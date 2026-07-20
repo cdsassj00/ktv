@@ -1,0 +1,99 @@
+import Link from "next/link";
+import { notFound } from "next/navigation";
+import type { Metadata } from "next";
+import SpeakerAvatar from "@/components/SpeakerAvatar";
+import { getSpeaker, getSpeakerHistory, getSpeakers } from "@/lib/data";
+import { formatDate, formatTime, TURN_KIND_STYLE, youtubeUrlAt } from "@/lib/utils";
+
+export const dynamicParams = false;
+
+export function generateStaticParams() {
+  return Object.keys(getSpeakers()).map((id) => ({ id }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}): Promise<Metadata> {
+  const { id } = await params;
+  const sp = getSpeaker(id);
+  return { title: sp ? `${sp.name} ${sp.role}` : "발언자" };
+}
+
+export default async function SpeakerPage({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params;
+  const speaker = getSpeaker(id);
+  if (!speaker) notFound();
+  const history = getSpeakerHistory(id);
+
+  return (
+    <div className="space-y-8">
+      <header className="flex flex-col items-center gap-4 rounded-2xl bg-gradient-to-br from-navy-900 to-navy-700 p-8 text-white sm:flex-row sm:items-center">
+        <SpeakerAvatar speaker={speaker} size="xl" />
+        <div className="text-center sm:text-left">
+          <h1 className="text-2xl font-bold">{speaker.name}</h1>
+          <p className="mt-1 text-navy-200">
+            {speaker.role} · {speaker.org}
+          </p>
+          {speaker.term && (
+            <p className="mt-1 text-xs text-navy-300">
+              재임: {speaker.term.from} ~ {speaker.term.to ?? "현재"}
+            </p>
+          )}
+          {speaker.photoSource && (
+            <p className="mt-2 text-[11px] text-navy-300">사진 출처: {speaker.photoSource}</p>
+          )}
+        </div>
+      </header>
+
+      <section className="space-y-4">
+        <h2 className="text-xl font-bold text-navy-900">회의별 발언 이력</h2>
+        {history.length === 0 ? (
+          <p className="rounded-lg border border-slate-200 bg-white p-8 text-center text-slate-500">
+            아직 기록된 발언이 없습니다.
+          </p>
+        ) : (
+          history.map(({ meeting, turns }) => (
+            <div key={meeting.id} className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
+              <Link href={`/meetings/${meeting.id}`} className="font-semibold text-navy-800 hover:underline">
+                {formatDate(meeting.date)} · {meeting.title}
+              </Link>
+              <ul className="mt-3 space-y-2">
+                {turns.map((t, i) => {
+                  const kind = TURN_KIND_STYLE[t.kind] ?? TURN_KIND_STYLE["발언"];
+                  return (
+                    <li key={i} className="flex items-start gap-2 text-sm">
+                      <span className={`mt-0.5 shrink-0 rounded-full border px-2 py-0.5 text-[11px] font-medium ${kind.className}`}>
+                        {kind.label}
+                      </span>
+                      <div>
+                        <Link href={`/meetings/${meeting.id}#${t.exchangeId}`} className="text-slate-700 hover:underline">
+                          <span className="text-xs text-slate-400">[{t.topic}]</span> {t.summary}
+                        </Link>
+                        {meeting.videoId ? (
+                          <a
+                            href={youtubeUrlAt(meeting.videoId, t.timestamp)}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="ml-2 font-mono text-xs text-navy-500 hover:underline"
+                          >
+                            ▶ {formatTime(t.timestamp)}
+                          </a>
+                        ) : (
+                          <span className="ml-2 font-mono text-xs text-slate-400">
+                            ▶ {formatTime(t.timestamp)}
+                          </span>
+                        )}
+                      </div>
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
+          ))
+        )}
+      </section>
+    </div>
+  );
+}

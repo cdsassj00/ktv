@@ -1,0 +1,77 @@
+{
+  "id": "2026-07-14-cabinet-sample",
+  "type": "cabinet",
+  "title": "국무회의 (샘플 B)",
+  "date": "2026-07-14",
+  "videoId": "",
+  "videoUrl": "",
+  "duration": 4800,
+  "thumbnail": "",
+  "sample": true,
+  "summary": {
+    "oneLine": "[샘플] 지난 회의 지시에 따른 AI 기본법 시행령 초안이 보고되고 데이터 산업 육성 예산이 논의된 국무회의.",
+    "overview": "[데모용 샘플 데이터입니다 — 실제 회의 내용이 아닙니다]\n\n지시-이행 추적 기능을 시연하기 위한 샘플입니다. 7/7 회의(샘플 A)에서 대통령이 지시한 'AI 기본법 시행령 초안 보고'가 이 회의에서 이행되는 흐름을 보여줍니다.",
+    "agenda": [
+      { "title": "AI 기본법 시행령 초안 보고", "summary": "[샘플] 지난 회의 지시에 따른 초안 보고 — 고영향 AI 범위와 중소기업 유예 조항 포함.", "timestamp": 480 },
+      { "title": "데이터 산업 육성 예산", "summary": "[샘플] 데이터 바우처 확대와 가명정보 활용 지원 예산 심의.", "timestamp": 2400 }
+    ],
+    "remarks": [
+      {
+        "speakerId": "msit-minister",
+        "quote": "[샘플 인용문] 지난 회의 지시에 따라 시행령 초안을 보고드립니다.",
+        "context": "AI 기본법 시행령 초안 보고",
+        "timestamp": 490
+      }
+    ]
+  },
+  "exchanges": [
+    {
+      "id": "ex-01",
+      "topic": "AI 기본법 시행령 초안 보고 (7/7 지시 후속)",
+      "turns": [
+        { "speakerId": "msit-minister", "kind": "보고", "summary": "[샘플] 지난 회의 지시에 따라 시행령 초안을 보고 — 중소기업 유예 조항 포함.", "quote": "[샘플 인용문] 지난 회의 지시에 따라 시행령 초안을 보고드립니다.", "timestamp": 490, "inReplyTo": null },
+        { "speakerId": "president", "kind": "질문", "summary": "[샘플] 고영향 AI 판정 기준이 명확한지 질문.", "timestamp": 900, "inReplyTo": 0 },
+        { "speakerId": "msit-minister", "kind": "답변", "summary": "[샘플] 판정 가이드라인을 별도 고시로 마련하겠다고 답변.", "timestamp": 960, "inReplyTo": 1 },
+        { "speakerId": "moj-minister", "kind": "발언", "summary": "[샘플] 법제처 심사 일정 관련 보완 의견 제시.", "timestamp": 1080, "inReplyTo": 0 }
+      ]
+    },
+    {
+      "id": "ex-02",
+      "topic": "데이터 산업 육성 예산",
+      "turns": [
+        { "speakerId": "moef-minister", "kind": "보고", "summary": "[샘플] 데이터 바우처 확대 예산안 보고.", "timestamp": 2400, "inReplyTo": null },
+        { "speakerId": "president", "kind": "지시", "summary": "[샘플] 지역 중소기업 배정 비율을 높이는 방안을 검토하라고 지시.", "timestamp": 2650, "inReplyTo": 0 }
+      ]
+    }
+  ],
+  "directives": [
+    {
+      "id": "dir-2026-07-14-01",
+      "from": "president",
+      "to": ["moef-minister"],
+      "content": "[샘플] 데이터 바우처의 지역 중소기업 배정 비율 상향 방안을 검토할 것",
+      "timestamp": 2650,
+      "tags": ["데이터산업", "AI예산"],
+      "status": "issued",
+      "followUps": []
+    }
+  ],
+  "aiDataPolicy": [
+    {
+      "topic": "AI 기본법 시행령 초안",
+      "speakerId": "msit-minister",
+      "summary": "[샘플] 고영향 AI 범위와 중소기업 유예 조항이 담긴 시행령 초안을 보고.",
+      "quote": "[샘플 인용문] 지난 회의 지시에 따라 시행령 초안을 보고드립니다.",
+      "timestamp": 490,
+      "tags": ["AI기본법", "규제"]
+    },
+    {
+      "topic": "데이터 바우처 예산",
+      "speakerId": "moef-minister",
+      "summary": "[샘플] 데이터 바우처 확대와 가명정보 활용 지원 예산안을 보고.",
+      "timestamp": 2400,
+      "tags": ["데이터산업", "AI예산"]
+    }
+  ],
+  "tags": ["AI", "데이터", "예산"]
+}

@@ -1,0 +1,24 @@
+# dependencies
+/node_modules
+
+# next.js
+/.next/
+/out/
+next-env.d.ts
+
+# misc
+.DS_Store
+*.pem
+.env
+.env.local
+.env*.local
+
+# pipeline intermediates (transcripts can be large; queue is regenerated)
+/data/transcripts/
+/data/videos-queue.json
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo

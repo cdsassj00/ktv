@@ -1,0 +1,33 @@
+{
+  "name": "opencabinet",
+  "version": "0.1.0",
+  "private": true,
+  "description": "열린국무회의 — KTV 국무회의·국민업무보고 요약 아카이브",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "fetch:videos": "tsx scripts/fetch-videos.ts",
+    "fetch:transcripts": "tsx scripts/fetch-transcripts.ts",
+    "summarize": "tsx scripts/summarize.ts",
+    "pipeline": "tsx scripts/pipeline.ts"
+  },
+  "dependencies": {
+    "next": "^15.3.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@anthropic-ai/sdk": "^0.57.0",
+    "@tailwindcss/postcss": "^4.1.0",
+    "@types/node": "^22.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "postcss": "^8.5.0",
+    "tailwindcss": "^4.1.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.8.0",
+    "youtube-transcript": "^1.2.1"
+  }
+}

@@ -1,0 +1,54 @@
+name: 회의 수집·요약 파이프라인
+
+on:
+  schedule:
+    # 국무회의는 통상 화요일 오전(KST) 개최 → 화요일 오후 KST(= 04~10시 UTC) 집중 폴링
+    - cron: "0 4 * * 2"
+    - cron: "0 7 * * 2"
+    - cron: "0 10 * * 2"
+    # 그 외 요일은 하루 1회 (21:00 UTC = 오전 6시 KST)
+    - cron: "0 21 * * *"
+  workflow_dispatch:
+    inputs:
+      since:
+        description: "이 날짜(YYYY-MM-DD) 이후 영상만 수집"
+        required: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: collect
+  cancel-in-progress: false
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      - name: 파이프라인 실행
+        env:
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          SINCE: ${{ inputs.since }}
+        run: npm run pipeline
+
+      - name: 결과 커밋
+        run: |
+          git config user.name "opencabinet-bot"
+          git config user.email "actions@github.com"
+          git add data/meetings data/speakers.json
+          if git diff --cached --quiet; then
+            echo "변경 없음"
+          else
+            git commit -m "data: 회의 요약 자동 수집 ($(date -u +%Y-%m-%d))"
+            git push
+          fi
