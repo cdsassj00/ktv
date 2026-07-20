@@ -46,12 +46,28 @@ html {
 }
 
 body {
+  /* Pretendard Variable을 명시적으로 강제 (테마 변수 폴백에만 의존하지 않음) */
+  font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont,
+    "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
   background-color: var(--color-paper);
   color: var(--color-ink);
   word-break: keep-all;
   overflow-wrap: break-word;
-  letter-spacing: -0.012em;
+  letter-spacing: -0.01em;
+  font-feature-settings: "ss05"; /* Pretendard 대체 글리프: 더 열린 따옴표·괄호 */
   @apply antialiased;
+}
+
+/* 제목 계열: 더 타이트한 자간 + 최적화된 웨이트 렌더링 */
+h1, h2, h3, .h-judge {
+  letter-spacing: -0.028em;
+  font-variation-settings: "wght" 600;
+}
+h1 { font-variation-settings: "wght" 650; }
+
+/* 숫자(통계·타임스탬프)는 고정폭 숫자로 정렬 흔들림 방지 */
+.font-mono, [class*="CountUp"], .tabular {
+  font-variant-numeric: tabular-nums;
 }
 
 /* ── 컴포넌트 ─────────────────────────────── */
