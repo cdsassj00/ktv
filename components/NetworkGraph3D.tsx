@@ -107,9 +107,9 @@ export default function NetworkGraph3D({
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
           .nodeColor((n: any) => {
             const hl = hlRef.current;
-            if (hoverRef.current === n.id) return NEON.gold;
+            if (hoverRef.current === n.id) return "#e0b400";
             if (!hl) return n.color;
-            return hl.nodes.has(n.id) ? NEON.gold : NEON.dimNode;
+            return hl.nodes.has(n.id) ? "#e0b400" : NEON.dimNode;
           })
           .nodeOpacity(1)
           .nodeResolution(24)
@@ -157,7 +157,7 @@ export default function NetworkGraph3D({
 
         // ── 은하수 연출 ──────────────────────────────
         // 1) 네온 블룸
-        const bloom = new UnrealBloomPass(new THREE.Vector2(1024, 1024), 1.45, 0.75, 0.05);
+        const bloom = new UnrealBloomPass(new THREE.Vector2(1024, 1024), 0.85, 0.55, 0.12);
         graph.postProcessingComposer().addPass(bloom);
         // 2) 스타필드 (배경 별 1500개)
         const starGeo = new THREE.BufferGeometry();
