@@ -12,6 +12,7 @@ import {
 } from "@/lib/utils";
 import { UNKNOWN_SPEAKER } from "@/lib/client-data";
 import ThreadView from "./ThreadView";
+import { IconAlert, IconFilm, IconInfo, IconNetwork, IconPin, IconTag, IconThread } from "./icons";
 import NetworkView from "./NetworkView";
 import SpeakerAvatar from "./SpeakerAvatar";
 
@@ -47,7 +48,7 @@ export default function MeetingDetail({
     <div className="space-y-6">
       {meeting.sample && (
         <div className="rounded-lg border border-amber-300 bg-amber-50 px-4 py-3 text-sm text-amber-800">
-          ⚠️ 이 회의는 <strong>데모용 샘플 데이터</strong>입니다. 실제 발언·회의 내용이 아닙니다.
+          <IconAlert className="mr-1.5 size-4 align-[-2px]" /> 이 회의는 <strong>데모용 샘플 데이터</strong>입니다. 실제 발언·회의 내용이 아닙니다.
         </div>
       )}
 
@@ -78,7 +79,7 @@ export default function MeetingDetail({
               />
             ) : (
               <div className="flex aspect-video w-full flex-col items-center justify-center gap-2 bg-navy-900 text-navy-300">
-                <span className="text-3xl">🎬</span>
+                <IconFilm className="size-8" />
                 <p className="text-sm">
                   샘플 데이터 — 연결된 영상이 없습니다. 파이프라인 실행 시 KTV 영상이 임베드됩니다.
                 </p>
@@ -89,7 +90,7 @@ export default function MeetingDetail({
           <section className="panel p-5">
             <h2 className="mb-2 text-lg font-black text-ink">전체 요약</h2>
             <p className="mb-1 text-xs text-slate-400">
-              ⓘ 영상 자막을 바탕으로 AI가 생성한 요약입니다. 타임스탬프로 원문을 확인하세요.
+              <IconInfo className="mr-1 size-3.5 align-[-2px]" /> 영상 자막을 바탕으로 AI가 생성한 요약입니다. 타임스탬프로 원문을 확인하세요.
             </p>
             <div className="space-y-3 text-sm leading-relaxed text-slate-700">
               {meeting.summary.overview.split("\n\n").map((p, i) => (
@@ -130,7 +131,7 @@ export default function MeetingDetail({
           {meeting.aiDataPolicy.length > 0 && (
             <section className="rounded-lg border border-accent-500/35 bg-[#f9f1f0] p-5 shadow-card">
               <h2 className="mb-3 text-lg font-black text-ink">
-                🏷️ AI·데이터 정책 발언 <span className="text-accent-600">{meeting.aiDataPolicy.length}건</span>
+                <IconTag className="mr-1.5 size-[18px] align-[-2px] text-accent-500" /> AI·데이터 정책 발언 <span className="text-accent-600">{meeting.aiDataPolicy.length}건</span>
               </h2>
               <div className="space-y-3">
                 {meeting.aiDataPolicy.map((item, i) => {
@@ -183,7 +184,7 @@ export default function MeetingDetail({
                 tab === "thread" ? "bg-navy-900 font-bold text-white" : "font-semibold text-mut hover:bg-navy-50"
               }`}
             >
-              💬 발언 스레드
+              <IconThread className="mr-1.5 size-4 align-[-2px]" /> 발언 스레드
             </button>
             <button
               type="button"
@@ -192,7 +193,7 @@ export default function MeetingDetail({
                 tab === "network" ? "bg-navy-900 font-bold text-white" : "font-semibold text-mut hover:bg-navy-50"
               }`}
             >
-              🕸️ 네트워크
+              <IconNetwork className="mr-1.5 size-4 align-[-2px]" /> 네트워크
             </button>
           </div>
 
@@ -210,7 +211,7 @@ export default function MeetingDetail({
           {meeting.directives.length > 0 && (
             <section className="panel p-4">
               <h3 className="mb-3 flex items-center justify-between font-bold text-navy-900">
-                📌 이 회의의 지시
+                <IconPin className="mr-1.5 size-4 align-[-2px] text-accent-500" /> 이 회의의 지시
                 <Link href="/directives" className="text-xs font-normal text-navy-500 hover:underline">
                   전체 지시-이행 보기 →
                 </Link>

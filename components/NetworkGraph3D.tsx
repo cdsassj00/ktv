@@ -1,8 +1,9 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import type { NetworkEdge, NetworkNode, SpeakerMap } from "@/lib/types";
 import { UNKNOWN_SPEAKER } from "@/lib/client-data";
+import NetworkGraph from "./NetworkGraph";
 
 const EDGE_COLOR: Record<NetworkEdge["kind"], string> = {
   directive: "#c96a60",
@@ -10,10 +11,19 @@ const EDGE_COLOR: Record<NetworkEdge["kind"], string> = {
   mention: "#68758a",
 };
 
+function webglAvailable(): boolean {
+  try {
+    const cv = document.createElement("canvas");
+    return Boolean(cv.getContext("webgl2") ?? cv.getContext("webgl"));
+  } catch {
+    return false;
+  }
+}
+
 /**
  * 3D 발언 네트워크 — three.js(3d-force-graph) 기반.
  * 드래그로 회전, 휠로 줌. 지시 엣지는 코랄색 파티클이 흐르는 굵은 선.
- * SSR 불가 라이브러리이므로 useEffect에서 동적 import.
+ * 로딩 중 코닉 스피너, WebGL 미지원 시 2D SVG 그래프로 폴백.
  */
 export default function NetworkGraph3D({
   nodes,
@@ -25,6 +35,7 @@ export default function NetworkGraph3D({
   speakers: SpeakerMap;
 }) {
   const containerRef = useRef<HTMLDivElement>(null);
+  const [status, setStatus] = useState<"loading" | "ready" | "fallback">("loading");
 
   useEffect(() => {
     let disposed = false;
@@ -32,73 +43,81 @@ export default function NetworkGraph3D({
     let graph: any;
 
     (async () => {
-      const [{ default: ForceGraph3D }, { default: SpriteText }] = await Promise.all([
-        import("3d-force-graph"),
-        import("three-spritetext"),
-      ]);
-      if (disposed || !containerRef.current) return;
+      if (!webglAvailable()) {
+        setStatus("fallback");
+        return;
+      }
+      try {
+        const [{ default: ForceGraph3D }, { default: SpriteText }] = await Promise.all([
+          import("3d-force-graph"),
+          import("three-spritetext"),
+        ]);
+        if (disposed || !containerRef.current) return;
 
-      const data = {
-        nodes: nodes.map((n) => {
-          const sp = speakers[n.speakerId] ?? UNKNOWN_SPEAKER;
-          return {
-            id: n.speakerId,
-            name: `${sp.name} · ${sp.role}`,
-            label: sp.name,
-            val: 4 + Math.min(20, n.turnCount * 3),
-            color: n.speakerId === "president" ? "#c96a60" : "#6f8ab8",
-          };
-        }),
-        links: edges.map((e) => ({
-          source: e.source,
-          target: e.target,
-          kind: e.kind,
-          count: e.count,
-        })),
-      };
+        const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+        const data = {
+          nodes: nodes.map((n) => {
+            const sp = speakers[n.speakerId] ?? UNKNOWN_SPEAKER;
+            return {
+              id: n.speakerId,
+              name: `${sp.name} · ${sp.role}`,
+              label: sp.name,
+              val: 4 + Math.min(20, n.turnCount * 3),
+              color: n.speakerId === "president" ? "#c96a60" : "#6f8ab8",
+            };
+          }),
+          links: edges.map((e) => ({
+            source: e.source,
+            target: e.target,
+            kind: e.kind,
+            count: e.count,
+          })),
+        };
 
-      graph = new ForceGraph3D(containerRef.current)
-        .graphData(data)
-        .width(containerRef.current.clientWidth)
-        .height(560)
-        .backgroundColor("#0c1220")
-        .showNavInfo(false)
-        .nodeVal("val")
-        .nodeColor("color")
-        .nodeOpacity(0.92)
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        .nodeThreeObjectExtend(true)
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        .nodeThreeObject((node: any) => {
-          const sprite = new SpriteText(node.label);
-          sprite.color = "#ffffff";
-          sprite.textHeight = 4.5;
-          sprite.fontWeight = "700";
-          // three 버전 간 타입 불일치로 Object3D.position이 타입에 노출되지 않아 캐스팅
-          (sprite as unknown as { position: { set: (x: number, y: number, z: number) => void } })
-            .position.set(0, -(2 + Math.cbrt(node.val) * 2.5), 0);
-          return sprite;
-        })
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        .linkColor((l: any) => EDGE_COLOR[l.kind as NetworkEdge["kind"]])
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        .linkWidth((l: any) => (l.kind === "directive" ? 1.8 : 0.7))
-        .linkOpacity(0.55)
-        .linkDirectionalArrowLength(4)
-        .linkDirectionalArrowRelPos(0.92)
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        .linkDirectionalParticles((l: any) => (l.kind === "directive" ? 2 + l.count : 0))
-        .linkDirectionalParticleWidth(1.6)
-        .linkDirectionalParticleSpeed(0.006)
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        .onNodeClick((node: any) => {
-          window.location.href = `/speakers/${node.id}`;
-        });
+        graph = new ForceGraph3D(containerRef.current)
+          .graphData(data)
+          .width(containerRef.current.clientWidth)
+          .height(560)
+          .backgroundColor("#0c1220")
+          .showNavInfo(false)
+          .nodeVal("val")
+          .nodeColor("color")
+          .nodeOpacity(0.92)
+          .nodeThreeObjectExtend(true)
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          .nodeThreeObject((node: any) => {
+            const sprite = new SpriteText(node.label);
+            sprite.color = "#ffffff";
+            sprite.textHeight = 4.5;
+            sprite.fontWeight = "700";
+            (sprite as unknown as { position: { set: (x: number, y: number, z: number) => void } })
+              .position.set(0, -(2 + Math.cbrt(node.val) * 2.5), 0);
+            return sprite;
+          })
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          .linkColor((l: any) => EDGE_COLOR[l.kind as NetworkEdge["kind"]])
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          .linkWidth((l: any) => (l.kind === "directive" ? 1.8 : 0.7))
+          .linkOpacity(0.55)
+          .linkDirectionalArrowLength(4)
+          .linkDirectionalArrowRelPos(0.92)
+          // 파티클은 상시 애니메이션이므로 reduced-motion에서는 끔
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          .linkDirectionalParticles((l: any) => (!reduce && l.kind === "directive" ? 2 + l.count : 0))
+          .linkDirectionalParticleWidth(1.6)
+          .linkDirectionalParticleSpeed(0.006)
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          .onNodeClick((node: any) => {
+            window.location.href = `/speakers/${node.id}`;
+          });
 
-      // 노드가 덜 뭉치도록 반발력·링크 거리 조정
-      graph.d3Force("charge")?.strength(-180);
-      graph.d3Force("link")?.distance(60);
-      graph.cameraPosition({ z: 230 });
+        graph.d3Force("charge")?.strength(-180);
+        graph.d3Force("link")?.distance(60);
+        graph.cameraPosition({ z: 230 });
+        setStatus("ready");
+      } catch {
+        setStatus("fallback");
+      }
     })();
 
     return () => {
@@ -107,8 +126,23 @@ export default function NetworkGraph3D({
     };
   }, [nodes, edges, speakers]);
 
+  if (status === "fallback") {
+    return (
+      <div className="panel p-4">
+        <p className="mb-2 text-xs text-mut">3D를 지원하지 않는 환경이라 2D 그래프로 표시합니다.</p>
+        <NetworkGraph nodes={nodes} edges={edges} speakers={speakers} />
+      </div>
+    );
+  }
+
   return (
-    <div className="overflow-hidden rounded-2xl border border-hair shadow-lift">
+    <div className="relative overflow-hidden rounded-lg border border-hair shadow-lift">
+      {status === "loading" && (
+        <div className="absolute inset-0 z-10 flex flex-col items-center justify-center gap-3 bg-navy-950">
+          <span className="spinner" />
+          <span className="on-dark-mut text-xs font-semibold">3D 네트워크 준비 중…</span>
+        </div>
+      )}
       <div ref={containerRef} className="min-h-[560px] w-full" />
     </div>
   );

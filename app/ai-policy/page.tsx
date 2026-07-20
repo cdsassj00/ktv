@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import SpeakerAvatar from "@/components/SpeakerAvatar";
+import Reveal from "@/components/Reveal";
 import {
   getAiDataPolicyTags,
   getAllAiDataPolicy,
@@ -97,7 +98,7 @@ export default async function AiPolicyPage({
           해당 태그의 발언이 없습니다.
         </p>
       ) : (
-        <div className="space-y-3">
+        <Reveal stagger className="space-y-3">
           {items.map(({ meeting, item }, i) => {
             const sp = speakers[item.speakerId] ?? UNKNOWN_SPEAKER;
             return (
@@ -145,7 +146,7 @@ export default async function AiPolicyPage({
               </div>
             );
           })}
-        </div>
+        </Reveal>
       )}
     </div>
   );

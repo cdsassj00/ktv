@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import SpeakerAvatar from "@/components/SpeakerAvatar";
+import Reveal from "@/components/Reveal";
 import { getAllDirectives, getMeeting, getSpeakers, UNKNOWN_SPEAKER } from "@/lib/data";
 import { DIRECTIVE_STATUS_LABEL, formatDate, formatTime, youtubeUrlAt } from "@/lib/utils";
 
@@ -66,7 +67,7 @@ export default async function DirectivesPage({
           지시 데이터가 없습니다.
         </p>
       ) : (
-        <div className="space-y-4">
+        <Reveal stagger className="space-y-4">
           {items.map(({ meeting, directive }) => {
             const from = speakers[directive.from] ?? UNKNOWN_SPEAKER;
             const status = DIRECTIVE_STATUS_LABEL[directive.status];
@@ -156,7 +157,7 @@ export default async function DirectivesPage({
               </div>
             );
           })}
-        </div>
+        </Reveal>
       )}
     </div>
   );

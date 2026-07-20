@@ -43,7 +43,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="on-dark-mut whitespace-nowrap rounded px-3 py-1.5 font-bold transition hover:bg-white/10 hover:text-white"
+                  className="on-dark-mut nav-link whitespace-nowrap rounded px-3 py-1.5 font-bold hover:text-white"
                 >
                   {item.label}
                 </Link>

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import SpeakerAvatar from "@/components/SpeakerAvatar";
+import Reveal from "@/components/Reveal";
 import { getSpeakers } from "@/lib/data";
 
 export const metadata: Metadata = { title: "발언자" };
@@ -20,7 +21,7 @@ export default function SpeakersPage() {
         </p>
       </header>
 
-      <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
+      <Reveal stagger className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
         {entries.map(([id, sp]) => (
           <Link
             key={id}
@@ -34,7 +35,7 @@ export default function SpeakersPage() {
             </div>
           </Link>
         ))}
-      </div>
+      </Reveal>
     </div>
   );
 }

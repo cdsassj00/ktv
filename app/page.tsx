@@ -1,5 +1,8 @@
 import Link from "next/link";
 import MeetingCard from "@/components/MeetingCard";
+import CountUp from "@/components/CountUp";
+import Reveal from "@/components/Reveal";
+import { IconAlert } from "@/components/icons";
 import { getAllAiDataPolicy, getAllDirectives, getMeetings } from "@/lib/data";
 import { formatDate, formatTime, MEETING_TYPE_LABEL } from "@/lib/utils";
 
@@ -32,10 +35,14 @@ export default async function HomePage({
         <div className="grid gap-8 p-8 sm:p-10 lg:grid-cols-[minmax(0,7fr)_minmax(0,5fr)]">
           <div className="flex flex-col justify-center gap-5">
             <p className="overline-label">KTV 공개 국무회의·국민업무보고 아카이브</p>
+            {/* 라인 마스크 리빌(line mask reveal) — 줄 단위 등장 */}
             <h1 className="text-[34px] font-black leading-[1.18] tracking-tight sm:text-[42px]">
-              발언을 대화 단위로 재구성하고,
-              <br />
-              지시의 이행까지 추적한다
+              <span className="ln">
+                <span>발언을 대화 단위로 재구성하고,</span>
+              </span>
+              <span className="ln">
+                <span>지시의 이행까지 추적한다</span>
+              </span>
             </h1>
             <ul className="on-dark-mut space-y-1.5 text-[14.5px] leading-relaxed">
               <li className="flex gap-2">
@@ -102,7 +109,7 @@ export default async function HomePage({
             <div key={s.label} className="flex flex-col gap-0.5 border-l-2 border-white/15 pl-3">
               <span className="on-dark-mut text-[11px] font-bold">{s.label}</span>
               <span className="text-xl font-black leading-none">
-                {s.value}
+                <CountUp value={s.value} />
                 <span className="on-dark-mut ml-1 text-[11px] font-bold">{s.unit}</span>
               </span>
             </div>
@@ -111,10 +118,13 @@ export default async function HomePage({
       </section>
 
       {hasSample && (
-        <div className="rounded-lg border border-gold-400/50 bg-[#faf5e9] px-5 py-3 text-[13.5px] font-medium text-[#7a5a1a]">
-          현재 표시되는 회의는 <strong>데모용 샘플 데이터</strong>입니다. 실제 발언·회의 내용이
-          아니며, 수집 파이프라인(YouTube API + LLM 요약)을 실행하면 실제 KTV 회의 데이터로
-          대체됩니다.
+        <div className="flex items-start gap-2.5 rounded-lg border border-gold-400/50 bg-[#faf5e9] px-5 py-3 text-[13.5px] font-medium text-[#7a5a1a]">
+          <IconAlert className="mt-0.5 size-4" />
+          <p>
+            현재 표시되는 회의는 <strong>데모용 샘플 데이터</strong>입니다. 실제 발언·회의 내용이
+            아니며, 수집 파이프라인(YouTube API + LLM 요약)을 실행하면 실제 KTV 회의 데이터로
+            대체됩니다.
+          </p>
         </div>
       )}
 
@@ -145,11 +155,12 @@ export default async function HomePage({
         {meetings.length === 0 ? (
           <p className="panel p-10 text-center text-mut">해당 유형의 회의가 아직 없습니다.</p>
         ) : (
-          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          /* 스태거 그리드(stagger children) — 카드가 80ms 간격으로 등장 */
+          <Reveal stagger className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {meetings.map((m) => (
               <MeetingCard key={m.id} meeting={m} />
             ))}
-          </div>
+          </Reveal>
         )}
       </section>
     </div>
