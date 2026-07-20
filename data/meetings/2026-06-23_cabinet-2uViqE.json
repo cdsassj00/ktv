@@ -479,8 +479,15 @@
       "content": "청년미래적금은 2주 신청 기간 내 요건 충족자가 예산을 초과하더라도 추가 예산을 편성해서라도 전원 가입 처리하는 것으로 방침을 명확히 할 것",
       "timestamp": 3333,
       "tags": ["청년미래적금", "예산"],
-      "status": "issued",
-      "followUps": []
+      "status": "reported",
+      "followUps": [
+        {
+          "meetingId": "2026-06-30-cabinet-28",
+          "exchangeId": "ex-03",
+          "summary": "금융위원장이 예산 기준(320만 명)을 초과해도 요건 충족 청년은 선착순·예산 제약 없이 전원 지원받는다고 확인",
+          "inferred": true
+        }
+      ]
     },
     {
       "id": "dir-2026-06-23-11",
