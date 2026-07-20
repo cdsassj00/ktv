@@ -5,8 +5,12 @@
  * 쿼터 절약을 위해 search.list(100 unit) 대신
  * channels.list(1) + playlistItems.list(1/50개) + videos.list(1/50개)만 사용한다.
  *
+ * 수집 소스 2개를 합친다:
+ *   1) KTV 공식 "국무회의" 재생목록 (PLAYLIST_ID, 기본 PLTlQMzTtp1gY) — 전 회차 아카이브
+ *   2) 채널 최신 업로드 (제목 필터) — 재생목록에 아직 안 들어간 최신 회의/업무보고 커버
+ *
  * 필요 환경변수: YOUTUBE_API_KEY
- * 선택 환경변수: CHANNEL_HANDLE(기본 KTV_korea), MAX_PAGES(기본 4), SINCE(YYYY-MM-DD)
+ * 선택 환경변수: PLAYLIST_ID, CHANNEL_HANDLE(기본 KTV_korea), MAX_PAGES(기본 4), SINCE(YYYY-MM-DD)
  */
 import { pathToFileURL } from "url";
 import {
@@ -30,22 +34,9 @@ async function yt<T>(endpoint: string, params: Record<string, string>): Promise<
   return (await res.json()) as T;
 }
 
-export async function fetchVideos(): Promise<QueueItem[]> {
-  const handle = process.env.CHANNEL_HANDLE ?? "KTV_korea";
-  const maxPages = Number(process.env.MAX_PAGES ?? 4);
-  const since = process.env.SINCE; // 이 날짜 이전 영상은 무시
-
-  // 1) 채널 → uploads 재생목록 ID
-  const channels = await yt<{
-    items?: { contentDetails: { relatedPlaylists: { uploads: string } } }[];
-  }>("channels", { part: "contentDetails", forHandle: handle });
-  const uploads = channels.items?.[0]?.contentDetails.relatedPlaylists.uploads;
-  if (!uploads) throw new Error(`채널을 찾을 수 없음: @${handle}`);
-  log(`채널 @${handle} uploads 재생목록: ${uploads}`);
-
-  // 2) 최신 업로드 순회 + 제목 필터
-  const known = existingVideoIds();
-  const candidates: { videoId: string; title: string; publishedAt: string; type: QueueItem["type"] }[] = [];
+/** 재생목록의 모든 항목을 페이지네이션으로 순회 */
+async function listPlaylist(playlistId: string, maxPages: number) {
+  const items: { videoId: string; title: string; publishedAt: string }[] = [];
   let pageToken: string | undefined;
   for (let page = 0; page < maxPages; page++) {
     const res = await yt<{
@@ -53,22 +44,58 @@ export async function fetchVideos(): Promise<QueueItem[]> {
       nextPageToken?: string;
     }>("playlistItems", {
       part: "snippet",
-      playlistId: uploads,
+      playlistId,
       maxResults: "50",
       ...(pageToken ? { pageToken } : {}),
     });
     for (const item of res.items) {
-      const { title, publishedAt, resourceId } = item.snippet;
-      if (since && publishedAt.slice(0, 10) < since) continue;
-      const type = classifyTitle(title);
-      if (!type || type === "other") continue;
-      if (known.has(resourceId.videoId)) continue;
-      candidates.push({ videoId: resourceId.videoId, title, publishedAt, type });
+      items.push({
+        videoId: item.snippet.resourceId.videoId,
+        title: item.snippet.title,
+        publishedAt: item.snippet.publishedAt,
+      });
     }
     pageToken = res.nextPageToken;
     if (!pageToken) break;
   }
-  log(`신규 회의 영상 후보 ${candidates.length}건`);
+  return items;
+}
+
+export async function fetchVideos(): Promise<QueueItem[]> {
+  const handle = process.env.CHANNEL_HANDLE ?? "KTV_korea";
+  const playlistId = process.env.PLAYLIST_ID ?? "PLTlQMzTtp1gY"; // KTV 공식 국무회의 재생목록
+  const maxPages = Number(process.env.MAX_PAGES ?? 4);
+  const since = process.env.SINCE; // 이 날짜 이전 영상은 무시
+
+  const known = existingVideoIds();
+  const candidates: { videoId: string; title: string; publishedAt: string; type: QueueItem["type"] }[] = [];
+  const seen = new Set<string>();
+
+  // 1) 공식 국무회의 재생목록 전체 — 전부 cabinet으로 분류
+  for (const item of await listPlaylist(playlistId, maxPages)) {
+    if (since && item.publishedAt.slice(0, 10) < since) continue;
+    if (known.has(item.videoId) || seen.has(item.videoId)) continue;
+    seen.add(item.videoId);
+    candidates.push({ ...item, type: "cabinet" });
+  }
+  log(`재생목록(${playlistId})에서 신규 ${candidates.length}건`);
+
+  // 2) 채널 최신 업로드 — 재생목록에 아직 없는 최신 회의·업무보고 커버
+  const channels = await yt<{
+    items?: { contentDetails: { relatedPlaylists: { uploads: string } } }[];
+  }>("channels", { part: "contentDetails", forHandle: handle });
+  const uploads = channels.items?.[0]?.contentDetails.relatedPlaylists.uploads;
+  if (uploads) {
+    for (const item of await listPlaylist(uploads, 2)) {
+      if (since && item.publishedAt.slice(0, 10) < since) continue;
+      const type = classifyTitle(item.title);
+      if (!type || type === "other") continue;
+      if (known.has(item.videoId) || seen.has(item.videoId)) continue;
+      seen.add(item.videoId);
+      candidates.push({ ...item, type });
+    }
+  }
+  log(`채널 최신분 포함 신규 회의 영상 후보 총 ${candidates.length}건`);
 
   // 3) 영상 상세(길이·썸네일) — 생중계 예고(길이 0) 및 진행 중 라이브 제외
   const queue: QueueItem[] = [];
