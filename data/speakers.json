@@ -3,9 +3,11 @@
     "name": "이재명",
     "role": "대통령",
     "org": "대통령실",
-    "photo": null,
-    "photoSource": null,
-    "term": { "from": "2025-06-04" }
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/President_Lee_Jae_Myung_20260306.jpg?width=400",
+    "photoSource": "위키미디어 공용 · CC BY-SA 4.0 · Republic of Korea/플리커 / 대한민국 청와대",
+    "term": {
+      "from": "2025-06-04"
+    }
   },
   "pm": {
     "name": "김민석",
@@ -18,15 +20,15 @@
     "name": "구윤철",
     "role": "부총리 겸 기획재정부 장관",
     "org": "기획재정부",
-    "photo": null,
-    "photoSource": null
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Koo_Yun-cheol_20250806.jpg?width=400",
+    "photoSource": "위키미디어 공용 · KOGL Type 1 · 대한민국 국회"
   },
   "moe-minister": {
     "name": "최교진",
     "role": "부총리 겸 교육부 장관",
     "org": "교육부",
-    "photo": null,
-    "photoSource": null
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Choi_Kyo-jin_20250918.jpg?width=400",
+    "photoSource": "위키미디어 공용 · KOGL Type 1 · 대한민국 국회"
   },
   "msit-minister": {
     "name": "배경훈",
@@ -46,8 +48,8 @@
     "name": "정동영",
     "role": "통일부 장관",
     "org": "통일부",
-    "photo": null,
-    "photoSource": null
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Chung_Dong-young_20250822.jpg?width=400",
+    "photoSource": "위키미디어 공용 · KOGL Type 1 · 통일부 통일협력국 국제협력과"
   },
   "moj-minister": {
     "name": "정성호",
@@ -60,36 +62,36 @@
     "name": "안규백",
     "role": "국방부 장관",
     "org": "국방부",
-    "photo": null,
-    "photoSource": null
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Ahn_Gyu-back_250814.jpg?width=400",
+    "photoSource": "위키미디어 공용 · KOGL Type 1 · 대한민국 국회"
   },
   "mois-minister": {
     "name": "윤호중",
     "role": "행정안전부 장관",
     "org": "행정안전부",
-    "photo": null,
-    "photoSource": null
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Yun_Ho-jung_20250818.jpg?width=400",
+    "photoSource": "위키미디어 공용 · KOGL Type 1 · 대한민국 국회"
   },
   "mpva-minister": {
     "name": "권오을",
     "role": "국가보훈부 장관",
     "org": "국가보훈부",
-    "photo": null,
-    "photoSource": null
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Kwon_Oh-eul_20250804.jpg?width=400",
+    "photoSource": "위키미디어 공용 · KOGL Type 1 · 대한민국 국회"
   },
   "mcst-minister": {
     "name": "최휘영",
     "role": "문화체육관광부 장관",
     "org": "문화체육관광부",
-    "photo": null,
-    "photoSource": null
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Choi_Hwi-Young%27s_portrait_%282025.11%29.jpg?width=400",
+    "photoSource": "위키미디어 공용 · KOGL Type 1 · 대한민국 국회"
   },
   "mafra-minister": {
     "name": "송미령",
     "role": "농림축산식품부 장관",
     "org": "농림축산식품부",
-    "photo": null,
-    "photoSource": null
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Song_Mi-ryung_%2825102201%29.jpg?width=400",
+    "photoSource": "위키미디어 공용 · KOGL Type 1 · 농림축산식품부  동물복지환경정책관  농촌탄소중립정책과"
   },
   "motie-minister": {
     "name": "김정관",

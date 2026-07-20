@@ -2,6 +2,8 @@ import Link from "next/link";
 import CountUp from "@/components/CountUp";
 import DirectiveFlow from "@/components/DirectiveFlow";
 import DotNav from "@/components/DotNav";
+import FloatingNav from "@/components/FloatingNav";
+import ParallaxPhoto from "@/components/ParallaxPhoto";
 import ParticleGlobe from "@/components/ParticleGlobe";
 import Reveal from "@/components/Reveal";
 import ScrollProgress from "@/components/ScrollProgress";
@@ -13,6 +15,7 @@ import {
   buildNetwork,
   getAllAiDataPolicy,
   getAllDirectives,
+  getExchangeIndex,
   getMeetings,
   getSearchDocs,
   getSpeakers,
@@ -42,6 +45,7 @@ export default function HomePage() {
   const aiItems = getAllAiDataPolicy();
   const network = buildNetwork();
   const searchDocs = getSearchDocs();
+  const exchangeIndex = getExchangeIndex();
 
   const featuredExchange =
     latest?.exchanges.reduce((a, b) => (b.turns.length > a.turns.length ? b : a), latest.exchanges[0]);
@@ -50,6 +54,7 @@ export default function HomePage() {
     <>
       <ScrollProgress />
       <DotNav sections={SECTIONS} />
+      <FloatingNav sections={SECTIONS} />
 
       {/* ══ 1. 히어로 — 3D 파티클 글로브 (스크롤 스크럽 회전) ══ */}
       <section id="hero" className="relative flex min-h-[100svh] flex-col items-center justify-center overflow-hidden px-5 text-center">
@@ -57,6 +62,15 @@ export default function HomePage() {
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_30%,#000_78%)]" />
         <div className="relative">
           <p className="text-[13px] font-semibold tracking-wide text-mut">KTV 공개 국무회의 아카이브</p>
+          {latest && (
+            <p className="mt-2 inline-flex items-center gap-1.5 rounded-full border border-[#30d158]/30 bg-[#30d158]/10 px-3 py-1 text-[11.5px] font-semibold text-[#4cd964]">
+              <span className="relative flex size-1.5">
+                <span className="absolute inline-flex size-full animate-ping rounded-full bg-[#30d158] opacity-60" />
+                <span className="relative inline-flex size-1.5 rounded-full bg-[#30d158]" />
+              </span>
+              최신 반영 · {latest.title} ({latest.date})
+            </p>
+          )}
           <h1 className="mx-auto mt-4 max-w-4xl text-[44px] font-semibold leading-[1.06] tracking-[-0.03em] sm:text-[68px]">
             <span className="ln">
               <span>국무회의,</span>
@@ -88,7 +102,14 @@ export default function HomePage() {
       </section>
 
       {/* ══ 2. 회의 — 스티키 스택 카드 ══ */}
-      <section id="meetings" className="px-5 py-24">
+      <section id="meetings" className="relative overflow-hidden px-5 py-24">
+        {latest && (
+          <ParallaxPhoto
+            src={`https://i.ytimg.com/vi/${latest.videoId}/maxresdefault.jpg`}
+            fallbackSrc={`https://i.ytimg.com/vi/${latest.videoId}/hqdefault.jpg`}
+            maxOpacity={0.13}
+          />
+        )}
         <div className="mx-auto max-w-3xl">
           <Reveal>
             <p className="overline-label">회의 아카이브</p>
@@ -170,7 +191,15 @@ export default function HomePage() {
       )}
 
       {/* ══ 4. 지시-이행 — 셀프 드로잉 라인 ══ */}
-      <section id="directives" className="border-t border-hair/40 px-5 py-24">
+      <section id="directives" className="relative overflow-hidden border-t border-hair/40 px-5 py-24">
+        {meetings[1] && (
+          <ParallaxPhoto
+            src={`https://i.ytimg.com/vi/${meetings[1].videoId}/maxresdefault.jpg`}
+            fallbackSrc={`https://i.ytimg.com/vi/${meetings[1].videoId}/hqdefault.jpg`}
+            maxOpacity={0.1}
+            rate={0.12}
+          />
+        )}
         <div className="mx-auto mb-12 max-w-2xl">
           <Reveal>
             <p className="overline-label">지시-이행 트래커</p>
@@ -206,7 +235,7 @@ export default function HomePage() {
             </p>
           </Reveal>
           <div className="mt-8">
-            <NetworkView nodes={network.nodes} edges={network.edges} speakers={speakers} searchDocs={searchDocs} />
+            <NetworkView nodes={network.nodes} edges={network.edges} speakers={speakers} searchDocs={searchDocs} exchangeIndex={exchangeIndex} />
           </div>
         </div>
       </section>

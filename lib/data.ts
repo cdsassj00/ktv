@@ -172,6 +172,26 @@ export function getSearchDocs(): import("./types").SearchDoc[] {
   return docs;
 }
 
+/** 검색 결과에서 대화 전체를 펼쳐 보여주기 위한 exchange 인덱스 (key: meetingId#exchangeId) */
+export function getExchangeIndex(): Record<
+  string,
+  { topic: string; meetingId: string; meetingTitle: string; videoId: string; turns: import("./types").ExchangeTurn[] }
+> {
+  const idx: ReturnType<typeof getExchangeIndex> = {};
+  for (const m of getMeetings()) {
+    for (const ex of m.exchanges) {
+      idx[`${m.id}#${ex.id}`] = {
+        topic: ex.topic,
+        meetingId: m.id,
+        meetingTitle: m.title,
+        videoId: m.videoId,
+        turns: ex.turns,
+      };
+    }
+  }
+  return idx;
+}
+
 /** 회의(들)에서 네트워크 노드·엣지 집계. meetingId 없으면 전체 누적 */
 export function buildNetwork(meetingId?: string): { nodes: NetworkNode[]; edges: NetworkEdge[] } {
   const meetings = meetingId

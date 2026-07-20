@@ -29,6 +29,7 @@
     "@types/node": "^22.0.0",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
+    "@types/three": "^0.185.1",
     "postcss": "^8.5.0",
     "tailwindcss": "^4.1.0",
     "tsx": "^4.19.0",

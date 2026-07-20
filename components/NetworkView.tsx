@@ -3,10 +3,17 @@
 import { useMemo, useState } from "react";
 import Link from "next/link";
 import Fuse from "fuse.js";
-import type { NetworkEdge, NetworkNode, SearchDoc, SpeakerMap } from "@/lib/types";
+import type { ExchangeTurn, NetworkEdge, NetworkNode, SearchDoc, SpeakerMap } from "@/lib/types";
 import { formatTime, TURN_KIND_STYLE, youtubeUrlAt } from "@/lib/utils";
+import { UNKNOWN_SPEAKER } from "@/lib/client-data";
+import SpeakerAvatar from "./SpeakerAvatar";
 import NetworkGraph from "./NetworkGraph";
 import NetworkGraph3D, { type GraphHighlight } from "./NetworkGraph3D";
+
+export type ExchangeIndex = Record<
+  string,
+  { topic: string; meetingId: string; meetingTitle: string; videoId: string; turns: ExchangeTurn[] }
+>;
 
 /**
  * 3D(기본)/2D 네트워크 + Fuse.js 퍼지 검색.
@@ -18,14 +25,18 @@ export default function NetworkView({
   edges,
   speakers,
   searchDocs,
+  exchangeIndex,
 }: {
   nodes: NetworkNode[];
   edges: NetworkEdge[];
   speakers: SpeakerMap;
   searchDocs?: SearchDoc[];
+  exchangeIndex?: ExchangeIndex;
 }) {
   const [mode, setMode] = useState<"3d" | "2d">("3d");
   const [query, setQuery] = useState("");
+  const [selected, setSelected] = useState<number | null>(null);
+  const [focusNode, setFocusNode] = useState<string | null>(null);
 
   const fuse = useMemo(
     () =>
@@ -52,10 +63,34 @@ export default function NetworkView({
     return fuse.search(query.trim()).slice(0, 8).map((r) => r.item);
   }, [fuse, query]);
 
+  // 검색어가 바뀌면 선택·카메라 초기화
+  useMemo(() => {
+    setSelected(null);
+    setFocusNode(null);
+    return null;
+  }, [query]);
+
+  const selectedDoc = selected !== null ? results[selected] : null;
+  const selectedExchange =
+    selectedDoc?.exchangeId && exchangeIndex
+      ? exchangeIndex[`${selectedDoc.meetingId}#${selectedDoc.exchangeId}`]
+      : null;
+
   const highlight: GraphHighlight | null = useMemo(() => {
     if (results.length === 0) return null;
     const ns = new Set<string>();
     const pairs = new Set<string>();
+    if (selectedExchange) {
+      for (const t of selectedExchange.turns) {
+        if (t.speakerId !== "unknown") ns.add(t.speakerId);
+        if (t.inReplyTo !== null) {
+          const parent = selectedExchange.turns[t.inReplyTo];
+          if (parent && parent.speakerId !== "unknown" && t.speakerId !== "unknown")
+            pairs.add(`${t.speakerId}→${parent.speakerId}`);
+        }
+      }
+      return { nodes: [...ns], pairs: [...pairs] };
+    }
     for (const doc of results) {
       doc.speakerIds.forEach((id) => id !== "unknown" && ns.add(id));
       if (doc.kind === "지시" && doc.speakerIds.length >= 2) {
@@ -64,7 +99,7 @@ export default function NetworkView({
       }
     }
     return { nodes: [...ns], pairs: [...pairs] };
-  }, [results]);
+  }, [results, selectedExchange]);
 
   return (
     <div className="space-y-4">
@@ -131,7 +166,7 @@ export default function NetworkView({
       )}
 
       {mode === "3d" ? (
-        <NetworkGraph3D nodes={nodes} edges={edges} speakers={speakers} highlight={highlight} />
+        <NetworkGraph3D nodes={nodes} edges={edges} speakers={speakers} highlight={highlight} focusNode={focusNode} />
       ) : (
         <div className="panel p-4">
           <NetworkGraph nodes={nodes} edges={edges} speakers={speakers} highlight={highlight} />
@@ -148,8 +183,23 @@ export default function NetworkView({
                   ? "border-transparent bg-[rgba(10,132,255,0.16)] text-[#64b5ff]"
                   : "border-transparent bg-tint2 text-mut",
             };
+            const isSelected = selected === i;
+            const hasThread = Boolean(doc.exchangeId && exchangeIndex?.[`${doc.meetingId}#${doc.exchangeId}`]);
             return (
-              <div key={i} className="panel flex items-start gap-3 p-4">
+              <div
+                key={i}
+                role="button"
+                tabIndex={0}
+                onClick={() => {
+                  setSelected(isSelected ? null : i);
+                  const firstKnown = doc.speakerIds.find((id) => id !== "unknown");
+                  setFocusNode(isSelected ? null : firstKnown ?? null);
+                }}
+                onKeyDown={(e) => e.key === "Enter" && (e.currentTarget as HTMLElement).click()}
+                className={`panel flex cursor-pointer items-start gap-3 p-4 transition ${
+                  isSelected ? "ring-2 ring-[#ffd60a]/60" : "hover:bg-tint"
+                }`}
+              >
                 <span className={`chip mt-0.5 shrink-0 ${kindStyle.className}`}>{kindStyle.label}</span>
                 <div className="min-w-0 flex-1">
                   <p className="text-sm leading-relaxed text-body">
@@ -158,6 +208,46 @@ export default function NetworkView({
                     )}
                     {doc.text}
                   </p>
+                  {hasThread && !isSelected && (
+                    <p className="mt-1 text-[11.5px] font-medium text-[#ffd60a]/80">
+                      클릭하면 이 발언이 오간 대화 전체가 펼쳐지고, 그래프가 발언자에게 이동합니다
+                    </p>
+                  )}
+                  {isSelected && selectedExchange && (
+                    <div className="mt-3 space-y-2 border-t border-hair pt-3" onClick={(e) => e.stopPropagation()}>
+                      <p className="text-xs font-semibold text-mut">
+                        대화 스레드 「{selectedExchange.topic}」 — {selectedExchange.turns.length}개 발언
+                      </p>
+                      {selectedExchange.turns.map((turn, ti) => {
+                        const sp = speakers[turn.speakerId] ?? UNKNOWN_SPEAKER;
+                        const k = TURN_KIND_STYLE[turn.kind] ?? TURN_KIND_STYLE["발언"];
+                        return (
+                          <div
+                            key={ti}
+                            className="flex gap-2.5"
+                            style={{ marginLeft: turn.inReplyTo !== null ? 20 : 0 }}
+                          >
+                            <SpeakerAvatar speaker={sp} size="sm" />
+                            <div className="bubble flex-1 !p-2.5">
+                              <div className="mb-0.5 flex flex-wrap items-center gap-1.5">
+                                <span className="text-[12.5px] font-semibold text-ink">{sp.name}</span>
+                                <span className={`chip ${k.className}`}>{k.label}</span>
+                                <a
+                                  href={youtubeUrlAt(doc.videoId, turn.timestamp)}
+                                  target="_blank"
+                                  rel="noreferrer"
+                                  className="ml-auto font-mono text-[10.5px] text-faint hover:text-ink"
+                                >
+                                  ▶ {formatTime(turn.timestamp)}
+                                </a>
+                              </div>
+                              <p className="text-[12.5px] leading-relaxed text-body">{turn.summary}</p>
+                            </div>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  )}
                   <p className="mt-1 flex flex-wrap items-center gap-2 text-xs text-mut">
                     <Link
                       href={

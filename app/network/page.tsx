@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import NetworkView from "@/components/NetworkView";
 import BackLink from "@/components/BackLink";
-import { buildNetwork, getMeetings, getSearchDocs, getSpeakers } from "@/lib/data";
+import { buildNetwork, getExchangeIndex, getMeetings, getSearchDocs, getSpeakers } from "@/lib/data";
 
 export const metadata: Metadata = { title: "발언 네트워크" };
 
@@ -24,7 +24,7 @@ export default function NetworkPage() {
         </p>
       </header>
 
-      <NetworkView nodes={network.nodes} edges={network.edges} speakers={speakers} searchDocs={getSearchDocs()} />
+      <NetworkView nodes={network.nodes} edges={network.edges} speakers={speakers} searchDocs={getSearchDocs()} exchangeIndex={getExchangeIndex()} />
     </div>
   );
 }
