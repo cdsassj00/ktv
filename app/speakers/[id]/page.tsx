@@ -29,33 +29,33 @@ export default async function SpeakerPage({ params }: { params: Promise<{ id: st
 
   return (
     <div className="space-y-8">
-      <header className="flex flex-col items-center gap-4 rounded-2xl bg-gradient-to-br from-navy-900 to-navy-700 p-8 text-white sm:flex-row sm:items-center">
+      <header className="flex flex-col items-center gap-4 rounded-lg bg-navy-900 p-8 text-white sm:flex-row sm:items-center">
         <SpeakerAvatar speaker={speaker} size="xl" />
         <div className="text-center sm:text-left">
           <h1 className="text-2xl font-bold">{speaker.name}</h1>
-          <p className="mt-1 text-navy-200">
+          <p className="mt-1 on-dark-mut">
             {speaker.role} · {speaker.org}
           </p>
           {speaker.term && (
-            <p className="mt-1 text-xs text-navy-300">
+            <p className="mt-1 text-xs text-faint">
               재임: {speaker.term.from} ~ {speaker.term.to ?? "현재"}
             </p>
           )}
           {speaker.photoSource && (
-            <p className="mt-2 text-[11px] text-navy-300">사진 출처: {speaker.photoSource}</p>
+            <p className="mt-2 text-[11px] text-faint">사진 출처: {speaker.photoSource}</p>
           )}
         </div>
       </header>
 
       <section className="space-y-4">
-        <h2 className="text-xl font-bold text-navy-900">회의별 발언 이력</h2>
+        <h2 className="h-judge">회의별 발언 이력</h2>
         {history.length === 0 ? (
           <p className="rounded-lg border border-slate-200 bg-white p-8 text-center text-slate-500">
             아직 기록된 발언이 없습니다.
           </p>
         ) : (
           history.map(({ meeting, turns }) => (
-            <div key={meeting.id} className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
+            <div key={meeting.id} className="panel p-5">
               <Link href={`/meetings/${meeting.id}`} className="font-semibold text-navy-800 hover:underline">
                 {formatDate(meeting.date)} · {meeting.title}
               </Link>

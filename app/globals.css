@@ -1,44 +1,42 @@
 @import "tailwindcss";
 
 @theme {
-  /* 네이비-코랄 페이퍼 팔레트 */
-  --color-navy-50: #f2f5fa;
-  --color-navy-100: #dde6f1;
-  --color-navy-200: #b9cce5;
-  --color-navy-300: #8aa9d1;
-  --color-navy-400: #5b83b8;
-  --color-navy-500: #3c649c;
-  --color-navy-600: #2c4d7e;
-  --color-navy-700: #223c63;
-  --color-navy-800: #16294a;
-  --color-navy-900: #0e1d38;
-  --color-navy-950: #081226;
-  --color-accent-400: #ff7a63;
-  --color-accent-500: #f95d43;
-  --color-accent-600: #e04530;
-  --color-gold-400: #e3b45e;
-  --color-gold-500: #d9a441;
-  --color-paper: #eef1f5;
-  --font-sans: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont,
-    "Apple SD Gothic Neo", "Noto Sans KR", "Segoe UI", sans-serif;
-  --shadow-card: 0 1px 2px rgb(14 29 56 / 0.06), 0 8px 24px -12px rgb(14 29 56 / 0.18);
-  --shadow-lift: 0 2px 4px rgb(14 29 56 / 0.08), 0 20px 44px -16px rgb(14 29 56 / 0.32);
-  --animate-float-a: float-a 7s ease-in-out infinite;
-  --animate-float-b: float-b 9s ease-in-out infinite;
-  --animate-float-c: float-c 8s ease-in-out infinite;
+  /* ssjhtml3 정본 navy-coral 팔레트 — 쿨그레이 종이 + 네이비 + 코랄레드 + 골드 */
+  --color-paper: #f5f6f8;
+  --color-surf: #ffffff;
+  --color-tint: #e5e9ef;
+  --color-tint2: #d7dde6;
+  --color-hair: #d7dee8;
+  --color-hair2: #c3cedb;
 
-  @keyframes float-a {
-    0%, 100% { transform: rotateX(8deg) rotateY(-14deg) translateY(0); }
-    50% { transform: rotateX(8deg) rotateY(-14deg) translateY(-14px); }
-  }
-  @keyframes float-b {
-    0%, 100% { transform: rotateX(-6deg) rotateY(12deg) translateY(0); }
-    50% { transform: rotateX(-6deg) rotateY(12deg) translateY(-20px); }
-  }
-  @keyframes float-c {
-    0%, 100% { transform: rotateX(10deg) rotateY(8deg) translateY(0); }
-    50% { transform: rotateX(10deg) rotateY(8deg) translateY(-10px); }
-  }
+  --color-ink: #102139;
+  --color-body: #3d4c60;
+  --color-mut: #68758a;
+  --color-faint: #93a1b3;
+
+  --color-navy-50: #eef1f5;
+  --color-navy-100: #d7dee8;
+  --color-navy-200: #c3cedb;
+  --color-navy-300: #93a1b3;
+  --color-navy-400: #6f8ab8;
+  --color-navy-500: #4266a3;
+  --color-navy-600: #31456b;
+  --color-navy-700: #23324e;
+  --color-navy-800: #1a2740;
+  --color-navy-900: #101827;
+  --color-navy-950: #0c1220;
+
+  --color-accent-400: #c96a60;
+  --color-accent-500: #b94a48;
+  --color-accent-600: #943539;
+  --color-green-600: #2e7d5b;
+  --color-gold-400: #d09a3f;
+  --color-gold-500: #c38424;
+
+  --font-sans: "Pretendard Variable", Pretendard, "Noto Sans KR", "Malgun Gothic",
+    -apple-system, BlinkMacSystemFont, sans-serif;
+  --shadow-card: 0 1px 2px rgb(16 33 57 / 0.05), 0 6px 18px -10px rgb(16 33 57 / 0.14);
+  --shadow-lift: 0 2px 4px rgb(16 33 57 / 0.07), 0 14px 30px -14px rgb(16 33 57 / 0.24);
 }
 
 html {
@@ -47,64 +45,54 @@ html {
 
 body {
   background-color: var(--color-paper);
-  background-image:
-    radial-gradient(1200px 500px at 85% -10%, rgb(60 100 156 / 0.10), transparent 60%),
-    radial-gradient(900px 400px at -10% 20%, rgb(249 93 67 / 0.06), transparent 55%);
-  background-attachment: fixed;
-  @apply text-slate-900 antialiased;
+  color: var(--color-ink);
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  @apply antialiased;
 }
 
-/* ── 커스텀 유틸리티 ─────────────────────────────── */
+/* ── 컴포넌트 유틸리티 ─────────────────────────────── */
 
-/* 히어로 딥네이비 배경: 그리드 + 코랄/골드 글로우 */
-.hero-surface {
-  background-color: var(--color-navy-950);
-  background-image:
-    radial-gradient(700px 340px at 78% 18%, rgb(249 93 67 / 0.22), transparent 62%),
-    radial-gradient(520px 300px at 12% 88%, rgb(60 100 156 / 0.38), transparent 60%),
-    radial-gradient(380px 220px at 92% 92%, rgb(217 164 65 / 0.14), transparent 60%),
-    linear-gradient(rgb(255 255 255 / 0.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgb(255 255 255 / 0.035) 1px, transparent 1px);
-  background-size: auto, auto, auto, 44px 44px, 44px 44px;
+/* 본문 패널: 흰 종이 + 헤어라인 */
+.panel {
+  @apply rounded-lg border border-hair bg-surf shadow-card;
 }
 
-.glass {
-  background: rgb(255 255 255 / 0.08);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border: 1px solid rgb(255 255 255 / 0.14);
-  box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.12), 0 24px 48px -20px rgb(0 0 0 / 0.55);
+/* 판단 제목(섹션): 명사구/사실 서술, 900 웨이트 */
+.h-judge {
+  @apply text-[26px] font-black leading-tight tracking-tight text-ink sm:text-3xl;
 }
 
-/* 3D 틸트 카드 (호버 시 살짝 일어남) */
-.tilt-parent {
-  perspective: 1100px;
-}
-.tilt-card {
-  transform-style: preserve-3d;
-  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.45s ease;
-}
-.tilt-parent:hover .tilt-card {
-  transform: rotateX(3.5deg) rotateY(-4deg) translateY(-6px) scale(1.015);
-  box-shadow: var(--shadow-lift);
+/* 오버라인: 문서 라벨 */
+.overline-label {
+  @apply text-[11px] font-extrabold uppercase tracking-[0.22em] text-accent-500;
 }
 
-/* 섹션 키커 (코랄 오버라인) */
-.kicker {
-  @apply text-xs font-extrabold uppercase tracking-[0.22em] text-accent-500;
+/* 마스트헤드(다크 네이비) 위 서브텍스트 */
+.on-dark-mut {
+  color: #9fb0c6;
 }
 
 /* 발언 말풍선 */
 .bubble {
-  @apply rounded-2xl rounded-tl-sm border border-slate-200/80 bg-white p-3.5 text-left shadow-[0_1px_2px_rgb(14_29_56/0.05)];
-  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  @apply rounded-lg rounded-tl-none border border-hair bg-surf p-3.5 text-left shadow-card;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 .bubble-clickable:hover {
-  @apply border-navy-300;
-  transform: translateY(-2px);
-  box-shadow: 0 10px 26px -14px rgb(14 29 56 / 0.35);
+  border-color: var(--color-navy-400);
+  box-shadow: var(--shadow-lift);
+}
+
+/* 상태·관계 배지 공통 */
+.chip {
+  @apply inline-flex items-center gap-1 rounded border px-1.5 py-0.5 text-[11px] font-bold;
+}
+
+/* 스탯 셀 (히어로 하단 사실 스트립) */
+.stat-cell {
+  @apply flex flex-col gap-0.5 border-l-2 border-hair2 pl-3;
 }
 
 /* 얇은 스크롤바 */
 .scroll-thin::-webkit-scrollbar { height: 6px; width: 6px; }
-.scroll-thin::-webkit-scrollbar-thumb { background: rgb(60 100 156 / 0.35); border-radius: 999px; }
+.scroll-thin::-webkit-scrollbar-thumb { background: var(--color-hair2); border-radius: 999px; }

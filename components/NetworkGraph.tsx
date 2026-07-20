@@ -12,9 +12,9 @@ const EDGE_STYLE: Record<
   NetworkEdge["kind"],
   { stroke: string; width: number; dash?: string; marker: string }
 > = {
-  directive: { stroke: "#dc2626", width: 2.5, marker: "arrow-red" },
-  reply: { stroke: "#3c649c", width: 1.5, marker: "arrow-navy" },
-  mention: { stroke: "#94a3b8", width: 1, dash: "4 3", marker: "arrow-gray" },
+  directive: { stroke: "#b94a48", width: 2.5, marker: "arrow-red" },
+  reply: { stroke: "#4266a3", width: 1.5, marker: "arrow-navy" },
+  mention: { stroke: "#93a1b3", width: 1, dash: "4 3", marker: "arrow-gray" },
 };
 
 /**
@@ -57,9 +57,9 @@ export default function NetworkGraph({
       <defs>
         {(
           [
-            ["arrow-red", "#dc2626"],
-            ["arrow-navy", "#3c649c"],
-            ["arrow-gray", "#94a3b8"],
+            ["arrow-red", "#b94a48"],
+            ["arrow-navy", "#4266a3"],
+            ["arrow-gray", "#93a1b3"],
           ] as const
         ).map(([id, color]) => (
           <marker
@@ -134,7 +134,7 @@ export default function NetworkGraph({
         return (
           <a key={n.speakerId} href={`/speakers/${n.speakerId}`}>
             <g className="cursor-pointer">
-              <circle cx={p.x} cy={p.y} r={r} fill="#1a2e4d" stroke="#fff" strokeWidth="2.5" />
+              <circle cx={p.x} cy={p.y} r={r} fill="#101827" stroke="#fff" strokeWidth="2.5" />
               {sp.photo ? (
                 <image
                   href={sp.photo}
@@ -164,11 +164,11 @@ export default function NetworkGraph({
                 textAnchor="middle"
                 fontSize="12"
                 fontWeight="600"
-                fill="#1a2e4d"
+                fill="#102139"
               >
                 {sp.name}
               </text>
-              <text x={p.x} y={p.y + r + 27} textAnchor="middle" fontSize="10" fill="#64748b">
+              <text x={p.x} y={p.y + r + 27} textAnchor="middle" fontSize="10" fill="#68758a">
                 {sp.role.length > 14 ? sp.org : sp.role}
               </text>
             </g>

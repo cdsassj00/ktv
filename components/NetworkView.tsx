@@ -20,22 +20,22 @@ export default function NetworkView({
   return (
     <div className="space-y-4">
       <div className="flex flex-wrap items-center justify-between gap-3">
-        <div className="flex flex-wrap gap-4 text-sm font-medium text-slate-600">
+        <div className="flex flex-wrap gap-4 text-sm font-medium text-body">
           <span className="flex items-center gap-1.5">
             <span className="inline-block w-6 rounded bg-accent-500" style={{ height: 3 }} /> 지시
           </span>
           <span className="flex items-center gap-1.5">
-            <span className="inline-block h-0.5 w-6 rounded bg-navy-400" /> 답변·보고
+            <span className="inline-block h-0.5 w-6 rounded bg-navy-500" /> 답변·보고
           </span>
         </div>
-        <div className="flex gap-1 rounded-xl border border-navy-100 bg-white p-1 shadow-card">
+        <div className="flex gap-1 rounded-xl border border-hair bg-surf p-1">
           {(["3d", "2d"] as const).map((m) => (
             <button
               key={m}
               type="button"
               onClick={() => setMode(m)}
               className={`rounded-lg px-4 py-1.5 text-sm font-bold uppercase transition ${
-                mode === m ? "bg-navy-900 text-white shadow" : "text-slate-500 hover:bg-navy-50"
+                mode === m ? "bg-navy-900 text-white shadow" : "text-mut hover:bg-navy-50"
               }`}
             >
               {m}
@@ -47,13 +47,13 @@ export default function NetworkView({
       {mode === "3d" ? (
         <>
           <NetworkGraph3D nodes={nodes} edges={edges} speakers={speakers} />
-          <p className="text-xs text-slate-500">
+          <p className="text-xs text-mut">
             드래그로 회전 · 휠로 줌 · 노드 클릭 시 발언자 페이지로 이동. 코랄색 파티클이 흐르는
             선이 <strong>지시</strong>입니다.
           </p>
         </>
       ) : (
-        <div className="rounded-2xl border border-navy-100 bg-white p-4 shadow-card">
+        <div className="panel p-4">
           <NetworkGraph nodes={nodes} edges={edges} speakers={speakers} />
         </div>
       )}

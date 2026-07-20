@@ -9,14 +9,14 @@ const SIZE_CLASS = {
 
 /** 발언자별 고정 배경색 (이름 해시) */
 function bgColor(name: string): string {
+  /* 색은 관계·상태 전용이므로 아바타는 네이비 톤 계열로만 구분한다 */
   const palette = [
-    "bg-navy-600",
-    "bg-emerald-700",
-    "bg-rose-700",
-    "bg-amber-700",
-    "bg-violet-700",
-    "bg-cyan-700",
-    "bg-slate-600",
+    "bg-navy-700",
+    "bg-navy-500",
+    "bg-[#31456b]",
+    "bg-[#4d5f7d]",
+    "bg-[#23324e]",
+    "bg-[#5a6b85]",
   ];
   let h = 0;
   for (const ch of name) h = (h * 31 + ch.charCodeAt(0)) % 997;

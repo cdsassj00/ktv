@@ -12,8 +12,8 @@ export default function NetworkPage() {
   return (
     <div className="space-y-6">
       <header>
-        <p className="kicker">Network</p>
-        <h1 className="mt-1 text-3xl font-black tracking-tight text-navy-900">
+        <p className="overline-label">Network</p>
+        <h1 className="h-judge mt-1">
           발언 네트워크 <span className="text-navy-400">(전체 누적)</span>
         </h1>
         <p className="mt-2 max-w-2xl text-sm leading-relaxed text-slate-600">

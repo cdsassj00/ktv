@@ -5,9 +5,9 @@ import type { NetworkEdge, NetworkNode, SpeakerMap } from "@/lib/types";
 import { UNKNOWN_SPEAKER } from "@/lib/client-data";
 
 const EDGE_COLOR: Record<NetworkEdge["kind"], string> = {
-  directive: "#f95d43",
-  reply: "#5b83b8",
-  mention: "#64748b",
+  directive: "#c96a60",
+  reply: "#7c96c8",
+  mention: "#68758a",
 };
 
 /**
@@ -46,7 +46,7 @@ export default function NetworkGraph3D({
             name: `${sp.name} · ${sp.role}`,
             label: sp.name,
             val: 4 + Math.min(20, n.turnCount * 3),
-            color: n.speakerId === "president" ? "#f95d43" : "#8aa9d1",
+            color: n.speakerId === "president" ? "#c96a60" : "#6f8ab8",
           };
         }),
         links: edges.map((e) => ({
@@ -61,7 +61,7 @@ export default function NetworkGraph3D({
         .graphData(data)
         .width(containerRef.current.clientWidth)
         .height(560)
-        .backgroundColor("#081226")
+        .backgroundColor("#0c1220")
         .showNavInfo(false)
         .nodeVal("val")
         .nodeColor("color")
@@ -108,7 +108,7 @@ export default function NetworkGraph3D({
   }, [nodes, edges, speakers]);
 
   return (
-    <div className="overflow-hidden rounded-2xl border border-navy-800 shadow-lift">
+    <div className="overflow-hidden rounded-2xl border border-hair shadow-lift">
       <div ref={containerRef} className="min-h-[560px] w-full" />
     </div>
   );

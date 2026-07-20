@@ -53,20 +53,20 @@ export default function MeetingDetail({
 
       <header className="space-y-2">
         <div className="flex flex-wrap items-center gap-2 text-sm text-slate-500">
-          <span className="rounded-md bg-navy-800 px-2 py-0.5 text-xs font-medium text-white">
+          <span className="rounded-md bg-navy-900 px-2 py-0.5 text-[11px] font-bold text-white">
             {MEETING_TYPE_LABEL[meeting.type]}
           </span>
           <span>{formatDate(meeting.date)}</span>
           <span>· 영상 길이 {formatTime(meeting.duration)}</span>
         </div>
-        <h1 className="text-2xl font-bold text-navy-900 sm:text-3xl">{meeting.title}</h1>
+        <h1 className="text-2xl font-black tracking-tight text-ink sm:text-3xl">{meeting.title}</h1>
         <p className="max-w-3xl text-slate-600">{meeting.summary.oneLine}</p>
       </header>
 
       <div className="grid gap-6 lg:grid-cols-[minmax(0,7fr)_minmax(0,5fr)]">
         {/* 좌측: 플레이어 + 전체 요약 + 안건 */}
         <div className="space-y-5">
-          <div ref={playerBoxRef} className="overflow-hidden rounded-xl bg-black shadow">
+          <div ref={playerBoxRef} className="overflow-hidden rounded-lg bg-black shadow-card">
             {canSeek ? (
               <iframe
                 ref={iframeRef}
@@ -77,7 +77,7 @@ export default function MeetingDetail({
                 allowFullScreen
               />
             ) : (
-              <div className="flex aspect-video w-full flex-col items-center justify-center gap-2 bg-gradient-to-br from-navy-900 to-navy-700 text-navy-200">
+              <div className="flex aspect-video w-full flex-col items-center justify-center gap-2 bg-navy-900 text-navy-300">
                 <span className="text-3xl">🎬</span>
                 <p className="text-sm">
                   샘플 데이터 — 연결된 영상이 없습니다. 파이프라인 실행 시 KTV 영상이 임베드됩니다.
@@ -86,8 +86,8 @@ export default function MeetingDetail({
             )}
           </div>
 
-          <section className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
-            <h2 className="mb-2 text-lg font-bold text-navy-900">전체 요약</h2>
+          <section className="panel p-5">
+            <h2 className="mb-2 text-lg font-black text-ink">전체 요약</h2>
             <p className="mb-1 text-xs text-slate-400">
               ⓘ 영상 자막을 바탕으로 AI가 생성한 요약입니다. 타임스탬프로 원문을 확인하세요.
             </p>
@@ -98,8 +98,8 @@ export default function MeetingDetail({
             </div>
           </section>
 
-          <section className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
-            <h2 className="mb-3 text-lg font-bold text-navy-900">안건</h2>
+          <section className="panel p-5">
+            <h2 className="mb-3 text-lg font-black text-ink">안건</h2>
             <ol className="space-y-2">
               {meeting.summary.agenda.map((item, i) => (
                 <li key={i}>
@@ -128,8 +128,8 @@ export default function MeetingDetail({
           </section>
 
           {meeting.aiDataPolicy.length > 0 && (
-            <section className="rounded-xl border-2 border-accent-500/30 bg-orange-50/50 p-5 shadow-sm">
-              <h2 className="mb-3 text-lg font-bold text-navy-900">
+            <section className="rounded-lg border border-accent-500/35 bg-[#f9f1f0] p-5 shadow-card">
+              <h2 className="mb-3 text-lg font-black text-ink">
                 🏷️ AI·데이터 정책 발언 <span className="text-accent-600">{meeting.aiDataPolicy.length}건</span>
               </h2>
               <div className="space-y-3">
@@ -175,12 +175,12 @@ export default function MeetingDetail({
 
         {/* 우측: 발언 스레드 / 네트워크 탭 */}
         <div className="space-y-4">
-          <div className="flex gap-1 rounded-lg border border-slate-200 bg-white p-1">
+          <div className="flex gap-1 rounded-md border border-hair bg-surf p-1">
             <button
               type="button"
               onClick={() => setTab("thread")}
               className={`flex-1 rounded-md px-3 py-1.5 text-sm transition ${
-                tab === "thread" ? "bg-navy-800 font-medium text-white" : "text-slate-600 hover:bg-slate-100"
+                tab === "thread" ? "bg-navy-900 font-bold text-white" : "font-semibold text-mut hover:bg-navy-50"
               }`}
             >
               💬 발언 스레드
@@ -189,7 +189,7 @@ export default function MeetingDetail({
               type="button"
               onClick={() => setTab("network")}
               className={`flex-1 rounded-md px-3 py-1.5 text-sm transition ${
-                tab === "network" ? "bg-navy-800 font-medium text-white" : "text-slate-600 hover:bg-slate-100"
+                tab === "network" ? "bg-navy-900 font-bold text-white" : "font-semibold text-mut hover:bg-navy-50"
               }`}
             >
               🕸️ 네트워크
@@ -208,7 +208,7 @@ export default function MeetingDetail({
           )}
 
           {meeting.directives.length > 0 && (
-            <section className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
+            <section className="panel p-4">
               <h3 className="mb-3 flex items-center justify-between font-bold text-navy-900">
                 📌 이 회의의 지시
                 <Link href="/directives" className="text-xs font-normal text-navy-500 hover:underline">

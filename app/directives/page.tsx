@@ -31,8 +31,8 @@ export default async function DirectivesPage({
   return (
     <div className="space-y-6">
       <header>
-        <p className="kicker">Directive Tracker</p>
-        <h1 className="mt-1 text-3xl font-black tracking-tight text-navy-900">지시-이행 트래커</h1>
+        <p className="overline-label">Directive Tracker</p>
+        <h1 className="h-judge mt-1">지시-이행 트래커</h1>
         <p className="mt-2 max-w-2xl text-sm leading-relaxed text-slate-600">
           대통령·총리의 지시가 어느 부처에 내려졌고, 이후 회의에서 어떻게 후속 보고됐는지 회의를
           넘어 추적합니다. 자동 연결된 후속 보고는 <em>추정 연결</em>로 표시됩니다.
@@ -43,7 +43,7 @@ export default async function DirectivesPage({
         <Link
           href="/directives"
           className={`rounded-full border px-3 py-1 text-sm transition ${
-            !org ? "border-navy-800 bg-navy-800 text-white" : "border-slate-300 bg-white text-slate-600 hover:bg-slate-100"
+            !org ? "border-navy-900 bg-navy-900 text-white" : "border-slate-300 bg-white text-slate-600 hover:bg-slate-100"
           }`}
         >
           전체
@@ -53,7 +53,7 @@ export default async function DirectivesPage({
             key={o}
             href={`/directives?org=${encodeURIComponent(o)}`}
             className={`rounded-full border px-3 py-1 text-sm transition ${
-              org === o ? "border-navy-800 bg-navy-800 text-white" : "border-slate-300 bg-white text-slate-600 hover:bg-slate-100"
+              org === o ? "border-navy-900 bg-navy-900 text-white" : "border-slate-300 bg-white text-slate-600 hover:bg-slate-100"
             }`}
           >
             {o}
@@ -71,11 +71,11 @@ export default async function DirectivesPage({
             const from = speakers[directive.from] ?? UNKNOWN_SPEAKER;
             const status = DIRECTIVE_STATUS_LABEL[directive.status];
             return (
-              <div key={directive.id} className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
+              <div key={directive.id} className="panel p-5">
                 <div className="flex flex-wrap items-center gap-3">
                   <SpeakerAvatar speaker={from} size="md" />
                   <div>
-                    <span className="font-semibold text-navy-900">{from.name}</span>
+                    <span className="font-extrabold text-ink">{from.name}</span>
                     <span className="ml-1.5 text-xs text-slate-500">{from.role}</span>
                   </div>
                   <span className="text-slate-300">→</span>
@@ -122,13 +122,13 @@ export default async function DirectivesPage({
 
                 {directive.followUps.length > 0 && (
                   <div className="mt-4 border-t border-dashed border-slate-200 pt-3">
-                    <p className="mb-2 text-xs font-semibold text-emerald-700">후속 보고 타임라인</p>
+                    <p className="mb-2 text-xs font-extrabold text-green-600">후속 보고 타임라인</p>
                     <ol className="space-y-1.5">
                       {directive.followUps.map((fu, i) => {
                         const fuMeeting = getMeeting(fu.meetingId);
                         return (
                           <li key={i} className="flex items-start gap-2 text-sm">
-                            <span className="mt-1 size-2 shrink-0 rounded-full bg-emerald-500" />
+                            <span className="mt-1 size-2 shrink-0 rounded-full bg-green-600" />
                             <div>
                               <Link
                                 href={

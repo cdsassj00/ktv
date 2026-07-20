@@ -28,11 +28,11 @@ function TrendChart({ data }: { data: { month: string; count: number }[] }) {
         const y = H - pad.bottom - h;
         return (
           <g key={d.month}>
-            <rect x={x + bw * 0.2} y={y} width={bw * 0.6} height={h} rx={4} fill="#3c649c" />
-            <text x={x + bw / 2} y={y - 5} textAnchor="middle" fontSize="12" fontWeight="600" fill="#1a2e4d">
+            <rect x={x + bw * 0.2} y={y} width={bw * 0.6} height={h} rx={4} fill="#4266a3" />
+            <text x={x + bw / 2} y={y - 5} textAnchor="middle" fontSize="12" fontWeight="600" fill="#102139">
               {d.count}
             </text>
-            <text x={x + bw / 2} y={H - 10} textAnchor="middle" fontSize="11" fill="#64748b">
+            <text x={x + bw / 2} y={H - 10} textAnchor="middle" fontSize="11" fill="#68758a">
               {d.month}
             </text>
           </g>
@@ -57,16 +57,16 @@ export default async function AiPolicyPage({
   return (
     <div className="space-y-6">
       <header>
-        <p className="kicker">AI &amp; Data Policy</p>
-        <h1 className="mt-1 text-3xl font-black tracking-tight text-navy-900">AI·데이터 정책 대시보드</h1>
+        <p className="overline-label">AI &amp; Data Policy</p>
+        <h1 className="h-judge mt-1">AI·데이터 정책 대시보드</h1>
         <p className="mt-2 max-w-2xl text-sm leading-relaxed text-slate-600">
           모든 회의에서 추출한 AI·데이터 정책 관련 발언을 모아봅니다. 각 발언의 타임스탬프로
           원문 영상을 바로 확인할 수 있습니다.
         </p>
       </header>
 
-      <section className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
-        <h2 className="mb-2 text-sm font-bold text-navy-900">월별 언급 추이</h2>
+      <section className="panel p-5">
+        <h2 className="mb-2 text-sm font-black text-ink">월별 언급 추이</h2>
         <TrendChart data={monthly} />
       </section>
 
@@ -74,7 +74,7 @@ export default async function AiPolicyPage({
         <Link
           href="/ai-policy"
           className={`rounded-full border px-3 py-1 text-sm transition ${
-            !tag ? "border-navy-800 bg-navy-800 text-white" : "border-slate-300 bg-white text-slate-600 hover:bg-slate-100"
+            !tag ? "border-navy-900 bg-navy-900 text-white" : "border-slate-300 bg-white text-slate-600 hover:bg-slate-100"
           }`}
         >
           전체 ({all.length})
@@ -84,7 +84,7 @@ export default async function AiPolicyPage({
             key={t.tag}
             href={`/ai-policy?tag=${encodeURIComponent(t.tag)}`}
             className={`rounded-full border px-3 py-1 text-sm transition ${
-              tag === t.tag ? "border-navy-800 bg-navy-800 text-white" : "border-slate-300 bg-white text-slate-600 hover:bg-slate-100"
+              tag === t.tag ? "border-navy-900 bg-navy-900 text-white" : "border-slate-300 bg-white text-slate-600 hover:bg-slate-100"
             }`}
           >
             #{t.tag} ({t.count})
@@ -101,7 +101,7 @@ export default async function AiPolicyPage({
           {items.map(({ meeting, item }, i) => {
             const sp = speakers[item.speakerId] ?? UNKNOWN_SPEAKER;
             return (
-              <div key={`${meeting.id}-${i}`} className="flex gap-3 rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
+              <div key={`${meeting.id}-${i}`} className="panel flex gap-3 p-4">
                 <Link href={`/speakers/${item.speakerId}`}>
                   <SpeakerAvatar speaker={sp} size="lg" />
                 </Link>

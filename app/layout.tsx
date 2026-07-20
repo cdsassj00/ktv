@@ -29,41 +29,40 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       </head>
       <body>
-        <header className="sticky top-0 z-40 border-b border-white/10 bg-navy-950/90 text-white shadow-[0_8px_30px_-12px_rgb(8_18_38/0.6)] backdrop-blur-md">
-          <div className="h-[3px] w-full bg-gradient-to-r from-accent-500 via-gold-500 to-navy-500" />
-          <div className="mx-auto flex max-w-6xl items-center gap-6 px-4 py-3.5">
-            <Link href="/" className="group flex shrink-0 items-baseline gap-2">
-              <span className="text-xl font-black tracking-tight">
-                열린<span className="text-accent-400">국무회의</span>
-              </span>
-              <span className="hidden text-[11px] font-medium tracking-[0.18em] text-navy-300 sm:inline">
-                OPENCABINET
+        {/* 마스트헤드: 네이비 정본 + 코랄 룰 */}
+        <header className="sticky top-0 z-40 bg-navy-900 text-white">
+          <div className="mx-auto flex max-w-6xl items-center gap-8 px-5 py-3">
+            <Link href="/" className="flex shrink-0 items-baseline gap-2.5">
+              <span className="text-lg font-black tracking-tight">열린국무회의</span>
+              <span className="on-dark-mut hidden text-[10.5px] font-bold tracking-[0.2em] sm:inline">
+                KTV 공개회의 아카이브
               </span>
             </Link>
-            <nav className="scroll-thin flex gap-0.5 overflow-x-auto text-sm">
+            <nav className="scroll-thin ml-auto flex gap-0.5 overflow-x-auto text-[13.5px]">
               {NAV.map((item) => (
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="relative whitespace-nowrap rounded-md px-3 py-1.5 font-semibold text-navy-100 transition hover:bg-white/10 hover:text-white"
+                  className="on-dark-mut whitespace-nowrap rounded px-3 py-1.5 font-bold transition hover:bg-white/10 hover:text-white"
                 >
                   {item.label}
                 </Link>
               ))}
             </nav>
           </div>
+          <div className="h-[3px] w-full bg-accent-500" />
         </header>
-        <main className="mx-auto max-w-6xl px-4 py-10">{children}</main>
-        <footer className="mt-20 border-t border-navy-100 bg-white/70 backdrop-blur">
-          <div className="mx-auto max-w-6xl space-y-2 px-4 py-10 text-xs leading-relaxed text-slate-500">
-            <p className="text-sm font-black tracking-tight text-navy-900">
-              열린<span className="text-accent-500">국무회의</span>
-            </p>
+
+        <main className="mx-auto max-w-6xl px-5 py-9">{children}</main>
+
+        <footer className="mt-16 border-t border-hair bg-surf">
+          <div className="mx-auto max-w-6xl space-y-2 px-5 py-8 text-xs leading-relaxed text-mut">
+            <p className="text-sm font-black tracking-tight text-ink">열린국무회의</p>
             <p>
               영상 출처:{" "}
               <a
                 href="https://www.youtube.com/@KTV_korea"
-                className="underline hover:text-navy-600"
+                className="underline hover:text-navy-500"
                 target="_blank"
                 rel="noreferrer"
               >

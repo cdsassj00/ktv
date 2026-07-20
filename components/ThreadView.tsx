@@ -38,9 +38,9 @@ export default function ThreadView({
   return (
     <div className="space-y-6">
       {exchanges.map((ex) => (
-        <div key={ex.id} id={ex.id} className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
-          <h4 className="mb-3 flex items-center gap-2 text-sm font-semibold text-navy-800">
-            <span className="rounded bg-navy-100 px-1.5 py-0.5 text-xs text-navy-700">주제</span>
+        <div key={ex.id} id={ex.id} className="panel p-4">
+          <h4 className="mb-3 flex items-center gap-2 text-sm font-extrabold text-ink">
+            <span className="rounded bg-tint px-1.5 py-0.5 text-xs font-bold text-navy-600">주제</span>
             {ex.topic}
           </h4>
           <div className="space-y-3">
@@ -69,7 +69,7 @@ export default function ThreadView({
                     title={canSeek ? "클릭하면 영상이 해당 시점으로 이동합니다" : undefined}
                   >
                     <div className="mb-1 flex flex-wrap items-center gap-2">
-                      <span className="text-sm font-semibold text-navy-900">{speaker.name}</span>
+                      <span className="text-sm font-extrabold text-ink">{speaker.name}</span>
                       <span className="text-xs text-slate-500">{speaker.role}</span>
                       <span className={`rounded-full border px-2 py-0.5 text-[11px] font-medium ${kind.className}`}>
                         {kind.label}
@@ -80,7 +80,7 @@ export default function ThreadView({
                     </div>
                     <p className="text-sm text-slate-700">{turn.summary}</p>
                     {turn.quote && (
-                      <p className="mt-1.5 border-l-2 border-navy-300 pl-2 text-sm italic text-slate-600">
+                      <p className="mt-1.5 border-l-2 border-accent-500/50 pl-2 text-sm italic text-slate-600">
                         “{turn.quote}”
                       </p>
                     )}
