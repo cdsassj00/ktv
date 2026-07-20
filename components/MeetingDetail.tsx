@@ -15,6 +15,7 @@ import ThreadView from "./ThreadView";
 import { IconAlert, IconFilm, IconInfo, IconNetwork, IconPin, IconTag, IconThread } from "./icons";
 import NetworkView from "./NetworkView";
 import SpeakerAvatar from "./SpeakerAvatar";
+import BackLink from "./BackLink";
 
 type Tab = "thread" | "network";
 
@@ -46,6 +47,7 @@ export default function MeetingDetail({
 
   return (
     <div className="mx-auto max-w-6xl space-y-6 px-5 py-10">
+      <BackLink />
       {meeting.sample && (
         <div className="rounded-2xl bg-[rgba(255,214,10,0.1)] px-4 py-3 text-sm text-[#ffd60a]/90">
           <IconAlert className="mr-1.5 size-4 align-[-2px]" /> 이 회의는 <strong>데모용 샘플 데이터</strong>입니다. 실제 발언·회의 내용이 아닙니다.

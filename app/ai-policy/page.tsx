@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import AiPolicyClient from "./AiPolicyClient";
+import BackLink from "@/components/BackLink";
 import { getAllAiDataPolicy, getMonthlyAiDataCounts, getSpeakers } from "@/lib/data";
 
 export const metadata: Metadata = { title: "AI·데이터 정책 대시보드" };
@@ -14,6 +15,7 @@ export default function AiPolicyPage() {
 
   return (
     <div className="mx-auto max-w-5xl space-y-6 px-5 py-10">
+      <BackLink />
       <header>
         <p className="overline-label">AI &amp; Data Policy</p>
         <h1 className="h-judge mt-1">AI·데이터 정책 대시보드</h1>

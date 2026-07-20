@@ -27,19 +27,36 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       </head>
       <body>
-        {/* 최소화된 프로스티드 내비 — 브랜드 + 홈 링크만 */}
+        {/* 프로스티드 내비 — 브랜드 + 섹션 링크 */}
         <header className="fixed inset-x-0 top-0 z-40 bg-black/60 backdrop-blur-xl backdrop-saturate-150">
-          <div className="mx-auto flex h-12 max-w-6xl items-center justify-between px-5">
-            <Link href="/" className="text-[15px] font-semibold tracking-tight text-ink">
+          <div className="mx-auto flex h-12 max-w-6xl items-center gap-6 px-5">
+            <Link href="/" className="shrink-0 text-[15px] font-semibold tracking-tight text-ink">
               열린국무회의
             </Link>
+            <nav className="scroll-thin flex flex-1 gap-0.5 overflow-x-auto">
+              {[
+                { href: "/#meetings", label: "회의" },
+                { href: "/directives", label: "지시-이행" },
+                { href: "/network", label: "네트워크" },
+                { href: "/ai-policy", label: "AI·데이터" },
+                { href: "/speakers", label: "발언자" },
+              ].map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="whitespace-nowrap rounded-full px-3 py-1 text-xs text-mut transition hover:bg-white/10 hover:text-ink"
+                >
+                  {item.label}
+                </Link>
+              ))}
+            </nav>
             <a
               href="https://www.youtube.com/@KTV_korea"
               target="_blank"
               rel="noreferrer"
-              className="text-xs text-mut transition hover:text-ink"
+              className="hidden shrink-0 text-xs text-mut transition hover:text-ink sm:block"
             >
-              KTV 원본 채널 ↗
+              KTV 원본 ↗
             </a>
           </div>
         </header>

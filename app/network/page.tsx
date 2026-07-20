@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import NetworkView from "@/components/NetworkView";
+import BackLink from "@/components/BackLink";
 import { buildNetwork, getMeetings, getSearchDocs, getSpeakers } from "@/lib/data";
 
 export const metadata: Metadata = { title: "발언 네트워크" };
@@ -11,6 +12,7 @@ export default function NetworkPage() {
 
   return (
     <div className="mx-auto max-w-5xl space-y-6 px-5 py-10">
+      <BackLink />
       <header>
         <p className="overline-label">Network</p>
         <h1 className="h-judge mt-1">

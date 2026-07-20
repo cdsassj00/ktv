@@ -2,6 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import SpeakerAvatar from "@/components/SpeakerAvatar";
+import BackLink from "@/components/BackLink";
 import { getSpeaker, getSpeakerHistory, getSpeakers } from "@/lib/data";
 import { formatDate, formatTime, TURN_KIND_STYLE, youtubeUrlAt } from "@/lib/utils";
 
@@ -29,6 +30,7 @@ export default async function SpeakerPage({ params }: { params: Promise<{ id: st
 
   return (
     <div className="mx-auto max-w-5xl space-y-8 px-5 py-10">
+      <BackLink />
       <header className="flex flex-col items-center gap-4 panel p-9 text-ink sm:flex-row sm:items-center">
         <SpeakerAvatar speaker={speaker} size="xl" />
         <div className="text-center sm:text-left">

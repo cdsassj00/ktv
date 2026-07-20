@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import DirectivesClient from "./DirectivesClient";
+import BackLink from "@/components/BackLink";
 import { getAllDirectives, getMeetings, getSpeakers } from "@/lib/data";
 
 export const metadata: Metadata = { title: "지시-이행 트래커" };
@@ -16,6 +17,7 @@ export default function DirectivesPage() {
 
   return (
     <div className="mx-auto max-w-5xl space-y-6 px-5 py-10">
+      <BackLink />
       <header>
         <p className="overline-label">Directive Tracker</p>
         <h1 className="h-judge mt-1">지시-이행 트래커</h1>

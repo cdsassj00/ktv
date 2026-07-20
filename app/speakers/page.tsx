@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import SpeakerAvatar from "@/components/SpeakerAvatar";
 import Reveal from "@/components/Reveal";
+import BackLink from "@/components/BackLink";
 import { getSpeakers } from "@/lib/data";
 
 export const metadata: Metadata = { title: "발언자" };
@@ -12,6 +13,7 @@ export default function SpeakersPage() {
 
   return (
     <div className="mx-auto max-w-5xl space-y-6 px-5 py-10">
+      <BackLink />
       <header>
         <p className="overline-label">Speakers</p>
         <h1 className="h-judge mt-1">발언자</h1>
