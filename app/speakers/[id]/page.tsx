@@ -28,11 +28,11 @@ export default async function SpeakerPage({ params }: { params: Promise<{ id: st
   const history = getSpeakerHistory(id);
 
   return (
-    <div className="space-y-8">
-      <header className="flex flex-col items-center gap-4 rounded-lg bg-navy-900 p-8 text-white sm:flex-row sm:items-center">
+    <div className="mx-auto max-w-5xl space-y-8 px-5 py-10">
+      <header className="flex flex-col items-center gap-4 rounded-3xl bg-navy-950 p-9 text-white sm:flex-row sm:items-center">
         <SpeakerAvatar speaker={speaker} size="xl" />
         <div className="text-center sm:text-left">
-          <h1 className="text-2xl font-bold">{speaker.name}</h1>
+          <h1 className="text-[28px] font-semibold tracking-tight">{speaker.name}</h1>
           <p className="mt-1 on-dark-mut">
             {speaker.role} · {speaker.org}
           </p>

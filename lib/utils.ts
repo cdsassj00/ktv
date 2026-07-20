@@ -22,20 +22,20 @@ export const MEETING_TYPE_LABEL: Record<string, string> = {
   other: "기타 회의",
 };
 
-/* 색은 관계·상태 표현 전용 — 지시=코랄, 보고=블루, 답변=그린, 질문=골드 (ssjhtml3 시맨틱) */
+/* Apple 시스템 컬러 틴트 칩 — 지시=레드, 보고=블루, 답변=그린, 질문=오렌지 (보더 없음) */
 export const TURN_KIND_STYLE: Record<string, { label: string; className: string }> = {
-  지시: { label: "지시", className: "border-accent-500/40 bg-[#f7ecec] text-accent-600" },
-  보고: { label: "보고", className: "border-navy-500/40 bg-[#ecf0f7] text-navy-500" },
-  답변: { label: "답변", className: "border-green-600/40 bg-[#eaf3ee] text-green-600" },
-  질문: { label: "질문", className: "border-gold-500/50 bg-[#faf3e4] text-gold-500" },
-  추가질문: { label: "추가질문", className: "border-gold-500/50 bg-[#faf3e4] text-gold-500" },
-  발언: { label: "발언", className: "border-hair bg-tint text-body" },
+  지시: { label: "지시", className: "border-transparent bg-[#ffebeb] text-[#d70015]" },
+  보고: { label: "보고", className: "border-transparent bg-[#e8f1ff] text-[#0066cc]" },
+  답변: { label: "답변", className: "border-transparent bg-[#e9f6ee] text-[#248a3d]" },
+  질문: { label: "질문", className: "border-transparent bg-[#fff3e0] text-[#b25000]" },
+  추가질문: { label: "추가질문", className: "border-transparent bg-[#fff3e0] text-[#b25000]" },
+  발언: { label: "발언", className: "border-transparent bg-tint2 text-mut" },
 };
 
 export const DIRECTIVE_STATUS_LABEL: Record<string, { label: string; className: string }> = {
-  issued: { label: "지시됨", className: "border-accent-500/40 bg-[#f7ecec] text-accent-600" },
-  in_progress: { label: "진행 중", className: "border-gold-500/50 bg-[#faf3e4] text-gold-500" },
-  reported: { label: "후속보고 확인", className: "border-green-600/40 bg-[#eaf3ee] text-green-600" },
+  issued: { label: "지시됨", className: "border-transparent bg-[#ffebeb] text-[#d70015]" },
+  in_progress: { label: "진행 중", className: "border-transparent bg-[#fff3e0] text-[#b25000]" },
+  reported: { label: "후속보고 확인", className: "border-transparent bg-[#e9f6ee] text-[#248a3d]" },
 };
 
 /** YouTube 타임스탬프 딥링크 */

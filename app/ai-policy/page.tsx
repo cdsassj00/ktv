@@ -56,7 +56,7 @@ export default async function AiPolicyPage({
   const items = tag ? all.filter(({ item }) => item.tags.includes(tag)) : all;
 
   return (
-    <div className="space-y-6">
+    <div className="mx-auto max-w-5xl space-y-6 px-5 py-10">
       <header>
         <p className="overline-label">AI &amp; Data Policy</p>
         <h1 className="h-judge mt-1">AI·데이터 정책 대시보드</h1>
@@ -74,8 +74,8 @@ export default async function AiPolicyPage({
       <div className="flex flex-wrap gap-1.5">
         <Link
           href="/ai-policy"
-          className={`rounded-full border px-3 py-1 text-sm transition ${
-            !tag ? "border-navy-900 bg-navy-900 text-white" : "border-slate-300 bg-white text-slate-600 hover:bg-slate-100"
+          className={`rounded-full border px-3.5 py-1.5 text-[13px] font-medium transition ${
+            !tag ? "border-transparent bg-ink text-white" : "border-transparent bg-white text-mut shadow-card hover:text-ink"
           }`}
         >
           전체 ({all.length})
@@ -84,8 +84,8 @@ export default async function AiPolicyPage({
           <Link
             key={t.tag}
             href={`/ai-policy?tag=${encodeURIComponent(t.tag)}`}
-            className={`rounded-full border px-3 py-1 text-sm transition ${
-              tag === t.tag ? "border-navy-900 bg-navy-900 text-white" : "border-slate-300 bg-white text-slate-600 hover:bg-slate-100"
+            className={`rounded-full border px-3.5 py-1.5 text-[13px] font-medium transition ${
+              tag === t.tag ? "border-transparent bg-ink text-white" : "border-transparent bg-white text-mut shadow-card hover:text-ink"
             }`}
           >
             #{t.tag} ({t.count})

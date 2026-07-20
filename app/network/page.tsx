@@ -10,7 +10,7 @@ export default function NetworkPage() {
   const meetingCount = getMeetings().length;
 
   return (
-    <div className="space-y-6">
+    <div className="mx-auto max-w-5xl space-y-6 px-5 py-10">
       <header>
         <p className="overline-label">Network</p>
         <h1 className="h-judge mt-1">

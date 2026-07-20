@@ -22,20 +22,20 @@ export default function NetworkView({
       <div className="flex flex-wrap items-center justify-between gap-3">
         <div className="flex flex-wrap gap-4 text-sm font-medium text-body">
           <span className="flex items-center gap-1.5">
-            <span className="inline-block w-6 rounded bg-accent-500" style={{ height: 3 }} /> 지시
+            <span className="inline-block w-6 rounded bg-[#d70015]" style={{ height: 3 }} /> 지시
           </span>
           <span className="flex items-center gap-1.5">
-            <span className="inline-block h-0.5 w-6 rounded bg-navy-500" /> 답변·보고
+            <span className="inline-block h-0.5 w-6 rounded bg-[#0066cc]" /> 답변·보고
           </span>
         </div>
-        <div className="flex gap-1 rounded-xl border border-hair bg-surf p-1">
+        <div className="flex gap-1 rounded-full bg-tint2 p-1">
           {(["3d", "2d"] as const).map((m) => (
             <button
               key={m}
               type="button"
               onClick={() => setMode(m)}
-              className={`rounded-lg px-4 py-1.5 text-sm font-bold uppercase transition ${
-                mode === m ? "bg-navy-900 text-white shadow" : "text-mut hover:bg-navy-50"
+              className={`rounded-full px-4 py-1.5 text-[13px] font-medium uppercase transition ${
+                mode === m ? "bg-white text-ink shadow-sm" : "text-mut hover:text-ink"
               }`}
             >
               {m}

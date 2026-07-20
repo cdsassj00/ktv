@@ -6,9 +6,9 @@ import { UNKNOWN_SPEAKER } from "@/lib/client-data";
 import NetworkGraph from "./NetworkGraph";
 
 const EDGE_COLOR: Record<NetworkEdge["kind"], string> = {
-  directive: "#c96a60",
-  reply: "#7c96c8",
-  mention: "#68758a",
+  directive: "#ff453a",
+  reply: "#0a84ff",
+  mention: "#98989d",
 };
 
 function webglAvailable(): boolean {
@@ -63,7 +63,7 @@ export default function NetworkGraph3D({
               name: `${sp.name} · ${sp.role}`,
               label: sp.name,
               val: 4 + Math.min(20, n.turnCount * 3),
-              color: n.speakerId === "president" ? "#c96a60" : "#6f8ab8",
+              color: n.speakerId === "president" ? "#ff453a" : "#64a0ff",
             };
           }),
           links: edges.map((e) => ({
@@ -78,7 +78,7 @@ export default function NetworkGraph3D({
           .graphData(data)
           .width(containerRef.current.clientWidth)
           .height(560)
-          .backgroundColor("#0c1220")
+          .backgroundColor("#000000")
           .showNavInfo(false)
           .nodeVal("val")
           .nodeColor("color")
@@ -136,9 +136,9 @@ export default function NetworkGraph3D({
   }
 
   return (
-    <div className="relative overflow-hidden rounded-lg border border-hair shadow-lift">
+    <div className="relative overflow-hidden rounded-2xl shadow-card">
       {status === "loading" && (
-        <div className="absolute inset-0 z-10 flex flex-col items-center justify-center gap-3 bg-navy-950">
+        <div className="absolute inset-0 z-10 flex flex-col items-center justify-center gap-3 bg-black">
           <span className="spinner" />
           <span className="on-dark-mut text-xs font-semibold">3D 네트워크 준비 중…</span>
         </div>

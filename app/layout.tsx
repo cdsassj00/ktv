@@ -29,40 +29,36 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       </head>
       <body>
-        {/* 마스트헤드: 네이비 정본 + 코랄 룰 */}
-        <header className="sticky top-0 z-40 bg-navy-900 text-white">
-          <div className="mx-auto flex max-w-6xl items-center gap-8 px-5 py-3">
-            <Link href="/" className="flex shrink-0 items-baseline gap-2.5">
-              <span className="text-lg font-black tracking-tight">열린국무회의</span>
-              <span className="on-dark-mut hidden text-[10.5px] font-bold tracking-[0.2em] sm:inline">
-                KTV 공개회의 아카이브
-              </span>
+        {/* 프로스티드 다크 내비 (apple.com 스타일) */}
+        <header className="sticky top-0 z-40 bg-[rgba(22,22,23,0.8)] text-white backdrop-blur-xl backdrop-saturate-150">
+          <div className="mx-auto flex h-12 max-w-5xl items-center gap-8 px-5">
+            <Link href="/" className="shrink-0 text-[15px] font-semibold tracking-tight">
+              열린국무회의
             </Link>
-            <nav className="scroll-thin ml-auto flex gap-0.5 overflow-x-auto text-[13.5px]">
+            <nav className="scroll-thin ml-auto flex gap-1 overflow-x-auto">
               {NAV.map((item) => (
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="on-dark-mut nav-link whitespace-nowrap rounded px-3 py-1.5 font-bold hover:text-white"
+                  className="nav-link whitespace-nowrap px-3 py-1 text-xs font-normal text-[rgba(245,245,247,0.8)] hover:text-white"
                 >
                   {item.label}
                 </Link>
               ))}
             </nav>
           </div>
-          <div className="h-[3px] w-full bg-accent-500" />
         </header>
 
-        <main className="mx-auto max-w-6xl px-5 py-9">{children}</main>
+        <main className="min-h-[60vh]">{children}</main>
 
-        <footer className="mt-16 border-t border-hair bg-surf">
-          <div className="mx-auto max-w-6xl space-y-2 px-5 py-8 text-xs leading-relaxed text-mut">
-            <p className="text-sm font-black tracking-tight text-ink">열린국무회의</p>
+        <footer className="mt-20 bg-tint2/60">
+          <div className="mx-auto max-w-5xl space-y-2 px-5 py-9 text-xs leading-relaxed text-mut">
+            <p className="text-sm font-semibold tracking-tight text-ink">열린국무회의</p>
             <p>
               영상 출처:{" "}
               <a
                 href="https://www.youtube.com/@KTV_korea"
-                className="underline hover:text-navy-500"
+                className="text-navy-500 hover:underline"
                 target="_blank"
                 rel="noreferrer"
               >

@@ -30,7 +30,7 @@ export default async function DirectivesPage({
     : all;
 
   return (
-    <div className="space-y-6">
+    <div className="mx-auto max-w-5xl space-y-6 px-5 py-10">
       <header>
         <p className="overline-label">Directive Tracker</p>
         <h1 className="h-judge mt-1">지시-이행 트래커</h1>
@@ -43,8 +43,8 @@ export default async function DirectivesPage({
       <div className="flex flex-wrap gap-1.5">
         <Link
           href="/directives"
-          className={`rounded-full border px-3 py-1 text-sm transition ${
-            !org ? "border-navy-900 bg-navy-900 text-white" : "border-slate-300 bg-white text-slate-600 hover:bg-slate-100"
+          className={`rounded-full border px-3.5 py-1.5 text-[13px] font-medium transition ${
+            !org ? "border-transparent bg-ink text-white" : "border-transparent bg-white text-mut shadow-card hover:text-ink"
           }`}
         >
           전체
@@ -53,8 +53,8 @@ export default async function DirectivesPage({
           <Link
             key={o}
             href={`/directives?org=${encodeURIComponent(o)}`}
-            className={`rounded-full border px-3 py-1 text-sm transition ${
-              org === o ? "border-navy-900 bg-navy-900 text-white" : "border-slate-300 bg-white text-slate-600 hover:bg-slate-100"
+            className={`rounded-full border px-3.5 py-1.5 text-[13px] font-medium transition ${
+              org === o ? "border-transparent bg-ink text-white" : "border-transparent bg-white text-mut shadow-card hover:text-ink"
             }`}
           >
             {o}

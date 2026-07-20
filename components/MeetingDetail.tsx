@@ -45,29 +45,29 @@ export default function MeetingDetail({
   };
 
   return (
-    <div className="space-y-6">
+    <div className="mx-auto max-w-6xl space-y-6 px-5 py-10">
       {meeting.sample && (
-        <div className="rounded-lg border border-amber-300 bg-amber-50 px-4 py-3 text-sm text-amber-800">
+        <div className="rounded-2xl bg-[#fff8e6] px-4 py-3 text-sm text-[#8a6116]">
           <IconAlert className="mr-1.5 size-4 align-[-2px]" /> 이 회의는 <strong>데모용 샘플 데이터</strong>입니다. 실제 발언·회의 내용이 아닙니다.
         </div>
       )}
 
       <header className="space-y-2">
         <div className="flex flex-wrap items-center gap-2 text-sm text-slate-500">
-          <span className="rounded-md bg-navy-900 px-2 py-0.5 text-[11px] font-bold text-white">
+          <span className="chip bg-tint2 text-mut">
             {MEETING_TYPE_LABEL[meeting.type]}
           </span>
           <span>{formatDate(meeting.date)}</span>
           <span>· 영상 길이 {formatTime(meeting.duration)}</span>
         </div>
-        <h1 className="text-2xl font-black tracking-tight text-ink sm:text-3xl">{meeting.title}</h1>
+        <h1 className="text-[28px] font-semibold tracking-[-0.02em] text-ink sm:text-[34px]">{meeting.title}</h1>
         <p className="max-w-3xl text-slate-600">{meeting.summary.oneLine}</p>
       </header>
 
       <div className="grid gap-6 lg:grid-cols-[minmax(0,7fr)_minmax(0,5fr)]">
         {/* 좌측: 플레이어 + 전체 요약 + 안건 */}
         <div className="space-y-5">
-          <div ref={playerBoxRef} className="overflow-hidden rounded-lg bg-black shadow-card">
+          <div ref={playerBoxRef} className="overflow-hidden rounded-2xl bg-black shadow-card">
             {canSeek ? (
               <iframe
                 ref={iframeRef}
@@ -88,7 +88,7 @@ export default function MeetingDetail({
           </div>
 
           <section className="panel p-5">
-            <h2 className="mb-2 text-lg font-black text-ink">전체 요약</h2>
+            <h2 className="mb-2 text-lg font-semibold tracking-tight text-ink">전체 요약</h2>
             <p className="mb-1 text-xs text-slate-400">
               <IconInfo className="mr-1 size-3.5 align-[-2px]" /> 영상 자막을 바탕으로 AI가 생성한 요약입니다. 타임스탬프로 원문을 확인하세요.
             </p>
@@ -100,7 +100,7 @@ export default function MeetingDetail({
           </section>
 
           <section className="panel p-5">
-            <h2 className="mb-3 text-lg font-black text-ink">안건</h2>
+            <h2 className="mb-3 text-lg font-semibold tracking-tight text-ink">안건</h2>
             <ol className="space-y-2">
               {meeting.summary.agenda.map((item, i) => (
                 <li key={i}>
@@ -108,12 +108,12 @@ export default function MeetingDetail({
                     type="button"
                     onClick={() => canSeek && seek(item.timestamp)}
                     disabled={!canSeek}
-                    className={`w-full rounded-lg border border-slate-200 p-3 text-left transition ${
-                      canSeek ? "hover:border-navy-300 hover:bg-navy-50" : ""
+                    className={`w-full rounded-xl bg-tint p-3 text-left transition ${
+                      canSeek ? "hover:bg-tint2" : ""
                     }`}
                   >
                     <div className="flex items-center gap-2">
-                      <span className="flex size-6 shrink-0 items-center justify-center rounded-full bg-navy-100 text-xs font-bold text-navy-700">
+                      <span className="flex size-6 shrink-0 items-center justify-center rounded-full bg-white text-xs font-semibold text-accent-500 shadow-sm">
                         {i + 1}
                       </span>
                       <span className="font-medium text-navy-900">{item.title}</span>
@@ -129,9 +129,9 @@ export default function MeetingDetail({
           </section>
 
           {meeting.aiDataPolicy.length > 0 && (
-            <section className="rounded-lg border border-accent-500/35 bg-[#f9f1f0] p-5 shadow-card">
-              <h2 className="mb-3 text-lg font-black text-ink">
-                <IconTag className="mr-1.5 size-[18px] align-[-2px] text-accent-500" /> AI·데이터 정책 발언 <span className="text-accent-600">{meeting.aiDataPolicy.length}건</span>
+            <section className="rounded-2xl bg-[#f0f6ff] p-5">
+              <h2 className="mb-3 text-lg font-semibold tracking-tight text-ink">
+                <IconTag className="mr-1.5 size-[18px] align-[-2px] text-accent-500" /> AI·데이터 정책 발언 <span className="text-accent-500">{meeting.aiDataPolicy.length}건</span>
               </h2>
               <div className="space-y-3">
                 {meeting.aiDataPolicy.map((item, i) => {
@@ -154,7 +154,7 @@ export default function MeetingDetail({
                         </div>
                         <p className="mt-1 text-sm text-slate-700">{item.summary}</p>
                         {item.quote && (
-                          <p className="mt-1 border-l-2 border-accent-500 pl-2 text-sm italic text-slate-600">
+                          <p className="mt-1 border-l-2 border-accent-400 pl-2 text-sm italic text-slate-600">
                             “{item.quote}”
                           </p>
                         )}
@@ -176,12 +176,12 @@ export default function MeetingDetail({
 
         {/* 우측: 발언 스레드 / 네트워크 탭 */}
         <div className="space-y-4">
-          <div className="flex gap-1 rounded-md border border-hair bg-surf p-1">
+          <div className="flex gap-1 rounded-full bg-tint2 p-1">
             <button
               type="button"
               onClick={() => setTab("thread")}
-              className={`flex-1 rounded-md px-3 py-1.5 text-sm transition ${
-                tab === "thread" ? "bg-navy-900 font-bold text-white" : "font-semibold text-mut hover:bg-navy-50"
+              className={`flex-1 rounded-full px-3 py-1.5 text-sm font-medium transition ${
+                tab === "thread" ? "bg-white text-ink shadow-sm" : "text-mut hover:text-ink"
               }`}
             >
               <IconThread className="mr-1.5 size-4 align-[-2px]" /> 발언 스레드
@@ -189,8 +189,8 @@ export default function MeetingDetail({
             <button
               type="button"
               onClick={() => setTab("network")}
-              className={`flex-1 rounded-md px-3 py-1.5 text-sm transition ${
-                tab === "network" ? "bg-navy-900 font-bold text-white" : "font-semibold text-mut hover:bg-navy-50"
+              className={`flex-1 rounded-full px-3 py-1.5 text-sm font-medium transition ${
+                tab === "network" ? "bg-white text-ink shadow-sm" : "text-mut hover:text-ink"
               }`}
             >
               <IconNetwork className="mr-1.5 size-4 align-[-2px]" /> 네트워크
@@ -221,7 +221,7 @@ export default function MeetingDetail({
                   const from = speakers[d.from] ?? UNKNOWN_SPEAKER;
                   const status = DIRECTIVE_STATUS_LABEL[d.status];
                   return (
-                    <div key={d.id} className="rounded-lg border border-slate-200 p-3">
+                    <div key={d.id} className="rounded-xl bg-tint p-3">
                       <div className="mb-1 flex flex-wrap items-center gap-2 text-xs">
                         <span className="font-semibold text-navy-800">{from.name}</span>
                         <span className="text-slate-400">→</span>

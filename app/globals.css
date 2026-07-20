@@ -1,42 +1,47 @@
 @import "tailwindcss";
 
 @theme {
-  /* ssjhtml3 정본 navy-coral 팔레트 — 쿨그레이 종이 + 네이비 + 코랄레드 + 골드 */
-  --color-paper: #f5f6f8;
+  /* Apple 스타일 팔레트 — apple.com 계열 뉴트럴 + SF 시스템 컬러 */
+  --color-paper: #f5f5f7;
   --color-surf: #ffffff;
-  --color-tint: #e5e9ef;
-  --color-tint2: #d7dde6;
-  --color-hair: #d7dee8;
-  --color-hair2: #c3cedb;
+  --color-tint: #f5f5f7;
+  --color-tint2: #e8e8ed;
+  --color-hair: #d2d2d7;
+  --color-hair2: #c7c7cc;
 
-  --color-ink: #102139;
-  --color-body: #3d4c60;
-  --color-mut: #68758a;
-  --color-faint: #93a1b3;
+  --color-ink: #1d1d1f;
+  --color-body: #424245;
+  --color-mut: #6e6e73;
+  --color-faint: #86868b;
 
-  --color-navy-50: #eef1f5;
-  --color-navy-100: #d7dee8;
-  --color-navy-200: #c3cedb;
-  --color-navy-300: #93a1b3;
-  --color-navy-400: #6f8ab8;
-  --color-navy-500: #4266a3;
-  --color-navy-600: #31456b;
-  --color-navy-700: #23324e;
-  --color-navy-800: #1a2740;
-  --color-navy-900: #101827;
-  --color-navy-950: #0c1220;
+  /* 그레이/블루 스케일 (기존 navy-* 클래스 호환) */
+  --color-navy-50: #f5f5f7;
+  --color-navy-100: #e8e8ed;
+  --color-navy-200: #d2d2d7;
+  --color-navy-300: #86868b;
+  --color-navy-400: #6e6e73;
+  --color-navy-500: #0066cc;
+  --color-navy-600: #424245;
+  --color-navy-700: #333336;
+  --color-navy-800: #2a2a2d;
+  --color-navy-900: #1d1d1f;
+  --color-navy-950: #000000;
 
-  --color-accent-400: #c96a60;
-  --color-accent-500: #b94a48;
-  --color-accent-600: #943539;
-  --color-green-600: #2e7d5b;
-  --color-gold-400: #d09a3f;
-  --color-gold-500: #c38424;
+  /* 액센트 = Apple 블루 (CTA·링크) */
+  --color-accent-400: #2997ff;
+  --color-accent-500: #0071e3;
+  --color-accent-600: #0056b3;
 
-  --font-sans: "Pretendard Variable", Pretendard, "Noto Sans KR", "Malgun Gothic",
-    -apple-system, BlinkMacSystemFont, sans-serif;
-  --shadow-card: 0 1px 2px rgb(16 33 57 / 0.05), 0 6px 18px -10px rgb(16 33 57 / 0.14);
-  --shadow-lift: 0 2px 4px rgb(16 33 57 / 0.07), 0 14px 30px -14px rgb(16 33 57 / 0.24);
+  /* 시맨틱 (텍스트 대비 확보용 다크 변형) */
+  --color-red-600: #d70015;
+  --color-green-600: #248a3d;
+  --color-gold-400: #ff9500;
+  --color-gold-500: #b25000;
+
+  --font-sans: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont,
+    "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+  --shadow-card: 0 2px 12px rgb(0 0 0 / 0.08);
+  --shadow-lift: 0 4px 24px rgb(0 0 0 / 0.12);
 }
 
 html {
@@ -48,49 +53,52 @@ body {
   color: var(--color-ink);
   word-break: keep-all;
   overflow-wrap: break-word;
+  letter-spacing: -0.012em;
   @apply antialiased;
 }
 
 /* ── 컴포넌트 유틸리티 ─────────────────────────────── */
 
-/* 본문 패널: 흰 종이 + 헤어라인 */
+/* Apple 카드: 보더 없음, 라운드 크게, 부드러운 그림자 */
 .panel {
-  @apply rounded-lg border border-hair bg-surf shadow-card;
+  @apply rounded-2xl bg-surf shadow-card;
 }
 
-/* 판단 제목(섹션): 명사구/사실 서술, 900 웨이트 */
+/* 섹션 제목 — SF 스타일 세미볼드, 타이트 트래킹 */
 .h-judge {
-  @apply text-[26px] font-black leading-tight tracking-tight text-ink sm:text-3xl;
+  @apply text-[28px] font-semibold leading-tight tracking-[-0.02em] text-ink sm:text-[32px];
 }
 
-/* 오버라인: 문서 라벨 */
+/* 아이브로우(오버라인) */
 .overline-label {
-  @apply text-[11px] font-extrabold uppercase tracking-[0.22em] text-accent-500;
+  @apply text-[13px] font-semibold text-mut;
 }
 
-/* 마스트헤드(다크 네이비) 위 서브텍스트 */
 .on-dark-mut {
-  color: #9fb0c6;
+  color: rgba(245, 245, 247, 0.68);
 }
 
-/* 발언 말풍선 */
+/* Apple 필 버튼 */
+.btn-pill {
+  @apply inline-flex items-center justify-center rounded-full bg-accent-500 px-6 py-2.5 text-[15px] font-medium text-white transition hover:bg-accent-400;
+}
+.btn-link {
+  @apply text-[15px] font-medium text-accent-500 hover:underline;
+}
+
+/* 발언 말풍선 — iMessage 수신 버블 스타일 */
 .bubble {
-  @apply rounded-lg rounded-tl-none border border-hair bg-surf p-3.5 text-left shadow-card;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  @apply rounded-2xl rounded-tl-md bg-tint p-3.5 text-left;
+  transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 .bubble-clickable:hover {
-  border-color: var(--color-navy-400);
-  box-shadow: var(--shadow-lift);
+  background-color: var(--color-tint2);
+  transform: translateY(-1px);
 }
 
-/* 상태·관계 배지 공통 */
+/* 상태·관계 칩 — 틴트 배경 + 컬러 텍스트, 보더 없음 */
 .chip {
-  @apply inline-flex items-center gap-1 rounded border px-1.5 py-0.5 text-[11px] font-bold;
-}
-
-/* 스탯 셀 (히어로 하단 사실 스트립) */
-.stat-cell {
-  @apply flex flex-col gap-0.5 border-l-2 border-hair2 pl-3;
+  @apply inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[11px] font-semibold;
 }
 
 /* 얇은 스크롤바 */
@@ -99,7 +107,6 @@ body {
 
 /* ── 모션 (vibe-webeffect) ─────────────────────────────── */
 
-/* 페이드 업 + 스태거 그리드 — IntersectionObserver 1개(components/Reveal.tsx)가 .show를 토글 */
 [data-reveal] {
   opacity: 0;
   transform: translateY(28px);
@@ -115,7 +122,7 @@ body {
 }
 [data-stagger].show > * { opacity: 1; transform: none; }
 
-/* 라인 마스크 리빌 — 히어로 제목 줄 단위, 로드 시 1회 */
+/* 라인 마스크 리빌 — 히어로 제목 */
 .ln { display: block; overflow: hidden; }
 .ln > span {
   display: block;
@@ -125,15 +132,15 @@ body {
 .ln:nth-of-type(2) > span { animation-delay: 0.12s; }
 @keyframes ln-up { to { transform: none; } }
 
-/* 언더라인 리빌 — 내비게이션 */
+/* 언더라인 리빌 — 내비게이션 (라이트 텍스트용) */
 .nav-link {
-  background: linear-gradient(var(--color-accent-400), var(--color-accent-400)) 0 100% / 0% 2px
+  background: linear-gradient(rgba(245, 245, 247, 0.9), rgba(245, 245, 247, 0.9)) 0 100% / 0% 1.5px
     no-repeat;
   transition: background-size 0.25s ease, color 0.2s ease;
 }
-.nav-link:hover { background-size: 100% 2px; }
+.nav-link:hover { background-size: 100% 1.5px; }
 
-/* 코닉 스피너 — 3D 그래프 로딩 */
+/* 코닉 스피너 */
 .spinner {
   width: 34px;
   height: 34px;
@@ -144,8 +151,8 @@ body {
 }
 @keyframes spin { to { transform: rotate(1turn); } }
 
-/* 접근성: 포커스 링·커서 (Accessible & Ethical) */
-:focus-visible { outline: 3px solid var(--color-navy-500); outline-offset: 2px; }
+/* 접근성 */
+:focus-visible { outline: 3px solid var(--color-accent-500); outline-offset: 2px; }
 button:not(:disabled) { cursor: pointer; }
 
 @media (prefers-reduced-motion: reduce) {
