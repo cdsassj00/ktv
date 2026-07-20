@@ -26,11 +26,15 @@ export default function NetworkGraph({
   nodes,
   edges,
   speakers,
+  highlight,
 }: {
   nodes: NetworkNode[];
   edges: NetworkEdge[];
   speakers: SpeakerMap;
+  highlight?: { nodes: string[]; pairs: string[] } | null;
 }) {
+  const hlNodes = highlight ? new Set(highlight.nodes) : null;
+  const hlPairs = highlight ? new Set(highlight.pairs) : null;
   if (nodes.length === 0) {
     return <p className="p-4 text-sm text-mut">네트워크를 그릴 발언 데이터가 없습니다.</p>;
   }
@@ -106,12 +110,15 @@ export default function NetworkGraph({
         // 양방향 엣지가 겹치지 않도록 수직 방향으로 살짝 휘어줌
         const mx = (x1 + x2) / 2 - uy * 22;
         const my = (y1 + y2) / 2 + ux * 22;
+        const pairKey = `${e.source}→${e.target}`;
+        const edgeDim = hlPairs && !hlPairs.has(pairKey);
+        const edgeStroke = hlPairs && hlPairs.has(pairKey) ? "#ffd60a" : style.stroke;
         return (
-          <g key={i}>
+          <g key={i} opacity={edgeDim ? 0.15 : 1}>
             <path
               d={`M ${x1} ${y1} Q ${mx} ${my} ${x2} ${y2}`}
               fill="none"
-              stroke={style.stroke}
+              stroke={edgeStroke}
               strokeWidth={style.width}
               strokeDasharray={style.dash}
               markerEnd={`url(#${style.marker})`}
@@ -131,10 +138,11 @@ export default function NetworkGraph({
         const p = pos.get(n.speakerId)!;
         const r = radiusOf.get(n.speakerId)!;
         const sp = speakers[n.speakerId] ?? UNKNOWN_SPEAKER;
+        const dim = hlNodes && !hlNodes.has(n.speakerId);
         return (
           <a key={n.speakerId} href={`/speakers/${n.speakerId}`}>
-            <g className="cursor-pointer">
-              <circle cx={p.x} cy={p.y} r={r} fill="#2c2c2e" stroke="#48484a" strokeWidth="2.5" />
+            <g className="cursor-pointer" opacity={dim ? 0.22 : 1}>
+              <circle cx={p.x} cy={p.y} r={r} fill={hlNodes && hlNodes.has(n.speakerId) ? "#4a3f10" : "#2c2c2e"} stroke={hlNodes && hlNodes.has(n.speakerId) ? "#ffd60a" : "#48484a"} strokeWidth="2.5" />
               {sp.photo ? (
                 <image
                   href={sp.photo}

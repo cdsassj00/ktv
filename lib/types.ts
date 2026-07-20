@@ -99,6 +99,23 @@ export interface Speaker {
 
 export type SpeakerMap = Record<string, Speaker>;
 
+/** 퍼지 검색 문서 (Fuse.js 인덱스 단위) */
+export interface SearchDoc {
+  /** 항목 종류 라벨: 지시 | 보고 | 답변 | 질문 | 발언 | AI·데이터 | 안건 */
+  kind: string;
+  text: string;
+  topic?: string;
+  tags: string[];
+  speakerIds: string[];
+  speakerNames: string;
+  meetingId: string;
+  meetingTitle: string;
+  date: string;
+  videoId: string;
+  timestamp: number;
+  exchangeId?: string;
+}
+
 /** 네트워크 뷰 집계 결과 */
 export interface NetworkEdge {
   source: string;

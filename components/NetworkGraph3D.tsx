@@ -25,17 +25,27 @@ function webglAvailable(): boolean {
  * 드래그로 회전, 휠로 줌. 지시 엣지는 코랄색 파티클이 흐르는 굵은 선.
  * 로딩 중 코닉 스피너, WebGL 미지원 시 2D SVG 그래프로 폴백.
  */
+export interface GraphHighlight {
+  nodes: string[];
+  pairs: string[]; // "from→to" (지시 엣지)
+}
+
 export default function NetworkGraph3D({
   nodes,
   edges,
   speakers,
+  highlight,
 }: {
   nodes: NetworkNode[];
   edges: NetworkEdge[];
   speakers: SpeakerMap;
+  highlight?: GraphHighlight | null;
 }) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [status, setStatus] = useState<"loading" | "ready" | "fallback">("loading");
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const graphRef = useRef<any>(null);
+  const hlRef = useRef<{ nodes: Set<string>; pairs: Set<string> } | null>(null);
 
   useEffect(() => {
     let disposed = false;
@@ -81,7 +91,12 @@ export default function NetworkGraph3D({
           .backgroundColor("#000000")
           .showNavInfo(false)
           .nodeVal("val")
-          .nodeColor("color")
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          .nodeColor((n: any) => {
+            const hl = hlRef.current;
+            if (!hl) return n.color;
+            return hl.nodes.has(n.id) ? "#ffd60a" : "rgba(110,110,115,0.22)";
+          })
           .nodeOpacity(0.92)
           .nodeThreeObjectExtend(true)
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -95,7 +110,13 @@ export default function NetworkGraph3D({
             return sprite;
           })
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
-          .linkColor((l: any) => EDGE_COLOR[l.kind as NetworkEdge["kind"]])
+          .linkColor((l: any) => {
+            const hl = hlRef.current;
+            const base = EDGE_COLOR[l.kind as NetworkEdge["kind"]];
+            if (!hl) return base;
+            const key = `${l.source?.id ?? l.source}→${l.target?.id ?? l.target}`;
+            return hl.pairs.has(key) ? "#ffd60a" : "rgba(58,58,60,0.35)";
+          })
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
           .linkWidth((l: any) => (l.kind === "directive" ? 1.8 : 0.7))
           .linkOpacity(0.55)
@@ -123,6 +144,7 @@ export default function NetworkGraph3D({
             controls.autoRotate = false;
           });
         }
+        graphRef.current = graph;
         setStatus("ready");
       } catch {
         setStatus("fallback");
@@ -134,6 +156,18 @@ export default function NetworkGraph3D({
       graph?._destructor?.();
     };
   }, [nodes, edges, speakers]);
+
+  useEffect(() => {
+    hlRef.current = highlight
+      ? { nodes: new Set(highlight.nodes), pairs: new Set(highlight.pairs) }
+      : null;
+    const g = graphRef.current;
+    if (g) {
+      // 같은 접근자를 다시 설정해 재렌더 트리거
+      g.nodeColor(g.nodeColor());
+      g.linkColor(g.linkColor());
+    }
+  }, [highlight]);
 
   if (status === "fallback") {
     return (

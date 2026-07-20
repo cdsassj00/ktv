@@ -115,6 +115,63 @@ export function getSpeakerHistory(speakerId: string) {
   return history;
 }
 
+/** 전 회의를 퍼지 검색 문서로 평탄화 — 지시/발언/AI·데이터/안건 전부 */
+export function getSearchDocs(): import("./types").SearchDoc[] {
+  const speakers = getSpeakers();
+  const name = (id: string) => speakers[id]?.name ?? "미상";
+  const docs: import("./types").SearchDoc[] = [];
+  for (const m of getMeetings()) {
+    const base = {
+      meetingId: m.id,
+      meetingTitle: m.title,
+      date: m.date,
+      videoId: m.videoId,
+    };
+    for (const a of m.summary.agenda) {
+      docs.push({ ...base, kind: "안건", text: `${a.title} — ${a.summary}`, tags: [], speakerIds: [], speakerNames: "", timestamp: a.timestamp });
+    }
+    for (const ex of m.exchanges) {
+      for (const t of ex.turns) {
+        docs.push({
+          ...base,
+          kind: t.kind,
+          text: `${t.summary}${t.quote ? ` "${t.quote}"` : ""}`,
+          topic: ex.topic,
+          tags: [],
+          speakerIds: [t.speakerId],
+          speakerNames: name(t.speakerId),
+          timestamp: t.timestamp,
+          exchangeId: ex.id,
+        });
+      }
+    }
+    for (const d of m.directives) {
+      docs.push({
+        ...base,
+        kind: "지시",
+        text: d.content,
+        tags: d.tags,
+        speakerIds: [d.from, ...d.to],
+        speakerNames: [d.from, ...d.to].map(name).join(" "),
+        timestamp: d.timestamp,
+      });
+    }
+    for (const ai of m.aiDataPolicy) {
+      docs.push({
+        ...base,
+        kind: "AI·데이터",
+        text: `${ai.summary}${ai.quote ? ` "${ai.quote}"` : ""}`,
+        topic: ai.topic,
+        tags: ai.tags,
+        speakerIds: [ai.speakerId],
+        speakerNames: name(ai.speakerId),
+        timestamp: ai.timestamp,
+      });
+    }
+  }
+  return docs;
+}
+
 /** 회의(들)에서 네트워크 노드·엣지 집계. meetingId 없으면 전체 누적 */
 export function buildNetwork(meetingId?: string): { nodes: NetworkNode[]; edges: NetworkEdge[] } {
   const meetings = meetingId

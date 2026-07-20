@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import NetworkView from "@/components/NetworkView";
-import { buildNetwork, getMeetings, getSpeakers } from "@/lib/data";
+import { buildNetwork, getMeetings, getSearchDocs, getSpeakers } from "@/lib/data";
 
 export const metadata: Metadata = { title: "발언 네트워크" };
 
@@ -22,7 +22,7 @@ export default function NetworkPage() {
         </p>
       </header>
 
-      <NetworkView nodes={network.nodes} edges={network.edges} speakers={speakers} />
+      <NetworkView nodes={network.nodes} edges={network.edges} speakers={speakers} searchDocs={getSearchDocs()} />
     </div>
   );
 }

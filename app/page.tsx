@@ -14,6 +14,7 @@ import {
   getAllAiDataPolicy,
   getAllDirectives,
   getMeetings,
+  getSearchDocs,
   getSpeakers,
   UNKNOWN_SPEAKER,
 } from "@/lib/data";
@@ -40,6 +41,7 @@ export default function HomePage() {
   const threadCount = meetings.reduce((n, m) => n + m.exchanges.length, 0);
   const aiItems = getAllAiDataPolicy();
   const network = buildNetwork();
+  const searchDocs = getSearchDocs();
 
   const featuredExchange =
     latest?.exchanges.reduce((a, b) => (b.turns.length > a.turns.length ? b : a), latest.exchanges[0]);
@@ -200,11 +202,11 @@ export default function HomePage() {
             <p className="mt-3 max-w-2xl text-[15px] leading-relaxed text-mut">
               노드는 발언자(크기=발언량), <span className="text-[#ff6961]">빨간 파티클 선</span>은
               지시, <span className="text-[#64b5ff]">파란 선</span>은 답변·보고입니다. 드래그로
-              회전, 노드 클릭 시 발언자 페이지로 이동합니다.
+              회전, 노드 클릭 시 발언자 페이지로 이동합니다. 검색창에 키워드를 치면 관련 지시·발언이 그래프에 표시됩니다.
             </p>
           </Reveal>
           <div className="mt-8">
-            <NetworkView nodes={network.nodes} edges={network.edges} speakers={speakers} />
+            <NetworkView nodes={network.nodes} edges={network.edges} speakers={speakers} searchDocs={searchDocs} />
           </div>
         </div>
       </section>
