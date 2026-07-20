@@ -57,8 +57,9 @@ export default async function AiPolicyPage({
   return (
     <div className="space-y-6">
       <header>
-        <h1 className="text-2xl font-bold text-navy-900">🏷️ AI·데이터 정책 대시보드</h1>
-        <p className="mt-1 text-sm text-slate-600">
+        <p className="kicker">AI &amp; Data Policy</p>
+        <h1 className="mt-1 text-3xl font-black tracking-tight text-navy-900">AI·데이터 정책 대시보드</h1>
+        <p className="mt-2 max-w-2xl text-sm leading-relaxed text-slate-600">
           모든 회의에서 추출한 AI·데이터 정책 관련 발언을 모아봅니다. 각 발언의 타임스탬프로
           원문 영상을 바로 확인할 수 있습니다.
         </p>

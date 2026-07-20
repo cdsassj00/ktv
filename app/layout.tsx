@@ -29,18 +29,23 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       </head>
       <body>
-        <header className="sticky top-0 z-40 bg-navy-900 text-white shadow-md">
-          <div className="mx-auto flex max-w-6xl items-center gap-6 px-4 py-3">
-            <Link href="/" className="flex items-baseline gap-2 shrink-0">
-              <span className="text-lg font-bold tracking-tight">열린국무회의</span>
-              <span className="hidden text-xs text-navy-300 sm:inline">OpenCabinet</span>
+        <header className="sticky top-0 z-40 border-b border-white/10 bg-navy-950/90 text-white shadow-[0_8px_30px_-12px_rgb(8_18_38/0.6)] backdrop-blur-md">
+          <div className="h-[3px] w-full bg-gradient-to-r from-accent-500 via-gold-500 to-navy-500" />
+          <div className="mx-auto flex max-w-6xl items-center gap-6 px-4 py-3.5">
+            <Link href="/" className="group flex shrink-0 items-baseline gap-2">
+              <span className="text-xl font-black tracking-tight">
+                열린<span className="text-accent-400">국무회의</span>
+              </span>
+              <span className="hidden text-[11px] font-medium tracking-[0.18em] text-navy-300 sm:inline">
+                OPENCABINET
+              </span>
             </Link>
-            <nav className="flex gap-1 overflow-x-auto text-sm">
+            <nav className="scroll-thin flex gap-0.5 overflow-x-auto text-sm">
               {NAV.map((item) => (
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="whitespace-nowrap rounded-md px-3 py-1.5 text-navy-100 transition hover:bg-navy-700 hover:text-white"
+                  className="relative whitespace-nowrap rounded-md px-3 py-1.5 font-semibold text-navy-100 transition hover:bg-white/10 hover:text-white"
                 >
                   {item.label}
                 </Link>
@@ -48,9 +53,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             </nav>
           </div>
         </header>
-        <main className="mx-auto max-w-6xl px-4 py-8">{children}</main>
-        <footer className="mt-16 border-t border-slate-200 bg-white">
-          <div className="mx-auto max-w-6xl space-y-2 px-4 py-8 text-xs text-slate-500">
+        <main className="mx-auto max-w-6xl px-4 py-10">{children}</main>
+        <footer className="mt-20 border-t border-navy-100 bg-white/70 backdrop-blur">
+          <div className="mx-auto max-w-6xl space-y-2 px-4 py-10 text-xs leading-relaxed text-slate-500">
+            <p className="text-sm font-black tracking-tight text-navy-900">
+              열린<span className="text-accent-500">국무회의</span>
+            </p>
             <p>
               영상 출처:{" "}
               <a
@@ -61,8 +69,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               >
                 KTV 국민방송 유튜브 채널
               </a>
-              . 요약은 영상 자막을 바탕으로 AI(Claude)가 생성한 것으로, 오류가 있을 수 있습니다.
-              모든 요약 항목의 타임스탬프로 원문 영상을 직접 확인하세요.
+              . 요약은 영상 자막을 바탕으로 AI가 생성한 것으로, 오류가 있을 수 있습니다. 모든 요약
+              항목의 타임스탬프로 원문 영상을 직접 확인하세요.
             </p>
             <p>발언자 사진은 공공누리 제1유형(출처표시) 자료만 사용하며, 각 사진에 출처를 표기합니다.</p>
           </div>

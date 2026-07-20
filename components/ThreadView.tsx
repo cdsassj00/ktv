@@ -65,9 +65,7 @@ export default function ThreadView({
                     type="button"
                     onClick={() => canSeek && onSeek(turn.timestamp)}
                     disabled={!canSeek}
-                    className={`flex-1 rounded-xl rounded-tl-sm border border-slate-200 bg-slate-50 p-3 text-left transition ${
-                      canSeek ? "cursor-pointer hover:border-navy-300 hover:bg-navy-50" : "cursor-default"
-                    }`}
+                    className={`bubble flex-1 ${canSeek ? "bubble-clickable cursor-pointer" : "cursor-default"}`}
                     title={canSeek ? "클릭하면 영상이 해당 시점으로 이동합니다" : undefined}
                   >
                     <div className="mb-1 flex flex-wrap items-center gap-2">

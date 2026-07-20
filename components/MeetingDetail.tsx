@@ -12,7 +12,7 @@ import {
 } from "@/lib/utils";
 import { UNKNOWN_SPEAKER } from "@/lib/client-data";
 import ThreadView from "./ThreadView";
-import NetworkGraph from "./NetworkGraph";
+import NetworkView from "./NetworkView";
 import SpeakerAvatar from "./SpeakerAvatar";
 
 type Tab = "thread" | "network";
@@ -204,13 +204,7 @@ export default function MeetingDetail({
               canSeek={canSeek}
             />
           ) : (
-            <div className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
-              <p className="mb-2 text-xs text-slate-500">
-                노드 = 발언자(크기는 발언량), <span className="text-red-600">굵은 화살표 = 지시</span>,{" "}
-                <span className="text-navy-500">가는 화살표 = 답변·보고</span>
-              </p>
-              <NetworkGraph nodes={network.nodes} edges={network.edges} speakers={speakers} />
-            </div>
+            <NetworkView nodes={network.nodes} edges={network.edges} speakers={speakers} />
           )}
 
           {meeting.directives.length > 0 && (

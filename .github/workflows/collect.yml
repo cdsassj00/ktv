@@ -37,7 +37,18 @@ jobs:
       - name: 파이프라인 실행
         env:
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+          # LLM 공급자: 아래 셋 중 쓰는 것 하나만 Secrets에 등록하면 됨
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          # 공급자·모델 선택(선택): 리포 Settings → Secrets and variables → Actions → Variables 탭
+          LLM_PROVIDER: ${{ vars.LLM_PROVIDER }}
+          LLM_MODEL_MAIN: ${{ vars.LLM_MODEL_MAIN }}
+          LLM_MODEL_LIGHT: ${{ vars.LLM_MODEL_LIGHT }}
+          # Cloudflare R2 아카이브(선택): 등록 시 자막·요약 JSON을 R2에 미러링
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          R2_BUCKET: ${{ vars.R2_BUCKET }}
           SINCE: ${{ inputs.since }}
         run: npm run pipeline
 

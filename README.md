@@ -32,29 +32,63 @@ npm run build # 정적 생성 (data/*.json 기반 SSG)
 ## 수집·요약 파이프라인
 
 ```bash
-export YOUTUBE_API_KEY=...    # GCP YouTube Data API v3
-export ANTHROPIC_API_KEY=...  # Claude 요약용
+export YOUTUBE_API_KEY=...     # GCP YouTube Data API v3
+export ANTHROPIC_API_KEY=...   # (기본 공급자) 또는 OPENROUTER_API_KEY / OPENAI_API_KEY
 
 npm run pipeline              # 수집 → 자막 → 요약 한 번에
 # 또는 단계별
 npm run fetch:videos          # 채널 업로드 목록 → data/videos-queue.json
 npm run fetch:transcripts     # 한국어 자막 → data/transcripts/*.json
-npm run summarize             # Claude map-reduce → data/meetings/*.json
+npm run summarize             # LLM map-reduce → data/meetings/*.json
 ```
 
 - 쿼터: `search.list`를 쓰지 않고 uploads 재생목록 순회로 **일 수십 unit** 수준.
-- 요약 모델: 기본 `claude-sonnet-5` (`ANTHROPIC_MODEL`로 변경 가능).
 - 유용한 환경변수: `SINCE=YYYY-MM-DD`(이후 영상만), `MAX_PAGES`(순회 페이지 수), `MAX_MEETINGS`(1회 요약 처리 수).
 - 지시-이행 연결: 새 회의 요약 후 기존 회의의 미결 지시와 자동 대조해 `followUps`에
   `inferred: true`(추정 연결)로 기록합니다.
 
+### LLM 공급자·모델 선택 (`scripts/llm.ts`)
+
+작업 경중에 따라 모델을 2단계로 나눠 씁니다 — **light**(청크 발언 분리, 지시 매칭)와
+**main**(회의 통합 요약). 공급자는 환경변수로 선택합니다:
+
+| `LLM_PROVIDER` | 필요한 키 | 기본 main | 기본 light |
+|---|---|---|---|
+| `anthropic` (기본) | `ANTHROPIC_API_KEY` | claude-sonnet-5 | claude-haiku-4-5 |
+| `openrouter` | `OPENROUTER_API_KEY` | anthropic/claude-sonnet-4.5 | openai/gpt-5-mini |
+| `openai` | `OPENAI_API_KEY` | gpt-5 | gpt-5-mini |
+
+`LLM_MODEL_MAIN` / `LLM_MODEL_LIGHT`로 어떤 모델이든 직접 지정할 수 있습니다.
+OpenRouter를 쓰면 한 키로 Claude·GPT·Gemini 등 모델을 자유롭게 골라 쓸 수 있습니다.
+(모델 ID는 시점에 따라 바뀌니 [openrouter.ai/models](https://openrouter.ai/models)에서 확인 후 지정 권장)
+
 ## 자동화 (GitHub Actions)
 
 `.github/workflows/collect.yml` — 화요일(국무회의 당일) 오후 KST 집중 폴링 + 매일 1회 수집 후
-`data/meetings/*.json`을 커밋합니다. 리포 **Secrets**에 등록 필요:
+`data/meetings/*.json`을 커밋합니다.
 
-- `YOUTUBE_API_KEY`
-- `ANTHROPIC_API_KEY`
+### Secrets 등록 위치 (처음이라면)
+
+1. GitHub에서 리포 페이지 열기 → 상단 **Settings** 탭
+2. 왼쪽 메뉴 **Secrets and variables → Actions**
+3. **New repository secret** 버튼 → Name/Value 입력
+   - `YOUTUBE_API_KEY` (필수)
+   - `ANTHROPIC_API_KEY` 또는 `OPENROUTER_API_KEY` 또는 `OPENAI_API_KEY` (쓰는 것 하나만)
+   - `CLOUDFLARE_ACCOUNT_ID`, `CLOUDFLARE_API_TOKEN` (선택 — R2 아카이브 사용 시)
+4. (선택) 같은 화면의 **Variables** 탭에 `LLM_PROVIDER`, `LLM_MODEL_MAIN`, `LLM_MODEL_LIGHT`,
+   `R2_BUCKET` 등록
+5. **Actions** 탭 → "회의 수집·요약 파이프라인" → **Run workflow**로 수동 첫 실행
+
+### Cloudflare R2 아카이브 (선택)
+
+파이프라인 마지막 단계에서 수집 결과를 R2 버킷에 미러링합니다 (`scripts/upload-r2.ts`):
+
+- `meetings/*.json`, `speakers.json` — git 원본의 백업 미러
+- `transcripts/*.json` — **git에는 커밋되지 않는 자막 원문의 영구 보관소** (요약 재생성·모델 교체 시 재사용)
+
+설정: Cloudflare 대시보드 → R2 → 버킷 생성(기본 이름 `opencabinet-data`) →
+**R2 API 토큰**(Object Read & Write) 발급 → 위 Secrets에 계정 ID와 토큰 등록.
+미설정 시 이 단계는 자동으로 건너뜁니다.
 
 Vercel을 리포에 연결해 두면 커밋 → 자동 재배포로 사이트가 갱신됩니다.
 
