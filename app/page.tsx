@@ -1,156 +1,290 @@
 import Link from "next/link";
-import MeetingCard from "@/components/MeetingCard";
 import CountUp from "@/components/CountUp";
+import DirectiveFlow from "@/components/DirectiveFlow";
+import DotNav from "@/components/DotNav";
+import ParticleGlobe from "@/components/ParticleGlobe";
 import Reveal from "@/components/Reveal";
+import ScrollProgress from "@/components/ScrollProgress";
+import SpeakerAvatar from "@/components/SpeakerAvatar";
+import ThreadScrub from "@/components/ThreadScrub";
+import NetworkView from "@/components/NetworkView";
 import { IconAlert } from "@/components/icons";
-import { getAllAiDataPolicy, getAllDirectives, getMeetings } from "@/lib/data";
-import { formatDate, formatTime, MEETING_TYPE_LABEL } from "@/lib/utils";
+import {
+  buildNetwork,
+  getAllAiDataPolicy,
+  getAllDirectives,
+  getMeetings,
+  getSpeakers,
+  UNKNOWN_SPEAKER,
+} from "@/lib/data";
+import { formatDate, formatTime, MEETING_TYPE_LABEL, youtubeUrlAt } from "@/lib/utils";
 
-const FILTERS = [
-  { key: "all", label: "전체" },
-  { key: "cabinet", label: "국무회의" },
-  { key: "briefing", label: "국민업무보고" },
-] as const;
+const SECTIONS = [
+  { id: "hero", label: "홈" },
+  { id: "meetings", label: "회의" },
+  { id: "thread", label: "발언 스레드" },
+  { id: "directives", label: "지시-이행" },
+  { id: "network", label: "네트워크" },
+  { id: "ai-policy", label: "AI·데이터" },
+  { id: "speakers", label: "발언자" },
+];
 
-export default async function HomePage({
-  searchParams,
-}: {
-  searchParams: Promise<{ type?: string }>;
-}) {
-  const { type = "all" } = await searchParams;
-  const all = getMeetings();
-  const meetings = type === "all" ? all : all.filter((m) => m.type === type);
-  const latest = all[0];
-  const hasSample = all.some((m) => m.sample);
+export default function HomePage() {
+  const meetings = getMeetings();
+  const speakers = getSpeakers();
+  const latest = meetings[0];
+  const hasSample = meetings.some((m) => m.sample);
 
   const directives = getAllDirectives();
   const reportedCount = directives.filter(({ directive }) => directive.status === "reported").length;
-  const threadCount = all.reduce((n, m) => n + m.exchanges.length, 0);
-  const aiCount = getAllAiDataPolicy().length;
+  const threadCount = meetings.reduce((n, m) => n + m.exchanges.length, 0);
+  const aiItems = getAllAiDataPolicy();
+  const network = buildNetwork();
+
+  const featuredExchange =
+    latest?.exchanges.reduce((a, b) => (b.turns.length > a.turns.length ? b : a), latest.exchanges[0]);
 
   return (
     <>
-      {/* ── 풀블리드 블랙 히어로 ── */}
-      <section className="bg-navy-950 px-5 pb-16 pt-20 text-center text-white sm:pb-20 sm:pt-24">
-        <p className="text-[13px] font-semibold text-[rgba(245,245,247,0.6)]">
-          KTV 공개 국무회의 아카이브
-        </p>
-        <h1 className="mx-auto mt-3 max-w-3xl text-[42px] font-semibold leading-[1.08] tracking-[-0.025em] sm:text-[60px]">
-          <span className="ln">
-            <span>국무회의, 대화로 읽다.</span>
-          </span>
-        </h1>
-        <p className="on-dark-mut mx-auto mt-5 max-w-xl text-[17px] leading-relaxed sm:text-[19px]">
-          발언을 대화 단위로 재구성하고, 지시가 다음 회의에서 어떻게 이행되는지까지 추적합니다.
-          모든 요약에는 영상 타임스탬프가 붙습니다.
-        </p>
-        <div className="mt-7 flex flex-wrap items-center justify-center gap-5">
-          {latest && (
-            <Link href={`/meetings/${latest.id}`} className="btn-pill">
-              최근 회의 보기
-            </Link>
-          )}
-          <Link href="/directives" className="text-[15px] font-medium text-accent-400 hover:underline">
-            지시-이행 트래커 &rsaquo;
-          </Link>
-        </div>
+      <ScrollProgress />
+      <DotNav sections={SECTIONS} />
 
-        <div className="mx-auto mt-16 grid max-w-3xl grid-cols-2 gap-y-8 sm:grid-cols-4">
-          {[
-            { label: "수집 회의", value: all.length, unit: "건" },
-            { label: "발언 스레드", value: threadCount, unit: "개" },
-            { label: "추적 중 지시", value: directives.length, unit: `건 · 이행 ${reportedCount}` },
-            { label: "AI·데이터 발언", value: aiCount, unit: "건" },
-          ].map((s) => (
-            <div key={s.label} className="flex flex-col items-center gap-1">
-              <span className="text-[34px] font-semibold leading-none tracking-tight">
-                <CountUp value={s.value} />
+      {/* ══ 1. 히어로 — 3D 파티클 글로브 (스크롤 스크럽 회전) ══ */}
+      <section id="hero" className="relative flex min-h-[100svh] flex-col items-center justify-center overflow-hidden px-5 text-center">
+        <ParticleGlobe className="absolute inset-0 size-full opacity-70" />
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_30%,#000_78%)]" />
+        <div className="relative">
+          <p className="text-[13px] font-semibold tracking-wide text-mut">KTV 공개 국무회의 아카이브</p>
+          <h1 className="mx-auto mt-4 max-w-4xl text-[44px] font-semibold leading-[1.06] tracking-[-0.03em] sm:text-[68px]">
+            <span className="ln">
+              <span>국무회의,</span>
+            </span>
+            <span className="ln">
+              <span>대화로 읽다.</span>
+            </span>
+          </h1>
+          <p className="on-dark-mut mx-auto mt-6 max-w-xl text-[17px] leading-relaxed sm:text-[19px]">
+            발언을 대화 단위로 재구성하고,
+            <br className="sm:hidden" /> 지시의 이행까지 추적합니다.
+          </p>
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-5">
+            <a href="#meetings" className="btn-pill">
+              살펴보기
+            </a>
+            {latest && (
+              <Link href={`/meetings/${latest.id}`} className="btn-link">
+                최근 회의 바로가기 &rsaquo;
+              </Link>
+            )}
+          </div>
+        </div>
+        <a href="#meetings" className="scroll-cue absolute bottom-8" aria-label="아래로 스크롤">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="size-6 text-mut">
+            <path d="m6 9 6 6 6-6" />
+          </svg>
+        </a>
+      </section>
+
+      {/* ══ 2. 회의 — 스티키 스택 카드 ══ */}
+      <section id="meetings" className="px-5 py-24">
+        <div className="mx-auto max-w-3xl">
+          <Reveal>
+            <p className="overline-label">회의 아카이브</p>
+            <h2 className="h-judge mt-1.5">
+              매주의 공개회의가
+              <br />
+              차곡차곡 쌓입니다.
+            </h2>
+            <div className="mt-4 flex gap-8 text-[15px] text-mut">
+              <span>
+                <strong className="text-[26px] font-semibold text-ink"><CountUp value={meetings.length} /></strong> 회의
               </span>
-              <span className="on-dark-mut text-[13px]">
-                {s.label} · {s.unit}
+              <span>
+                <strong className="text-[26px] font-semibold text-ink"><CountUp value={threadCount} /></strong> 스레드
+              </span>
+              <span>
+                <strong className="text-[26px] font-semibold text-ink"><CountUp value={aiItems.length} /></strong> AI·데이터 발언
               </span>
             </div>
-          ))}
+          </Reveal>
+
+          {hasSample && (
+            <div className="mt-8 flex items-start gap-2.5 rounded-2xl bg-[rgba(255,214,10,0.1)] px-5 py-3.5 text-[13.5px] text-[#ffd60a]/90">
+              <IconAlert className="mt-0.5 size-4" />
+              <p>
+                아래 회의는 <strong>데모용 샘플 데이터</strong>입니다. 수집 파이프라인 실행 시 실제
+                KTV 회의로 대체됩니다.
+              </p>
+            </div>
+          )}
+
+          {/* 스티키 스택 — 스크롤하면 카드가 겹겹이 쌓임 */}
+          <div className="mt-10 space-y-6">
+            {meetings.map((m, i) => (
+              <Link
+                key={m.id}
+                href={`/meetings/${m.id}`}
+                className="panel group sticky block overflow-hidden p-7 shadow-lift transition hover:bg-tint sm:p-8"
+                style={{ top: `${88 + i * 14}px` }}
+              >
+                <p className="text-[12.5px] font-medium text-mut">
+                  {MEETING_TYPE_LABEL[m.type]} · {formatDate(m.date)}
+                </p>
+                <h3 className="mt-1.5 text-[24px] font-semibold tracking-tight text-ink group-hover:text-accent-400">
+                  {m.title}
+                </h3>
+                <p className="mt-2 max-w-2xl text-[15px] leading-relaxed text-body">
+                  {m.summary.oneLine}
+                </p>
+                <div className="mt-4 flex flex-wrap items-center gap-3 text-[13px] font-medium text-mut">
+                  <span>안건 {m.summary.agenda.length}</span>
+                  <span className="text-tint2">·</span>
+                  <span>스레드 {m.exchanges.length}</span>
+                  <span className="text-tint2">·</span>
+                  <span className={m.directives.length > 0 ? "text-[#ff6961]" : ""}>
+                    지시 {m.directives.length}
+                  </span>
+                  {m.aiDataPolicy.length > 0 && (
+                    <span className="chip ml-auto bg-[rgba(10,132,255,0.16)] text-[#64b5ff]">
+                      AI·데이터 {m.aiDataPolicy.length}건
+                    </span>
+                  )}
+                </div>
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* ── 최근 회의 하이라이트 (화이트 섹션) ── */}
-      {latest && (
-        <section className="bg-surf px-5 py-14">
-          <div className="mx-auto max-w-6xl">
-            {hasSample && (
-              <div className="mb-8 flex items-start gap-2.5 rounded-2xl bg-[#fff8e6] px-5 py-3.5 text-[14px] text-[#8a6116]">
-                <IconAlert className="mt-0.5 size-4" />
-                <p>
-                  현재 표시되는 회의는 <strong>데모용 샘플 데이터</strong>입니다. 실제 발언·회의
-                  내용이 아니며, 수집 파이프라인(YouTube API + LLM 요약)을 실행하면 실제 KTV 회의
-                  데이터로 대체됩니다.
-                </p>
-              </div>
-            )}
-            <Reveal>
-              <Link
-                href={`/meetings/${latest.id}`}
-                className="group flex flex-col gap-6 rounded-2xl bg-tint p-7 transition hover:bg-tint2 sm:flex-row sm:items-center sm:p-8"
-              >
-                <div className="flex-1">
-                  <p className="overline-label">
-                    최근 회의 · {formatDate(latest.date)} · {MEETING_TYPE_LABEL[latest.type]}
-                  </p>
-                  <h2 className="mt-1.5 text-2xl font-semibold tracking-tight text-ink group-hover:text-accent-500">
-                    {latest.title}
-                  </h2>
-                  <p className="mt-2 max-w-2xl text-[15px] leading-relaxed text-body">
-                    {latest.summary.oneLine}
-                  </p>
-                  <div className="mt-4 flex flex-wrap gap-x-4 gap-y-1 text-[13px] text-mut">
-                    {latest.summary.agenda.slice(0, 3).map((a, i) => (
-                      <span key={i} className="flex items-baseline gap-1.5">
-                        <span className="font-semibold text-accent-500">{i + 1}</span>
-                        {a.title}
-                        <span className="font-mono text-[11px] text-faint">
-                          {formatTime(a.timestamp)}
-                        </span>
-                      </span>
-                    ))}
-                  </div>
-                </div>
-                <span className="btn-link shrink-0">자세히 보기 &rsaquo;</span>
-              </Link>
-            </Reveal>
-          </div>
+      {/* ══ 3. 발언 스레드 — 스크롤 스크럽 ══ */}
+      {featuredExchange && latest && (
+        <section id="thread" className="border-t border-hair/40">
+          <ThreadScrub
+            exchange={featuredExchange}
+            speakers={speakers}
+            meetingHref={`/meetings/${latest.id}`}
+          />
         </section>
       )}
 
-      {/* ── 타임라인 (라이트 그레이 섹션) ── */}
-      <section className="px-5 py-14">
-        <div className="mx-auto max-w-6xl space-y-6">
-          <div className="flex flex-wrap items-end justify-between gap-3">
-            <h2 className="h-judge">회의 타임라인</h2>
-            <div className="flex gap-1 rounded-full bg-tint2 p-1">
-              {FILTERS.map((f) => (
-                <Link
-                  key={f.key}
-                  href={f.key === "all" ? "/" : `/?type=${f.key}`}
-                  className={`rounded-full px-4 py-1.5 text-[13px] font-medium transition ${
-                    type === f.key ? "bg-white text-ink shadow-sm" : "text-mut hover:text-ink"
-                  }`}
-                >
-                  {f.label}
-                </Link>
-              ))}
-            </div>
-          </div>
+      {/* ══ 4. 지시-이행 — 셀프 드로잉 라인 ══ */}
+      <section id="directives" className="border-t border-hair/40 px-5 py-24">
+        <div className="mx-auto mb-12 max-w-2xl">
+          <Reveal>
+            <p className="overline-label">지시-이행 트래커</p>
+            <h2 className="h-judge mt-1.5">
+              지시는 사라지지 않고
+              <br />
+              다음 회의로 이어집니다.
+            </h2>
+            <p className="mt-3 text-[15px] leading-relaxed text-mut">
+              {directives.length}건의 지시를 추적 중이며, 그중 {reportedCount}건의 후속 보고가
+              연결됐습니다. 자동 연결은 &ldquo;추정&rdquo;으로 표시됩니다.
+            </p>
+          </Reveal>
+        </div>
+        <DirectiveFlow items={directives} speakers={speakers} />
+        <div className="mt-10 text-center">
+          <Link href="/directives" className="btn-link">
+            전체 지시 이력 보기 &rsaquo;
+          </Link>
+        </div>
+      </section>
 
-          {meetings.length === 0 ? (
-            <p className="panel p-10 text-center text-mut">해당 유형의 회의가 아직 없습니다.</p>
-          ) : (
-            <Reveal stagger className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-              {meetings.map((m) => (
-                <MeetingCard key={m.id} meeting={m} />
-              ))}
-            </Reveal>
-          )}
+      {/* ══ 5. 3D 발언 네트워크 ══ */}
+      <section id="network" className="border-t border-hair/40 px-5 py-24">
+        <div className="mx-auto max-w-5xl">
+          <Reveal>
+            <p className="overline-label">발언 네트워크</p>
+            <h2 className="h-judge mt-1.5">회의의 역학을 3D로.</h2>
+            <p className="mt-3 max-w-2xl text-[15px] leading-relaxed text-mut">
+              노드는 발언자(크기=발언량), <span className="text-[#ff6961]">빨간 파티클 선</span>은
+              지시, <span className="text-[#64b5ff]">파란 선</span>은 답변·보고입니다. 드래그로
+              회전, 노드 클릭 시 발언자 페이지로 이동합니다.
+            </p>
+          </Reveal>
+          <div className="mt-8">
+            <NetworkView nodes={network.nodes} edges={network.edges} speakers={speakers} />
+          </div>
+        </div>
+      </section>
+
+      {/* ══ 6. AI·데이터 정책 ══ */}
+      <section id="ai-policy" className="border-t border-hair/40 px-5 py-24">
+        <div className="mx-auto max-w-3xl">
+          <Reveal>
+            <p className="overline-label">AI·데이터 정책</p>
+            <h2 className="h-judge mt-1.5">
+              AI·데이터 발언만
+              <br />
+              골라서 봅니다.
+            </h2>
+          </Reveal>
+          <Reveal stagger className="mt-8 space-y-3">
+            {aiItems.slice(0, 4).map(({ meeting, item }, i) => {
+              const sp = speakers[item.speakerId] ?? UNKNOWN_SPEAKER;
+              return (
+                <div key={i} className="panel flex gap-3.5 p-5">
+                  <SpeakerAvatar speaker={sp} size="md" />
+                  <div className="min-w-0 flex-1">
+                    <div className="flex flex-wrap items-center gap-2">
+                      <span className="text-sm font-semibold text-ink">{sp.name}</span>
+                      <span className="text-xs text-mut">{item.topic}</span>
+                      {meeting.videoId ? (
+                        <a
+                          href={youtubeUrlAt(meeting.videoId, item.timestamp)}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="ml-auto font-mono text-[11px] text-accent-400 hover:underline"
+                        >
+                          {formatTime(item.timestamp)}
+                        </a>
+                      ) : (
+                        <span className="ml-auto font-mono text-[11px] text-faint">
+                          {formatTime(item.timestamp)}
+                        </span>
+                      )}
+                    </div>
+                    <p className="mt-1 text-sm leading-relaxed text-body">{item.summary}</p>
+                    <div className="mt-1.5 flex flex-wrap gap-1.5">
+                      {item.tags.map((t) => (
+                        <span key={t} className="rounded-full bg-tint2 px-2 py-0.5 text-[11px] text-mut">
+                          #{t}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </Reveal>
+          <div className="mt-8 text-center">
+            <Link href="/ai-policy" className="btn-link">
+              태그 필터·추이 차트 포함 전체 보기 &rsaquo;
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ══ 7. 발언자 ══ */}
+      <section id="speakers" className="border-t border-hair/40 px-5 py-24">
+        <div className="mx-auto max-w-4xl text-center">
+          <Reveal>
+            <p className="overline-label">발언자</p>
+            <h2 className="h-judge mt-1.5">국무위원 {Object.keys(speakers).length}인</h2>
+          </Reveal>
+          <Reveal stagger className="mt-10 flex flex-wrap items-start justify-center gap-x-6 gap-y-7">
+            {Object.entries(speakers).map(([id, sp]) => (
+              <Link key={id} href={`/speakers/${id}`} className="group flex w-[76px] flex-col items-center gap-2">
+                <SpeakerAvatar speaker={sp} size="lg" />
+                <span className="text-[12px] font-medium text-mut group-hover:text-ink">{sp.name}</span>
+              </Link>
+            ))}
+          </Reveal>
+          <p className="mt-10 text-xs leading-relaxed text-faint">
+            요약은 KTV 영상 자막 기반 AI 생성물이며 오류가 있을 수 있습니다. 모든 항목의
+            타임스탬프로 원문 영상을 직접 확인하세요.
+          </p>
         </div>
       </section>
     </>

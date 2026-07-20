@@ -12,8 +12,8 @@ const EDGE_STYLE: Record<
   NetworkEdge["kind"],
   { stroke: string; width: number; dash?: string; marker: string }
 > = {
-  directive: { stroke: "#d70015", width: 2.5, marker: "arrow-red" },
-  reply: { stroke: "#0066cc", width: 1.5, marker: "arrow-navy" },
+  directive: { stroke: "#ff453a", width: 2.5, marker: "arrow-red" },
+  reply: { stroke: "#0a84ff", width: 1.5, marker: "arrow-navy" },
   mention: { stroke: "#86868b", width: 1, dash: "4 3", marker: "arrow-gray" },
 };
 
@@ -32,7 +32,7 @@ export default function NetworkGraph({
   speakers: SpeakerMap;
 }) {
   if (nodes.length === 0) {
-    return <p className="p-4 text-sm text-slate-500">네트워크를 그릴 발언 데이터가 없습니다.</p>;
+    return <p className="p-4 text-sm text-mut">네트워크를 그릴 발언 데이터가 없습니다.</p>;
   }
 
   const center = nodes.find((n) => n.speakerId === "president");
@@ -57,8 +57,8 @@ export default function NetworkGraph({
       <defs>
         {(
           [
-            ["arrow-red", "#d70015"],
-            ["arrow-navy", "#0066cc"],
+            ["arrow-red", "#ff453a"],
+            ["arrow-navy", "#0a84ff"],
             ["arrow-gray", "#86868b"],
           ] as const
         ).map(([id, color]) => (
@@ -134,7 +134,7 @@ export default function NetworkGraph({
         return (
           <a key={n.speakerId} href={`/speakers/${n.speakerId}`}>
             <g className="cursor-pointer">
-              <circle cx={p.x} cy={p.y} r={r} fill="#1d1d1f" stroke="#fff" strokeWidth="2.5" />
+              <circle cx={p.x} cy={p.y} r={r} fill="#2c2c2e" stroke="#48484a" strokeWidth="2.5" />
               {sp.photo ? (
                 <image
                   href={sp.photo}
@@ -164,11 +164,11 @@ export default function NetworkGraph({
                 textAnchor="middle"
                 fontSize="12"
                 fontWeight="600"
-                fill="#1d1d1f"
+                fill="#f5f5f7"
               >
                 {sp.name}
               </text>
-              <text x={p.x} y={p.y + r + 27} textAnchor="middle" fontSize="10" fill="#6e6e73">
+              <text x={p.x} y={p.y + r + 27} textAnchor="middle" fontSize="10" fill="#98989d">
                 {sp.role.length > 14 ? sp.org : sp.role}
               </text>
             </g>

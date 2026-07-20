@@ -33,7 +33,7 @@ export default function ThreadView({
   canSeek: boolean;
 }) {
   if (exchanges.length === 0) {
-    return <p className="text-sm text-slate-500">재구성된 발언 스레드가 없습니다.</p>;
+    return <p className="text-sm text-mut">재구성된 발언 스레드가 없습니다.</p>;
   }
   return (
     <div className="space-y-6">
@@ -57,7 +57,7 @@ export default function ThreadView({
                   {depth > 0 && (
                     <span
                       aria-hidden
-                      className="absolute -left-4 top-0 h-5 w-3 rounded-bl-lg border-b-2 border-l-2 border-slate-300"
+                      className="absolute -left-4 top-0 h-5 w-3 rounded-bl-lg border-b-2 border-l-2 border-hair"
                     />
                   )}
                   <SpeakerAvatar speaker={speaker} size="md" />
@@ -70,17 +70,17 @@ export default function ThreadView({
                   >
                     <div className="mb-1 flex flex-wrap items-center gap-2">
                       <span className="text-sm font-semibold text-ink">{speaker.name}</span>
-                      <span className="text-xs text-slate-500">{speaker.role}</span>
+                      <span className="text-xs text-mut">{speaker.role}</span>
                       <span className={`rounded-full border px-2 py-0.5 text-[11px] font-medium ${kind.className}`}>
                         {kind.label}
                       </span>
-                      <span className="ml-auto font-mono text-[11px] text-slate-400">
+                      <span className="ml-auto font-mono text-[11px] text-faint">
                         ▶ {formatTime(turn.timestamp)}
                       </span>
                     </div>
-                    <p className="text-sm text-slate-700">{turn.summary}</p>
+                    <p className="text-sm text-body">{turn.summary}</p>
                     {turn.quote && (
-                      <p className="mt-1.5 border-l-2 border-accent-400 pl-2 text-sm italic text-slate-600">
+                      <p className="mt-1.5 border-l-2 border-accent-400 pl-2 text-sm italic text-body">
                         “{turn.quote}”
                       </p>
                     )}

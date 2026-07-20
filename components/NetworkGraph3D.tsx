@@ -114,6 +114,15 @@ export default function NetworkGraph3D({
         graph.d3Force("charge")?.strength(-180);
         graph.d3Force("link")?.distance(60);
         graph.cameraPosition({ z: 230 });
+        // 사용자가 잡기 전까지 천천히 자동 회전 (reduced-motion 시 정지)
+        const controls = graph.controls();
+        if (controls && !reduce) {
+          controls.autoRotate = true;
+          controls.autoRotateSpeed = 0.6;
+          controls.addEventListener?.("start", () => {
+            controls.autoRotate = false;
+          });
+        }
         setStatus("ready");
       } catch {
         setStatus("fallback");

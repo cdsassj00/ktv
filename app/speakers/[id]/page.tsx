@@ -29,7 +29,7 @@ export default async function SpeakerPage({ params }: { params: Promise<{ id: st
 
   return (
     <div className="mx-auto max-w-5xl space-y-8 px-5 py-10">
-      <header className="flex flex-col items-center gap-4 rounded-3xl bg-navy-950 p-9 text-white sm:flex-row sm:items-center">
+      <header className="flex flex-col items-center gap-4 panel p-9 text-ink sm:flex-row sm:items-center">
         <SpeakerAvatar speaker={speaker} size="xl" />
         <div className="text-center sm:text-left">
           <h1 className="text-[28px] font-semibold tracking-tight">{speaker.name}</h1>
@@ -50,13 +50,13 @@ export default async function SpeakerPage({ params }: { params: Promise<{ id: st
       <section className="space-y-4">
         <h2 className="h-judge">회의별 발언 이력</h2>
         {history.length === 0 ? (
-          <p className="rounded-lg border border-slate-200 bg-white p-8 text-center text-slate-500">
+          <p className="panel p-8 text-center text-mut">
             아직 기록된 발언이 없습니다.
           </p>
         ) : (
           history.map(({ meeting, turns }) => (
             <div key={meeting.id} className="panel p-5">
-              <Link href={`/meetings/${meeting.id}`} className="font-semibold text-navy-800 hover:underline">
+              <Link href={`/meetings/${meeting.id}`} className="font-semibold text-ink hover:underline">
                 {formatDate(meeting.date)} · {meeting.title}
               </Link>
               <ul className="mt-3 space-y-2">
@@ -68,8 +68,8 @@ export default async function SpeakerPage({ params }: { params: Promise<{ id: st
                         {kind.label}
                       </span>
                       <div>
-                        <Link href={`/meetings/${meeting.id}#${t.exchangeId}`} className="text-slate-700 hover:underline">
-                          <span className="text-xs text-slate-400">[{t.topic}]</span> {t.summary}
+                        <Link href={`/meetings/${meeting.id}#${t.exchangeId}`} className="text-body hover:underline">
+                          <span className="text-xs text-faint">[{t.topic}]</span> {t.summary}
                         </Link>
                         {meeting.videoId ? (
                           <a
@@ -81,7 +81,7 @@ export default async function SpeakerPage({ params }: { params: Promise<{ id: st
                             ▶ {formatTime(t.timestamp)}
                           </a>
                         ) : (
-                          <span className="ml-2 font-mono text-xs text-slate-400">
+                          <span className="ml-2 font-mono text-xs text-faint">
                             ▶ {formatTime(t.timestamp)}
                           </span>
                         )}

@@ -60,7 +60,7 @@ export default async function AiPolicyPage({
       <header>
         <p className="overline-label">AI &amp; Data Policy</p>
         <h1 className="h-judge mt-1">AI·데이터 정책 대시보드</h1>
-        <p className="mt-2 max-w-2xl text-sm leading-relaxed text-slate-600">
+        <p className="mt-2 max-w-2xl text-sm leading-relaxed text-body">
           모든 회의에서 추출한 AI·데이터 정책 관련 발언을 모아봅니다. 각 발언의 타임스탬프로
           원문 영상을 바로 확인할 수 있습니다.
         </p>
@@ -75,7 +75,7 @@ export default async function AiPolicyPage({
         <Link
           href="/ai-policy"
           className={`rounded-full border px-3.5 py-1.5 text-[13px] font-medium transition ${
-            !tag ? "border-transparent bg-ink text-white" : "border-transparent bg-white text-mut shadow-card hover:text-ink"
+            !tag ? "border-transparent bg-ink text-paper" : "border-transparent bg-surf text-mut hover:text-ink"
           }`}
         >
           전체 ({all.length})
@@ -85,7 +85,7 @@ export default async function AiPolicyPage({
             key={t.tag}
             href={`/ai-policy?tag=${encodeURIComponent(t.tag)}`}
             className={`rounded-full border px-3.5 py-1.5 text-[13px] font-medium transition ${
-              tag === t.tag ? "border-transparent bg-ink text-white" : "border-transparent bg-white text-mut shadow-card hover:text-ink"
+              tag === t.tag ? "border-transparent bg-ink text-paper" : "border-transparent bg-surf text-mut hover:text-ink"
             }`}
           >
             #{t.tag} ({t.count})
@@ -94,7 +94,7 @@ export default async function AiPolicyPage({
       </div>
 
       {items.length === 0 ? (
-        <p className="rounded-lg border border-slate-200 bg-white p-8 text-center text-slate-500">
+        <p className="panel p-8 text-center text-mut">
           해당 태그의 발언이 없습니다.
         </p>
       ) : (
@@ -108,20 +108,20 @@ export default async function AiPolicyPage({
                 </Link>
                 <div className="min-w-0 flex-1">
                   <div className="flex flex-wrap items-center gap-2">
-                    <Link href={`/speakers/${item.speakerId}`} className="font-semibold text-navy-900 hover:underline">
+                    <Link href={`/speakers/${item.speakerId}`} className="font-semibold text-ink hover:underline">
                       {sp.name}
                     </Link>
-                    <span className="text-xs text-slate-500">{sp.role}</span>
-                    <span className="rounded bg-navy-100 px-1.5 py-0.5 text-xs text-navy-700">{item.topic}</span>
+                    <span className="text-xs text-mut">{sp.role}</span>
+                    <span className="rounded bg-navy-100 px-1.5 py-0.5 text-xs text-body">{item.topic}</span>
                   </div>
-                  <p className="mt-1.5 text-sm text-slate-700">{item.summary}</p>
+                  <p className="mt-1.5 text-sm text-body">{item.summary}</p>
                   {item.quote && (
-                    <p className="mt-1.5 border-l-2 border-accent-500 pl-2 text-sm italic text-slate-600">
+                    <p className="mt-1.5 border-l-2 border-accent-500 pl-2 text-sm italic text-body">
                       “{item.quote}”
                     </p>
                   )}
-                  <div className="mt-2 flex flex-wrap items-center gap-2 text-xs text-slate-500">
-                    <Link href={`/meetings/${meeting.id}`} className="text-navy-600 hover:underline">
+                  <div className="mt-2 flex flex-wrap items-center gap-2 text-xs text-mut">
+                    <Link href={`/meetings/${meeting.id}`} className="text-body hover:underline">
                       {formatDate(meeting.date)} · {meeting.title}
                     </Link>
                     {meeting.videoId ? (
@@ -137,7 +137,7 @@ export default async function AiPolicyPage({
                       <span className="font-mono">▶ {formatTime(item.timestamp)}</span>
                     )}
                     {item.tags.map((t) => (
-                      <Link key={t} href={`/ai-policy?tag=${encodeURIComponent(t)}`} className="rounded-full bg-slate-100 px-2 py-0.5 hover:bg-slate-200">
+                      <Link key={t} href={`/ai-policy?tag=${encodeURIComponent(t)}`} className="rounded-full bg-tint2 px-2 py-0.5 hover:bg-hair2">
                         #{t}
                       </Link>
                     ))}

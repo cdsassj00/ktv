@@ -22,20 +22,20 @@ export const MEETING_TYPE_LABEL: Record<string, string> = {
   other: "기타 회의",
 };
 
-/* Apple 시스템 컬러 틴트 칩 — 지시=레드, 보고=블루, 답변=그린, 질문=오렌지 (보더 없음) */
+/* Apple 다크 시스템 컬러 틴트 칩 — 지시=레드, 보고=블루, 답변=그린, 질문=오렌지 */
 export const TURN_KIND_STYLE: Record<string, { label: string; className: string }> = {
-  지시: { label: "지시", className: "border-transparent bg-[#ffebeb] text-[#d70015]" },
-  보고: { label: "보고", className: "border-transparent bg-[#e8f1ff] text-[#0066cc]" },
-  답변: { label: "답변", className: "border-transparent bg-[#e9f6ee] text-[#248a3d]" },
-  질문: { label: "질문", className: "border-transparent bg-[#fff3e0] text-[#b25000]" },
-  추가질문: { label: "추가질문", className: "border-transparent bg-[#fff3e0] text-[#b25000]" },
+  지시: { label: "지시", className: "border-transparent bg-[rgba(255,69,58,0.16)] text-[#ff6961]" },
+  보고: { label: "보고", className: "border-transparent bg-[rgba(10,132,255,0.16)] text-[#64b5ff]" },
+  답변: { label: "답변", className: "border-transparent bg-[rgba(48,209,88,0.14)] text-[#4cd964]" },
+  질문: { label: "질문", className: "border-transparent bg-[rgba(255,159,10,0.15)] text-[#ffb340]" },
+  추가질문: { label: "추가질문", className: "border-transparent bg-[rgba(255,159,10,0.15)] text-[#ffb340]" },
   발언: { label: "발언", className: "border-transparent bg-tint2 text-mut" },
 };
 
 export const DIRECTIVE_STATUS_LABEL: Record<string, { label: string; className: string }> = {
-  issued: { label: "지시됨", className: "border-transparent bg-[#ffebeb] text-[#d70015]" },
-  in_progress: { label: "진행 중", className: "border-transparent bg-[#fff3e0] text-[#b25000]" },
-  reported: { label: "후속보고 확인", className: "border-transparent bg-[#e9f6ee] text-[#248a3d]" },
+  issued: { label: "지시됨", className: "border-transparent bg-[rgba(255,69,58,0.16)] text-[#ff6961]" },
+  in_progress: { label: "진행 중", className: "border-transparent bg-[rgba(255,159,10,0.15)] text-[#ffb340]" },
+  reported: { label: "후속보고 확인", className: "border-transparent bg-[rgba(48,209,88,0.14)] text-[#4cd964]" },
 };
 
 /** YouTube 타임스탬프 딥링크 */
