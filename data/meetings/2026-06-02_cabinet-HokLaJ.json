@@ -396,8 +396,15 @@
       "content": "동일 사업장 안에서 동일 유형의 사고가 반복적으로 발생하는 사업장들을 추려 대통령에게 따로 직접 보고할 것",
       "timestamp": 724,
       "tags": ["산업안전", "산재예방"],
-      "status": "issued",
-      "followUps": []
+      "status": "reported",
+      "followUps": [
+        {
+          "meetingId": "2026-06-23-cabinet-27",
+          "exchangeId": "ex-06",
+          "summary": "추락·맨홀 질식 등 반복 산재 사업장 논의",
+          "inferred": true
+        }
+      ]
     },
     {
       "id": "dir-2026-06-02-02",
@@ -453,8 +460,15 @@
       "content": "복지 위기가구 조사 과정에서 빚 때문에 위기에 몰린 사람을 추가로 발굴할 방법을 연구하고, 개인 채무·불법 추심을 적극 확인해 관계기관과 연계할 것",
       "timestamp": 3060,
       "tags": ["복지", "자살예방"],
-      "status": "issued",
-      "followUps": []
+      "status": "reported",
+      "followUps": [
+        {
+          "meetingId": "2026-07-14-cabinet-30",
+          "exchangeId": "ex-04",
+          "summary": "경제적 위기자 자살 예방 대책 보고",
+          "inferred": true
+        }
+      ]
     },
     {
       "id": "dir-2026-06-02-07",

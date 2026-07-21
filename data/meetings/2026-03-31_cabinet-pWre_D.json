@@ -348,8 +348,15 @@
       "content": "전력 수요의 중장기 조정과 적절한 에너지 믹스 정책을 추진하되, 특히 재생에너지로의 전환에 각별히 속도를 낼 것",
       "timestamp": 513,
       "tags": ["에너지전환", "재생에너지"],
-      "status": "issued",
-      "followUps": []
+      "status": "reported",
+      "followUps": [
+        {
+          "meetingId": "2026-04-06-cabinet-14",
+          "exchangeId": "ex-06",
+          "summary": "국민주권정부 에너지 대전환 추진 계획 보고",
+          "inferred": true
+        }
+      ]
     },
     {
       "id": "dir-2026-03-31-06",

@@ -412,8 +412,15 @@
       "content": "취약계층과 수출 기업 지원을 위한 '전쟁 추경'을 신속하게 편성하고 국회 통과 후 빠르게 집행되도록 다각도로 노력할 것",
       "timestamp": 227,
       "tags": ["추경", "민생"],
-      "status": "issued",
-      "followUps": []
+      "status": "reported",
+      "followUps": [
+        {
+          "meetingId": "2026-03-24-cabinet-11",
+          "exchangeId": "ex-03",
+          "summary": "전쟁 추경 편성 방향 후속 논의",
+          "inferred": true
+        }
+      ]
     },
     {
       "id": "dir-2026-03-17-04",

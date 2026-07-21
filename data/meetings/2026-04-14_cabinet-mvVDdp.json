@@ -450,8 +450,15 @@
       "content": "순직 소방관 사고를 계기로 소방관 안전 매뉴얼을 다시 점검하고, 소방 로봇 도입 확대 등 화재진압 시스템 전반을 개선할 것",
       "timestamp": 844,
       "tags": ["소방안전", "재난대응"],
-      "status": "issued",
-      "followUps": []
+      "status": "reported",
+      "followUps": [
+        {
+          "meetingId": "2026-04-28-cabinet-18",
+          "exchangeId": "ex-05",
+          "summary": "인도·베트남 순방 후속조치와 협력 체계 보고",
+          "inferred": true
+        }
+      ]
     },
     {
       "id": "dir-2026-04-14-05",

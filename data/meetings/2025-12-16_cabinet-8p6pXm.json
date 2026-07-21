@@ -305,8 +305,15 @@
       "content": "협동조합·교육·문화예술·돌봄·의료·주거·기후에너지 등 다양한 분야에서 사회연대경제를 활성화할 방안을 각 부처가 충분히 연구하고 제도 정비·정책 발굴에 속도를 낼 것",
       "timestamp": 352,
       "tags": ["사회연대경제"],
-      "status": "issued",
-      "followUps": []
+      "status": "reported",
+      "followUps": [
+        {
+          "meetingId": "2026-06-30-cabinet-28",
+          "exchangeId": "ex-06",
+          "summary": "사회연대경제 발전 종합 계획 보고",
+          "inferred": true
+        }
+      ]
     },
     {
       "id": "dir-2025-12-16-03",
@@ -315,8 +322,15 @@
       "content": "공공서비스 위탁과 공공조달에서 수의계약 대신 사회적기업·협동조합을 우선 활용할 분야를 대대적으로 발굴하고, 일정 비율을 맡기도록 규정화하는 방안을 기본법 제정 과정에서 검토할 것",
       "timestamp": 1153,
       "tags": ["사회연대경제", "공공조달"],
-      "status": "issued",
-      "followUps": []
+      "status": "reported",
+      "followUps": [
+        {
+          "meetingId": "2026-06-30-cabinet-28",
+          "exchangeId": "ex-06",
+          "summary": "사회연대경제 발전 종합 계획 보고 — 공공서비스 위탁 확대 논의",
+          "inferred": true
+        }
+      ]
     },
     {
       "id": "dir-2025-12-16-04",
@@ -335,8 +349,15 @@
       "content": "햇빛소득마을 조성 목표(2030년 2,500개)를 전국 10만여 개 마을 규모에 맞게 대폭 확대하고, 공공용지·지붕·유휴지를 활용해 신속히 개발할 것. 은면장 등 대상 대대적 교육 확산 방법도 집중 연구할 것",
       "timestamp": 2551,
       "tags": ["햇빛소득마을", "재생에너지"],
-      "status": "issued",
-      "followUps": []
+      "status": "reported",
+      "followUps": [
+        {
+          "meetingId": "2026-03-24-cabinet-11",
+          "exchangeId": "ex-05",
+          "summary": "햇빛소득마을 확산 추진 계획 보고 및 재정 지원 방식 재설계 논의",
+          "inferred": true
+        }
+      ]
     },
     {
       "id": "dir-2025-12-16-06",
@@ -385,8 +406,15 @@
       "content": "경기도에서 시작한 계곡 불법시설 정비를 전국으로 확산하도록 기획해 정리·추진할 것",
       "timestamp": 5968,
       "tags": ["계곡정비", "안전"],
-      "status": "issued",
-      "followUps": []
+      "status": "reported",
+      "followUps": [
+        {
+          "meetingId": "2026-02-24-cabinet-6",
+          "exchangeId": "ex-05",
+          "summary": "하천·계곡 내 불법 점용 시설 정비 계획 보고",
+          "inferred": true
+        }
+      ]
     }
   ],
   "aiDataPolicy": [

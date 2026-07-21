@@ -475,8 +475,15 @@
       "content": "고액 상습 체납자를 전수조사하고, 통합징수 입법 전이라도 각 부처 명의로 인력을 채용해 합동 관리를 지금부터 시작하되 총괄 지휘는 국세청이 맡을 것. 국가채권관리법 개정·통합징수법 입법은 최대한 서두를 것(국세청장)",
       "timestamp": 2981,
       "tags": ["세금체납", "조세정의"],
-      "status": "issued",
-      "followUps": []
+      "status": "reported",
+      "followUps": [
+        {
+          "meetingId": "2026-04-28-cabinet-18",
+          "exchangeId": "ex-02",
+          "summary": "국세청 체납 징수 추진 상황 논의",
+          "inferred": true
+        }
+      ]
     },
     {
       "id": "dir-2026-01-27-08",

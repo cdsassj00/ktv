@@ -377,8 +377,14 @@
       "content": "중동 잔류 국민이 한 분도 빠짐없이 안전하게 대피할 때까지 전세기 추가 투입과 군용기 활용을 적극 검토하고, 인접국 육로 이동과 현지 필수 인력의 안전까지 각별히 챙길 것",
       "timestamp": 482,
       "tags": ["재외국민보호", "중동사태"],
-      "status": "issued",
-      "followUps": []
+      "status": "reported",
+      "followUps": [
+        {
+          "meetingId": "2026-03-17-cabinet-10",
+          "summary": "중동 상황 주요 동향 및 재외국민 보호 방안 보고",
+          "inferred": true
+        }
+      ]
     },
     {
       "id": "dir-2026-03-10-03",
@@ -397,8 +403,15 @@
       "content": "국가정상화위원회 같은 팀을 만들어 각 부처의 '비정상의 정상화' 과제를 뽑아 종합 추진하는 방안을 검토·논의할 것",
       "timestamp": 605,
       "tags": ["정상화", "국정운영"],
-      "status": "issued",
-      "followUps": []
+      "status": "reported",
+      "followUps": [
+        {
+          "meetingId": "2026-05-06-cabinet-20",
+          "exchangeId": "ex-01",
+          "summary": "비정상의 정상화 과제(산림 복구 부실·계곡 정비) 점검",
+          "inferred": true
+        }
+      ]
     },
     {
       "id": "dir-2026-03-10-05",
@@ -407,8 +420,15 @@
       "content": "석유 최고가격제 시행이 지연된 기간만큼 실제 유가 상승 이후에도 적용 기간을 연장하고, 정유사 손실 보상 산정 시 그간 취한 부당이익을 감안하는 것이 법률상 가능한지 검토할 것",
       "timestamp": 1992,
       "tags": ["석유최고가격제", "물가안정"],
-      "status": "issued",
-      "followUps": []
+      "status": "reported",
+      "followUps": [
+        {
+          "meetingId": "2026-03-17-cabinet-10",
+          "exchangeId": "ex-03",
+          "summary": "석유 최고가격제 점검 결과 및 조치 방안 보고",
+          "inferred": true
+        }
+      ]
     },
     {
       "id": "dir-2026-03-10-06",
@@ -437,8 +457,15 @@
       "content": "부정행위 신고 포상금은 상한 없이 일정 비율로 과감하게 지급하고 최저선을 보장하며, 내부 가담자 신고 시 면책·감면과 감액 포상을 결합하는 방안을 공정위·금융위 등 포상제를 가진 모든 부처가 준비할 것",
       "timestamp": 4427,
       "tags": ["신고포상금", "공정경제"],
-      "status": "issued",
-      "followUps": []
+      "status": "reported",
+      "followUps": [
+        {
+          "meetingId": "2026-05-20-cabinet-22",
+          "exchangeId": "ex-03",
+          "summary": "공익신고 포상금 일반법 제정 논의",
+          "inferred": true
+        }
+      ]
     },
     {
       "id": "dir-2026-03-10-09",
@@ -467,8 +494,15 @@
       "content": "촉법소년 연령 공론화의 참여단 대표성과 숙의 과정을 잘 관리해 사회적 논쟁 의제 공론화의 모범 사례로 만들 것",
       "timestamp": 6026,
       "tags": ["촉법소년", "공론화"],
-      "status": "issued",
-      "followUps": []
+      "status": "reported",
+      "followUps": [
+        {
+          "meetingId": "2026-07-14-cabinet-30",
+          "exchangeId": "ex-01",
+          "summary": "촉법소년 연령 기준 공론화 결과 보고",
+          "inferred": true
+        }
+      ]
     },
     {
       "id": "dir-2026-03-10-12",
@@ -477,8 +511,14 @@
       "content": "공공부문·산하기관·지방정부의 퇴직금 회피 쪼개기 계약 등 비정규직 고용 관행을 국무조정실이 한 번에 모아 시행 방안을 기획·전파하고, 공정임금 기준을 신속히 마련해 권고할 것",
       "timestamp": 6356,
       "tags": ["공정임금", "모범사용자"],
-      "status": "issued",
-      "followUps": []
+      "status": "reported",
+      "followUps": [
+        {
+          "meetingId": "2026-04-28-cabinet-18",
+          "summary": "공공부문 비정규직 처우 개선 대책 보고",
+          "inferred": true
+        }
+      ]
     }
   ],
   "aiDataPolicy": [

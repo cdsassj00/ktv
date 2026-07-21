@@ -454,8 +454,14 @@
       "content": "국민과 기업이 부처를 따지지 않고 규제 개선을 쉽게 제안·신고할 수 있는 통로를 만들고 재경부가 총괄 접수해 처리할 것",
       "timestamp": 2074,
       "tags": ["규제개선", "소통"],
-      "status": "issued",
-      "followUps": []
+      "status": "reported",
+      "followUps": [
+        {
+          "meetingId": "2026-07-14-cabinet-30",
+          "summary": "규제 합리화 대국민 공모전 추진 보고",
+          "inferred": true
+        }
+      ]
     },
     {
       "id": "dir-2026-04-06-08",
@@ -474,8 +480,14 @@
       "content": "출퇴근 시간 유연화를 공공 영역부터 선제 시행하고 재택근무 확대를 포함한 대중교통 혼잡 완화 조치를 일부라도 조기에 시행할 것",
       "timestamp": 2466,
       "tags": ["대중교통", "에너지절약"],
-      "status": "issued",
-      "followUps": []
+      "status": "reported",
+      "followUps": [
+        {
+          "meetingId": "2026-04-28-cabinet-18",
+          "summary": "출퇴근 대중교통 혼잡 완화 종합대책 보고",
+          "inferred": true
+        }
+      ]
     },
     {
       "id": "dir-2026-04-06-10",
@@ -484,8 +496,14 @@
       "content": "채무 탕감·조정과 파산 면책이 실제 작동해 연체 채무자가 줄도록 하고, 연체채권 헐값 일괄매각 등 원시적 관행을 개선하는 금융 선진화를 금융위가 유도할 것(금융위원장)",
       "timestamp": 3293,
       "tags": ["채무조정", "금융"],
-      "status": "issued",
-      "followUps": []
+      "status": "reported",
+      "followUps": [
+        {
+          "meetingId": "2026-05-06-cabinet-20",
+          "summary": "사람 살리는 포용적 금융 대전환 경과 보고",
+          "inferred": true
+        }
+      ]
     },
     {
       "id": "dir-2026-04-06-11",
@@ -514,8 +532,15 @@
       "content": "협동조합 활성화를 위해 공공서비스 분야의 협동조합·사회적기업 위탁을 늘리고 전문 활동가 교육을 강화하며, 노동자의 회사 인수에 대한 정부 지원·권장 방안도 챙길 것(기획예산처장관·행안부)",
       "timestamp": 8632,
       "tags": ["협동조합", "사회적경제"],
-      "status": "issued",
-      "followUps": []
+      "status": "reported",
+      "followUps": [
+        {
+          "meetingId": "2026-06-30-cabinet-28",
+          "exchangeId": "ex-06",
+          "summary": "사회연대경제 발전 종합 계획 보고",
+          "inferred": true
+        }
+      ]
     },
     {
       "id": "dir-2026-04-06-14",

@@ -382,8 +382,15 @@
       "content": "계곡 불법시설 재조사 종료 후 전국 감찰반을 구성해 실태를 조사하고 국민 신고 시스템을 만들며, 알면서 누락한 공직자·자치단체는 징계를 넘어 형사처벌까지 엄정 처벌할 것. 국무총리실 공직기강 감찰팀도 철저히 점검할 것",
       "timestamp": 642,
       "tags": ["공직기강", "계곡정비"],
-      "status": "issued",
-      "followUps": []
+      "status": "reported",
+      "followUps": [
+        {
+          "meetingId": "2026-05-06-cabinet-20",
+          "exchangeId": "ex-02",
+          "summary": "계곡 불법시설 정비 감찰 진행 상황 점검",
+          "inferred": true
+        }
+      ]
     },
     {
       "id": "dir-2026-03-24-06",

@@ -492,8 +492,15 @@
       "content": "소비자가 고발조차 못 하는 전속고발제의 폐지 또는 고발권 확대 방안을 공정위 단독이 아니라 총리실이 챙겨 관계 기관과 함께 신속히 검토할 것",
       "timestamp": 3658,
       "tags": ["공정거래", "제도개혁"],
-      "status": "issued",
-      "followUps": []
+      "status": "reported",
+      "followUps": [
+        {
+          "meetingId": "2026-03-31-cabinet-13",
+          "exchangeId": "ex-03",
+          "summary": "전속고발제 전면 개편 추진 방안 보고",
+          "inferred": true
+        }
+      ]
     },
     {
       "id": "dir-2026-02-03-09",

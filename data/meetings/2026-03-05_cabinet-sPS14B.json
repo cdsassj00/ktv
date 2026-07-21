@@ -301,8 +301,14 @@
       "content": "주재원·출장자·유학생·여행객 등 중동 체류 국민을 빠짐없이 파악하고, 군용기·전세기·육로 등 모든 수단을 총동원한 비상 철수 대책을 2중 3중으로 준비할 것. 중동 해역의 선박·선원 안전에도 만전을 기할 것",
       "timestamp": 377,
       "tags": ["재외국민보호", "국민안전"],
-      "status": "issued",
-      "followUps": []
+      "status": "reported",
+      "followUps": [
+        {
+          "meetingId": "2026-03-17-cabinet-10",
+          "summary": "중동 상황 주요 동향 및 재외국민 보호 방안 보고",
+          "inferred": true
+        }
+      ]
     },
     {
       "id": "dir-2026-03-05-05",
@@ -311,8 +317,15 @@
       "content": "물가안정법에 따라 지역별·유종별로 현실적인 최고가격을 신속하게 지정하고, 위기 편승 '바가지' 가격 인상을 제재할 행정처분 제도를 점검·마련하며, 주유소 매입가격 등 객관적 가격 정보를 제공하는 홈페이지·비교 사이트를 추진할 것",
       "timestamp": 2157,
       "tags": ["물가", "유가", "민생"],
-      "status": "issued",
-      "followUps": []
+      "status": "reported",
+      "followUps": [
+        {
+          "meetingId": "2026-03-17-cabinet-10",
+          "exchangeId": "ex-03",
+          "summary": "석유 최고가격제 점검 결과 및 조치 방안 보고",
+          "inferred": true
+        }
+      ]
     },
     {
       "id": "dir-2026-03-05-06",
@@ -321,8 +334,15 @@
       "content": "반복되는 유가·원유 조달 위기를 계기로 재생에너지 전환을 신속하고 대대적으로 가속하고, 송전망 확충과 함께 전기요금 차등제 등 에너지 지산지소와 산업의 지방 배치를 현실성 있게 추진할 것",
       "timestamp": 2808,
       "tags": ["재생에너지", "국토균형발전"],
-      "status": "issued",
-      "followUps": []
+      "status": "reported",
+      "followUps": [
+        {
+          "meetingId": "2026-04-06-cabinet-14",
+          "exchangeId": "ex-06",
+          "summary": "국민주권정부 에너지 대전환 추진 계획 보고",
+          "inferred": true
+        }
+      ]
     },
     {
       "id": "dir-2026-03-05-07",

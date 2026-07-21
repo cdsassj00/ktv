@@ -341,8 +341,14 @@
       "content": "상법 개정안과 노란봉투법의 입법 취지(기업 경영 투명성 강화·노사 상생)가 살아나도록 관계 부처는 후속 조치에 만전을 기할 것",
       "timestamp": 236,
       "tags": ["상법개정", "노란봉투법"],
-      "status": "issued",
-      "followUps": []
+      "status": "reported",
+      "followUps": [
+        {
+          "meetingId": "2026-03-10-cabinet-9",
+          "summary": "개정 노동조합법(노란봉투법) 시행 준비 상황을 부처 협조사항으로 보고",
+          "inferred": true
+        }
+      ]
     },
     {
       "id": "dir-2025-09-02-03",

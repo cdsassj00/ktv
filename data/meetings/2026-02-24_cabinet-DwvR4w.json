@@ -448,8 +448,15 @@
       "content": "담합 신고 포상금을 기금 조성 등을 통해 과징금의 10~20% 수준까지 파격적으로 확대해 담합 근절 유인을 만들고, 가격 재결정 명령은 구체적 인하 폭을 정해 집행하며 미이행 시 제재 방안을 확보할 것",
       "timestamp": 6006,
       "tags": ["공정거래", "물가", "담합"],
-      "status": "issued",
-      "followUps": []
+      "status": "reported",
+      "followUps": [
+        {
+          "meetingId": "2026-03-10-cabinet-9",
+          "exchangeId": "ex-03",
+          "summary": "부정행위 신고 포상금 확대 방안 후속 논의",
+          "inferred": true
+        }
+      ]
     },
     {
       "id": "dir-2026-02-24-09",

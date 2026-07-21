@@ -325,8 +325,14 @@
       "content": "쿠팡 개인정보 유출 사고의 원인을 조속히 규명해 엄중하게 책임을 묻고, 2차 피해 방지에 가용 수단을 총동원하며, 해외 사례를 참고해 과징금 강화·징벌적 손해배상 현실화 등 실효적 대책과 민간·공공을 아우르는 새로운 디지털 보안 제도를 조속히 마련·시행할 것(관계부처)",
       "timestamp": 241,
       "tags": ["개인정보보호", "디지털보안"],
-      "status": "issued",
-      "followUps": []
+      "status": "reported",
+      "followUps": [
+        {
+          "meetingId": "2026-05-12-cabinet-21",
+          "summary": "예방 중심 개인정보 관리체계 전환 계획 보고",
+          "inferred": true
+        }
+      ]
     },
     {
       "id": "dir-2025-12-02-02",
@@ -345,8 +351,15 @@
       "content": "자살예방 대책에서 일본과의 협업 합의 사항을 점검하고, 지방정부·관련 기관의 인력을 확충하며 추진 속도를 높일 것",
       "timestamp": 571,
       "tags": ["자살예방"],
-      "status": "issued",
-      "followUps": []
+      "status": "reported",
+      "followUps": [
+        {
+          "meetingId": "2026-05-06-cabinet-20",
+          "exchangeId": "ex-05",
+          "summary": "범정부 자살예방 대책 추진 현황 보고 및 109 상담인력 확충 논의",
+          "inferred": true
+        }
+      ]
     },
     {
       "id": "dir-2025-12-02-04",
@@ -375,8 +388,15 @@
       "content": "종교재단의 조직적·체계적 정치 개입 문제를 법제처가 주관해 검토하고, 담당 부처와 필요한 조치를 정리해 추후 국무회의에 보고할 것(법제처장)",
       "timestamp": 893,
       "tags": ["정교분리"],
-      "status": "issued",
-      "followUps": []
+      "status": "reported",
+      "followUps": [
+        {
+          "meetingId": "2025-12-09-cabinet-53",
+          "exchangeId": "ex-03",
+          "summary": "법제처의 종교단체 해산 방안 검토 경과 보고",
+          "inferred": true
+        }
+      ]
     },
     {
       "id": "dir-2025-12-02-07",
@@ -385,8 +405,15 @@
       "content": "재외국민에 대한 공관의 역할을 대폭 확대해 편의 제공과 투표권 보장을 강화하고, 커뮤니티 지원과 현황 파악률 제고 등 재외국민 정책을 전면 개편할 것",
       "timestamp": 1126,
       "tags": ["재외국민", "외교"],
-      "status": "issued",
-      "followUps": []
+      "status": "reported",
+      "followUps": [
+        {
+          "meetingId": "2025-12-09-cabinet-53",
+          "exchangeId": "ex-07",
+          "summary": "새로운 재외동포 정책 추진 방안 보고",
+          "inferred": true
+        }
+      ]
     },
     {
       "id": "dir-2025-12-02-08",
@@ -425,8 +452,14 @@
       "content": "미국 의존을 낮추기 위해 재외공관과 국가기관 파견 인력을 통합해 민관 합동으로 제3세계 시장 개척과 문화 진출에 총력을 다하고, 재외공관 활성화·재창조 방안을 부처 협의를 거쳐 국무회의에 보고할 것",
       "timestamp": 3129,
       "tags": ["시장다변화", "수출"],
-      "status": "issued",
-      "followUps": []
+      "status": "reported",
+      "followUps": [
+        {
+          "meetingId": "2026-01-20-cabinet-2",
+          "summary": "재외공관 역할 재창조 이행 계획 보고",
+          "inferred": true
+        }
+      ]
     },
     {
       "id": "dir-2025-12-02-12",

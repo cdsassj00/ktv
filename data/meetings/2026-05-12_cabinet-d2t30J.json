@@ -380,8 +380,15 @@
       "content": "계곡 불법시설 중 공공시설에 준하는 민간 설치 시설은 일선에 맡기지 말고 정부 차원의 위원회를 만들어 존치·합법화·지원 후 정부 취득 등 처리 기준을 판단하게 하고, 여름 행락철 전에 중요도에 따라 급한 곳부터 정비할 것",
       "timestamp": 1418,
       "tags": ["비정상의정상화", "계곡정비"],
-      "status": "issued",
-      "followUps": []
+      "status": "reported",
+      "followUps": [
+        {
+          "meetingId": "2026-07-14-cabinet-30",
+          "exchangeId": "ex-06",
+          "summary": "계곡 불법시설 정비 점검",
+          "inferred": true
+        }
+      ]
     },
     {
       "id": "dir-2026-05-12-05",

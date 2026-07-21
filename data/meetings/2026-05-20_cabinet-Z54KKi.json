@@ -500,8 +500,15 @@
       "content": "전체 연체채권 실태를 정확히 파악해 장기 연체채권을 정리하는 방안을 마련하고, 고금리 사금융과 제1금융권 사이 비어 있는 중금리 대출 공백 문제도 챙길 것(금융위원장)",
       "timestamp": 10329,
       "tags": ["채무조정", "민생금융"],
-      "status": "issued",
-      "followUps": []
+      "status": "reported",
+      "followUps": [
+        {
+          "meetingId": "2026-06-02-cabinet-24",
+          "exchangeId": "ex-02",
+          "summary": "장기연체채권 정리와 채무자 자살 예방 논의",
+          "inferred": true
+        }
+      ]
     },
     {
       "id": "dir-2026-05-20-10",
@@ -540,8 +547,14 @@
       "content": "오늘 성과 보고에서 빠진 검찰청·조달청·질병관리청 등 14개 청은 다음에 간략하게라도 업무·성과를 보고하게 하고, 대통령 소속 위원회 보고도 예정대로 진행할 것",
       "timestamp": 16692,
       "tags": ["국정운영", "업무보고"],
-      "status": "issued",
-      "followUps": []
+      "status": "reported",
+      "followUps": [
+        {
+          "meetingId": "2026-06-02-cabinet-24",
+          "summary": "국정성과 2차 보고 — 청 단위 기관 보고 실시",
+          "inferred": true
+        }
+      ]
     }
   ],
   "aiDataPolicy": [

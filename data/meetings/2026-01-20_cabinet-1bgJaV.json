@@ -303,8 +303,14 @@
       "content": "민간 무인기의 대북 침투를 탐지하지 못한 경위를 철저히 조사하고 필요하면 방공 시설·장비를 개선할 것. 수사기관은 신속·엄정 수사로 재발을 막고, 남북 긴장이 고조되지 않도록 관리할 것",
       "timestamp": 519,
       "tags": ["국방", "무인기"],
-      "status": "issued",
-      "followUps": []
+      "status": "reported",
+      "followUps": [
+        {
+          "meetingId": "2026-04-06-cabinet-14",
+          "summary": "무인기 재발 방지 및 접경지역 평화·안전 증진 방안 보고",
+          "inferred": true
+        }
+      ]
     },
     {
       "id": "dir-2026-01-20-03",
@@ -333,8 +339,15 @@
       "content": "농어촌 기본소득 시범지역의 인구 증가가 인근 이동인지 도심 유입인지 실태를 분석해 보고하고, 2년 시범으로 끝내지 말고 조례·법률로 제도화해 주민이 미래를 설계할 수 있게 할 것",
       "timestamp": 1437,
       "tags": ["농어촌기본소득", "지방균형발전"],
-      "status": "issued",
-      "followUps": []
+      "status": "reported",
+      "followUps": [
+        {
+          "meetingId": "2026-02-24-cabinet-6",
+          "exchangeId": "ex-03",
+          "summary": "인구감소지역 인구 증감 분석 보고 — 농어촌 기본소득 인구 유입 효과 확인",
+          "inferred": true
+        }
+      ]
     },
     {
       "id": "dir-2026-01-20-06",
@@ -383,8 +396,15 @@
       "content": "해외보다 40% 가까이 비싼 생리대 문제 해소를 위해 기본 품질을 갖춘 저가 표준 생리대를 위탁 생산해 일정 대상에게 현금 지원 대신 무상 공급하는 방안을 검토할 것",
       "timestamp": 7702,
       "tags": ["여성정책", "민생물가"],
-      "status": "issued",
-      "followUps": []
+      "status": "reported",
+      "followUps": [
+        {
+          "meetingId": "2026-03-10-cabinet-9",
+          "exchangeId": "ex-04",
+          "summary": "생리용품 지원 확대 방안 보고",
+          "inferred": true
+        }
+      ]
     },
     {
       "id": "dir-2026-01-20-11",

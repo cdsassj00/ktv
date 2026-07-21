@@ -368,8 +368,15 @@
       "content": "AI 투자의 마중물인 국민성장펀드가 차질 없이 출범하도록 만전을 기할 것",
       "timestamp": 288,
       "tags": ["AI예산", "투자"],
-      "status": "issued",
-      "followUps": []
+      "status": "reported",
+      "followUps": [
+        {
+          "meetingId": "2026-03-17-cabinet-10",
+          "exchangeId": "ex-05",
+          "summary": "국민성장펀드 추진 현황 및 향후 계획 보고",
+          "inferred": true
+        }
+      ]
     },
     {
       "id": "dir-2025-09-09-04",
