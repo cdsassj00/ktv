@@ -88,7 +88,7 @@
           "inReplyTo": null
         },
         {
-          "speakerId": "unknown",
+          "speakerId": "molegis-minister",
           "kind": "답변",
           "summary": "법제처장이 총리는 '각 부를 통할한다'고 답변하며 청은 부에 당연히 포함된다는 취지로 설명.",
           "timestamp": 761,
@@ -186,7 +186,7 @@
           "inReplyTo": null
         },
         {
-          "speakerId": "unknown",
+          "speakerId": "molegis-minister",
           "kind": "답변",
           "summary": "법제처장이 행정부 전체를 통할하는 대통령 지위에서 국가적·전 사회적 이슈에 대한 일반적·포괄적 지시는 충분히 가능하다고 판단된다고 답변.",
           "timestamp": 1531,
@@ -200,7 +200,7 @@
           "inReplyTo": 1
         },
         {
-          "speakerId": "unknown",
+          "speakerId": "molegis-minister",
           "kind": "답변",
           "summary": "법제처장이 그에 대한 규정이 없으며 일반적 지휘권 외에는 없다고 답변. 신설되는 중대범죄수사청도 행안부 장관을 통한 민주적 통제가 필요한 것으로 검토 중이라고 부연.",
           "timestamp": 1700,
@@ -296,10 +296,15 @@
     {
       "id": "dir-2025-12-30-01",
       "from": "president",
-      "to": ["unknown"],
+      "to": [
+        "unknown"
+      ],
       "content": "12·29 여객기 참사의 독립적·객관적 진상조사를 위한 제도 개선을 최대한 서두르고 유가족 지원 대책을 세심하게 살필 것. 전 부처는 비극이 반복되지 않도록 구조적 안전 문제를 근본부터 점검·보완할 것",
       "timestamp": 129,
-      "tags": ["안전", "참사수습"],
+      "tags": [
+        "안전",
+        "참사수습"
+      ],
       "status": "reported",
       "followUps": [
         {
@@ -313,20 +318,30 @@
     {
       "id": "dir-2025-12-30-02",
       "from": "president",
-      "to": ["pm"],
+      "to": [
+        "pm"
+      ],
       "content": "다음 국무회의부터 특별한 사정이 없는 한 외청도 모두 국무회의에 참석하게 할 것",
       "timestamp": 853,
-      "tags": ["정부운영", "지휘체계"],
+      "tags": [
+        "정부운영",
+        "지휘체계"
+      ],
       "status": "issued",
       "followUps": []
     },
     {
       "id": "dir-2025-12-30-03",
       "from": "president",
-      "to": ["pm"],
+      "to": [
+        "pm"
+      ],
       "content": "6개월 후 2차 업무보고에서 부처별 주요 성과, 계류 중인 주요 현안·갈등 과제, 국회·감사·민원·전문가 지적사항의 처리 현황(종결 사유 또는 진행 상황)을 정리해 보고하도록 준비하고, 총리가 이를 사전에 스크린할 것",
       "timestamp": 993,
-      "tags": ["업무보고", "정부운영"],
+      "tags": [
+        "업무보고",
+        "정부운영"
+      ],
       "status": "reported",
       "followUps": [
         {
@@ -339,80 +354,120 @@
     {
       "id": "dir-2025-12-30-04",
       "from": "president",
-      "to": ["moef-minister"],
+      "to": [
+        "moef-minister"
+      ],
       "content": "통폐합·신설을 포함한 공공기관 개혁 기본계획을 속도감 있게 마련하고, 지방 재배치 문제도 개혁 방안 검토 내용에 포함할 것",
       "timestamp": 1110,
-      "tags": ["공공기관개혁"],
+      "tags": [
+        "공공기관개혁"
+      ],
       "status": "issued",
       "followUps": []
     },
     {
       "id": "dir-2025-12-30-05",
       "from": "president",
-      "to": ["mohw-minister"],
+      "to": [
+        "mohw-minister"
+      ],
       "content": "전주로 이전한 국민연금공단이 운용자산 배분 시 지역 소재 운용사에 우선권·인센티브를 주는 등 지역경제 활성화라는 이전 취지에 기여할 방안을 챙겨볼 것",
       "timestamp": 1228,
-      "tags": ["공공기관", "지역균형"],
+      "tags": [
+        "공공기관",
+        "지역균형"
+      ],
       "status": "issued",
       "followUps": []
     },
     {
       "id": "dir-2025-12-30-06",
       "from": "president",
-      "to": ["mois-minister", "moj-minister"],
+      "to": [
+        "mois-minister",
+        "moj-minister"
+      ],
       "content": "댓글 여론조작 수사의 성과를 보고하고, 순위 조작 등 민주주의 체제를 위협하는 정보조작 행위에 대해 경찰·검찰·행안부·법무부가 각별한 경각심을 갖고 대응할 것",
       "timestamp": 1411,
-      "tags": ["여론조작", "수사"],
+      "tags": [
+        "여론조작",
+        "수사"
+      ],
       "status": "issued",
       "followUps": []
     },
     {
       "id": "dir-2025-12-30-07",
       "from": "president",
-      "to": ["unknown"],
+      "to": [
+        "molegis-minister"
+      ],
       "content": "국가수사본부 수사에 대한 지휘·통제 공백과 행안부 장관의 치안 사무 부재 등 경찰 수사 지휘체계의 법적 애매함을 법제처가 명확하게 정리하고, 해석으로 안 되면 정부조직법 개정 등 입법 방안까지 판단해 신속히 정리할 것(법제처장)",
       "timestamp": 1721,
-      "tags": ["수사지휘체계", "법제정비"],
+      "tags": [
+        "수사지휘체계",
+        "법제정비"
+      ],
       "status": "issued",
       "followUps": []
     },
     {
       "id": "dir-2025-12-30-08",
       "from": "pm",
-      "to": ["moj-minister"],
+      "to": [
+        "moj-minister"
+      ],
       "content": "서해 공무원 사건 관련 국정원 고발 취하를 계기로, 사건을 수사했던 검찰의 항소 포기와 수사 검사들에 대한 감찰·정리 여부에 대해 법무부가 명확하게 입장을 정리할 것",
       "timestamp": 1956,
-      "tags": ["검찰개혁", "권력기관정상화"],
+      "tags": [
+        "검찰개혁",
+        "권력기관정상화"
+      ],
       "status": "issued",
       "followUps": []
     },
     {
       "id": "dir-2025-12-30-09",
       "from": "president",
-      "to": ["moj-minister", "mois-minister"],
+      "to": [
+        "moj-minister",
+        "mois-minister"
+      ],
       "content": "통일교·신천지 등 정교유착 사건은 특검 출범만 기다리지 말고 검찰과 행안부가 상의해 합동 또는 개별 수사팀을 구성하고, 특검이 출범하면 그때 이관할 것",
       "timestamp": 2339,
-      "tags": ["정교유착", "수사"],
+      "tags": [
+        "정교유착",
+        "수사"
+      ],
       "status": "issued",
       "followUps": []
     },
     {
       "id": "dir-2025-12-30-10",
       "from": "president",
-      "to": ["pm"],
+      "to": [
+        "pm"
+      ],
       "content": "각 부처·청이 소속 공공기관·산하기관 관리를 자신의 중요 업무로 확실히 인지하고 제 역할을 하도록 관리하되, 총리실은 이를 일상 업무로 주기적으로 체크할 것. 6개월 후 대통령이 다시 점검 예정",
       "timestamp": 2871,
-      "tags": ["공공기관", "정부운영"],
+      "tags": [
+        "공공기관",
+        "정부운영"
+      ],
       "status": "issued",
       "followUps": []
     },
     {
       "id": "dir-2025-12-30-11",
       "from": "president",
-      "to": ["mcst-minister"],
+      "to": [
+        "mcst-minister"
+      ],
       "content": "국정홍보 총괄 부처로서 각 부처의 홍보 시스템·실태·성과를 정리해 공유하고, 대통령실 홍보수석실과 협의해 정기 평가와 포상(경진대회, 휴가·포상비 등)으로 전체 홍보 역량을 끌어올릴 것",
       "timestamp": 3692,
-      "tags": ["국정홍보"],
+      "tags": [
+        "국정홍보"
+      ],
       "status": "issued",
       "followUps": []
     }
@@ -420,18 +475,30 @@
   "aiDataPolicy": [
     {
       "topic": "외화 반출 단속에 AI 판독 기술 활용",
-      "speakerId": "unknown",
+      "speakerId": "osc-minister",
       "summary": "국무조정실장이 업무보고 후속조치 보고에서 경제질서 확립 지시사항 이행을 위해 국토부가 AI 짐(수하물) 판독 기술 활용 방안을 수립하고 관세청이 출국편 엑스레이 판독 검사 체계를 설계할 계획이라고 보고.",
       "timestamp": 2405,
-      "tags": ["행정AI", "규제"]
+      "tags": [
+        "행정AI",
+        "규제"
+      ]
     },
     {
       "topic": "포털 댓글 조작의 기술적 탐지·차단",
       "speakerId": "mss-minister",
       "summary": "대통령의 질문에 한성숙 중기부 장관이 IP 체크 등으로 매크로·조직적 댓글 작성 집단을 기술적으로 확인할 수 있으며, 댓글에 프로필을 연결해 다작성자 리스트를 공개하는 등의 플랫폼 개선이 계속 필요하다고 답변. 대통령은 정보조작을 민주주의 위협으로 규정하고 관계기관 대응을 지시.",
       "timestamp": 1436,
-      "tags": ["데이터거버넌스", "규제"]
+      "tags": [
+        "데이터거버넌스",
+        "규제"
+      ]
     }
   ],
-  "tags": ["국민통합", "권력기관정상화", "공공기관개혁", "여론조작대응", "녹색대전환"]
+  "tags": [
+    "국민통합",
+    "권력기관정상화",
+    "공공기관개혁",
+    "여론조작대응",
+    "녹색대전환"
+  ]
 }

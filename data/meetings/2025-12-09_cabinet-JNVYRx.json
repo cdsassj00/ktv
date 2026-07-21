@@ -164,7 +164,7 @@
           "inReplyTo": null
         },
         {
-          "speakerId": "unknown",
+          "speakerId": "molegis-minister",
           "kind": "답변",
           "summary": "법제처장이 검토 보고서를 지난주 제출했고 다음 주 국무회의에서 보고 예정이라고 답변. 헌법 문제라기보다 민법 38조 적용 문제로, 조직적·지속적 위법행위가 확인되면 해산이 가능하며 해산 명령 권한은 주무관청에 있다고 설명.",
           "timestamp": 1256,
@@ -239,7 +239,7 @@
       "topic": "짝퉁 K푸드와 지식재산권 보호",
       "turns": [
         {
-          "speakerId": "unknown",
+          "speakerId": "kipo-commissioner",
           "kind": "보고",
           "summary": "특허청장이 K브랜드 위조상품 유통 규모 97억 달러와 인도네시아 업체의 한글 포장 '한국 라면', 삼양 불닭볶음면 모방, '부산' 상표 선점으로 국내 중소기업이 판매금지·손해배상을 당한 사례를 보고. IP 선확보 지원, AI·RFID 위조방지 기술, 온라인 플랫폼 MOU 차단, 25개 지재권 중점 공관의 대응 전략을 제시.",
           "timestamp": 3208,
@@ -254,7 +254,7 @@
           "inReplyTo": 0
         },
         {
-          "speakerId": "unknown",
+          "speakerId": "kipo-commissioner",
           "kind": "답변",
           "summary": "특허청장이 지재권은 국제적으로 가장 표준화된 분야지만 속지주의라 해당국 등록이 우선하며, WTO·파리협약 등에 따라 부정 등록은 무효화할 수 있으나 소송 비용·시간이 들어 정부 지원이 필요하다고 답변. 중소기업 대상 출원 비용 보조 사업을 확대하겠다고 보고.",
           "timestamp": 3483,
@@ -275,7 +275,7 @@
           "inReplyTo": 3
         },
         {
-          "speakerId": "unknown",
+          "speakerId": "trade-minister",
           "kind": "발언",
           "summary": "통상교섭본부장이 FTA 지재권 챕터를 통한 상대국 시정 요구가 가능하다고 설명하고, 불닭볶음면의 EU 동물성 성분 규제 등 비관세장벽 사례를 들어 한국판 무역장벽 보고서로 공세적으로 대응하겠다고 보고.",
           "timestamp": 3739,
@@ -295,14 +295,14 @@
           "inReplyTo": null
         },
         {
-          "speakerId": "unknown",
+          "speakerId": "pipc-chairman",
           "kind": "발언",
           "summary": "개인정보보호위원장이 통합 DB·재외동포 인증제 추진 시 개인정보 영향평가 등 개인정보보호법상 절차 준수가 필요하다며, 개인정보위의 사전 적정성 검토 활용을 권고.",
           "timestamp": 4035,
           "inReplyTo": 0
         },
         {
-          "speakerId": "unknown",
+          "speakerId": "oka-commissioner",
           "kind": "보고",
           "summary": "재외동포청장이 상세 보고 — 재외국민 등록률 제고(자동 등록·출국 전 사전 등록), 재외동포 인증제와 디지털 DB, 블록체인·ARS 본인확인 기반 투표 방식 다변화와 공직선거법 개정안 2026년 상반기 통과 추진, 동포 전담 영사 복원.",
           "timestamp": 4105,
@@ -322,30 +322,47 @@
     {
       "id": "dir-2025-12-09-01",
       "from": "president",
-      "to": ["mafra-minister", "mcst-minister"],
+      "to": [
+        "mafra-minister",
+        "mcst-minister"
+      ],
       "content": "K푸드가 전략 수출 산업으로 성장하도록 해외 마케팅, 물류 지원, 관광 연계 상품 개발, 지식재산권 보호 강화 등 종합 지원 방안을 관계 부처가 마련할 것",
       "timestamp": 426,
-      "tags": ["K푸드", "수출"],
+      "tags": [
+        "K푸드",
+        "수출"
+      ],
       "status": "issued",
       "followUps": []
     },
     {
       "id": "dir-2025-12-09-02",
       "from": "president",
-      "to": ["mois-minister"],
+      "to": [
+        "mois-minister"
+      ],
       "content": "장관 관사(공관) 보유 실태와 지급 기준을 정확히 파악해 보고할 것",
       "timestamp": 704,
-      "tags": ["공직자처우", "행정관리"],
+      "tags": [
+        "공직자처우",
+        "행정관리"
+      ],
       "status": "issued",
       "followUps": []
     },
     {
       "id": "dir-2025-12-09-03",
       "from": "president",
-      "to": ["moel-minister"],
+      "to": [
+        "moel-minister"
+      ],
       "content": "노동부 자체와 소속·산하기관부터 임시직·비정규직에 적정 임금을 주고 있는지 실태를 조사하고, 최저임금만 주는 관행에 대해 다른 부처에 시정을 명령할 것. 상시지속 업무는 정규직으로 채용하고 1년 미만 근속자에게도 퇴직금을 지급하는 방안을 연구할 것",
       "timestamp": 1006,
-      "tags": ["적정임금", "비정규직", "공공부문"],
+      "tags": [
+        "적정임금",
+        "비정규직",
+        "공공부문"
+      ],
       "status": "reported",
       "followUps": [
         {
@@ -358,40 +375,60 @@
     {
       "id": "dir-2025-12-09-04",
       "from": "president",
-      "to": ["mafra-minister"],
+      "to": [
+        "mafra-minister"
+      ],
       "content": "남는 쌀의 일본 계약재배 수출 방안을 일본과 협의해 검토할 것",
       "timestamp": 2062,
-      "tags": ["쌀", "수출"],
+      "tags": [
+        "쌀",
+        "수출"
+      ],
       "status": "issued",
       "followUps": []
     },
     {
       "id": "dir-2025-12-09-05",
       "from": "president",
-      "to": ["mafra-minister"],
+      "to": [
+        "mafra-minister"
+      ],
       "content": "한식학교 '수라학교' 구상은 K컬처·K푸드·K팝·K뷰티를 엮어 UN 대학 유치 수준으로 격을 높여 검토할 것",
       "timestamp": 2135,
-      "tags": ["K푸드", "인재양성"],
+      "tags": [
+        "K푸드",
+        "인재양성"
+      ],
       "status": "issued",
       "followUps": []
     },
     {
       "id": "dir-2025-12-09-06",
       "from": "president",
-      "to": ["mofa-minister"],
+      "to": [
+        "mofa-minister"
+      ],
       "content": "국가·지방정부·공공기관의 해외 파견 기관·지사·인력을 통합 관리하고 재외공관 중심으로 실효적으로 운영되도록 정리 방안을 준비할 것",
       "timestamp": 2361,
-      "tags": ["재외공관", "행정효율"],
+      "tags": [
+        "재외공관",
+        "행정효율"
+      ],
       "status": "issued",
       "followUps": []
     },
     {
       "id": "dir-2025-12-09-07",
       "from": "president",
-      "to": ["moj-minister"],
+      "to": [
+        "moj-minister"
+      ],
       "content": "법무부 출입국 관리 자료를 재외동포청·재외국민 관할 업무와 공유·협력하는 실제 시스템을 갖추고, 재외국민의 주권 행사에 부족함이 없도록 챙길 것",
       "timestamp": 4349,
-      "tags": ["재외동포", "데이터공유"],
+      "tags": [
+        "재외동포",
+        "데이터공유"
+      ],
       "status": "issued",
       "followUps": []
     }
@@ -402,36 +439,57 @@
       "speakerId": "motie-minister",
       "summary": "산업부가 코트라의 해외 인증 지원 기능 강화, 소비재 인증 지원 데스크 설치와 함께 AI를 활용한 해외 인증·기술규제 통합 시스템 구축 계획을 보고.",
       "timestamp": 2731,
-      "tags": ["AI인프라", "규제"]
+      "tags": [
+        "AI인프라",
+        "규제"
+      ]
     },
     {
       "topic": "AI·RFID 위조방지 기술 보급",
-      "speakerId": "unknown",
+      "speakerId": "kipo-commissioner",
       "summary": "특허청장이 짝퉁 K푸드 대응책으로 AI 기술과 RFID 등 위조상품 판별·방지 기술을 수출 기업에 보급하겠다고 보고.",
       "timestamp": 3370,
-      "tags": ["AI인프라", "데이터산업"]
+      "tags": [
+        "AI인프라",
+        "데이터산업"
+      ]
     },
     {
       "topic": "통합 동포 DB 구축과 재외동포 인증제",
       "speakerId": "unknown",
       "summary": "외교부 차관·재외동포청장이 재외국민 등록 정보와 외국 국적 동포 인증 정보를 종합한 디지털 통합 동포 DB를 구축해 동포 정책 기반을 강화하겠다고 보고. 블록체인·ARS 본인확인 기술 기반의 우편·전자투표 도입도 추진.",
       "timestamp": 3943,
-      "tags": ["데이터거버넌스", "공공데이터"]
+      "tags": [
+        "데이터거버넌스",
+        "공공데이터"
+      ]
     },
     {
       "topic": "동포 DB 구축 시 개인정보 보호 절차",
-      "speakerId": "unknown",
+      "speakerId": "pipc-chairman",
       "summary": "개인정보보호위원장이 통합 DB 시스템 설계 완료 전 개인정보 영향평가를 받아야 하며, 어려우면 개인정보위의 사전 적정성 검토를 활용하라고 권고.",
       "timestamp": 4059,
-      "tags": ["데이터거버넌스", "규제"]
+      "tags": [
+        "데이터거버넌스",
+        "규제"
+      ]
     },
     {
       "topic": "출입국 데이터와 재외동포 행정 연계",
       "speakerId": "president",
       "summary": "법무부 출입국 관리 자료를 재외동포청과 공유·연계하는 실제 시스템을 갖춰 재외국민 현황 관리와 참정권 보장에 활용하라고 지시.",
       "timestamp": 4349,
-      "tags": ["공공데이터", "데이터거버넌스"]
+      "tags": [
+        "공공데이터",
+        "데이터거버넌스"
+      ]
     }
   ],
-  "tags": ["K푸드", "수출다변화", "지식재산권", "공공부문임금", "재외동포정책"]
+  "tags": [
+    "K푸드",
+    "수출다변화",
+    "지식재산권",
+    "공공부문임금",
+    "재외동포정책"
+  ]
 }

@@ -164,7 +164,7 @@
       "topic": "부정행위 신고 포상금 확대",
       "turns": [
         {
-          "speakerId": "unknown",
+          "speakerId": "ftc-chairman",
           "kind": "보고",
           "summary": "공정거래위원장이 정유사 공급가 담합 조사를 전날 개시했고 주유소 가격 담합 의심 건도 현장조사에 들어갔다며, 정유사·주유소에 인위적 가격 인상 중단을 요청.",
           "timestamp": 3099,
@@ -179,7 +179,7 @@
           "inReplyTo": 0
         },
         {
-          "speakerId": "unknown",
+          "speakerId": "ftc-chairman",
           "kind": "답변",
           "summary": "공정거래위원장이 포상금 상한(종전 30억 원) 폐지와 과징금 부과율 20%에서 30%로의 상향 입법을 설명하고, 4조 원대 설탕 담합 사례처럼 수백억 원대 포상이 가능해진다고 답변.",
           "timestamp": 3265,
@@ -193,7 +193,7 @@
           "inReplyTo": 2
         },
         {
-          "speakerId": "unknown",
+          "speakerId": "fsc-chairman",
           "kind": "보고",
           "summary": "금융위원장이 주가조작 신고 포상금의 상한을 없애고 부당이득의 30%(미국 수준)로 상향해 5월 말까지 입법예고 예정이며, 가담자 면책과 적정 포상까지 반영했다고 보고.",
           "timestamp": 4448,
@@ -227,7 +227,7 @@
           "inReplyTo": 0
         },
         {
-          "speakerId": "unknown",
+          "speakerId": "mfds-minister",
           "kind": "답변",
           "summary": "식약처장이 모든 생리대는 가격과 무관하게 동일한 안전성·품질 기준으로 심사되며, 실속형 저가 제품 7개가 접수돼 통상 3개월 걸리는 심사를 3주 이내로 신속 처리 중이라고 답변.",
           "timestamp": 3895,
@@ -363,20 +363,31 @@
     {
       "id": "dir-2026-03-10-01",
       "from": "president",
-      "to": ["moef-minister", "motie-minister"],
+      "to": [
+        "moef-minister",
+        "motie-minister"
+      ],
       "content": "유류비 상승으로 어려움을 겪는 화물·택배·배달·하우스 농가 등 민생 부담을 덜 정책을 적극 발굴해 신속 집행하고, 석유 최고가격제·에너지 세제 조정·소비자 직접 지원을 포함한 추가 금융·재정 지원을 속도감 있게 검토할 것",
       "timestamp": 343,
-      "tags": ["물가안정", "유가대응"],
+      "tags": [
+        "물가안정",
+        "유가대응"
+      ],
       "status": "issued",
       "followUps": []
     },
     {
       "id": "dir-2026-03-10-02",
       "from": "president",
-      "to": ["mofa-minister"],
+      "to": [
+        "mofa-minister"
+      ],
       "content": "중동 잔류 국민이 한 분도 빠짐없이 안전하게 대피할 때까지 전세기 추가 투입과 군용기 활용을 적극 검토하고, 인접국 육로 이동과 현지 필수 인력의 안전까지 각별히 챙길 것",
       "timestamp": 482,
-      "tags": ["재외국민보호", "중동사태"],
+      "tags": [
+        "재외국민보호",
+        "중동사태"
+      ],
       "status": "reported",
       "followUps": [
         {
@@ -389,20 +400,30 @@
     {
       "id": "dir-2026-03-10-03",
       "from": "president",
-      "to": ["molit-minister"],
+      "to": [
+        "molit-minister"
+      ],
       "content": "전세사기 근절을 위해 주택 관련 정보 공개 확대, 세입자 대항력 공백 축소, 중개사 책임 강화 등 제도 개선을 차질 없이 추진할 것",
       "timestamp": 532,
-      "tags": ["전세사기", "주거안정"],
+      "tags": [
+        "전세사기",
+        "주거안정"
+      ],
       "status": "issued",
       "followUps": []
     },
     {
       "id": "dir-2026-03-10-04",
       "from": "president",
-      "to": ["pm"],
+      "to": [
+        "pm"
+      ],
       "content": "국가정상화위원회 같은 팀을 만들어 각 부처의 '비정상의 정상화' 과제를 뽑아 종합 추진하는 방안을 검토·논의할 것",
       "timestamp": 605,
-      "tags": ["정상화", "국정운영"],
+      "tags": [
+        "정상화",
+        "국정운영"
+      ],
       "status": "reported",
       "followUps": [
         {
@@ -416,10 +437,16 @@
     {
       "id": "dir-2026-03-10-05",
       "from": "president",
-      "to": ["motie-minister", "moef-minister"],
+      "to": [
+        "motie-minister",
+        "moef-minister"
+      ],
       "content": "석유 최고가격제 시행이 지연된 기간만큼 실제 유가 상승 이후에도 적용 기간을 연장하고, 정유사 손실 보상 산정 시 그간 취한 부당이익을 감안하는 것이 법률상 가능한지 검토할 것",
       "timestamp": 1992,
-      "tags": ["석유최고가격제", "물가안정"],
+      "tags": [
+        "석유최고가격제",
+        "물가안정"
+      ],
       "status": "reported",
       "followUps": [
         {
@@ -433,30 +460,45 @@
     {
       "id": "dir-2026-03-10-06",
       "from": "president",
-      "to": ["moef-minister"],
+      "to": [
+        "moef-minister"
+      ],
       "content": "유류세 일률 인하와 취약계층 타깃 직접 지원의 복지적·경제적 효과가 상충하는 정도를 한국은행 등과 분석해 양극화 완화에 도움이 되는 조합으로 설계할 것",
       "timestamp": 2988,
-      "tags": ["유류세", "양극화완화"],
+      "tags": [
+        "유류세",
+        "양극화완화"
+      ],
       "status": "issued",
       "followUps": []
     },
     {
       "id": "dir-2026-03-10-07",
       "from": "president",
-      "to": ["unknown"],
+      "to": [
+        "unknown"
+      ],
       "content": "생리대 외에도 국민 필수품에서 독과점을 이용한 폭리·과도한 부담 사례를 각 부처가 발굴하고, 물가 TF에 국민 신고 접수와 소비자단체 등 민간 참여를 확대할 것",
       "timestamp": 3805,
-      "tags": ["필수품물가", "독과점"],
+      "tags": [
+        "필수품물가",
+        "독과점"
+      ],
       "status": "issued",
       "followUps": []
     },
     {
       "id": "dir-2026-03-10-08",
       "from": "president",
-      "to": ["unknown"],
+      "to": [
+        "unknown"
+      ],
       "content": "부정행위 신고 포상금은 상한 없이 일정 비율로 과감하게 지급하고 최저선을 보장하며, 내부 가담자 신고 시 면책·감면과 감액 포상을 결합하는 방안을 공정위·금융위 등 포상제를 가진 모든 부처가 준비할 것",
       "timestamp": 4427,
-      "tags": ["신고포상금", "공정경제"],
+      "tags": [
+        "신고포상금",
+        "공정경제"
+      ],
       "status": "reported",
       "followUps": [
         {
@@ -470,30 +512,45 @@
     {
       "id": "dir-2026-03-10-09",
       "from": "president",
-      "to": ["moel-minister"],
+      "to": [
+        "moel-minister"
+      ],
       "content": "남성이 육아휴직을 일정 기간 사용하지 않으면 불이익을 주는 북유럽식 제도 사례를 찾아 남성 육아휴직 촉진 방안을 별도로 검토할 것",
       "timestamp": 5605,
-      "tags": ["육아휴직", "일가정양립"],
+      "tags": [
+        "육아휴직",
+        "일가정양립"
+      ],
       "status": "issued",
       "followUps": []
     },
     {
       "id": "dir-2026-03-10-10",
       "from": "president",
-      "to": ["moj-minister"],
+      "to": [
+        "moj-minister"
+      ],
       "content": "살인 등 강력범죄로 목숨을 잃거나 중대한 피해를 입은 경우의 범죄피해자 구조제도(지원 금액·대상)를 강화하는 방안을 별도로 보고할 것",
       "timestamp": 5955,
-      "tags": ["범죄피해자", "피해자보호"],
+      "tags": [
+        "범죄피해자",
+        "피해자보호"
+      ],
       "status": "issued",
       "followUps": []
     },
     {
       "id": "dir-2026-03-10-11",
       "from": "president",
-      "to": ["mogef-minister"],
+      "to": [
+        "mogef-minister"
+      ],
       "content": "촉법소년 연령 공론화의 참여단 대표성과 숙의 과정을 잘 관리해 사회적 논쟁 의제 공론화의 모범 사례로 만들 것",
       "timestamp": 6026,
-      "tags": ["촉법소년", "공론화"],
+      "tags": [
+        "촉법소년",
+        "공론화"
+      ],
       "status": "reported",
       "followUps": [
         {
@@ -507,10 +564,16 @@
     {
       "id": "dir-2026-03-10-12",
       "from": "president",
-      "to": ["pm", "moel-minister"],
+      "to": [
+        "pm",
+        "moel-minister"
+      ],
       "content": "공공부문·산하기관·지방정부의 퇴직금 회피 쪼개기 계약 등 비정규직 고용 관행을 국무조정실이 한 번에 모아 시행 방안을 기획·전파하고, 공정임금 기준을 신속히 마련해 권고할 것",
       "timestamp": 6356,
-      "tags": ["공정임금", "모범사용자"],
+      "tags": [
+        "공정임금",
+        "모범사용자"
+      ],
       "status": "reported",
       "followUps": [
         {
@@ -527,22 +590,38 @@
       "speakerId": "moel-minister",
       "summary": "일가정 양립 제도와 실업급여를 AI 상담 후 바로 신청으로 연계하는 서비스를 올 하반기 시작하고 내년에 고용정책 전 분야로 확대. 건강보험공단의 임신·출산 정보와 고용보험 정보를 연계해 노동자·사업주에게 권리와 지원금을 사전 안내.",
       "timestamp": 5465,
-      "tags": ["행정AI", "공공데이터", "데이터거버넌스"]
+      "tags": [
+        "행정AI",
+        "공공데이터",
+        "데이터거버넌스"
+      ]
     },
     {
       "topic": "전세거래 권리정보 연계·개방",
       "speakerId": "molit-minister",
       "summary": "부처별로 산재된 등기·확정일자·선순위 보증금·임대인 세금 체납 및 신용 정보를 연계해 예비 임차인에게 제공하고, 안심전세 앱을 8월까지 고도화해 9월부터 대국민 서비스. 전세거래 위험 정보를 금융 시스템과 공유해 편법 대출을 차단.",
       "timestamp": 5681,
-      "tags": ["공공데이터", "데이터거버넌스"]
+      "tags": [
+        "공공데이터",
+        "데이터거버넌스"
+      ]
     },
     {
       "topic": "범죄피해자 보호 시스템 연계·자동화",
       "speakerId": "moj-minister",
       "summary": "가해자 석방·출소 통지를 기관 간 시스템 연계로 자동화하고 형사사법포털에서 상시 조회할 수 있게 개선. 온라인 통합지원 시스템을 구축하고 스토킹 가해자의 실시간 위치를 피해자 모바일 앱 지도로 제공(6월 예정).",
       "timestamp": 4819,
-      "tags": ["공공데이터"]
+      "tags": [
+        "공공데이터"
+      ]
     }
   ],
-  "tags": ["중동사태대응", "물가안정", "공공생리대", "전세사기", "신고포상금", "일가정양립"]
+  "tags": [
+    "중동사태대응",
+    "물가안정",
+    "공공생리대",
+    "전세사기",
+    "신고포상금",
+    "일가정양립"
+  ]
 }

@@ -116,7 +116,7 @@
           "inReplyTo": null
         },
         {
-          "speakerId": "unknown",
+          "speakerId": "kcc-chairman",
           "kind": "답변",
           "summary": "방송통신위원장이 방송의 자유는 언론의 자유와 구별되는 제도화된 기본권이며 방송법상 공적 책임이 부여돼 있다고 답변.",
           "timestamp": 755,
@@ -172,7 +172,7 @@
           "inReplyTo": 1
         },
         {
-          "speakerId": "unknown",
+          "speakerId": "khs-administrator",
           "kind": "발언",
           "summary": "국가유산청장이 워싱턴 DC 공사관 관리 사례를 들어 홍보 시설·유물 전시·보존 처리 지원이 가능하다고 발언.",
           "timestamp": 3184,
@@ -276,7 +276,7 @@
           "inReplyTo": 1
         },
         {
-          "speakerId": "unknown",
+          "speakerId": "khs-administrator",
           "kind": "발언",
           "summary": "국가유산청장이 취지에 공감하고 적극 지원하겠다면서도, 2010년 광화문 현판 균열 사례를 들어 목재와 기법 선정에 신중을 기하겠다고 발언.",
           "timestamp": 8805,
@@ -289,20 +289,30 @@
     {
       "id": "dir-2026-01-20-01",
       "from": "president",
-      "to": ["mois-minister"],
+      "to": [
+        "mois-minister"
+      ],
       "content": "올겨울 최강 한파에 대비해 수도관·계량기 동파, 비닐하우스, 취약계층 보호 대책을 철저히 점검하고, 각 부처는 지방정부 소관 한파 대책의 이행 여부까지 점검할 것",
       "timestamp": 281,
-      "tags": ["안전", "재난대응"],
+      "tags": [
+        "안전",
+        "재난대응"
+      ],
       "status": "issued",
       "followUps": []
     },
     {
       "id": "dir-2026-01-20-02",
       "from": "president",
-      "to": ["mnd-minister"],
+      "to": [
+        "mnd-minister"
+      ],
       "content": "민간 무인기의 대북 침투를 탐지하지 못한 경위를 철저히 조사하고 필요하면 방공 시설·장비를 개선할 것. 수사기관은 신속·엄정 수사로 재발을 막고, 남북 긴장이 고조되지 않도록 관리할 것",
       "timestamp": 519,
-      "tags": ["국방", "무인기"],
+      "tags": [
+        "국방",
+        "무인기"
+      ],
       "status": "reported",
       "followUps": [
         {
@@ -315,30 +325,48 @@
     {
       "id": "dir-2026-01-20-03",
       "from": "president",
-      "to": ["mpva-minister"],
+      "to": [
+        "mpva-minister"
+      ],
       "content": "김구 선생 등 독립운동가 묘역이 있는 효창공원을 효창운동장과 함께 국민이 즐겨 찾을 수 있는 국립공원으로 만드는 방안을 연구하고, 지방선거 등 정치 상황 때문에 추진이 막히지 않게 할 것",
       "timestamp": 661,
-      "tags": ["보훈", "국립공원"],
+      "tags": [
+        "보훈",
+        "국립공원"
+      ],
       "status": "issued",
       "followUps": []
     },
     {
       "id": "dir-2026-01-20-04",
       "from": "president",
-      "to": ["mofa-minister", "moel-minister", "motie-minister"],
+      "to": [
+        "mofa-minister",
+        "moel-minister",
+        "motie-minister"
+      ],
       "content": "해외에 진출한 우리 기업이 제3세계 저임금 사업장에서 노동 탄압이나 인권 침해를 하고 있지 않은지 관련 부처가 점검할 것. 국격과 국가적 위신에 관한 문제로 관리할 것",
       "timestamp": 1036,
-      "tags": ["노동", "기업책임", "국격"],
+      "tags": [
+        "노동",
+        "기업책임",
+        "국격"
+      ],
       "status": "issued",
       "followUps": []
     },
     {
       "id": "dir-2026-01-20-05",
       "from": "president",
-      "to": ["mafra-minister"],
+      "to": [
+        "mafra-minister"
+      ],
       "content": "농어촌 기본소득 시범지역의 인구 증가가 인근 이동인지 도심 유입인지 실태를 분석해 보고하고, 2년 시범으로 끝내지 말고 조례·법률로 제도화해 주민이 미래를 설계할 수 있게 할 것",
       "timestamp": 1437,
-      "tags": ["농어촌기본소득", "지방균형발전"],
+      "tags": [
+        "농어촌기본소득",
+        "지방균형발전"
+      ],
       "status": "reported",
       "followUps": [
         {
@@ -352,50 +380,78 @@
     {
       "id": "dir-2026-01-20-06",
       "from": "president",
-      "to": ["mofa-minister"],
+      "to": [
+        "mofa-minister"
+      ],
       "content": "상하이 임시정부 청사 등 항일 유적 보존을 중국 측 선의에만 맡기지 말고 한중 정부 간 보존 협약 또는 양해를 협의해 되돌릴 수 없는 형태로 만들고, 충칭 임시정부 청사도 별도로 챙길 것",
       "timestamp": 3029,
-      "tags": ["보훈", "한중외교", "임시정부청사"],
+      "tags": [
+        "보훈",
+        "한중외교",
+        "임시정부청사"
+      ],
       "status": "issued",
       "followUps": []
     },
     {
       "id": "dir-2026-01-20-07",
       "from": "president",
-      "to": ["pm"],
+      "to": [
+        "pm"
+      ],
       "content": "멕시코 주재관 징계가 원소속 부처 복귀 후 무산된 사건의 전체 경위와 방치 원인을 총리가 확인해 별도 보고하고, 한 부처의 징계가 인사에 일괄 적용되도록 제도를 정비할 것",
       "timestamp": 3888,
-      "tags": ["공직기강", "재외공관"],
+      "tags": [
+        "공직기강",
+        "재외공관"
+      ],
       "status": "issued",
       "followUps": []
     },
     {
       "id": "dir-2026-01-20-08",
       "from": "president",
-      "to": ["mofa-minister", "unknown"],
+      "to": [
+        "mofa-minister",
+        "unknown"
+      ],
       "content": "재외동포의 애로사항·민원(한글학교 교과서 등)을 재외공관을 통해 취합·분석해 한 달 안에 국무회의에 보고하고, 재외공관은 정기적으로 동포 간담회를 열 것(재외동포청장 공동)",
       "timestamp": 4981,
-      "tags": ["재외동포", "재외공관"],
+      "tags": [
+        "재외동포",
+        "재외공관"
+      ],
       "status": "issued",
       "followUps": []
     },
     {
       "id": "dir-2026-01-20-09",
       "from": "president",
-      "to": ["mois-minister"],
+      "to": [
+        "mois-minister"
+      ],
       "content": "지방정부별 지방세·세외수입 체납액, 대상자 수, 체납 관리 투입 인력을 전수 파악하고 체납관리단 채용 협조 여부까지 조사해 2월 상반기 중 보고할 것. 국세청도 체납관리단을 과감하게 확대할 것",
       "timestamp": 5349,
-      "tags": ["조세정의", "체납관리", "일자리"],
+      "tags": [
+        "조세정의",
+        "체납관리",
+        "일자리"
+      ],
       "status": "issued",
       "followUps": []
     },
     {
       "id": "dir-2026-01-20-10",
       "from": "president",
-      "to": ["mogef-minister"],
+      "to": [
+        "mogef-minister"
+      ],
       "content": "해외보다 40% 가까이 비싼 생리대 문제 해소를 위해 기본 품질을 갖춘 저가 표준 생리대를 위탁 생산해 일정 대상에게 현금 지원 대신 무상 공급하는 방안을 검토할 것",
       "timestamp": 7702,
-      "tags": ["여성정책", "민생물가"],
+      "tags": [
+        "여성정책",
+        "민생물가"
+      ],
       "status": "reported",
       "followUps": [
         {
@@ -409,10 +465,15 @@
     {
       "id": "dir-2026-01-20-11",
       "from": "president",
-      "to": ["molit-minister"],
+      "to": [
+        "molit-minister"
+      ],
       "content": "땅 투기·주택 투기·토목 부정비리 등 돈과 얽힌 소관 업무가 많은 국토부는 오염 의심 공직자에 대해 과감한 인사 조치를 포함해 엄정하게 관리할 것",
       "timestamp": 7885,
-      "tags": ["반부패", "공직기강"],
+      "tags": [
+        "반부패",
+        "공직기강"
+      ],
       "status": "issued",
       "followUps": []
     }
@@ -423,35 +484,49 @@
       "speakerId": "mofa-minister",
       "summary": "재외공관 역할 재창조 계획의 하나로 외교부 본부와 173개 재외공관을 연계하는 AI 플랫폼을 단계적으로 구축하고, 신규 외교 인력 교육에 AI 강좌를 신설하겠다고 보고.",
       "timestamp": 3552,
-      "tags": ["AI인프라", "인재양성"]
+      "tags": [
+        "AI인프라",
+        "인재양성"
+      ]
     },
     {
       "topic": "AI·디지털 기본교육 확대",
       "speakerId": "president",
       "summary": "2026년 민생 체감 정책 중 과기정통부 과제로 AI·디지털 기본교육의 역량과 접근성을 높이는 사업을 소개.",
       "timestamp": 5549,
-      "tags": ["인재양성"]
+      "tags": [
+        "인재양성"
+      ]
     },
     {
       "topic": "AI 활용 맞춤형 법률구조 서비스",
       "speakerId": "moj-minister",
       "summary": "법무부가 올해부터 AI를 활용한 맞춤형 법률구조 서비스를 시작한다고 보고. 민사·형사·범죄피해자 등 법률 문제 전반에 적용되며, 대통령 확인에 예산은 충분하다고 답변.",
       "timestamp": 5782,
-      "tags": ["행정AI", "법률서비스"]
+      "tags": [
+        "행정AI",
+        "법률서비스"
+      ]
     },
     {
       "topic": "제조업 AI 전환 '맥스(MX) 얼라이언스'",
       "speakerId": "motie-minister",
       "summary": "앵커 기업·AI 기업·대학이 참여하는 제조업 AI 전환(AX) 연합체 '맥스 얼라이언스'를 구성해 특정 기업 단독이 아닌 협업 방식으로 제조 현장의 인공지능 전환을 지원한다고 보고.",
       "timestamp": 6835,
-      "tags": ["AI인프라", "데이터산업"]
+      "tags": [
+        "AI인프라",
+        "데이터산업"
+      ]
     },
     {
       "topic": "AI 합성영상 성범죄 대응",
       "speakerId": "president",
       "summary": "성평등가족부의 디지털 성범죄·성착취 대응 강화 과제를 짚으며 인공지능 합성영상(딥페이크)으로 인한 피해가 문제라고 지적, 여러 부처가 협력해 제도적 대응 방안을 마련 중이라는 답변을 확인.",
       "timestamp": 7657,
-      "tags": ["규제", "디지털성범죄"]
+      "tags": [
+        "규제",
+        "디지털성범죄"
+      ]
     },
     {
       "topic": "정책 책자의 AI 검색 전환",
@@ -459,8 +534,17 @@
       "summary": "280건이 담긴 민생정책 책자를 보고받으며 책자 대신 인공지능으로 바로 찾을 수 있게 하라고 주문. AI 프로그램이 정부 정책 자료에 접근 가능하도록 데이터로 공개하고 디지털 버전으로 전환하기로 함.",
       "quote": "이런 거를 사실은 책자로 만드는 게 아니라 인공지능으로 딱 찾을 수 있게 해 줘야 돼.",
       "timestamp": 8623,
-      "tags": ["공공데이터", "행정AI"]
+      "tags": [
+        "공공데이터",
+        "행정AI"
+      ]
     }
   ],
-  "tags": ["민생정책", "한중일외교", "재외공관개혁", "무인기", "지방균형발전"]
+  "tags": [
+    "민생정책",
+    "한중일외교",
+    "재외공관개혁",
+    "무인기",
+    "지방균형발전"
+  ]
 }

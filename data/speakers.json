@@ -155,5 +155,138 @@
     "org": "국무조정실",
     "photo": null,
     "photoSource": null
+  },
+  "fsc-chairman": {
+    "name": "이억원",
+    "role": "금융위원장",
+    "org": "금융위원회",
+    "photo": null,
+    "photoSource": null
+  },
+  "acrc-chairman": {
+    "name": "국민권익위원장",
+    "role": "국민권익위원회",
+    "org": "국민권익위원회",
+    "photo": null,
+    "photoSource": null
+  },
+  "data-minister": {
+    "name": "국가데이터처장",
+    "role": "국가데이터처",
+    "org": "국가데이터처",
+    "photo": null,
+    "photoSource": null
+  },
+  "ftc-chairman": {
+    "name": "공정거래위원장",
+    "role": "공정거래위원회",
+    "org": "공정거래위원회",
+    "photo": null,
+    "photoSource": null
+  },
+  "ipo-minister": {
+    "name": "지식재산처장",
+    "role": "지식재산처",
+    "org": "지식재산처",
+    "photo": null,
+    "photoSource": null
+  },
+  "kcc-chairman": {
+    "name": "방송통신위원장",
+    "role": "방송통신위원회",
+    "org": "방송통신위원회",
+    "photo": null,
+    "photoSource": null
+  },
+  "kcs-commissioner": {
+    "name": "관세청장",
+    "role": "관세청",
+    "org": "관세청",
+    "photo": null,
+    "photoSource": null
+  },
+  "kfs-minister": {
+    "name": "산림청장",
+    "role": "산림청",
+    "org": "산림청",
+    "photo": null,
+    "photoSource": null
+  },
+  "khs-administrator": {
+    "name": "국가유산청장",
+    "role": "국가유산청",
+    "org": "국가유산청",
+    "photo": null,
+    "photoSource": null
+  },
+  "kipo-commissioner": {
+    "name": "특허청장",
+    "role": "특허청",
+    "org": "특허청",
+    "photo": null,
+    "photoSource": null
+  },
+  "knpa-commissioner": {
+    "name": "경찰청장",
+    "role": "경찰청",
+    "org": "경찰청",
+    "photo": null,
+    "photoSource": null
+  },
+  "mfds-minister": {
+    "name": "식약처장",
+    "role": "식품의약품안전처",
+    "org": "식품의약품안전처",
+    "photo": null,
+    "photoSource": null
+  },
+  "molegis-minister": {
+    "name": "법제처장",
+    "role": "법제처",
+    "org": "법제처",
+    "photo": null,
+    "photoSource": null
+  },
+  "nts-commissioner": {
+    "name": "국세청장",
+    "role": "국세청",
+    "org": "국세청",
+    "photo": null,
+    "photoSource": null
+  },
+  "oka-commissioner": {
+    "name": "재외동포청장",
+    "role": "재외동포청",
+    "org": "재외동포청",
+    "photo": null,
+    "photoSource": null
+  },
+  "osc-minister": {
+    "name": "국무조정실장",
+    "role": "국무조정실",
+    "org": "국무조정실",
+    "photo": null,
+    "photoSource": null
+  },
+  "pipc-chairman": {
+    "name": "개인정보보호위원장",
+    "role": "개인정보보호위원회",
+    "org": "개인정보보호위원회",
+    "photo": null,
+    "photoSource": null
+  },
+  "senior-civil": {
+    "name": "민정수석",
+    "role": "대통령비서실",
+    "org": "대통령비서실",
+    "photo": null,
+    "photoSource": null
+  },
+  "trade-minister": {
+    "name": "통상교섭본부장",
+    "role": "산업통상자원부",
+    "org": "산업통상자원부",
+    "photo": null,
+    "photoSource": null
   }
 }

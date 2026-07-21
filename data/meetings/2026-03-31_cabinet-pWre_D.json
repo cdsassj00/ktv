@@ -133,7 +133,7 @@
           "inReplyTo": 0
         },
         {
-          "speakerId": "unknown",
+          "speakerId": "knpa-commissioner",
           "kind": "답변",
           "summary": "경찰청장이 가짜뉴스 대응팀 운영을 확인하고 엄정·신속하게 수사하겠다고 답변.",
           "timestamp": 1625,
@@ -146,7 +146,7 @@
       "topic": "전속고발제 전면 개편",
       "turns": [
         {
-          "speakerId": "unknown",
+          "speakerId": "ftc-chairman",
           "kind": "보고",
           "summary": "공정거래위원장이 전속고발제 전면 폐지 방향 발제 — 국민 300명·사업자 30개 이상 연서 고발 허용, 모든 중앙행정기관·지방정부에 고발요청권 부여, 중대 위반만 형벌을 유지하는 경제형벌 합리화 병행.",
           "timestamp": 2573,
@@ -188,7 +188,7 @@
           "inReplyTo": 0
         },
         {
-          "speakerId": "unknown",
+          "speakerId": "knpa-commissioner",
           "kind": "발언",
           "summary": "경찰청장이 고발 주체·고발요청권 확대에 찬성하면서, 검찰총장에게만 고발하게 한 규정을 '수사기관의 장'으로 바꿔 경찰·중수청에도 고발할 수 있게 하자는 의견을 제시.",
           "timestamp": 4145,
@@ -202,7 +202,7 @@
           "inReplyTo": 0
         },
         {
-          "speakerId": "unknown",
+          "speakerId": "molegis-minister",
           "kind": "발언",
           "summary": "법제처장이 외국 대부분이 경쟁당국에 전속고발권을 두는 이유를 설명 — 공정거래 사건은 경제정책과 긴밀히 연결돼 있어 고발권을 전면 개방하면 사법적 판단 위주로 흐를 위험이 있다고 지적.",
           "timestamp": 5102,
@@ -229,7 +229,7 @@
           "inReplyTo": null
         },
         {
-          "speakerId": "unknown",
+          "speakerId": "knpa-commissioner",
           "kind": "답변",
           "summary": "경찰청장이 경비 인력 약 2천 명을 수사 인력으로 전환했고 수사 기간이 국수본 출범 이전 수준으로 짧아져 경찰 수사는 큰 문제가 없다고 답변. 특검 등에 약 500명의 핵심 수사 인력이 파견돼 있다고 부연.",
           "timestamp": 5689,
@@ -304,50 +304,75 @@
     {
       "id": "dir-2026-03-31-01",
       "from": "president",
-      "to": ["pm"],
+      "to": [
+        "pm"
+      ],
       "content": "정부 각 부처는 담당 품목의 동향을 1일 단위로 세밀하게 모니터링하고, 수급 불안 우려에는 선제적이고 과감하게 대응할 것. 요소·요소수·헬륨·알루미늄 등 핵심 원자재는 전시 물자에 준한 수준으로 엄격히 관리할 것",
       "timestamp": 135,
-      "tags": ["공급망", "비상경제"],
+      "tags": [
+        "공급망",
+        "비상경제"
+      ],
       "status": "issued",
       "followUps": []
     },
     {
       "id": "dir-2026-03-31-02",
       "from": "president",
-      "to": ["mois-minister"],
+      "to": [
+        "mois-minister"
+      ],
       "content": "종량제 봉투 논란처럼 지자체 준비 부족으로 생기는 생필품 수급 문제가 재발하지 않도록 지방정부를 엄격히 지도·관리하고, 담당 부처는 다른 물품에 대해 한 박자 빠르게 선제 대처할 것",
       "timestamp": 258,
-      "tags": ["생필품", "지방행정"],
+      "tags": [
+        "생필품",
+        "지방행정"
+      ],
       "status": "issued",
       "followUps": []
     },
     {
       "id": "dir-2026-03-31-03",
       "from": "president",
-      "to": ["unknown"],
+      "to": [
+        "knpa-commissioner"
+      ],
       "content": "종량제 봉투 사재기 허위 소문의 최초 유포자와 '석유 90만 배럴 북한 유입설' 유포자를 경찰이 신속히 수사해 밝혀내고, 위기 조장 가짜뉴스에 엄정 대응할 것(경찰청장)",
       "timestamp": 1602,
-      "tags": ["가짜뉴스", "치안"],
+      "tags": [
+        "가짜뉴스",
+        "치안"
+      ],
       "status": "issued",
       "followUps": []
     },
     {
       "id": "dir-2026-03-31-04",
       "from": "president",
-      "to": ["me-minister"],
+      "to": [
+        "me-minister"
+      ],
       "content": "전기차 구매 지원을 재생에너지가 많이 생산되는 지역에 획기적으로 확대하는 방안을 검토하고, 남는 재생에너지를 화석연료 대체에 쓸 수 있는 길을 최대한 찾을 것",
       "timestamp": 638,
-      "tags": ["에너지전환", "전기차"],
+      "tags": [
+        "에너지전환",
+        "전기차"
+      ],
       "status": "issued",
       "followUps": []
     },
     {
       "id": "dir-2026-03-31-05",
       "from": "president",
-      "to": ["motie-minister"],
+      "to": [
+        "motie-minister"
+      ],
       "content": "전력 수요의 중장기 조정과 적절한 에너지 믹스 정책을 추진하되, 특히 재생에너지로의 전환에 각별히 속도를 낼 것",
       "timestamp": 513,
-      "tags": ["에너지전환", "재생에너지"],
+      "tags": [
+        "에너지전환",
+        "재생에너지"
+      ],
       "status": "reported",
       "followUps": [
         {
@@ -361,50 +386,76 @@
     {
       "id": "dir-2026-03-31-06",
       "from": "president",
-      "to": ["pm"],
+      "to": [
+        "pm"
+      ],
       "content": "위기 대응에 걸리는 법령·제도·관행의 장애물을 각 부처가 끌어안지 말고 현장 수요를 취합해 국무회의와 대통령실로 가져올 것. 필요하면 심사 절차 단축·생략, 법 개정, 긴급재정경제명령까지 검토해 해결할 것",
       "timestamp": 2433,
-      "tags": ["규제", "비상대응"],
+      "tags": [
+        "규제",
+        "비상대응"
+      ],
       "status": "issued",
       "followUps": []
     },
     {
       "id": "dir-2026-03-31-07",
       "from": "president",
-      "to": ["unknown"],
+      "to": [
+        "ftc-chairman"
+      ],
       "content": "전속고발제 개편안은 고발 요청권 확대라는 우회 구조 대신 증거가 명확한 경우 지방정부 등 기관에 직접 고발권을 부여하는 방향으로 다시 검토하고, 법제처가 제기한 쟁점까지 고려해 정리한 뒤 재논의를 준비할 것(공정거래위원장)",
       "timestamp": 4648,
-      "tags": ["전속고발제", "공정거래"],
+      "tags": [
+        "전속고발제",
+        "공정거래"
+      ],
       "status": "issued",
       "followUps": []
     },
     {
       "id": "dir-2026-03-31-08",
       "from": "president",
-      "to": ["unknown"],
+      "to": [
+        "knpa-commissioner"
+      ],
       "content": "경찰의 경비 등 비효율 인력을 최대한 생활치안·수사 인력으로 전환해 국민의 치안 수요를 충족할 것(경찰청장)",
       "timestamp": 5736,
-      "tags": ["치안", "인력운용"],
+      "tags": [
+        "치안",
+        "인력운용"
+      ],
       "status": "issued",
       "followUps": []
     },
     {
       "id": "dir-2026-03-31-09",
       "from": "president",
-      "to": ["moj-minister", "mois-minister"],
+      "to": [
+        "moj-minister",
+        "mois-minister"
+      ],
       "content": "중수청 출범 전환기의 수사 사건 적체가 발생하지 않도록 검찰·중수청 인력 운용과 이관 계획을 정리해 별도 보고할 것",
       "timestamp": 6172,
-      "tags": ["수사기소분리", "중수청"],
+      "tags": [
+        "수사기소분리",
+        "중수청"
+      ],
       "status": "issued",
       "followUps": []
     },
     {
       "id": "dir-2026-03-31-10",
       "from": "president",
-      "to": ["mofa-minister"],
+      "to": [
+        "mofa-minister"
+      ],
       "content": "난립한 무상원조 사업을 통제·관리할 수 있는 체계를 갖추고 효율적으로 운영해, 어디서 무엇을 하는지 모르는 채 예산이 쓰이는 일이 없도록 할 것",
       "timestamp": 7045,
-      "tags": ["ODA", "재정효율"],
+      "tags": [
+        "ODA",
+        "재정효율"
+      ],
       "status": "issued",
       "followUps": []
     }
@@ -412,46 +463,69 @@
   "aiDataPolicy": [
     {
       "topic": "국민 삶의 질 지표의 데이터 기반 진단",
-      "speakerId": "unknown",
+      "speakerId": "data-minister",
       "summary": "국가데이터처장이 GDP 중심 지표의 한계를 보완하는 11개 영역 71개 삶의 질 지표 결과를 보고. 급속한 디지털 전환과 개인정보 유출 불안(28.9%) 등이 삶의 질 개선을 제약하는 요인으로 제시됨.",
       "timestamp": 5197,
-      "tags": ["공공데이터", "데이터거버넌스"]
+      "tags": [
+        "공공데이터",
+        "데이터거버넌스"
+      ]
     },
     {
       "topic": "AI·데이터 기반 화재 예측과 CCTV 이상행동 감지",
       "speakerId": "mohw-minister",
       "summary": "삶의 질 개선 방안 총괄 보고에서 AI·데이터 기반으로 화재 취약 요인을 사전 예측하는 시스템 구축과 CCTV 이상행동 감지 고도화를 통한 야간 보행 안전 강화 계획을 보고.",
       "timestamp": 5453,
-      "tags": ["행정AI", "공공데이터"]
+      "tags": [
+        "행정AI",
+        "공공데이터"
+      ]
     },
     {
       "topic": "상권 데이터 분석 기반 지역 상권 정책",
       "speakerId": "mss-minister",
       "summary": "전국 1,227개 상권 데이터를 분석해 상위 10% 상권의 수도권 집중(64.2%)과 점포당 매출 4배 격차를 확인하고, 이를 근거로 지방 상권 우선 지원과 재정자주도에 따른 국비 차등 보조로 정책 규칙을 변경하겠다고 보고.",
       "timestamp": 6266,
-      "tags": ["공공데이터", "데이터산업"]
+      "tags": [
+        "공공데이터",
+        "데이터산업"
+      ]
     },
     {
       "topic": "K브랜드 인증상표의 AI 정품 인증 기술",
-      "speakerId": "unknown",
+      "speakerId": "ipo-minister",
       "summary": "지식재산처장이 정부 국제 인증상표에 AI 활용 정품 인증 기술을 적용해 해외 위조상품 유통을 모니터링하고, 침해 발생 시 정부가 권리자로서 현지 수사·단속을 직접 요구하는 체계를 보고.",
       "timestamp": 6733,
-      "tags": ["행정AI", "규제"]
+      "tags": [
+        "행정AI",
+        "규제"
+      ]
     },
     {
       "topic": "ODA의 AI 분야 활용",
       "speakerId": "mofa-minister",
       "summary": "무상원조 구조조정을 통해 글로벌 AI 기본사회 선도 등 전략 분야를 지원하겠다고 보고했고, 재정경제부도 EDCF 사업에서 AI·문화 분야 사업을 발굴해 오면 적극 반영하겠다고 밝힘.",
       "timestamp": 6899,
-      "tags": ["AI예산", "AI인프라"]
+      "tags": [
+        "AI예산",
+        "AI인프라"
+      ]
     },
     {
       "topic": "디지털 신산업 직업훈련",
       "speakerId": "mohw-minister",
       "summary": "중동전쟁 민생 대응 보고에서 청년 직무역량 향상을 위한 디지털 신산업 직업훈련과 일경험 기회 지원 계획을 포함해 보고.",
       "timestamp": 1884,
-      "tags": ["인재양성"]
+      "tags": [
+        "인재양성"
+      ]
     }
   ],
-  "tags": ["중동전쟁대응", "에너지전환", "전속고발제", "국민삶의질", "지역상권"]
+  "tags": [
+    "중동전쟁대응",
+    "에너지전환",
+    "전속고발제",
+    "국민삶의질",
+    "지역상권"
+  ]
 }

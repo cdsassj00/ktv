@@ -227,7 +227,7 @@
       "topic": "사회연대경제 금융 지원과 공제 허용",
       "turns": [
         {
-          "speakerId": "unknown",
+          "speakerId": "fsc-chairman",
           "kind": "보고",
           "summary": "금융위원장이 사회연대경제 자금 공급 3축 보고 — 미소금융·신보 전용 보증 프로그램 확대, 신협 등 상호금융의 기금 100억 원 조성과 출자 근거 입법, 성장사다리 사회투자펀드 등 민간 투자 확대.",
           "timestamp": 3410,
@@ -291,20 +291,29 @@
     {
       "id": "dir-2025-12-16-01",
       "from": "president",
-      "to": ["mois-minister"],
+      "to": [
+        "mois-minister"
+      ],
       "content": "탁월한 성과를 내는 공무원에게 걸맞은 파격적 포상이 이루어지도록 후속 조치를 신속히 추진하고, 공직사회 처우 개선을 위한 추가 해법도 계속 연구·검토할 것",
       "timestamp": 237,
-      "tags": ["공직혁신", "성과보상"],
+      "tags": [
+        "공직혁신",
+        "성과보상"
+      ],
       "status": "issued",
       "followUps": []
     },
     {
       "id": "dir-2025-12-16-02",
       "from": "president",
-      "to": ["mois-minister"],
+      "to": [
+        "mois-minister"
+      ],
       "content": "협동조합·교육·문화예술·돌봄·의료·주거·기후에너지 등 다양한 분야에서 사회연대경제를 활성화할 방안을 각 부처가 충분히 연구하고 제도 정비·정책 발굴에 속도를 낼 것",
       "timestamp": 352,
-      "tags": ["사회연대경제"],
+      "tags": [
+        "사회연대경제"
+      ],
       "status": "reported",
       "followUps": [
         {
@@ -318,10 +327,15 @@
     {
       "id": "dir-2025-12-16-03",
       "from": "president",
-      "to": ["mois-minister"],
+      "to": [
+        "mois-minister"
+      ],
       "content": "공공서비스 위탁과 공공조달에서 수의계약 대신 사회적기업·협동조합을 우선 활용할 분야를 대대적으로 발굴하고, 일정 비율을 맡기도록 규정화하는 방안을 기본법 제정 과정에서 검토할 것",
       "timestamp": 1153,
-      "tags": ["사회연대경제", "공공조달"],
+      "tags": [
+        "사회연대경제",
+        "공공조달"
+      ],
       "status": "reported",
       "followUps": [
         {
@@ -335,20 +349,32 @@
     {
       "id": "dir-2025-12-16-04",
       "from": "president",
-      "to": ["mohw-minister"],
+      "to": [
+        "mohw-minister"
+      ],
       "content": "간병비 급여화 사업 추진 시 전일제 전제를 벗어나 교육받은 인력이 시간제로 참여하는 플랫폼·협동조합형 공급 방식을 검토해 간병 비용을 낮추고 일자리를 만들 것",
       "timestamp": 2020,
-      "tags": ["돌봄", "간병"],
+      "tags": [
+        "돌봄",
+        "간병"
+      ],
       "status": "issued",
       "followUps": []
     },
     {
       "id": "dir-2025-12-16-05",
       "from": "president",
-      "to": ["mois-minister", "mafra-minister", "me-minister"],
+      "to": [
+        "mois-minister",
+        "mafra-minister",
+        "me-minister"
+      ],
       "content": "햇빛소득마을 조성 목표(2030년 2,500개)를 전국 10만여 개 마을 규모에 맞게 대폭 확대하고, 공공용지·지붕·유휴지를 활용해 신속히 개발할 것. 은면장 등 대상 대대적 교육 확산 방법도 집중 연구할 것",
       "timestamp": 2551,
-      "tags": ["햇빛소득마을", "재생에너지"],
+      "tags": [
+        "햇빛소득마을",
+        "재생에너지"
+      ],
       "status": "reported",
       "followUps": [
         {
@@ -362,50 +388,75 @@
     {
       "id": "dir-2025-12-16-06",
       "from": "president",
-      "to": ["me-minister"],
+      "to": [
+        "me-minister"
+      ],
       "content": "송전망을 한전 재원에만 의존하지 말고 국민 펀드 등 민간 자금이 참여하도록 입법을 서두르고, 해상풍력 대기 수요 등으로 잡혀 있는 계통 여유 용량 조사를 신속히 마무리할 것",
       "timestamp": 2639,
-      "tags": ["송전망", "재생에너지"],
+      "tags": [
+        "송전망",
+        "재생에너지"
+      ],
       "status": "issued",
       "followUps": []
     },
     {
       "id": "dir-2025-12-16-07",
       "from": "president",
-      "to": ["unknown"],
+      "to": [
+        "fsc-chairman"
+      ],
       "content": "협동조합이 수익으로 공제를 조성해 상호 부조하는 것을 금융업 규제로 막는 문제를 긍정적으로 검토하고, 부처 간에 해결되지 않으면 대통령에게 직접 보고할 것(금융위원장)",
       "timestamp": 3825,
-      "tags": ["사회연대경제", "금융규제"],
+      "tags": [
+        "사회연대경제",
+        "금융규제"
+      ],
       "status": "issued",
       "followUps": []
     },
     {
       "id": "dir-2025-12-16-08",
       "from": "president",
-      "to": ["pm"],
+      "to": [
+        "pm"
+      ],
       "content": "각 부처 감사 기능을 강화하고 부정·부패·무능에 대한 감찰과 문책을 엄정히 하여 신상필벌을 확립할 것. 행정은 국민에게 최대한 투명하게 공개할 것",
       "timestamp": 5633,
-      "tags": ["공직기강", "감사"],
+      "tags": [
+        "공직기강",
+        "감사"
+      ],
       "status": "issued",
       "followUps": []
     },
     {
       "id": "dir-2025-12-16-09",
       "from": "president",
-      "to": ["pm"],
+      "to": [
+        "pm"
+      ],
       "content": "케이블카·버스 노선 면허·면세점 등 인허가·면허로 특정 개인·기업에 특혜가 귀속되는 행정행위를 전면 점검하고, 행정의 효과가 국민 다수나 사회적경제 조직에 돌아가는 길을 최대한 찾을 것",
       "timestamp": 5778,
-      "tags": ["인허가", "특혜개선"],
+      "tags": [
+        "인허가",
+        "특혜개선"
+      ],
       "status": "issued",
       "followUps": []
     },
     {
       "id": "dir-2025-12-16-10",
       "from": "president",
-      "to": ["mois-minister"],
+      "to": [
+        "mois-minister"
+      ],
       "content": "경기도에서 시작한 계곡 불법시설 정비를 전국으로 확산하도록 기획해 정리·추진할 것",
       "timestamp": 5968,
-      "tags": ["계곡정비", "안전"],
+      "tags": [
+        "계곡정비",
+        "안전"
+      ],
       "status": "reported",
       "followUps": [
         {
@@ -423,22 +474,37 @@
       "speakerId": "mois-minister",
       "summary": "사회연대경제에 대한 공통 통계 지표 개발과 데이터 관리를 통해 과학적이고 세밀하게 정책을 추진하겠다고 보고.",
       "timestamp": 670,
-      "tags": ["데이터거버넌스", "공공데이터"]
+      "tags": [
+        "데이터거버넌스",
+        "공공데이터"
+      ]
     },
     {
       "topic": "디지털 경제에 맞춘 협동조합 법령 정비",
       "speakerId": "moef-minister",
       "summary": "협동조합 기본법 등 관련 법령을 디지털 경제 시대에 맞게 개정하는 방향으로 제도 정비를 추진하겠다고 보고.",
       "timestamp": 1439,
-      "tags": ["데이터산업", "규제"]
+      "tags": [
+        "데이터산업",
+        "규제"
+      ]
     },
     {
       "topic": "사회적 성과 공시 플랫폼·표준 제안",
       "speakerId": "unknown",
       "summary": "참석자가 정부 주도의 사회연대경제 플랫폼을 만들어 경영 공시 기준을 통일하고, 그린 택소노미·ESG 공시처럼 사회적 성과에 대한 표준 체계를 마련하자고 제언.",
       "timestamp": 4090,
-      "tags": ["데이터거버넌스", "공공데이터"]
+      "tags": [
+        "데이터거버넌스",
+        "공공데이터"
+      ]
     }
   ],
-  "tags": ["사회연대경제", "햇빛소득마을", "재생에너지", "공공위탁", "공직혁신"]
+  "tags": [
+    "사회연대경제",
+    "햇빛소득마을",
+    "재생에너지",
+    "공공위탁",
+    "공직혁신"
+  ]
 }

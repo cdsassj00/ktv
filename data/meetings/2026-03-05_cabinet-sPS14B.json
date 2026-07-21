@@ -129,14 +129,14 @@
           "inReplyTo": 3
         },
         {
-          "speakerId": "unknown",
+          "speakerId": "ftc-chairman",
           "kind": "답변",
           "summary": "공정거래위원장이 시장지배적 사업자의 가격 남용은 규제할 수 있으나 소규모 주유소에는 직접 제재 수단이 없고, 주변 가격을 투명하게 공개해 소비자가 비싼 주유소를 피하도록 경쟁을 유도하는 방식으로 대응 중이라고 답변.",
           "timestamp": 2089,
           "inReplyTo": 4
         },
         {
-          "speakerId": "unknown",
+          "speakerId": "senior-civil",
           "kind": "답변",
           "summary": "민정수석이 물가안정법 2조의 최고가격 지정 제도와, 지정가를 어겨 얻은 부당이득 전액을 과징금으로 환수할 수 있는 규정을 설명. 과거 석탄·연탄 등에 예외적으로 운영된 사례가 있다고 보고.",
           "timestamp": 2111,
@@ -212,7 +212,7 @@
       "topic": "100조 시장 안정 프로그램의 성격",
       "turns": [
         {
-          "speakerId": "unknown",
+          "speakerId": "fsc-chairman",
           "kind": "보고",
           "summary": "금융위원장이 금융시장 비상대응 보고 — 코스피는 연초 48.2% 상승 후 18.4% 하락했으나 외국인이 순매수로 전환, 증시 추세 하락 가능성은 낮다는 평가. 100조 플러스 알파 시장 안정 프로그램과 피해 중소기업 20.3조 원 정책금융, 가짜뉴스 등 시장 교란 무관용 엄단 방침.",
           "timestamp": 2483,
@@ -226,7 +226,7 @@
           "inReplyTo": 0
         },
         {
-          "speakerId": "unknown",
+          "speakerId": "fsc-chairman",
           "kind": "답변",
           "summary": "금융위원장이 해당 프로그램은 채권시장과 단기 자금시장용으로, 구조적 문제가 없는데 일시적 비정상이 발생할 때 교정하기 위한 것이며 증권시장 부양 개념과는 전혀 다르다고 답변.",
           "timestamp": 3142,
@@ -267,40 +267,63 @@
     {
       "id": "dir-2026-03-05-01",
       "from": "president",
-      "to": ["moef-minister", "unknown"],
+      "to": [
+        "moef-minister",
+        "unknown"
+      ],
       "content": "자본시장 안정을 위해 100조 원 규모 시장 안정 프로그램을 적절하고 신속하게 집행·관리하고, 가짜뉴스·시세조종 등 시장 교란 범죄는 무관용 원칙으로 엄단할 것",
       "timestamp": 189,
-      "tags": ["금융시장", "시장안정"],
+      "tags": [
+        "금융시장",
+        "시장안정"
+      ],
       "status": "issued",
       "followUps": []
     },
     {
       "id": "dir-2026-03-05-02",
       "from": "president",
-      "to": ["motie-minister"],
+      "to": [
+        "motie-minister"
+      ],
       "content": "원유·가스·나프타 등 긴급 수급 안정책과 중장기 수입처 다변화를 신속히 추진하고, 매점매석·폭리 시도를 강력히 단속할 것",
       "timestamp": 238,
-      "tags": ["에너지", "수급안정"],
+      "tags": [
+        "에너지",
+        "수급안정"
+      ],
       "status": "issued",
       "followUps": []
     },
     {
       "id": "dir-2026-03-05-03",
       "from": "president",
-      "to": ["moef-minister", "mss-minister"],
+      "to": [
+        "moef-minister",
+        "mss-minister"
+      ],
       "content": "중동 수출 의존도가 높은 기업과 해운 등 직접 영향 분야에 신속하고 폭넓은 정책금융 지원을 서두를 것",
       "timestamp": 332,
-      "tags": ["정책금융", "수출"],
+      "tags": [
+        "정책금융",
+        "수출"
+      ],
       "status": "issued",
       "followUps": []
     },
     {
       "id": "dir-2026-03-05-04",
       "from": "president",
-      "to": ["mofa-minister", "mnd-minister"],
+      "to": [
+        "mofa-minister",
+        "mnd-minister"
+      ],
       "content": "주재원·출장자·유학생·여행객 등 중동 체류 국민을 빠짐없이 파악하고, 군용기·전세기·육로 등 모든 수단을 총동원한 비상 철수 대책을 2중 3중으로 준비할 것. 중동 해역의 선박·선원 안전에도 만전을 기할 것",
       "timestamp": 377,
-      "tags": ["재외국민보호", "국민안전"],
+      "tags": [
+        "재외국민보호",
+        "국민안전"
+      ],
       "status": "reported",
       "followUps": [
         {
@@ -313,10 +336,17 @@
     {
       "id": "dir-2026-03-05-05",
       "from": "president",
-      "to": ["moef-minister", "motie-minister"],
+      "to": [
+        "moef-minister",
+        "motie-minister"
+      ],
       "content": "물가안정법에 따라 지역별·유종별로 현실적인 최고가격을 신속하게 지정하고, 위기 편승 '바가지' 가격 인상을 제재할 행정처분 제도를 점검·마련하며, 주유소 매입가격 등 객관적 가격 정보를 제공하는 홈페이지·비교 사이트를 추진할 것",
       "timestamp": 2157,
-      "tags": ["물가", "유가", "민생"],
+      "tags": [
+        "물가",
+        "유가",
+        "민생"
+      ],
       "status": "reported",
       "followUps": [
         {
@@ -330,10 +360,16 @@
     {
       "id": "dir-2026-03-05-06",
       "from": "president",
-      "to": ["motie-minister", "moef-minister"],
+      "to": [
+        "motie-minister",
+        "moef-minister"
+      ],
       "content": "반복되는 유가·원유 조달 위기를 계기로 재생에너지 전환을 신속하고 대대적으로 가속하고, 송전망 확충과 함께 전기요금 차등제 등 에너지 지산지소와 산업의 지방 배치를 현실성 있게 추진할 것",
       "timestamp": 2808,
-      "tags": ["재생에너지", "국토균형발전"],
+      "tags": [
+        "재생에너지",
+        "국토균형발전"
+      ],
       "status": "reported",
       "followUps": [
         {
@@ -347,10 +383,16 @@
     {
       "id": "dir-2026-03-05-07",
       "from": "president",
-      "to": ["pm", "unknown"],
+      "to": [
+        "pm",
+        "unknown"
+      ],
       "content": "지배구조 개선, 불공정거래 근절 등 자본시장 비정상 상황을 교정하는 정책·입법 조치를 이번 기회에 더 강력하고 신속하게 추진할 것",
       "timestamp": 3283,
-      "tags": ["자본시장", "입법"],
+      "tags": [
+        "자본시장",
+        "입법"
+      ],
       "status": "issued",
       "followUps": []
     }
@@ -362,8 +404,16 @@
       "summary": "유가 폭리 대응 토의에서 주유소 매입가격 공개 제안을 받아, 국민이 폭리 여부를 직접 확인할 수 있도록 객관적 가격 정보를 제공하는 홈페이지나 가격 비교 사이트를 만들어 보라고 주문.",
       "quote": "객관적인 가격 정보를 제공하는 거, 홈페이지를 하나 만들든지 아니면 비교 사이트를 하나 만들든지 좀 그렇게 한번 해 보시죠.",
       "timestamp": 2183,
-      "tags": ["공공데이터"]
+      "tags": [
+        "공공데이터"
+      ]
     }
   ],
-  "tags": ["중동위기", "재외국민보호", "유가·물가안정", "금융시장안정", "에너지안보"]
+  "tags": [
+    "중동위기",
+    "재외국민보호",
+    "유가·물가안정",
+    "금융시장안정",
+    "에너지안보"
+  ]
 }

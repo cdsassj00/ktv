@@ -127,7 +127,7 @@
           "inReplyTo": 3
         },
         {
-          "speakerId": "unknown",
+          "speakerId": "molegis-minister",
           "kind": "발언",
           "summary": "법제처장이 소년원 송치 기준을 정정 — 6개월 이상 2년까지 송치는 12세 이상만 가능하고 11세 이하는 6개월 이하만 가능하다고 설명.",
           "timestamp": 2623,
@@ -177,7 +177,7 @@
           "inReplyTo": 0
         },
         {
-          "speakerId": "unknown",
+          "speakerId": "fsc-chairman",
           "kind": "보고",
           "summary": "금융위원장이 금융 분야 쟁점 보고 — 실수요자 대출 규제 조정, 전세대출의 갭투자 견인 문제, 이주비 대출 규제를 둘러싼 완화·유지 대립 구도를 정리.",
           "timestamp": 3718,
@@ -191,7 +191,7 @@
           "inReplyTo": 0
         },
         {
-          "speakerId": "unknown",
+          "speakerId": "osc-minister",
           "kind": "답변",
           "summary": "국무조정실장이 실시간 집계 결과를 보고 — 약 90%가 초고가 1주택 보유세 강화에 동의(1번)했고, 기준 금액은 30억 원 의견이 가장 많고 20억 원도 상당수라고 답변.",
           "timestamp": 4429,
@@ -261,7 +261,7 @@
       "topic": "자살 예방 대책과 채무자 면책",
       "turns": [
         {
-          "speakerId": "unknown",
+          "speakerId": "fsc-chairman",
           "kind": "보고",
           "summary": "금융위원장이 경제적 위기자 자살 예방 대책 보고 — 채무자 지원 종합창구(대표번호 1375), 금융·비금융 데이터 결합 위기 포착 특화 모형, 부채증명서 통합 발급, 생계비 압류금지 계좌, 복합지원 확대.",
           "timestamp": 7256,
@@ -325,14 +325,14 @@
           "inReplyTo": null
         },
         {
-          "speakerId": "unknown",
+          "speakerId": "mfds-minister",
           "kind": "답변",
           "summary": "식약처장이 국정과제상 성평등가족부 주관으로 법체계가 완비되면 허가 행정은 신속히 이행 가능하며, 허가 시 전문의약품이 될 것으로 본다고 답변.",
           "timestamp": 10480,
           "inReplyTo": 0
         },
         {
-          "speakerId": "unknown",
+          "speakerId": "molegis-minister",
           "kind": "답변",
           "summary": "법제처장이 헌법재판소의 낙태죄 헌법불합치 결정과 대체입법 미비 상황을 설명하며, 원칙적으로는 대체입법이 선행돼야 하나 국민 다수가 동의할 짧은 주수 기준을 정해 사실상 처방약으로 허용하는 방법도 있다고 답변.",
           "timestamp": 10671,
@@ -380,100 +380,155 @@
     {
       "id": "dir-2026-07-14-01",
       "from": "president",
-      "to": ["mofa-minister"],
+      "to": [
+        "mofa-minister"
+      ],
       "content": "나토·몽골 순방의 외교적 결실이 국민의 삶과 경제에 실질적 보탬이 되도록 관계 부처는 후속 조치를 속도감 있게 추진할 것",
       "timestamp": 964,
-      "tags": ["외교", "순방후속조치"],
+      "tags": [
+        "외교",
+        "순방후속조치"
+      ],
       "status": "issued",
       "followUps": []
     },
     {
       "id": "dir-2026-07-14-02",
       "from": "president",
-      "to": ["mois-minister"],
+      "to": [
+        "mois-minister"
+      ],
       "content": "폭염과 호우가 번갈아 예보되는 이번 주, 취약 계층과 위험 지역에 대한 안전 대책을 세밀하게 점검할 것",
       "timestamp": 1031,
-      "tags": ["안전", "재난대응"],
+      "tags": [
+        "안전",
+        "재난대응"
+      ],
       "status": "issued",
       "followUps": []
     },
     {
       "id": "dir-2026-07-14-03",
       "from": "president",
-      "to": ["mogef-minister"],
+      "to": [
+        "mogef-minister"
+      ],
       "content": "촉법소년 연령 하향은 오늘 결정하지 말고, 하향 범위(전면/부분)·폭(1년/2년) 등 쟁점을 정리해 현장·국민 의견을 다시 수렴한 뒤 재논의를 준비할 것",
       "timestamp": 3038,
-      "tags": ["촉법소년", "공론화"],
+      "tags": [
+        "촉법소년",
+        "공론화"
+      ],
       "status": "issued",
       "followUps": []
     },
     {
       "id": "dir-2026-07-14-04",
       "from": "president",
-      "to": ["moef-minister", "mofa-minister"],
+      "to": [
+        "moef-minister",
+        "mofa-minister"
+      ],
       "content": "순방 MOU를 유형별로 구분·관리해 실질적 성과로 연결하고, 각 부처도 소관 합의 사항의 이행 관리 체계를 갖출 것. 수출·품목 다변화와 문화 진출에 각별히 신경 쓸 것",
       "timestamp": 5159,
-      "tags": ["외교", "MOU", "수출"],
+      "tags": [
+        "외교",
+        "MOU",
+        "수출"
+      ],
       "status": "issued",
       "followUps": []
     },
     {
       "id": "dir-2026-07-14-05",
       "from": "president",
-      "to": ["mafra-minister"],
+      "to": [
+        "mafra-minister"
+      ],
       "content": "산지 가격과 소비자 가격의 괴리를 해소하도록 계약재배·직거래 확대 등 농산물 유통구조의 근본적 개혁 방안을 마련하고, 필요하면 정부 투자·시스템 참여도 검토할 것",
       "timestamp": 6164,
-      "tags": ["물가", "농업", "유통구조"],
+      "tags": [
+        "물가",
+        "농업",
+        "유통구조"
+      ],
       "status": "issued",
       "followUps": []
     },
     {
       "id": "dir-2026-07-14-06",
       "from": "president",
-      "to": ["moj-minister"],
+      "to": [
+        "moj-minister"
+      ],
       "content": "법정 이자율을 초과하는 불법 사금융에 대해 이자 무효·원금 무효를 넘어 형사처벌이 가능하도록 처벌 조항 입법을 검토할 것",
       "timestamp": 8204,
-      "tags": ["불법사금융", "민생금융"],
+      "tags": [
+        "불법사금융",
+        "민생금융"
+      ],
       "status": "issued",
       "followUps": []
     },
     {
       "id": "dir-2026-07-14-07",
       "from": "president",
-      "to": ["moj-minister", "moef-minister"],
+      "to": [
+        "moj-minister",
+        "moef-minister"
+      ],
       "content": "법원별로 다른 개인회생·파산 면책 실무 기준을 법원 협의 또는 시행령으로 통일하는 방안과, 갚을 수 없는 채무자가 쉽게 면책받도록 면책 기준을 입법화하는 방안을 검토할 것(금융위 공동)",
       "timestamp": 8434,
-      "tags": ["채무조정", "자살예방"],
+      "tags": [
+        "채무조정",
+        "자살예방"
+      ],
       "status": "issued",
       "followUps": []
     },
     {
       "id": "dir-2026-07-14-08",
       "from": "president",
-      "to": ["pm"],
+      "to": [
+        "pm"
+      ],
       "content": "빚 문제로 인한 자살이 재발하지 않도록 채무자 구제·면책 제도의 홍보와 자살 예방 대책 이행을 총리가 각별히 챙길 것",
       "timestamp": 8680,
-      "tags": ["자살예방", "홍보"],
+      "tags": [
+        "자살예방",
+        "홍보"
+      ],
       "status": "issued",
       "followUps": []
     },
     {
       "id": "dir-2026-07-14-09",
       "from": "president",
-      "to": ["unknown"],
+      "to": [
+        "acrc-chairman"
+      ],
       "content": "각 부처·산하기관·지방정부에 흩어진 민원을 통합 관리하는 방안을 마련하고, 처리 결과를 유형별로 분류해 추적 관리하며 민원 응대의 전문성을 높일 것(국민권익위원장)",
       "timestamp": 9163,
-      "tags": ["민원", "행정혁신"],
+      "tags": [
+        "민원",
+        "행정혁신"
+      ],
       "status": "issued",
       "followUps": []
     },
     {
       "id": "dir-2026-07-14-10",
       "from": "president",
-      "to": ["pm", "mogef-minister"],
+      "to": [
+        "pm",
+        "mogef-minister"
+      ],
       "content": "임신중지 약물 문제를 방치하지 말고 총리 주재로 관계부처 회의를 거쳐 절충적 해결책을 담은 안건을 국무회의에 상정해 재토론할 것",
       "timestamp": 10830,
-      "tags": ["보건", "여성정책"],
+      "tags": [
+        "보건",
+        "여성정책"
+      ],
       "status": "issued",
       "followUps": []
     }
@@ -485,21 +540,31 @@
       "summary": "모두발언에서 반도체가 주도하는 수출 호조를 언급하며 AI 혁명이 촉발한 글로벌 산업 재편을 대한민국 도약의 기회로 규정.",
       "quote": "인공지능 혁명이 촉발한 글로벌 산업 재편이 우리에게 새로운 기회의 창을 열어주고 있는 셈입니다.",
       "timestamp": 794,
-      "tags": ["AI전환", "데이터산업"]
+      "tags": [
+        "AI전환",
+        "데이터산업"
+      ]
     },
     {
       "topic": "하반기 경제성장전략의 AI·데이터 과제",
       "speakerId": "moef-minister",
       "summary": "3대 메가 프로젝트 총력 지원과 함께 차세대 전력 반도체, 데이터 경제 활성화, AI 시대 휴머노이드 로봇 핵심 부품(센서·액추에이터 등) 기술 개발 지원을 하반기 경제성장전략에 포함해 보고.",
       "timestamp": 6625,
-      "tags": ["데이터산업", "AI인프라", "AI예산"]
+      "tags": [
+        "데이터산업",
+        "AI인프라",
+        "AI예산"
+      ]
     },
     {
       "topic": "경제적 위기자 조기 포착 특화 모형",
-      "speakerId": "unknown",
+      "speakerId": "fsc-chairman",
       "summary": "금융위원장이 채무 정보 등 금융 데이터와 건강보험료 납부 정보 등 비금융 데이터를 결합해 경제적 위기 징후를 조기 포착하는 특화 모형 개발 계획을 보고. 위기가구 발굴 시스템에 금융위기 정보 제공도 확대.",
       "timestamp": 7537,
-      "tags": ["데이터거버넌스", "공공데이터"]
+      "tags": [
+        "데이터거버넌스",
+        "공공데이터"
+      ]
     },
     {
       "topic": "복지·상담 분야 AI 도입 촉구",
@@ -507,7 +572,10 @@
       "summary": "자살 예방 대책 보고를 들으며 인공지능 조기 도입 필요성을 강조. 대표번호 상담을 넘어 휴대폰으로 AI에게 물으면 지원 제도를 음성으로 안내받는 서비스를 빨리 만들라고 주문.",
       "quote": "정말로 빨리 인공지능을 도입해야 되겠다는 생각이 들었어요.",
       "timestamp": 7809,
-      "tags": ["행정AI", "AI인프라"]
+      "tags": [
+        "행정AI",
+        "AI인프라"
+      ]
     },
     {
       "topic": "민원 통합관리에 AI 활용",
@@ -515,29 +583,46 @@
       "summary": "부처·지방정부·권익위에 흩어진 중복 민원의 동일성 판별과 통합 관리에 인공지능을 활용하는 시스템 발굴을 지시.",
       "quote": "요즘은 인공지능으로 쉽게 파악할 테니까요. 그 시스템을 좀 발굴하는 게 좋을 것 같아요.",
       "timestamp": 9282,
-      "tags": ["행정AI", "공공데이터"]
+      "tags": [
+        "행정AI",
+        "공공데이터"
+      ]
     },
     {
       "topic": "계곡 불법시설 조사 시스템 국민 개방",
       "speakerId": "mois-minister",
       "summary": "항공·위성사진 기반으로 계곡 불법시설 10만여 건을 적발한 조사 시스템을 국민에게 공개해 누구나 불법 여부를 확인하고 신고할 수 있게 하겠다고 보고.",
       "timestamp": 9976,
-      "tags": ["공공데이터"]
+      "tags": [
+        "공공데이터"
+      ]
     },
     {
       "topic": "'하반기부터 이렇게 달라집니다' AI 검색 서비스",
       "speakerId": "moef-minister",
       "summary": "정책 안내 책자를 없애고 245건의 하반기 달라지는 정책을 AI 검색으로 제공한다고 보고. 상황별·수혜자별 검색과 요약 기능으로 국민 접근성을 높이는 홍보 영상을 소개.",
       "timestamp": 11006,
-      "tags": ["행정AI", "공공데이터"]
+      "tags": [
+        "행정AI",
+        "공공데이터"
+      ]
     },
     {
       "topic": "지방정부 적극행정의 AI 활용 사례",
       "speakerId": "pm",
       "summary": "적극행정 정부포상 심사에서 도로 노면을 AI로 분석해 교통사고를 줄이는 등 지방정부의 AI 활용 과제가 많았다며, 포상·확산에 더 과감한 인센티브가 필요하다고 발언.",
       "timestamp": 11403,
-      "tags": ["행정AI"]
+      "tags": [
+        "행정AI"
+      ]
     }
   ],
-  "tags": ["부동산정책", "경제성장전략", "자살예방", "촉법소년", "순방후속조치", "AI행정"]
+  "tags": [
+    "부동산정책",
+    "경제성장전략",
+    "자살예방",
+    "촉법소년",
+    "순방후속조치",
+    "AI행정"
+  ]
 }

@@ -210,7 +210,7 @@
           "inReplyTo": 0
         },
         {
-          "speakerId": "unknown",
+          "speakerId": "ftc-chairman",
           "kind": "발언",
           "summary": "공정거래위원장이 가격을 내리지 않는 주유소 중심의 지방 담합 대응반을 구성해 대구·부산·제주에서 조사에 착수했다고 보고. 대구는 주유소 수가 적은 지역 특성이 있다고 설명.",
           "timestamp": 2759,
@@ -265,7 +265,7 @@
           "inReplyTo": 2
         },
         {
-          "speakerId": "unknown",
+          "speakerId": "fsc-chairman",
           "kind": "답변",
           "summary": "금융위원장이 정책금융기관의 지방 공급 목표제, 지방 우대 금리·한도, 부산 이전 청년 대출 등 '지방 우대 금융' 추진 상황을 답변.",
           "timestamp": 3936,
@@ -299,7 +299,7 @@
       "topic": "국민성장펀드와 국민 참여 인프라 투자",
       "turns": [
         {
-          "speakerId": "unknown",
+          "speakerId": "fsc-chairman",
           "kind": "보고",
           "summary": "금융위원장이 국민성장펀드 보고 — 5년간 150조 원 조성, 지방 프로젝트 60조 원, 1차 7개 메가 프로젝트 선정과 3건(신안 해상풍력·울산 이차전지·평택 AI 반도체 HBM 공장) 자금 승인, 연 6천억 원 규모 국민참여형 펀드 5월 출시 계획.",
           "timestamp": 4674,
@@ -327,7 +327,7 @@
           "inReplyTo": 2
         },
         {
-          "speakerId": "unknown",
+          "speakerId": "fsc-chairman",
           "kind": "답변",
           "summary": "금융위원장이 인프라 투융자는 국가 경제 미래에도 중요하고 성과를 국민과 나눌 수 있는 부분이라며 관계부처와 사업을 발굴하겠다고 답변.",
           "timestamp": 5297,
@@ -388,30 +388,46 @@
     {
       "id": "dir-2026-03-17-01",
       "from": "president",
-      "to": ["motie-minister"],
+      "to": [
+        "motie-minister"
+      ],
       "content": "국민이 석유 최고가격제 시행 효과를 충분히 체감하도록 현장 점검 강화 등 가용 수단을 총동원할 것",
       "timestamp": 109,
-      "tags": ["물가", "에너지"],
+      "tags": [
+        "물가",
+        "에너지"
+      ],
       "status": "issued",
       "followUps": []
     },
     {
       "id": "dir-2026-03-17-02",
       "from": "president",
-      "to": ["mofa-minister", "motie-minister"],
+      "to": [
+        "mofa-minister",
+        "motie-minister"
+      ],
       "content": "중동 상황 장기화를 전제로 최악의 시나리오까지 염두에 둔 대책 마련 — 외교 역량을 총동원한 추가 대체 공급선 발굴, 자동차 5부제·10부제 등 수요 절감 대책 조기 수립, 필요시 수출 통제와 원전 가동 확대 등 비상 대책 강구",
       "timestamp": 134,
-      "tags": ["중동사태", "에너지안보"],
+      "tags": [
+        "중동사태",
+        "에너지안보"
+      ],
       "status": "issued",
       "followUps": []
     },
     {
       "id": "dir-2026-03-17-03",
       "from": "president",
-      "to": ["moef-minister"],
+      "to": [
+        "moef-minister"
+      ],
       "content": "취약계층과 수출 기업 지원을 위한 '전쟁 추경'을 신속하게 편성하고 국회 통과 후 빠르게 집행되도록 다각도로 노력할 것",
       "timestamp": 227,
-      "tags": ["추경", "민생"],
+      "tags": [
+        "추경",
+        "민생"
+      ],
       "status": "reported",
       "followUps": [
         {
@@ -425,100 +441,153 @@
     {
       "id": "dir-2026-03-17-04",
       "from": "president",
-      "to": ["pm"],
+      "to": [
+        "pm"
+      ],
       "content": "국무총리실 주관으로 전 부처가 재정·세제·금융·규제 등 모든 정책 수단을 지방 주도 균형 성장에 맞춰 재정비하는 체계적·장기적·근본적 대책을 수립하고, 균형발전 영향평가 제도화 검토와 예타·민간투자 제도의 지방 우대 전면 개편, 내년 예산·중기재정계획 대폭 반영을 추진할 것",
       "timestamp": 347,
-      "tags": ["균형발전", "지방주도성장"],
+      "tags": [
+        "균형발전",
+        "지방주도성장"
+      ],
       "status": "issued",
       "followUps": []
     },
     {
       "id": "dir-2026-03-17-05",
       "from": "president",
-      "to": ["mois-minister"],
+      "to": [
+        "mois-minister"
+      ],
       "content": "BTS 광화문 공연에 대비해 경찰·소방 등 관계 부처가 빈틈없는 안전 대책을 수립하고, 명동 화재를 계기로 숙박시설 안전 점검과 테러 가능성 대비도 충실히 할 것",
       "timestamp": 573,
-      "tags": ["안전", "행사관리"],
+      "tags": [
+        "안전",
+        "행사관리"
+      ],
       "status": "issued",
       "followUps": []
     },
     {
       "id": "dir-2026-03-17-06",
       "from": "president",
-      "to": ["mois-minister", "mafra-minister"],
+      "to": [
+        "mois-minister",
+        "mafra-minister"
+      ],
       "content": "봄철 입산·잔재물 소각 등 산불 위험에 대비하고 확보된 야간 진압 헬기를 실제 활용·훈련하며, 가뭄으로 인한 식수·농작물 피해도 미리 대비할 것",
       "timestamp": 734,
-      "tags": ["산불", "재난대응"],
+      "tags": [
+        "산불",
+        "재난대응"
+      ],
       "status": "issued",
       "followUps": []
     },
     {
       "id": "dir-2026-03-17-07",
       "from": "president",
-      "to": ["molit-minister", "pm"],
+      "to": [
+        "molit-minister",
+        "pm"
+      ],
       "content": "12·29 여객기 참사의 시신 수습 경과와 책임 소재를 분명히 따지고, 총리실로 이관된 사고 조사가 너무 늦어지지 않도록 속도를 낼 것",
       "timestamp": 970,
-      "tags": ["참사수습", "안전"],
+      "tags": [
+        "참사수습",
+        "안전"
+      ],
       "status": "issued",
       "followUps": []
     },
     {
       "id": "dir-2026-03-17-08",
       "from": "president",
-      "to": ["pm"],
+      "to": [
+        "pm"
+      ],
       "content": "5·18 정신과 부마항쟁의 헌법 전문 수록, 지방자치 강화, 계엄 요건 강화 등 합의 가능한 의제부터의 단계적·점진적 개헌을 국무조정실·법제처가 정부 차원에서 공식 검토하고 입장을 정리할 것",
       "timestamp": 1414,
-      "tags": ["개헌", "국정과제"],
+      "tags": [
+        "개헌",
+        "국정과제"
+      ],
       "status": "issued",
       "followUps": []
     },
     {
       "id": "dir-2026-03-17-09",
       "from": "president",
-      "to": ["moef-minister"],
+      "to": [
+        "moef-minister"
+      ],
       "content": "연간 80조 원 규모의 조세지출·세금 감면 제도를 제로베이스에서 정비해 꼭 필요한 곳에 두텁게 감면하는 방안을 올해 준비할 것",
       "timestamp": 2507,
-      "tags": ["세제", "재정"],
+      "tags": [
+        "세제",
+        "재정"
+      ],
       "status": "issued",
       "followUps": []
     },
     {
       "id": "dir-2026-03-17-10",
       "from": "president",
-      "to": ["moef-minister"],
+      "to": [
+        "moef-minister"
+      ],
       "content": "국내생산촉진세제 등 도입 시 지방 투자에 파격적으로 추가 지원하고, 교육·문화 인프라의 공공 구축을 선도지구·초광역 거점에 집중하는 방안을 연구할 것",
       "timestamp": 4097,
-      "tags": ["지방주도성장", "세제"],
+      "tags": [
+        "지방주도성장",
+        "세제"
+      ],
       "status": "issued",
       "followUps": []
     },
     {
       "id": "dir-2026-03-17-11",
       "from": "president",
-      "to": ["me-minister", "unknown"],
+      "to": [
+        "me-minister",
+        "unknown"
+      ],
       "content": "전기요금 차등제를 현실적으로 조속히 계산·검토하고, 송배전망 등 안전한 국가 인프라 구축에 국민이 투자자로 참여하는 제3섹터형 사업 모델을 최대한 많이 발굴할 것(금융위 공동)",
       "timestamp": 5180,
-      "tags": ["에너지", "국민참여투자"],
+      "tags": [
+        "에너지",
+        "국민참여투자"
+      ],
       "status": "issued",
       "followUps": []
     },
     {
       "id": "dir-2026-03-17-12",
       "from": "president",
-      "to": ["unknown"],
+      "to": [
+        "acrc-chairman"
+      ],
       "content": "각 부처 갈등조정 담당관 지정에 날짜를 정해 시행하고 이행 상황을 취합하며 담당 인력 교육도 실시할 것(국민권익위원장)",
       "timestamp": 6203,
-      "tags": ["민원", "행정혁신"],
+      "tags": [
+        "민원",
+        "행정혁신"
+      ],
       "status": "issued",
       "followUps": []
     },
     {
       "id": "dir-2026-03-17-13",
       "from": "president",
-      "to": ["mois-minister"],
+      "to": [
+        "mois-minister"
+      ],
       "content": "학생·직장인 외에 누락되는 국민이 없도록 전 국민 AI 접근·교육 기회 부여를 행안부 주관으로 총괄 점검할 것",
       "timestamp": 6748,
-      "tags": ["AI교육", "디지털포용"],
+      "tags": [
+        "AI교육",
+        "디지털포용"
+      ],
       "status": "issued",
       "followUps": []
     }
@@ -526,17 +595,23 @@
   "aiDataPolicy": [
     {
       "topic": "국민성장펀드의 AI 반도체 투자",
-      "speakerId": "unknown",
+      "speakerId": "fsc-chairman",
       "summary": "금융위원장이 'K-엔비디아' 육성 프로젝트를 뒷받침할 국내 대표 AI 반도체 기업에 3~4월 중 수천억 원 규모 지분 투자를 예정하고 있고, 평택 AI 반도체 HBM 공장 생산기지 구축에 자금 공급을 승인했다고 보고.",
       "timestamp": 4769,
-      "tags": ["AI인프라", "AI예산"]
+      "tags": [
+        "AI인프라",
+        "AI예산"
+      ]
     },
     {
       "topic": "AI 기반 중소기업 통합지원 플랫폼",
       "speakerId": "mss-minister",
       "summary": "AI 기반 중소기업 통합지원 플랫폼을 5월 시범 오픈하고, AI가 맞춤형으로 받을 수 있는 지원 사업을 추천하는 대화형 상담을 연내 구현하며, 키워드를 입력하면 AI가 사업계획서 초안을 제공하는 기능을 하반기에 적용하겠다고 보고.",
       "timestamp": 5480,
-      "tags": ["행정AI", "AI인프라"]
+      "tags": [
+        "행정AI",
+        "AI인프라"
+      ]
     },
     {
       "topic": "전국 안내전화 통합과 AI 음성 민원 구상",
@@ -544,21 +619,29 @@
       "summary": "너무 많아 외울 수 없는 안내 전화를 하나로 통합하는 방안을 연구하라고 제안했고, 행안부가 AI를 적용한 음성 민원 접수 서비스가 이미 준비되고 있다고 답변.",
       "quote": "대한민국의 모든 안내 전화를 하나로 통합하면 어떨까 이런 생각을 계속 해 봤거든요.",
       "timestamp": 5831,
-      "tags": ["행정AI"]
+      "tags": [
+        "행정AI"
+      ]
     },
     {
       "topic": "민원 빅데이터 분석 기반 빈발 민원 대응",
-      "speakerId": "unknown",
+      "speakerId": "acrc-chairman",
       "summary": "국민권익위원장이 국민신문고 민원 빅데이터 분석으로 확인된 단기 급증·빈발 민원에 대해 주무·관계 부처 TF를 구성해 조기 대응하고, AI를 활용해 단순 반복 민원 처리 시간을 단축하겠다고 보고.",
       "timestamp": 5922,
-      "tags": ["공공데이터", "데이터거버넌스"]
+      "tags": [
+        "공공데이터",
+        "데이터거버넌스"
+      ]
     },
     {
       "topic": "AI 국민비서·AI 정부24 시범 운영",
       "speakerId": "mois-minister",
       "summary": "네이버·카카오 등 민간 플랫폼에서 대화로 100여 종 민원 서류 발급과 1,200개 공공시설 예약이 가능한 AI 국민비서, 1만여 종 민원을 일상어로 안내하는 AI 정부24를 3월 9일부터 시범 운영. 연말 음성 서비스, 국민신문고 AI 답변 추천, 부처별 서비스를 연계한 AI 통합민원 플랫폼 구축 계획 보고.",
       "timestamp": 6250,
-      "tags": ["행정AI", "공공데이터"]
+      "tags": [
+        "행정AI",
+        "공공데이터"
+      ]
     },
     {
       "topic": "전 국민 AI 접근·교육 기회 보장",
@@ -566,15 +649,27 @@
       "summary": "AI가 이미 일상에 들어와 있지만 이를 모르는 국민이 많다며, '모두의 AI' 정책에 따라 평생교육을 포함해 누락 없이 AI 접근·교육 기회를 부여해야 한다고 강조하고 행안부 주관 총괄을 지시.",
       "quote": "우리 국민들께서 이렇게 인공지능에 접근할 수 있게 기회를 만들고 교육하고 하는 게 꼭 필요한데.",
       "timestamp": 6631,
-      "tags": ["인재양성", "AI기본법"]
+      "tags": [
+        "인재양성",
+        "AI기본법"
+      ]
     },
     {
       "topic": "AI 맞춤형 복지·혜택 안내와 대리 신청",
       "speakerId": "president",
       "summary": "'내가 국가로부터 도움받을 수 있는 게 뭐가 있을까'를 물으면 AI가 개인 데이터를 바탕으로 지원 제도를 읊어주는 서비스를 구상했다고 언급. 행안부는 모바일 신분증 본인 인증으로 필요한 서비스를 안내하고 대신 신청까지 하는 것이 내년이면 가능하다고 답변.",
       "timestamp": 6819,
-      "tags": ["행정AI", "데이터거버넌스"]
+      "tags": [
+        "행정AI",
+        "데이터거버넌스"
+      ]
     }
   ],
-  "tags": ["중동사태대응", "석유최고가격제", "지방주도성장", "국민성장펀드", "AI민원서비스"]
+  "tags": [
+    "중동사태대응",
+    "석유최고가격제",
+    "지방주도성장",
+    "국민성장펀드",
+    "AI민원서비스"
+  ]
 }

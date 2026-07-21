@@ -215,7 +215,7 @@
           "inReplyTo": null
         },
         {
-          "speakerId": "unknown",
+          "speakerId": "fsc-chairman",
           "kind": "답변",
           "summary": "금융위원장이 금융권의 사전 채무조정 확대, 연체채권 자체 소각, 소멸시효 장기 연장 관행에 대한 인센티브 개편 등 조치를 설명.",
           "timestamp": 3135,
@@ -230,7 +230,7 @@
           "inReplyTo": 1
         },
         {
-          "speakerId": "unknown",
+          "speakerId": "fsc-chairman",
           "kind": "답변",
           "summary": "금융위원장이 채권자-채무자 관계가 아닌 고객 관계라는 관점에서 포용적 금융, 사람 살리는 금융을 제도적·문화적으로 중점 추진하겠다고 답변.",
           "timestamp": 3319,
@@ -340,7 +340,7 @@
       "topic": "가업상속공제 남용과 제도 개선",
       "turns": [
         {
-          "speakerId": "unknown",
+          "speakerId": "nts-commissioner",
           "kind": "보고",
           "summary": "국세청장이 실태조사 결과 보고 — 수도권 대형 베이커리 카페 25곳 중 44%에서 남용 소지 확인, 주차장업 등 부적합 업종 편입, 10년 요건의 텍스 플래닝 악용, 토지 끼워넣기, 매출 없는 외관 유지, 사후관리 5년 종료 직후 60% 이상 고용 감소·휴폐업.",
           "timestamp": 7108,
@@ -355,7 +355,7 @@
           "inReplyTo": 0
         },
         {
-          "speakerId": "unknown",
+          "speakerId": "nts-commissioner",
           "kind": "답변",
           "summary": "국세청장이 주차장업은 2020년 물류업 지원 과정에서 시행령으로 편입됐고, 공제 한도는 1997년 1억 원에서 25년 만에 600억 원까지 600배 확대됐다고 연혁을 설명.",
           "timestamp": 7502,
@@ -390,70 +390,109 @@
     {
       "id": "dir-2026-04-06-01",
       "from": "president",
-      "to": ["motie-minister", "me-minister"],
+      "to": [
+        "motie-minister",
+        "me-minister"
+      ],
       "content": "특정 지역에 편중된 에너지 수급처를 다변화하고 재생에너지 중심의 에너지 대전환에 속도를 낼 것",
       "timestamp": 631,
-      "tags": ["에너지", "재생에너지"],
+      "tags": [
+        "에너지",
+        "재생에너지"
+      ],
       "status": "issued",
       "followUps": []
     },
     {
       "id": "dir-2026-04-06-02",
       "from": "president",
-      "to": ["moef-minister"],
+      "to": [
+        "moef-minister"
+      ],
       "content": "전쟁 추경이 통과되는 즉시 최단 기간에 예산 집행이 이루어지도록 지금부터 사전 준비에 만전을 기할 것",
       "timestamp": 656,
-      "tags": ["추경", "재정집행"],
+      "tags": [
+        "추경",
+        "재정집행"
+      ],
       "status": "issued",
       "followUps": []
     },
     {
       "id": "dir-2026-04-06-03",
       "from": "president",
-      "to": ["unikorea-minister", "mnd-minister"],
+      "to": [
+        "unikorea-minister",
+        "mnd-minister"
+      ],
       "content": "민간인 무인기 사건과 같은 유사 사례가 재발하지 않도록 즉각적인 제도 개선과 당장 집행 가능한 조치를 신속하게 취할 것",
       "timestamp": 753,
-      "tags": ["무인기", "남북관계"],
+      "tags": [
+        "무인기",
+        "남북관계"
+      ],
       "status": "issued",
       "followUps": []
     },
     {
       "id": "dir-2026-04-06-04",
       "from": "president",
-      "to": ["moef-minister", "molit-minister"],
+      "to": [
+        "moef-minister",
+        "molit-minister"
+      ],
       "content": "다주택자 양도세 특례의 5월 9일 시한을 '허가 신청'까지 완료한 경우로 인정하도록 해석 명확화 또는 규정 개정을 검토하고, 세입자가 있는 1주택자의 주택 매각 허용도 수요·공급 효과를 판단해 시행령 개정을 검토, 다음 국무회의까지 판단 가능하게 보고할 것",
       "timestamp": 965,
-      "tags": ["부동산", "양도세"],
+      "tags": [
+        "부동산",
+        "양도세"
+      ],
       "status": "issued",
       "followUps": []
     },
     {
       "id": "dir-2026-04-06-05",
       "from": "president",
-      "to": ["pm"],
+      "to": [
+        "pm"
+      ],
       "content": "산불 발생 14.1% 감소에 기여가 큰 부처·부서를 찾아 포상을 준비할 것",
       "timestamp": 1272,
-      "tags": ["산불", "포상"],
+      "tags": [
+        "산불",
+        "포상"
+      ],
       "status": "issued",
       "followUps": []
     },
     {
       "id": "dir-2026-04-06-06",
       "from": "president",
-      "to": ["moef-minister", "molit-minister"],
+      "to": [
+        "moef-minister",
+        "molit-minister"
+      ],
       "content": "부동산 투기 공화국 탈피를 위해 보유가 부담이 되는 세제 정비, 남의 돈으로 하는 투기를 막는 금융 제도·규제 정비, 주택 공급의 신속 집행을 준비하되 이해관계자 반론까지 들어 0.1%의 구멍도 봉쇄한 완벽한 대책을 수립할 것",
       "timestamp": 1318,
-      "tags": ["부동산", "투기근절"],
+      "tags": [
+        "부동산",
+        "투기근절"
+      ],
       "status": "issued",
       "followUps": []
     },
     {
       "id": "dir-2026-04-06-07",
       "from": "president",
-      "to": ["moef-minister"],
+      "to": [
+        "moef-minister"
+      ],
       "content": "국민과 기업이 부처를 따지지 않고 규제 개선을 쉽게 제안·신고할 수 있는 통로를 만들고 재경부가 총괄 접수해 처리할 것",
       "timestamp": 2074,
-      "tags": ["규제개선", "소통"],
+      "tags": [
+        "규제개선",
+        "소통"
+      ],
       "status": "reported",
       "followUps": [
         {
@@ -466,20 +505,30 @@
     {
       "id": "dir-2026-04-06-08",
       "from": "president",
-      "to": ["mois-minister"],
+      "to": [
+        "mois-minister"
+      ],
       "content": "국정에 혼란을 주는 가짜뉴스에 대해 신고 처리를 넘어 유포 경로를 선제적으로 적발·스크린하는 시스템을 갖추고 강력히 대응할 것",
       "timestamp": 2212,
-      "tags": ["가짜뉴스", "치안"],
+      "tags": [
+        "가짜뉴스",
+        "치안"
+      ],
       "status": "issued",
       "followUps": []
     },
     {
       "id": "dir-2026-04-06-09",
       "from": "president",
-      "to": ["molit-minister"],
+      "to": [
+        "molit-minister"
+      ],
       "content": "출퇴근 시간 유연화를 공공 영역부터 선제 시행하고 재택근무 확대를 포함한 대중교통 혼잡 완화 조치를 일부라도 조기에 시행할 것",
       "timestamp": 2466,
-      "tags": ["대중교통", "에너지절약"],
+      "tags": [
+        "대중교통",
+        "에너지절약"
+      ],
       "status": "reported",
       "followUps": [
         {
@@ -492,10 +541,15 @@
     {
       "id": "dir-2026-04-06-10",
       "from": "president",
-      "to": ["unknown"],
+      "to": [
+        "fsc-chairman"
+      ],
       "content": "채무 탕감·조정과 파산 면책이 실제 작동해 연체 채무자가 줄도록 하고, 연체채권 헐값 일괄매각 등 원시적 관행을 개선하는 금융 선진화를 금융위가 유도할 것(금융위원장)",
       "timestamp": 3293,
-      "tags": ["채무조정", "금융"],
+      "tags": [
+        "채무조정",
+        "금융"
+      ],
       "status": "reported",
       "followUps": [
         {
@@ -508,30 +562,46 @@
     {
       "id": "dir-2026-04-06-11",
       "from": "president",
-      "to": ["me-minister"],
+      "to": [
+        "me-minister"
+      ],
       "content": "전남 서남해안의 발전 추가허가 제한을 해제하고, 허가·심사 절차는 순차가 아닌 동시 진행으로 바꿔 제주 전기차 전환·분산형 전력망 등 에너지 전환 사업의 속도를 낼 것",
       "timestamp": 5567,
-      "tags": ["재생에너지", "규제개선"],
+      "tags": [
+        "재생에너지",
+        "규제개선"
+      ],
       "status": "issued",
       "followUps": []
     },
     {
       "id": "dir-2026-04-06-12",
       "from": "president",
-      "to": ["moef-minister"],
+      "to": [
+        "moef-minister"
+      ],
       "content": "가업상속공제는 사회적으로 보호 가치가 있는 업종만 남기도록 대상을 확실하게 축소하고, 경영 기간·사후관리 요건을 상향하며 시민이 참여하는 심의 절차 등으로 엄격하게 재설계해 개선안을 다시 정리할 것(국세청 공동)",
       "timestamp": 8238,
-      "tags": ["가업상속공제", "세제"],
+      "tags": [
+        "가업상속공제",
+        "세제"
+      ],
       "status": "issued",
       "followUps": []
     },
     {
       "id": "dir-2026-04-06-13",
       "from": "president",
-      "to": ["unknown", "mois-minister"],
+      "to": [
+        "unknown",
+        "mois-minister"
+      ],
       "content": "협동조합 활성화를 위해 공공서비스 분야의 협동조합·사회적기업 위탁을 늘리고 전문 활동가 교육을 강화하며, 노동자의 회사 인수에 대한 정부 지원·권장 방안도 챙길 것(기획예산처장관·행안부)",
       "timestamp": 8632,
-      "tags": ["협동조합", "사회적경제"],
+      "tags": [
+        "협동조합",
+        "사회적경제"
+      ],
       "status": "reported",
       "followUps": [
         {
@@ -545,10 +615,15 @@
     {
       "id": "dir-2026-04-06-14",
       "from": "president",
-      "to": ["moef-minister"],
+      "to": [
+        "moef-minister"
+      ],
       "content": "정부 출범 이후 지방 고용이 크게 늘어난 원인을 정확히 분석해 정책 효과를 확인하고 보도 자료를 보강할 것",
       "timestamp": 9377,
-      "tags": ["고용", "균형발전"],
+      "tags": [
+        "고용",
+        "균형발전"
+      ],
       "status": "issued",
       "followUps": []
     }
@@ -559,29 +634,46 @@
       "speakerId": "me-minister",
       "summary": "에너지 대전환 보고에서 AI·반도체·데이터센터 등 첨단 산업의 전기 수요가 폭발적으로 늘고 있다며, 재생에너지로 전기를 생산해 산업 구조를 전기 기반으로 바꾸는 '전기 국가' 개념을 제시. AI 시대의 경쟁력은 반도체 칩과 전력 생산 능력이라는 일론 머스크의 언급도 인용.",
       "timestamp": 4146,
-      "tags": ["AI인프라"]
+      "tags": [
+        "AI인프라"
+      ]
     },
     {
       "topic": "시간대별 요금제의 AI 운영",
       "speakerId": "me-minister",
       "summary": "낮에 충전하고 밤에 방전하는 시간대별 차등 요금 시스템은 전력 계통 운영이 복잡해 사람이 아닌 AI가 운영하게 해야 한다며 올해 제주도 시범 실시 계획을 보고.",
       "timestamp": 4284,
-      "tags": ["AI인프라", "행정AI"]
+      "tags": [
+        "AI인프라",
+        "행정AI"
+      ]
     },
     {
       "topic": "지능형 분산 전력망과 가상발전소(VPP)",
       "speakerId": "president",
       "summary": "분산형 전력망을 지능형으로 만들어 관리해야 한다며 AI와 가상발전소(VPP) 개념에 대한 투자와 준비를 촉구. 신사업 심사·규제 기간이 너무 길다며 실증 특구 활용과 절차 단축도 함께 주문.",
       "timestamp": 5363,
-      "tags": ["AI인프라", "규제"]
+      "tags": [
+        "AI인프라",
+        "규제"
+      ]
     },
     {
       "topic": "AI 기반 대국민 서비스 본격화",
-      "speakerId": "unknown",
+      "speakerId": "osc-minister",
       "summary": "국무조정실장이 1분기 국정과제 성과로 AI 기반 대국민 서비스가 본격화됐다고 보고. 국정 성과 통합 관리 시스템과 소통 플랫폼 구축도 함께 언급.",
       "timestamp": 6683,
-      "tags": ["행정AI", "공공데이터"]
+      "tags": [
+        "행정AI",
+        "공공데이터"
+      ]
     }
   ],
-  "tags": ["중동전쟁", "에너지대전환", "가업상속공제", "기후금융", "무인기사건"]
+  "tags": [
+    "중동전쟁",
+    "에너지대전환",
+    "가업상속공제",
+    "기후금융",
+    "무인기사건"
+  ]
 }
