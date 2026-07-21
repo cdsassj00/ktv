@@ -5,6 +5,7 @@ import FloatingNav from "@/components/FloatingNav";
 import ParallaxPhoto from "@/components/ParallaxPhoto";
 import ParticleGlobe from "@/components/ParticleGlobe";
 import Reveal from "@/components/Reveal";
+import RotatingWord from "@/components/RotatingWord";
 import ScrollProgress from "@/components/ScrollProgress";
 import SearchExperience from "@/components/SearchExperience";
 import SpeakerAvatar from "@/components/SpeakerAvatar";
@@ -121,36 +122,51 @@ export default function HomePage() {
 
       {/* ══ 2. 네트워크 검색 — 클릭 시 원탁 그래프 모달 ══ */}
       <section id="search" className="px-5 py-20">
-        <div className="mx-auto max-w-3xl text-center">
-          <Reveal>
-            <p className="overline-label">Network Search</p>
-            <h2 className="h-judge mt-1.5">무엇이든 검색해 보세요.</h2>
-            <p className="mx-auto mt-3 max-w-xl text-[16px] leading-relaxed text-mut">
-              {directives.length}건의 지시와 {threadCount}개 대화에서 키워드를 찾아, 누가 지시하고
-              누가 답했는지 원탁 네트워크로 보여드립니다.
-            </p>
-          </Reveal>
-          <div className="mt-8">
-            <SearchExperience
-              nodes={network.nodes}
-              edges={network.edges}
-              speakers={speakers}
-              searchDocs={searchDocs}
-              exchangeIndex={exchangeIndex}
+        <div className="mx-auto max-w-4xl">
+          {/* 페이지의 순수 블랙과 구분되는 네이비 글로우 패널 */}
+          <div className="relative overflow-hidden rounded-[28px] bg-[linear-gradient(165deg,#0b1830_0%,#070d1a_45%,#050508_100%)] px-6 py-14 text-center ring-1 ring-white/10 sm:px-12">
+            <div
+              aria-hidden
+              className="pointer-events-none absolute -top-24 left-1/2 h-56 w-[560px] -translate-x-1/2 rounded-full bg-accent-500/15 blur-3xl"
             />
+            <div
+              aria-hidden
+              className="pointer-events-none absolute -bottom-28 -right-16 h-48 w-72 rounded-full bg-[#ffd257]/[0.07] blur-3xl"
+            />
+            <div className="relative">
+              <Reveal>
+                <p className="overline-label">Network Search</p>
+                <h2 className="h-judge mt-1.5">
+                  <RotatingWord words={["무엇이든", "지시도", "발언도", "안건도", "인물도"]} /> 검색해
+                  보세요.
+                </h2>
+                <p className="mx-auto mt-3 max-w-xl text-[16px] leading-relaxed text-mut">
+                  {directives.length}건의 지시와 {threadCount}개 대화에서 키워드를 찾아, 누가
+                  지시하고 누가 답했는지 원탁 네트워크로 보여드립니다.
+                </p>
+              </Reveal>
+              <div className="mt-8">
+                <SearchExperience
+                  nodes={network.nodes}
+                  edges={network.edges}
+                  speakers={speakers}
+                  searchDocs={searchDocs}
+                  exchangeIndex={exchangeIndex}
+                />
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       {/* ══ 3. 회의 — 스티키 스택 카드 ══ */}
       <section id="meetings" className="relative overflow-hidden px-5 py-24">
-        {latest && (
-          <ParallaxPhoto
-            src={`https://i.ytimg.com/vi/${latest.videoId}/maxresdefault.jpg`}
-            fallbackSrc={`https://i.ytimg.com/vi/${latest.videoId}/hqdefault.jpg`}
-            maxOpacity={0.13}
-          />
-        )}
+        {/* 회의장 전경(국기에 대한 경례 장면) — 유튜브 자동 프레임 캡처, 인물 클로즈업 회피 */}
+        <ParallaxPhoto
+          src="https://i.ytimg.com/vi/dZLnc3sgHMo/maxres1.jpg"
+          fallbackSrc="https://i.ytimg.com/vi/dZLnc3sgHMo/hq1.jpg"
+          maxOpacity={0.13}
+        />
         <div className="mx-auto max-w-3xl">
           <Reveal>
             <p className="overline-label">회의 아카이브</p>
@@ -299,14 +315,13 @@ export default function HomePage() {
 
       {/* ══ 5. 지시-이행 — 셀프 드로잉 라인 ══ */}
       <section id="directives" className="relative overflow-hidden border-t border-hair/40 px-5 py-24">
-        {meetings[1] && (
-          <ParallaxPhoto
-            src={`https://i.ytimg.com/vi/${meetings[1].videoId}/maxresdefault.jpg`}
-            fallbackSrc={`https://i.ytimg.com/vi/${meetings[1].videoId}/hqdefault.jpg`}
-            maxOpacity={0.1}
-            rate={0.12}
-          />
-        )}
+        {/* 원탁 발언 장면 — 회의장 배경 (유튜브 자동 프레임 캡처) */}
+        <ParallaxPhoto
+          src="https://i.ytimg.com/vi/dZLnc3sgHMo/maxres3.jpg"
+          fallbackSrc="https://i.ytimg.com/vi/dZLnc3sgHMo/hq3.jpg"
+          maxOpacity={0.1}
+          rate={0.12}
+        />
         <div className="mx-auto mb-12 max-w-2xl">
           <Reveal>
             <p className="overline-label">지시-이행 트래커</p>

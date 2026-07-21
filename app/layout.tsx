@@ -3,12 +3,27 @@ import Link from "next/link";
 import "./globals.css";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://opencabinet.pages.dev"),
   title: {
     default: "열린국무회의 — KTV 국무회의·국민업무보고 아카이브",
     template: "%s | 열린국무회의",
   },
   description:
     "대통령 주재 공개 국무회의·국민업무보고 영상을 자동 수집·요약해 발언 스레드, 지시-이행 추적, AI·데이터 정책 발언을 한눈에 보여주는 아카이브",
+  openGraph: {
+    title: "열린국무회의 — 국무회의, 대화로 읽다",
+    description:
+      "공개 국무회의 발언을 대화 단위로 재구성하고, 지시의 이행까지 추적하는 아카이브",
+    url: "/",
+    siteName: "열린국무회의",
+    locale: "ko_KR",
+    type: "website",
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: "열린국무회의 — 국무회의, 대화로 읽다" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: ["/og.png"],
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
