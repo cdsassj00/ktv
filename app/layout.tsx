@@ -35,7 +35,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             </Link>
             <nav className="scroll-thin flex flex-1 gap-0.5 overflow-x-auto">
               {[
-                { href: "/#meetings", label: "회의" },
+                { href: "/meetings", label: "회의" },
                 { href: "/directives", label: "지시-이행" },
                 { href: "/network", label: "네트워크" },
                 { href: "/ai-policy", label: "AI·데이터" },

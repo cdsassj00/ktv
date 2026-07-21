@@ -164,9 +164,9 @@ export default function HomePage() {
             </div>
           )}
 
-          {/* 스티키 스택 — 스크롤하면 카드가 겹겹이 쌓임 */}
+          {/* 스티키 스택 — 최신 4개만 (전량은 /meetings) */}
           <div className="mt-10 space-y-6">
-            {meetings.map((m, i) => (
+            {meetings.slice(0, 4).map((m, i) => (
               <Link
                 key={m.id}
                 href={`/meetings/${m.id}`}
@@ -199,6 +199,11 @@ export default function HomePage() {
               </Link>
             ))}
           </div>
+          <div className="mt-10 text-center">
+            <Link href="/meetings" className="btn-pill">
+              전체 {meetings.length}개 회의 보기
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -206,7 +211,7 @@ export default function HomePage() {
       {featuredExchange && latest && (
         <section id="thread" className="border-t border-hair/40">
           <ThreadScrub
-            exchange={featuredExchange}
+            exchange={{ ...featuredExchange, turns: featuredExchange.turns.slice(0, 6) }}
             speakers={speakers}
             meetingHref={`/meetings/${latest.id}`}
           />
@@ -237,7 +242,10 @@ export default function HomePage() {
             </p>
           </Reveal>
         </div>
-        <DirectiveFlow items={directives} speakers={speakers} />
+        <DirectiveFlow
+          items={directives.filter(({ directive }) => directive.status === "reported").slice(0, 5)}
+          speakers={speakers}
+        />
         <div className="mt-10 text-center">
           <Link href="/directives" className="btn-link">
             전체 지시 이력 보기 &rsaquo;

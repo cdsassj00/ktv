@@ -65,7 +65,7 @@ export default function ThreadScrub({
   }, [N]);
 
   return (
-    <div ref={trackRef} style={{ height: `${120 + N * 55}vh` }}>
+    <div ref={trackRef} style={{ height: `${90 + N * 34}vh` }}>
       <div className="sticky top-0 flex min-h-screen flex-col justify-center px-5 py-16">
         <div className="mx-auto w-full max-w-2xl">
           <p className="overline-label">발언 스레드</p>
