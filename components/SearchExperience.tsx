@@ -87,19 +87,25 @@ export default function SearchExperience({
           aria-modal="true"
           aria-label="네트워크 검색"
         >
-          <div className="relative w-full max-w-5xl rounded-2xl bg-paper p-5 shadow-lift sm:p-7">
+          <div className="metal-frame w-full max-w-5xl">
+            <div className="relative rounded-[18.5px] bg-paper p-5 sm:p-7">
             <div className="mb-4 flex items-center justify-between">
               <h2 className="text-lg font-semibold tracking-tight text-ink">네트워크 검색</h2>
-              <button
-                type="button"
-                onClick={() => setOpen(false)}
-                aria-label="닫기"
-                className="rounded-full bg-tint p-2 text-mut transition hover:bg-tint2 hover:text-ink"
-              >
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="size-4" aria-hidden>
-                  <path d="M18 6 6 18M6 6l12 12" />
-                </svg>
-              </button>
+              <div className="flex items-center gap-2.5">
+                <span className="hidden rounded-md border border-white/15 px-1.5 py-0.5 font-mono text-[11px] text-mut sm:block">
+                  ESC
+                </span>
+                <button
+                  type="button"
+                  onClick={() => setOpen(false)}
+                  aria-label="닫기"
+                  className="flex size-9 items-center justify-center rounded-full bg-white text-black shadow-[0_0_14px_rgba(255,210,87,0.35)] ring-2 ring-[#ffd257]/70 transition hover:scale-110 hover:bg-[#ffd257]"
+                >
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" className="size-[18px]" aria-hidden>
+                    <path d="M18 6 6 18M6 6l12 12" />
+                  </svg>
+                </button>
+              </div>
             </div>
             <NetworkView
               key={initialQuery /* 칩으로 다시 열면 검색어 초기화 */}
@@ -111,6 +117,7 @@ export default function SearchExperience({
               initialQuery={initialQuery}
               autoFocus
             />
+            </div>
           </div>
         </div>
       )}

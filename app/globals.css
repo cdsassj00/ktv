@@ -185,6 +185,38 @@ h1 { font-variation-settings: "wght" 650; }
   55%, 100% { transform: translateX(100%); }
 }
 
+/* 네트워크 모달 — 금·은 반사광이 테두리를 따라 도는 메탈 프레임 */
+@property --frame-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+.metal-frame {
+  padding: 1.5px;
+  border-radius: 20px;
+  background: conic-gradient(
+    from var(--frame-angle),
+    #55555e 0%,
+    #d9d9e3 10%,
+    #8a8a95 22%,
+    #ffd257 34%,
+    #fff3c4 42%,
+    #ffd257 50%,
+    #8a8a95 62%,
+    #f2f2f8 78%,
+    #6d6d75 90%,
+    #55555e 100%
+  );
+  animation: frame-spin 6s linear infinite;
+  box-shadow: 0 0 24px rgba(255, 210, 87, 0.12), 0 8px 40px rgba(0, 0, 0, 0.7);
+}
+@keyframes frame-spin {
+  to { --frame-angle: 360deg; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .metal-frame { animation: none; }
+}
+
 .spinner {
   width: 34px;
   height: 34px;
