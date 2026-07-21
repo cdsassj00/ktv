@@ -179,12 +179,11 @@
     "photoSource": "위키미디어 공용 (Ju Biung-ghi's portrait (2025.09).jpg)"
   },
   "ipo-minister": {
-    "name": "지식재산처장",
-    "role": "지식재산처",
+    "name": "김용선",
+    "role": "지식재산처장",
     "org": "지식재산처",
-    "photo": null,
-    "photoSource": null,
-    "titleOnly": true
+    "photo": "/speakers/ipo-minister.png",
+    "photoSource": "지식재산처 누리집 (처장 인사말)"
   },
   "kcc-chairman": {
     "name": "방송통신위원장",
@@ -210,12 +209,11 @@
     "photoSource": null
   },
   "khs-administrator": {
-    "name": "국가유산청장",
-    "role": "국가유산청",
+    "name": "허민",
+    "role": "국가유산청장",
     "org": "국가유산청",
-    "photo": null,
-    "photoSource": null,
-    "titleOnly": true
+    "photo": "/speakers/khs-administrator.png",
+    "photoSource": "국가유산청 누리집 (청장 소개)"
   },
   "kipo-commissioner": {
     "name": "특허청장",
@@ -234,20 +232,18 @@
     "titleOnly": true
   },
   "mfds-minister": {
-    "name": "식약처장",
-    "role": "식품의약품안전처",
+    "name": "오유경",
+    "role": "식품의약품안전처장",
     "org": "식품의약품안전처",
-    "photo": null,
-    "photoSource": null,
-    "titleOnly": true
+    "photo": "/speakers/mfds-minister.jpg",
+    "photoSource": "식품의약품안전처 누리집 (처장 소개)"
   },
   "molegis-minister": {
-    "name": "법제처장",
-    "role": "법제처",
+    "name": "조원철",
+    "role": "법제처장",
     "org": "법제처",
     "photo": null,
-    "photoSource": null,
-    "titleOnly": true
+    "photoSource": null
   },
   "nts-commissioner": {
     "name": "임광현",
