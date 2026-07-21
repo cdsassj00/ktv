@@ -163,7 +163,7 @@
           "inReplyTo": 1
         },
         {
-          "speakerId": "mss-minister",
+          "speakerId": "pm2",
           "kind": "발언",
           "summary": "가격 비교·레시피 연동은 현재도 가능하며, 데이터 접근 API·MCP를 연결한 에이전트형 서비스는 민간이 빠르게 구축할 수 있다고 부연.",
           "timestamp": 2235,
@@ -191,7 +191,7 @@
       "topic": "폐업 소상공인 대출 일시상환 보완",
       "turns": [
         {
-          "speakerId": "mss-minister",
+          "speakerId": "pm2",
           "kind": "보고",
           "summary": "소상공인 매출·신용 데이터 기반 위기알람 모형과 채무조정~폐업~재기의 종합 지원 체계 구축 방안을 보고.",
           "timestamp": 2559,
@@ -468,7 +468,7 @@
     },
     {
       "topic": "소상공인 AI·데이터 기반 지원",
-      "speakerId": "mss-minister",
+      "speakerId": "pm2",
       "summary": "매출·신용 데이터 기반 폐업 전 위기알람 모형, AI 활용 경영·마케팅 지원, AI 민원상담 도우미, 국세청 데이터를 연계한 빅데이터 플랫폼과 전 부처·지자체 정책을 모은 AI 채팅 단일 창구 구축 계획을 보고. 업종별 공동 AI 지원 필요성도 논의됨.",
       "timestamp": 2584,
       "tags": ["데이터거버넌스", "데이터산업"]

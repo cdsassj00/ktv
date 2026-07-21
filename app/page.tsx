@@ -427,9 +427,16 @@ export default function HomePage() {
           </Reveal>
           <Reveal stagger className="mt-10 flex flex-wrap items-start justify-center gap-x-6 gap-y-7">
             {Object.entries(speakers).map(([id, sp]) => (
-              <Link key={id} href={`/speakers/${id}`} className="group flex w-[76px] flex-col items-center gap-2">
+              <Link key={id} href={`/speakers/${id}`} className="group flex w-[96px] flex-col items-center gap-1.5">
                 <SpeakerAvatar speaker={sp} size="lg" />
-                <span className="text-[13px] font-medium text-mut group-hover:text-ink">{sp.name}</span>
+                <span className="text-[13px] font-medium leading-tight text-body group-hover:text-ink">
+                  {sp.name}
+                </span>
+                {sp.name !== sp.role && (
+                  <span className="line-clamp-2 text-center text-[11px] leading-snug text-faint">
+                    {sp.role}
+                  </span>
+                )}
               </Link>
             ))}
           </Reveal>
