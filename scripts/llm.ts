@@ -15,7 +15,7 @@ import Anthropic from "@anthropic-ai/sdk";
 export type Tier = "light" | "main";
 type Provider = "anthropic" | "openrouter" | "openai";
 
-const PROVIDER = (process.env.LLM_PROVIDER ?? "anthropic") as Provider;
+const PROVIDER = ((process.env.LLM_PROVIDER || "").trim() || "anthropic") as Provider;
 
 const DEFAULT_MODELS: Record<Provider, Record<Tier, string>> = {
   anthropic: { main: "claude-sonnet-5", light: "claude-haiku-4-5-20251001" },

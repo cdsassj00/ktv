@@ -11,7 +11,7 @@
   },
   "pm": {
     "name": "김민석",
-    "role": "국무총리",
+    "role": "국무총리(전임)",
     "org": "국무조정실",
     "photo": null,
     "photoSource": null
@@ -144,8 +144,15 @@
   },
   "mss-minister": {
     "name": "한성숙",
-    "role": "중소벤처기업부 장관",
+    "role": "중소벤처기업부 장관(전임, 현 국무총리)",
     "org": "중소벤처기업부",
+    "photo": null,
+    "photoSource": null
+  },
+  "pm2": {
+    "name": "한성숙",
+    "role": "국무총리",
+    "org": "국무조정실",
     "photo": null,
     "photoSource": null
   }
