@@ -64,14 +64,14 @@ export default function AiPolicyClient({
   const items = tag ? entries.filter(({ item }) => item.tags.includes(tag)) : entries;
 
   const pill = (active: boolean) =>
-    `rounded-full border px-3.5 py-1.5 text-[13px] font-medium transition ${
+    `rounded-full border px-3.5 py-1.5 text-[14px] font-medium transition ${
       active ? "border-transparent bg-ink text-paper" : "border-transparent bg-surf text-mut hover:text-ink"
     }`;
 
   return (
     <>
       <section className="panel p-5">
-        <h2 className="mb-2 text-sm font-black text-ink">월별 언급 추이</h2>
+        <h2 className="mb-2 text-[15px] font-black text-ink">월별 언급 추이</h2>
         <TrendChart data={monthly} />
       </section>
 
@@ -102,16 +102,16 @@ export default function AiPolicyClient({
                     <Link href={`/speakers/${item.speakerId}`} className="font-semibold text-ink hover:underline">
                       {sp.name}
                     </Link>
-                    <span className="text-xs text-mut">{sp.role}</span>
-                    <span className="rounded bg-tint2 px-1.5 py-0.5 text-xs text-body">{item.topic}</span>
+                    <span className="text-[13px] text-mut">{sp.role}</span>
+                    <span className="rounded bg-tint2 px-1.5 py-0.5 text-[13px] text-body">{item.topic}</span>
                   </div>
-                  <p className="mt-1.5 text-sm text-body">{item.summary}</p>
+                  <p className="mt-1.5 text-[15px] text-body">{item.summary}</p>
                   {item.quote && (
-                    <p className="mt-1.5 border-l-2 border-accent-400 pl-2 text-sm italic text-mut">
+                    <p className="mt-1.5 border-l-2 border-accent-400 pl-2 text-[15px] italic text-mut">
                       “{item.quote}”
                     </p>
                   )}
-                  <div className="mt-2 flex flex-wrap items-center gap-2 text-xs text-mut">
+                  <div className="mt-2 flex flex-wrap items-center gap-2 text-[13px] text-mut">
                     <Link href={`/meetings/${meeting.id}`} className="text-accent-400 hover:underline">
                       {formatDate(meeting.date)} · {meeting.title}
                     </Link>

@@ -36,7 +36,7 @@ export default function NetworkGraph({
   const hlNodes = highlight ? new Set(highlight.nodes) : null;
   const hlPairs = highlight ? new Set(highlight.pairs) : null;
   if (nodes.length === 0) {
-    return <p className="p-4 text-sm text-mut">네트워크를 그릴 발언 데이터가 없습니다.</p>;
+    return <p className="p-4 text-[15px] text-mut">네트워크를 그릴 발언 데이터가 없습니다.</p>;
   }
 
   const center = nodes.find((n) => n.speakerId === "president");

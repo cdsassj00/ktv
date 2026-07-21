@@ -99,17 +99,17 @@ export default function DirectiveFlow({
               <div className="panel flex-1 p-5">
                 <div className="flex flex-wrap items-center gap-2.5">
                   <SpeakerAvatar speaker={from} size="sm" />
-                  <span className="text-sm font-semibold text-ink">{from.name}</span>
-                  <span className="text-xs text-mut">→</span>
-                  <span className="text-xs text-body">
+                  <span className="text-[15px] font-semibold text-ink">{from.name}</span>
+                  <span className="text-[13px] text-mut">→</span>
+                  <span className="text-[13px] text-body">
                     {directive.to
                       .map((id) => (speakers[id] ?? UNKNOWN_SPEAKER).org || (speakers[id] ?? UNKNOWN_SPEAKER).name)
                       .join(", ")}
                   </span>
                   <span className={`chip ml-auto ${status.className}`}>{status.label}</span>
                 </div>
-                <p className="mt-2.5 text-[15px] leading-relaxed text-body">{directive.content}</p>
-                <div className="mt-2 flex flex-wrap items-center gap-2 text-xs text-mut">
+                <p className="mt-2.5 text-[16px] leading-relaxed text-body">{directive.content}</p>
+                <div className="mt-2 flex flex-wrap items-center gap-2 text-[13px] text-mut">
                   <Link href={`/meetings/${meeting.id}`} className="text-accent-400 hover:underline">
                     {formatDate(meeting.date)} · {meeting.title}
                   </Link>

@@ -49,13 +49,13 @@ export default function MeetingDetail({
     <div className="mx-auto max-w-6xl space-y-6 px-5 py-10">
       <BackLink />
       {meeting.sample && (
-        <div className="rounded-2xl bg-[rgba(255,214,10,0.1)] px-4 py-3 text-sm text-[#ffd60a]/90">
+        <div className="rounded-2xl bg-[rgba(255,214,10,0.1)] px-4 py-3 text-[15px] text-[#ffd60a]/90">
           <IconAlert className="mr-1.5 size-4 align-[-2px]" /> 이 회의는 <strong>데모용 샘플 데이터</strong>입니다. 실제 발언·회의 내용이 아닙니다.
         </div>
       )}
 
       <header className="space-y-2">
-        <div className="flex flex-wrap items-center gap-2 text-sm text-mut">
+        <div className="flex flex-wrap items-center gap-2 text-[15px] text-mut">
           <span className="chip bg-tint2 text-mut">
             {MEETING_TYPE_LABEL[meeting.type]}
           </span>
@@ -82,7 +82,7 @@ export default function MeetingDetail({
             ) : (
               <div className="flex aspect-video w-full flex-col items-center justify-center gap-2 bg-navy-900 text-navy-300">
                 <IconFilm className="size-8" />
-                <p className="text-sm">
+                <p className="text-[15px]">
                   샘플 데이터 — 연결된 영상이 없습니다. 파이프라인 실행 시 KTV 영상이 임베드됩니다.
                 </p>
               </div>
@@ -91,10 +91,10 @@ export default function MeetingDetail({
 
           <section className="panel p-5">
             <h2 className="mb-2 text-lg font-semibold tracking-tight text-ink">전체 요약</h2>
-            <p className="mb-1 text-xs text-faint">
+            <p className="mb-1 text-[13px] text-faint">
               <IconInfo className="mr-1 size-3.5 align-[-2px]" /> 영상 자막을 바탕으로 AI가 생성한 요약입니다. 타임스탬프로 원문을 확인하세요.
             </p>
-            <div className="space-y-3 text-sm leading-relaxed text-body">
+            <div className="space-y-3 text-[15px] leading-relaxed text-body">
               {meeting.summary.overview.split("\n\n").map((p, i) => (
                 <p key={i}>{p}</p>
               ))}
@@ -115,15 +115,15 @@ export default function MeetingDetail({
                     }`}
                   >
                     <div className="flex items-center gap-2">
-                      <span className="flex size-6 shrink-0 items-center justify-center rounded-full bg-tint2 text-xs font-semibold text-accent-400">
+                      <span className="flex size-6 shrink-0 items-center justify-center rounded-full bg-tint2 text-[13px] font-semibold text-accent-400">
                         {i + 1}
                       </span>
                       <span className="font-medium text-ink">{item.title}</span>
-                      <span className="ml-auto font-mono text-xs text-faint">
+                      <span className="ml-auto font-mono text-[13px] text-faint">
                         ▶ {formatTime(item.timestamp)}
                       </span>
                     </div>
-                    <p className="mt-1.5 pl-8 text-sm text-body">{item.summary}</p>
+                    <p className="mt-1.5 pl-8 text-[15px] text-body">{item.summary}</p>
                   </button>
                 </li>
               ))}
@@ -143,26 +143,26 @@ export default function MeetingDetail({
                       <SpeakerAvatar speaker={sp} size="md" />
                       <div className="min-w-0 flex-1">
                         <div className="flex flex-wrap items-center gap-2">
-                          <span className="text-sm font-semibold">{sp.name}</span>
-                          <span className="text-xs text-mut">{item.topic}</span>
+                          <span className="text-[15px] font-semibold">{sp.name}</span>
+                          <span className="text-[13px] text-mut">{item.topic}</span>
                           <button
                             type="button"
                             onClick={() => canSeek && seek(item.timestamp)}
-                            className="ml-auto font-mono text-xs text-navy-500 hover:underline disabled:no-underline"
+                            className="ml-auto font-mono text-[13px] text-navy-500 hover:underline disabled:no-underline"
                             disabled={!canSeek}
                           >
                             ▶ {formatTime(item.timestamp)}
                           </button>
                         </div>
-                        <p className="mt-1 text-sm text-body">{item.summary}</p>
+                        <p className="mt-1 text-[15px] text-body">{item.summary}</p>
                         {item.quote && (
-                          <p className="mt-1 border-l-2 border-accent-400 pl-2 text-sm italic text-body">
+                          <p className="mt-1 border-l-2 border-accent-400 pl-2 text-[15px] italic text-body">
                             “{item.quote}”
                           </p>
                         )}
                         <div className="mt-1.5 flex flex-wrap gap-1">
                           {item.tags.map((t) => (
-                            <span key={t} className="rounded-full bg-tint2 px-2 py-0.5 text-[11px] text-body">
+                            <span key={t} className="rounded-full bg-tint2 px-2 py-0.5 text-[12px] text-body">
                               #{t}
                             </span>
                           ))}
@@ -182,7 +182,7 @@ export default function MeetingDetail({
             <button
               type="button"
               onClick={() => setTab("thread")}
-              className={`flex-1 rounded-full px-3 py-1.5 text-sm font-medium transition ${
+              className={`flex-1 rounded-full px-3 py-1.5 text-[15px] font-medium transition ${
                 tab === "thread" ? "bg-tint2 text-ink" : "text-mut hover:text-ink"
               }`}
             >
@@ -191,7 +191,7 @@ export default function MeetingDetail({
             <button
               type="button"
               onClick={() => setTab("network")}
-              className={`flex-1 rounded-full px-3 py-1.5 text-sm font-medium transition ${
+              className={`flex-1 rounded-full px-3 py-1.5 text-[15px] font-medium transition ${
                 tab === "network" ? "bg-tint2 text-ink" : "text-mut hover:text-ink"
               }`}
             >
@@ -214,7 +214,7 @@ export default function MeetingDetail({
             <section className="panel p-4">
               <h3 className="mb-3 flex items-center justify-between font-bold text-ink">
                 <IconPin className="mr-1.5 size-4 align-[-2px] text-accent-500" /> 이 회의의 지시
-                <Link href="/directives" className="text-xs font-normal text-navy-500 hover:underline">
+                <Link href="/directives" className="text-[13px] font-normal text-navy-500 hover:underline">
                   전체 지시-이행 보기 →
                 </Link>
               </h3>
@@ -224,7 +224,7 @@ export default function MeetingDetail({
                   const status = DIRECTIVE_STATUS_LABEL[d.status];
                   return (
                     <div key={d.id} className="rounded-xl bg-tint p-3">
-                      <div className="mb-1 flex flex-wrap items-center gap-2 text-xs">
+                      <div className="mb-1 flex flex-wrap items-center gap-2 text-[13px]">
                         <span className="font-semibold text-ink">{from.name}</span>
                         <span className="text-faint">→</span>
                         {d.to.map((toId) => (
@@ -236,17 +236,17 @@ export default function MeetingDetail({
                           {status.label}
                         </span>
                       </div>
-                      <p className="text-sm text-body">{d.content}</p>
+                      <p className="text-[15px] text-body">{d.content}</p>
                       {canSeek ? (
                         <button
                           type="button"
                           onClick={() => seek(d.timestamp)}
-                          className="mt-1 font-mono text-xs text-navy-500 hover:underline"
+                          className="mt-1 font-mono text-[13px] text-navy-500 hover:underline"
                         >
                           ▶ {formatTime(d.timestamp)}
                         </button>
                       ) : (
-                        <span className="mt-1 font-mono text-xs text-faint">
+                        <span className="mt-1 font-mono text-[13px] text-faint">
                           ▶ {formatTime(d.timestamp)}
                         </span>
                       )}
@@ -258,7 +258,7 @@ export default function MeetingDetail({
           )}
 
           {canSeek && (
-            <p className="text-xs text-faint">
+            <p className="text-[13px] text-faint">
               원본 영상:{" "}
               <a href={youtubeUrlAt(meeting.videoId, 0)} target="_blank" rel="noreferrer" className="underline">
                 KTV 유튜브에서 보기

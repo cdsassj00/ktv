@@ -18,7 +18,7 @@ export default function NetworkPage() {
         <h1 className="h-judge mt-1">
           발언 네트워크 <span className="text-navy-400">(전체 누적)</span>
         </h1>
-        <p className="mt-2 max-w-2xl text-sm leading-relaxed text-body">
+        <p className="mt-2 max-w-2xl text-[15px] leading-relaxed text-body">
           {meetingCount}개 회의에서 집계한 지시·답변 관계입니다. 노드 크기는 발언량이며, 누가
           누구에게 지시하고 누가 답하는지를 입체적으로 보여줍니다.
         </p>

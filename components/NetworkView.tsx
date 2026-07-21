@@ -127,12 +127,12 @@ export default function NetworkView({
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               placeholder="검색: 부동산, AI, 물가, 자살예방, 촉법소년…"
-              className="w-full rounded-full bg-surf py-2.5 pl-10 pr-4 text-[14px] text-ink placeholder:text-faint focus:outline-none focus:ring-2 focus:ring-accent-500"
+              className="w-full rounded-full bg-surf py-2.5 pl-10 pr-4 text-[15px] text-ink placeholder:text-faint focus:outline-none focus:ring-2 focus:ring-accent-500"
               aria-label="회의 내용 검색"
             />
           </div>
         ) : (
-          <div className="flex flex-wrap gap-4 text-sm font-medium text-body">
+          <div className="flex flex-wrap gap-4 text-[15px] font-medium text-body">
             <span className="flex items-center gap-1.5">
               <span className="inline-block w-6 rounded bg-[#ff453a]" style={{ height: 3 }} /> 지시
             </span>
@@ -147,7 +147,7 @@ export default function NetworkView({
               key={m}
               type="button"
               onClick={() => setMode(m)}
-              className={`rounded-full px-4 py-1.5 text-[13px] font-medium uppercase transition ${
+              className={`rounded-full px-4 py-1.5 text-[14px] font-medium uppercase transition ${
                 mode === m ? "bg-black/40 text-ink" : "text-mut hover:text-ink"
               }`}
             >
@@ -158,7 +158,7 @@ export default function NetworkView({
       </div>
 
       {query.trim().length >= 2 && (
-        <p className="text-[13px] text-mut">
+        <p className="text-[14px] text-mut">
           {results.length > 0 ? (
             <>
               <strong className="text-[#ffd60a]">{results.length}건</strong> 매칭 — 관련 발언자와
@@ -207,20 +207,20 @@ export default function NetworkView({
               >
                 <span className={`chip mt-0.5 shrink-0 ${kindStyle.className}`}>{kindStyle.label}</span>
                 <div className="min-w-0 flex-1">
-                  <p className="text-sm leading-relaxed text-body">
+                  <p className="text-[15px] leading-relaxed text-body">
                     {doc.speakerNames && (
                       <strong className="mr-1.5 text-ink">{doc.speakerNames.split(" ")[0]}</strong>
                     )}
                     {doc.text}
                   </p>
                   {hasThread && !isSelected && (
-                    <p className="mt-1 text-[11.5px] font-medium text-[#ffd60a]/80">
+                    <p className="mt-1 text-[12.5px] font-medium text-[#ffd60a]/80">
                       클릭하면 이 발언이 오간 대화 전체가 펼쳐지고, 그래프가 발언자에게 이동합니다
                     </p>
                   )}
                   {isSelected && selectedExchange && (
                     <div className="mt-3 space-y-2 border-t border-hair pt-3" onClick={(e) => e.stopPropagation()}>
-                      <p className="text-xs font-semibold text-mut">
+                      <p className="text-[13px] font-semibold text-mut">
                         대화 스레드 「{selectedExchange.topic}」 — {selectedExchange.turns.length}개 발언
                       </p>
                       {selectedExchange.turns.map((turn, ti) => {
@@ -235,25 +235,25 @@ export default function NetworkView({
                             <SpeakerAvatar speaker={sp} size="sm" />
                             <div className="bubble flex-1 !p-2.5">
                               <div className="mb-0.5 flex flex-wrap items-center gap-1.5">
-                                <span className="text-[12.5px] font-semibold text-ink">{sp.name}</span>
+                                <span className="text-[13.5px] font-semibold text-ink">{sp.name}</span>
                                 <span className={`chip ${k.className}`}>{k.label}</span>
                                 <a
                                   href={youtubeUrlAt(doc.videoId, turn.timestamp)}
                                   target="_blank"
                                   rel="noreferrer"
-                                  className="ml-auto font-mono text-[10.5px] text-faint hover:text-ink"
+                                  className="ml-auto font-mono text-[12px] text-faint hover:text-ink"
                                 >
                                   ▶ {formatTime(turn.timestamp)}
                                 </a>
                               </div>
-                              <p className="text-[12.5px] leading-relaxed text-body">{turn.summary}</p>
+                              <p className="text-[13.5px] leading-relaxed text-body">{turn.summary}</p>
                             </div>
                           </div>
                         );
                       })}
                     </div>
                   )}
-                  <p className="mt-1 flex flex-wrap items-center gap-2 text-xs text-mut">
+                  <p className="mt-1 flex flex-wrap items-center gap-2 text-[13px] text-mut">
                     <Link
                       href={
                         doc.exchangeId

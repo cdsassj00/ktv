@@ -74,7 +74,7 @@ export default function ThreadScrub({
             <br />
             누가 어떻게 답했는지.
           </h2>
-          <p className="mt-3 text-[15px] text-mut">
+          <p className="mt-3 text-[16px] text-mut">
             주제 「{exchange.topic}」 — 스크롤하면 대화가 이어집니다.
           </p>
 
@@ -95,14 +95,14 @@ export default function ThreadScrub({
                   <SpeakerAvatar speaker={sp} size="md" />
                   <div className="bubble flex-1">
                     <div className="mb-1 flex flex-wrap items-center gap-2">
-                      <span className="text-sm font-semibold text-ink">{sp.name}</span>
-                      <span className="text-xs text-mut">{sp.role}</span>
+                      <span className="text-[15px] font-semibold text-ink">{sp.name}</span>
+                      <span className="text-[13px] text-mut">{sp.role}</span>
                       <span className={`chip ${kind.className}`}>{kind.label}</span>
-                      <span className="ml-auto font-mono text-[11px] text-faint">
+                      <span className="ml-auto font-mono text-[12px] text-faint">
                         {formatTime(turn.timestamp)}
                       </span>
                     </div>
-                    <p className="text-sm leading-relaxed text-body">{turn.summary}</p>
+                    <p className="text-[15px] leading-relaxed text-body">{turn.summary}</p>
                   </div>
                 </div>
               );

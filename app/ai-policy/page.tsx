@@ -19,7 +19,7 @@ export default function AiPolicyPage() {
       <header>
         <p className="overline-label">AI &amp; Data Policy</p>
         <h1 className="h-judge mt-1">AI·데이터 정책 대시보드</h1>
-        <p className="mt-2 max-w-2xl text-sm leading-relaxed text-body">
+        <p className="mt-2 max-w-2xl text-[15px] leading-relaxed text-body">
           모든 회의에서 추출한 AI·데이터 정책 관련 발언을 모아봅니다. 각 발언의 타임스탬프로 원문
           영상을 바로 확인할 수 있습니다.
         </p>

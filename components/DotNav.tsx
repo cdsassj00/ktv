@@ -34,7 +34,7 @@ export default function DotNav({ sections }: { sections: { id: string; label: st
           className="group relative flex items-center justify-end"
           aria-label={s.label}
         >
-          <span className="pointer-events-none absolute right-6 whitespace-nowrap rounded-md bg-surf px-2 py-1 text-[11px] font-medium text-body opacity-0 transition group-hover:opacity-100">
+          <span className="pointer-events-none absolute right-6 whitespace-nowrap rounded-md bg-surf px-2 py-1 text-[12px] font-medium text-body opacity-0 transition group-hover:opacity-100">
             {s.label}
           </span>
           <span

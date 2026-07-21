@@ -42,7 +42,7 @@ export default function FloatingNav({ sections }: { sections: { id: string; labe
           <a
             key={s.id}
             href={`#${s.id}`}
-            className={`whitespace-nowrap rounded-full px-3.5 py-1.5 text-[12.5px] font-medium transition ${
+            className={`whitespace-nowrap rounded-full px-3.5 py-1.5 text-[13.5px] font-medium transition ${
               active === s.id ? "bg-accent-500 text-white" : "text-mut hover:bg-white/10 hover:text-ink"
             }`}
           >

@@ -30,7 +30,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {/* 프로스티드 내비 — 브랜드 + 섹션 링크 */}
         <header className="fixed inset-x-0 top-0 z-40 bg-black/60 backdrop-blur-xl backdrop-saturate-150">
           <div className="mx-auto flex h-12 max-w-6xl items-center gap-6 px-5">
-            <Link href="/" className="shrink-0 text-[15px] font-semibold tracking-tight text-ink">
+            <Link href="/" className="shrink-0 text-[16px] font-semibold tracking-tight text-ink">
               열린국무회의
             </Link>
             <nav className="scroll-thin flex flex-1 gap-0.5 overflow-x-auto">
@@ -44,7 +44,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="whitespace-nowrap rounded-full px-3 py-1 text-xs text-mut transition hover:bg-white/10 hover:text-ink"
+                  className="whitespace-nowrap rounded-full px-3 py-1 text-[13px] text-mut transition hover:bg-white/10 hover:text-ink"
                 >
                   {item.label}
                 </Link>
@@ -54,7 +54,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               href="https://www.youtube.com/@KTV_korea"
               target="_blank"
               rel="noreferrer"
-              className="hidden shrink-0 text-xs text-mut transition hover:text-ink sm:block"
+              className="hidden shrink-0 text-[13px] text-mut transition hover:text-ink sm:block"
             >
               KTV 원본 ↗
             </a>
@@ -64,8 +64,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <main className="min-h-screen pt-12">{children}</main>
 
         <footer className="border-t border-hair/40 bg-black">
-          <div className="mx-auto max-w-6xl space-y-2 px-5 py-10 text-xs leading-relaxed text-faint">
-            <p className="text-sm font-semibold tracking-tight text-mut">열린국무회의</p>
+          <div className="mx-auto max-w-6xl space-y-2 px-5 py-10 text-[13px] leading-relaxed text-faint">
+            <p className="text-[15px] font-semibold tracking-tight text-mut">열린국무회의</p>
             <p>
               영상 출처:{" "}
               <a

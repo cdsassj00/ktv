@@ -46,6 +46,46 @@ function makeGlowTexture(THREE: typeof import("three")) {
   return new THREE.CanvasTexture(cv);
 }
 
+/** 원형 크롭 + 컬러 링 사진 텍스처 (비동기 로드) */
+function makePhotoTexture(
+  THREE: typeof import("three"),
+  url: string,
+  ringColor: string,
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  onReady: (tex: any) => void
+) {
+  const img = new Image();
+  img.crossOrigin = "anonymous";
+  img.onload = () => {
+    const S = 256;
+    const cv = document.createElement("canvas");
+    cv.width = cv.height = S;
+    const c = cv.getContext("2d")!;
+    c.save();
+    c.beginPath();
+    c.arc(S / 2, S / 2, S / 2 - 10, 0, Math.PI * 2);
+    c.clip();
+    const sc = Math.max(S / img.width, S / img.height);
+    c.drawImage(
+      img,
+      (S - img.width * sc) / 2,
+      (S - img.height * sc) / 2 - img.height * sc * 0.04, // 얼굴이 대개 상단 — 살짝 위로
+      img.width * sc,
+      img.height * sc
+    );
+    c.restore();
+    c.beginPath();
+    c.arc(S / 2, S / 2, S / 2 - 10, 0, Math.PI * 2);
+    c.lineWidth = 10;
+    c.strokeStyle = ringColor;
+    c.stroke();
+    const tex = new THREE.CanvasTexture(cv);
+    tex.colorSpace = THREE.SRGBColorSpace;
+    onReady(tex);
+  };
+  img.src = url;
+}
+
 interface NodeParts {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   group: any;
@@ -55,6 +95,8 @@ interface NodeParts {
   haloMat: any;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   label: any;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  photoMat?: any;
   base: string;
 }
 
@@ -95,7 +137,12 @@ export default function NetworkGraph3D({
       p.coreMat.color.set(color);
       p.haloMat.color.set(color);
       p.coreMat.opacity = dimmed ? 0.12 : 1;
-      p.haloMat.opacity = dimmed ? 0.04 : lit ? 1 : 0.8;
+      if (p.photoMat) {
+        p.photoMat.opacity = dimmed ? 0.12 : 1;
+        p.haloMat.opacity = dimmed ? 0.03 : lit ? 0.95 : 0.45;
+      } else {
+        p.haloMat.opacity = dimmed ? 0.04 : lit ? 1 : 0.8;
+      }
       p.label.material.opacity = dimmed ? 0.15 : 1;
       const s = hovered ? 1.35 : lit && hl ? 1.15 : 1;
       p.group.scale.set(s, s, s);
@@ -133,6 +180,7 @@ export default function NetworkGraph3D({
               id: n.speakerId,
               name: `${sp.name} · ${sp.role}`,
               label: sp.name,
+              photo: sp.photo,
               val: 3 + Math.min(14, n.turnCount * 1.6),
               base:
                 n.speakerId === "president"
@@ -191,7 +239,31 @@ export default function NetworkGraph3D({
             (label as any).position.set(0, -(r + 5.5), 0);
 
             group.add(halo, core, label);
-            partsRef.current.set(node.id, { group, coreMat, haloMat, label, base: node.base });
+            const parts: NodeParts = { group, coreMat, haloMat, label, base: node.base };
+            partsRef.current.set(node.id, parts);
+
+            /* 얼굴 사진이 있으면 로드 후 별 코어 → 원형 사진으로 교체 */
+            if (node.photo) {
+              makePhotoTexture(THREE, node.photo, node.base, (tex) => {
+                const photoMat = new THREE.SpriteMaterial({
+                  map: tex,
+                  transparent: true,
+                  depthWrite: false,
+                });
+                const photo = new THREE.Sprite(photoMat);
+                const d = r * 3.6;
+                photo.scale.set(d, d, 1);
+                group.remove(core);
+                group.add(photo);
+                // 광륜은 사진 뒤 은은한 링 글로우로 축소
+                haloMat.opacity = 0.45;
+                halo.scale.set(d * 1.7, d * 1.7, 1);
+                (label as { position: { set: (x: number, y: number, z: number) => void } })
+                  .position.set(0, -(d / 2 + 4.5), 0);
+                parts.photoMat = photoMat;
+                applyNodeStyles();
+              });
+            }
             return group;
           })
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -324,7 +396,7 @@ export default function NetworkGraph3D({
   if (status === "fallback") {
     return (
       <div className="panel p-4">
-        <p className="mb-2 text-xs text-mut">3D를 지원하지 않는 환경이라 2D 그래프로 표시합니다.</p>
+        <p className="mb-2 text-[13px] text-mut">3D를 지원하지 않는 환경이라 2D 그래프로 표시합니다.</p>
         <NetworkGraph nodes={nodes} edges={edges} speakers={speakers} highlight={highlight} />
       </div>
     );
@@ -335,7 +407,7 @@ export default function NetworkGraph3D({
       {status === "loading" && (
         <div className="absolute inset-0 z-10 flex flex-col items-center justify-center gap-3 bg-[#000004]">
           <span className="spinner" />
-          <span className="on-dark-mut text-xs font-semibold">은하 네트워크 준비 중…</span>
+          <span className="on-dark-mut text-[13px] font-semibold">은하 네트워크 준비 중…</span>
         </div>
       )}
       <div ref={containerRef} className="min-h-[600px] w-full" />

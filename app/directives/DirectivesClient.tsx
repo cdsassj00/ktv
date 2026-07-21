@@ -47,7 +47,7 @@ export default function DirectivesClient({
         <button
           type="button"
           onClick={() => setOrg(null)}
-          className={`rounded-full border px-3.5 py-1.5 text-[13px] font-medium transition ${
+          className={`rounded-full border px-3.5 py-1.5 text-[14px] font-medium transition ${
             !org ? "border-transparent bg-ink text-paper" : "border-transparent bg-surf text-mut hover:text-ink"
           }`}
         >
@@ -58,7 +58,7 @@ export default function DirectivesClient({
             key={o}
             type="button"
             onClick={() => setOrg(o)}
-            className={`rounded-full border px-3.5 py-1.5 text-[13px] font-medium transition ${
+            className={`rounded-full border px-3.5 py-1.5 text-[14px] font-medium transition ${
               org === o ? "border-transparent bg-ink text-paper" : "border-transparent bg-surf text-mut hover:text-ink"
             }`}
           >
@@ -80,7 +80,7 @@ export default function DirectivesClient({
                   <SpeakerAvatar speaker={from} size="md" />
                   <div>
                     <span className="font-extrabold text-ink">{from.name}</span>
-                    <span className="ml-1.5 text-xs text-mut">{from.role}</span>
+                    <span className="ml-1.5 text-[13px] text-mut">{from.role}</span>
                   </div>
                   <span className="text-faint">→</span>
                   <div className="flex items-center gap-2">
@@ -89,19 +89,19 @@ export default function DirectivesClient({
                       return (
                         <Link key={id} href={`/speakers/${id}`} className="flex items-center gap-1.5 hover:underline">
                           <SpeakerAvatar speaker={to} size="sm" />
-                          <span className="text-sm text-body">{to.org || to.name}</span>
+                          <span className="text-[15px] text-body">{to.org || to.name}</span>
                         </Link>
                       );
                     })}
                   </div>
-                  <span className={`ml-auto rounded-full border px-2.5 py-0.5 text-xs font-medium ${status.className}`}>
+                  <span className={`ml-auto rounded-full border px-2.5 py-0.5 text-[13px] font-medium ${status.className}`}>
                     {status.label}
                   </span>
                 </div>
 
                 <p className="mt-3 text-ink">{directive.content}</p>
 
-                <div className="mt-2 flex flex-wrap items-center gap-2 text-xs text-mut">
+                <div className="mt-2 flex flex-wrap items-center gap-2 text-[13px] text-mut">
                   <Link href={`/meetings/${meeting.id}`} className="text-accent-400 hover:underline">
                     {formatDate(meeting.date)} · {meeting.title}
                   </Link>
@@ -126,12 +126,12 @@ export default function DirectivesClient({
 
                 {directive.followUps.length > 0 && (
                   <div className="mt-4 border-t border-dashed border-hair pt-3">
-                    <p className="mb-2 text-xs font-extrabold text-green-600">후속 보고 타임라인</p>
+                    <p className="mb-2 text-[13px] font-extrabold text-green-600">후속 보고 타임라인</p>
                     <ol className="space-y-1.5">
                       {directive.followUps.map((fu, i) => {
                         const fuMeeting = meetingIndex[fu.meetingId];
                         return (
-                          <li key={i} className="flex items-start gap-2 text-sm">
+                          <li key={i} className="flex items-start gap-2 text-[15px]">
                             <span className="mt-1 size-2 shrink-0 rounded-full bg-green-600" />
                             <div>
                               <Link

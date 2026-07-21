@@ -57,10 +57,10 @@ export default function SearchExperience({
             <circle cx="11" cy="11" r="8" />
             <path d="m21 21-4.3-4.3" />
           </svg>
-          <span className="flex-1 text-[15.5px] text-faint group-hover:text-mut">
+          <span className="flex-1 text-[16px] text-faint group-hover:text-mut">
             지시·발언·안건 검색 — 3D 네트워크에서 관계를 확인하세요
           </span>
-          <span className="hidden rounded-full bg-tint2 px-3 py-1 text-[11.5px] font-medium text-mut sm:block">
+          <span className="hidden rounded-full bg-tint2 px-3 py-1 text-[12.5px] font-medium text-mut sm:block">
             29개 회의 · 295건 지시
           </span>
         </button>
@@ -70,7 +70,7 @@ export default function SearchExperience({
               key={k}
               type="button"
               onClick={() => openWith(k)}
-              className="rounded-full bg-tint px-3.5 py-1.5 text-[13px] font-medium text-body transition hover:bg-tint2 hover:text-ink"
+              className="rounded-full bg-tint px-3.5 py-1.5 text-[14px] font-medium text-body transition hover:bg-tint2 hover:text-ink"
             >
               #{k}
             </button>

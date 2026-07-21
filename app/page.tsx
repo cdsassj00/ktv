@@ -61,9 +61,9 @@ export default function HomePage() {
         <ParticleGlobe className="absolute inset-0 size-full opacity-70" />
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_30%,#000_78%)]" />
         <div className="relative">
-          <p className="text-[13px] font-semibold tracking-wide text-mut">KTV 공개 국무회의 아카이브</p>
+          <p className="text-[14px] font-semibold tracking-wide text-mut">KTV 공개 국무회의 아카이브</p>
           {latest && (
-            <p className="mt-2 inline-flex items-center gap-1.5 rounded-full border border-[#30d158]/30 bg-[#30d158]/10 px-3 py-1 text-[11.5px] font-semibold text-[#4cd964]">
+            <p className="mt-2 inline-flex items-center gap-1.5 rounded-full border border-[#30d158]/30 bg-[#30d158]/10 px-3 py-1 text-[12.5px] font-semibold text-[#4cd964]">
               <span className="relative flex size-1.5">
                 <span className="absolute inline-flex size-full animate-ping rounded-full bg-[#30d158] opacity-60" />
                 <span className="relative inline-flex size-1.5 rounded-full bg-[#30d158]" />
@@ -107,7 +107,7 @@ export default function HomePage() {
           <Reveal>
             <p className="overline-label">Network Search</p>
             <h2 className="h-judge mt-1.5">무엇이든 검색해 보세요.</h2>
-            <p className="mx-auto mt-3 max-w-xl text-[15px] leading-relaxed text-mut">
+            <p className="mx-auto mt-3 max-w-xl text-[16px] leading-relaxed text-mut">
               {directives.length}건의 지시와 {threadCount}개 대화에서 키워드를 찾아, 누가 지시하고
               누가 답했는지 3D 네트워크로 보여드립니다.
             </p>
@@ -141,7 +141,7 @@ export default function HomePage() {
               <br />
               차곡차곡 쌓입니다.
             </h2>
-            <div className="mt-4 flex gap-8 text-[15px] text-mut">
+            <div className="mt-4 flex gap-8 text-[16px] text-mut">
               <span>
                 <strong className="text-[26px] font-semibold text-ink"><CountUp value={meetings.length} /></strong> 회의
               </span>
@@ -155,7 +155,7 @@ export default function HomePage() {
           </Reveal>
 
           {hasSample && (
-            <div className="mt-8 flex items-start gap-2.5 rounded-2xl bg-[rgba(255,214,10,0.1)] px-5 py-3.5 text-[13.5px] text-[#ffd60a]/90">
+            <div className="mt-8 flex items-start gap-2.5 rounded-2xl bg-[rgba(255,214,10,0.1)] px-5 py-3.5 text-[14.5px] text-[#ffd60a]/90">
               <IconAlert className="mt-0.5 size-4" />
               <p>
                 아래 회의는 <strong>데모용 샘플 데이터</strong>입니다. 수집 파이프라인 실행 시 실제
@@ -173,16 +173,16 @@ export default function HomePage() {
                 className="panel group sticky block overflow-hidden p-7 shadow-lift transition hover:bg-tint sm:p-8"
                 style={{ top: `${88 + i * 14}px` }}
               >
-                <p className="text-[12.5px] font-medium text-mut">
+                <p className="text-[13.5px] font-medium text-mut">
                   {MEETING_TYPE_LABEL[m.type]} · {formatDate(m.date)}
                 </p>
                 <h3 className="mt-1.5 text-[24px] font-semibold tracking-tight text-ink group-hover:text-accent-400">
                   {m.title}
                 </h3>
-                <p className="mt-2 max-w-2xl text-[15px] leading-relaxed text-body">
+                <p className="mt-2 max-w-2xl text-[16px] leading-relaxed text-body">
                   {m.summary.oneLine}
                 </p>
-                <div className="mt-4 flex flex-wrap items-center gap-3 text-[13px] font-medium text-mut">
+                <div className="mt-4 flex flex-wrap items-center gap-3 text-[14px] font-medium text-mut">
                   <span>안건 {m.summary.agenda.length}</span>
                   <span className="text-tint2">·</span>
                   <span>스레드 {m.exchanges.length}</span>
@@ -236,7 +236,7 @@ export default function HomePage() {
               <br />
               다음 회의로 이어집니다.
             </h2>
-            <p className="mt-3 text-[15px] leading-relaxed text-mut">
+            <p className="mt-3 text-[16px] leading-relaxed text-mut">
               {directives.length}건의 지시를 추적 중이며, 그중 {reportedCount}건의 후속 보고가
               연결됐습니다. 자동 연결은 &ldquo;추정&rdquo;으로 표시됩니다.
             </p>
@@ -272,27 +272,27 @@ export default function HomePage() {
                   <SpeakerAvatar speaker={sp} size="md" />
                   <div className="min-w-0 flex-1">
                     <div className="flex flex-wrap items-center gap-2">
-                      <span className="text-sm font-semibold text-ink">{sp.name}</span>
-                      <span className="text-xs text-mut">{item.topic}</span>
+                      <span className="text-[15px] font-semibold text-ink">{sp.name}</span>
+                      <span className="text-[13px] text-mut">{item.topic}</span>
                       {meeting.videoId ? (
                         <a
                           href={youtubeUrlAt(meeting.videoId, item.timestamp)}
                           target="_blank"
                           rel="noreferrer"
-                          className="ml-auto font-mono text-[11px] text-accent-400 hover:underline"
+                          className="ml-auto font-mono text-[12px] text-accent-400 hover:underline"
                         >
                           {formatTime(item.timestamp)}
                         </a>
                       ) : (
-                        <span className="ml-auto font-mono text-[11px] text-faint">
+                        <span className="ml-auto font-mono text-[12px] text-faint">
                           {formatTime(item.timestamp)}
                         </span>
                       )}
                     </div>
-                    <p className="mt-1 text-sm leading-relaxed text-body">{item.summary}</p>
+                    <p className="mt-1 text-[15px] leading-relaxed text-body">{item.summary}</p>
                     <div className="mt-1.5 flex flex-wrap gap-1.5">
                       {item.tags.map((t) => (
-                        <span key={t} className="rounded-full bg-tint2 px-2 py-0.5 text-[11px] text-mut">
+                        <span key={t} className="rounded-full bg-tint2 px-2 py-0.5 text-[12px] text-mut">
                           #{t}
                         </span>
                       ))}
@@ -321,11 +321,11 @@ export default function HomePage() {
             {Object.entries(speakers).map(([id, sp]) => (
               <Link key={id} href={`/speakers/${id}`} className="group flex w-[76px] flex-col items-center gap-2">
                 <SpeakerAvatar speaker={sp} size="lg" />
-                <span className="text-[12px] font-medium text-mut group-hover:text-ink">{sp.name}</span>
+                <span className="text-[13px] font-medium text-mut group-hover:text-ink">{sp.name}</span>
               </Link>
             ))}
           </Reveal>
-          <p className="mt-10 text-xs leading-relaxed text-faint">
+          <p className="mt-10 text-[13px] leading-relaxed text-faint">
             요약은 KTV 영상 자막 기반 AI 생성물이며 오류가 있을 수 있습니다. 모든 항목의
             타임스탬프로 원문 영상을 직접 확인하세요.
           </p>

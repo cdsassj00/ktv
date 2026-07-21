@@ -97,7 +97,7 @@ h1 { font-variation-settings: "wght" 650; }
 
 /* 발언 말풍선 — iMessage 다크 수신 버블 */
 .bubble {
-  @apply rounded-2xl rounded-tl-md bg-tint p-3.5 text-left;
+  @apply rounded-2xl rounded-tl-md bg-tint p-4 text-left;
   transition: background-color 0.2s ease, transform 0.2s ease;
 }
 .bubble-clickable:hover {
@@ -106,7 +106,7 @@ h1 { font-variation-settings: "wght" 650; }
 }
 
 .chip {
-  @apply inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[11px] font-semibold;
+  @apply inline-flex items-center gap-1 rounded-full px-2.5 py-1 text-[12.5px] font-semibold;
 }
 
 .scroll-thin::-webkit-scrollbar { height: 6px; width: 6px; }

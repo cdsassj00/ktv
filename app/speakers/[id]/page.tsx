@@ -39,12 +39,12 @@ export default async function SpeakerPage({ params }: { params: Promise<{ id: st
             {speaker.role} · {speaker.org}
           </p>
           {speaker.term && (
-            <p className="mt-1 text-xs text-faint">
+            <p className="mt-1 text-[13px] text-faint">
               재임: {speaker.term.from} ~ {speaker.term.to ?? "현재"}
             </p>
           )}
           {speaker.photoSource && (
-            <p className="mt-2 text-[11px] text-faint">사진 출처: {speaker.photoSource}</p>
+            <p className="mt-2 text-[12px] text-faint">사진 출처: {speaker.photoSource}</p>
           )}
         </div>
       </header>
@@ -65,25 +65,25 @@ export default async function SpeakerPage({ params }: { params: Promise<{ id: st
                 {turns.map((t, i) => {
                   const kind = TURN_KIND_STYLE[t.kind] ?? TURN_KIND_STYLE["발언"];
                   return (
-                    <li key={i} className="flex items-start gap-2 text-sm">
-                      <span className={`mt-0.5 shrink-0 rounded-full border px-2 py-0.5 text-[11px] font-medium ${kind.className}`}>
+                    <li key={i} className="flex items-start gap-2 text-[15px]">
+                      <span className={`mt-0.5 shrink-0 rounded-full border px-2 py-0.5 text-[12px] font-medium ${kind.className}`}>
                         {kind.label}
                       </span>
                       <div>
                         <Link href={`/meetings/${meeting.id}#${t.exchangeId}`} className="text-body hover:underline">
-                          <span className="text-xs text-faint">[{t.topic}]</span> {t.summary}
+                          <span className="text-[13px] text-faint">[{t.topic}]</span> {t.summary}
                         </Link>
                         {meeting.videoId ? (
                           <a
                             href={youtubeUrlAt(meeting.videoId, t.timestamp)}
                             target="_blank"
                             rel="noreferrer"
-                            className="ml-2 font-mono text-xs text-navy-500 hover:underline"
+                            className="ml-2 font-mono text-[13px] text-navy-500 hover:underline"
                           >
                             ▶ {formatTime(t.timestamp)}
                           </a>
                         ) : (
-                          <span className="ml-2 font-mono text-xs text-faint">
+                          <span className="ml-2 font-mono text-[13px] text-faint">
                             ▶ {formatTime(t.timestamp)}
                           </span>
                         )}

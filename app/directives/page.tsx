@@ -21,7 +21,7 @@ export default function DirectivesPage() {
       <header>
         <p className="overline-label">Directive Tracker</p>
         <h1 className="h-judge mt-1">지시-이행 트래커</h1>
-        <p className="mt-2 max-w-2xl text-sm leading-relaxed text-body">
+        <p className="mt-2 max-w-2xl text-[15px] leading-relaxed text-body">
           대통령·총리의 지시가 어느 부처에 내려졌고, 이후 회의에서 어떻게 후속 보고됐는지 회의를
           넘어 추적합니다. 자동 연결된 후속 보고는 <em>추정 연결</em>로 표시됩니다.
         </p>
