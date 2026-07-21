@@ -26,15 +26,19 @@ export default function NetworkView({
   speakers,
   searchDocs,
   exchangeIndex,
+  initialQuery,
+  autoFocus,
 }: {
   nodes: NetworkNode[];
   edges: NetworkEdge[];
   speakers: SpeakerMap;
   searchDocs?: SearchDoc[];
   exchangeIndex?: ExchangeIndex;
+  initialQuery?: string;
+  autoFocus?: boolean;
 }) {
   const [mode, setMode] = useState<"3d" | "2d">("3d");
-  const [query, setQuery] = useState("");
+  const [query, setQuery] = useState(initialQuery ?? "");
   const [selected, setSelected] = useState<number | null>(null);
   const [focusNode, setFocusNode] = useState<string | null>(null);
 
@@ -119,6 +123,7 @@ export default function NetworkView({
             </svg>
             <input
               type="search"
+              autoFocus={autoFocus}
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               placeholder="검색: 부동산, AI, 물가, 자살예방, 촉법소년…"

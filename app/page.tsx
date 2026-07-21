@@ -7,9 +7,9 @@ import ParallaxPhoto from "@/components/ParallaxPhoto";
 import ParticleGlobe from "@/components/ParticleGlobe";
 import Reveal from "@/components/Reveal";
 import ScrollProgress from "@/components/ScrollProgress";
+import SearchExperience from "@/components/SearchExperience";
 import SpeakerAvatar from "@/components/SpeakerAvatar";
 import ThreadScrub from "@/components/ThreadScrub";
-import NetworkView from "@/components/NetworkView";
 import { IconAlert } from "@/components/icons";
 import {
   buildNetwork,
@@ -25,10 +25,10 @@ import { formatDate, formatTime, MEETING_TYPE_LABEL, youtubeUrlAt } from "@/lib/
 
 const SECTIONS = [
   { id: "hero", label: "홈" },
+  { id: "search", label: "검색" },
   { id: "meetings", label: "회의" },
   { id: "thread", label: "발언 스레드" },
   { id: "directives", label: "지시-이행" },
-  { id: "network", label: "네트워크" },
   { id: "ai-policy", label: "AI·데이터" },
   { id: "speakers", label: "발언자" },
 ];
@@ -101,7 +101,30 @@ export default function HomePage() {
         </a>
       </section>
 
-      {/* ══ 2. 회의 — 스티키 스택 카드 ══ */}
+      {/* ══ 2. 네트워크 검색 — 클릭 시 3D 그래프 모달 ══ */}
+      <section id="search" className="px-5 py-20">
+        <div className="mx-auto max-w-3xl text-center">
+          <Reveal>
+            <p className="overline-label">Network Search</p>
+            <h2 className="h-judge mt-1.5">무엇이든 검색해 보세요.</h2>
+            <p className="mx-auto mt-3 max-w-xl text-[15px] leading-relaxed text-mut">
+              {directives.length}건의 지시와 {threadCount}개 대화에서 키워드를 찾아, 누가 지시하고
+              누가 답했는지 3D 네트워크로 보여드립니다.
+            </p>
+          </Reveal>
+          <div className="mt-8">
+            <SearchExperience
+              nodes={network.nodes}
+              edges={network.edges}
+              speakers={speakers}
+              searchDocs={searchDocs}
+              exchangeIndex={exchangeIndex}
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* ══ 3. 회의 — 스티키 스택 카드 ══ */}
       <section id="meetings" className="relative overflow-hidden px-5 py-24">
         {latest && (
           <ParallaxPhoto
@@ -219,24 +242,6 @@ export default function HomePage() {
           <Link href="/directives" className="btn-link">
             전체 지시 이력 보기 &rsaquo;
           </Link>
-        </div>
-      </section>
-
-      {/* ══ 5. 3D 발언 네트워크 ══ */}
-      <section id="network" className="border-t border-hair/40 px-5 py-24">
-        <div className="mx-auto max-w-5xl">
-          <Reveal>
-            <p className="overline-label">발언 네트워크</p>
-            <h2 className="h-judge mt-1.5">회의의 역학을 3D로.</h2>
-            <p className="mt-3 max-w-2xl text-[15px] leading-relaxed text-mut">
-              노드는 발언자(크기=발언량), <span className="text-[#ff6961]">빨간 파티클 선</span>은
-              지시, <span className="text-[#64b5ff]">파란 선</span>은 답변·보고입니다. 드래그로
-              회전, 노드 클릭 시 발언자 페이지로 이동합니다. 검색창에 키워드를 치면 관련 지시·발언이 그래프에 표시됩니다.
-            </p>
-          </Reveal>
-          <div className="mt-8">
-            <NetworkView nodes={network.nodes} edges={network.edges} speakers={speakers} searchDocs={searchDocs} exchangeIndex={exchangeIndex} />
-          </div>
         </div>
       </section>
 
