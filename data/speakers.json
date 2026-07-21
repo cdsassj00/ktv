@@ -34,8 +34,8 @@
     "name": "배경훈",
     "role": "과학기술정보통신부 장관",
     "org": "과학기술정보통신부",
-    "photo": null,
-    "photoSource": null
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Bae_Kyung-hoon%27s_Portrait_%282025.7%29.png?width=400",
+    "photoSource": "위키미디어 공용 (Bae Kyung-hoon's Portrait (2025.7).png)"
   },
   "mofa-minister": {
     "name": "조현",
@@ -164,8 +164,8 @@
     "photoSource": "위키미디어 공용 (Lee_Eog-weon's_portrait_(2025.09).jpg)"
   },
   "acrc-chairman": {
-    "name": "국민권익위원장",
-    "role": "국민권익위원회",
+    "name": "유철환",
+    "role": "국민권익위원장",
     "org": "국민권익위원회",
     "photo": null,
     "photoSource": null
@@ -178,8 +178,8 @@
     "photoSource": null
   },
   "ftc-chairman": {
-    "name": "공정거래위원장",
-    "role": "공정거래위원회",
+    "name": "주병기",
+    "role": "공정거래위원장",
     "org": "공정거래위원회",
     "photo": null,
     "photoSource": null
@@ -206,8 +206,8 @@
     "photoSource": null
   },
   "kfs-minister": {
-    "name": "산림청장",
-    "role": "산림청",
+    "name": "남성현",
+    "role": "산림청장",
     "org": "산림청",
     "photo": null,
     "photoSource": null
@@ -248,8 +248,8 @@
     "photoSource": null
   },
   "nts-commissioner": {
-    "name": "국세청장",
-    "role": "국세청",
+    "name": "임광현",
+    "role": "국세청장",
     "org": "국세청",
     "photo": null,
     "photoSource": null
@@ -283,10 +283,10 @@
     "photoSource": null
   },
   "trade-minister": {
-    "name": "통상교섭본부장",
-    "role": "산업통상자원부",
+    "name": "여한구",
+    "role": "통상교섭본부장",
     "org": "산업통상자원부",
-    "photo": null,
-    "photoSource": null
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Yeo_Han-koo_20220207.jpg?width=400",
+    "photoSource": "위키미디어 공용 (Yeo Han-koo 20220207.jpg)"
   }
 }
