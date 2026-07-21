@@ -140,6 +140,9 @@ export default function NetworkView({
           <span className="hidden text-faint sm:inline">
             드래그 회전 · 위아래 드래그 기울기 · 휠/핀치 확대 · 인물 클릭 시 관계만 표시
           </span>
+          <span className="text-faint sm:hidden">
+            좌우 드래그 회전 · 두 손가락 확대 · 인물 탭 시 관계 표시
+          </span>
         </div>
       </div>
 

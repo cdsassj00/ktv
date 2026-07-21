@@ -11,6 +11,47 @@ const HOT_KEYWORDS = ["AI", "물가", "부동산", "촉법소년", "계곡 불�
  * 검색바(또는 키워드 칩)를 누르면 모달이 열리고, 그 안에서 원탁 네트워크 그래프와
  * 퍼지 검색·대화 스레드가 함께 동작한다. Esc/배경 클릭으로 닫힘, 열려 있는 동안 body 스크롤 잠금.
  */
+/** 자리표시자에 키워드가 실제 타이핑되듯 순환하는 타자기 훅 */
+function useTypewriter(words: string[]) {
+  const [typed, setTyped] = useState("");
+  useEffect(() => {
+    if (matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      setTyped(words[0] ?? "");
+      return;
+    }
+    let w = 0;
+    let i = 0;
+    let deleting = false;
+    let t: ReturnType<typeof setTimeout>;
+    const tick = () => {
+      const word = words[w];
+      if (!deleting) {
+        i += 1;
+        setTyped(word.slice(0, i));
+        if (i === word.length) {
+          deleting = true;
+          t = setTimeout(tick, 1700);
+          return;
+        }
+        t = setTimeout(tick, 90 + Math.random() * 80);
+      } else {
+        i -= 1;
+        setTyped(word.slice(0, i));
+        if (i === 0) {
+          deleting = false;
+          w = (w + 1) % words.length;
+          t = setTimeout(tick, 400);
+          return;
+        }
+        t = setTimeout(tick, 42);
+      }
+    };
+    t = setTimeout(tick, 900);
+    return () => clearTimeout(t);
+  }, [words]);
+  return typed;
+}
+
 export default function SearchExperience({
   nodes,
   edges,
@@ -26,6 +67,7 @@ export default function SearchExperience({
 }) {
   const [open, setOpen] = useState(false);
   const [initialQuery, setInitialQuery] = useState("");
+  const typed = useTypewriter(HOT_KEYWORDS);
 
   const openWith = useCallback((q: string) => {
     setInitialQuery(q);
@@ -50,15 +92,17 @@ export default function SearchExperience({
         <button
           type="button"
           onClick={() => openWith("")}
-          className="group flex w-full items-center gap-3 rounded-full bg-surf px-6 py-4 text-left shadow-card transition hover:bg-tint"
+          className="group flex w-full items-center gap-3 rounded-full bg-surf px-6 py-4 text-left shadow-card ring-1 ring-white/10 transition duration-300 hover:bg-tint hover:shadow-[0_0_36px_rgba(10,132,255,0.22)] hover:ring-accent-500/50"
           aria-label="회의 내용 검색 열기"
         >
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="size-5 text-accent-400" aria-hidden>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="size-5 text-accent-400 transition group-hover:scale-110" aria-hidden>
             <circle cx="11" cy="11" r="8" />
             <path d="m21 21-4.3-4.3" />
           </svg>
-          <span className="flex-1 text-[16px] text-faint group-hover:text-mut">
-            지시·발언·안건 검색 — 원탁 네트워크에서 관계를 확인하세요
+          <span className="flex-1 text-[16px] text-faint">
+            <span className="text-ink">{typed}</span>
+            <span className="caret ml-px inline-block h-[1.1em] w-[2px] translate-y-[3px] bg-accent-400" aria-hidden />
+            <span className="ml-2 group-hover:text-mut">검색해 보세요</span>
           </span>
           <span className="hidden rounded-full bg-tint2 px-3 py-1 text-[12.5px] font-medium text-mut sm:block">
             29개 회의 · 295건 지시
@@ -70,7 +114,7 @@ export default function SearchExperience({
               key={k}
               type="button"
               onClick={() => openWith(k)}
-              className="rounded-full bg-tint px-3.5 py-1.5 text-[14px] font-medium text-body transition hover:bg-tint2 hover:text-ink"
+              className="rounded-full bg-tint px-3.5 py-1.5 text-[14px] font-medium text-body transition duration-300 hover:-translate-y-0.5 hover:bg-tint2 hover:text-ink hover:shadow-[0_4px_16px_rgba(10,132,255,0.18)]"
             >
               #{k}
             </button>

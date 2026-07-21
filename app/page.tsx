@@ -68,6 +68,14 @@ export default function HomePage() {
 
       {/* ══ 1. 히어로 — 3D 파티클 글로브 (스크롤 스크럽 회전) ══ */}
       <section id="hero" className="relative flex min-h-[100svh] flex-col items-center justify-center overflow-hidden px-5 text-center">
+        {latest && (
+          <ParallaxPhoto
+            src={`https://i.ytimg.com/vi/${latest.videoId}/maxresdefault.jpg`}
+            fallbackSrc={`https://i.ytimg.com/vi/${latest.videoId}/hqdefault.jpg`}
+            maxOpacity={0.2}
+            rate={0.1}
+          />
+        )}
         <ParticleGlobe className="absolute inset-0 size-full opacity-70" />
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_30%,#000_78%)]" />
         <div className="relative">

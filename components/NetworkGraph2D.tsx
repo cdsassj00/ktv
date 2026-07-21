@@ -194,6 +194,7 @@ export default function NetworkGraph2D({
     if (!ctx) return;
 
     const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const coarse = matchMedia("(pointer: coarse)").matches; // 터치 기기: 탭 판정 반경 확대
     let W = 0;
     let H = height;
     let dpr = 1;
@@ -249,9 +250,10 @@ export default function NetworkGraph2D({
     };
 
     const pick = (mx: number, my: number): OrbitNode | null => {
+      const slack = coarse ? 14 : 6;
       let best: OrbitNode | null = null;
       for (const o of orbitsRef.current) {
-        if (Math.hypot(mx - o.sx, my - o.sy) <= o.r + 6) {
+        if (Math.hypot(mx - o.sx, my - o.sy) <= o.r + slack) {
           if (!best || o.depth > best.depth) best = o;
         }
       }
@@ -287,11 +289,14 @@ export default function NetworkGraph2D({
           const dx = e.clientX - prev.x;
           const dy = e.clientY - prev.y;
           moved += Math.abs(dx) + Math.abs(dy);
-          /* 가로 = 궤도 회전, 세로 = 원탁 기울기 */
+          /* 가로 = 궤도 회전. 세로 기울기는 마우스 전용 —
+             터치의 세로 스와이프는 touch-action: pan-y로 페이지 스크롤에 양보 */
           rotRef.current.value += dx * 0.006;
           rotRef.current.vel = dx * 0.006;
-          const v = viewRef.current;
-          v.tilt = Math.min(0.75, Math.max(0.18, v.tilt + dy * 0.0022));
+          if (e.pointerType === "mouse") {
+            const v = viewRef.current;
+            v.tilt = Math.min(0.75, Math.max(0.18, v.tilt + dy * 0.0022));
+          }
         }
       } else {
         const hit = pick(e.clientX - rect.left, e.clientY - rect.top);
@@ -312,6 +317,11 @@ export default function NetworkGraph2D({
       setSelected(next);
       if (next) pulseRef.current = { id: next, start: performance.now() };
     };
+    /* 브라우저가 스크롤을 가져가면(pointercancel) 클릭으로 처리하지 않는다 */
+    const onCancel = (e: PointerEvent) => {
+      pointers.delete(e.pointerId);
+      pinchDist = 0;
+    };
     const onLeave = () => {
       hoverRef.current = null;
     };
@@ -323,7 +333,7 @@ export default function NetworkGraph2D({
     canvas.addEventListener("pointerdown", onDown);
     canvas.addEventListener("pointermove", onMove);
     canvas.addEventListener("pointerup", onUp);
-    canvas.addEventListener("pointercancel", onUp);
+    canvas.addEventListener("pointercancel", onCancel);
     canvas.addEventListener("pointerleave", onLeave);
     canvas.addEventListener("wheel", onWheel, { passive: false });
 
@@ -637,7 +647,7 @@ export default function NetworkGraph2D({
       canvas.removeEventListener("pointerdown", onDown);
       canvas.removeEventListener("pointermove", onMove);
       canvas.removeEventListener("pointerup", onUp);
-      canvas.removeEventListener("pointercancel", onUp);
+      canvas.removeEventListener("pointercancel", onCancel);
       canvas.removeEventListener("pointerleave", onLeave);
       canvas.removeEventListener("wheel", onWheel);
     };
@@ -650,7 +660,13 @@ export default function NetworkGraph2D({
 
   return (
     <div ref={wrapRef} className="relative w-full select-none" style={{ height }}>
-      <canvas ref={canvasRef} className="block cursor-grab touch-none" aria-label="발언 네트워크 그래프" role="img" />
+      <canvas
+        ref={canvasRef}
+        className="block cursor-grab"
+        style={{ touchAction: "pan-y" }} /* 세로 스와이프는 페이지 스크롤로 양보 */
+        aria-label="발언 네트워크 그래프"
+        role="img"
+      />
 
       {/* 선택된 발언자 정보 카드 — 관계도 위에 떠 있음 */}
       {selected && selSpeaker && (

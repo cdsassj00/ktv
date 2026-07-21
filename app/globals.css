@@ -185,6 +185,14 @@ h1 { font-variation-settings: "wght" 650; }
   55%, 100% { transform: translateX(100%); }
 }
 
+/* 타자기 커서 깜빡임 */
+.caret {
+  animation: caret-blink 1.1s steps(1) infinite;
+}
+@keyframes caret-blink {
+  50% { opacity: 0; }
+}
+
 /* 네트워크 모달 — 금·은 반사광이 테두리를 따라 도는 메탈 프레임 */
 @property --frame-angle {
   syntax: "<angle>";
@@ -235,6 +243,7 @@ button:not(:disabled) { cursor: pointer; }
   .ln > span { transform: none; animation: none; }
   .scroll-cue { animation: none; }
   .gold-shine { animation: none; }
+  .caret { animation: none; }
   .spinner { animation-duration: 2s; }
   html { scroll-behavior: auto; }
 }
