@@ -1,7 +1,6 @@
 import Link from "next/link";
 import CountUp from "@/components/CountUp";
 import DirectiveFlow from "@/components/DirectiveFlow";
-import DotNav from "@/components/DotNav";
 import FloatingNav from "@/components/FloatingNav";
 import ParallaxPhoto from "@/components/ParallaxPhoto";
 import ParticleGlobe from "@/components/ParticleGlobe";
@@ -65,7 +64,6 @@ export default function HomePage() {
   return (
     <>
       <ScrollProgress />
-      <DotNav sections={SECTIONS} />
       <FloatingNav sections={SECTIONS} />
 
       {/* ══ 1. 히어로 — 3D 파티클 글로브 (스크롤 스크럽 회전) ══ */}

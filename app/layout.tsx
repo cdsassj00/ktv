@@ -27,8 +27,25 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       </head>
       <body>
+        {/* CDSA 골드 배너 — 스크롤에도 항상 상단 고정, 황금빛 반사 스윕 */}
+        <a
+          href="https://cdsa.kr"
+          target="_blank"
+          rel="noreferrer"
+          className="gold-banner fixed inset-x-0 top-0 z-50 flex h-9 items-center justify-center gap-2 overflow-hidden px-4"
+        >
+          <span className="gold-shine" aria-hidden />
+          <span className="relative rounded-full bg-black/25 px-1.5 py-px text-[10px] font-bold tracking-wide text-[#fff7dc]">
+            AD
+          </span>
+          <span className="relative truncate text-[12.5px] font-semibold tracking-tight text-[#241a02] sm:text-[13.5px]">
+            강사가 부족하다고 아무 강사나 뽑고 계십니까? — AX 전환·AI 교육은{" "}
+            <span className="underline underline-offset-2">CDSA와 함께</span>
+          </span>
+        </a>
+
         {/* 프로스티드 내비 — 브랜드 + 섹션 링크 */}
-        <header className="fixed inset-x-0 top-0 z-40 bg-black/60 backdrop-blur-xl backdrop-saturate-150">
+        <header className="fixed inset-x-0 top-9 z-40 bg-black/60 backdrop-blur-xl backdrop-saturate-150">
           <div className="mx-auto flex h-12 max-w-6xl items-center gap-6 px-5">
             <Link href="/" className="shrink-0 text-[16px] font-semibold tracking-tight text-ink">
               열린국무회의
@@ -61,7 +78,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           </div>
         </header>
 
-        <main className="min-h-screen pt-12">{children}</main>
+        <main className="min-h-screen pt-[84px]">{children}</main>
 
         <footer className="border-t border-hair/40 bg-black">
           <div className="mx-auto max-w-6xl space-y-2 px-5 py-10 text-[13px] leading-relaxed text-faint">
