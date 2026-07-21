@@ -157,11 +157,11 @@
     "photoSource": "위키미디어 공용 (Lee_Eog-weon's_portrait_(2025.09).jpg)"
   },
   "acrc-chairman": {
-    "name": "유철환",
+    "name": "정일연",
     "role": "국민권익위원장",
     "org": "국민권익위원회",
-    "photo": null,
-    "photoSource": null
+    "photo": "/speakers/acrc-chairman.jpg",
+    "photoSource": "국민권익위원회 누리집 (위원장 인사말)"
   },
   "data-minister": {
     "name": "국가데이터처장",
@@ -175,8 +175,8 @@
     "name": "주병기",
     "role": "공정거래위원장",
     "org": "공정거래위원회",
-    "photo": null,
-    "photoSource": null
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Ju_Biung-ghi%27s_portrait_%282025.09%29.jpg?width=400",
+    "photoSource": "위키미디어 공용 (Ju Biung-ghi's portrait (2025.09).jpg)"
   },
   "ipo-minister": {
     "name": "지식재산처장",
@@ -253,8 +253,8 @@
     "name": "임광현",
     "role": "국세청장",
     "org": "국세청",
-    "photo": null,
-    "photoSource": null
+    "photo": "/speakers/nts-commissioner.png",
+    "photoSource": "국세청 누리집 (청장 소개)"
   },
   "oka-commissioner": {
     "name": "재외동포청장",
