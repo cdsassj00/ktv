@@ -197,17 +197,22 @@ export default function NetworkGraph2D({
     let W = 0;
     let H = height;
     let dpr = 1;
+    let defaultTilt = 0.4;
 
     const resize = () => {
       dpr = Math.min(2, window.devicePixelRatio || 1);
       W = wrap.clientWidth;
-      H = height;
+      H = W < 520 ? Math.min(height, 470) : height;
+      wrap.style.height = `${H}px`;
       canvas.width = W * dpr;
       canvas.height = H * dpr;
       canvas.style.width = `${W}px`;
       canvas.style.height = `${H}px`;
+      /* 좁은 화면은 궤도가 작아 겹침 — 기본 기울기를 세워 세로 공간 활용 */
+      defaultTilt = W < 520 ? 0.58 : 0.4;
     };
     resize();
+    viewRef.current.tilt = defaultTilt;
     const ro = new ResizeObserver(resize);
     ro.observe(wrap);
 
@@ -238,7 +243,7 @@ export default function NetworkGraph2D({
     zoomApiRef.current = {
       by: (f: number) => zoomAt(W / 2, H * 0.5, f),
       reset: () => {
-        viewRef.current = { zoom: 1, panX: 0, panY: 0, tilt: 0.4 };
+        viewRef.current = { zoom: 1, panX: 0, panY: 0, tilt: defaultTilt };
         rotRef.current.vel = 0;
       },
     };
@@ -349,11 +354,13 @@ export default function NetworkGraph2D({
 
       const cx = W / 2 + panX;
       const cy = H * 0.5 + panY;
-      const Rmax = Math.min(W * 0.43, 350) * zoom;
+      const compact = W < 520; // 모바일: 노드·라벨 축소 + 뒷줄 라벨 생략
+      const sizeK = Math.min(1, Math.max(0.55, W / 760));
+      const Rmax = Math.min(W * (compact ? 0.47 : 0.43), 350) * zoom;
       const RADII: Record<number, number> = { 1: Rmax * 0.52, 2: Rmax * 0.77, 3: Rmax };
       const usedRings = [...new Set(orbitsRef.current.map((o) => o.ring).filter((r) => r > 0))];
-      const nodeScale = zoom ** 0.85;
-      const lblScale = Math.min(1.45, 0.78 + 0.32 * zoom);
+      const nodeScale = zoom ** 0.85 * sizeK;
+      const lblScale = Math.min(1.45, 0.78 + 0.32 * zoom) * (compact ? 0.9 : 1);
 
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
       ctx.clearRect(0, 0, W, H);
@@ -597,19 +604,24 @@ export default function NetworkGraph2D({
           }
         }
 
-        /* 라벨 */
-        const fs = (o.ring === 0 ? 14 : 10.5 + 3 * o.depth) * lblScale;
-        ctx.font = `600 ${fs}px Pretendard, sans-serif`;
-        ctx.textAlign = "center";
-        ctx.fillStyle = COLOR.ink;
-        ctx.shadowColor = "rgba(0,0,0,0.8)";
-        ctx.shadowBlur = 4;
-        ctx.shadowOffsetY = 1;
-        ctx.fillText(o.name, o.sx, o.sy + r + fs + 4);
-        if (hover || lit || isSel || o.ring === 0 || o.depth > 0.78) {
-          ctx.font = `500 ${fs - 3.5}px Pretendard, sans-serif`;
-          ctx.fillStyle = COLOR.mut;
-          ctx.fillText(o.role, o.sx, o.sy + r + fs * 2 + 5);
+        /* 라벨 — 모바일은 뒷줄 이름 생략(겹침 방지), 직책은 강조 시에만 */
+        const showName = !compact || o.ring === 0 || o.depth > 0.62 || lit || hover || isSel;
+        const showRole =
+          hover || isSel || o.ring === 0 || (!compact && (lit || o.depth > 0.78));
+        if (showName) {
+          const fs = (o.ring === 0 ? 14 : 10.5 + 3 * o.depth) * lblScale;
+          ctx.font = `600 ${fs}px Pretendard, sans-serif`;
+          ctx.textAlign = "center";
+          ctx.fillStyle = COLOR.ink;
+          ctx.shadowColor = "rgba(0,0,0,0.8)";
+          ctx.shadowBlur = 4;
+          ctx.shadowOffsetY = 1;
+          ctx.fillText(o.name, o.sx, o.sy + r + fs + 4);
+          if (showRole) {
+            ctx.font = `500 ${fs - 3.5}px Pretendard, sans-serif`;
+            ctx.fillStyle = COLOR.mut;
+            ctx.fillText(o.role, o.sx, o.sy + r + fs * 2 + 5);
+          }
         }
         ctx.restore();
       }
