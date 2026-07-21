@@ -9,7 +9,6 @@ import Reveal from "@/components/Reveal";
 import ScrollProgress from "@/components/ScrollProgress";
 import SearchExperience from "@/components/SearchExperience";
 import SpeakerAvatar from "@/components/SpeakerAvatar";
-import ThreadScrub from "@/components/ThreadScrub";
 import { IconAlert } from "@/components/icons";
 import {
   buildNetwork,
@@ -27,7 +26,7 @@ const SECTIONS = [
   { id: "hero", label: "홈" },
   { id: "search", label: "검색" },
   { id: "meetings", label: "회의" },
-  { id: "thread", label: "발언 스레드" },
+  { id: "quotes", label: "말말말" },
   { id: "directives", label: "지시-이행" },
   { id: "ai-policy", label: "AI·데이터" },
   { id: "speakers", label: "발언자" },
@@ -47,8 +46,21 @@ export default function HomePage() {
   const searchDocs = getSearchDocs();
   const exchangeIndex = getExchangeIndex();
 
-  const featuredExchange =
-    latest?.exchanges.reduce((a, b) => (b.turns.length > a.turns.length ? b : a), latest.exchanges[0]);
+  /* 말말말 — 최신 회의의 대표 인용 5개 (remarks 우선, 스레드 인용으로 보충, 중복 제거) */
+  const quotes = latest
+    ? [
+        ...latest.summary.remarks.map((r) => ({
+          speakerId: r.speakerId, quote: r.quote, timestamp: r.timestamp, context: r.context ?? "",
+        })),
+        ...latest.exchanges.flatMap((ex) =>
+          ex.turns
+            .filter((t) => t.quote)
+            .map((t) => ({ speakerId: t.speakerId, quote: t.quote!, timestamp: t.timestamp, context: ex.topic }))
+        ),
+      ]
+        .filter((q, i, arr) => arr.findIndex((x) => x.quote === q.quote) === i)
+        .slice(0, 5)
+    : [];
 
   return (
     <>
@@ -174,14 +186,24 @@ export default function HomePage() {
                 style={{ top: `${88 + i * 14}px` }}
               >
                 <p className="text-[13.5px] font-medium text-mut">
-                  {MEETING_TYPE_LABEL[m.type]} · {formatDate(m.date)}
+                  {m.title} · {formatDate(m.date)}
                 </p>
-                <h3 className="mt-1.5 text-[24px] font-semibold tracking-tight text-ink group-hover:text-accent-400">
-                  {m.title}
+                <h3 className="mt-2.5 line-clamp-2 text-[21px] font-semibold leading-snug tracking-tight text-ink group-hover:text-accent-400">
+                  {m.summary.remarks[0]?.quote ? (
+                    <>
+                      <span className="mr-1 text-accent-500/80">❝</span>
+                      {m.summary.remarks[0].quote}
+                      <span className="ml-1 text-accent-500/80">❞</span>
+                    </>
+                  ) : (
+                    m.summary.oneLine
+                  )}
                 </h3>
-                <p className="mt-2 max-w-2xl text-[16px] leading-relaxed text-body">
-                  {m.summary.oneLine}
-                </p>
+                {m.summary.remarks[0]?.quote && (
+                  <p className="mt-2 text-[14px] text-mut">
+                    — {(speakers[m.summary.remarks[0].speakerId] ?? UNKNOWN_SPEAKER).name} · {m.summary.oneLine.slice(0, 60)}{m.summary.oneLine.length > 60 ? "…" : ""}
+                  </p>
+                )}
                 <div className="mt-4 flex flex-wrap items-center gap-3 text-[14px] font-medium text-mut">
                   <span>안건 {m.summary.agenda.length}</span>
                   <span className="text-tint2">·</span>
@@ -207,18 +229,69 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ══ 3. 발언 스레드 — 스크롤 스크럽 ══ */}
-      {featuredExchange && latest && (
-        <section id="thread" className="border-t border-hair/40">
-          <ThreadScrub
-            exchange={{ ...featuredExchange, turns: featuredExchange.turns.slice(0, 6) }}
-            speakers={speakers}
-            meetingHref={`/meetings/${latest.id}`}
-          />
+      {/* ══ 4. 말말말 — 이번 회의 대표 인용 피드 ══ */}
+      {latest && quotes.length > 0 && (
+        <section id="quotes" className="border-t border-hair/40 px-5 py-24">
+          <div className="mx-auto max-w-2xl">
+            <Reveal>
+              <p className="overline-label">이번 회의 말말말</p>
+              <h2 className="h-judge mt-1.5">
+                발언 그대로,
+                <br />
+                핵심만 남깁니다.
+              </h2>
+              <p className="mt-3 text-[16px] leading-relaxed text-mut">
+                {formatDate(latest.date)}에 열린 {latest.title}의 대표 발언입니다. 타임스탬프를
+                누르면 원문 영상의 해당 시점으로 이동합니다.
+              </p>
+            </Reveal>
+            <Reveal stagger className="mt-10 space-y-4">
+              {quotes.map((q, i) => {
+                const sp = speakers[q.speakerId] ?? UNKNOWN_SPEAKER;
+                return (
+                  <figure key={i} className="panel p-6 sm:p-7">
+                    <span aria-hidden className="block text-[34px] leading-none text-accent-500/70">❝</span>
+                    <blockquote className="mt-2 text-[18px] font-medium leading-relaxed text-ink sm:text-[19px]">
+                      {q.quote}
+                    </blockquote>
+                    <figcaption className="mt-4 flex flex-wrap items-center gap-2.5">
+                      <SpeakerAvatar speaker={sp} size="sm" />
+                      <span className="text-[14.5px] font-semibold text-ink">{sp.name}</span>
+                      <span className="text-[13px] text-mut">{sp.role}</span>
+                      {q.context && (
+                        <span className="rounded-full bg-tint2 px-2 py-0.5 text-[12px] text-mut">
+                          {q.context}
+                        </span>
+                      )}
+                      {latest.videoId ? (
+                        <a
+                          href={youtubeUrlAt(latest.videoId, q.timestamp)}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="ml-auto font-mono text-[12.5px] text-accent-400 hover:underline"
+                        >
+                          ▶ {formatTime(q.timestamp)}
+                        </a>
+                      ) : (
+                        <span className="ml-auto font-mono text-[12.5px] text-faint">
+                          ▶ {formatTime(q.timestamp)}
+                        </span>
+                      )}
+                    </figcaption>
+                  </figure>
+                );
+              })}
+            </Reveal>
+            <div className="mt-8 text-center">
+              <Link href={`/meetings/${latest.id}`} className="btn-link">
+                이 회의 전체 스레드·요약 보기 &rsaquo;
+              </Link>
+            </div>
+          </div>
         </section>
       )}
 
-      {/* ══ 4. 지시-이행 — 셀프 드로잉 라인 ══ */}
+      {/* ══ 5. 지시-이행 — 셀프 드로잉 라인 ══ */}
       <section id="directives" className="relative overflow-hidden border-t border-hair/40 px-5 py-24">
         {meetings[1] && (
           <ParallaxPhoto
@@ -268,28 +341,40 @@ export default function HomePage() {
             {aiItems.slice(0, 4).map(({ meeting, item }, i) => {
               const sp = speakers[item.speakerId] ?? UNKNOWN_SPEAKER;
               return (
-                <div key={i} className="panel flex gap-3.5 p-5">
-                  <SpeakerAvatar speaker={sp} size="md" />
-                  <div className="min-w-0 flex-1">
-                    <div className="flex flex-wrap items-center gap-2">
+                <details key={i} open={i === 0} className="panel group/ai p-5">
+                  <summary className="flex cursor-pointer list-none items-center gap-3 [&::-webkit-details-marker]:hidden">
+                    <SpeakerAvatar speaker={sp} size="md" />
+                    <span className="min-w-0 flex-1">
                       <span className="text-[15px] font-semibold text-ink">{sp.name}</span>
-                      <span className="text-[13px] text-mut">{item.topic}</span>
-                      {meeting.videoId ? (
-                        <a
-                          href={youtubeUrlAt(meeting.videoId, item.timestamp)}
-                          target="_blank"
-                          rel="noreferrer"
-                          className="ml-auto font-mono text-[12px] text-accent-400 hover:underline"
-                        >
-                          {formatTime(item.timestamp)}
-                        </a>
-                      ) : (
-                        <span className="ml-auto font-mono text-[12px] text-faint">
-                          {formatTime(item.timestamp)}
-                        </span>
-                      )}
-                    </div>
-                    <p className="mt-1 text-[15px] leading-relaxed text-body">{item.summary}</p>
+                      <span className="ml-2 text-[13px] text-mut">{item.topic}</span>
+                    </span>
+                    {meeting.videoId ? (
+                      <a
+                        href={youtubeUrlAt(meeting.videoId, item.timestamp)}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="font-mono text-[12px] text-accent-400 hover:underline"
+                      >
+                        {formatTime(item.timestamp)}
+                      </a>
+                    ) : (
+                      <span className="font-mono text-[12px] text-faint">
+                        {formatTime(item.timestamp)}
+                      </span>
+                    )}
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      className="size-4 shrink-0 text-mut transition-transform group-open/ai:rotate-180"
+                      aria-hidden
+                    >
+                      <path d="m6 9 6 6 6-6" />
+                    </svg>
+                  </summary>
+                  <div className="mt-2.5 pl-[52px]">
+                    <p className="text-[15px] leading-relaxed text-body">{item.summary}</p>
                     <div className="mt-1.5 flex flex-wrap gap-1.5">
                       {item.tags.map((t) => (
                         <span key={t} className="rounded-full bg-tint2 px-2 py-0.5 text-[12px] text-mut">
@@ -298,7 +383,7 @@ export default function HomePage() {
                       ))}
                     </div>
                   </div>
-                </div>
+                </details>
               );
             })}
           </Reveal>

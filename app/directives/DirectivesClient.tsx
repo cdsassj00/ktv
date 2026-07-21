@@ -125,9 +125,21 @@ export default function DirectivesClient({
                 </div>
 
                 {directive.followUps.length > 0 && (
-                  <div className="mt-4 border-t border-dashed border-hair pt-3">
-                    <p className="mb-2 text-[13px] font-extrabold text-green-600">후속 보고 타임라인</p>
-                    <ol className="space-y-1.5">
+                  <details className="group/fu mt-4 border-t border-dashed border-hair pt-3">
+                    <summary className="flex cursor-pointer list-none items-center gap-1.5 text-[13px] font-extrabold text-green-600 [&::-webkit-details-marker]:hidden">
+                      후속 보고 타임라인 {directive.followUps.length}건
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        className="size-3.5 transition-transform group-open/fu:rotate-180"
+                        aria-hidden
+                      >
+                        <path d="m6 9 6 6 6-6" />
+                      </svg>
+                    </summary>
+                    <ol className="mt-2 space-y-1.5">
                       {directive.followUps.map((fu, i) => {
                         const fuMeeting = meetingIndex[fu.meetingId];
                         return (
@@ -155,7 +167,7 @@ export default function DirectivesClient({
                         );
                       })}
                     </ol>
-                  </div>
+                  </details>
                 )}
               </div>
             );

@@ -36,14 +36,25 @@ export default function ThreadView({
     return <p className="text-[15px] text-mut">재구성된 발언 스레드가 없습니다.</p>;
   }
   return (
-    <div className="space-y-6">
-      {exchanges.map((ex) => (
-        <div key={ex.id} id={ex.id} className="panel p-4">
-          <h4 className="mb-3 flex items-center gap-2 text-[15px] font-semibold text-ink">
+    <div className="space-y-4">
+      {exchanges.map((ex, exIdx) => (
+        <details key={ex.id} id={ex.id} open={exIdx === 0} className="panel group/ex p-4">
+          <summary className="flex cursor-pointer list-none items-center gap-2 text-[15px] font-semibold text-ink [&::-webkit-details-marker]:hidden">
             <span className="rounded-full bg-tint2 px-2 py-0.5 text-[13px] font-semibold text-mut">주제</span>
-            {ex.topic}
-          </h4>
-          <div className="space-y-3">
+            <span className="flex-1">{ex.topic}</span>
+            <span className="text-[12.5px] font-medium text-faint">발언 {ex.turns.length}</span>
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              className="size-4 shrink-0 text-mut transition-transform group-open/ex:rotate-180"
+              aria-hidden
+            >
+              <path d="m6 9 6 6 6-6" />
+            </svg>
+          </summary>
+          <div className="mt-3 space-y-3">
             {ex.turns.map((turn, i) => {
               const speaker = speakers[turn.speakerId] ?? UNKNOWN_SPEAKER;
               const kind = TURN_KIND_STYLE[turn.kind] ?? TURN_KIND_STYLE["발언"];
@@ -89,7 +100,7 @@ export default function ThreadView({
               );
             })}
           </div>
-        </div>
+        </details>
       ))}
     </div>
   );

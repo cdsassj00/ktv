@@ -5,6 +5,8 @@ import { useEffect, useRef } from "react";
 /* 페이지 전체가 공유하는 IntersectionObserver 1개 (recipes.md 규칙) */
 let sharedIO: IntersectionObserver | null = null;
 function getObserver(): IntersectionObserver {
+  /* threshold는 0이어야 뷰포트보다 큰(긴 목록) 요소도 발동한다 —
+     대신 rootMargin으로 하단 10% 진입 시점까지 늦춘다 */
   sharedIO ??= new IntersectionObserver(
     (entries) =>
       entries.forEach((e) => {
@@ -12,7 +14,7 @@ function getObserver(): IntersectionObserver {
         e.target.classList.add("show");
         sharedIO?.unobserve(e.target);
       }),
-    { threshold: 0.15 }
+    { threshold: 0, rootMargin: "0px 0px -10% 0px" }
   );
   return sharedIO;
 }
@@ -41,7 +43,7 @@ export default function Reveal({
     }
     if (stagger) {
       [...el.children].forEach(
-        (c, i) => ((c as HTMLElement).style.transitionDelay = `${i * 80}ms`)
+        (c, i) => ((c as HTMLElement).style.transitionDelay = `${Math.min(i, 8) * 80}ms`)
       );
     }
     const io = getObserver();
