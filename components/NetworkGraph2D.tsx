@@ -409,16 +409,17 @@ export default function NetworkGraph2D({
       const hl = hlRef.current;
       const sel = selRef.current;
       const selNeighbors = sel ? neighbors.get(sel) : undefined;
+      /* 우선순위: 노드 클릭 선택(가장 최근 행동) > 검색 하이라이트 */
       const litNode = (id: string) => {
         if (hoverRef.current === id) return true;
-        if (hl) return hl.nodes.has(id);
         if (sel) return id === sel || (selNeighbors?.has(id) ?? false);
+        if (hl) return hl.nodes.has(id);
         return false;
       };
       const dimNode = (id: string) => {
         if (hoverRef.current === id) return false;
-        if (hl) return !hl.nodes.has(id);
         if (sel) return !(id === sel || (selNeighbors?.has(id) ?? false));
+        if (hl) return !hl.nodes.has(id);
         return false;
       };
 
@@ -429,8 +430,8 @@ export default function NetworkGraph2D({
         if (!s || !t) continue;
         const key = `${e.source}→${e.target}`;
         const touchesSel = sel !== null && (e.source === sel || e.target === sel);
-        const litPair = hl ? hl.pairs.has(key) : touchesSel;
-        const factor = hl || sel ? (litPair ? 1 : 0.08) : 1;
+        const litPair = sel ? touchesSel : hl ? hl.pairs.has(key) : false;
+        const factor = sel || hl ? (litPair ? 1 : 0.08) : 1;
         const alpha =
           Math.min(s.alpha, t.alpha) * factor * (e.kind === "mention" ? 0.4 : 0.8);
         if (alpha < 0.02) continue;
@@ -452,7 +453,7 @@ export default function NetworkGraph2D({
         /* 선택 관계는 종류 색 유지(골드는 검색 전용), 검색 매칭은 골드 */
         const kindColor =
           e.kind === "directive" ? COLOR.directive : e.kind === "reply" ? COLOR.reply : COLOR.mention;
-        const stroke = hl && litPair ? COLOR.gold : kindColor;
+        const stroke = !sel && hl && litPair ? COLOR.gold : kindColor;
         const width =
           (e.kind === "directive" ? 1.6 + Math.min(2.4, e.count * 0.5) : e.kind === "reply" ? 1.2 : 0.8) *
           (0.7 + 0.5 * Math.min(s.depth, t.depth)) *
@@ -502,7 +503,7 @@ export default function NetworkGraph2D({
             ctx.globalAlpha = alpha * 0.9;
             const pr = 5 * zoom ** 0.7;
             const g = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, pr);
-            g.addColorStop(0, hl && litPair ? "rgba(255,230,150,0.95)" : "rgba(255,190,200,0.9)");
+            g.addColorStop(0, !sel && hl && litPair ? "rgba(255,230,150,0.95)" : "rgba(255,190,200,0.9)");
             g.addColorStop(1, "rgba(255,120,140,0)");
             ctx.fillStyle = g;
             ctx.beginPath();
@@ -523,7 +524,7 @@ export default function NetworkGraph2D({
         const isSel = sel === o.id;
         const alpha = dim ? o.alpha * 0.16 : o.alpha;
         const r = o.r * (hover ? 1.16 : isSel ? 1.12 : lit && hl ? 1.08 : 1);
-        const ringColor = hl && lit ? COLOR.gold : isSel ? COLOR.gold : o.color;
+        const ringColor = isSel || (!sel && hl && lit) ? COLOR.gold : o.color;
 
         ctx.save();
         ctx.globalAlpha = alpha;
