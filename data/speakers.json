@@ -13,8 +13,8 @@
     "name": "김민석",
     "role": "국무총리(전임)",
     "org": "국무조정실",
-    "photo": null,
-    "photoSource": null
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Kim_Min_Seok%27s_Potrait_%282025.08.21%29.png?width=400",
+    "photoSource": "위키미디어 공용 (Kim_Min_Seok's_Potrait_(2025.08.21).png)"
   },
   "moef-minister": {
     "name": "구윤철",
@@ -41,8 +41,8 @@
     "name": "조현",
     "role": "외교부 장관",
     "org": "외교부",
-    "photo": null,
-    "photoSource": null
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Cho_Hyun_20260619.jpg?width=400",
+    "photoSource": "위키미디어 공용 (Cho_Hyun_20260619.jpg)"
   },
   "unikorea-minister": {
     "name": "정동영",
@@ -55,8 +55,8 @@
     "name": "정성호",
     "role": "법무부 장관",
     "org": "법무부",
-    "photo": null,
-    "photoSource": null
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/%EC%A0%95%EC%84%B1%ED%98%B8%2C_Official_Portrait.jpg?width=400",
+    "photoSource": "위키미디어 공용 (정성호,_Official_Portrait.jpg)"
   },
   "mnd-minister": {
     "name": "안규백",
@@ -104,64 +104,64 @@
     "name": "정은경",
     "role": "보건복지부 장관",
     "org": "보건복지부",
-    "photo": null,
-    "photoSource": null
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Jeong_Eun-kyeong%27s_Portrait_%282025.10%29.jpg?width=400",
+    "photoSource": "위키미디어 공용 (Jeong_Eun-kyeong's_Portrait_(2025.10).jpg)"
   },
   "me-minister": {
     "name": "김성환",
     "role": "환경부 장관",
     "org": "환경부",
-    "photo": null,
-    "photoSource": null
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Kim_Sung-hwan_20250818.jpg?width=400",
+    "photoSource": "위키미디어 공용 (Kim_Sung-hwan_20250818.jpg)"
   },
   "moel-minister": {
     "name": "김영훈",
     "role": "고용노동부 장관",
     "org": "고용노동부",
-    "photo": null,
-    "photoSource": null
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Kim_Young-hoon.jpg?width=400",
+    "photoSource": "위키미디어 공용 (Kim_Young-hoon.jpg)"
   },
   "mogef-minister": {
     "name": "원민경",
     "role": "여성가족부 장관",
     "org": "여성가족부",
-    "photo": null,
-    "photoSource": null
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/20251124_%EC%9B%90%EB%AF%BC%EA%B2%BD_%EC%84%B1%ED%8F%89%EB%93%B1%EA%B0%80%EC%A1%B1%EB%B6%80_%EC%9E%A5%EA%B4%80.jpg?width=400",
+    "photoSource": "위키미디어 공용 (20251124_원민경_성평등가족부_장관.jpg)"
   },
   "molit-minister": {
     "name": "김윤덕",
     "role": "국토교통부 장관",
     "org": "국토교통부",
-    "photo": null,
-    "photoSource": null
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Kim_Yoon-deok_2021.jpg?width=400",
+    "photoSource": "위키미디어 공용 (Kim_Yoon-deok_2021.jpg)"
   },
   "mof-minister": {
     "name": "전재수",
     "role": "해양수산부 장관",
     "org": "해양수산부",
-    "photo": null,
-    "photoSource": null
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Chun_Jae-soo%27s_Portrait_%282026.5%29.png?width=400",
+    "photoSource": "위키미디어 공용 (Chun_Jae-soo's_Portrait_(2026.5).png)"
   },
   "mss-minister": {
     "name": "한성숙",
     "role": "중소벤처기업부 장관(전임, 현 국무총리)",
     "org": "중소벤처기업부",
-    "photo": null,
-    "photoSource": null
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Prime_Minister_Han_Seong-sook_20260707.jpg?width=400",
+    "photoSource": "위키미디어 공용 (Prime_Minister_Han_Seong-sook_20260707.jpg)"
   },
   "pm2": {
     "name": "한성숙",
     "role": "국무총리",
     "org": "국무조정실",
-    "photo": null,
-    "photoSource": null
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Prime_Minister_Han_Seong-sook_20260707.jpg?width=400",
+    "photoSource": "위키미디어 공용 (Prime_Minister_Han_Seong-sook_20260707.jpg)"
   },
   "fsc-chairman": {
     "name": "이억원",
     "role": "금융위원장",
     "org": "금융위원회",
-    "photo": null,
-    "photoSource": null
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Lee_Eog-weon%27s_portrait_%282025.09%29.jpg?width=400",
+    "photoSource": "위키미디어 공용 (Lee_Eog-weon's_portrait_(2025.09).jpg)"
   },
   "acrc-chairman": {
     "name": "국민권익위원장",

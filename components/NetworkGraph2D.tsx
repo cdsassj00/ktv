@@ -1,8 +1,10 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
 import type { NetworkEdge, NetworkNode, SpeakerMap } from "@/lib/types";
 import { UNKNOWN_SPEAKER } from "@/lib/client-data";
+import SpeakerAvatar from "./SpeakerAvatar";
 
 export interface GraphHighlight {
   nodes: string[];
@@ -21,7 +23,8 @@ const COLOR = {
   mut: "#98989d",
 };
 
-const TILT = 0.4; // 원탁 기울기 (수직 압축비)
+const ZOOM_MIN = 0.55;
+const ZOOM_MAX = 2.6;
 
 interface OrbitNode {
   id: string;
@@ -56,10 +59,12 @@ function qPoint(t: number, x1: number, y1: number, cx: number, cy: number, x2: n
 
 /**
  * 발언 네트워크 2D — 기울어진 원탁(orbital) 원근 뷰.
- * 대통령을 중앙에, 발언자들을 두 겹의 타원 궤도에 배치한다.
- * 궤도가 천천히 돌며 앞쪽 노드는 크고 선명하게, 뒤쪽은 작고 흐리게(원근),
- * 안쪽·바깥 링의 회전 속도 차이로 시차(parallax)를 낸다.
- * 드래그로 회전, 지시 엣지에는 흐르는 파티클, 검색 하이라이트는 골드 점등.
+ * 대통령을 중앙에, 발언자들을 최대 3겹의 타원 궤도에 배치한다.
+ * 앞쪽 노드는 크고 선명, 뒤쪽은 작고 흐리게(원근) + 링별 회전 시차.
+ *
+ * 조작: 가로 드래그 = 회전, 세로 드래그 = 기울기(틸트), 휠·핀치 = 확대/축소(커서 기준),
+ * 노드 클릭 = 그 사람의 관계만 밝히기(+정보 카드), 빈 곳 클릭 = 해제.
+ * 검색 하이라이트는 골드 점등, 결과 클릭 시 해당 노드가 정면으로 회전.
  */
 export default function NetworkGraph2D({
   nodes,
@@ -83,10 +88,17 @@ export default function NetworkGraph2D({
   const hlRef = useRef<{ nodes: Set<string>; pairs: Set<string> } | null>(null);
   const hoverRef = useRef<string | null>(null);
   const rotRef = useRef({ value: 0, vel: 0 });
+  const viewRef = useRef({ zoom: 1, panX: 0, panY: 0, tilt: 0.4 });
+  const selRef = useRef<string | null>(null);
   const focusAnimRef = useRef<{ from: number; to: number; start: number } | null>(null);
   const pulseRef = useRef<{ id: string; start: number } | null>(null);
+  const zoomApiRef = useRef<{ by: (f: number) => void; reset: () => void }>({
+    by: () => {},
+    reset: () => {},
+  });
+  const [selected, setSelected] = useState<string | null>(null);
 
-  /* 노드 → 궤도 배치 (대통령 중앙, 발언량 상위 8명 안쪽 링, 나머지 바깥 링) */
+  /* 노드 → 궤도 배치 (대통령 중앙, 발언량 순 3겹 링) */
   useEffect(() => {
     const centerId = nodes.some((n) => n.speakerId === "president")
       ? "president"
@@ -94,7 +106,6 @@ export default function NetworkGraph2D({
     const rest = [...nodes]
       .filter((n) => n.speakerId !== centerId)
       .sort((a, b) => b.turnCount - a.turnCount);
-    /* 발언량 순으로 안쪽부터 3겹 궤도 배치 (인원이 적으면 2겹) */
     const inner = rest.slice(0, 8);
     const useThree = rest.length > 22;
     const mid = useThree ? rest.slice(8, 22) : rest.slice(8);
@@ -145,10 +156,15 @@ export default function NetworkGraph2D({
     }
   }, [nodes, speakers]);
 
+  /* 검색 하이라이트가 들어오면 노드 선택은 해제 (검색이 우선) */
   useEffect(() => {
     hlRef.current = highlight
       ? { nodes: new Set(highlight.nodes), pairs: new Set(highlight.pairs) }
       : null;
+    if (highlight) {
+      selRef.current = null;
+      setSelected(null);
+    }
   }, [highlight]);
 
   /* 검색 결과 클릭 → 해당 노드가 정면(앞)으로 오도록 궤도 회전 */
@@ -195,10 +211,37 @@ export default function NetworkGraph2D({
     const ro = new ResizeObserver(resize);
     ro.observe(wrap);
 
-    /* ── 인터랙션: 드래그 회전 + 호버 + 클릭 ── */
-    let dragging = false;
+    /* 인접 노드 맵 (선택 시 관계 하이라이트용) */
+    const neighbors = new Map<string, Set<string>>();
+    for (const e of edges) {
+      if (!neighbors.has(e.source)) neighbors.set(e.source, new Set());
+      if (!neighbors.has(e.target)) neighbors.set(e.target, new Set());
+      neighbors.get(e.source)!.add(e.target);
+      neighbors.get(e.target)!.add(e.source);
+    }
+
+    /* ── 뷰 조작: 회전·틸트 드래그 + 휠/핀치 줌 ── */
+    const pointers = new Map<number, { x: number; y: number }>();
     let moved = 0;
-    let lastX = 0;
+    let pinchDist = 0;
+
+    const zoomAt = (mx: number, my: number, factor: number) => {
+      const v = viewRef.current;
+      const nz = Math.min(ZOOM_MAX, Math.max(ZOOM_MIN, v.zoom * factor));
+      const cx = W / 2;
+      const cy = H * 0.5;
+      /* 커서 아래 지점이 그대로 있도록 팬 보정 */
+      v.panX = mx - cx - ((mx - cx - v.panX) / v.zoom) * nz;
+      v.panY = my - cy - ((my - cy - v.panY) / v.zoom) * nz;
+      v.zoom = nz;
+    };
+    zoomApiRef.current = {
+      by: (f: number) => zoomAt(W / 2, H * 0.5, f),
+      reset: () => {
+        viewRef.current = { zoom: 1, panX: 0, panY: 0, tilt: 0.4 };
+        rotRef.current.vel = 0;
+      },
+    };
 
     const pick = (mx: number, my: number): OrbitNode | null => {
       let best: OrbitNode | null = null;
@@ -211,20 +254,40 @@ export default function NetworkGraph2D({
     };
 
     const onDown = (e: PointerEvent) => {
-      dragging = true;
-      moved = 0;
-      lastX = e.clientX;
+      pointers.set(e.pointerId, { x: e.clientX, y: e.clientY });
+      if (pointers.size === 1) moved = 0;
+      if (pointers.size === 2) {
+        const [a, b] = [...pointers.values()];
+        pinchDist = Math.hypot(a.x - b.x, a.y - b.y);
+      }
       focusAnimRef.current = null;
       canvas.setPointerCapture(e.pointerId);
     };
     const onMove = (e: PointerEvent) => {
       const rect = canvas.getBoundingClientRect();
-      if (dragging) {
-        const dx = e.clientX - lastX;
-        lastX = e.clientX;
-        moved += Math.abs(dx);
-        rotRef.current.value += dx * 0.006;
-        rotRef.current.vel = dx * 0.006;
+      const prev = pointers.get(e.pointerId);
+      if (prev) {
+        pointers.set(e.pointerId, { x: e.clientX, y: e.clientY });
+        if (pointers.size === 2) {
+          /* 핀치 줌 */
+          const [a, b] = [...pointers.values()];
+          const dist = Math.hypot(a.x - b.x, a.y - b.y);
+          if (pinchDist > 0) {
+            const mid = { x: (a.x + b.x) / 2 - rect.left, y: (a.y + b.y) / 2 - rect.top };
+            zoomAt(mid.x, mid.y, dist / pinchDist);
+          }
+          pinchDist = dist;
+          moved += 10;
+        } else {
+          const dx = e.clientX - prev.x;
+          const dy = e.clientY - prev.y;
+          moved += Math.abs(dx) + Math.abs(dy);
+          /* 가로 = 궤도 회전, 세로 = 원탁 기울기 */
+          rotRef.current.value += dx * 0.006;
+          rotRef.current.vel = dx * 0.006;
+          const v = viewRef.current;
+          v.tilt = Math.min(0.75, Math.max(0.18, v.tilt + dy * 0.0022));
+        }
       } else {
         const hit = pick(e.clientX - rect.left, e.clientY - rect.top);
         hoverRef.current = hit?.id ?? null;
@@ -233,19 +296,31 @@ export default function NetworkGraph2D({
     };
     const onUp = (e: PointerEvent) => {
       const rect = canvas.getBoundingClientRect();
-      if (dragging && moved < 5) {
-        const hit = pick(e.clientX - rect.left, e.clientY - rect.top);
-        if (hit) window.location.href = `/speakers/${hit.id}`;
-      }
-      dragging = false;
+      const wasClick = pointers.size === 1 && moved < 6;
+      pointers.delete(e.pointerId);
+      pinchDist = 0;
+      if (!wasClick) return;
+      const hit = pick(e.clientX - rect.left, e.clientY - rect.top);
+      /* 클릭 = 관계 하이라이트 선택/해제 (프로필 이동은 정보 카드에서) */
+      const next = hit && hit.id !== selRef.current ? hit.id : null;
+      selRef.current = next;
+      setSelected(next);
+      if (next) pulseRef.current = { id: next, start: performance.now() };
     };
     const onLeave = () => {
       hoverRef.current = null;
     };
+    const onWheel = (e: WheelEvent) => {
+      e.preventDefault();
+      const rect = canvas.getBoundingClientRect();
+      zoomAt(e.clientX - rect.left, e.clientY - rect.top, Math.exp(-e.deltaY * 0.0012));
+    };
     canvas.addEventListener("pointerdown", onDown);
     canvas.addEventListener("pointermove", onMove);
     canvas.addEventListener("pointerup", onUp);
+    canvas.addEventListener("pointercancel", onUp);
     canvas.addEventListener("pointerleave", onLeave);
+    canvas.addEventListener("wheel", onWheel, { passive: false });
 
     /* ── 렌더 루프 ── */
     let raf = 0;
@@ -255,7 +330,7 @@ export default function NetworkGraph2D({
       const dt = Math.min(50, now - prev);
       prev = now;
 
-      /* 회전 갱신: 포커스 비행 > 관성 > 자동 회전 */
+      const dragging = pointers.size > 0;
       const anim = focusAnimRef.current;
       if (anim) {
         const t = Math.min(1, (now - anim.start) / 900);
@@ -265,17 +340,20 @@ export default function NetworkGraph2D({
         if (Math.abs(rotRef.current.vel) > 0.0004) {
           rotRef.current.value += rotRef.current.vel;
           rotRef.current.vel *= 0.94;
-        } else if (!reduce && !hoverRef.current) {
+        } else if (!reduce && !hoverRef.current && !selRef.current) {
           rotRef.current.value += 0.00006 * dt;
         }
       }
       const rot = rotRef.current.value;
+      const { zoom, panX, panY, tilt } = viewRef.current;
 
-      const cx = W / 2;
-      const cy = H * 0.5;
-      const Rmax = Math.min(W * 0.43, 350);
+      const cx = W / 2 + panX;
+      const cy = H * 0.5 + panY;
+      const Rmax = Math.min(W * 0.43, 350) * zoom;
       const RADII: Record<number, number> = { 1: Rmax * 0.52, 2: Rmax * 0.77, 3: Rmax };
       const usedRings = [...new Set(orbitsRef.current.map((o) => o.ring).filter((r) => r > 0))];
+      const nodeScale = zoom ** 0.85;
+      const lblScale = Math.min(1.45, 0.78 + 0.32 * zoom);
 
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
       ctx.clearRect(0, 0, W, H);
@@ -288,7 +366,7 @@ export default function NetworkGraph2D({
       ctx.fillStyle = tableGlow;
       ctx.save();
       ctx.translate(cx, cy);
-      ctx.scale(1, TILT);
+      ctx.scale(1, tilt);
       ctx.beginPath();
       ctx.arc(0, 0, Rmax * 1.1, 0, Math.PI * 2);
       ctx.fill();
@@ -306,38 +384,50 @@ export default function NetworkGraph2D({
       for (const o of orbitsRef.current) {
         if (o.ring === 0) {
           o.sx = cx;
-          o.sy = cy - 6;
+          o.sy = cy - 6 * zoom;
           o.depth = 0.82;
         } else {
           const R = RADII[o.ring];
           const th = o.angle0 + rot * o.speed;
           o.sx = cx + Math.cos(th) * R;
-          o.sy = cy + Math.sin(th) * R * TILT;
+          o.sy = cy + Math.sin(th) * R * tilt;
           o.depth = (Math.sin(th) + 1) / 2;
         }
         const scale = o.ring === 0 ? 1 : 0.64 + 0.52 * o.depth;
         o.alpha = o.ring === 0 ? 1 : 0.34 + 0.66 * o.depth;
-        o.r = o.baseR * scale;
+        o.r = o.baseR * scale * nodeScale;
         pos.set(o.id, o);
       }
 
       const hl = hlRef.current;
-      const litNode = (id: string) => hoverRef.current === id || (hl?.nodes.has(id) ?? false);
-      const dimNode = (id: string) => (hl ? !hl.nodes.has(id) && hoverRef.current !== id : false);
+      const sel = selRef.current;
+      const selNeighbors = sel ? neighbors.get(sel) : undefined;
+      const litNode = (id: string) => {
+        if (hoverRef.current === id) return true;
+        if (hl) return hl.nodes.has(id);
+        if (sel) return id === sel || (selNeighbors?.has(id) ?? false);
+        return false;
+      };
+      const dimNode = (id: string) => {
+        if (hoverRef.current === id) return false;
+        if (hl) return !hl.nodes.has(id);
+        if (sel) return !(id === sel || (selNeighbors?.has(id) ?? false));
+        return false;
+      };
 
-      /* ── 엣지 (뒤→앞 노드보다 먼저) ── */
+      /* ── 엣지 (노드보다 먼저) ── */
       for (const e of edges) {
         const s = pos.get(e.source);
         const t = pos.get(e.target);
         if (!s || !t) continue;
         const key = `${e.source}→${e.target}`;
-        const litPair = hl?.pairs.has(key) ?? false;
-        const factor = hl ? (litPair ? 1 : 0.1) : 1;
+        const touchesSel = sel !== null && (e.source === sel || e.target === sel);
+        const litPair = hl ? hl.pairs.has(key) : touchesSel;
+        const factor = hl || sel ? (litPair ? 1 : 0.08) : 1;
         const alpha =
           Math.min(s.alpha, t.alpha) * factor * (e.kind === "mention" ? 0.4 : 0.8);
         if (alpha < 0.02) continue;
 
-        /* 시작·끝을 노드 가장자리로, 컨트롤 포인트는 중심 쪽으로 당겨 곡선 */
         const dx = t.sx - s.sx;
         const dy = t.sy - s.sy;
         const len = Math.hypot(dx, dy) || 1;
@@ -352,16 +442,14 @@ export default function NetworkGraph2D({
         const qx = mx + (cx - mx) * 0.22 - uy * 14;
         const qy = my + (cy - my) * 0.22 + ux * 14;
 
-        const stroke = litPair
-          ? COLOR.gold
-          : e.kind === "directive"
-            ? COLOR.directive
-            : e.kind === "reply"
-              ? COLOR.reply
-              : COLOR.mention;
+        /* 선택 관계는 종류 색 유지(골드는 검색 전용), 검색 매칭은 골드 */
+        const kindColor =
+          e.kind === "directive" ? COLOR.directive : e.kind === "reply" ? COLOR.reply : COLOR.mention;
+        const stroke = hl && litPair ? COLOR.gold : kindColor;
         const width =
           (e.kind === "directive" ? 1.6 + Math.min(2.4, e.count * 0.5) : e.kind === "reply" ? 1.2 : 0.8) *
-          (0.7 + 0.5 * Math.min(s.depth, t.depth));
+          (0.7 + 0.5 * Math.min(s.depth, t.depth)) *
+          zoom ** 0.7;
 
         ctx.globalAlpha = alpha;
         ctx.strokeStyle = stroke;
@@ -373,7 +461,7 @@ export default function NetworkGraph2D({
         ctx.stroke();
         ctx.setLineDash([]);
 
-        /* 화살촉 (곡선 끝 접선 방향) */
+        /* 화살촉 */
         const tx = x2 - qx;
         const ty = y2 - qy;
         const tl = Math.hypot(tx, ty) || 1;
@@ -388,8 +476,9 @@ export default function NetworkGraph2D({
         ctx.closePath();
         ctx.fill();
 
-        if (e.count > 2 && e.kind === "directive" && factor === 1) {
-          ctx.font = "600 10px Pretendard, sans-serif";
+        /* 반복 지시 배수 — 관계가 밝혀졌거나 크게 반복될 때만 */
+        if (e.kind === "directive" && e.count > 1 && (litPair || e.count > 2) && factor === 1) {
+          ctx.font = `600 ${10 * lblScale}px Pretendard, sans-serif`;
           ctx.fillStyle = stroke;
           ctx.textAlign = "center";
           ctx.fillText(`×${e.count}`, qx, qy - 4);
@@ -404,12 +493,13 @@ export default function NetworkGraph2D({
             const pt = ((now * 0.00012 + i / nP + (key.length % 7) * 0.13) % 1);
             const p = qPoint(pt, x1, y1, qx, qy, x2, y2);
             ctx.globalAlpha = alpha * 0.9;
-            const g = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, 5);
-            g.addColorStop(0, litPair ? "rgba(255,230,150,0.95)" : "rgba(255,190,200,0.9)");
+            const pr = 5 * zoom ** 0.7;
+            const g = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, pr);
+            g.addColorStop(0, hl && litPair ? "rgba(255,230,150,0.95)" : "rgba(255,190,200,0.9)");
             g.addColorStop(1, "rgba(255,120,140,0)");
             ctx.fillStyle = g;
             ctx.beginPath();
-            ctx.arc(p.x, p.y, 5, 0, Math.PI * 2);
+            ctx.arc(p.x, p.y, pr, 0, Math.PI * 2);
             ctx.fill();
           }
           ctx.restore();
@@ -423,14 +513,14 @@ export default function NetworkGraph2D({
         const lit = litNode(o.id);
         const dim = dimNode(o.id);
         const hover = hoverRef.current === o.id;
+        const isSel = sel === o.id;
         const alpha = dim ? o.alpha * 0.16 : o.alpha;
-        const r = o.r * (hover ? 1.16 : lit && hl ? 1.08 : 1);
-        const ringColor = lit ? COLOR.gold : o.color;
+        const r = o.r * (hover ? 1.16 : isSel ? 1.12 : lit && hl ? 1.08 : 1);
+        const ringColor = hl && lit ? COLOR.gold : isSel ? COLOR.gold : o.color;
 
         ctx.save();
         ctx.globalAlpha = alpha;
-        /* 원경은 살짝 흐리게 — 피사계 심도 */
-        if (o.depth < 0.32 && !dim) ctx.filter = `blur(${((0.32 - o.depth) * 5).toFixed(1)}px)`;
+        if (o.depth < 0.32 && !dim && zoom < 1.4) ctx.filter = `blur(${((0.32 - o.depth) * 5).toFixed(1)}px)`;
 
         /* 글로우 */
         if (!dim) {
@@ -446,7 +536,7 @@ export default function NetworkGraph2D({
           ctx.restore();
         }
 
-        /* 본체 — 사진 원형 크롭 또는 이니셜 디스크 (입체감용 그림자) */
+        /* 본체 — 사진 원형 크롭 또는 이니셜 디스크 */
         ctx.shadowColor = "rgba(0,0,0,0.55)";
         ctx.shadowBlur = 14;
         ctx.shadowOffsetY = 5;
@@ -487,10 +577,10 @@ export default function NetworkGraph2D({
         ctx.beginPath();
         ctx.arc(o.sx, o.sy, r, 0, Math.PI * 2);
         ctx.strokeStyle = ringColor;
-        ctx.lineWidth = lit ? 3 : 2.2;
+        ctx.lineWidth = lit || isSel ? 3 : 2.2;
         ctx.stroke();
 
-        /* 포커스 펄스 */
+        /* 포커스·선택 펄스 */
         const pulse = pulseRef.current;
         if (pulse && pulse.id === o.id) {
           const pt = (now - pulse.start) / 1400;
@@ -508,7 +598,7 @@ export default function NetworkGraph2D({
         }
 
         /* 라벨 */
-        const fs = o.ring === 0 ? 14 : 10.5 + 3 * o.depth;
+        const fs = (o.ring === 0 ? 14 : 10.5 + 3 * o.depth) * lblScale;
         ctx.font = `600 ${fs}px Pretendard, sans-serif`;
         ctx.textAlign = "center";
         ctx.fillStyle = COLOR.ink;
@@ -516,7 +606,7 @@ export default function NetworkGraph2D({
         ctx.shadowBlur = 4;
         ctx.shadowOffsetY = 1;
         ctx.fillText(o.name, o.sx, o.sy + r + fs + 4);
-        if (hover || lit || o.ring === 0 || o.depth > 0.78) {
+        if (hover || lit || isSel || o.ring === 0 || o.depth > 0.78) {
           ctx.font = `500 ${fs - 3.5}px Pretendard, sans-serif`;
           ctx.fillStyle = COLOR.mut;
           ctx.fillText(o.role, o.sx, o.sy + r + fs * 2 + 5);
@@ -534,13 +624,73 @@ export default function NetworkGraph2D({
       canvas.removeEventListener("pointerdown", onDown);
       canvas.removeEventListener("pointermove", onMove);
       canvas.removeEventListener("pointerup", onUp);
+      canvas.removeEventListener("pointercancel", onUp);
       canvas.removeEventListener("pointerleave", onLeave);
+      canvas.removeEventListener("wheel", onWheel);
     };
   }, [edges, height]);
 
+  const selSpeaker = selected ? (speakers[selected] ?? UNKNOWN_SPEAKER) : null;
+  const selDegree = selected
+    ? edges.filter((e) => e.source === selected || e.target === selected).length
+    : 0;
+
   return (
     <div ref={wrapRef} className="relative w-full select-none" style={{ height }}>
-      <canvas ref={canvasRef} className="block cursor-grab" aria-label="발언 네트워크 그래프" role="img" />
+      <canvas ref={canvasRef} className="block cursor-grab touch-none" aria-label="발언 네트워크 그래프" role="img" />
+
+      {/* 선택된 발언자 정보 카드 — 관계도 위에 떠 있음 */}
+      {selected && selSpeaker && (
+        <div className="absolute left-3 top-3 flex max-w-[260px] items-center gap-3 rounded-2xl bg-black/70 p-3.5 shadow-lift backdrop-blur-md">
+          <SpeakerAvatar speaker={selSpeaker} size="md" />
+          <div className="min-w-0">
+            <p className="truncate text-[14.5px] font-semibold text-ink">{selSpeaker.name}</p>
+            <p className="truncate text-[12.5px] text-mut">{selSpeaker.role}</p>
+            <p className="mt-0.5 text-[12px] text-faint">연결 {selDegree}건 표시 중</p>
+            <Link
+              href={`/speakers/${selected}`}
+              className="mt-1 inline-block text-[12.5px] font-medium text-accent-400 hover:underline"
+            >
+              프로필·발언 이력 보기 &rsaquo;
+            </Link>
+          </div>
+          <button
+            type="button"
+            aria-label="선택 해제"
+            onClick={() => {
+              selRef.current = null;
+              setSelected(null);
+            }}
+            className="ml-1 self-start rounded-full bg-white/10 p-1 text-mut hover:text-ink"
+          >
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="size-3" aria-hidden>
+              <path d="M18 6 6 18M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+      )}
+
+      {/* 줌 컨트롤 */}
+      <div className="absolute bottom-3 right-3 flex flex-col gap-1.5">
+        {(
+          [
+            ["확대", "+", () => zoomApiRef.current.by(1.3)],
+            ["축소", "−", () => zoomApiRef.current.by(1 / 1.3)],
+            ["보기 초기화", "⟲", () => zoomApiRef.current.reset()],
+          ] as const
+        ).map(([label, glyph, fn]) => (
+          <button
+            key={label}
+            type="button"
+            aria-label={label}
+            title={label}
+            onClick={fn}
+            className="flex size-9 items-center justify-center rounded-full bg-white/10 text-[16px] font-semibold text-ink backdrop-blur-md transition hover:bg-white/20"
+          >
+            {glyph}
+          </button>
+        ))}
+      </div>
     </div>
   );
 }

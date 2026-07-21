@@ -137,7 +137,9 @@ export default function NetworkView({
           <span className="flex items-center gap-1.5">
             <span className="inline-block h-0.5 w-6 rounded bg-[#5f9dff]" /> 답변·보고
           </span>
-          <span className="hidden text-faint sm:inline">드래그로 원탁을 돌려보세요</span>
+          <span className="hidden text-faint sm:inline">
+            드래그 회전 · 위아래 드래그 기울기 · 휠/핀치 확대 · 인물 클릭 시 관계만 표시
+          </span>
         </div>
       </div>
 
