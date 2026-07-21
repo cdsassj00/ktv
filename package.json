@@ -15,13 +15,10 @@
     "pipeline": "tsx scripts/pipeline.ts"
   },
   "dependencies": {
-    "3d-force-graph": "^1.80.0",
     "fuse.js": "^7.5.0",
     "next": "^15.3.0",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "three": "^0.185.1",
-    "three-spritetext": "^1.10.0"
+    "react-dom": "^19.0.0"
   },
   "devDependencies": {
     "@anthropic-ai/sdk": "^0.57.0",
@@ -29,7 +26,6 @@
     "@types/node": "^22.0.0",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
-    "@types/three": "^0.185.1",
     "postcss": "^8.5.0",
     "tailwindcss": "^4.1.0",
     "tsx": "^4.19.0",

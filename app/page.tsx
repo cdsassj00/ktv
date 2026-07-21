@@ -113,7 +113,7 @@ export default function HomePage() {
         </a>
       </section>
 
-      {/* ══ 2. 네트워크 검색 — 클릭 시 3D 그래프 모달 ══ */}
+      {/* ══ 2. 네트워크 검색 — 클릭 시 원탁 그래프 모달 ══ */}
       <section id="search" className="px-5 py-20">
         <div className="mx-auto max-w-3xl text-center">
           <Reveal>
@@ -121,7 +121,7 @@ export default function HomePage() {
             <h2 className="h-judge mt-1.5">무엇이든 검색해 보세요.</h2>
             <p className="mx-auto mt-3 max-w-xl text-[16px] leading-relaxed text-mut">
               {directives.length}건의 지시와 {threadCount}개 대화에서 키워드를 찾아, 누가 지시하고
-              누가 답했는지 3D 네트워크로 보여드립니다.
+              누가 답했는지 원탁 네트워크로 보여드립니다.
             </p>
           </Reveal>
           <div className="mt-8">
@@ -400,7 +400,7 @@ export default function HomePage() {
         <div className="mx-auto max-w-4xl text-center">
           <Reveal>
             <p className="overline-label">발언자</p>
-            <h2 className="h-judge mt-1.5">국무위원 {Object.keys(speakers).length}인</h2>
+            <h2 className="h-judge mt-1.5">발언자 {Object.keys(speakers).length}인</h2>
           </Reveal>
           <Reveal stagger className="mt-10 flex flex-wrap items-start justify-center gap-x-6 gap-y-7">
             {Object.entries(speakers).map(([id, sp]) => (

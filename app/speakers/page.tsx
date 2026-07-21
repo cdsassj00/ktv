@@ -18,7 +18,7 @@ export default function SpeakersPage() {
         <p className="overline-label">Speakers</p>
         <h1 className="h-judge mt-1">발언자</h1>
         <p className="mt-2 max-w-2xl text-[15px] leading-relaxed text-body">
-          국무회의·국민업무보고에 참석하는 국무위원 명부입니다. 사진은 공공누리 제1유형
+          국무회의·국민업무보고에 참석하는 국무위원·기관장 명부입니다. 사진은 공공누리 제1유형
           자료 확보 시 출처와 함께 표시되며, 그 전에는 이니셜 아바타로 표시됩니다.
         </p>
       </header>

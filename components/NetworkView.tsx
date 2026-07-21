@@ -7,8 +7,7 @@ import type { ExchangeTurn, NetworkEdge, NetworkNode, SearchDoc, SpeakerMap } fr
 import { formatTime, TURN_KIND_STYLE, youtubeUrlAt } from "@/lib/utils";
 import { UNKNOWN_SPEAKER } from "@/lib/client-data";
 import SpeakerAvatar from "./SpeakerAvatar";
-import NetworkGraph from "./NetworkGraph";
-import NetworkGraph3D, { type GraphHighlight } from "./NetworkGraph3D";
+import NetworkGraph2D, { type GraphHighlight } from "./NetworkGraph2D";
 
 export type ExchangeIndex = Record<
   string,
@@ -16,7 +15,7 @@ export type ExchangeIndex = Record<
 >;
 
 /**
- * 3D(기본)/2D 네트워크 + Fuse.js 퍼지 검색.
+ * 원근감 2D 네트워크 + Fuse.js 퍼지 검색.
  * 검색어 입력 → 지시·보고·답변·AI 발언·안건에서 연관 항목 매칭 →
  * 그래프에서 관련 발언자 노드·지시 엣지를 골드로 하이라이트(나머지 디밍) + 결과 리스트.
  */
@@ -37,7 +36,6 @@ export default function NetworkView({
   initialQuery?: string;
   autoFocus?: boolean;
 }) {
-  const [mode, setMode] = useState<"3d" | "2d">("3d");
   const [query, setQuery] = useState(initialQuery ?? "");
   const [selected, setSelected] = useState<number | null>(null);
   const [focusNode, setFocusNode] = useState<string | null>(null);
@@ -131,29 +129,15 @@ export default function NetworkView({
               aria-label="회의 내용 검색"
             />
           </div>
-        ) : (
-          <div className="flex flex-wrap gap-4 text-[15px] font-medium text-body">
-            <span className="flex items-center gap-1.5">
-              <span className="inline-block w-6 rounded bg-[#ff453a]" style={{ height: 3 }} /> 지시
-            </span>
-            <span className="flex items-center gap-1.5">
-              <span className="inline-block h-0.5 w-6 rounded bg-[#0a84ff]" /> 답변·보고
-            </span>
-          </div>
-        )}
-        <div className="flex gap-1 rounded-full bg-tint2 p-1">
-          {(["3d", "2d"] as const).map((m) => (
-            <button
-              key={m}
-              type="button"
-              onClick={() => setMode(m)}
-              className={`rounded-full px-4 py-1.5 text-[14px] font-medium uppercase transition ${
-                mode === m ? "bg-black/40 text-ink" : "text-mut hover:text-ink"
-              }`}
-            >
-              {m}
-            </button>
-          ))}
+        ) : null}
+        <div className="flex flex-wrap items-center gap-4 text-[13.5px] font-medium text-mut">
+          <span className="flex items-center gap-1.5">
+            <span className="inline-block w-6 rounded bg-[#ff5c72]" style={{ height: 3 }} /> 지시
+          </span>
+          <span className="flex items-center gap-1.5">
+            <span className="inline-block h-0.5 w-6 rounded bg-[#5f9dff]" /> 답변·보고
+          </span>
+          <span className="hidden text-faint sm:inline">드래그로 원탁을 돌려보세요</span>
         </div>
       </div>
 
@@ -170,13 +154,15 @@ export default function NetworkView({
         </p>
       )}
 
-      {mode === "3d" ? (
-        <NetworkGraph3D nodes={nodes} edges={edges} speakers={speakers} highlight={highlight} focusNode={focusNode} />
-      ) : (
-        <div className="panel p-4">
-          <NetworkGraph nodes={nodes} edges={edges} speakers={speakers} highlight={highlight} />
-        </div>
-      )}
+      <div className="overflow-hidden rounded-2xl bg-[#050508] shadow-card">
+        <NetworkGraph2D
+          nodes={nodes}
+          edges={edges}
+          speakers={speakers}
+          highlight={highlight}
+          focusNode={focusNode}
+        />
+      </div>
 
       {results.length > 0 && (
         <div className="space-y-2">
