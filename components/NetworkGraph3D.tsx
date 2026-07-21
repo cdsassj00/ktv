@@ -7,10 +7,10 @@ import NetworkGraph from "./NetworkGraph";
 
 /* 네온 팔레트 — 은하수 톤 */
 const NEON = {
-  president: "#ff375f",
-  minister: "#38b6ff",
-  directive: "#ff375f",
-  reply: "#38b6ff",
+  president: "#e04a63",
+  minister: "#4a8fd6",
+  directive: "#e04a63",
+  reply: "#4a8fd6",
   mention: "#8e8e93",
   gold: "#ffd60a",
   dimNode: "rgba(90,95,110,0.18)",
@@ -134,7 +134,7 @@ export default function NetworkGraph3D({
           })
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
           .linkWidth((l: any) => (l.kind === "directive" ? 1.6 : 0.55))
-          .linkOpacity(0.5)
+          .linkOpacity(0.42)
           .linkCurvature(0.18)
           .linkDirectionalArrowLength(3.6)
           .linkDirectionalArrowRelPos(0.9)
@@ -157,7 +157,7 @@ export default function NetworkGraph3D({
 
         // ── 은하수 연출 ──────────────────────────────
         // 1) 네온 블룸
-        const bloom = new UnrealBloomPass(new THREE.Vector2(1024, 1024), 0.85, 0.55, 0.12);
+        const bloom = new UnrealBloomPass(new THREE.Vector2(1024, 1024), 0.42, 0.4, 0.3);
         graph.postProcessingComposer().addPass(bloom);
         // 2) 스타필드 (배경 별 1500개)
         const starGeo = new THREE.BufferGeometry();
@@ -173,7 +173,7 @@ export default function NetworkGraph3D({
         starGeo.setAttribute("position", new THREE.BufferAttribute(starPos, 3));
         const stars = new THREE.Points(
           starGeo,
-          new THREE.PointsMaterial({ color: 0x8899ff, size: 1.6, transparent: true, opacity: 0.55 })
+          new THREE.PointsMaterial({ color: 0x8899ff, size: 1.6, transparent: true, opacity: 0.4 })
         );
         graph.scene().add(stars);
         // 3) 성운 안개(원근감)
