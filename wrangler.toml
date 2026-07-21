@@ -1,0 +1,9 @@
+# Cloudflare Pages 설정 — 배포 시 Functions(KV 바인딩)까지 함께 적용된다.
+name = "opencabinet"
+compatibility_date = "2026-07-01"
+pages_build_output_dir = "out"
+
+# 방문자 카운터 저장소 (functions/api/visit.js에서 사용)
+[[kv_namespaces]]
+binding = "VISITS"
+id = "d1686e97574243ef975c20e4845863e6"

@@ -9,6 +9,7 @@ import RotatingWord from "@/components/RotatingWord";
 import ScrollProgress from "@/components/ScrollProgress";
 import SearchExperience from "@/components/SearchExperience";
 import SpeakerAvatar from "@/components/SpeakerAvatar";
+import VisitBadge from "@/components/VisitBadge";
 import { IconAlert } from "@/components/icons";
 import {
   buildNetwork,
@@ -112,6 +113,7 @@ export default function HomePage() {
               </Link>
             )}
           </div>
+          <VisitBadge className="mt-6" />
         </div>
         <a href="#meetings" className="scroll-cue absolute bottom-8" aria-label="아래로 스크롤">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="size-6 text-mut">

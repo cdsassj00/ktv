@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import VisitBadge from "@/components/VisitBadge";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -111,6 +112,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               . 요약은 영상 자막을 바탕으로 AI가 생성한 것으로, 오류가 있을 수 있습니다.
             </p>
             <p>발언자 사진은 공공누리 제1유형(출처표시) 자료만 사용하며, 각 사진에 출처를 표기합니다.</p>
+            <VisitBadge className="pt-2" />
           </div>
         </footer>
       </body>
