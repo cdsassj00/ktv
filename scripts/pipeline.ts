@@ -21,7 +21,12 @@ async function main() {
   await summarize();
   if (r2Configured()) {
     log("=== 4/4 Cloudflare R2 아카이브 ===");
-    await uploadToR2();
+    try {
+      await uploadToR2();
+    } catch (e) {
+      // R2는 보조 아카이브 — 실패해도 수집·요약 결과 커밋은 막지 않는다
+      console.warn("[pipeline] R2 업로드 실패(계속 진행):", e);
+    }
   } else {
     log("=== 4/4 R2 미설정 — 건너뜀 (CLOUDFLARE_ACCOUNT_ID/API_TOKEN 등록 시 자동 업로드) ===");
   }

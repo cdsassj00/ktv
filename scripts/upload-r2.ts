@@ -16,12 +16,33 @@ import path from "path";
 import { pathToFileURL } from "url";
 import { DATA_DIR, log, MEETINGS_DIR, TRANSCRIPTS_DIR } from "./lib";
 
-const BUCKET = process.env.R2_BUCKET ?? "opencabinet-data";
+/* GitHub Actions vars는 미설정 시 빈 문자열로 내려오므로 ??가 아니라 ||로 폴백 */
+const BUCKET = (process.env.R2_BUCKET || "").trim() || "opencabinet-data";
 
-function apiBase(): string {
+function accountId(): string {
   const account = process.env.CLOUDFLARE_ACCOUNT_ID;
   if (!account) throw new Error("CLOUDFLARE_ACCOUNT_ID 환경변수가 필요합니다.");
-  return `https://api.cloudflare.com/client/v4/accounts/${account}/r2/buckets/${BUCKET}/objects`;
+  return account;
+}
+
+function apiBase(): string {
+  return `https://api.cloudflare.com/client/v4/accounts/${accountId()}/r2/buckets/${BUCKET}/objects`;
+}
+
+/** 버킷이 없으면 생성한다 (이미 있으면 무시) */
+async function ensureBucket(token: string): Promise<void> {
+  const res = await fetch(`https://api.cloudflare.com/client/v4/accounts/${accountId()}/r2/buckets`, {
+    method: "POST",
+    headers: { Authorization: `Bearer ${token}`, "Content-Type": "application/json" },
+    body: JSON.stringify({ name: BUCKET }),
+  });
+  if (res.ok) {
+    log(`R2 버킷 생성: ${BUCKET}`);
+    return;
+  }
+  const text = await res.text();
+  // 10004: The bucket you tried to create already exists
+  if (!text.includes("10004")) throw new Error(`R2 버킷 확인 실패 (${res.status}): ${text}`);
 }
 
 async function putObject(key: string, body: string): Promise<void> {
@@ -55,6 +76,9 @@ export function r2Configured(): boolean {
 }
 
 export async function uploadToR2(): Promise<void> {
+  const token = process.env.CLOUDFLARE_API_TOKEN;
+  if (!token) throw new Error("CLOUDFLARE_API_TOKEN 환경변수가 필요합니다.");
+  await ensureBucket(token);
   let count = 0;
   for (const { key, file } of filesToUpload()) {
     await putObject(key, fs.readFileSync(file, "utf-8"));
