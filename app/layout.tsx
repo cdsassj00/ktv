@@ -12,6 +12,20 @@ export const metadata: Metadata = {
   },
   description:
     "대통령 주재 공개 국무회의·국민업무보고 영상을 자동 수집·요약해 발언 스레드, 지시-이행 추적, AI·데이터 정책 발언을 한눈에 보여주는 아카이브",
+  keywords: [
+    "국무회의",
+    "국민업무보고",
+    "이재명 대통령",
+    "국무회의 요약",
+    "지시 이행",
+    "AI 정책",
+    "데이터 정책",
+    "KTV",
+    "정부 정책",
+    "국무회의 발언",
+  ],
+  alternates: { canonical: "/" },
+  robots: { index: true, follow: true },
   openGraph: {
     title: "열린국무회의 — 국무회의, 대화로 읽다",
     description:
@@ -41,6 +55,31 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link
           rel="stylesheet"
           href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              name: "열린국무회의",
+              alternateName: "OpenCabinet",
+              url: "https://opencabinet.pages.dev",
+              description:
+                "대통령 주재 공개 국무회의·국민업무보고 영상을 AI로 요약해 발언 스레드·지시 이행·AI 데이터 정책을 보여주는 아카이브",
+              inLanguage: "ko",
+              publisher: {
+                "@type": "Organization",
+                name: "CDSA 한국데이터사이언티스트협회",
+                url: "https://cdsa.kr",
+              },
+              potentialAction: {
+                "@type": "SearchAction",
+                target: "https://opencabinet.pages.dev/network?q={search_term_string}",
+                "query-input": "required name=search_term_string",
+              },
+            }),
+          }}
         />
       </head>
       <body>
