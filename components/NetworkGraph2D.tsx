@@ -72,6 +72,7 @@ export default function NetworkGraph2D({
   speakers,
   highlight,
   focusNode,
+  onSelect,
   height = 560,
 }: {
   nodes: NetworkNode[];
@@ -79,6 +80,8 @@ export default function NetworkGraph2D({
   speakers: SpeakerMap;
   highlight?: GraphHighlight | null;
   focusNode?: string | null;
+  /** 노드 선택/해제 시 부모에 통지 — 아래 발언 목록 연동용 */
+  onSelect?: (speakerId: string | null) => void;
   height?: number;
 }) {
   const wrapRef = useRef<HTMLDivElement>(null);
@@ -97,6 +100,10 @@ export default function NetworkGraph2D({
     reset: () => {},
   });
   const [selected, setSelected] = useState<string | null>(null);
+  const onSelectRef = useRef(onSelect);
+  useEffect(() => {
+    onSelectRef.current = onSelect;
+  }, [onSelect]);
 
   /* 노드 → 궤도 배치 (대통령 중앙, 발언량 순 3겹 링) */
   useEffect(() => {
@@ -161,10 +168,12 @@ export default function NetworkGraph2D({
     hlRef.current = highlight
       ? { nodes: new Set(highlight.nodes), pairs: new Set(highlight.pairs) }
       : null;
-    if (highlight) {
+    if (highlight && selRef.current) {
       selRef.current = null;
       setSelected(null);
+      onSelect?.(null);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [highlight]);
 
   /* 검색 결과 클릭 → 해당 노드가 정면(앞)으로 오도록 궤도 회전 */
@@ -315,6 +324,7 @@ export default function NetworkGraph2D({
       const next = hit && hit.id !== selRef.current ? hit.id : null;
       selRef.current = next;
       setSelected(next);
+      onSelectRef.current?.(next);
       if (next) pulseRef.current = { id: next, start: performance.now() };
     };
     /* 브라우저가 스크롤을 가져가면(pointercancel) 클릭으로 처리하지 않는다 */
@@ -689,6 +699,7 @@ export default function NetworkGraph2D({
             onClick={() => {
               selRef.current = null;
               setSelected(null);
+              onSelect?.(null);
             }}
             className="ml-1 self-start rounded-full bg-white/10 p-1 text-mut hover:text-ink"
           >

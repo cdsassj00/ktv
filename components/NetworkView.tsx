@@ -39,6 +39,7 @@ export default function NetworkView({
   const [query, setQuery] = useState(initialQuery ?? "");
   const [selected, setSelected] = useState<number | null>(null);
   const [focusNode, setFocusNode] = useState<string | null>(null);
+  const [speakerSel, setSpeakerSel] = useState<string | null>(null); // 그래프 노드 선택
 
   const fuse = useMemo(
     () =>
@@ -65,6 +66,18 @@ export default function NetworkView({
     return fuse.search(query.trim()).slice(0, 8).map((r) => r.item);
   }, [fuse, query]);
 
+  /* 노드 선택 시: 그 인물이 참여한 발언·지시·대화 목록 (최신 회의 우선) */
+  const speakerDocs = useMemo(() => {
+    if (!speakerSel || !searchDocs) return [];
+    return searchDocs
+      .filter((d) => d.speakerIds.includes(speakerSel))
+      .sort((a, b) => (a.date < b.date ? 1 : -1))
+      .slice(0, 10);
+  }, [speakerSel, searchDocs]);
+
+  /* 아래 목록에 실제로 보여줄 문서: 노드 선택이 검색보다 우선 (그래프와 동일 규칙) */
+  const docs = speakerSel ? speakerDocs : results;
+
   // 검색어가 바뀌면 선택·카메라 초기화
   useMemo(() => {
     setSelected(null);
@@ -72,7 +85,7 @@ export default function NetworkView({
     return null;
   }, [query]);
 
-  const selectedDoc = selected !== null ? results[selected] : null;
+  const selectedDoc = selected !== null ? docs[selected] : null;
   const selectedExchange =
     selectedDoc?.exchangeId && exchangeIndex
       ? exchangeIndex[`${selectedDoc.meetingId}#${selectedDoc.exchangeId}`]
@@ -146,7 +159,7 @@ export default function NetworkView({
         </div>
       </div>
 
-      {query.trim().length >= 2 && (
+      {!speakerSel && query.trim().length >= 2 && (
         <p className="text-[14px] text-mut">
           {results.length > 0 ? (
             <>
@@ -166,12 +179,30 @@ export default function NetworkView({
           speakers={speakers}
           highlight={highlight}
           focusNode={focusNode}
+          onSelect={(id) => {
+            setSpeakerSel(id);
+            setSelected(null);
+          }}
         />
       </div>
 
-      {results.length > 0 && (
+      {/* 노드 선택 시 — 그 인물의 발언 목록 헤더 */}
+      {speakerSel && searchDocs && (
+        <p className="text-[14px] text-mut">
+          <strong className="text-ink">
+            {(speakers[speakerSel] ?? UNKNOWN_SPEAKER).name}
+          </strong>
+          {(speakers[speakerSel] ?? UNKNOWN_SPEAKER).role && (
+            <span className="ml-1.5 text-[13px]">{(speakers[speakerSel] ?? UNKNOWN_SPEAKER).role}</span>
+          )}{" "}
+          — 관련 발언·지시 <strong className="text-[#ffd60a]">{speakerDocs.length}건</strong>
+          {speakerDocs.length === 0 && " (재구성된 발언 기록이 없습니다)"}
+        </p>
+      )}
+
+      {docs.length > 0 && (
         <div className="space-y-2">
-          {results.map((doc, i) => {
+          {docs.map((doc, i) => {
             const kindStyle = TURN_KIND_STYLE[doc.kind] ?? {
               label: doc.kind,
               className:
