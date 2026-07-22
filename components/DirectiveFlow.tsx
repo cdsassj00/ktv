@@ -14,9 +14,12 @@ import SpeakerAvatar from "./SpeakerAvatar";
 export default function DirectiveFlow({
   items,
   speakers,
+  meetingIndex = {},
 }: {
   items: { meeting: Meeting; directive: Directive }[];
   speakers: SpeakerMap;
+  /** 후속보고의 회의 id → 제목·날짜 (펼침 목록 표기용) */
+  meetingIndex?: Record<string, { title: string; date: string }>;
 }) {
   const sectionRef = useRef<HTMLDivElement>(null);
   const pathRef = useRef<SVGPathElement>(null);
@@ -109,16 +112,56 @@ export default function DirectiveFlow({
                   <span className={`chip ml-auto ${status.className}`}>{status.label}</span>
                 </div>
                 <p className="mt-2.5 text-[16px] leading-relaxed text-body">{directive.content}</p>
-                <div className="mt-2 flex flex-wrap items-center gap-2 text-[13px] text-mut">
+                <div className="mt-2 text-[13px] text-mut">
                   <Link href={`/meetings/${meeting.id}`} className="text-accent-400 hover:underline">
                     {formatDate(meeting.date)} · {meeting.title}
                   </Link>
-                  {directive.followUps.length > 0 && (
-                    <span className="text-[#30d158]">
-                      ↳ 후속보고 {directive.followUps.length}건 연결됨
-                    </span>
-                  )}
                 </div>
+                {directive.followUps.length > 0 && (
+                  <details className="group/fu mt-3 border-t border-dashed border-hair pt-2.5">
+                    <summary className="flex cursor-pointer list-none items-center gap-1.5 text-[13.5px] font-semibold text-[#30d158] [&::-webkit-details-marker]:hidden">
+                      ↳ 후속보고 {directive.followUps.length}건 보기
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2.5"
+                        className="size-3.5 transition-transform group-open/fu:rotate-180"
+                        aria-hidden
+                      >
+                        <path d="m6 9 6 6 6-6" />
+                      </svg>
+                    </summary>
+                    <ol className="mt-2.5 space-y-2">
+                      {directive.followUps.map((fu, fi) => {
+                        const fuMeeting = meetingIndex[fu.meetingId];
+                        return (
+                          <li key={fi} className="flex items-start gap-2 text-[14px]">
+                            <span className="mt-1.5 size-2 shrink-0 rounded-full bg-[#30d158]" />
+                            <div className="min-w-0">
+                              <Link
+                                href={
+                                  fu.exchangeId
+                                    ? `/meetings/${fu.meetingId}#${fu.exchangeId}`
+                                    : `/meetings/${fu.meetingId}`
+                                }
+                                className="font-medium text-accent-400 hover:underline"
+                              >
+                                {fuMeeting ? `${formatDate(fuMeeting.date)} · ${fuMeeting.title}` : fu.meetingId}
+                              </Link>
+                              <p className="mt-0.5 leading-relaxed text-body">{fu.summary}</p>
+                              {fu.inferred && (
+                                <span className="mt-1 inline-block rounded border border-hair bg-tint px-1.5 py-0.5 text-[10.5px] text-mut">
+                                  추정 연결
+                                </span>
+                              )}
+                            </div>
+                          </li>
+                        );
+                      })}
+                    </ol>
+                  </details>
+                )}
               </div>
             </div>
           );

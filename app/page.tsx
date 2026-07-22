@@ -341,6 +341,7 @@ export default function HomePage() {
         <DirectiveFlow
           items={directives.filter(({ directive }) => directive.status === "reported").slice(0, 5)}
           speakers={speakers}
+          meetingIndex={Object.fromEntries(meetings.map((m) => [m.id, { title: m.title, date: m.date }]))}
         />
         <div className="mt-10 text-center">
           <Link href="/directives" className="btn-link">
