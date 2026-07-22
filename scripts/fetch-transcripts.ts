@@ -19,7 +19,25 @@ import {
   TranscriptSegment,
 } from "./lib";
 
-const UA = "com.google.android.youtube/20.10.38 (Linux; U; Android 11) gzip";
+/* 클라이언트 폴백 체인 — 데이터센터 IP는 클라이언트별로 차단 여부가 달라
+   ANDROID가 LOGIN_REQUIRED를 받아도 다른 클라이언트는 통과할 수 있다 */
+const CLIENTS = [
+  {
+    label: "ANDROID",
+    ua: "com.google.android.youtube/20.10.38 (Linux; U; Android 11) gzip",
+    client: { clientName: "ANDROID", clientVersion: "20.10.38", androidSdkVersion: 30, hl: "ko", gl: "KR" },
+  },
+  {
+    label: "IOS",
+    ua: "com.google.ios.youtube/20.10.4 (iPhone16,2; U; CPU iOS 18_1_0 like Mac OS X;)",
+    client: { clientName: "IOS", clientVersion: "20.10.4", deviceModel: "iPhone16,2", hl: "ko", gl: "KR" },
+  },
+  {
+    label: "WEB",
+    ua: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+    client: { clientName: "WEB", clientVersion: "2.20260715.00.00", hl: "ko", gl: "KR" },
+  },
+] as const;
 
 function decodeEntities(s: string): string {
   return s
@@ -33,55 +51,63 @@ function decodeEntities(s: string): string {
     .trim();
 }
 
-/** InnerTube로 한국어 자막 트랙을 찾아 XML을 파싱. 자막 없으면 null */
+/**
+ * InnerTube로 한국어 자막 트랙을 찾아 XML을 파싱.
+ * 클라이언트 폴백 체인을 순회하며, 차단(LOGIN_REQUIRED 등)과
+ * 진짜 자막 없음을 구분해 로그로 남긴다. 자막 없으면 null.
+ */
 export async function fetchTranscriptInnerTube(
   videoId: string
 ): Promise<TranscriptSegment[] | null> {
-  const res = await fetch("https://www.youtube.com/youtubei/v1/player?prettyPrint=false", {
-    method: "POST",
-    headers: { "content-type": "application/json", "user-agent": UA },
-    body: JSON.stringify({
-      context: {
-        client: {
-          clientName: "ANDROID",
-          clientVersion: "20.10.38",
-          androidSdkVersion: 30,
-          hl: "ko",
-          gl: "KR",
-        },
-      },
-      videoId,
-    }),
-  });
-  if (!res.ok) throw new Error(`player API ${res.status}`);
-  const data = (await res.json()) as {
-    playabilityStatus?: { status?: string };
-    captions?: {
-      playerCaptionsTracklistRenderer?: {
-        captionTracks?: { languageCode: string; kind?: string; baseUrl: string }[];
+  let lastStatus = "";
+  for (const c of CLIENTS) {
+    const res = await fetch("https://www.youtube.com/youtubei/v1/player?prettyPrint=false", {
+      method: "POST",
+      headers: { "content-type": "application/json", "user-agent": c.ua },
+      body: JSON.stringify({ context: { client: c.client }, videoId }),
+    });
+    if (!res.ok) {
+      lastStatus = `HTTP ${res.status}`;
+      continue;
+    }
+    const data = (await res.json()) as {
+      playabilityStatus?: { status?: string; reason?: string };
+      captions?: {
+        playerCaptionsTracklistRenderer?: {
+          captionTracks?: { languageCode: string; kind?: string; baseUrl: string }[];
+        };
       };
     };
-  };
-  const tracks = data.captions?.playerCaptionsTracklistRenderer?.captionTracks;
-  if (!tracks?.length) return null;
-  const ko = tracks.find((t) => t.languageCode === "ko" && t.kind !== "asr")
-    ?? tracks.find((t) => t.languageCode === "ko");
-  if (!ko) return null;
+    const status = data.playabilityStatus?.status ?? "?";
+    if (status !== "OK") {
+      // LOGIN_REQUIRED = 봇 차단(자막 없음과 다름) → 다음 클라이언트 시도
+      lastStatus = status;
+      log(`  [${c.label}] ${videoId}: playability=${status} — 다음 클라이언트 시도`);
+      await new Promise((r) => setTimeout(r, 1500));
+      continue;
+    }
+    const tracks = data.captions?.playerCaptionsTracklistRenderer?.captionTracks;
+    if (!tracks?.length) return null; // 재생 가능 + 트랙 없음 = 진짜 자막 없음
+    const ko = tracks.find((t) => t.languageCode === "ko" && t.kind !== "asr")
+      ?? tracks.find((t) => t.languageCode === "ko");
+    if (!ko) return null;
 
-  const xml = await (await fetch(ko.baseUrl, { headers: { "user-agent": UA } })).text();
-  const segments: TranscriptSegment[] = [];
-  const re = /<p t="(\d+)"(?: d="(\d+)")?[^>]*>(.*?)<\/p>/gs;
-  let m: RegExpExecArray | null;
-  while ((m = re.exec(xml))) {
-    const text = decodeEntities(m[3]);
-    if (text)
-      segments.push({
-        text,
-        start: Math.round(Number(m[1]) / 1000),
-        duration: Math.round(Number(m[2] ?? 0) / 1000),
-      });
+    const xml = await (await fetch(ko.baseUrl, { headers: { "user-agent": c.ua } })).text();
+    const segments: TranscriptSegment[] = [];
+    const re = /<p t="(\d+)"(?: d="(\d+)")?[^>]*>(.*?)<\/p>/gs;
+    let m: RegExpExecArray | null;
+    while ((m = re.exec(xml))) {
+      const text = decodeEntities(m[3]);
+      if (text)
+        segments.push({
+          text,
+          start: Math.round(Number(m[1]) / 1000),
+          duration: Math.round(Number(m[2] ?? 0) / 1000),
+        });
+    }
+    return segments.length > 0 ? segments : null;
   }
-  return segments.length > 0 ? segments : null;
+  throw new Error(`모든 클라이언트 차단/실패 (마지막: ${lastStatus})`);
 }
 
 export async function fetchTranscripts(): Promise<void> {
