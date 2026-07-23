@@ -26,6 +26,10 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: "/" },
   robots: { index: true, follow: true },
+  verification: {
+    // 검색엔진 소유확인 (네이버 서치어드바이저)
+    other: { "naver-site-verification": "aeb78c98c2144c93d51e4c37870b8fbec0948356" },
+  },
   openGraph: {
     title: "열린국무회의 — 국무회의, 대화로 읽다",
     description:
