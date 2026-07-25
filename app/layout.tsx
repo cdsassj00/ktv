@@ -27,7 +27,8 @@ export const metadata: Metadata = {
   alternates: { canonical: "/" },
   robots: { index: true, follow: true },
   verification: {
-    // 검색엔진 소유확인 (네이버 서치어드바이저)
+    // 검색엔진 소유확인
+    google: "i0Zni9lCZkdIBazKdKDbSoRw-hX0EdmAorYPtOTh5Og",
     other: { "naver-site-verification": "aeb78c98c2144c93d51e4c37870b8fbec0948356" },
   },
   openGraph: {
