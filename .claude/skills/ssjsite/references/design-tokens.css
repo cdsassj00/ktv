@@ -1,0 +1,195 @@
+/* ============================================================
+   ssjsite 디자인 토큰 — 애플 다크 몰입형
+   두 가지 방식으로 쓸 수 있다:
+   (A) Tailwind v4 프로젝트: 아래 @theme 블록을 globals.css에 붙인다.
+   (B) 순수 HTML/CSS: @theme 대신 하단의 :root 블록 + 유틸리티 클래스를 쓴다.
+   accent(액센트) 색만 바꾸면 다른 브랜드로 쉽게 베리에이션된다.
+   ============================================================ */
+
+/* ─── (A) Tailwind v4 용 @theme ─────────────────────────── */
+@theme {
+  /* 배경 — 순수 블랙 종이 + iOS 시스템 그레이 계단 */
+  --color-paper: #000000;   /* 페이지 배경 */
+  --color-surf:  #1c1c1e;   /* 카드/패널 */
+  --color-tint:  #2c2c2e;   /* 버블/한 단계 위 */
+  --color-tint2: #3a3a3c;   /* 호버/칩 */
+  --color-hair:  #38383a;   /* 얇은 구분선 */
+  --color-hair2: #48484a;
+
+  /* 텍스트 — 흰색에서 회색으로 4단계 */
+  --color-ink:   #f5f5f7;   /* 제목/강조 */
+  --color-body:  #d1d1d6;   /* 본문 */
+  --color-mut:   #98989d;   /* 보조 */
+  --color-faint: #6e6e73;   /* 가장 흐림/타임스탬프 */
+
+  /* 액센트 — iOS 블루 (베리에이션 시 여기만 바꾼다) */
+  --color-accent-400: #409cff;
+  --color-accent-500: #0a84ff;
+  --color-accent-600: #0071e3;
+
+  /* 시맨틱 — 지시=레드, 성공=그린, 강조=골드 */
+  --color-red-600:   #ff453a;
+  --color-green-600: #30d158;
+  --color-gold-400:  #ff9f0a;
+  --color-gold-500:  #ffd60a;
+
+  --font-sans: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont,
+    "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+  --shadow-card: 0 2px 16px rgb(0 0 0 / 0.5);
+  --shadow-lift: 0 8px 32px rgb(0 0 0 / 0.6);
+}
+
+/* ─── (B) 순수 CSS 폴백 — Tailwind 없이 쓸 때 ────────────── */
+/* @theme 을 쓰지 못하는 환경이면 위 블록 대신 아래 :root 를 쓰고,
+   .panel/.chip/... 유틸리티는 이 파일 하단 정의를 그대로 쓴다. */
+:root {
+  --paper:#000; --surf:#1c1c1e; --tint:#2c2c2e; --tint2:#3a3a3c;
+  --hair:#38383a; --ink:#f5f5f7; --body:#d1d1d6; --mut:#98989d; --faint:#6e6e73;
+  --accent:#0a84ff; --accent-hi:#409cff;
+  --red:#ff453a; --green:#30d158; --gold:#ffd60a; --gold-warm:#f3dd7f;
+}
+
+/* ─── 전역 타이포 규칙 (Pretendard 특성 살리기) ──────────── */
+html { scroll-behavior: smooth; }
+body {
+  font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont,
+    "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+  background: var(--paper, #000);
+  color: var(--ink, #f5f5f7);
+  word-break: keep-all;          /* 한글 단어 단위 줄바꿈 — 가독성 핵심 */
+  overflow-wrap: break-word;
+  letter-spacing: -0.01em;
+  font-feature-settings: "ss05"; /* Pretendard 대체 글리프: 더 열린 따옴표·괄호 */
+  -webkit-font-smoothing: antialiased;
+}
+/* 제목은 자간을 더 조이고 두께를 명시 — 애플 헤드라인 느낌의 핵심 */
+h1, h2, h3, .h-judge { letter-spacing: -0.028em; font-variation-settings: "wght" 600; }
+h1 { font-variation-settings: "wght" 650; }
+/* 숫자는 고정폭 — 카운트업·타임스탬프 정렬 흔들림 방지 */
+.tabular, .font-mono { font-variant-numeric: tabular-nums; }
+
+/* ─── 시그니처 컴포넌트 클래스 (순수 CSS 버전) ──────────── */
+/* Tailwind 프로젝트라면 @apply 로 바꿔 써도 되고 이대로 써도 된다. */
+.panel {
+  border-radius: 16px;
+  background: var(--surf, #1c1c1e);
+}
+.h-judge {
+  font-size: clamp(30px, 5vw, 38px);
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--ink, #f5f5f7);
+}
+.overline-label {   /* 섹션 상단 작은 라벨 */
+  font-size: 13px; font-weight: 600; color: var(--mut, #98989d);
+}
+.btn-pill {         /* 주 CTA — 알약 버튼 */
+  display: inline-flex; align-items: center; justify-content: center;
+  border-radius: 999px; background: var(--accent, #0a84ff);
+  padding: 10px 24px; font-size: 15px; font-weight: 500; color: #fff;
+  transition: background .2s;
+}
+.btn-pill:hover { background: var(--accent-hi, #409cff); }
+.btn-link { color: var(--accent-hi, #409cff); font-size: 15px; font-weight: 500; }
+.btn-link:hover { text-decoration: underline; }
+.bubble {           /* iMessage 다크 수신 말풍선 */
+  border-radius: 16px; border-top-left-radius: 6px;
+  background: var(--tint, #2c2c2e); padding: 16px; text-align: left;
+  transition: background .2s, transform .2s;
+}
+.chip {             /* 상태·태그 칩 */
+  display: inline-flex; align-items: center; gap: 4px;
+  border-radius: 999px; padding: 4px 10px; font-size: 12.5px; font-weight: 600;
+}
+/* 시맨틱 칩 틴트 (투명 배경 + 채도 낮춘 텍스트) */
+.chip-directive { background: rgba(255,69,58,.16);  color:#ff6961; } /* 지시 */
+.chip-report    { background: rgba(10,132,255,.16); color:#64b5ff; } /* 보고 */
+.chip-answer    { background: rgba(48,209,88,.14);  color:#4cd964; } /* 답변 */
+.chip-question  { background: rgba(255,159,10,.15); color:#ffb340; } /* 질문 */
+
+.scroll-thin::-webkit-scrollbar { height: 6px; width: 6px; }
+.scroll-thin::-webkit-scrollbar-thumb { background: var(--tint2, #3a3a3c); border-radius: 999px; }
+
+:focus-visible { outline: 3px solid var(--accent, #0a84ff); outline-offset: 2px; }
+button:not(:disabled) { cursor: pointer; }
+
+/* ============================================================
+   모션 — 전부 prefers-reduced-motion 으로 끌 수 있게 설계
+   ============================================================ */
+
+/* 스크롤 진입 페이드업 (JS로 .show 를 붙인다 — motion.md 참고) */
+[data-reveal] {
+  opacity: 0; transform: translateY(28px);
+  transition: opacity .7s cubic-bezier(.2,.7,.2,1), transform .7s cubic-bezier(.2,.7,.2,1);
+}
+[data-reveal].show { opacity: 1; transform: none; }
+[data-stagger] > * {
+  opacity: 0; transform: translateY(22px);
+  transition: opacity .6s cubic-bezier(.2,.7,.2,1), transform .6s cubic-bezier(.2,.7,.2,1);
+}
+[data-stagger].show > * { opacity: 1; transform: none; }
+
+/* 히어로 제목 라인마스크 — 한 줄씩 아래에서 밀려 올라옴 */
+.ln { display: block; overflow: hidden; }
+.ln > span { display: block; transform: translateY(115%); animation: ln-up .9s cubic-bezier(.2,.7,.2,1) forwards; }
+.ln:nth-of-type(2) > span { animation-delay: .14s; }
+@keyframes ln-up { to { transform: none; } }
+
+/* 히어로 하단 스크롤 유도 셰브런 */
+.scroll-cue { animation: cue 1.8s ease-in-out infinite; }
+@keyframes cue { 0%,100%{transform:translateY(0);opacity:.5} 50%{transform:translateY(8px);opacity:1} }
+
+/* 오로라 텍스트 — 강조 단어에 블루·골드가 흐름 (로테이팅 워드와 조합) */
+.aurora-text {
+  background: linear-gradient(100deg,#f5f5f7 0%,#7fb7ff 30%,#ffd257 55%,#9db8ff 75%,#f5f5f7 100%);
+  background-size: 280% 100%; -webkit-background-clip: text; background-clip: text;
+  color: transparent; animation: aurora-flow 6.5s ease-in-out infinite;
+}
+@keyframes aurora-flow { 0%,100%{background-position:0% 50%} 50%{background-position:100% 50%} }
+
+/* 타자기 커서 */
+.caret { animation: caret-blink 1.1s steps(1) infinite; }
+@keyframes caret-blink { 50% { opacity: 0; } }
+
+/* 골드 배너 — 광고/공지용 금박 + 반사광 스윕 (선택) */
+.gold-banner {
+  background: linear-gradient(100deg,#7a5c16 0%,#c9a227 22%,#f3dd7f 50%,#c9a227 78%,#7a5c16 100%);
+  box-shadow: inset 0 1px 0 rgba(255,250,220,.55), inset 0 -1px 0 rgba(60,40,0,.45);
+}
+.gold-shine {
+  position:absolute; inset:0; pointer-events:none;
+  background: linear-gradient(115deg,transparent 32%,rgba(255,255,255,.65) 48%,rgba(255,255,255,.25) 52%,transparent 68%);
+  transform: translateX(-100%); animation: gold-sweep 3.4s ease-in-out infinite;
+}
+@keyframes gold-sweep { 0%{transform:translateX(-100%)} 55%,100%{transform:translateX(100%)} }
+
+/* 메탈 프레임 — 금·은 반사광이 테두리를 도는 모달 테두리 (선택) */
+@property --frame-angle { syntax: "<angle>"; initial-value: 0deg; inherits: false; }
+.metal-frame {
+  padding: 1.5px; border-radius: 20px;
+  background: conic-gradient(from var(--frame-angle),
+    #55555e 0%,#d9d9e3 10%,#8a8a95 22%,#ffd257 34%,#fff3c4 42%,#ffd257 50%,
+    #8a8a95 62%,#f2f2f8 78%,#6d6d75 90%,#55555e 100%);
+  animation: frame-spin 6s linear infinite;
+  box-shadow: 0 0 24px rgba(255,210,87,.12), 0 8px 40px rgba(0,0,0,.7);
+}
+@keyframes frame-spin { to { --frame-angle: 360deg; } }
+
+/* 원형 스피너 */
+.spinner {
+  width:34px; height:34px; border-radius:50%;
+  background: conic-gradient(transparent 8%, var(--accent-hi,#409cff));
+  mask: radial-gradient(farthest-side, transparent calc(100% - 5px), #000 0);
+  animation: spin .9s linear infinite;
+}
+@keyframes spin { to { transform: rotate(1turn); } }
+
+/* 접근성 — 모션 최소화 사용자에겐 전부 정지 */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  [data-reveal], [data-stagger] > * { opacity: 1; transform: none; transition: none; }
+  .ln > span { transform: none; animation: none; }
+  .scroll-cue, .gold-shine, .caret, .aurora-text, .metal-frame { animation: none; }
+  .spinner { animation-duration: 2s; }
+}
