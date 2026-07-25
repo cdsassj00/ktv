@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Script from "next/script";
 import CreditBadge from "@/components/CreditBadge";
 import VisitBadge from "@/components/VisitBadge";
 import "./globals.css";
@@ -88,6 +89,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       </head>
       <body>
+        {/* Google Analytics (GA4) — 방문·유입·검색어 측정 */}
+        <Script src="https://www.googletagmanager.com/gtag/js?id=G-T991E527M3" strategy="afterInteractive" />
+        <Script id="ga4" strategy="afterInteractive">
+          {`window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-T991E527M3');`}
+        </Script>
+
         {/* CDSA 골드 배너 — 스크롤에도 항상 상단 고정, 황금빛 반사 스윕 */}
         <a
           href="https://cdsa.kr"
