@@ -6,12 +6,14 @@ import { fetchVideos } from "./fetch-videos";
 import { fetchTranscripts } from "./fetch-transcripts";
 import { summarize } from "./summarize";
 import { findPhotos } from "./find-photos";
+import { pingIndexNow } from "./ping-indexnow";
 import { r2Configured, uploadToR2 } from "./upload-r2";
 import { log } from "./lib";
 
 async function main() {
   log("=== 1/5 영상 수집 ===");
   const queue = await fetchVideos();
+  let collectedNew = false;
   if (queue.length === 0) {
     log("신규 회의 영상 없음 — 자막·요약 건너뜀");
   } else {
@@ -19,6 +21,7 @@ async function main() {
     await fetchTranscripts();
     log("=== 3/5 요약 ===");
     await summarize();
+    collectedNew = true;
   }
   log("=== 4/5 발언자 사진 수색 ===");
   try {
@@ -37,6 +40,12 @@ async function main() {
     }
   } else {
     log("=== 5/5 R2 미설정 — 건너뜀 (CLOUDFLARE_ACCOUNT_ID/API_TOKEN 등록 시 자동 업로드) ===");
+  }
+
+  /* 새 회의가 수집됐으면 검색엔진(네이버·빙)에 자동 통지 — 수동 수집요청 불필요 */
+  if (collectedNew) {
+    log("=== IndexNow 검색엔진 통지 ===");
+    await pingIndexNow();
   }
 }
 
