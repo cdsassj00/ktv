@@ -28,8 +28,11 @@ export const metadata: Metadata = {
   alternates: { canonical: "/" },
   robots: { index: true, follow: true },
   verification: {
-    // 검색엔진 소유확인
-    google: "i0Zni9lCZkdIBazKdKDbSoRw-hX0EdmAorYPtOTh5Og",
+    // 검색엔진 소유확인 — 옛(pages.dev)·새(opencabinet.cc) 속성 둘 다 유지
+    google: [
+      "i0Zni9lCZkdIBazKdKDbSoRw-hX0EdmAorYPtOTh5Og",
+      "Rm1rWqKZwQAM1dA6mAyG2Bu6noNwS1U57uP4wcY43sg",
+    ],
     other: { "naver-site-verification": "aeb78c98c2144c93d51e4c37870b8fbec0948356" },
   },
   openGraph: {
