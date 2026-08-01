@@ -5,7 +5,13 @@ import Reveal from "@/components/Reveal";
 import { getMeetings } from "@/lib/data";
 import { formatDate, MEETING_TYPE_LABEL } from "@/lib/utils";
 
-export const metadata: Metadata = { title: "전체 회의" };
+export const metadata: Metadata = {
+  title: "전체 회의",
+  description:
+    "이재명 대통령 주재 공개 국무회의·국민업무보고 전체 목록. 각 회의의 발언 스레드, 지시-이행, AI·데이터 정책 발언을 요약과 함께 확인하세요.",
+  alternates: { canonical: "/meetings" },
+  openGraph: { title: "전체 회의 — 열린국무회의", url: "/meetings" },
+};
 
 /** 전체 회의 목록 — 홈에는 최신 하이라이트만 두고, 전량은 여기서 컴팩트하게 */
 export default function MeetingsPage() {

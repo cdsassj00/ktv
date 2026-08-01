@@ -3,7 +3,13 @@ import AiPolicyClient from "./AiPolicyClient";
 import BackLink from "@/components/BackLink";
 import { getAllAiDataPolicy, getMonthlyAiDataCounts, getSpeakers } from "@/lib/data";
 
-export const metadata: Metadata = { title: "AI·데이터 정책 대시보드" };
+export const metadata: Metadata = {
+  title: "AI·데이터 정책 대시보드",
+  description:
+    "국무회의·업무보고에서 나온 AI·데이터·디지털 정책 발언만 모아 태그별 필터와 월별 추이 차트로 보여주는 대시보드. AI기본법·공공데이터·데이터거버넌스 등.",
+  alternates: { canonical: "/ai-policy" },
+  openGraph: { title: "AI·데이터 정책 대시보드 — 열린국무회의", url: "/ai-policy" },
+};
 
 export default function AiPolicyPage() {
   const speakers = getSpeakers();

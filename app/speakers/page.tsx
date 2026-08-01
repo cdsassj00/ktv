@@ -5,7 +5,13 @@ import Reveal from "@/components/Reveal";
 import BackLink from "@/components/BackLink";
 import { getSpeakers } from "@/lib/data";
 
-export const metadata: Metadata = { title: "발언자" };
+export const metadata: Metadata = {
+  title: "발언자",
+  description:
+    "국무회의·국민업무보고에 참석하는 국무위원·기관장 명부. 각 인물의 발언 이력과 받은 지시를 프로필에서 확인하세요.",
+  alternates: { canonical: "/speakers" },
+  openGraph: { title: "발언자 — 열린국무회의", url: "/speakers" },
+};
 
 export default function SpeakersPage() {
   const speakers = getSpeakers();

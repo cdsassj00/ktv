@@ -3,7 +3,13 @@ import NetworkView from "@/components/NetworkView";
 import BackLink from "@/components/BackLink";
 import { buildNetwork, getExchangeIndex, getMeetings, getSearchDocs, getSpeakers } from "@/lib/data";
 
-export const metadata: Metadata = { title: "발언 네트워크" };
+export const metadata: Metadata = {
+  title: "발언 네트워크",
+  description:
+    "누가 누구에게 지시하고 누가 답했는지, 국무회의 발언 관계를 원탁 네트워크로 시각화. 키워드 검색으로 관련 발언자·지시 관계를 함께 확인하세요.",
+  alternates: { canonical: "/network" },
+  openGraph: { title: "발언 네트워크 — 열린국무회의", url: "/network" },
+};
 
 export default function NetworkPage() {
   const speakers = getSpeakers();

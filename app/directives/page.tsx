@@ -3,7 +3,13 @@ import DirectivesClient from "./DirectivesClient";
 import BackLink from "@/components/BackLink";
 import { getAllDirectives, getMeetings, getSpeakers } from "@/lib/data";
 
-export const metadata: Metadata = { title: "지시-이행 트래커" };
+export const metadata: Metadata = {
+  title: "지시-이행 트래커",
+  description:
+    "대통령·총리가 국무회의에서 내린 지시가 어느 부처로, 이후 어떻게 이행·보고됐는지 회의를 넘어 추적합니다. 부처별 필터와 후속 보고 타임라인 제공.",
+  alternates: { canonical: "/directives" },
+  openGraph: { title: "지시-이행 트래커 — 열린국무회의", url: "/directives" },
+};
 
 export default function DirectivesPage() {
   const speakers = getSpeakers();
