@@ -33,7 +33,12 @@ export const metadata: Metadata = {
       "i0Zni9lCZkdIBazKdKDbSoRw-hX0EdmAorYPtOTh5Og",
       "Rm1rWqKZwQAM1dA6mAyG2Bu6noNwS1U57uP4wcY43sg",
     ],
-    other: { "naver-site-verification": "aeb78c98c2144c93d51e4c37870b8fbec0948356" },
+    other: {
+      "naver-site-verification": [
+        "aeb78c98c2144c93d51e4c37870b8fbec0948356",
+        "775bc5d1f31a08817bb5e3d276c76e9bf0f8ac8c",
+      ],
+    },
   },
   openGraph: {
     title: "열린국무회의 — 국무회의, 대화로 읽다",
