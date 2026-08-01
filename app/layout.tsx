@@ -111,7 +111,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           {`window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
-gtag('config', 'G-T991E527M3');`}
+gtag('config', 'G-T991E527M3');
+gtag('config', 'G-GSYEFJ4GTC');`}
         </Script>
 
         {/* CDSA 골드 배너 — 스크롤에도 항상 상단 고정, 황금빛 반사 스윕 */}
