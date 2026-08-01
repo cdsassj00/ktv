@@ -1,7 +1,7 @@
 import { getMeetings } from "@/lib/data";
 import { MEETING_TYPE_LABEL } from "@/lib/utils";
 
-const BASE = "https://opencabinet.pages.dev";
+const BASE = "https://opencabinet.cc";
 
 /** 정적 RSS 2.0 피드 — 최신 회의 40건. 네이버·구글이 새 회의를 빠르게 수집한다. */
 export const dynamic = "force-static";

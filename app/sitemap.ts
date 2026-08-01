@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { getMeetings, getSpeakers } from "@/lib/data";
 
-const BASE = "https://opencabinet.pages.dev";
+const BASE = "https://opencabinet.cc";
 
 /** 정적 사이트맵 — 정적 페이지 + 전체 회의·발언자 상세를 포함한다. */
 export const dynamic = "force-static";

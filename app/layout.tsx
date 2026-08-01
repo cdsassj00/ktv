@@ -6,7 +6,7 @@ import VisitBadge from "@/components/VisitBadge";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://opencabinet.pages.dev"),
+  metadataBase: new URL("https://opencabinet.cc"),
   title: {
     default: "열린국무회의 — KTV 국무회의·국민업무보고 아카이브",
     template: "%s | 열린국무회의",
@@ -77,7 +77,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               "@type": "WebSite",
               name: "열린국무회의",
               alternateName: "OpenCabinet",
-              url: "https://opencabinet.pages.dev",
+              url: "https://opencabinet.cc",
               description:
                 "대통령 주재 공개 국무회의·국민업무보고 영상을 AI로 요약해 발언 스레드·지시 이행·AI 데이터 정책을 보여주는 아카이브",
               inLanguage: "ko",
@@ -88,7 +88,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               },
               potentialAction: {
                 "@type": "SearchAction",
-                target: "https://opencabinet.pages.dev/network?q={search_term_string}",
+                target: "https://opencabinet.cc/network?q={search_term_string}",
                 "query-input": "required name=search_term_string",
               },
             }),

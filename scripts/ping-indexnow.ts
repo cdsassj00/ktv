@@ -10,7 +10,7 @@ import fs from "fs";
 import { pathToFileURL } from "url";
 import { log, MEETINGS_DIR } from "./lib";
 
-const HOST = "opencabinet.pages.dev";
+const HOST = "opencabinet.cc";
 const KEY = "0c930c47a19071eb9396cc5dfb1c6ec0";
 const BASE = `https://${HOST}`;
 

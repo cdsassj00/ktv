@@ -66,7 +66,7 @@ export default async function MeetingPage({ params }: { params: Promise<{ id: st
     publisher: {
       "@type": "Organization",
       name: "열린국무회의 (CDSA)",
-      url: "https://opencabinet.pages.dev",
+      url: "https://opencabinet.cc",
     },
     inLanguage: "ko",
   };

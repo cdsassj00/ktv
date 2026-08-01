@@ -12,7 +12,7 @@ import { pathToFileURL } from "url";
 import { DATA_DIR, log } from "./lib";
 
 const SPEAKERS_PATH = path.join(DATA_DIR, "speakers.json");
-const UA = "OpenCabinet/1.0 (https://opencabinet.pages.dev; archive project)";
+const UA = "OpenCabinet/1.0 (https://opencabinet.cc; archive project)";
 
 interface Speaker {
   name: string;
