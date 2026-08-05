@@ -220,7 +220,7 @@ JSON만 출력: {"matches":[{"index":0,"exchangeId":"ex-01","summary":"후속 �
   }
 }
 
-export async function summarize(): Promise<void> {
+export async function summarize(): Promise<number> {
   assertLlmEnv();
   log(`LLM: ${describeLlm()}`);
   const queue = readJson<QueueItem[]>(QUEUE_FILE, []);
@@ -263,6 +263,7 @@ export async function summarize(): Promise<void> {
 
   writeJson(QUEUE_FILE, remaining);
   log(`완료: ${processed}건 요약, ${remaining.length}건 큐에 남음`);
+  return processed;
 }
 
 if (import.meta.url === pathToFileURL(process.argv[1] ?? "").href) {

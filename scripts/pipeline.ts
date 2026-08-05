@@ -15,13 +15,16 @@ async function main() {
   const queue = await fetchVideos();
   let collectedNew = false;
   if (queue.length === 0) {
-    log("신규 회의 영상 없음 — 자막·요약 건너뜀");
+    log("대기 중인 회의 영상 없음 — 자막·요약 건너뜀");
   } else {
-    log("=== 2/5 자막 수집 ===");
+    // 큐에는 신규 + 자막 대기 중인 회의가 함께 있다. 매 실행마다 자막을
+    // 재확인하고, 자막이 붙은 회의만 요약된다. 실제로 요약이 나온 경우에만
+    // 검색엔진에 통지한다(대기만 하는 실행은 통지하지 않음).
+    log(`=== 2/5 자막 수집 (대기 큐 ${queue.length}건) ===`);
     await fetchTranscripts();
     log("=== 3/5 요약 ===");
-    await summarize();
-    collectedNew = true;
+    const summarized = await summarize();
+    collectedNew = summarized > 0;
   }
   log("=== 4/5 발언자 사진 수색 ===");
   try {
