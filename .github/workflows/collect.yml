@@ -37,6 +37,8 @@ jobs:
       - name: 파이프라인 실행
         env:
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+          # 유튜브 봇 차단(LOGIN_REQUIRED) 우회용 로그인 쿠키(선택, 등록 시 자막 수집 안정화)
+          YT_COOKIE: ${{ secrets.YT_COOKIE }}
           # LLM 공급자: 아래 셋 중 쓰는 것 하나만 Secrets에 등록하면 됨
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}

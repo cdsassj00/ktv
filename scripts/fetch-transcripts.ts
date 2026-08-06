@@ -3,9 +3,18 @@
  * data/transcripts/{videoId}.json 으로 저장한다.
  *
  * youtube-transcript 패키지는 데이터센터 IP에서 "Transcript is disabled"로 전부 실패하므로,
- * InnerTube player API(ANDROID 클라이언트) + timedtext XML 직접 파싱으로 수집한다.
- * 실패한 영상은 큐에 남겨두고 다음 실행에서 재시도한다.
+ * InnerTube player API + timedtext XML 직접 파싱으로 수집한다.
+ *
+ * 봇 차단(LOGIN_REQUIRED) 대응:
+ *   데이터센터 IP(로컬·GitHub Actions)는 유튜브가 "로그인해 봇 아님을 확인하라"며
+ *   모든 클라이언트를 막는다. YT_COOKIE(로그인된 유튜브 쿠키)가 주어지면 인증된
+ *   WEB 클라이언트로 SAPISIDHASH 서명을 붙여 요청해 이 차단을 우회한다.
+ *   쿠키가 없으면 기존 익명 폴백 체인(ANDROID→IOS→WEB)만 시도한다.
+ *
+ * 필요 환경변수: (없음 — 쿠키는 선택)
+ * 선택 환경변수: YT_COOKIE (youtube.com 로그인 쿠키의 Cookie 헤더 문자열)
  */
+import crypto from "crypto";
 import fs from "fs";
 import path from "path";
 import { pathToFileURL } from "url";
@@ -19,23 +28,29 @@ import {
   TranscriptSegment,
 } from "./lib";
 
+const ORIGIN = "https://www.youtube.com";
+
 /* 클라이언트 폴백 체인 — 데이터센터 IP는 클라이언트별로 차단 여부가 달라
-   ANDROID가 LOGIN_REQUIRED를 받아도 다른 클라이언트는 통과할 수 있다 */
+   ANDROID가 LOGIN_REQUIRED를 받아도 다른 클라이언트는 통과할 수 있다.
+   auth:true 인 클라이언트는 YT_COOKIE가 있을 때 SAPISIDHASH 인증을 붙인다. */
 const CLIENTS = [
   {
+    label: "WEB(auth)",
+    auth: true,
+    ua: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0 Safari/537.36",
+    client: { clientName: "WEB", clientVersion: "2.20260715.00.00", hl: "ko", gl: "KR" },
+  },
+  {
     label: "ANDROID",
+    auth: false,
     ua: "com.google.android.youtube/20.10.38 (Linux; U; Android 11) gzip",
     client: { clientName: "ANDROID", clientVersion: "20.10.38", androidSdkVersion: 30, hl: "ko", gl: "KR" },
   },
   {
     label: "IOS",
+    auth: false,
     ua: "com.google.ios.youtube/20.10.4 (iPhone16,2; U; CPU iOS 18_1_0 like Mac OS X;)",
     client: { clientName: "IOS", clientVersion: "20.10.4", deviceModel: "iPhone16,2", hl: "ko", gl: "KR" },
-  },
-  {
-    label: "WEB",
-    ua: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
-    client: { clientName: "WEB", clientVersion: "2.20260715.00.00", hl: "ko", gl: "KR" },
   },
 ] as const;
 
@@ -51,6 +66,37 @@ function decodeEntities(s: string): string {
     .trim();
 }
 
+/** YT_COOKIE 문자열을 정리(개행·따옴표 제거). 없으면 null. */
+function getCookie(): string | null {
+  const raw = process.env.YT_COOKIE?.trim();
+  if (!raw) return null;
+  return raw.replace(/^["']|["']$/g, "").replace(/\s*\n\s*/g, " ").trim();
+}
+
+/**
+ * 로그인 쿠키로 인증 헤더(SAPISIDHASH)를 만든다.
+ * 유튜브 WEB InnerTube는 쿠키만으론 부족하고, SAPISID 기반 시간서명 해시를
+ * Authorization 헤더로 요구한다. *1P/*3P 변형이 있으면 함께 서명한다.
+ */
+function authHeaders(cookie: string): Record<string, string> {
+  const pick = (name: string) => cookie.match(new RegExp(`(?:^|[;\\s])${name}=([^;]+)`))?.[1];
+  const ts = Math.floor(Date.now() / 1000);
+  const sign = (sid: string) =>
+    crypto.createHash("sha1").update(`${ts} ${sid} ${ORIGIN}`).digest("hex");
+
+  const parts: string[] = [];
+  const sapisid = pick("SAPISID") ?? pick("__Secure-3PAPISID") ?? pick("__Secure-1PAPISID");
+  if (sapisid) parts.push(`SAPISIDHASH ${ts}_${sign(sapisid)}`);
+  const p1 = pick("__Secure-1PAPISID");
+  if (p1) parts.push(`SAPISID1PHASH ${ts}_${sign(p1)}`);
+  const p3 = pick("__Secure-3PAPISID");
+  if (p3) parts.push(`SAPISID3PHASH ${ts}_${sign(p3)}`);
+
+  const headers: Record<string, string> = { cookie, origin: ORIGIN, "x-origin": ORIGIN };
+  if (parts.length) headers["authorization"] = parts.join(" ");
+  return headers;
+}
+
 /**
  * InnerTube로 한국어 자막 트랙을 찾아 XML을 파싱.
  * 클라이언트 폴백 체인을 순회하며, 차단(LOGIN_REQUIRED 등)과
@@ -59,12 +105,27 @@ function decodeEntities(s: string): string {
 export async function fetchTranscriptInnerTube(
   videoId: string
 ): Promise<TranscriptSegment[] | null> {
+  const cookie = getCookie();
   let lastStatus = "";
   for (const c of CLIENTS) {
-    const res = await fetch("https://www.youtube.com/youtubei/v1/player?prettyPrint=false", {
+    const useAuth = c.auth && cookie;
+    // 익명 WEB(auth 클라이언트인데 쿠키 없음)은 어차피 ANDROID/IOS와 중복 → 건너뜀
+    if (c.auth && !cookie) continue;
+
+    const headers: Record<string, string> = {
+      "content-type": "application/json",
+      "user-agent": c.ua,
+      ...(useAuth ? authHeaders(cookie!) : cookie ? { cookie } : {}),
+    };
+    const res = await fetch(`${ORIGIN}/youtubei/v1/player?prettyPrint=false`, {
       method: "POST",
-      headers: { "content-type": "application/json", "user-agent": c.ua },
-      body: JSON.stringify({ context: { client: c.client }, videoId }),
+      headers,
+      body: JSON.stringify({
+        context: { client: c.client },
+        videoId,
+        contentCheckOk: true,
+        racyCheckOk: true,
+      }),
     });
     if (!res.ok) {
       lastStatus = `HTTP ${res.status}`;
@@ -82,7 +143,7 @@ export async function fetchTranscriptInnerTube(
     if (status !== "OK") {
       // LOGIN_REQUIRED = 봇 차단(자막 없음과 다름) → 다음 클라이언트 시도
       lastStatus = status;
-      log(`  [${c.label}] ${videoId}: playability=${status} — 다음 클라이언트 시도`);
+      log(`  [${c.label}] ${videoId}: playability=${status}${useAuth ? " (쿠키인증)" : ""} — 다음 클라이언트 시도`);
       await new Promise((r) => setTimeout(r, 1500));
       continue;
     }
@@ -92,7 +153,9 @@ export async function fetchTranscriptInnerTube(
       ?? tracks.find((t) => t.languageCode === "ko");
     if (!ko) return null;
 
-    const xml = await (await fetch(ko.baseUrl, { headers: { "user-agent": c.ua } })).text();
+    const capHeaders: Record<string, string> = { "user-agent": c.ua };
+    if (cookie) capHeaders["cookie"] = cookie;
+    const xml = await (await fetch(ko.baseUrl, { headers: capHeaders })).text();
     const segments: TranscriptSegment[] = [];
     const re = /<p t="(\d+)"(?: d="(\d+)")?[^>]*>(.*?)<\/p>/gs;
     let m: RegExpExecArray | null;
@@ -117,6 +180,7 @@ export async function fetchTranscripts(): Promise<void> {
     return;
   }
   ensureDir(TRANSCRIPTS_DIR);
+  log(getCookie() ? "YT_COOKIE 감지 — 쿠키 인증(WEB) 우선 시도" : "YT_COOKIE 없음 — 익명 폴백만 시도(차단 시 실패)");
 
   for (const item of queue) {
     const outFile = path.join(TRANSCRIPTS_DIR, `${item.videoId}.json`);
