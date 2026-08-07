@@ -23,14 +23,28 @@ export function getMeetings(): Meeting[] {
   const files = fs.readdirSync(MEETINGS_DIR).filter((f) => f.endsWith(".json"));
   const meetings = files.map((f) => {
     const m = JSON.parse(fs.readFileSync(path.join(MEETINGS_DIR, f), "utf-8")) as Meeting;
-    // 요약이 토큰 한도로 잘려 일부 배열 필드가 누락되더라도 페이지 렌더·빌드가
-    // 깨지지 않도록 보정한다(누락 = 빈 배열).
+    // 요약이 토큰 한도로 잘려 일부 필드가 누락(특히 3시간짜리 업무보고)되더라도
+    // 페이지 렌더·빌드가 깨지지 않도록 모든 배열·요약 필드를 방어적으로 보정한다.
+    m.summary = {
+      oneLine: m.summary?.oneLine ?? "",
+      overview: m.summary?.overview ?? "",
+      agenda: Array.isArray(m.summary?.agenda) ? m.summary.agenda : [],
+      remarks: Array.isArray(m.summary?.remarks) ? m.summary.remarks : [],
+    };
     m.exchanges = (Array.isArray(m.exchanges) ? m.exchanges : []).map((ex) => ({
       ...ex,
       turns: Array.isArray(ex?.turns) ? ex.turns : [],
     }));
-    m.directives = Array.isArray(m.directives) ? m.directives : [];
-    m.aiDataPolicy = Array.isArray(m.aiDataPolicy) ? m.aiDataPolicy : [];
+    m.directives = (Array.isArray(m.directives) ? m.directives : []).map((d) => ({
+      ...d,
+      to: Array.isArray(d?.to) ? d.to : [],
+      tags: Array.isArray(d?.tags) ? d.tags : [],
+      followUps: Array.isArray(d?.followUps) ? d.followUps : [],
+    }));
+    m.aiDataPolicy = (Array.isArray(m.aiDataPolicy) ? m.aiDataPolicy : []).map((a) => ({
+      ...a,
+      tags: Array.isArray(a?.tags) ? a.tags : [],
+    }));
     return m;
   });
   meetings.sort((a, b) => (a.date < b.date ? 1 : -1));
