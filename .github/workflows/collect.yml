@@ -13,6 +13,10 @@ on:
       since:
         description: "이 날짜(YYYY-MM-DD) 이후 영상만 수집"
         required: false
+      reconcile:
+        description: "출처 대조·교체: 클립/삭제된 출처를 정상 공식 본편으로 바꿈(기존 회의 유지)"
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -53,6 +57,13 @@ jobs:
           R2_BUCKET: ${{ vars.R2_BUCKET }}
           SINCE: ${{ inputs.since }}
         run: npm run pipeline
+
+      - name: 출처 대조·교체 (수동 트리거 시)
+        if: ${{ inputs.reconcile }}
+        env:
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+          RECONCILE: "1"
+        run: npm run reconcile
 
       - name: 결과 커밋
         run: |

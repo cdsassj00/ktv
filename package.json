@@ -11,6 +11,7 @@
     "fetch:videos": "tsx scripts/fetch-videos.ts",
     "fetch:transcripts": "tsx scripts/fetch-transcripts.ts",
     "summarize": "tsx scripts/summarize.ts",
+    "reconcile": "tsx scripts/reconcile-sources.ts",
     "upload:r2": "tsx scripts/upload-r2.ts",
     "pipeline": "tsx scripts/pipeline.ts"
   },
