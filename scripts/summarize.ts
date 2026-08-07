@@ -90,15 +90,19 @@ ${chunk.text}
 JSON만 출력:
 {"segments":[{"speakerId":"...","kind":"...","summary":"...","quote":"...","timestamp":0}],"aiDataRelated":[0,2]}
 (aiDataRelated는 AI·데이터 정책 관련 segments의 인덱스 배열)`;
-  const parse = (t: string) => extractJson<{ segments: MappedSegment[]; aiDataRelated: number[] }>(t);
-  const text = await ask(prompt, 6000, "light");
+  // 잘린 응답이 복구돼 aiDataRelated가 없을 수 있으므로 기본값으로 정규화
+  const parse = (t: string) => {
+    const r = extractJson<{ segments?: MappedSegment[]; aiDataRelated?: number[] }>(t);
+    return { segments: r.segments ?? [], aiDataRelated: r.aiDataRelated ?? [] };
+  };
+  const text = await ask(prompt, 12000, "light");
   try {
     return parse(text);
   } catch {
-    // LLM이 이따금 깨진 JSON을 반환한다 — 한 번 더 엄격히 요청해 복구 시도
+    // LLM이 이따금 깨진 JSON을 반환한다 — 더 엄격히, 더 넉넉한 한도로 재요청
     const retry = await ask(
       prompt + "\n\n주의: 반드시 유효한 JSON만 출력하라. 문자열 값 안의 큰따옴표는 \\\" 로 escape하고, 코드펜스(```)는 쓰지 마라.",
-      6000,
+      12000,
       "light"
     );
     return parse(retry);
@@ -151,7 +155,7 @@ JSON만 출력 (스키마):
   "aiDataPolicy": [{"topic":"...","speakerId":"...","summary":"...","quote":"...","timestamp":0,"tags":["..."]}],
   "tags": ["..."]
 }`;
-  const text = await ask(prompt, 8000, "main");
+  const text = await ask(prompt, 16000, "main");
   const meeting = extractJson<Record<string, unknown>>(text);
   return {
     ...meeting,

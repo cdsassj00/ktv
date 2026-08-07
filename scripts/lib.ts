@@ -146,13 +146,54 @@ export function parseIsoDuration(iso: string): number {
   return Number(m[1] ?? 0) * 3600 + Number(m[2] ?? 0) * 60 + Number(m[3] ?? 0);
 }
 
-/** Claude 응답에서 JSON 추출 (코드펜스·전후 설명 제거) */
+/**
+ * 잘린 JSON 복구: LLM 출력이 토큰 한도에서 잘려 문자열·배열이 미완성일 때,
+ * 마지막으로 "완결된 요소"까지만 남기고 열린 괄호를 닫아 유효한 JSON으로 만든다.
+ * 예: {"segments":[{..},{..},{..←잘림  →  {"segments":[{..},{..}]}
+ * 복구 지점이 없으면 null.
+ */
+function closeTruncatedJson(s: string): string | null {
+  const stack: string[] = [];
+  let inStr = false;
+  let esc = false;
+  let cut = -1;
+  let cutStack: string[] = [];
+  for (let i = 0; i < s.length; i++) {
+    const c = s[i];
+    if (inStr) {
+      if (esc) esc = false;
+      else if (c === "\\") esc = true;
+      else if (c === '"') inStr = false;
+      continue;
+    }
+    if (c === '"') inStr = true;
+    else if (c === "{") stack.push("}");
+    else if (c === "[") stack.push("]");
+    else if (c === "}" || c === "]") {
+      stack.pop();
+      cut = i + 1; // 컨테이너가 닫힌 직후 = 안전한 절단 지점
+      cutStack = [...stack];
+    }
+  }
+  if (cut === -1) return null;
+  return s.slice(0, cut) + cutStack.reverse().join("");
+}
+
+/** Claude 응답에서 JSON 추출 (코드펜스·전후 설명 제거, 토큰 한도로 잘린 경우 복구) */
 export function extractJson<T>(text: string): T {
   const fenced = text.match(/```(?:json)?\s*([\s\S]*?)```/);
   const raw = fenced ? fenced[1] : text;
   const start = raw.search(/[[{]/);
   if (start === -1) throw new Error(`JSON을 찾을 수 없음: ${text.slice(0, 200)}`);
-  return JSON.parse(raw.slice(start)) as T;
+  const body = raw.slice(start);
+  try {
+    return JSON.parse(body) as T;
+  } catch {
+    // 토큰 한도로 잘린 응답이면 완결된 요소까지 살려 복구
+    const repaired = closeTruncatedJson(body);
+    if (repaired) return JSON.parse(repaired) as T;
+    throw new Error(`JSON 파싱 실패(복구 불가): …${body.slice(-120)}`);
+  }
 }
 
 export function log(msg: string) {
