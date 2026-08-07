@@ -1,0 +1,875 @@
+{
+  "id": "2026-08-04-briefing-hbe2bj",
+  "type": "briefing",
+  "title": "(26.8.4.) 산업통상부·지식재산처·기후에너지환경부·기상청·원자력안전위원회 업무보고｜삶으로 체감하는 대체불가 대한민국",
+  "date": "2026-08-04",
+  "summary": {
+    "oneLine": "산업통상부·지식재산처·기후에너지환경부·기상청·원자력안전위원회가 초격차 산업·에너지 강국 실현을 위한 하반기 업무계획을 보고하고, 대통령과 함께 지역균형발전, 산업 AI전환, 에너지 안보, 지식재산 전략, 전력·수자원 관리 등을 논의했다.",
+    "overview": "이재명 대통령은 인사말을 통해 저성장에서 성장률이 회복되는 변화가 국민 실생활에 체감되어야 한다고 강조하고, 인공지능 중심의 산업 대격변기 속에서 '대체불가 대한민국'을 만들기 위한 지방 중심 산업지도 재편, 투자 걸림돌 제거, 통상정책의 유연한 국익중심 운용, 원유 도입국 다변화, 탈탄소 전환의 성장동력화, 원전 안전성 투명공개, 지식재산의 국가자산화 등을 당부했다.\n\n산업통상부 김정관 장관은 '키우고(산업강국 유산 확대)·넓히고(지방·해외 경제영토 확장)·다지고(산업자원 안보 강화)'라는 하반기 3대 전략을 보고했다. 3대 메가프로젝트(호남권 반도체 클러스터 등), MAX얼라이언스를 통한 제조 AI전환, 메가특구법 제정, 재생에너지 자립도시 특별법, CPTPP 가입 검토, 산업자원보 기금 신설 등이 핵심 내용이었다. 대통령은 산업부가 대기업·국가산업 중심이어서 중소기업과의 상생 구조가 부족해 보인다고 지적했고, 장관은 '산업의 함께 성장 프로젝트' 등으로 대응하겠다고 답했다. 한성숙 총리는 부처간 협업(중기부·기후부·산업부)을 통한 생태계 조성이 중요하다고 덧붙였고, 대통령은 이를 총리가 챙기도록 지시했다.\n\n이어 강원랜드, KOTRA, 광해광업공단, 로봇산업진흥원, 무역보험공사, 한국산업기술원, 한국산업단지공단, 한국석유공사 등 산하기관에 대한 현안 점검이 이어졌다. 특히 무역보험공사에는 낮은 사고율을 근거로 보험 한도 확대를 지시했고, 석유공사에는 원유 수입선 다변화 역할이 미약했음을 지적하며 각별한 신경을 당부했다. 광해광업공단의 과거 해외자원개발 실패(안바토비 니켈, 볼레오 구리 사업 등)에 대해서도 원인을 짚었다.\n\n지식재산처 김용선 처장은 알파고 이후 AI시대에 대응한 지식재산 전략, K브랜드 정부인증제, IP수익화펀드 확대, 국가 IP통합관리체계, 기술유출 전담수사조직 등을 보고했다. 대통령은 사업화 전 기술거래 시스템의 진척이 더디다고 질책하며 관계부처 협의 및 종합보고서 제출을 지시했다.\n\n환경부(기후에너지환경부) 김성환 장관은 메가프로젝트 전력·용수 공급, 재생에너지 100GW 조기달성, 발전공기업 재편, 물관리 통합(4대강→5대강 체계), 순환경제 등을 보고했다. 이어진 질의응답에서 대통령은 국립공원 불법시설 정비 현황, 댐 관리주체 통합, 전력망 확충 속도와 재원조달 문제를 집중 점검하며 정책실 주관의 중장기 플랜 수립을 지시했다. 기상청과 원자력안전위원회도 짧게 하반기 계획을 보고했으며, 국민참여단은 반도체 인재양성 지속지원, 바이오 소부장 국산화 연계, 평택 대기환경 규제, 담배꽁초 환경부담금, 태양광·전력피크 등 다양한 현장 의견을 제시했다."
+  },
+  "agenda": [
+    {
+      "title": "대통령 인사말 및 산업·에너지 정책 방향 제시",
+      "summary": "초격차 산업·에너지 강국, 지역균형발전, 통상정책, 탈탄소, 원전안전, 지식재산 강조",
+      "timestamp": 1
+    },
+    {
+      "title": "산업통상부 2026년 하반기 업무계획 보고",
+      "summary": "키우고·넓히고·다지고 3대 전략, 메가프로젝트, MAX얼라이언스, 산업자원안보",
+      "timestamp": 26
+    },
+    {
+      "title": "산업부 산하기관 현안 점검",
+      "summary": "강원랜드·KOTRA·광해광업공단·로봇산업진흥원·무역보험공사·산업기술원·산업단지공단·석유공사 질의응답",
+      "timestamp": 3009
+    },
+    {
+      "title": "지식재산처 업무보고 및 질의",
+      "summary": "AI시대 지식재산 전략, K브랜드 인증, 기술거래시스템 문제 지적",
+      "timestamp": 67
+    },
+    {
+      "title": "기후에너지환경부 업무보고 및 질의",
+      "summary": "전력·용수 공급, 재생에너지 확대, 물관리 통합, 순환경제, 전력망 확충",
+      "timestamp": 80
+    },
+    {
+      "title": "기상청·원자력안전위원회 업무보고",
+      "summary": "세밀한 기상정보 제공, 원전 안전성 확인 및 SMR 규제체계 구축",
+      "timestamp": 89
+    },
+    {
+      "title": "국민참여단 및 온라인 의견 수렴",
+      "summary": "반도체 인재양성, 바이오 소부장, 평택 대기환경, 담배꽁초 환경문제, 태양광·전력피크 등",
+      "timestamp": 3731
+    }
+  ],
+  "remarks": [
+    {
+      "speakerId": "president",
+      "quote": "핵심은 대체불가 대한민국, 대체 불가능한 우리만의 경쟁력을 만드는 것입니다.",
+      "context": "인공지능 중심 산업 대격변기 대응 방향 제시",
+      "timestamp": 26
+    },
+    {
+      "speakerId": "motie-minister",
+      "quote": "절체 절명의 시기의 산업부는 지역 성장 올인, 제조 AI 대전환, 친통상 전략 등 세 가지 정책 방향을 국민과 대통령님께 보고드리고 추진한 바 있습니다.",
+      "context": "산업통상부 정책 방향 3대 축 설명",
+      "timestamp": 50
+    },
+    {
+      "speakerId": "president",
+      "quote": "산업 생태계라고 하는게... 수평적으로 네트워을 유지하면서 소위 상생해야 이게 건전한 산업 경제 생태 대계가 만들어지잖아요.",
+      "context": "대기업-중소기업 수직적 관계 개선 필요성 지적",
+      "timestamp": 3718
+    },
+    {
+      "speakerId": "pm2",
+      "quote": "중소벤처 기업부, 기후부, 뭐 산업부 모두 모여서 같이 생태계를 만드는 그 공동의 과제들이 지금 이제 메가프젝트가 저는 그런 굉장히 중요한 과제가 될 거라고 생각하는데요.",
+      "context": "부처간 협업의 필요성 강조",
+      "timestamp": 3910
+    },
+    {
+      "speakerId": "ipo-minister",
+      "quote": "9개월 만에 특허 등록 27만 여건의 아이디어가 모인 모두의 아이디어로 지식재산 금융 12조 4천억 원 돌파",
+      "context": "지식재산처 출범 후 초기 성과 보고",
+      "timestamp": 68
+    },
+    {
+      "speakerId": "me-minister",
+      "quote": "AI 3대 메가 프로젝트의 성공은 전력과 용수 공급 능력에 달려 있습니다.",
+      "context": "메가프로젝트 지원을 위한 전력·용수 공급계획 보고",
+      "timestamp": 80
+    }
+  ],
+  "exchanges": [
+    {
+      "id": "ex-01",
+      "topic": "산업부-중소기업 상생 및 K자 성장 대책",
+      "turns": [
+        {
+          "speakerId": "president",
+          "kind": "질문",
+          "summary": "산업부가 대기업·국가산업 위주로 보이며 중소기업 대책을 묻는다.",
+          "quote": "산업부가 마치 중소기업을 뭐 같이 안 하는 것처럼 보여 있어서 그런데 그 대책 얘기 한번 해 보세요.",
+          "timestamp": 3656,
+          "inReplyTo": null
+        },
+        {
+          "speakerId": "motie-minister",
+          "kind": "답변",
+          "summary": "산업의 함께 성장 프로젝트, K콘텐츠 유통망 지원 등을 통해 중소기업을 지원할 계획이라 답한다.",
+          "quote": "저희들이 새로 만드는 프로젝트 프로그램 중에 하나가 산업의 함께 성장 프로젝트가 있습니다.",
+          "timestamp": 3668,
+          "inReplyTo": 0
+        },
+        {
+          "speakerId": "president",
+          "kind": "발언",
+          "summary": "대기업과 중소기업의 수직적 관계가 수평적 네트워크로 전환되어야 한다고 강조한다.",
+          "quote": "근데 한때 우리 산업 구조가 힘센 대기들에게 나머지가 거의 뭐 착취당하는... 이제는 이게 수평적인 네트워으로 바뀌어 가야 되지 않습니까?",
+          "timestamp": 3738,
+          "inReplyTo": 1
+        },
+        {
+          "speakerId": "motie-minister",
+          "kind": "답변",
+          "summary": "대기업과 중소기업 간 영업이익률 격차 문제에 동의한다.",
+          "quote": "최근에 어떤 산업 영역에는 뭐 대기업의 영업 이익률은 뭐 70%를 넘는다... 관련 중소 기업들은 어 영업 이익률이 뭐 8%",
+          "timestamp": 3763,
+          "inReplyTo": 2
+        },
+        {
+          "speakerId": "president",
+          "kind": "질문",
+          "summary": "산업 경제 문화 개선과 중소기업 분야 관심 확대를 요청한다.",
+          "quote": "어쨌든 대교업과 주요 국가 산업 정책을 산업부가 담당을 하기 때문에... 이런 중소기업 분야나 또 기업 생태계에 대한 관심을 충분히 갖고 계시겠지만 좀 더 많이 가져 주시면 좋겠다는게 제 생각입니다.",
+          "timestamp": 3827,
+          "inReplyTo": 3
+        },
+        {
+          "speakerId": "pm2",
+          "kind": "발언",
+          "summary": "중소벤처기업부는 대기업 구조조정 결정에 개입할 수 없어 사후 대책이 미흡하다고 지적한다.",
+          "quote": "중소벤처 기업부는 어떤 결정도 할 수 없는 상황 속에서 대기업의 구조의 결정이 이루어지고... 경안정 자금 주는 형태의 구조라면 사실 지금의 경쟁력이 계속해서 좋아지기 어렵다",
+          "timestamp": 3890,
+          "inReplyTo": 4
+        },
+        {
+          "speakerId": "pm2",
+          "kind": "발언",
+          "summary": "중기부·기후부·산업부가 함께 생태계를 만드는 협업 구조가 필요하며 메가프로젝트가 중요한 사례라고 본다.",
+          "quote": "중소벤처 기업부, 기후부, 뭐 산업부 모두 모여서 같이 생태계를 만드는 그 공동의 과제들이 지금 이제 메가프젝트",
+          "timestamp": 3910,
+          "inReplyTo": 5
+        },
+        {
+          "speakerId": "president",
+          "kind": "지시",
+          "summary": "총리가 중소기업·산업생태계 문제를 앞으로 챙기도록 지시한다.",
+          "quote": "총리께서 앞으로 총리의 업무 중에 하나니까 잘 챙겨 주시면 될 것 같습니다.",
+          "timestamp": 3964,
+          "inReplyTo": 6
+        }
+      ]
+    },
+    {
+      "id": "ex-02",
+      "topic": "강원랜드 현황 및 지방 카지노 요구",
+      "turns": [
+        {
+          "speakerId": "president",
+          "kind": "질문",
+          "summary": "강원랜드가 유일한 내국인 출입 카지노인지 확인한다.",
+          "quote": "강원랜드는 지금 현재 국내 내국인 출입 가능한 카지노가 유일하죠?",
+          "timestamp": 3012,
+          "inReplyTo": null
+        },
+        {
+          "speakerId": "unknown",
+          "kind": "답변",
+          "summary": "카지노 18개 중 강원랜드만 내국인 출입 가능, 나머지 17개는 외국인 전용이라 답한다.",
+          "quote": "카지노 전체가 총 18개고요. 그중에 내국인 카지노 강원랜드가 유일합니다.",
+          "timestamp": 3043,
+          "inReplyTo": 0
+        },
+        {
+          "speakerId": "president",
+          "kind": "질문",
+          "summary": "지방의 카지노 설립 요구에 대한 입장을 묻는다.",
+          "quote": "지금 저기 지방 사정들이 워낙 나쁘다 보니까 우리도 지금 내국인 출입 카지노 만들어 달라고 여기저기서 요구를 하는데",
+          "timestamp": 3054,
+          "inReplyTo": 1
+        },
+        {
+          "speakerId": "unknown",
+          "kind": "답변",
+          "summary": "강원랜드는 폐광지역 대안사업으로 시작되었음을 설명한다.",
+          "quote": "강원도는 폐광 지역이 많아서지면서 그 대안으로 어 시작한 일이긴 하죠.",
+          "timestamp": 3113,
+          "inReplyTo": 2
+        },
+        {
+          "speakerId": "president",
+          "kind": "질문",
+          "summary": "매출 감소 소문에 대해 확인한다.",
+          "quote": "매출이 좀 줄었다는 소문이 있던데 그런가요?",
+          "timestamp": 3131,
+          "inReplyTo": 3
+        },
+        {
+          "speakerId": "unknown",
+          "kind": "답변",
+          "summary": "인건비·물가상승으로 영업비용 증가, 이익 감소를 설명한다.",
+          "quote": "기본적으로 저기 인건비 상승과 물가 상승률 등으로 인한 영업 비용이 증가하다 보니까",
+          "timestamp": 3133,
+          "inReplyTo": 4
+        }
+      ]
+    },
+    {
+      "id": "ex-03",
+      "topic": "KOTRA 수출 지원 역할",
+      "turns": [
+        {
+          "speakerId": "president",
+          "kind": "질문",
+          "summary": "수출 급증 상황에서 KOTRA의 역할을 질문한다.",
+          "quote": "지금 대한민국의 무역, 특히 수출이 급증하고 있는데, 새로운 시장 개척이나 수출 품목 개발에 대해 코트라는 어떤 역할을 합니까?",
+          "timestamp": 3207,
+          "inReplyTo": null
+        },
+        {
+          "speakerId": "unknown",
+          "kind": "답변",
+          "summary": "품목·지역·수출주체 다변화를 추진 중이라 답한다.",
+          "quote": "품목으로는 반도체 이외의 품목을 발굴해서 수출을 늘리는 거고요.",
+          "timestamp": 3229,
+          "inReplyTo": 0
+        },
+        {
+          "speakerId": "president",
+          "kind": "질문",
+          "summary": "바이어 연결의 어려움에 대해 지적한다.",
+          "quote": "루트를 뚫는게 수요도 있는 거 같고 현지에 수출 의지도 있는데 문제는 연결이 그렇게 쉽지는 않다는 측면이죠.",
+          "timestamp": 3338,
+          "inReplyTo": 1
+        },
+        {
+          "speakerId": "unknown",
+          "kind": "답변",
+          "summary": "전시상담을 통한 바이어 매칭사업을 설명한다.",
+          "quote": "시장 개척을 해야 되기 때문에 제일 우리 기업들이 희망하는게 바이어를 만나게 하고 매칭시키는 겁니다.",
+          "timestamp": 3320,
+          "inReplyTo": 2
+        },
+        {
+          "speakerId": "president",
+          "kind": "질문",
+          "summary": "KOTRA와 재외공관 간 협업 현황을 확인한다.",
+          "quote": null,
+          "timestamp": 3353,
+          "inReplyTo": 3
+        },
+        {
+          "speakerId": "unknown",
+          "kind": "답변",
+          "summary": "86개국 132개 무역관이 대사관과 연계 운영됨을 설명한다.",
+          "quote": "코트라 해외 무역관이 86개국 132개로 운영하고 있는데 주재국 우리 한국 대사관하고 다 연결되어서",
+          "timestamp": 3404,
+          "inReplyTo": 4
+        }
+      ]
+    },
+    {
+      "id": "ex-04",
+      "topic": "광해광업공단 해외자원개발 실패 원인",
+      "turns": [
+        {
+          "speakerId": "president",
+          "kind": "질문",
+          "summary": "광물자원공사가 핵심 광물 공급망 확보의 중심 역할을 못하는 이유를 묻는다.",
+          "quote": "광물 자원 공사가 국외 핵심 광물 공급망 확보의 중심 역할을 해야 되는데 원래는 지금은 그렇지 못한 상황인 거 같아요.",
+          "timestamp": 3550,
+          "inReplyTo": null
+        },
+        {
+          "speakerId": "unknown",
+          "kind": "답변",
+          "summary": "과거 무리한 해외자원개발 투자로 인한 손실이 원인이라 답한다.",
+          "quote": "과거 한 10여년 전 정부에서의 무리한 해외자원 개발 투자로 인해서 엄청난 손실을 겪었습니다.",
+          "timestamp": 3610,
+          "inReplyTo": 0
+        },
+        {
+          "speakerId": "president",
+          "kind": "질문",
+          "summary": "부채 규모를 확인한다.",
+          "quote": null,
+          "timestamp": 3649,
+          "inReplyTo": 1
+        },
+        {
+          "speakerId": "unknown",
+          "kind": "답변",
+          "summary": "부채 약 8조원, 자산 약 4조원임을 답한다.",
+          "quote": "부채 규모가 지금 8조원 가까이 됩니다. 자산은 한 4조 몇 천억?",
+          "timestamp": 3649,
+          "inReplyTo": 2
+        },
+        {
+          "speakerId": "president",
+          "kind": "질문",
+          "summary": "조 단위 투자 실패 사례를 확인한다.",
+          "quote": "조단위로 투자한게 나중에 보니까 몇백억밖에 안 남고 막 그런 것들이 몇 있는 거죠?",
+          "timestamp": 3723,
+          "inReplyTo": 3
+        },
+        {
+          "speakerId": "unknown",
+          "kind": "답변",
+          "summary": "안바토비 니켈, 볼레오 구리 사업이 대표적 실패 사례라 답한다.",
+          "quote": "볼레오하고 안바톱비입니다.",
+          "timestamp": 3734,
+          "inReplyTo": 4
+        },
+        {
+          "speakerId": "president",
+          "kind": "질문",
+          "summary": "구리광산 사업 실패 원인을 재질문한다.",
+          "quote": null,
+          "timestamp": 3742,
+          "inReplyTo": 5
+        },
+        {
+          "speakerId": "unknown",
+          "kind": "답변",
+          "summary": "소액 투자 후 무리한 증액과 플랜트 운영으로 손실이 커졌다고 답한다.",
+          "quote": "초기에는 소액으로 들어갔다가 나중에 별로 좋지 않은 조건에서 투자를 무리하게 늘리면서",
+          "timestamp": 3753,
+          "inReplyTo": 6
+        },
+        {
+          "speakerId": "president",
+          "kind": "질문",
+          "summary": "산업부에 핵심 광물 공급망 확보 전략을 질문한다.",
+          "quote": "핵심 광물 공급망을 어쨌든 우리가 다시 확충을 해야 되는데 확보를 해야 되는데 그건 어떻게 어 어떤 시스템으로 하기로 하셨어요?",
+          "timestamp": 3809,
+          "inReplyTo": 7
+        },
+        {
+          "speakerId": "motie-minister",
+          "kind": "답변",
+          "summary": "비축 확대, 해외자원개발, 민간중심 체계 구축 3가지를 계획 중이라 답한다.",
+          "quote": "저희는 지금 세 가지 정도를 생각을 하고 있습니다. 비축을 늘리는게 하나 필요합니다.",
+          "timestamp": 3825,
+          "inReplyTo": 8
+        },
+        {
+          "speakerId": "president",
+          "kind": "발언",
+          "summary": "해외자원개발의 부정부패와 검증의 어려움을 지적한다.",
+          "quote": "하여튼 이게 부정부패가 제일 문제잖아. 사실은 워낙 이게 해외에서 벌어지는 일이고 검증이나 감시도 쉽지가 않고",
+          "timestamp": 4025,
+          "inReplyTo": 9
+        }
+      ]
+    },
+    {
+      "id": "ex-05",
+      "topic": "무역보험공사 보험한도 확대",
+      "turns": [
+        {
+          "speakerId": "president",
+          "kind": "질문",
+          "summary": "무역보험이 수출업체 지원에 필요한지 질문한다.",
+          "quote": "지금 무역 보험을 취급하면은 이게 지금 무역 보험을 해야 이제 수출 업체들이 좀 쉽게 수출 업무를 하는 것 같죠?",
+          "timestamp": 4252,
+          "inReplyTo": null
+        },
+        {
+          "speakerId": "unknown",
+          "kind": "답변",
+          "summary": "바이어 위험도가 높을 때 큰 도움이 된다고 답한다.",
+          "quote": "바이어가 불확실하거나 좀 위험한 경우 특히 많은 도움이 되고 있습니다.",
+          "timestamp": 4305,
+          "inReplyTo": 0
+        },
+        {
+          "speakerId": "president",
+          "kind": "질문",
+          "summary": "보험 커버 범위를 확인한다.",
+          "quote": null,
+          "timestamp": 4311,
+          "inReplyTo": 1
+        },
+        {
+          "speakerId": "unknown",
+          "kind": "답변",
+          "summary": "95% 이상 전액 커버 제공한다고 답한다.",
+          "quote": "대부분 전액 95% 이상 그 커버를 해 주고 있습니다.",
+          "timestamp": 4315,
+          "inReplyTo": 2
+        },
+        {
+          "speakerId": "president",
+          "kind": "질문",
+          "summary": "보험료 수준을 확인한다.",
+          "quote": null,
+          "timestamp": 4321,
+          "inReplyTo": 3
+        },
+        {
+          "speakerId": "unknown",
+          "kind": "답변",
+          "summary": "보험료 0.3% 수준이며 중소기업 지원 다수라 답한다.",
+          "quote": "보험료는 저 0.3% 정도인데 중소기업 같은 경우는 지자체나 협단체에서 대부분 지원해 주기 때문에",
+          "timestamp": 4323,
+          "inReplyTo": 4
+        },
+        {
+          "speakerId": "president",
+          "kind": "질문",
+          "summary": "실제 사고율을 재확인한다.",
+          "quote": "내가 물어보는 거는 보험을 들었는데 사고가 얼마나 나냐이 말이잖.",
+          "timestamp": 4404,
+          "inReplyTo": 5
+        },
+        {
+          "speakerId": "unknown",
+          "kind": "답변",
+          "summary": "정확한 통계는 없으나 매우 낮을 것이라 답한다.",
+          "quote": "저희들 그 보면은 뭐 굉장히 낮은 그 사고들 자체는 굉장히 낮을 것으로 생각됩니다.",
+          "timestamp": 4427,
+          "inReplyTo": 6
+        },
+        {
+          "speakerId": "president",
+          "kind": "질문",
+          "summary": "수출기업의 요구를 다 충족하는지 확인한다.",
+          "quote": null,
+          "timestamp": 4455,
+          "inReplyTo": 7
+        },
+        {
+          "speakerId": "unknown",
+          "kind": "답변",
+          "summary": "요구하는 만큼 대응하고 있다고 답한다.",
+          "quote": "예, 그렇습니다.",
+          "timestamp": 4459,
+          "inReplyTo": 8
+        },
+        {
+          "speakerId": "president",
+          "kind": "질문",
+          "summary": "충분치 못해 확대 요청이 나오는 것 아닌지 재질문한다.",
+          "quote": "그럼 제가 물어봤잖아요. 그게 충분히 해 주고 있냐고 충분치 못하니까 늘려 달라고 했겠죠.",
+          "timestamp": 2771,
+          "inReplyTo": 9
+        },
+        {
+          "speakerId": "unknown",
+          "kind": "답변",
+          "summary": "기업들은 항상 확대를 요청하나 최근 대폭 확대해왔다고 답한다.",
+          "quote": "기업들은 늘 저 다다익선이라고 하지만 저희들은 과거에 비해서 지금 최근에 2, 3년 동안 계속 대폭적으로 늘리고 있습니다.",
+          "timestamp": 2820,
+          "inReplyTo": 10
+        },
+        {
+          "speakerId": "president",
+          "kind": "지시",
+          "summary": "사고율이 낮으므로 보험을 대폭 확대하도록 제안한다.",
+          "quote": "사고율도 그 높지 않고 보험료 0.3% 징수 한 걸로 보험금 지급 충분히 할 수 있다고 하면 좀 더 대폭 늘려서 수출 기업들이 보험을 하 가입하고 싶으면 다 해 주는게 맞일 텐데요.",
+          "timestamp": 2826,
+          "inReplyTo": 11
+        },
+        {
+          "speakerId": "unknown",
+          "kind": "답변",
+          "summary": "확대 방안을 적극 검토하겠다고 답한다.",
+          "quote": "예. 지금도 하고 있는데 말씀대로 저 더욱더 확대하는 방안을 찾아보겠습니다.",
+          "timestamp": 2846,
+          "inReplyTo": 12
+        },
+        {
+          "speakerId": "president",
+          "kind": "지시",
+          "summary": "통제적 입장을 넘어 적극적으로 확대 방안을 검토하도록 지시한다.",
+          "quote": "현장의 기업 추출 기업들이 그 겪는 어려움이 있으면 그 반료적인 입장에서 통제 하는 것을 좀 넘어서서 적극적으로 좀 늘려가는 방향을 검토해 보십시오.",
+          "timestamp": 2924,
+          "inReplyTo": 13
+        },
+        {
+          "speakerId": "unknown",
+          "kind": "답변",
+          "summary": "지시를 수용하겠다고 답한다.",
+          "quote": "예. 알겠습니다.",
+          "timestamp": 2940,
+          "inReplyTo": 14
+        }
+      ]
+    },
+    {
+      "id": "ex-06",
+      "topic": "산업단지공단 관리 체계",
+      "turns": [
+        {
+          "speakerId": "president",
+          "kind": "질문",
+          "summary": "국가 산업단지 전체 관리 현황을 확인한다.",
+          "quote": "산단 국가 산단 전체로 관리합니까?",
+          "timestamp": 3032,
+          "inReplyTo": null
+        },
+        {
+          "speakerId": "unknown",
+          "kind": "답변",
+          "summary": "1366개 산단 중 국가산단 55개, 산단공 직접관리 36개라 답한다.",
+          "quote": "산업 단지가 1366개가 있는데 그 국가 산업 단지가 55개가 있고요.",
+          "timestamp": 3036,
+          "inReplyTo": 0
+        },
+        {
+          "speakerId": "president",
+          "kind": "질문",
+          "summary": "나머지 산단 관리주체를 확인한다.",
+          "quote": "나머지는 어디서 관리해요?",
+          "timestamp": 3048,
+          "inReplyTo": 1
+        },
+        {
+          "speakerId": "unknown",
+          "kind": "답변",
+          "summary": "각 관리권자가 직접 관리한다고 답한다.",
+          "quote": "아 나머지는 그 관리권자가 직접 관리습니다.",
+          "timestamp": 3050,
+          "inReplyTo": 2
+        },
+        {
+          "speakerId": "president",
+          "kind": "질문",
+          "summary": "직접관리와 비직접관리의 차이를 재차 질문한다.",
+          "quote": "내가 질문하는 거 잘 못 알아 드리신 분인데 산업 단지 공단이 직접 관리하는 국가 산단하고... 어떤 차이가 있냐고 물어봤잖아요.",
+          "timestamp": 3126,
+          "inReplyTo": 3
+        },
+        {
+          "speakerId": "unknown",
+          "kind": "답변",
+          "summary": "국가산단과 일반산단의 구분을 설명하려 시도한다.",
+          "quote": "아 저기 산업 단지가 국가 산단하고 또 일반 산단들이 있습니다.",
+          "timestamp": 3142,
+          "inReplyTo": 4
+        },
+        {
+          "speakerId": "unknown",
+          "kind": "발언",
+          "summary": "산업부 차관이 용인 삼성 국가산단 사례로 명확히 설명한다.",
+          "quote": "예를 들어서 설명드리는게 쉬울 거 같은데요. 용인의 국가산단을 삼성이 하고 있지 않습니까?",
+          "timestamp": 3243,
+          "inReplyTo": 5
+        }
+      ]
+    },
+    {
+      "id": "ex-07",
+      "topic": "석유공사 원유수급 위기 대응 역할",
+      "turns": [
+        {
+          "speakerId": "president",
+          "kind": "질문",
+          "summary": "원유수급 위기 때 석유공사 역할이 미약했던 이유를 질문한다.",
+          "quote": "이번에 원유 수급 위기 때 별로 눈에 안 뛴 거 같아요. 왜 그랬을까요?",
+          "timestamp": 3509,
+          "inReplyTo": null
+        },
+        {
+          "speakerId": "unknown",
+          "kind": "답변",
+          "summary": "전략비축·국제공동비축을 통해 정유사에 공급했다고 설명한다.",
+          "quote": "전략 비중률을 수압을 통해서 정유사에다가 저희도 2,687만 배를 공급했고",
+          "timestamp": 3527,
+          "inReplyTo": 0
+        },
+        {
+          "speakerId": "president",
+          "kind": "질문",
+          "summary": "새로운 원유 도입선 확보가 석유공사의 역할인지 확인한다.",
+          "quote": "새로운 이제 원유 도입선을 확보한다든지 뭐 그런 것들은",
+          "timestamp": 3540,
+          "inReplyTo": 1
+        },
+        {
+          "speakerId": "unknown",
+          "kind": "답변",
+          "summary": "도입선 확보는 정유사·트레이딩사가 주로 수행하며 공사는 지원 역할이라 답한다.",
+          "quote": "공급망 확중을 저희들이 정유사나 아니면 트레이딩사... 이제 합작 투자를 하거나 이런 방법을 통해서 하고 있습니다.",
+          "timestamp": 3549,
+          "inReplyTo": 2
+        },
+        {
+          "speakerId": "president",
+          "kind": "질문",
+          "summary": "석유공사 차원의 구체적 다변화 활동을 재질문한다.",
+          "quote": "석유 공사 차원에서 한 건 뭐가 있어요?",
+          "timestamp": 3608,
+          "inReplyTo": 3
+        },
+        {
+          "speakerId": "unknown",
+          "kind": "답변",
+          "summary": "특사와 카자흐스탄 동행, 캐나다 앨버타주 방문 계획을 답한다.",
+          "quote": "지난번에도 우리 특사님 같이이 그 카자스탄도 같이 동행을 했었고... 8월 중에 방문할 예정입니다.",
+          "timestamp": 3625,
+          "inReplyTo": 4
+        },
+        {
+          "speakerId": "president",
+          "kind": "지시",
+          "summary": "원유수입 다변화를 각별히 신경쓰도록 지시한다.",
+          "quote": "어쨌든 원유 수입 다변화는 좀 각별히 신경 써야 될 일인데 석유공사의 주요 업무 중에 하나이죠.",
+          "timestamp": 3640,
+          "inReplyTo": 5
+        },
+        {
+          "speakerId": "unknown",
+          "kind": "답변",
+          "summary": "신경쓰겠다고 답한다.",
+          "quote": "예. 저희 신경 쓰겠습니다.",
+          "timestamp": 3703,
+          "inReplyTo": 6
+        }
+      ]
+    },
+    {
+      "id": "ex-08",
+      "topic": "지식재산처 기술거래시스템 통합 지시",
+      "turns": [
+        {
+          "speakerId": "president",
+          "kind": "질문",
+          "summary": "사업화 전 단계 기술거래 시스템 존재 여부를 확인한다.",
+          "quote": "이게 사업화되기 전 단계의 기술을 거래하는 시스템은 있나요?",
+          "timestamp": 76,
+          "inReplyTo": null
+        },
+        {
+          "speakerId": "ipo-minister",
+          "kind": "답변",
+          "summary": "부처별로 시스템이 있으나 실효성이 떨어진다고 답한다.",
+          "quote": "각 부처마다 산업부, 과기부, 중기부, 지식재산처 각 부처마다 운영되고 있습니다. 문제는 그게 좀 실효성이 떨어진다는 것입니다.",
+          "timestamp": 76,
+          "inReplyTo": 0
+        },
+        {
+          "speakerId": "president",
+          "kind": "질문",
+          "summary": "시스템 통합·연계 필요성을 지적한다.",
+          "quote": "그럼 통합을 하든지 뭐 아니면 같이 연계를 하든지 해야 될 거 아니에요.",
+          "timestamp": 77,
+          "inReplyTo": 1
+        },
+        {
+          "speakerId": "ipo-minister",
+          "kind": "답변",
+          "summary": "연계 작업 진행 중이나 효율성 과제가 있다고 답한다.",
+          "quote": "그래서 지금 역대 계속 각 부처 시스템을 연기하는 작업은 하고 있는데요.",
+          "timestamp": 77,
+          "inReplyTo": 2
+        },
+        {
+          "speakerId": "president",
+          "kind": "질문",
+          "summary": "취임 초 지적한 사안의 진척이 느린 이유를 재질문한다.",
+          "quote": "내가 취임 초기에 했던 거 같은데... 왜 진척이 이렇게 느리냐 그 말이에요.",
+          "timestamp": 76,
+          "inReplyTo": 3
+        },
+        {
+          "speakerId": "ipo-minister",
+          "kind": "답변",
+          "summary": "기술거래 전문가 양성, 지식재산거래소 신설 검토 중이라 답한다.",
+          "quote": "기술 전문가들이 수요자 공급자를 매치시키는... 현재 22명까지 내년에는 50명, 100명까지 늘려고 하고 있고요.",
+          "timestamp": 77,
+          "inReplyTo": 4
+        },
+        {
+          "speakerId": "president",
+          "kind": "지시",
+          "summary": "관계처 협의 결과와 종합보고서 제출을 지시한다.",
+          "quote": "그렇게 하십시오.",
+          "timestamp": 78,
+          "inReplyTo": 5
+        }
+      ]
+    },
+    {
+      "id": "ex-09",
+      "topic": "국립공원 불법시설물 정리",
+      "turns": [
+        {
+          "speakerId": "president",
+          "kind": "질문",
+          "summary": "국립공원 내 불법시설물 정리 여부를 확인한다.",
+          "quote": "국립공원 공단, 공원 내에 그 불법 시설물은 다 정리했습니까?",
+          "timestamp": 95,
+          "inReplyTo": null
+        },
+        {
+          "speakerId": "unknown",
+          "kind": "답변",
+          "summary": "432건 중 91%를 정비했으며 37건 남았다고 답한다.",
+          "quote": "불법 시설물들을 확인 결과 432건을 확인했고요, 91%를 정비했습니다.",
+          "timestamp": 96,
+          "inReplyTo": 0
+        },
+        {
+          "speakerId": "president",
+          "kind": "추가질문",
+          "summary": "공원 지정 전 불법시설은 자연공원법 적용이 어려워 지자체 이관 후 방치되지 않도록 주의를 요청한다.",
+          "quote": "공원 지정 전부터 있던 불법 시설은 자연공원법을 적용하기가 어려워서... 지자체 이관하고 저희가 협조 기관이 돼서 처리하도록 하겠습니다.",
+          "timestamp": 96,
+          "inReplyTo": 1
+        },
+        {
+          "speakerId": "president",
+          "kind": "지시",
+          "summary": "지자체 협조 부족 시 대통령실에 보고하도록 지시한다.",
+          "quote": "그거는 나중에 어디서 체크를 한번 하시죠. 지자체가 협조 안 되면 저희한테 말씀해 주세요.",
+          "timestamp": 97,
+          "inReplyTo": 2
+        },
+        {
+          "speakerId": "president",
+          "kind": "추가질문",
+          "summary": "고질적 불법시설 처리가 부진한 것 아닌지 의문을 제기한다.",
+          "quote": "그냥 고질적인 거 이거는 처리를 못 하고 있는 거 아닌가 하는 느낌이 듭니다.",
+          "timestamp": 97,
+          "inReplyTo": 3
+        },
+        {
+          "speakerId": "unknown",
+          "kind": "답변",
+          "summary": "89년 이전은 이전사업, 이후는 행정대집행으로 처리한다고 답한다.",
+          "quote": "89년 이전 건물인 경우 저희가 이전 사업을 하도록 되어 있습니다.",
+          "timestamp": 98,
+          "inReplyTo": 4
+        }
+      ]
+    },
+    {
+      "id": "ex-10",
+      "topic": "댐 관리 체계 및 수자원 통합관리",
+      "turns": [
+        {
+          "speakerId": "president",
+          "kind": "질문",
+          "summary": "댐 관리 주체를 확인한다.",
+          "quote": "댐 관리를 하는 데가 지금 수력 원자력은 댐에 설치된 발전 시설만 관리하는 거고 호수 자체는 어디 관리하는 건가요?",
+          "timestamp": 98,
+          "inReplyTo": null
+        },
+        {
+          "speakerId": "unknown",
+          "kind": "답변",
+          "summary": "발전용은 수력발전사, 다목적·홍수·식수는 수자원공사, 농업용은 농어촌공사가 관리한다고 답한다.",
+          "quote": "발전용 댐은 그 수력 원자력에서 관리하고 있고요.",
+          "timestamp": 98,
+          "inReplyTo": 0
+        },
+        {
+          "speakerId": "president",
+          "kind": "지시",
+          "summary": "수자원 통합관리를 환경부장관이 챙기도록 지시한다.",
+          "quote": "수자원 관리는 지금 통합 관리가 앞으로 되게 중요한 과제일 것 같긴 한데, 환경부장관께서 잘 챙겨야 될 것 같아요.",
+          "timestamp": 99,
+          "inReplyTo": 1
+        },
+        {
+          "speakerId": "unknown",
+          "kind": "답변",
+          "summary": "에너지·수자원 통합 후 농림부와 협업하면 해결 가능하다고 답한다.",
+          "quote": "에너지하고 수자원이 통합이 돼서 상당 부분 농림부를 빼면 거의 다 통합할 수 있는 상황이어서요.",
+          "timestamp": 99,
+          "inReplyTo": 2
+        }
+      ]
+    },
+    {
+      "id": "ex-11",
+      "topic": "전력망 확충 및 재원조달",
+      "turns": [
+        {
+          "speakerId": "president",
+          "kind": "질문",
+          "summary": "AI산업발전에 따른 전력수요 폭증에 대한 대책을 확인한다.",
+          "quote": "인공지능 관련 산업이 아주 초고속으로 발전하면서 전력 수요가 폭증했는데 송전망 확충이 어려울 것 같습니다. 충분한 대책이 있습니까?",
+          "timestamp": 99,
+          "inReplyTo": null
+        },
+        {
+          "speakerId": "unknown",
+          "kind": "답변",
+          "summary": "2025년 전력망법 제정 및 한전 전담조직 신설로 속도가 2배 늘었다고 답한다.",
+          "quote": "25년부터 전력망법이 재정되고 그리고 한전에 전력망 전담하는 조직이 만들어지고... 25년부터 속도가 두 배로 나고 있습니다.",
+          "timestamp": 100,
+          "inReplyTo": 0
+        },
+        {
+          "speakerId": "president",
+          "kind": "질문",
+          "summary": "재원 문제가 없는지 확인한다.",
+          "quote": "재원은 문제 없어요?",
+          "timestamp": 101,
+          "inReplyTo": 1
+        },
+        {
+          "speakerId": "unknown",
+          "kind": "답변",
+          "summary": "연 10조 규모 투자에 사채발행 등으로 충당 가능, 한전 흑자로 문제없다고 답한다.",
+          "quote": "재원은 뭐 한 1년에 투자비가 한 10조 정도 들어가는데요... 흑자를 내고 있기 때문에 문제가 없다고 볼 수 있습니다.",
+          "timestamp": 101,
+          "inReplyTo": 2
+        },
+        {
+          "speakerId": "president",
+          "kind": "지시",
+          "summary": "국민성장펀드 등 다양한 재원조달 방식을 검토한 중장기 플랜 수립을 지시한다.",
+          "quote": "내년 예산에도 중앙재정 한전 자체적으로 국민성장펀드 같이 사원화된 그런 역할분담 할 수 있도록 그렇게 중장기적인 플랜을 짜 가지고 비부하고 상의 중에 있습니다.",
+          "timestamp": 101,
+          "inReplyTo": 3
+        },
+        {
+          "speakerId": "president",
+          "kind": "지시",
+          "summary": "재원조달 차질 방지를 위해 정책실이 주관하도록 지시한다.",
+          "quote": "재원 조달이 쉽지는 않을 수도 있는데, 그거는 정책실이 좀 주관을 내서 차질 안 생기게 좀 해 주십시오.",
+          "timestamp": 102,
+          "inReplyTo": 4
+        }
+      ]
+    },
+    {
+      "id": "ex-12",
+      "topic": "태양광·풍력 전력피크 및 가상전력거래소",
+      "turns": [
+        {
+          "speakerId": "president",
+          "kind": "질문",
+          "summary": "재생에너지 발전 비중을 확인한다.",
+          "quote": "태양광 또는 풍력 발전 비중이 얼마나 됩니까?",
+          "timestamp": 6654,
+          "inReplyTo": null
+        },
+        {
+          "speakerId": "unknown",
+          "kind": "답변",
+          "summary": "재생에너지 평균 비중이 11%까지 올라왔으며 태양광이 압도적으로 많다고 답한다.",
+          "quote": "11% 평균 11%까지 올라왔습니다. 태양광이 압도적으로 많습니다.",
+          "timestamp": 6666,
+          "inReplyTo": 0
+        },
+        {
+          "speakerId": "president",
+          "kind": "질문",
+          "summary": "태양광의 낮 시간 집중 특성을 지적한다.",
+          "quote": "태양광은 해 뜨고 지기 전까지인데, 그 중에서 낮 시간에 또 집중되겠죠.",
+          "timestamp": 6697,
+          "inReplyTo": 1
+        },
+        {
+          "speakerId": "unknown",
+          "kind": "답변",
+          "summary": "태양광 영향으로 전력피크가 오후 5~7시로 이동했다고 설명한다.",
+          "quote": "현재 피크가 5시에서 7시에 걸리는 이유는 낮에 태양광이 그만큼 흡수해지기 때문입니다.",
+          "timestamp": 6755,
+          "inReplyTo": 2
+        }
+      ]
+    }
+  ],
+  "videoId": "hbe2bjScRZI",
+  "videoUrl": "https://youtu.be/hbe2bjScRZI",
+  "duration": 7233,
+  "thumbnail": "https://i.ytimg.com/vi/hbe2bjScRZI/hqdefault.jpg"
+}

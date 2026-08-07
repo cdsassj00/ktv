@@ -397,8 +397,15 @@
         "재생에너지",
         "신산업"
       ],
-      "status": "issued",
-      "followUps": []
+      "status": "reported",
+      "followUps": [
+        {
+          "meetingId": "2026-08-04-briefing-hbe2bj",
+          "exchangeId": "ex-11",
+          "summary": "에너지·원자재 공급망 전략적 다변화, 재생에너지 중심 에너지 믹스, 탈플라스틱 순환경제 이행 및 K산업 신엔진 육성 전략 보고",
+          "inferred": true
+        }
+      ]
     },
     {
       "id": "dir-2026-06-23-03",

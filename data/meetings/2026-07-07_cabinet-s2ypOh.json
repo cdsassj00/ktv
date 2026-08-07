@@ -212,8 +212,15 @@
         "기술탈취",
         "중소기업"
       ],
-      "status": "issued",
-      "followUps": []
+      "status": "reported",
+      "followUps": [
+        {
+          "meetingId": "2026-08-04-briefing-hbe2bj",
+          "exchangeId": "ex-04",
+          "summary": "기술탈취 근절을 위한 중기부·공정위·지재처·산업부의 기존 대책 보완 및 체계적 관리 방안 논의",
+          "inferred": true
+        }
+      ]
     },
     {
       "id": "dir-2026-07-07-04",
