@@ -50,11 +50,15 @@ let anthropicClient: Anthropic | null = null;
 
 async function askAnthropic(prompt: string, maxTokens: number, model: string): Promise<string> {
   anthropicClient ??= new Anthropic();
-  const res = await anthropicClient.messages.create({
+  // 큰 max_tokens(예: 3시간 업무보고 통합요약 32k)는 비스트리밍이면 10분 제한에
+  // 걸려 SDK가 막는다("Streaming is strongly recommended…"). 스트리밍으로 받아
+  // 최종 메시지를 조립한다(작은 출력에도 안전).
+  const stream = anthropicClient.messages.stream({
     model,
     max_tokens: maxTokens,
     messages: [{ role: "user", content: prompt }],
   });
+  const res = await stream.finalMessage();
   return res.content
     .filter((b): b is Anthropic.TextBlock => b.type === "text")
     .map((b) => b.text)
