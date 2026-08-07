@@ -101,6 +101,10 @@ async function searchChannelMeetings(
         q,
         type: "video",
         order: "date",
+        // 20분 이상 긴 영상만 — 국무회의·업무보고 본편은 모두 장시간이고,
+        // 쇼츠·클립·브이로그는 짧아서 검색 단계에서 원천 배제된다. 덕분에
+        // 짧은 영상에 밀려 안 보이던 제NN회 본편이 결과 상단에 드러난다.
+        videoDuration: "long",
         maxResults: "25",
         publishedAfter: publishedAfterISO,
       });
