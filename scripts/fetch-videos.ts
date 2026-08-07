@@ -27,6 +27,7 @@
 import { pathToFileURL } from "url";
 import {
   classifyTitle,
+  DATA_DIR,
   existingMeetingKeys,
   existingVideoIds,
   latestCabinetNumber,
@@ -260,6 +261,20 @@ export async function fetchVideos(): Promise<QueueItem[]> {
     for (const c of await searchChannelMeetings(channelId, publishedAfter)) add(c);
   }
   log(`검색 포함 신규 회의 영상 후보 총 ${candidates.length}건`);
+
+  // 4.5) 수동 추가 영상 — KTV 채널 밖(다른 채널 재송출 등)에 있어 검색·업로드로는
+  //      못 잡는 회의를 videoId로 직접 넣는다. data/extra-videos.json 형식:
+  //      [{ "videoId": "...", "title": "제32회 국무회의", "type": "cabinet", "publishedAt": "2026-07-28" }]
+  //      상세(길이·썸네일)는 아래 5)에서 videos.list로 채널 무관하게 채운다.
+  const extras = readJson<
+    { videoId: string; title: string; type: QueueItem["type"]; publishedAt: string }[]
+  >(`${DATA_DIR}/extra-videos.json`, []);
+  for (const e of extras) {
+    if (!e.videoId || !e.title) continue;
+    const publishedAt = /T/.test(e.publishedAt) ? e.publishedAt : `${e.publishedAt}T00:00:00Z`;
+    add({ videoId: e.videoId, title: e.title, type: e.type ?? "cabinet", publishedAt });
+  }
+  if (extras.length) log(`수동 추가(extra-videos) 반영 후 후보 총 ${candidates.length}건`);
 
   // 5) 영상 상세(길이·썸네일) — 생중계 예고(길이 0) 및 진행 중 라이브 제외
   const fresh: QueueItem[] = [];
