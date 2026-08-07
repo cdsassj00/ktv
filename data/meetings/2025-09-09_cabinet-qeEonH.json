@@ -344,30 +344,46 @@
     {
       "id": "dir-2025-09-09-01",
       "from": "president",
-      "to": ["mofa-minister"],
+      "to": [
+        "mofa-minister"
+      ],
       "content": "미국 이민당국에 구금됐던 국민들이 안전하게 귀국할 때까지 상황을 세심하게 관리하고, 유사 사례가 재발하지 않도록 미국과의 긴밀한 협의를 통한 제도 개선 교섭에 적극 나설 것",
       "timestamp": 93,
-      "tags": ["외교", "국민보호"],
+      "tags": [
+        "외교",
+        "국민보호"
+      ],
       "status": "issued",
       "followUps": []
     },
     {
       "id": "dir-2025-09-09-02",
       "from": "president",
-      "to": ["mafra-minister", "moef-minister"],
+      "to": [
+        "mafra-minister",
+        "moef-minister"
+      ],
       "content": "소비자와 생산자가 모두 체감하도록 불합리한 농산물 유통구조 개혁에 속도를 내고, 소상공인 체감경기 제고와 지역경제 활성화 대책을 함께 수립할 것",
       "timestamp": 212,
-      "tags": ["물가", "유통구조"],
+      "tags": [
+        "물가",
+        "유통구조"
+      ],
       "status": "issued",
       "followUps": []
     },
     {
       "id": "dir-2025-09-09-03",
       "from": "president",
-      "to": ["moef-minister"],
+      "to": [
+        "moef-minister"
+      ],
       "content": "AI 투자의 마중물인 국민성장펀드가 차질 없이 출범하도록 만전을 기할 것",
       "timestamp": 288,
-      "tags": ["AI예산", "투자"],
+      "tags": [
+        "AI예산",
+        "투자"
+      ],
       "status": "reported",
       "followUps": [
         {
@@ -381,70 +397,114 @@
     {
       "id": "dir-2025-09-09-04",
       "from": "president",
-      "to": ["unknown", "moef-minister"],
+      "to": [
+        "unknown",
+        "moef-minister"
+      ],
       "content": "15.9% 수준의 고금리 서민금융 구조를 근본적으로 재검토하고, 초우량 고객 저금리 대출에 소폭 비용을 분담시키는 공동 기금·상생금융 등 취약계층 금리 인하 방안을 마련할 것(금융위원장 공동)",
       "timestamp": 926,
-      "tags": ["서민금융", "민생"],
+      "tags": [
+        "서민금융",
+        "민생"
+      ],
       "status": "issued",
       "followUps": []
     },
     {
       "id": "dir-2025-09-09-05",
       "from": "president",
-      "to": ["mafra-minister"],
+      "to": [
+        "mafra-minister"
+      ],
       "content": "농산물 가격·거래 기초 데이터를 개방하고 민간 공모 방식으로 AI 기반 농산물 가격비교·주문 플랫폼을 조속히 구축하되, 부처별 앱 난립을 막을 통합 시스템을 마련할 것",
       "timestamp": 2280,
-      "tags": ["공공데이터", "유통구조"],
+      "tags": [
+        "공공데이터",
+        "유통구조"
+      ],
       "status": "issued",
       "followUps": []
     },
     {
       "id": "dir-2025-09-09-06",
       "from": "president",
-      "to": ["mafra-minister"],
+      "to": [
+        "mafra-minister"
+      ],
       "content": "가락시장 도매법인의 독점 구조가 가격 불안정과 유통 비용 상승의 원인인지 검토하고, 시장도매인 제도 등 독점 완화 방안을 연구할 것",
       "timestamp": 2534,
-      "tags": ["유통구조", "경쟁"],
+      "tags": [
+        "유통구조",
+        "경쟁"
+      ],
       "status": "issued",
       "followUps": []
     },
     {
       "id": "dir-2025-09-09-07",
       "from": "president",
-      "to": ["moj-minister"],
+      "to": [
+        "moj-minister"
+      ],
       "content": "특정 국가 관광객을 모욕하는 집회를 표현의 자유로만 방치하지 말고, 업무방해 관점 등 실효적으로 제지할 방안을 고민할 것",
       "timestamp": 3728,
-      "tags": ["관광", "법질서"],
+      "tags": [
+        "관광",
+        "법질서"
+      ],
       "status": "issued",
       "followUps": []
     },
     {
       "id": "dir-2025-09-09-08",
       "from": "president",
-      "to": ["mcst-minister"],
+      "to": [
+        "mcst-minister"
+      ],
       "content": "문화·관광·예술·체육 정책을 완전히 새로 설계한다는 각오로 재편하고, 늘어난 문화 예산의 효율적 사용처를 치밀하게 연구할 것",
       "timestamp": 4289,
-      "tags": ["관광", "문화산업"],
+      "tags": [
+        "관광",
+        "문화산업"
+      ],
       "status": "issued",
       "followUps": []
     },
     {
       "id": "dir-2025-09-09-09",
       "from": "president",
-      "to": ["moel-minister", "moj-minister"],
+      "to": [
+        "moel-minister",
+        "moj-minister"
+      ],
       "content": "예측 가능한 추락사고 위험을 방치한 사업장은 사고가 없어도 불시 점검해 엄벌하고, 신속한 수사·기소로 중형이 선고되도록 하며 필요하면 근로감독관을 증원할 것",
       "timestamp": 5165,
-      "tags": ["산업재해", "안전"],
-      "status": "issued",
-      "followUps": []
+      "tags": [
+        "산업재해",
+        "안전"
+      ],
+      "status": "reported",
+      "followUps": [
+        {
+          "meetingId": "2026-07-31-cabinet-oJX1L-",
+          "exchangeId": "ex-04",
+          "summary": "예측 가능한 추락사고 위험 방치 사업장 불시 점검 및 엄벌 계획 보고",
+          "inferred": true
+        }
+      ]
     },
     {
       "id": "dir-2025-09-09-10",
       "from": "president",
-      "to": ["molit-minister"],
+      "to": [
+        "molit-minister"
+      ],
       "content": "고속도로·국도변 쓰레기 청소를 전국 단위로 실시하고, 필요하면 예산을 확보해 한시적 일자리 사업으로 추진할 것",
       "timestamp": 6085,
-      "tags": ["환경", "일자리"],
+      "tags": [
+        "환경",
+        "일자리"
+      ],
       "status": "issued",
       "followUps": []
     }
@@ -456,7 +516,10 @@
       "summary": "모두발언에서 전날 출범한 국가 인공지능전략위원회를 AI 세계 3강의 컨트롤타워로 규정하고, 국민·기업·정부의 역량 총결집과 AI 투자 마중물인 국민성장펀드의 차질 없는 출범을 강조.",
       "quote": "인공지능 세계 3강으로 향하는 길도 우리 국민들이 함께해야 비로소 이룰 수 있습니다.",
       "timestamp": 238,
-      "tags": ["AI인프라", "AI예산"]
+      "tags": [
+        "AI인프라",
+        "AI예산"
+      ]
     },
     {
       "topic": "농산물 데이터 개방과 AI 장보기 플랫폼",
@@ -464,29 +527,48 @@
       "summary": "AI수석·중기부와의 즉석 토론에서 농산물 가격·레시피를 연동한 AI 장보기 서비스를 논의하고, 정부의 기초 데이터 개방과 민간 공모를 통한 플랫폼 구축, 부처별 앱 통합 시스템 마련을 지시. AI수석은 내년 시범 서비스가 가능하다고 답변.",
       "quote": "어쨌든 2년 후 이러지 마시고요.",
       "timestamp": 2070,
-      "tags": ["공공데이터", "데이터산업"]
+      "tags": [
+        "공공데이터",
+        "데이터산업"
+      ]
     },
     {
       "topic": "소상공인 AI·데이터 기반 지원",
       "speakerId": "pm2",
       "summary": "매출·신용 데이터 기반 폐업 전 위기알람 모형, AI 활용 경영·마케팅 지원, AI 민원상담 도우미, 국세청 데이터를 연계한 빅데이터 플랫폼과 전 부처·지자체 정책을 모은 AI 채팅 단일 창구 구축 계획을 보고. 업종별 공동 AI 지원 필요성도 논의됨.",
       "timestamp": 2584,
-      "tags": ["데이터거버넌스", "데이터산업"]
+      "tags": [
+        "데이터거버넌스",
+        "데이터산업"
+      ]
     },
     {
       "topic": "정부 AI 프로젝트의 청년 참여 할당 제안",
       "speakerId": "moel-minister",
       "summary": "청년 일자리 대책에서 과기부의 정부 지원 AI 프로젝트 수행 시 청년 기회 10% 할당, 중기부 AI 스타트업 집중 육성과 산업부 AI 팩토리 확산 시 청년고용 우수기업 우대를 관계 부처에 제안.",
       "timestamp": 4754,
-      "tags": ["인재양성", "AI예산"]
+      "tags": [
+        "인재양성",
+        "AI예산"
+      ]
     },
     {
       "topic": "복지행정의 AI 전환",
       "speakerId": "mohw-minister",
       "summary": "신청주의 한계를 극복하는 급여 자동지급 원칙화, AI 기반 복지 상담·위기가구 발굴, 재가·시설 돌봄의 AI 전환, 보건의료 데이터의 안전한 활용과 한국형 의료 AI 기술 개발을 보고.",
       "timestamp": 5510,
-      "tags": ["공공데이터", "AI인프라"]
+      "tags": [
+        "공공데이터",
+        "AI인프라"
+      ]
     }
   ],
-  "tags": ["추석민생대책", "농산물유통구조", "소상공인지원", "청년일자리", "산재예방", "관광활성화"]
+  "tags": [
+    "추석민생대책",
+    "농산물유통구조",
+    "소상공인지원",
+    "청년일자리",
+    "산재예방",
+    "관광활성화"
+  ]
 }

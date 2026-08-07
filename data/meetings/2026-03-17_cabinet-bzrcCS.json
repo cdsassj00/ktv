@@ -488,8 +488,15 @@
         "산불",
         "재난대응"
       ],
-      "status": "issued",
-      "followUps": []
+      "status": "reported",
+      "followUps": [
+        {
+          "meetingId": "2026-07-28-cabinet-VGsUla",
+          "exchangeId": "ex-03",
+          "summary": "봄철 가뭄 및 폭염에 대비한 예비 대책 추진",
+          "inferred": true
+        }
+      ]
     },
     {
       "id": "dir-2026-03-17-07",

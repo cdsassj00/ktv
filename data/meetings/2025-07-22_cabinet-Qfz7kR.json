@@ -103,8 +103,15 @@
         "공직기강",
         "신상필벌"
       ],
-      "status": "issued",
-      "followUps": []
+      "status": "reported",
+      "followUps": [
+        {
+          "meetingId": "2026-07-31-cabinet-oJX1L-",
+          "exchangeId": "ex-02",
+          "summary": "산업안전기준 미준수에 대한 제재 강화 방안 논의 및 실행 의지 확인",
+          "inferred": true
+        }
+      ]
     },
     {
       "id": "dir-2025-07-22-03",

@@ -1,0 +1,629 @@
+{
+  "id": "2026-07-31-cabinet-oJX1L-",
+  "type": "cabinet",
+  "title": "제33회 국무회의",
+  "date": "2026-07-31",
+  "summary": {
+    "oneLine": "신임 국무위원 인사에 이어 산업재해 사망사고 급증에 대한 범부처 종합대책을 집중 논의하고, 산림 벌목정책 재검토와 국무회의 운영방식 개편을 지시함",
+    "overview": "제33차 국무회의는 신임 국무위원들의 취임 인사로 시작되었다. 대통령은 국방부 장관 취임사가 국방일보에서 편집된 것을 지적하며 군 기강을 강조했고, 민생회복 소비쿠폰 지급에서 소외계층이 없도록 챙길 것과 폭염으로 인한 온열질환·가축 폐사 대응을 당부했다.\n\n회의의 핵심 의제는 산업재해 사망사고 대책이었다. 대통령은 포스코이앤씨 5명 사망, SPC 장시간 노동 등 최근 사례를 언급하며 다단계 하도급으로 인한 안전조치 부실 문제를 지적했고, 고용노동부는 2024년 1분기 137명의 산재 사망 현황과 원인(비용 인식, 저임금 장시간노동, 노후장비)을 보고했다. 이어 노동자를 예방의 주체로 전환하는 패러다임, 원청 책임 강화, 감독관 증원, 실질적 제재(징벌적 손해배상·입찰제한·영업정지) 등 대책이 논의됐다. 법무부는 중대재해처벌법 수사가 송치까지 418일, 기소까지 200일 걸리는 지연 문제와 아리셀 화재(23명 사망, 대표자 20년 구형) 사례를 보고했고, 대통령은 사망자 1인당 처벌 수준이 교통사고보다 낮다고 지적하며 전담수사팀 구성과 법원 양형기준 마련을 지시했다.\n\n산업통상자원부·국토교통부는 업종별(제조업·건설업) 대책을, 금융위원회는 ESG 평가와 여신심사 반영을 통한 시장 기반 제재를, 공정거래위원회는 하도급 대금 및 안전비용 전가 구조 개선을, 조달청은 입찰참가자격 제한 강화를 보고했다. 대통령은 중대재해 발생 자체를 입찰제한 사유로 하고, 반복 위반 시 제재를 강화하며, 나아가 인허가·면허 취소까지 검토할 것을 지시했다. 행정안전부·해양수산부도 각각 재난안전 관리체계와 어선안전조업법 시행 현황을 보고했다. 마지막으로 산업안전보건법상 안전조치 의무 위반 자체에 대한 제재가 미비하다는 점이 확인되어 과태료 체계 개정 검토가 지시됐다.\n\n이 외에 대통령은 산림청의 노령림 벌목·침엽수 조림 정책이 산사태 위험 및 탄소포집 효과 측면에서 과학적 근거가 부족하다고 문제를 제기하며 예산 편성 전 전문적 재검토를 지시했다. 회의 말미에는 다음 국무회의부터 외청 개별보고를 중단하고 부처별 주요 현안·개혁과제 토론 방식으로 전환하며, 필요시 국무회의를 주 1회 이상 개최할 수 있다는 운영방식 개편 방침을 밝혔다.",
+    "agenda": [
+      {
+        "title": "신임 국무위원 인사",
+        "summary": "해양수산부·국방부·농림축산식품부 등 신임 장관들의 취임 인사",
+        "timestamp": 31
+      },
+      {
+        "title": "민생회복 소비쿠폰 및 폭염 대응",
+        "summary": "소비쿠폰 지급 누락 방지, 온열질환·가축 폐사 등 폭염 피해 대응 당부",
+        "timestamp": 32
+      },
+      {
+        "title": "산업재해 사망사고 종합대책",
+        "summary": "산재 사망 현황 진단과 원청 책임·처벌 실효성·입찰제한 등 범부처 대책 논의",
+        "timestamp": 20
+      },
+      {
+        "title": "산림 벌목 정책 재검토",
+        "summary": "노령림 벌목·침엽수 조림 정책의 산사태 위험 및 탄소포집 효과에 대한 과학적 재검토 지시",
+        "timestamp": 4516
+      },
+      {
+        "title": "국무회의 운영방식 개편",
+        "summary": "외청 개별보고 중단 및 부처별 현안·개혁과제 토론 방식으로 전환, 개최 빈도 확대 검토",
+        "timestamp": 5145
+      }
+    ],
+    "remarks": [
+      {
+        "speakerId": "president",
+        "quote": "나와 내 가족이 귀한 것처럼 일하는 그 노동자들도 누군가의 가장이고 누군가의 가족입니다.",
+        "context": "산재 사망사고 논의를 시작하며 노동자 보호의 당위성을 강조",
+        "timestamp": 8
+      },
+      {
+        "speakerId": "president",
+        "quote": "이게 제일 핵심은 실질적 제재입니다.",
+        "context": "안전조치 미이행에 대한 경제적 제재 강화의 필요성 강조",
+        "timestamp": 2458
+      },
+      {
+        "speakerId": "president",
+        "quote": "우리가 법으로 정했으면 지키고 못 지킬 것 같으면 그 법 없애야지.",
+        "context": "하도급 규제가 실효적으로 집행되지 않는 문제를 지적",
+        "timestamp": 51
+      },
+      {
+        "speakerId": "senior-civil",
+        "quote": "인간의 존엄성은 건드릴 수 없다는 철학적 배경이 없이는 규정만 가지고는 문제를 근본적으로 해결할 수 없다는 생각입니다.",
+        "context": "산재 대책 논의 중 규정 중심 접근의 한계를 지적",
+        "timestamp": 70
+      },
+      {
+        "speakerId": "president",
+        "quote": "21세기 과학 시대에 저는 아직도 이런 거를 논쟁을 하고 있다는게 이해가 잘 안 돼요.",
+        "context": "산림 벌목 정책의 과학적 근거 부족에 대한 문제 제기",
+        "timestamp": 4783
+      }
+    ]
+  },
+  "exchanges": [
+    {
+      "id": "ex-01",
+      "topic": "신임 국방부 장관 인사와 언론 기강 지시",
+      "turns": [
+        {
+          "speakerId": "mnd-minister",
+          "kind": "발언",
+          "summary": "확실한 기강과 군 계획을 이끌어내겠다고 인사",
+          "quote": "아 말곡비를 확실히 잡고 우리 군 계획을 이끌어내겠습니다.",
+          "timestamp": 61,
+          "inReplyTo": null
+        },
+        {
+          "speakerId": "president",
+          "kind": "지시",
+          "summary": "국방일보가 취임사 핵심 메시지를 편집해 뺀 것에 대해 기강을 잡을 것을 지시",
+          "quote": "국방일보에 장관님 취임사를 편집을 해가지고 주요 핵심 메시지는 빼버렸다 그러던데 기강을 잘 잡으셔야 될 것 같습니다.",
+          "timestamp": 62,
+          "inReplyTo": 0
+        }
+      ]
+    },
+    {
+      "id": "ex-02",
+      "topic": "산업안전기준 미준수 원인과 제재 강화 필요성",
+      "turns": [
+        {
+          "speakerId": "president",
+          "kind": "질문",
+          "summary": "산업안전 기준이 법에 정해져 있는데 현장에서 지켜지지 않는 이유 질문",
+          "quote": "추락 방지 시설이니 폐쇄공간 진입이니 온갖 것들을 다 법에 정해놨는데 그것들이 안 지켜져서 사고들이 나는 거죠.",
+          "timestamp": 2230,
+          "inReplyTo": null
+        },
+        {
+          "speakerId": "moel-minister",
+          "kind": "답변",
+          "summary": "산업안전 기준 미준수의 근본 원인은 비용 절감",
+          "quote": "비용입니다. 원청에서 안 주니까 비용 때문에 안 지키는 것입니다.",
+          "timestamp": 2245,
+          "inReplyTo": 0
+        },
+        {
+          "speakerId": "president",
+          "kind": "지시",
+          "summary": "안전 미준수로 인한 이익이 사고 발생 시 손실보다 크도록 제재 강화 필요",
+          "quote": "결국은 제재나 대가가 너무 약한 거죠.",
+          "timestamp": 2303,
+          "inReplyTo": 1
+        }
+      ]
+    },
+    {
+      "id": "ex-03",
+      "topic": "근로감독관 증원 현황 및 노동조합 조직률 점검",
+      "turns": [
+        {
+          "speakerId": "president",
+          "kind": "질문",
+          "summary": "근로감독관 300명 증원 현황 확인",
+          "quote": "근로감독관 300명 빨리 구성하라는데 몇 명 했어요?",
+          "timestamp": 2329,
+          "inReplyTo": null
+        },
+        {
+          "speakerId": "moel-minister",
+          "kind": "답변",
+          "summary": "현재 300명 구성되었으며 150명이 산업안전공 반속으로 나가고 있음",
+          "quote": "지금 300명이 이미 구성되어 있습니다. 150명 산업안전공이 반속으로 나가고 있어요.",
+          "timestamp": 2332,
+          "inReplyTo": 0
+        },
+        {
+          "speakerId": "president",
+          "kind": "추가질문",
+          "summary": "감독 빈도 증대 필요, 현장 방문 함께 제의",
+          "quote": "매주 나갑니까? 매일 나가야지. 언제 저도 한번 같이 가면 좋겠어요.",
+          "timestamp": 2339,
+          "inReplyTo": 1
+        },
+        {
+          "speakerId": "president",
+          "kind": "지시",
+          "summary": "일정 기간 내 산재 감소 실적이 없으면 책임자 문책 의지 표현",
+          "quote": "진짜로 이번에 이거 해가 상당 기간이 지나도 산재가 안 줄어들면 진짜 직을 거십시오.",
+          "timestamp": 2401,
+          "inReplyTo": 2
+        },
+        {
+          "speakerId": "president",
+          "kind": "질문",
+          "summary": "노동자 조직율 증가 현황 확인",
+          "quote": "노동자들의 조직율은 좀 올라가고 있나요?",
+          "timestamp": 2442,
+          "inReplyTo": null
+        },
+        {
+          "speakerId": "moel-minister",
+          "kind": "답변",
+          "summary": "현재 12% 수준에서 정체",
+          "quote": "지금 현재 12% 관에서 정체되어 있습니다.",
+          "timestamp": 2445,
+          "inReplyTo": 4
+        }
+      ]
+    },
+    {
+      "id": "ex-04",
+      "topic": "중대재해처벌법 실효성과 법무부 수사현황",
+      "turns": [
+        {
+          "speakerId": "president",
+          "kind": "질문",
+          "summary": "중대재해 처벌법의 실효성 문제, 형식적 선고에 그치는 문제점 지적",
+          "quote": "대부분 집행유예 정도로 끝나는데, 실제 경영주는 안전 조치를 하지 않음으로써 이익을 얻는 주체인데 처벌받는 주체는 다르죠.",
+          "timestamp": 2549,
+          "inReplyTo": null
+        },
+        {
+          "speakerId": "moel-minister",
+          "kind": "답변",
+          "summary": "중대재해 처벌법의 실효성 제고 방안 검토 필요 동의",
+          "quote": "실효성 제고 방안을 검토하겠습니다.",
+          "timestamp": 2618,
+          "inReplyTo": 0
+        },
+        {
+          "speakerId": "president",
+          "kind": "발언",
+          "summary": "형사 처벌보다는 징벌적 손해배상, 과징금 등 경제적 제재의 중요성 강조",
+          "quote": "형사 처벌은 별로 결정적인 수단은 못 되는 것 같고 지출이 늘어나게 만들어야 될 것 같아요.",
+          "timestamp": 2620,
+          "inReplyTo": 1
+        },
+        {
+          "speakerId": "moj-minister",
+          "kind": "보고",
+          "summary": "중대재해 수사에서 검찰 송치까지 418일, 기소까지 200일 소요",
+          "quote": "최근에 중대재해법으로 처리된 30건 관련해 수사관계에서 검찰 송치까지가 418일 걸렸습니다. 검찰에서 기소까지가 200일이 걸렸습니다.",
+          "timestamp": 2742,
+          "inReplyTo": null
+        },
+        {
+          "speakerId": "president",
+          "kind": "질문",
+          "summary": "아리셀 화재 사망자 수 확인",
+          "quote": "아리셀 사망자가 몇 명이죠?",
+          "timestamp": 2916,
+          "inReplyTo": 3
+        },
+        {
+          "speakerId": "moj-minister",
+          "kind": "답변",
+          "summary": "아리셀 화재 사망자 23명, 대표자 20년 구형",
+          "quote": "23명이 사망했습니다.",
+          "timestamp": 2920,
+          "inReplyTo": 4
+        },
+        {
+          "speakerId": "president",
+          "kind": "발언",
+          "summary": "사망자 1인당 징역 기준이 교통사고 처리보다 약함을 지적",
+          "quote": "지금 기준에 의하면 사망자 1인당 징역 2년 6월에서 4년 정도로 설정되어 있는데 교통사고 처리보다 별로 세지 않네요.",
+          "timestamp": 2925,
+          "inReplyTo": 5
+        },
+        {
+          "speakerId": "president",
+          "kind": "지시",
+          "summary": "법원의 양형 기준 마련을 위해 법무부가 협의할 것을 지시",
+          "quote": "법원의 양형 기준 요청을 하는 거는 법무부가 좀 협의를 한번 하시죠.",
+          "timestamp": 32002,
+          "inReplyTo": null
+        }
+      ]
+    },
+    {
+      "id": "ex-05",
+      "topic": "산재 전담수사팀 구성 검토",
+      "turns": [
+        {
+          "speakerId": "president",
+          "kind": "질문",
+          "summary": "전담 부서 운영의 실효성 문제 지적, 산재된 사건 처리의 어려움",
+          "quote": "이게 예를 들면 광장에서 사고 나고 포천에서 사고 나고 하면 전담이 별로 의미가 없는 것 같은데",
+          "timestamp": 2946,
+          "inReplyTo": null
+        },
+        {
+          "speakerId": "moj-minister",
+          "kind": "답변",
+          "summary": "대검에서 일선 검찰에 수사 지휘를 하는 방식으로 운영 중",
+          "quote": "일선 검찰에 지금 저희가 수사 지휘를 대검에서 하고 있습니다.",
+          "timestamp": 2956,
+          "inReplyTo": 0
+        },
+        {
+          "speakerId": "president",
+          "kind": "질문",
+          "summary": "전담 팀 구성 검토 제의",
+          "quote": "전담 팀을 두는 걸 한번 검토해 보시면 어떻습니까?",
+          "timestamp": 3004,
+          "inReplyTo": 1
+        },
+        {
+          "speakerId": "president",
+          "kind": "제안",
+          "summary": "산재 사망사고 전담팀 구성 제안, 경찰·검찰 역할 분담 필요성 언급",
+          "quote": "산재 사망 사고는 아예 전담 팀을 부서를 하나 두든지 해 가지고 일률적으로 좀 모아서 하는 거.",
+          "timestamp": 30049,
+          "inReplyTo": 2
+        },
+        {
+          "speakerId": "moel-minister",
+          "kind": "답변",
+          "summary": "전담팀 구성과 전문성 강화를 위한 교육 실시에 동의",
+          "quote": "아예 전문 역량을 가진 사람으로 팀을 짜 가지고 교육을 좀 시킨 다음에 그걸 연구 한번 해 보시죠.",
+          "timestamp": 30049,
+          "inReplyTo": 3
+        }
+      ]
+    },
+    {
+      "id": "ex-06",
+      "topic": "산업부·국토부의 업종별 산재 대책",
+      "turns": [
+        {
+          "speakerId": "motie-minister",
+          "kind": "보고",
+          "summary": "제조업 산재 사망자 비중 30%, 고위험 업종 중심 AI 활용 예방 시스템 개발 계획",
+          "quote": "산재 사망자수의 제조업 분야에서가 30% 정도를 차지합니다. 고위험 업종을 중심으로 한 AI 등을 활용한 산재 예방 쪽에 주력을 하고 있습니다.",
+          "timestamp": 32011,
+          "inReplyTo": null
+        },
+        {
+          "speakerId": "molit-minister",
+          "kind": "보고",
+          "summary": "건설안전특별법 추진 - 발주청 책임 강화, 공사비 적정성 보장",
+          "quote": "건설안전 특별법은 발주청인 원청에 대한 책임 처벌 부분과 공사비 책정, 공기 적정성 보장을 다룹니다.",
+          "timestamp": 38023,
+          "inReplyTo": null
+        },
+        {
+          "speakerId": "molit-minister",
+          "kind": "보고",
+          "summary": "건설안전특별법의 과징금 규모(매출액 대비 3%) 설명",
+          "quote": "매출액 대비 지금 3% 정도의 과징금을 부과하는 방안을 생각하고 있습니다.",
+          "timestamp": 40018,
+          "inReplyTo": 1
+        },
+        {
+          "speakerId": "president",
+          "kind": "지시",
+          "summary": "사후 처벌보다 사전 미준수 행위에 대한 제재 강화로 안전 조치 준수 유도",
+          "quote": "사고 난 다음 처벌도 중요한데 그걸 안 지키는 평소의 미준수 행위에 대해서 제재를 세게 해 가지고",
+          "timestamp": 42051,
+          "inReplyTo": 2
+        }
+      ]
+    },
+    {
+      "id": "ex-07",
+      "topic": "금융위 ESG 평가를 통한 산재 예방 압박",
+      "turns": [
+        {
+          "speakerId": "fsc-chairman",
+          "kind": "보고",
+          "summary": "중대재해 예방을 위해 ESG 평가에서 시장의 경제적 불이익 활용",
+          "quote": "중대재해 예방에 있어서 경제적 불이익을 높이는 것이 중요하고 금융 쪽에서는 결국 시장의 힘에 의해서 불이익을 높여 나가는 방향으로",
+          "timestamp": 44035,
+          "inReplyTo": null
+        },
+        {
+          "speakerId": "president",
+          "kind": "질문",
+          "summary": "ESG 평가에 산재 사망 사고 등 중대 사건을 더 강하게 반영할 수 있는지 확인",
+          "quote": "중대재해 부분이 조금 더 강화될 수 있는 방향으로",
+          "timestamp": 46,
+          "inReplyTo": 0
+        },
+        {
+          "speakerId": "fsc-chairman",
+          "kind": "답변",
+          "summary": "실제로 산재 사고 발생 기업의 ESG 평가 등급과 주가가 하락했음을 확인",
+          "quote": "특정 기업 같은 경우는 평가 등급이 23년 굉장히 낮아졌고요. 실제로 주가가 처음 사고 난 대비로 많이 빠져 있습니다.",
+          "timestamp": 47,
+          "inReplyTo": 1
+        },
+        {
+          "speakerId": "president",
+          "kind": "지시",
+          "summary": "ESG 평가 강화를 통해 안전 투자를 유도할 실행 계획 수립 지시",
+          "quote": "이거는 실제 실행 계획을 좀 만들어서",
+          "timestamp": 47,
+          "inReplyTo": 2
+        }
+      ]
+    },
+    {
+      "id": "ex-08",
+      "topic": "공정위 하도급 구조 개선 및 국토부 협조",
+      "turns": [
+        {
+          "speakerId": "ftc-chairman",
+          "kind": "보고",
+          "summary": "원청의 안전비용 전가·하도급대금 미지급이 하도급업체 중대재해의 구조적 원인",
+          "quote": "산업안전 비용을 전가하거나 하도급 대금을 미지급하는 것은 결국 하도급 업체 중대재해 발생의 구조적 원인으로 작용한다고 보고 있습니다.",
+          "timestamp": 48,
+          "inReplyTo": null
+        },
+        {
+          "speakerId": "president",
+          "kind": "질문",
+          "summary": "건설업 하도급 규제 업무의 담당 부처 확인",
+          "timestamp": 50,
+          "inReplyTo": 0
+        },
+        {
+          "speakerId": "molit-minister",
+          "kind": "답변",
+          "summary": "건설업 하도급은 국토부가 관할함을 확인",
+          "timestamp": 51,
+          "inReplyTo": 1
+        },
+        {
+          "speakerId": "president",
+          "kind": "지시",
+          "summary": "법으로 정한 하도급 규제를 제대로 집행하지 않으면 법 자체를 폐지해야 한다는 원칙 제시",
+          "quote": "우리가 법으로 정했으면 지키고 못 지킬 것 같으면 그 법 없애야지.",
+          "timestamp": 51,
+          "inReplyTo": 2
+        },
+        {
+          "speakerId": "president",
+          "kind": "지시",
+          "summary": "노동부가 국토부와 협력하여 하도급 위반을 강력하게 단속할 것을 지시",
+          "quote": "노동부가 주무부처니까 강력하게 단속하게 하십시오.",
+          "timestamp": 51,
+          "inReplyTo": 3
+        },
+        {
+          "speakerId": "moel-minister",
+          "kind": "답변",
+          "summary": "지시를 수락하고 이행하겠다는 의사 표현",
+          "timestamp": 51,
+          "inReplyTo": 4
+        }
+      ]
+    },
+    {
+      "id": "ex-09",
+      "topic": "조달청 입찰참가제한 및 인허가 제재 강화",
+      "turns": [
+        {
+          "speakerId": "unknown",
+          "kind": "보고",
+          "summary": "조달청 입찰 자격 제한에 중대재해처벌법 위반 사유 추가 계획 보고",
+          "quote": "현재 입찰 자격 제한에는 중대재해처벌법이 없고 산업안전보건법 위반만 들어가 있습니다. 이번에 중대재해처벌법 위반 사유도 추가할 계획입니다.",
+          "timestamp": 52,
+          "inReplyTo": null
+        },
+        {
+          "speakerId": "president",
+          "kind": "지시",
+          "summary": "중대재해 발생 자체를 입찰제한 사유로 해야 한다고 지시",
+          "quote": "중대재해 발생 자체를 사유로 해야지 처벌법 위반으로 하면 몇 년 걸리잖아요.",
+          "timestamp": 53,
+          "inReplyTo": 0
+        },
+        {
+          "speakerId": "president",
+          "kind": "질문",
+          "summary": "현행 입찰 제한 기간과 반복성에 따른 추가 제재 여부 확인",
+          "timestamp": 54,
+          "inReplyTo": 1
+        },
+        {
+          "speakerId": "unknown",
+          "kind": "답변",
+          "summary": "현재 입찰 제한 기간은 사망자 수에 따라 1년~2년, 중대성에 따라 차등 적용",
+          "quote": "현재 법에서 2년으로 하고 대통령령으로 위임해 사고에 따라 1년, 1년 반, 2년으로 규정하고 있습니다.",
+          "timestamp": 54,
+          "inReplyTo": 2
+        },
+        {
+          "speakerId": "president",
+          "kind": "지시",
+          "summary": "입찰 제한 기간을 반복성과 중대성에 따라 더 강화할 것을 지시",
+          "quote": "한 번 사고 나면 얼마, 두 번째 사고 나면 몇 년, 반복하면 제재를 강화하는 겁니다.",
+          "timestamp": 55,
+          "inReplyTo": 3
+        },
+        {
+          "speakerId": "president",
+          "kind": "발언",
+          "summary": "중대재해처벌법이 입찰제한에 포함되지 않아 대다수 건설사가 제한되지 않았을 것으로 추정",
+          "timestamp": 56,
+          "inReplyTo": null
+        },
+        {
+          "speakerId": "unknown",
+          "kind": "답변",
+          "summary": "현재 중대재해처벌법 미포함, 기재부에 권고 중",
+          "timestamp": 56,
+          "inReplyTo": 5
+        },
+        {
+          "speakerId": "president",
+          "kind": "발언",
+          "summary": "중대 사고가 반복 발생하면 영업 허가 자체를 취소해야 하는 것 아닌지 제기",
+          "quote": "중대 사고가 반복적으로 발생한다 그러면 영업 허가를 취소해 버리는게 맞지 않나 싶어요.",
+          "timestamp": 57,
+          "inReplyTo": 6
+        },
+        {
+          "speakerId": "unknown",
+          "kind": "답변",
+          "summary": "인가 취소 여건은 전 부처에 걸쳐있어 법제처와 협의해 검토하겠다는 답변",
+          "timestamp": 57,
+          "inReplyTo": 7
+        },
+        {
+          "speakerId": "president",
+          "kind": "지시",
+          "summary": "안전 의무 반복 위반 시 건설 면허 정지·취소 등 인허가 제재 도입 검토 지시",
+          "quote": "안전 시설 조치 의무를 하나도 안 해서 매년 사람이 죽어 나간다면, 건설을 못 하게 해야 되는 거 아닙니까?",
+          "timestamp": 58,
+          "inReplyTo": 8
+        },
+        {
+          "speakerId": "osc-minister",
+          "kind": "답변",
+          "summary": "인허가 제재 현황을 파악하겠다는 답변",
+          "timestamp": 59,
+          "inReplyTo": 9
+        },
+        {
+          "speakerId": "president",
+          "kind": "지시",
+          "summary": "계약 제한을 넘어 인허가·면허 취소·정지까지 검토할 것을 지시",
+          "quote": "계약을 못 하는 정도를 넘어서 더 심하면 아예 인허가 면허를 통째로 취소 정지시키는 것도 검토하시죠.",
+          "timestamp": 59,
+          "inReplyTo": 10
+        },
+        {
+          "speakerId": "unknown",
+          "kind": "발언",
+          "summary": "입찰 제한에 대해 기업들이 집행정지 가처분을 신청하는 사례가 많음을 지적",
+          "quote": "입찰 제한이라든가 하게 되면 거의 100% 다 효력 집행정지 가처분 신청해서 인용도 많이 받습니다.",
+          "timestamp": 59,
+          "inReplyTo": 11
+        },
+        {
+          "speakerId": "president",
+          "kind": "발언",
+          "summary": "가처분을 받더라도 최종 판결이 나면 제재가 실행될 것이므로 다른 제재 수단도 병행할 것을 언급",
+          "quote": "그래도 결국은 판결이 나면 그때부터 정지될 거 아니에요?",
+          "timestamp": 59,
+          "inReplyTo": 12
+        }
+      ]
+    },
+    {
+      "id": "ex-10",
+      "topic": "행안부·경찰·해수부 산재 대책 보고",
+      "turns": [
+        {
+          "speakerId": "mois-minister",
+          "kind": "보고",
+          "summary": "산재 전담 수사 인력 확보, 사회재난 관리 체계 구축, 중앙재난안전대책본부 가동 준비",
+          "quote": "산재 전담 수사 인력을 확보해서 수사에 차질이 없도록 하고, 중앙 재난안전대책본부 가동 준비를 하고 있습니다.",
+          "timestamp": 60,
+          "inReplyTo": null
+        },
+        {
+          "speakerId": "mois-minister",
+          "kind": "보고",
+          "summary": "안전 우수 기업에 조달 우대, 보험료 할인, 대출 금리 인하 등 인센티브 제공",
+          "quote": "재해감소 활동을 잘 하고 ESG 평가를 잘 받는 기업에 대해서는 조달, 보험료 할인, 대출 금리 인하 같은 인센티브 대책을 마련해 주고 있습니다.",
+          "timestamp": 62,
+          "inReplyTo": 0
+        },
+        {
+          "speakerId": "mof-minister",
+          "kind": "보고",
+          "summary": "어선안전조업법 시행 및 안전조치 미이행 처벌 규정 관리감독",
+          "quote": "1월부터 어선 안전 조업법이 시행됐고, 안전 조치 미이행에 대한 처벌 규정이 들어가 있으며 철저하게 관리 감독하겠습니다.",
+          "timestamp": 62,
+          "inReplyTo": null
+        }
+      ]
+    },
+    {
+      "id": "ex-11",
+      "topic": "산업안전보건법 과태료 실효성 점검",
+      "turns": [
+        {
+          "speakerId": "president",
+          "kind": "질문",
+          "summary": "산업안전 조치 의무를 위반했을 경우 제재 수준 질문",
+          "quote": "건설현장에서 추락 방지 시설을 하지 않고 일을 시키는 경우, 제재가 어느 정도인가요?",
+          "timestamp": 63,
+          "inReplyTo": null
+        },
+        {
+          "speakerId": "moel-minister",
+          "kind": "답변",
+          "summary": "제재 조항을 정확히 파악하지 못해 확인 필요",
+          "quote": "제가 정확히 알지 못합니다. 확인해 보겠습니다.",
+          "timestamp": 64,
+          "inReplyTo": 0
+        },
+        {
+          "speakerId": "president",
+          "kind": "지시",
+          "summary": "산업안전보건법 위반 시 제재 수준 확인 지시",
+          "quote": "산안법에 위반했을 때 어느 정도 제재인지 확인해 봐 주세요.",
+          "timestamp": 64,
+          "inReplyTo": 1
+        },
+        {
+          "speakerId": "president",
+          "kind": "지시",
+          "summary": "최소 300명 근로감독관으로 불시 단속 수행 지시",
+          "quote": "최소 300명 구성해서 불시 단속하라는 거입니다.",
+          "timestamp": 65,
+          "inReplyTo": null
+        },
+        {
+          "speakerId": "moel-minister",
+          "kind": "답변",
+          "summary": "안전 조치 미이행 자체에 대한 제재 조항은 없으며 사망 시에만 7년 이하 징역·1억원 이하 벌금",
+          "quote": "안전 조치를 안 한 사실 자체에 대한 제재 조항은 없어요.",
+          "timestamp": 67,
+          "inReplyTo": null
+        },
+        {
+          "speakerId": "unknown",
+          "kind": "발언",
+          "summary": "건설현장 안전조치 미이행 과태료가 5만원~5천만원으로 편차가 커 실효성 부족",
+          "quote": "건설현장에서 안전 조치를 안 한 것이 걸리면 최소 5만 원에서 최대 5천만 원인데, 이렇게 하면 지킬 이유가 없죠.",
+          "timestamp": 72,
+          "inReplyTo": null
+        },
+        {
+          "speakerId": "president",
+          "kind": "지시",
+          "summary": "산업안전보건법 과태료 규정 개정 검토 및 논의 지시",
+          "quote": "안전 조치를 위반했을 때 과태료를 어떻게 개정할지 한번 검토를 하고 논의를 한번 해 보죠.",
+          "timestamp": 72,
+          "inReplyTo": 5
+        }
+      ]
+    }
+  ],
+  "videoId": "oJX1L-GjJmg",
+  "videoUrl": "https://youtu.be/oJX1L-GjJmg",
+  "duration": 5302,
+  "thumbnail": "https://i.ytimg.com/vi/oJX1L-GjJmg/hqdefault.jpg"
+}

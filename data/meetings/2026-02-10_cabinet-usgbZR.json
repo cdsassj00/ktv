@@ -381,8 +381,15 @@
         "방역",
         "산불예방"
       ],
-      "status": "issued",
-      "followUps": []
+      "status": "reported",
+      "followUps": [
+        {
+          "meetingId": "2026-07-28-cabinet-VGsUla",
+          "exchangeId": "ex-04",
+          "summary": "가축 전염병 방역과 함께 민족 대이동 시기 농업용수 관리",
+          "inferred": true
+        }
+      ]
     },
     {
       "id": "dir-2026-02-10-03",

@@ -436,8 +436,15 @@
         "MOU",
         "수출"
       ],
-      "status": "issued",
-      "followUps": []
+      "status": "reported",
+      "followUps": [
+        {
+          "meetingId": "2026-07-28-cabinet-VGsUla",
+          "exchangeId": "ex-02",
+          "summary": "남미 순방 MOU 성과 및 수출·품목 다변화 관련 후속 조치 논의",
+          "inferred": true
+        }
+      ]
     },
     {
       "id": "dir-2026-07-14-05",

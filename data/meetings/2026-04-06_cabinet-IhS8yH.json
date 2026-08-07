@@ -447,8 +447,15 @@
         "부동산",
         "양도세"
       ],
-      "status": "issued",
-      "followUps": []
+      "status": "reported",
+      "followUps": [
+        {
+          "meetingId": "2026-07-28-cabinet-VGsUla",
+          "exchangeId": "ex-01",
+          "summary": "다주택자 양도세 특례의 5월 9일 시한과 관련된 정책 설명 및 형평성 논의",
+          "inferred": true
+        }
+      ]
     },
     {
       "id": "dir-2026-04-06-05",

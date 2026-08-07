@@ -440,8 +440,15 @@
         "산업안전",
         "중대재해"
       ],
-      "status": "issued",
-      "followUps": []
+      "status": "reported",
+      "followUps": [
+        {
+          "meetingId": "2026-07-31-cabinet-oJX1L-",
+          "exchangeId": "ex-04",
+          "summary": "중대재해처벌법의 실효성 문제와 형사 처벌 강화 방안 검토 중",
+          "inferred": true
+        }
+      ]
     },
     {
       "id": "dir-2025-09-02-08",
