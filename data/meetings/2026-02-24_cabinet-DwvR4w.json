@@ -514,8 +514,15 @@
         "물가",
         "AI인프라"
       ],
-      "status": "issued",
-      "followUps": []
+      "status": "reported",
+      "followUps": [
+        {
+          "meetingId": "2026-08-04-briefing-dXlEOX",
+          "exchangeId": "ex-19",
+          "summary": "배달앱 수수료 문제와 독과점 구조 개선 방안 논의",
+          "inferred": true
+        }
+      ]
     }
   ],
   "aiDataPolicy": [

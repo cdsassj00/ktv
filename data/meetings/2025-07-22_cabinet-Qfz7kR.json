@@ -147,8 +147,15 @@
         "재난대응체계",
         "AI활용"
       ],
-      "status": "issued",
-      "followUps": []
+      "status": "reported",
+      "followUps": [
+        {
+          "meetingId": "2026-08-04-briefing-dXlEOX",
+          "exchangeId": "ex-01",
+          "summary": "공정거래위원회 신규 인력 증원 현황 보고 (1차 167명, 2차 250명 가량 증원 계획)",
+          "inferred": true
+        }
+      ]
     },
     {
       "id": "dir-2025-07-22-05",

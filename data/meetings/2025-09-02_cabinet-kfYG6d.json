@@ -336,8 +336,15 @@
         "잠재성장률",
         "경제성장전략"
       ],
-      "status": "issued",
-      "followUps": []
+      "status": "reported",
+      "followUps": [
+        {
+          "meetingId": "2026-08-04-briefing-dXlEOX",
+          "exchangeId": "ex-14",
+          "summary": "벤처투자 모태펀드 현황 보고 및 내년 증액 필요성 논의",
+          "inferred": true
+        }
+      ]
     },
     {
       "id": "dir-2025-09-02-02",
