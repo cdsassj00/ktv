@@ -38,7 +38,21 @@ const ORIGIN = "https://www.youtube.com";
    거쳐 나가게 한다. 요약 LLM·R2 업로드 등 다른 트래픽은 프록시를 타지 않는다.
    fetch의 표준 타입에 dispatcher가 없어 옵션 타입을 확장해 전달한다. */
 const PROXY_URL = process.env.PROXY_URL?.trim();
-const ytDispatcher = PROXY_URL ? new ProxyAgent(PROXY_URL) : undefined;
+/* undici ProxyAgent는 URL 안의 user:pass@ 를 Proxy-Authorization으로 자동
+   전송하지 않는 경우가 있어(→ 프록시 407 → "fetch failed"), 인증을 Basic
+   토큰으로 명시적으로 붙인다. */
+function makeProxyDispatcher(raw: string): ProxyAgent {
+  const u = new URL(raw);
+  const uri = `${u.protocol}//${u.host}`; // userinfo 제거한 순수 엔드포인트
+  if (u.username) {
+    const user = decodeURIComponent(u.username);
+    const pass = decodeURIComponent(u.password);
+    const token = "Basic " + Buffer.from(`${user}:${pass}`).toString("base64");
+    return new ProxyAgent({ uri, token });
+  }
+  return new ProxyAgent({ uri });
+}
+const ytDispatcher = PROXY_URL ? makeProxyDispatcher(PROXY_URL) : undefined;
 type FetchOpts = RequestInit & { dispatcher?: unknown };
 function ytFetch(url: string, opts: FetchOpts): Promise<Response> {
   if (ytDispatcher) opts = { ...opts, dispatcher: ytDispatcher };
@@ -271,7 +285,10 @@ export async function fetchTranscripts(): Promise<void> {
           log(`자막 차단(로그인 필요) — 재시도 생략: ${item.title}`);
           break;
         }
-        log(`자막 수집 오류(${attempt + 1}/4): ${item.title} — ${msg}`);
+        // "fetch failed" 같은 상위 메시지는 원인이 cause에 있으므로 함께 찍는다
+        const cause = (e as { cause?: { code?: string; message?: string } }).cause;
+        const detail = cause ? ` [${cause.code ?? cause.message ?? ""}]` : "";
+        log(`자막 수집 오류(${attempt + 1}/4): ${item.title} — ${msg}${detail}`);
         await sleep(4000 * (attempt + 1));
       }
     }
