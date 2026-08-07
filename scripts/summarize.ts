@@ -90,8 +90,19 @@ ${chunk.text}
 JSON만 출력:
 {"segments":[{"speakerId":"...","kind":"...","summary":"...","quote":"...","timestamp":0}],"aiDataRelated":[0,2]}
 (aiDataRelated는 AI·데이터 정책 관련 segments의 인덱스 배열)`;
-  const text = await ask(prompt, 4000, "light");
-  return extractJson<{ segments: MappedSegment[]; aiDataRelated: number[] }>(text);
+  const parse = (t: string) => extractJson<{ segments: MappedSegment[]; aiDataRelated: number[] }>(t);
+  const text = await ask(prompt, 6000, "light");
+  try {
+    return parse(text);
+  } catch {
+    // LLM이 이따금 깨진 JSON을 반환한다 — 한 번 더 엄격히 요청해 복구 시도
+    const retry = await ask(
+      prompt + "\n\n주의: 반드시 유효한 JSON만 출력하라. 문자열 값 안의 큰따옴표는 \\\" 로 escape하고, 코드펜스(```)는 쓰지 마라.",
+      6000,
+      "light"
+    );
+    return parse(retry);
+  }
 }
 
 async function reduceMeeting(
@@ -241,24 +252,31 @@ export async function summarize(): Promise<number> {
       continue;
     }
 
-    log(`요약 시작: ${item.title}`);
-    const chunks = chunkTranscript(segments);
-    log(`  청크 ${chunks.length}개 (15분 단위)`);
-    const mapped = [];
-    for (const [i, chunk] of chunks.entries()) {
-      log(`  map ${i + 1}/${chunks.length}…`);
-      mapped.push(await mapChunk(item, chunk, roster));
-    }
-    log("  reduce…");
-    const meeting = await reduceMeeting(item, mapped, roster);
-    const date = item.publishedAt.slice(0, 10);
-    const outFile = path.join(MEETINGS_DIR, `${date}_${item.type}-${item.videoId.slice(0, 6)}.json`);
-    writeJson(outFile, meeting);
-    log(`  저장: ${outFile}`);
+    // 한 회의의 요약 실패(예: LLM이 깨진 JSON 반환)가 파이프라인 전체를
+    // 중단시키지 않도록 회의 단위로 격리한다. 실패분은 큐에 남겨 재시도한다.
+    try {
+      log(`요약 시작: ${item.title}`);
+      const chunks = chunkTranscript(segments);
+      log(`  청크 ${chunks.length}개 (15분 단위)`);
+      const mapped = [];
+      for (const [i, chunk] of chunks.entries()) {
+        log(`  map ${i + 1}/${chunks.length}…`);
+        mapped.push(await mapChunk(item, chunk, roster));
+      }
+      log("  reduce…");
+      const meeting = await reduceMeeting(item, mapped, roster);
+      const date = item.publishedAt.slice(0, 10);
+      const outFile = path.join(MEETINGS_DIR, `${date}_${item.type}-${item.videoId.slice(0, 6)}.json`);
+      writeJson(outFile, meeting);
+      log(`  저장: ${outFile}`);
 
-    log("  지시-후속보고 연결 검사…");
-    await linkFollowUps(meeting as Record<string, unknown>);
-    processed += 1;
+      log("  지시-후속보고 연결 검사…");
+      await linkFollowUps(meeting as Record<string, unknown>);
+      processed += 1;
+    } catch (e) {
+      log(`요약 실패(다음 실행에서 재시도): ${item.title} — ${(e as Error).message}`);
+      remaining.push(item);
+    }
   }
 
   writeJson(QUEUE_FILE, remaining);

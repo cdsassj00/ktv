@@ -22,8 +22,11 @@
 import { pathToFileURL } from "url";
 import {
   classifyTitle,
+  existingMeetingKeys,
   existingVideoIds,
   log,
+  looksLikeClip,
+  meetingKey,
   parseIsoDuration,
   QUEUE_FILE,
   QueueItem,
@@ -81,8 +84,8 @@ async function searchChannelMeetings(
   publishedAfterISO: string
 ): Promise<Candidate[]> {
   const queries: { q: string; want: QueueItem["type"]; ok: (t: string) => boolean }[] = [
-    { q: "국무회의", want: "cabinet", ok: (t) => /국무회의/.test(t) && /제\s*\d+\s*회/.test(t) },
-    { q: "업무보고", want: "briefing", ok: (t) => /업무보고/.test(t) },
+    { q: "국무회의", want: "cabinet", ok: (t) => !looksLikeClip(t) && /국무회의/.test(t) && /제\s*\d+\s*회/.test(t) },
+    { q: "업무보고", want: "briefing", ok: (t) => !looksLikeClip(t) && /업무보고/.test(t) },
   ];
   const out: Candidate[] = [];
   for (const { q, want, ok } of queries) {
@@ -125,17 +128,26 @@ export async function fetchVideos(): Promise<QueueItem[]> {
   const queueMaxAgeDays = Number(process.env.QUEUE_MAX_AGE_DAYS ?? 45);
 
   const known = existingVideoIds();
+  const knownKeys = existingMeetingKeys(); // 수정본 재업로드(다른 videoId) 중복 방지
   const candidates: Candidate[] = [];
   const seen = new Set<string>();
+  const seenKeys = new Set<string>();
   const add = (c: Candidate) => {
     if (since && c.publishedAt.slice(0, 10) < since) return;
     if (known.has(c.videoId) || seen.has(c.videoId)) return;
+    const key = meetingKey(c.type, c.title, c.publishedAt.slice(0, 10));
+    if (knownKeys.has(key) || seenKeys.has(key)) {
+      log(`중복 회의(수정본 추정) — 건너뜀: ${c.title}`);
+      return;
+    }
     seen.add(c.videoId);
+    seenKeys.add(key);
     candidates.push(c);
   };
 
-  // 1) 공식 국무회의 재생목록 전체 — 전부 cabinet으로 분류
+  // 1) 공식 국무회의 재생목록 전체 — 전부 cabinet으로 분류(클립성 제외)
   for (const item of await listPlaylist(playlistId, maxPages)) {
+    if (looksLikeClip(item.title)) continue;
     add({ ...item, type: "cabinet" });
   }
   log(`재생목록(${playlistId})에서 신규 ${candidates.length}건`);
