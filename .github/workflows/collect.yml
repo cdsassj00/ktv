@@ -82,10 +82,12 @@ jobs:
         run: |
           git config user.name "opencabinet-bot"
           git config user.email "actions@github.com"
-          git add data/meetings data/speakers.json
+          # 자막(transcripts)도 커밋해 쌓아둔다 — 한 번 받으면 재수집 불필요,
+          # 쿠키가 죽어도 이미 받은 자막으로 요약을 이어갈 수 있다.
+          git add data/meetings data/speakers.json data/transcripts
           if git diff --cached --quiet; then
             echo "변경 없음"
           else
-            git commit -m "data: 회의 요약 자동 수집 ($(date -u +%Y-%m-%d))"
+            git commit -m "data: 회의 자막·요약 자동 수집 ($(date -u +%Y-%m-%d))"
             git push
           fi

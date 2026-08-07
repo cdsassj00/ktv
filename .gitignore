@@ -13,9 +13,12 @@ next-env.d.ts
 .env.local
 .env*.local
 
-# pipeline intermediates (transcripts can be large; queue is regenerated)
-/data/transcripts/
+# pipeline intermediates (queue is regenerated from YouTube each run)
 /data/videos-queue.json
+# NOTE: data/transcripts/ 는 일부러 커밋한다(gitignore 하지 않음).
+# 유튜브 자막 수집은 로그인 쿠키에 의존하고 쿠키는 자주 만료·차단되므로,
+# 한 번 받은 자막을 저장소에 쌓아두면(persist) 재수집이 필요 없어지고
+# 요약도 유튜브 접속 없이 언제든 재생성할 수 있어 파이프라인이 견고해진다.
 
 # vercel
 .vercel
