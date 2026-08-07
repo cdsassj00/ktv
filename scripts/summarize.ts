@@ -235,12 +235,21 @@ export async function summarize(): Promise<number> {
   assertLlmEnv();
   log(`LLM: ${describeLlm()}`);
   const queue = readJson<QueueItem[]>(QUEUE_FILE, []);
-  const maxMeetings = Number(process.env.MAX_MEETINGS ?? 3);
+  const n = Number(process.env.MAX_MEETINGS);
+  const maxMeetings = Number.isFinite(n) && n > 0 ? n : 3;
   const roster = speakerRoster();
   let processed = 0;
   const remaining: QueueItem[] = [];
 
-  for (const item of queue) {
+  // 회당 처리 한도(MAX_MEETINGS)가 있으므로, 사용자가 실제로 찾는 국무회의를
+  // 홍보 클립·업무보고보다 먼저 요약·공개하도록 우선순위로 정렬한다.
+  // (같은 종류 안에서는 최신 회의 우선)
+  const priority = (t: string) => (t === "cabinet" ? 0 : t === "briefing" ? 1 : 2);
+  const ordered = [...queue].sort(
+    (a, b) => priority(a.type) - priority(b.type) || (a.publishedAt < b.publishedAt ? 1 : -1)
+  );
+
+  for (const item of ordered) {
     const transcriptFile = path.join(TRANSCRIPTS_DIR, `${item.videoId}.json`);
     if (!fs.existsSync(transcriptFile) || processed >= maxMeetings) {
       remaining.push(item);

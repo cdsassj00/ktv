@@ -17,6 +17,9 @@ on:
         description: "출처 대조·교체: 클립/삭제된 출처를 정상 공식 본편으로 바꿈(기존 회의 유지)"
         type: boolean
         default: false
+      max:
+        description: "이번 실행에서 요약할 최대 회의 수(기본 3 — 밀린 백로그를 한 번에 처리하려면 크게)"
+        required: false
 
 permissions:
   contents: write
@@ -56,6 +59,7 @@ jobs:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           R2_BUCKET: ${{ vars.R2_BUCKET }}
           SINCE: ${{ inputs.since }}
+          MAX_MEETINGS: ${{ inputs.max }}
         run: npm run pipeline
 
       - name: 출처 대조·교체 (수동 트리거 시)
