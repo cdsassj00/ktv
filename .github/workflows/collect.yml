@@ -33,7 +33,10 @@ permissions:
 
 concurrency:
   group: collect
-  cancel-in-progress: false
+  # 새 실행이 멈춰있는 이전 실행을 취소하고 넘겨받는다(느린 프록시로 hang된
+  # 실행을 새 킥으로 밀어낼 수 있게). 파이프라인은 매번 처음부터 재구성되므로
+  # 진행 중인 실행을 취소해도 데이터 유실은 없다(자막은 커밋된 것만 유지).
+  cancel-in-progress: true
 
 jobs:
   collect:

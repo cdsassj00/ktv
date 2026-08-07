@@ -53,16 +53,20 @@ function makeProxyDispatcher(raw: string): ProxyAgent {
   return new ProxyAgent({ uri });
 }
 const ytDispatcher = PROXY_URL ? makeProxyDispatcher(PROXY_URL) : undefined;
+// 프록시 IP가 죽었거나 느릴 때 요청이 무한정 매달리는 것을 막는 요청 타임아웃.
+// (주거용 프록시는 IP를 랜덤 회전하면 일부가 응답 없이 hang → 전체가 멈춤)
+const YT_FETCH_TIMEOUT_MS = Number(process.env.YT_FETCH_TIMEOUT_MS) || 20000;
 type FetchOpts = RequestInit & { dispatcher?: unknown };
 function ytFetch(url: string, opts: FetchOpts): Promise<Response> {
   // 프록시(dispatcher)를 쓸 땐 반드시 undici 자체 fetch를 사용한다. Node 내장
   // fetch에 설치본 undici의 dispatcher를 넘기면 버전 불일치로 "invalid
   // onRequestStart method"(UND_ERR_INVALID_ARG)가 난다. 프록시가 없으면
-  // 기존처럼 Node 내장 fetch를 그대로 쓴다.
+  // 기존처럼 Node 내장 fetch를 그대로 쓴다. 두 경우 모두 타임아웃을 건다.
+  const merged: FetchOpts = { ...opts, signal: AbortSignal.timeout(YT_FETCH_TIMEOUT_MS) };
   if (ytDispatcher) {
-    return undiciFetch(url, { ...opts, dispatcher: ytDispatcher } as never) as unknown as Promise<Response>;
+    return undiciFetch(url, { ...merged, dispatcher: ytDispatcher } as never) as unknown as Promise<Response>;
   }
-  return fetch(url, opts as RequestInit);
+  return fetch(url, merged as RequestInit);
 }
 
 /* 클라이언트 폴백 체인 — 데이터센터 IP는 클라이언트별로 차단 여부가 달라
