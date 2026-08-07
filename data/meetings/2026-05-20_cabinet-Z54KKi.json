@@ -425,8 +425,21 @@
         "폭염",
         "재난대응"
       ],
-      "status": "issued",
-      "followUps": []
+      "status": "reported",
+      "followUps": [
+        {
+          "meetingId": "2026-08-04-cabinet-5lL3V1",
+          "exchangeId": "ex-03",
+          "summary": "극심한 폭염 상황에서 중앙재난안전대책본부를 2단계로 격상하고 무더위쉼터 전국 확대 운영, 국민 3대 행동지침(폭염경보시 야외활동 중단, 시원한 장소 이동) 안내 등 폭염 대응 현황 보고",
+          "inferred": true
+        },
+        {
+          "meetingId": "2026-08-04-cabinet-5lL3V1",
+          "exchangeId": "ex-05",
+          "summary": "영남지역 극심한 가뭄(전남 확산 중)에 대응하여 상황 악화 전 식수·도서지역·농업용수·지하수 관리 예비대책을 신속하고 강력하게 준비하고, 난개발된 지하수의 체계적 관리 체계화 지시",
+          "inferred": true
+        }
+      ]
     },
     {
       "id": "dir-2026-05-20-02",

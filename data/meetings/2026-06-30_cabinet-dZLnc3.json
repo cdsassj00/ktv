@@ -428,8 +428,15 @@
         "자살예방",
         "산재"
       ],
-      "status": "issued",
-      "followUps": []
+      "status": "reported",
+      "followUps": [
+        {
+          "meetingId": "2026-08-05-briefing-sMoUn4",
+          "exchangeId": "ex-03",
+          "summary": "자살·산재·교통사고 등 사망 유형별 추이 분석에서 자살사망자가 8개월 연속 감소한 성과를 국무조정실이 보고함",
+          "inferred": true
+        }
+      ]
     },
     {
       "id": "dir-2026-06-30-07",

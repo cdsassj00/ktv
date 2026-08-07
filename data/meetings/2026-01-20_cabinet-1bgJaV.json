@@ -421,8 +421,15 @@
         "재외동포",
         "재외공관"
       ],
-      "status": "issued",
-      "followUps": []
+      "status": "reported",
+      "followUps": [
+        {
+          "meetingId": "2026-08-05-briefing-Lf4llX",
+          "exchangeId": "ex-02",
+          "summary": "재외동포의 애로사항·민원 취합·분석 및 정기적 동포 간담회 개최 실적(역대 최다 동포간담회, 동포민원 2,800여 건 접수·989건 해소) 보고",
+          "inferred": true
+        }
+      ]
     },
     {
       "id": "dir-2026-01-20-09",

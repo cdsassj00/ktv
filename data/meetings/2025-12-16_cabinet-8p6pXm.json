@@ -427,8 +427,15 @@
         "공직기강",
         "감사"
       ],
-      "status": "issued",
-      "followUps": []
+      "status": "reported",
+      "followUps": [
+        {
+          "meetingId": "2026-08-05-briefing-sMoUn4",
+          "exchangeId": "ex-02",
+          "summary": "각 부처 감사 기능 강화 및 신상필벌 확립에 대해 행정안전부가 대통령 지시사항 이행 현황(138건 완료)을 보고함",
+          "inferred": true
+        }
+      ]
     },
     {
       "id": "dir-2025-12-16-09",

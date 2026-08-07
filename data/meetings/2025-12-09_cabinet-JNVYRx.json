@@ -414,8 +414,15 @@
         "재외공관",
         "행정효율"
       ],
-      "status": "issued",
-      "followUps": []
+      "status": "reported",
+      "followUps": [
+        {
+          "meetingId": "2026-08-05-briefing-Lf4llX",
+          "exchangeId": "ex-01",
+          "summary": "국가·지방정부·공공기관의 해외 파견 기관·지사·인력을 통합 관리하는 방안에 대해 재외공관 중심의 외교부 협업 체계 확립 및 포용적 동포정책 추진 보고",
+          "inferred": true
+        }
+      ]
     },
     {
       "id": "dir-2025-12-09-07",

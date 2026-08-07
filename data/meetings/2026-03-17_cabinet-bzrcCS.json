@@ -450,8 +450,15 @@
         "균형발전",
         "지방주도성장"
       ],
-      "status": "issued",
-      "followUps": []
+      "status": "reported",
+      "followUps": [
+        {
+          "meetingId": "2026-05-26-cabinet-B3JFkX",
+          "exchangeId": "ex-01",
+          "summary": "동남권을 남부 해양 수도권으로 육성하기 위한 전략적 투자 지속 및 동남권투자공사 신설, 항만·항공 인프라 확충, 해양산업 기반 강화 추진 현황",
+          "inferred": true
+        }
+      ]
     },
     {
       "id": "dir-2026-03-17-05",
@@ -588,8 +595,15 @@
         "AI교육",
         "디지털포용"
       ],
-      "status": "issued",
-      "followUps": []
+      "status": "reported",
+      "followUps": [
+        {
+          "meetingId": "2026-08-05-briefing-JQMNRc",
+          "exchangeId": "ex-06",
+          "summary": "전국민 AI 접근·교육 기회 부여를 위해 학점은행·독학사에 AI 과목 도입, 일상적 AI 교육 환경 조성 등 구체적 계획 발표",
+          "inferred": true
+        }
+      ]
     }
   ],
   "aiDataPolicy": [

@@ -492,8 +492,15 @@
         "산업재해",
         "안전"
       ],
-      "status": "issued",
-      "followUps": []
+      "status": "reported",
+      "followUps": [
+        {
+          "meetingId": "2026-08-04-briefing-dXlEOX",
+          "exchangeId": "ex-01",
+          "summary": "산재 사망 감소세에 안주하지 말고 고위험 사업장 감독 강화 - 상반기 산재 사망자 253명(역대 최저) 달성",
+          "inferred": true
+        }
+      ]
     },
     {
       "id": "dir-2026-04-14-06",

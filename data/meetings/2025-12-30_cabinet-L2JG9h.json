@@ -408,8 +408,15 @@
         "수사지휘체계",
         "법제정비"
       ],
-      "status": "issued",
-      "followUps": []
+      "status": "reported",
+      "followUps": [
+        {
+          "meetingId": "2026-08-04-cabinet-5lL3V1",
+          "exchangeId": "ex-02",
+          "summary": "경찰 수사 지휘체계 개선과 함께 국가경찰위원회 권한 강화, 민간 감찰관 100여명 이상 구성, 내부 비리수사 강화 등 경찰 개혁 방안을 연내 법 개정으로 이행할 계획 보고",
+          "inferred": true
+        }
+      ]
     },
     {
       "id": "dir-2025-12-30-08",

@@ -441,8 +441,15 @@
         "수사기소분리",
         "중수청"
       ],
-      "status": "issued",
-      "followUps": []
+      "status": "reported",
+      "followUps": [
+        {
+          "meetingId": "2026-08-05-briefing-sMoUn4",
+          "exchangeId": "ex-01",
+          "summary": "중수청 출범 전환기의 수사 사건 적체 방지를 위한 검찰·중수청 인력 운용과 이관 계획을 보고함",
+          "inferred": true
+        }
+      ]
     },
     {
       "id": "dir-2026-03-31-10",
@@ -456,8 +463,15 @@
         "ODA",
         "재정효율"
       ],
-      "status": "issued",
-      "followUps": []
+      "status": "reported",
+      "followUps": [
+        {
+          "meetingId": "2026-08-05-briefing-Lf4llX",
+          "exchangeId": "ex-03",
+          "summary": "난립한 무상원조 사업을 통제·관리하는 체계 구축 필요성에 대해 코이카 명의 일원화 및 예산·집행 체계 원칙적 통합 지시",
+          "inferred": true
+        }
+      ]
     }
   ],
   "aiDataPolicy": [

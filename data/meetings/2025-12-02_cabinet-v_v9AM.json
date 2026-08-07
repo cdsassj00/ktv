@@ -351,8 +351,15 @@
         "임금체불",
         "노동"
       ],
-      "status": "issued",
-      "followUps": []
+      "status": "reported",
+      "followUps": [
+        {
+          "meetingId": "2026-08-04-briefing-dXlEOX",
+          "exchangeId": "ex-01",
+          "summary": "임금체불 신고 사건 전수조사와 현장 점검, 상습 체불 처벌 강화 추진 - 상반기 임금체불액 10.7% 감소 성과 보고",
+          "inferred": true
+        }
+      ]
     },
     {
       "id": "dir-2025-12-02-03",

@@ -456,8 +456,15 @@
         "교육",
         "교권보호"
       ],
-      "status": "issued",
-      "followUps": []
+      "status": "reported",
+      "followUps": [
+        {
+          "meetingId": "2026-08-05-briefing-JQMNRc",
+          "exchangeId": "ex-04",
+          "summary": "AI 시대 논술형·서술형 평가 도입으로 사고력·창의성 중심 교육으로의 전환 필요성을 교육부가 구체적으로 설명하고 대통령과 논의",
+          "inferred": true
+        }
+      ]
     },
     {
       "id": "dir-2026-04-28-03",

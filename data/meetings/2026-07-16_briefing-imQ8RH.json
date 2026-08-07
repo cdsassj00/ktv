@@ -385,8 +385,15 @@
         "규제",
         "인력"
       ],
-      "status": "issued",
-      "followUps": []
+      "status": "reported",
+      "followUps": [
+        {
+          "meetingId": "2026-08-05-briefing-sMoUn4",
+          "exchangeId": "ex-04",
+          "summary": "의약품 허가심사 인력 충원 문제를 총리가 직접 점검하도록 지시했고, 법무부·검찰청 업무보고에서 수사 역량 강화 계획을 보고함",
+          "inferred": true
+        }
+      ]
     },
     {
       "id": "dir-2026-07-16-04",
