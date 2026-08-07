@@ -66,10 +66,30 @@ function decodeEntities(s: string): string {
     .trim();
 }
 
-/** YT_COOKIE 문자열을 정리(개행·따옴표 제거). 없으면 null. */
+/**
+ * YT_COOKIE를 Cookie 헤더 형식("name=value; name2=value2")으로 정규화한다.
+ * 두 입력 형식을 모두 허용한다:
+ *   1) Cookie 헤더 문자열 (브라우저 DevTools의 Request Headers > cookie)
+ *   2) Netscape 쿠키 파일 (확장프로그램 내보내기 — 탭 구분 7필드)
+ * 없으면 null.
+ */
 function getCookie(): string | null {
   const raw = process.env.YT_COOKIE?.trim();
   if (!raw) return null;
+  // Netscape 쿠키 파일이면(탭 포함 또는 헤더 주석) name=value 쌍으로 변환
+  if (/^#\s*Netscape/i.test(raw) || /\t/.test(raw)) {
+    const pairs: string[] = [];
+    for (const line of raw.split(/\r?\n/)) {
+      const t = line.trim();
+      if (!t || t.startsWith("#")) continue;
+      const f = line.split("\t");
+      if (f.length < 7) continue;
+      const name = f[5].trim();
+      const value = f[6].trim();
+      if (name) pairs.push(`${name}=${value}`);
+    }
+    if (pairs.length) return pairs.join("; ");
+  }
   return raw.replace(/^["']|["']$/g, "").replace(/\s*\n\s*/g, " ").trim();
 }
 
@@ -95,6 +115,34 @@ function authHeaders(cookie: string): Record<string, string> {
   const headers: Record<string, string> = { cookie, origin: ORIGIN, "x-origin": ORIGIN };
   if (parts.length) headers["authorization"] = parts.join(" ");
   return headers;
+}
+
+/**
+ * timedtext XML을 세그먼트로 파싱. 유튜브가 반환하는 두 형식을 모두 지원한다:
+ *   A) 기본:  <text start="0.56" dur="6.92">...</text>   (초 단위 실수)
+ *   B) srv3:  <p t="560" d="6920">...</p>                (밀리초)
+ * 예전 파서는 B만 처리해, 기본 형식(A)으로 오는 자막을 0줄로 오인했다.
+ */
+function parseTimedText(xml: string): TranscriptSegment[] {
+  const segments: TranscriptSegment[] = [];
+  let m: RegExpExecArray | null;
+  const reText = /<text start="([\d.]+)"(?: dur="([\d.]+)")?[^>]*>(.*?)<\/text>/gs;
+  while ((m = reText.exec(xml))) {
+    const text = decodeEntities(m[3]);
+    if (text) segments.push({ text, start: Math.round(Number(m[1])), duration: Math.round(Number(m[2] ?? 0)) });
+  }
+  if (segments.length > 0) return segments;
+  const reP = /<p t="(\d+)"(?: d="(\d+)")?[^>]*>(.*?)<\/p>/gs;
+  while ((m = reP.exec(xml))) {
+    const text = decodeEntities(m[3]);
+    if (text)
+      segments.push({
+        text,
+        start: Math.round(Number(m[1]) / 1000),
+        duration: Math.round(Number(m[2] ?? 0) / 1000),
+      });
+  }
+  return segments;
 }
 
 /**
@@ -156,18 +204,7 @@ export async function fetchTranscriptInnerTube(
     const capHeaders: Record<string, string> = { "user-agent": c.ua };
     if (cookie) capHeaders["cookie"] = cookie;
     const xml = await (await fetch(ko.baseUrl, { headers: capHeaders })).text();
-    const segments: TranscriptSegment[] = [];
-    const re = /<p t="(\d+)"(?: d="(\d+)")?[^>]*>(.*?)<\/p>/gs;
-    let m: RegExpExecArray | null;
-    while ((m = re.exec(xml))) {
-      const text = decodeEntities(m[3]);
-      if (text)
-        segments.push({
-          text,
-          start: Math.round(Number(m[1]) / 1000),
-          duration: Math.round(Number(m[2] ?? 0) / 1000),
-        });
-    }
+    const segments = parseTimedText(xml);
     return segments.length > 0 ? segments : null;
   }
   throw new Error(`모든 클라이언트 차단/실패 (마지막: ${lastStatus})`);
