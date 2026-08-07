@@ -8,6 +8,13 @@ on:
     - cron: "0 10 * * 2"
     # 그 외 요일은 하루 1회 (21:00 UTC = 오전 6시 KST)
     - cron: "0 21 * * *"
+  # 수동 킥: .github/collect-now 파일을 커밋하면 즉시 수집 실행.
+  # (dispatch 권한이 없는 환경에서 git push만으로 파이프라인을 돌리기 위한 스위치.
+  #  봇의 data 커밋은 이 경로를 건드리지 않으므로 재실행 루프가 생기지 않는다.)
+  push:
+    branches: [main]
+    paths:
+      - ".github/collect-now"
   workflow_dispatch:
     inputs:
       since:
@@ -59,7 +66,9 @@ jobs:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           R2_BUCKET: ${{ vars.R2_BUCKET }}
           SINCE: ${{ inputs.since }}
-          MAX_MEETINGS: ${{ inputs.max }}
+          # 수동 킥(push)으로 돌릴 땐 밀린 백로그를 한 번에 처리하도록 넉넉히,
+          # dispatch는 입력값, 그 외(cron)는 코드 기본값(3).
+          MAX_MEETINGS: ${{ inputs.max || (github.event_name == 'push' && '20' || '') }}
         run: npm run pipeline
 
       - name: 출처 대조·교체 (수동 트리거 시)
