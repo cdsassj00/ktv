@@ -219,6 +219,14 @@ export async function fetchTranscripts(): Promise<void> {
   ensureDir(TRANSCRIPTS_DIR);
   log(getCookie() ? "YT_COOKIE 감지 — 쿠키 인증(WEB) 우선 시도" : "YT_COOKIE 없음 — 익명 폴백만 시도(차단 시 실패)");
 
+  const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
+  // 쿠키 보호: 영상 사이 간격을 넉넉히 두어 "버스트"로 보이지 않게 한다.
+  const gapMs = Number(process.env.TRANSCRIPT_DELAY_MS) || 4000;
+  // 연속으로 로그인 차단(LOGIN_REQUIRED)이 이만큼 나오면 세션이 막힌 것이므로
+  // 남은 영상까지 두들기지 말고 즉시 중단한다(계속 두들기면 쿠키·IP가 더 태워짐).
+  const blockLimit = Number(process.env.TRANSCRIPT_BLOCK_LIMIT) || 3;
+  let consecutiveBlocks = 0;
+
   for (const item of queue) {
     const outFile = path.join(TRANSCRIPTS_DIR, `${item.videoId}.json`);
     if (fs.existsSync(outFile)) {
@@ -226,24 +234,45 @@ export async function fetchTranscripts(): Promise<void> {
       continue;
     }
     let done = false;
-    // InnerTube는 간헐적으로 트랙을 누락 반환하므로 null도 재시도 대상
+    let authBlocked = false;
+    // InnerTube는 간헐적으로 트랙을 누락 반환하므로 null도 재시도 대상.
+    // 단, 로그인 차단(LOGIN_REQUIRED)은 재시도해도 안 되고 봇 탐지만 악화되므로 즉시 포기.
     for (let attempt = 0; attempt < 4 && !done; attempt++) {
       try {
         const segments = await fetchTranscriptInnerTube(item.videoId);
         if (segments === null) {
           if (attempt === 3) log(`자막 없음 — 다음 실행에서 재시도: ${item.title}`);
-          else await new Promise((r) => setTimeout(r, 5000 * (attempt + 1)));
+          else await sleep(5000 * (attempt + 1));
           continue;
         }
         fs.writeFileSync(outFile, JSON.stringify(segments) + "\n", "utf-8");
         log(`자막 저장 (${segments.length} 세그먼트): ${item.title}`);
         done = true;
       } catch (e) {
-        log(`자막 수집 오류(${attempt + 1}/4): ${item.title} — ${(e as Error).message}`);
-        await new Promise((r) => setTimeout(r, 4000 * (attempt + 1)));
+        const msg = (e as Error).message;
+        if (/LOGIN_REQUIRED/.test(msg)) {
+          authBlocked = true;
+          log(`자막 차단(로그인 필요) — 재시도 생략: ${item.title}`);
+          break;
+        }
+        log(`자막 수집 오류(${attempt + 1}/4): ${item.title} — ${msg}`);
+        await sleep(4000 * (attempt + 1));
       }
     }
-    await new Promise((r) => setTimeout(r, 1500)); // 요청 간격
+
+    if (done) {
+      consecutiveBlocks = 0;
+    } else if (authBlocked) {
+      consecutiveBlocks += 1;
+      if (consecutiveBlocks >= blockLimit) {
+        log(
+          `유튜브가 세션을 차단했습니다(연속 ${consecutiveBlocks}건 로그인 요구). ` +
+            `남은 회의는 다음 실행에서 재시도합니다. 반복되면 YT_COOKIE 갱신 또는 프록시/자체 러너를 권장합니다.`
+        );
+        break; // 버스트로 쿠키를 더 태우지 않도록 전체 중단
+      }
+    }
+    await sleep(gapMs); // 요청 간격(쿠키 보호)
   }
 }
 
