@@ -155,7 +155,9 @@ JSON만 출력 (스키마):
   "aiDataPolicy": [{"topic":"...","speakerId":"...","summary":"...","quote":"...","timestamp":0,"tags":["..."]}],
   "tags": ["..."]
 }`;
-  const text = await ask(prompt, 16000, "main");
+  // 3시간짜리 업무보고는 통합 요약 출력이 커서 잘리기 쉽다 → 넉넉히.
+  const reduceMaxTokens = Number(process.env.REDUCE_MAX_TOKENS) || 32000;
+  const text = await ask(prompt, reduceMaxTokens, "main");
   const meeting = extractJson<Record<string, unknown>>(text);
   return {
     ...meeting,
