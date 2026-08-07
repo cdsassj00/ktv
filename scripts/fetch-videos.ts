@@ -2,12 +2,15 @@
  * KTV 유튜브 채널의 업로드 목록에서 국무회의·국민업무보고 영상을 수집해
  * data/videos-queue.json 에 저장한다.
  *
- * 수집 소스 3개를 합친다:
+ * 수집 소스 4개를 합친다:
  *   1) KTV 공식 "국무회의" 재생목록 (PLAYLIST_ID, 기본 PLTlQMzTtp1gY) — 전 회차 아카이브
  *   2) 채널 최신 업로드 (제목 필터) — 재생목록에 아직 안 들어간 최신 회의/업무보고 커버
- *   3) 키워드 검색(search.list) — "국무회의"·"업무보고"를 채널 안에서 직접 검색.
- *      재생목록 갱신이 늦거나(현재도 몇 주 밀림), 회의 영상이 쇼츠에 밀려
- *      최신 업로드 창(수백 개) 밖으로 빠져도 끝까지 찾아낸다.
+ *   3) 국무회의 "회차 번호 콕집기" — 보유한 최신 회차 다음 번호("제N회 국무회의")를
+ *      번호로 정확히 지목해 검색한다. 퍼지 매칭이 아니라 그 회차 본편만 잡히므로
+ *      클립 오수집 여지가 없고, 재생목록이 늦거나 쇼츠에 밀려도 다음 회차가
+ *      올라오는 즉시 잡는다. 국무회의 최신 추적의 "주력" 경로.
+ *   4) 키워드 검색(search.list) — 회차 번호가 없는 "업무보고", 그리고 콕집기의
+ *      보조 안전망. 20분 이상 긴 영상만 채택한다.
  *
  * 그리고 큐를 "누적(대기 큐)"로 운영한다: 이번 실행에서 재발견되지 않아도,
  * 아직 수집(요약)되지 않은 회의는 큐에 남겨 다음 실행에서 자막을 재확인한다.
@@ -17,13 +20,16 @@
  * 필요 환경변수: YOUTUBE_API_KEY
  * 선택 환경변수: PLAYLIST_ID, CHANNEL_HANDLE(기본 KTV_korea), MAX_PAGES(기본 4),
  *   SINCE(YYYY-MM-DD), SEARCH_LOOKBACK_DAYS(검색 소급 일수, 기본 90),
- *   QUEUE_MAX_AGE_DAYS(대기 큐 최대 보관 일수, 기본 45)
+ *   QUEUE_MAX_AGE_DAYS(대기 큐 최대 보관 일수, 기본 45),
+ *   CABINET_PROBE_AHEAD(회차 콕집기 최대 선행 탐색 수, 기본 8),
+ *   CABINET_PROBE_MISSES(연속 미발견 시 중단 임계, 기본 2)
  */
 import { pathToFileURL } from "url";
 import {
   classifyTitle,
   existingMeetingKeys,
   existingVideoIds,
+  latestCabinetNumber,
   log,
   looksLikeClip,
   meetingKey,
@@ -123,6 +129,65 @@ async function searchChannelMeetings(
   return out;
 }
 
+/**
+ * 국무회의 "회차 번호 콕집기" (deterministic).
+ * 우리가 보유한 최신 회차(highest) 다음 번호부터 "제N회 국무회의"를 번호로
+ * 정확히 지목해 검색한다. 퍼지 매칭이 아니라 그 회차 본편만 잡히므로 클립·
+ * 유사영상 오수집 여지가 없고, 재생목록이 늦거나 쇼츠에 밀려도 다음 회차가
+ * 올라오는 즉시 잡는다. 아직 안 열린 번호는 결과가 없으므로, 연속 miss가
+ * stopAfterMisses에 도달하면 "아직 미공개"로 보고 멈춘다(쿼터 절약).
+ */
+async function probeCabinetByNumber(
+  channelId: string,
+  highest: number,
+  expectYear: number,
+  aheadMax: number,
+  stopAfterMisses: number
+): Promise<Candidate[]> {
+  const out: Candidate[] = [];
+  let misses = 0;
+  for (let n = highest + 1; n <= highest + aheadMax; n++) {
+    const numRe = new RegExp(`제\\s*${n}\\s*회`);
+    let hit = false;
+    try {
+      const res = await yt<{
+        items?: { id: { videoId?: string }; snippet: { title: string; publishedAt: string } }[];
+      }>("search", {
+        part: "snippet",
+        channelId,
+        q: `제${n}회 국무회의`,
+        type: "video",
+        order: "date",
+        videoDuration: "long", // 본편은 장시간 — 짧은 클립 원천 배제
+        maxResults: "10",
+      });
+      for (const it of res.items ?? []) {
+        const videoId = it.id.videoId;
+        const title = it.snippet.title;
+        if (!videoId) continue;
+        // 정확히 그 회차(제N회) + 국무회의 + 클립 아님만 채택
+        if (looksLikeClip(title) || !/국무회의/.test(title) || !numRe.test(title)) continue;
+        // 번호는 매년 리셋되므로 현재 시리즈(당해 연도) 영상만 채택 — 이러면
+        // 옛 연도의 같은 번호(예: 2025 제32회)를 다시 끌어오지 않고, 아래
+        // "연속 miss 조기 종료"도 정상 작동한다.
+        if (Number(it.snippet.publishedAt.slice(0, 4)) < expectYear) continue;
+        out.push({ videoId, title, publishedAt: it.snippet.publishedAt, type: "cabinet" });
+        hit = true;
+      }
+    } catch (e) {
+      log(`회차검색(제${n}회) 실패(무시): ${(e as Error).message}`);
+    }
+    if (hit) {
+      misses = 0;
+      log(`회차검색 — 제${n}회 국무회의 발견`);
+    } else if (++misses >= stopAfterMisses) {
+      log(`회차검색 — 제${n}회부터 ${misses}연속 없음 → 아직 미공개로 보고 중단`);
+      break;
+    }
+  }
+  return out;
+}
+
 export async function fetchVideos(): Promise<QueueItem[]> {
   const handle = process.env.CHANNEL_HANDLE ?? "KTV_korea";
   const playlistId = process.env.PLAYLIST_ID ?? "PLTlQMzTtp1gY"; // KTV 공식 국무회의 재생목록
@@ -174,14 +239,29 @@ export async function fetchVideos(): Promise<QueueItem[]> {
   }
   log(`업로드 포함 후보 총 ${candidates.length}건`);
 
-  // 3) 키워드 검색 — 재생목록/업로드 창을 벗어난 최근 회의까지 추격
+  // 3) 국무회의 회차 번호 콕집기 — 현재 시리즈의 다음 회차를 번호로 정확히 지목
+  if (channelId) {
+    const latest = latestCabinetNumber(); // 연도 리셋 반영: 가장 최근 연도의 최대 회차
+    if (latest.number > 0) {
+      const aheadMax = Number(process.env.CABINET_PROBE_AHEAD ?? 8);
+      const stopMisses = Number(process.env.CABINET_PROBE_MISSES ?? 2);
+      for (const c of await probeCabinetByNumber(channelId, latest.number, latest.year, aheadMax, stopMisses))
+        add(c);
+      log(
+        `회차 콕집기 후 신규 후보 총 ${candidates.length}건 ` +
+          `(보유 최신 ${latest.year}년 제${latest.number}회 기준)`
+      );
+    }
+  }
+
+  // 4) 키워드 검색 — 회차 없는 업무보고, 그리고 회차 콕집기의 보조 안전망
   if (channelId) {
     const publishedAfter = new Date(Date.now() - lookbackDays * 86400_000).toISOString();
     for (const c of await searchChannelMeetings(channelId, publishedAfter)) add(c);
   }
   log(`검색 포함 신규 회의 영상 후보 총 ${candidates.length}건`);
 
-  // 4) 영상 상세(길이·썸네일) — 생중계 예고(길이 0) 및 진행 중 라이브 제외
+  // 5) 영상 상세(길이·썸네일) — 생중계 예고(길이 0) 및 진행 중 라이브 제외
   const fresh: QueueItem[] = [];
   for (let i = 0; i < candidates.length; i += 50) {
     const batch = candidates.slice(i, i + 50);
@@ -216,7 +296,7 @@ export async function fetchVideos(): Promise<QueueItem[]> {
     }
   }
 
-  // 5) 대기 큐 병합 — 아직 수집 안 된 기존 큐 항목을 유지한다.
+  // 6) 대기 큐 병합 — 아직 수집 안 된 기존 큐 항목을 유지한다.
   //    이번 실행에서 재발견 못 해도(창 밖으로 밀려도) 자막 대기 중이면 남긴다.
   //    단, 이미 수집됐거나 너무 오래된(자막이 끝내 안 붙은) 항목은 정리한다.
   const ageCutoff = new Date(Date.now() - queueMaxAgeDays * 86400_000).toISOString().slice(0, 10);
