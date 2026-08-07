@@ -19,7 +19,8 @@
     "fuse.js": "^7.5.0",
     "next": "^15.3.0",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "undici": "^8.10.0"
   },
   "devDependencies": {
     "@anthropic-ai/sdk": "^0.57.0",

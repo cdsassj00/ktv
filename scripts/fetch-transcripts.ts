@@ -12,12 +12,16 @@
  *   쿠키가 없으면 기존 익명 폴백 체인(ANDROID→IOS→WEB)만 시도한다.
  *
  * 필요 환경변수: (없음 — 쿠키는 선택)
- * 선택 환경변수: YT_COOKIE (youtube.com 로그인 쿠키의 Cookie 헤더 문자열)
+ * 선택 환경변수:
+ *   YT_COOKIE  (youtube.com 로그인 쿠키의 Cookie 헤더 문자열)
+ *   PROXY_URL  (주거용 프록시. 예: http://user:pass@host:port) — 설정 시 유튜브
+ *              요청만 이 프록시를 거쳐 나가 데이터센터 IP 차단을 회피한다.
  */
 import crypto from "crypto";
 import fs from "fs";
 import path from "path";
 import { pathToFileURL } from "url";
+import { ProxyAgent } from "undici";
 import {
   ensureDir,
   log,
@@ -29,6 +33,17 @@ import {
 } from "./lib";
 
 const ORIGIN = "https://www.youtube.com";
+
+/* 주거용 프록시 우회: PROXY_URL이 있으면 유튜브 요청만 이 프록시(가정용 IP)를
+   거쳐 나가게 한다. 요약 LLM·R2 업로드 등 다른 트래픽은 프록시를 타지 않는다.
+   fetch의 표준 타입에 dispatcher가 없어 옵션 타입을 확장해 전달한다. */
+const PROXY_URL = process.env.PROXY_URL?.trim();
+const ytDispatcher = PROXY_URL ? new ProxyAgent(PROXY_URL) : undefined;
+type FetchOpts = RequestInit & { dispatcher?: unknown };
+function ytFetch(url: string, opts: FetchOpts): Promise<Response> {
+  if (ytDispatcher) opts = { ...opts, dispatcher: ytDispatcher };
+  return fetch(url, opts as RequestInit);
+}
 
 /* 클라이언트 폴백 체인 — 데이터센터 IP는 클라이언트별로 차단 여부가 달라
    ANDROID가 LOGIN_REQUIRED를 받아도 다른 클라이언트는 통과할 수 있다.
@@ -165,7 +180,7 @@ export async function fetchTranscriptInnerTube(
       "user-agent": c.ua,
       ...(useAuth ? authHeaders(cookie!) : cookie ? { cookie } : {}),
     };
-    const res = await fetch(`${ORIGIN}/youtubei/v1/player?prettyPrint=false`, {
+    const res = await ytFetch(`${ORIGIN}/youtubei/v1/player?prettyPrint=false`, {
       method: "POST",
       headers,
       body: JSON.stringify({
@@ -203,7 +218,7 @@ export async function fetchTranscriptInnerTube(
 
     const capHeaders: Record<string, string> = { "user-agent": c.ua };
     if (cookie) capHeaders["cookie"] = cookie;
-    const xml = await (await fetch(ko.baseUrl, { headers: capHeaders })).text();
+    const xml = await (await ytFetch(ko.baseUrl, { headers: capHeaders })).text();
     const segments = parseTimedText(xml);
     return segments.length > 0 ? segments : null;
   }
@@ -218,6 +233,7 @@ export async function fetchTranscripts(): Promise<void> {
   }
   ensureDir(TRANSCRIPTS_DIR);
   log(getCookie() ? "YT_COOKIE 감지 — 쿠키 인증(WEB) 우선 시도" : "YT_COOKIE 없음 — 익명 폴백만 시도(차단 시 실패)");
+  if (PROXY_URL) log("PROXY_URL 감지 — 유튜브 요청을 주거용 프록시로 우회(데이터센터 IP 차단 회피)");
 
   const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
   // 쿠키 보호: 영상 사이 간격을 넉넉히 두어 "버스트"로 보이지 않게 한다.

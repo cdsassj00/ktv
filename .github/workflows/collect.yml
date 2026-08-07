@@ -53,6 +53,9 @@ jobs:
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
           # 유튜브 봇 차단(LOGIN_REQUIRED) 우회용 로그인 쿠키(선택, 등록 시 자막 수집 안정화)
           YT_COOKIE: ${{ secrets.YT_COOKIE }}
+          # 주거용 프록시(선택). 등록 시 유튜브 요청을 가정용 IP로 우회 → 데이터센터
+          # IP 차단을 근본 회피(쿠키 만료·재차단 문제 해소). 예: http://user:pass@host:port
+          PROXY_URL: ${{ secrets.PROXY_URL }}
           # LLM 공급자: 아래 셋 중 쓰는 것 하나만 Secrets에 등록하면 됨
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
