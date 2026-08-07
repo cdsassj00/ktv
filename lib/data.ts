@@ -21,9 +21,18 @@ export function getMeetings(): Meeting[] {
   if (meetingsCache) return meetingsCache;
   if (!fs.existsSync(MEETINGS_DIR)) return [];
   const files = fs.readdirSync(MEETINGS_DIR).filter((f) => f.endsWith(".json"));
-  const meetings = files.map(
-    (f) => JSON.parse(fs.readFileSync(path.join(MEETINGS_DIR, f), "utf-8")) as Meeting
-  );
+  const meetings = files.map((f) => {
+    const m = JSON.parse(fs.readFileSync(path.join(MEETINGS_DIR, f), "utf-8")) as Meeting;
+    // 요약이 토큰 한도로 잘려 일부 배열 필드가 누락되더라도 페이지 렌더·빌드가
+    // 깨지지 않도록 보정한다(누락 = 빈 배열).
+    m.exchanges = (Array.isArray(m.exchanges) ? m.exchanges : []).map((ex) => ({
+      ...ex,
+      turns: Array.isArray(ex?.turns) ? ex.turns : [],
+    }));
+    m.directives = Array.isArray(m.directives) ? m.directives : [];
+    m.aiDataPolicy = Array.isArray(m.aiDataPolicy) ? m.aiDataPolicy : [];
+    return m;
+  });
   meetings.sort((a, b) => (a.date < b.date ? 1 : -1));
   meetingsCache = meetings;
   return meetings;
