@@ -21,7 +21,7 @@ import crypto from "crypto";
 import fs from "fs";
 import path from "path";
 import { pathToFileURL } from "url";
-import { ProxyAgent } from "undici";
+import { fetch as undiciFetch, ProxyAgent } from "undici";
 import {
   ensureDir,
   log,
@@ -55,7 +55,13 @@ function makeProxyDispatcher(raw: string): ProxyAgent {
 const ytDispatcher = PROXY_URL ? makeProxyDispatcher(PROXY_URL) : undefined;
 type FetchOpts = RequestInit & { dispatcher?: unknown };
 function ytFetch(url: string, opts: FetchOpts): Promise<Response> {
-  if (ytDispatcher) opts = { ...opts, dispatcher: ytDispatcher };
+  // 프록시(dispatcher)를 쓸 땐 반드시 undici 자체 fetch를 사용한다. Node 내장
+  // fetch에 설치본 undici의 dispatcher를 넘기면 버전 불일치로 "invalid
+  // onRequestStart method"(UND_ERR_INVALID_ARG)가 난다. 프록시가 없으면
+  // 기존처럼 Node 내장 fetch를 그대로 쓴다.
+  if (ytDispatcher) {
+    return undiciFetch(url, { ...opts, dispatcher: ytDispatcher } as never) as unknown as Promise<Response>;
+  }
   return fetch(url, opts as RequestInit);
 }
 
