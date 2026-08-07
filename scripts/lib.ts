@@ -63,8 +63,11 @@ export function meetingKey(type: string, title: string, date: string): string {
   if (dm) mdate = `20${dm[1]}-${dm[2].padStart(2, "0")}-${dm[3].padStart(2, "0")}`;
 
   if (type === "cabinet") {
+    // 회차 번호는 매년 리셋되므로(2025 제32회 ≠ 2026 제32회) 연도를 함께 키에 넣어
+    // 해를 넘긴 같은 번호의 회의가 서로 중복으로 오인돼 버려지지 않게 한다.
+    const year = mdate.slice(0, 4);
     const m = clean.match(/제\s*(\d+)\s*회/);
-    return m ? `cabinet:${m[1]}` : `cabinet:${mdate}`;
+    return m ? `cabinet:${year}:${m[1]}` : `cabinet:${mdate}`;
   }
   if (type === "briefing") {
     // 부처 나열은 축약형/전체형이 섞이므로, 안정적인 "첫 부처명 + 날짜"로 식별
@@ -72,6 +75,32 @@ export function meetingKey(type: string, title: string, date: string): string {
     return `briefing:${mdate}:${first}`;
   }
   return `${type}:${mdate}`;
+}
+
+/**
+ * "회차 번호 콕집기"의 기준점 — 현재 진행 중인 시리즈의 최신 회차 번호.
+ *
+ * 국무회의 번호는 매년(행정부 기준) 리셋된다: 2025년은 제32~56회, 2026년은
+ * 제2~31회로 번호대가 겹친다. 따라서 전체 최고 번호(56)를 기준으로 삼으면
+ * 엉뚱한 제57회를 찾게 된다. 대신 "가장 최근 연도"의 최대 회차 번호를
+ * 반환해, 그 다음 번호(현재 시리즈의 다음 회의)를 정확히 겨냥한다.
+ * 반환값: { year, number } (데이터 없으면 number 0).
+ */
+export function latestCabinetNumber(): { year: number; number: number } {
+  if (!fs.existsSync(MEETINGS_DIR)) return { year: 0, number: 0 };
+  const byYear = new Map<number, number>(); // year -> max number
+  for (const f of fs.readdirSync(MEETINGS_DIR)) {
+    if (!f.endsWith(".json")) continue;
+    const m = readJson<{ type?: string; title?: string; date?: string }>(path.join(MEETINGS_DIR, f), {});
+    if (m.type !== "cabinet" || !m.title || !m.date) continue;
+    const num = m.title.match(/제\s*(\d+)\s*회/);
+    if (!num) continue;
+    const year = Number(m.date.slice(0, 4));
+    byYear.set(year, Math.max(byYear.get(year) ?? 0, Number(num[1])));
+  }
+  if (byYear.size === 0) return { year: 0, number: 0 };
+  const year = Math.max(...byYear.keys());
+  return { year, number: byYear.get(year) ?? 0 };
 }
 
 /** data/meetings에 이미 저장된 회의 내용키 집합 (수정본 중복 방지용) */
