@@ -84,6 +84,8 @@ h1 { font-variation-settings: "wght" 650; }
 .overline-label {   /* 섹션 상단 작은 라벨 */
   font-size: 13px; font-weight: 600; color: var(--mut, #98989d);
 }
+/* 다크 배경 위 중간 밝기 본문 — 히어로 부제 등 (ink보다 낮고 body보다 부드럽게) */
+.on-dark-mut { color: rgba(245, 245, 247, 0.68); }
 .btn-pill {         /* 주 CTA — 알약 버튼 */
   display: inline-flex; align-items: center; justify-content: center;
   border-radius: 999px; background: var(--accent, #0a84ff);

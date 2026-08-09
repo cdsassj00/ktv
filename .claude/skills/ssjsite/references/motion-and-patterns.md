@@ -195,3 +195,74 @@ export default function CountUp({ value }: { value: number }) {
 
 **저작권/광고 배지**: 좌하단 미니 배지(클릭 시 팝오버) 또는 상단 `.gold-banner`.
 반사광 스윕으로 시선을 끌되 과하지 않게.
+
+## 8. 실측 정밀 스펙 (opencabinet 라이브 기준)
+
+원본 사이트에서 그대로 뽑은 "치수까지 맞는" 스펙. 값을 지어내지 말고 이대로 쓴다.
+
+**히어로 상단 시퀀스** (위→아래, 이 순서·간격이 톤의 핵심):
+```html
+<div class="relative text-center">
+  <!-- ① 오버라인 라벨 -->
+  <p class="text-[14px] font-semibold tracking-wide text-mut">KTV 공개 국무회의 아카이브</p>
+  <!-- ② 라이브 배지: 초록 테두리/틴트 + 깜빡이는 점(animate-ping) -->
+  <p class="mt-2 inline-flex items-center gap-1.5 rounded-full border border-[#30d158]/30 bg-[#30d158]/10 px-3 py-1 text-[12.5px] font-semibold text-[#4cd964]">
+    <span class="relative flex size-1.5">
+      <span class="absolute inline-flex size-full animate-ping rounded-full bg-[#30d158] opacity-60"></span>
+      <span class="relative inline-flex size-1.5 rounded-full bg-[#30d158]"></span>
+    </span>
+    최신 반영 · 제34회 국무회의 (2026-08-04)
+  </p>
+  <!-- ③ 대헤드라인: 줄마다 .ln 라인마스크 -->
+  <h1 class="mx-auto mt-4 max-w-4xl text-[44px] font-semibold leading-[1.06] tracking-[-0.03em] sm:text-[68px]">
+    <span class="ln"><span>국무회의,</span></span>
+    <span class="ln"><span>대화로 읽다.</span></span>
+  </h1>
+  <!-- ④ 부제: on-dark-mut -->
+  <p class="on-dark-mut mx-auto mt-6 max-w-xl text-[17px] leading-relaxed sm:text-[19px]">한 줄 설명…</p>
+  <!-- ⑤ CTA: pill + link 나란히 -->
+  <div class="mt-8 flex flex-wrap items-center justify-center gap-5">
+    <a href="#next" class="btn-pill">살펴보기</a>
+    <a href="#" class="btn-link">최근 항목 바로가기 ›</a>
+  </div>
+</div>
+```
+
+**통계 스트립**: 큰 숫자(CountUp, `tabular-nums`) + 작은 라벨(mut)을 가로로.
+```html
+<div class="flex items-baseline justify-center gap-6">
+  <div><span class="text-[34px] font-semibold text-ink tabular">35</span> <span class="text-[14px] text-mut">회의</span></div>
+  <div><span class="text-[34px] font-semibold text-ink tabular">203</span> <span class="text-[14px] text-mut">스레드</span></div>
+  <div><span class="text-[34px] font-semibold text-ink tabular">187</span> <span class="text-[14px] text-mut">AI·데이터 발언</span></div>
+</div>
+```
+
+**썸네일 콘텐츠 카드** (목록의 기본 카드 — 치수까지 실측):
+```html
+<a href="#" class="panel group flex h-full flex-col overflow-hidden shadow-card transition duration-300 hover:-translate-y-1 hover:shadow-lift">
+  <!-- 썸네일: 16:9, 호버 시 미세 확대 + 우상단 칩 오버레이 -->
+  <div class="relative aspect-video w-full overflow-hidden bg-black">
+    <img src="…" alt="" class="size-full object-cover transition duration-500 group-hover:scale-[1.03]">
+    <span class="chip absolute right-3 top-3 bg-accent-500 text-white">AI·데이터 5건</span>
+  </div>
+  <!-- 본문: p-5, gap-1.5 -->
+  <div class="flex flex-1 flex-col gap-1.5 p-5">
+    <p class="text-[13px] font-medium text-mut">국무회의 · 2026년 8월 4일</p>
+    <h3 class="text-[17px] font-semibold leading-snug tracking-tight text-ink group-hover:text-accent-500">회의 제목</h3>
+    <p class="line-clamp-2 text-[14.5px] leading-relaxed text-body">한 줄 요약 두 줄까지…</p>
+    <!-- 하단 메타: 지시>0이면 빨강 강조, 구분점은 hair -->
+    <div class="mt-auto flex items-center gap-3 pt-3 text-[13px] font-medium text-mut">
+      <span>안건 9</span><span class="text-hair">·</span>
+      <span>스레드 6</span><span class="text-hair">·</span>
+      <span class="text-red-600">지시 8</span>
+    </div>
+  </div>
+</a>
+```
+
+**정밀 규칙 요약**
+- 히어로 H1은 `44px→68px` / `leading-[1.06]` / `tracking-[-0.03em]`, 줄마다 `.ln` 라인마스크.
+- 라이브·상태 배지는 "반투명 틴트 배경(10~16%) + 같은 색 테두리(30%) + 채도 낮춘 텍스트". 초록 점엔 `animate-ping`.
+- 카드 썸네일은 항상 `aspect-video`, 호버 시 이미지만 `scale-[1.03]`, 카드 전체는 `-translate-y-1`.
+- 카드 본문 간격은 `gap-1.5`, 패딩 `p-5`. 메타 라벨 13px, 제목 17px, 요약 14.5px `line-clamp-2`.
+- 수치/카운트에는 반드시 `tabular-nums`(정렬 흔들림 방지).
