@@ -565,8 +565,15 @@
         "행정수도",
         "국가상징"
       ],
-      "status": "issued",
-      "followUps": []
+      "status": "reported",
+      "followUps": [
+        {
+          "meetingId": "2026-08-11-cabinet-BvYdWp",
+          "exchangeId": "ex-01",
+          "summary": "대통령 세종 집무실 설계공모 당선작 발표(7월 22일) 후 본격 설계 착수, 2029년 8월 입주 목표, 국회의사당 2033년 준공 목표로 진행 중",
+          "inferred": true
+        }
+      ]
     },
     {
       "id": "dir-2026-06-02-11",

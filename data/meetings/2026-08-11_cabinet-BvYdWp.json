@@ -1,0 +1,918 @@
+{
+  "id": "2026-08-11-cabinet-BvYdWp",
+  "type": "cabinet",
+  "title": "제35회 국무회의",
+  "date": "2026-08-11",
+  "summary": {
+    "oneLine": "이재명 대통령이 세종에서 제35회 국무회의를 주재하며 국토균형발전과 3대 메가프로젝트, 자살예방·돌봄대책, 생산적 일자리 발굴, 국민 AI서비스 혁신추진단 등을 논의하고 극심한 폭염 대응을 지시했다.",
+    "overview": "이재명 대통령은 국민주권 정부 출범 이후 네 번째로 세종에서 열린 국무회의에서 수도권 일극 체제의 한계를 지적하며 국토균형발전의 중요성을 강조하고, 대통령 세종 집무실(2029년 8월 입주 목표)과 국회 세종의사당(2033년 준공 목표) 건립 속도를 높일 것을 지시했다. 반도체·AI데이터센터·피지컬AI 3대 메가프로젝트에 대해서는 낡은 관행과 절차를 과감히 개선하고 조기투자 장애물을 선제적으로 제거할 것을 당부했으며, SMR·재생에너지·양자컴퓨터·우주항공·첨단바이오 등 미래산업 분야에도 메가프로젝트급 투자를 주문했다.\n\n보건복지부는 고립위기가구 및 돌봄부담으로 인한 가족 자살 예방대책을 보고했으며, 대통령은 자살률이 OECD 평균의 3배에 달하는 현실을 지적하고 해결 불가능한 채무의 신속한 정리·청산, 기초연금의 하후상박형 조정을 지시했다. 국세청 체납관리단, 특허청 심사인력 등 투입비용 대비 편익이 큰 '생산적 일자리' 발굴 사례가 보고되었고, 대통령은 각 부처가 유사 사례를 적극 찾아내도록 당부했다.\n\n과학기술정보통신부는 민간 개발자를 중심으로 구성한 '국민 AI서비스 혁신추진단' 신설을 보고했으며, 대통령은 민간 개발자 직접 채용 방식의 타당성에 대해 여러 차례 질의했고, 행정안전부는 내부 공무원 교육을 통한 AI 역량 강화의 중요성을 강조했다. 고용노동부는 노란봉투법상 쟁의 대상 여부에 대한 명확한 기준 마련이 필요하다는 지적에 검토를 약속했다.\n\n그 외 2026 여수 세계섬박람회 준비 상황, 기획재정부의 세제개편안 입법예고 계획, 극심한 폭염에 대한 전방위 대응체계 가동 등이 논의되었으며, 대통령은 성실한 공직자에 대한 포상 강화와 실패에 대한 과도한 문책 배제, 극히 일부 부정행위자에 대한 엄정한 문책을 동시에 당부했다."
+  },
+  "agenda": [
+    {
+      "title": "대통령 세종 집무실 및 국가상징구역 조성 현황",
+      "summary": "설계공모 당선작 발표 후 설계 착수, 2029년 8월 입주 목표, 국회 세종의사당은 2033년 준공 목표",
+      "timestamp": 44
+    },
+    {
+      "title": "국토균형발전과 3대 메가프로젝트 추진",
+      "summary": "반도체·AI데이터센터·피지컬AI 3대 메가프로젝트 및 지역별(용인·호남·충청·영남) 메가프로젝트 점검",
+      "timestamp": 1318
+    },
+    {
+      "title": "자살예방 대책 - 고립위기가구 및 돌봄부담",
+      "summary": "보건복지부의 고립위기가구 자살예방대책 및 돌봄·간병 부담으로 인한 가족 자살 예방대책 보고",
+      "timestamp": 30580
+    },
+    {
+      "title": "생산적 일자리 발굴",
+      "summary": "국세청 체납관리단, 특허청 심사인력 등 투입비용 대비 편익이 큰 일자리 발굴 사례 점검",
+      "timestamp": 3245
+    },
+    {
+      "title": "국민 AI서비스 혁신추진단 신설",
+      "summary": "민간 개발자 중심의 범부처 AI서비스 혁신추진단 신설 및 운영방식 논의",
+      "timestamp": 412
+    },
+    {
+      "title": "2026 여수 세계섬박람회 준비",
+      "summary": "전남광주 통합특별시 출범 후 첫 국제행사인 여수 세계섬박람회 준비 상황 보고",
+      "timestamp": 5354
+    },
+    {
+      "title": "세제개편안 입법예고",
+      "summary": "기획재정부 세제개편 법안 입법예고 기간 운영 및 국민의견 수렴 계획",
+      "timestamp": 105
+    }
+  ],
+  "remarks": [
+    {
+      "speakerId": "president",
+      "quote": "그간에 경험하지 못했던 극심한 폭염이 연일 계속되고 있습니다. 정부는 비상한 각오를 가지고 폭염이 완화될 때까지 전방위적인 대응 체계를 가동하기 바랍니다.",
+      "context": "극심한 폭염 대응 지시",
+      "timestamp": 739
+    },
+    {
+      "speakerId": "president",
+      "quote": "이미 한계에 잃은 수도권 일극 체제는 부동산 문제, 교육 문제, 청년 문제, 극단적인 양극화 등 우리 사회의 모든 중대 문제 출발점입니다.",
+      "context": "국토균형발전 필요성 강조",
+      "timestamp": 1120
+    },
+    {
+      "speakerId": "president",
+      "quote": "안 되는 이유를 찾지 말고 일이 되는 방법을 찾는 적극적이고 능동적이며 창의적인 행정을 적극 당부합니다.",
+      "context": "메가프로젝트 추진 관련 행정 당부",
+      "timestamp": 1413
+    },
+    {
+      "speakerId": "mohw-minister",
+      "quote": "저희가 그 자살자 심리적인 부검을 해보면 한 54%가 자살할 당시의 부채를 갖고 있다. 한 78%는 월 소득이 200만 원 미만인 저소득층에서 많이 발생하고 있습니다.",
+      "context": "자살 원인 중 경제적 요인 분석",
+      "timestamp": 44480
+    },
+    {
+      "speakerId": "president",
+      "quote": "이 해결할 수 없는 채무는 정리를 하는 게 채권자에게도 채무자에게도 사회에도 다 좋다는 거예요.",
+      "context": "채무 청산 시스템 개선 필요성 강조",
+      "timestamp": 42070
+    },
+    {
+      "speakerId": "president",
+      "quote": "정책이라고 하는 것은 이론의 여지가 있고 다른 의견이 있기 때문에 정책인 거예요.",
+      "context": "부처 간 이견의 정책적 의미 설명",
+      "timestamp": 103
+    }
+  ],
+  "exchanges": [
+    {
+      "id": "ex-01",
+      "topic": "대통령 세종 집무실 및 국가상징구역 조성",
+      "turns": [
+        {
+          "speakerId": "unknown",
+          "kind": "질문",
+          "summary": "대통령 세종 집무실 이전 현황 문의",
+          "quote": "현재 진척 상황이 어느 정도 진행되고 있나요?",
+          "timestamp": 44,
+          "inReplyTo": null
+        },
+        {
+          "speakerId": "unknown",
+          "kind": "답변",
+          "summary": "7월 22일 설계공모 당선작 발표 후 설계 착수",
+          "quote": "지난 7월 22일 날 건축 설계 공모 당선작을 발표하고 지금 본격적인 설계에 착수한 상태가 되겠습니다.",
+          "timestamp": 45,
+          "inReplyTo": 0
+        },
+        {
+          "speakerId": "unknown",
+          "kind": "질문",
+          "summary": "건축의 상징성 관련 구성 및 계획 문의",
+          "quote": null,
+          "timestamp": 54,
+          "inReplyTo": null
+        },
+        {
+          "speakerId": "unknown",
+          "kind": "답변",
+          "summary": "각계 전문가로 특별자문단 구성해 한국적 미 반영 추진",
+          "quote": "한국의 미와 전통미를 어 마음껏 낼 수 있는 그런 건축물로 지으려고 하고 있습니다.",
+          "timestamp": 60,
+          "inReplyTo": 2
+        },
+        {
+          "speakerId": "unknown",
+          "kind": "질문",
+          "summary": "준공 시기 문의",
+          "quote": "언제 저희가 눈으로 확인할 수 있을까요?",
+          "timestamp": 245,
+          "inReplyTo": null
+        },
+        {
+          "speakerId": "unknown",
+          "kind": "답변",
+          "summary": "대통령 집무실 2029년 8월 입주, 국회의사당 2033년 준공 목표",
+          "quote": "대통령 세종 진무실은 어 설계를 거쳐서 29년 8월까지 입주할 수 있도록 추진할 계획이고요. 국회 세종 의사당은 33년 중공을 목표를 하고 있습니다.",
+          "timestamp": 261,
+          "inReplyTo": 4
+        }
+      ]
+    },
+    {
+      "id": "ex-02",
+      "topic": "세종 집무실 조감도 공개 및 건축위원회 역할",
+      "turns": [
+        {
+          "speakerId": "president",
+          "kind": "질문",
+          "summary": "당선작 조감도를 왜 보여주지 않는지 확인",
+          "quote": "조감도라 그러나? 그건 왜 안 보여 주세요?",
+          "timestamp": 74,
+          "inReplyTo": null
+        },
+        {
+          "speakerId": "unknown",
+          "kind": "답변",
+          "summary": "전문가 자문받아 디자인 보완 예정",
+          "quote": null,
+          "timestamp": 74,
+          "inReplyTo": 0
+        },
+        {
+          "speakerId": "president",
+          "kind": "질문",
+          "summary": "국가건축위원장 소견 청취",
+          "quote": "그 김진 건축 국가 건축 위원장님 뭐 혹시 소견 있어요? 간단하게",
+          "timestamp": 74,
+          "inReplyTo": 0
+        },
+        {
+          "speakerId": "unknown",
+          "kind": "답변",
+          "summary": "건축위원회는 권한 없이 자문·조언만 수행, 건축주-건축가 직접소통 구조 부족 지적",
+          "quote": "저희는 권한이 없습니다. 국민이라는 건축주와 행복청 건축가와의 직접 소통이 있는 자리가 없습니다",
+          "timestamp": 4556,
+          "inReplyTo": 2
+        },
+        {
+          "speakerId": "president",
+          "kind": "지시",
+          "summary": "건축자문위에 대통령에게 직접 자문하도록 요청",
+          "quote": "어차피 저도 이런 거 이거 봐도 뭘 압니까? 그 건축 자문위에 내가 이런 문제에 대해서 저한테 자문을 해 주세요",
+          "timestamp": 4624,
+          "inReplyTo": 3
+        },
+        {
+          "speakerId": "unknown",
+          "kind": "답변",
+          "summary": "이미 제안했으나 행복청이 결정권한을 가져 축소되는 부분 있음",
+          "quote": "어 그것에 대해서 결정을 하는 권한은 행복청이 있기 때문에 그런 과정에서 좀 이렇게 축소되는 부분이 있다",
+          "timestamp": 4658,
+          "inReplyTo": 4
+        }
+      ]
+    },
+    {
+      "id": "ex-03",
+      "topic": "자살률 및 채무 문제",
+      "turns": [
+        {
+          "speakerId": "president",
+          "kind": "질문",
+          "summary": "OECD 평균 3배인 자살률에 대한 관심 촉구",
+          "quote": "지금 OECD 평균 대비 우리가 한 세 배 정도 된다는 거... 좀 더 챙겨 주시기 바라고요.",
+          "timestamp": 2768,
+          "inReplyTo": null
+        },
+        {
+          "speakerId": "mohw-minister",
+          "kind": "답변",
+          "summary": "자살자의 부채비율 54%, 월소득 200만원 미만 78%로 경제적 위기가 주요 원인",
+          "quote": "부채를 갖고 사망하신 분이 한 54% 정도고요. 월소득 200만 원 미만이 한 78% 가구",
+          "timestamp": 2814,
+          "inReplyTo": 0
+        },
+        {
+          "speakerId": "president",
+          "kind": "지시",
+          "summary": "해결 불가능한 채무의 신속 청산 및 추심 고통 제거 필요",
+          "quote": "결국은 신용 회복 위원회 아니면 금융 기관 또는 대출 기관 스스로 좀 정리를 좀 청산을 좀 해야 된다. 무조건 팔아서 그 추심하는 그 고통을 가하지 않도록 좀 해 주면 좋겠습니다.",
+          "timestamp": 43700,
+          "inReplyTo": 1
+        },
+        {
+          "speakerId": "mohw-minister",
+          "kind": "답변",
+          "summary": "자살자의 54%가 부채, 78%가 저소득층임을 재확인",
+          "quote": "저희가 그 자살자 심리적인 부검을 해보면 한 54%가 자살할 당시의 부채를 갖고 있다.",
+          "timestamp": 44480,
+          "inReplyTo": 2
+        }
+      ]
+    },
+    {
+      "id": "ex-04",
+      "topic": "기초연금 개편",
+      "turns": [
+        {
+          "speakerId": "president",
+          "kind": "질문",
+          "summary": "기초연금 정비가 복지부 소관인지 확인",
+          "quote": "기초연금 정비도 복지부 소관이겠네.",
+          "timestamp": 2852,
+          "inReplyTo": null
+        },
+        {
+          "speakerId": "mohw-minister",
+          "kind": "답변",
+          "summary": "복지부가 정부 내 최종 조율 중",
+          "quote": "복지부가 지금 정부 내에서 최종 조율을 하고 있는 상황입니다.",
+          "timestamp": 2880,
+          "inReplyTo": 0
+        },
+        {
+          "speakerId": "president",
+          "kind": "지시",
+          "summary": "기초연금 선정기준을 하후상박형으로 정교화할 것을 지시",
+          "quote": "그래서 이걸 좀 하후 상박형으로 어 좀 조정을 좀 하자... 세부 기준을 좀 잘 만들어 주기 바랍니다.",
+          "timestamp": 2951,
+          "inReplyTo": 1
+        },
+        {
+          "speakerId": "mohw-minister",
+          "kind": "답변",
+          "summary": "정부 부처 논의 중이며 정리되면 별도 보고 예정",
+          "quote": "방안을 지금 어 정부 부처에서 논의 중에 있고요. 정리되면 또 말씀드리겠습니다.",
+          "timestamp": 2965,
+          "inReplyTo": 2
+        }
+      ]
+    },
+    {
+      "id": "ex-05",
+      "topic": "범죄피해 사망통계 및 대응",
+      "turns": [
+        {
+          "speakerId": "president",
+          "kind": "지시",
+          "summary": "범죄유형별 사망통계(살인·과실치사 등) 분류 및 월별 추이 분석 지시",
+          "quote": "일단 뭐 사망도 있겠지만 살인도 있겠지만 치사 그러니까 과실로 인한 경우 요거 좀 분류를 하고 연간 추세... 월별로 좀 분석을 좀 해 주세요.",
+          "timestamp": 3034,
+          "inReplyTo": null
+        },
+        {
+          "speakerId": "knpa-commissioner",
+          "kind": "답변",
+          "summary": "통계는 별도 보고 예정",
+          "quote": "그 통계는 제가 지금 기억을 못... 모르겠어요. 별도로 보고를 드리겠.",
+          "timestamp": 3062,
+          "inReplyTo": 0
+        },
+        {
+          "speakerId": "president",
+          "kind": "지시",
+          "summary": "범죄 피해 확대 방지·구제·진상규명 대책 보고 요구",
+          "quote": "범죄 피해가 확대되지 않을까 또는 범죄 피해에 대한 어 구제 그 진상 규명... 그것도 한번 정리를 좀 해 가지고 한번 대책 보고를 한번 해 주시기 바랍니다.",
+          "timestamp": 3087,
+          "inReplyTo": 1
+        },
+        {
+          "speakerId": "knpa-commissioner",
+          "kind": "답변",
+          "summary": "범죄대응 대책 마련 후 보고 예정",
+          "quote": "예. 대책 마련해서 보고 드리겠습니다.",
+          "timestamp": 3227,
+          "inReplyTo": 2
+        }
+      ]
+    },
+    {
+      "id": "ex-06",
+      "topic": "생산적 일자리 발굴",
+      "turns": [
+        {
+          "speakerId": "president",
+          "kind": "질문",
+          "summary": "각 부처별 생산적 일자리 발굴 결과 확인",
+          "quote": "생산적 일자리를 각 부처별로 다 발구를 좀 해 보라고 지시했었는데 그거 결과는 어떻게 됐어요?",
+          "timestamp": 3245,
+          "inReplyTo": null
+        },
+        {
+          "speakerId": "senior-civil",
+          "kind": "답변",
+          "summary": "정리 미흡, 다시 점검 예정",
+          "quote": "아, 그거 제가 못 챙긴 거 같습니다. 다시 챙겨 보겠습니다.",
+          "timestamp": 3273,
+          "inReplyTo": 0
+        },
+        {
+          "speakerId": "president",
+          "kind": "질문",
+          "summary": "장관들이 실제로 챙기고 있는지 재확인",
+          "quote": "근데 우리 장관님들이 저번에 제가 이거 국무회에서 말씀드렸는데 각다 챙기고 있나요?",
+          "timestamp": 3277,
+          "inReplyTo": 1
+        },
+        {
+          "speakerId": "senior-civil",
+          "kind": "답변",
+          "summary": "고용노동부 중심으로 관련 사항 취합해 추후 보고 예정",
+          "quote": "고용노동부 중심으로 해서 어 많은 부처의 일자리 관련을 모았고요. 관련해서 대수 때 보고드릴 예정입니다.",
+          "timestamp": 3294,
+          "inReplyTo": 2
+        },
+        {
+          "speakerId": "president",
+          "kind": "질문",
+          "summary": "식약처 심사요원 부족이 왜 해결되지 않았는지 확인",
+          "quote": "그 왜 붙어했어요?",
+          "timestamp": 3416,
+          "inReplyTo": null
+        },
+        {
+          "speakerId": "mfds-minister",
+          "kind": "답변",
+          "summary": "심사요원 확충 위해 관계부처와 협의 중, 100명 부족",
+          "quote": "그거 지금 관계 부처와 협의하고 있는데요.",
+          "timestamp": 3419,
+          "inReplyTo": 4
+        },
+        {
+          "speakerId": "president",
+          "kind": "지시",
+          "summary": "행안부에 심사기간 단축 서둘러 줄 것을 요청",
+          "quote": "행안부 좀 서둘러 주세요.",
+          "timestamp": 60,
+          "inReplyTo": 5
+        }
+      ]
+    },
+    {
+      "id": "ex-07",
+      "topic": "체납관리단 및 국세청 채무구제",
+      "turns": [
+        {
+          "speakerId": "president",
+          "kind": "질문",
+          "summary": "지방정부 체납관리단 운영 현황 확인",
+          "quote": "지방 정부들은 어떻게 하고 있어요?",
+          "timestamp": 3029,
+          "inReplyTo": null
+        },
+        {
+          "speakerId": "nts-commissioner",
+          "kind": "답변",
+          "summary": "지방정부 인원 증원 계획, 3년간 총 연인원 2만명 규모",
+          "quote": "올해 어 그러니까 2,명을 어 그 증원을 해 줬고요. 그리고 내년부터는 6,명으로 늘려서... 3년간 유지를 해서 총 연인원 2만 명.",
+          "timestamp": 3043,
+          "inReplyTo": 0
+        },
+        {
+          "speakerId": "president",
+          "kind": "질문",
+          "summary": "국세 및 세외수입 체납자 총수 확인",
+          "quote": "체납자 국가 세외 수입 체납자 총수가 얼마 정도예요?",
+          "timestamp": 3126,
+          "inReplyTo": null
+        },
+        {
+          "speakerId": "nts-commissioner",
+          "kind": "답변",
+          "summary": "국세 체납자 130만명, 국세외 수입 체납자 400만명 이상",
+          "quote": "국세 체납자는 한 130만 명 정도 되고요. 국세 수입은 저희가 받은 숫자는 한 400만 명이 넘습니다.",
+          "timestamp": 3138,
+          "inReplyTo": 2
+        }
+      ]
+    },
+    {
+      "id": "ex-08",
+      "topic": "노란봉투법 쟁의대상 기준",
+      "turns": [
+        {
+          "speakerId": "president",
+          "kind": "질문",
+          "summary": "쟁의 대상 여부에 대한 명확한 규정 필요성 지적",
+          "quote": "노란봉 투법에 의한 쟁의 대상인지 아닌지에 대해서 명확한 규정 예를 들면 사례나 이런 것들을 좀 명확하게 좀 해야 되는 거 아니냐",
+          "timestamp": 68,
+          "inReplyTo": null
+        },
+        {
+          "speakerId": "moel-minister",
+          "kind": "답변",
+          "summary": "이미 행정해석으로 모두 내렸다는 입장",
+          "quote": "저희들이 행정 해석으로 이미 다 내렸습니다.",
+          "timestamp": 69,
+          "inReplyTo": 0
+        },
+        {
+          "speakerId": "president",
+          "kind": "발언",
+          "summary": "해석과 법률상 기준 제시는 다르다는 점 강조",
+          "quote": "해석하고 법률이 정한 기준을 제시하는 건 다르죠.",
+          "timestamp": 70,
+          "inReplyTo": 1
+        },
+        {
+          "speakerId": "moel-minister",
+          "kind": "답변",
+          "summary": "법률 위임규정이 없어 시행령 제정에 한계가 있다는 기존 입장",
+          "quote": "보법에 아마 위임 규정이 없기 때문에 그런 비판이 있을 수 있는데",
+          "timestamp": 70,
+          "inReplyTo": 2
+        },
+        {
+          "speakerId": "president",
+          "kind": "지시",
+          "summary": "법률 위임 없이도 시행에 필요한 범위 내 행정규칙 제정 가능함을 설명하며 적극 검토 지시",
+          "quote": "법률의 시행에 필요한 세부 사항을 정하는 것은 헌법이 정한 행정부의 권한이에요. 법률의 위임이 없으면 못 하는게 아니고 법률에 반하지 않는 범위에서 그 법의 시행을 위해서 필요한 범위 내에서 할 수 있는 거예요.",
+          "timestamp": 70,
+          "inReplyTo": 3
+        }
+      ]
+    },
+    {
+      "id": "ex-09",
+      "topic": "국민 AI서비스 혁신추진단 채용방식",
+      "turns": [
+        {
+          "speakerId": "president",
+          "kind": "질문",
+          "summary": "민간 개발자 고용 개념 상세 설명 요청",
+          "quote": "저기이 개발자들을 채용해서 고용하겠다는 거예요",
+          "timestamp": 4860,
+          "inReplyTo": null
+        },
+        {
+          "speakerId": "msit-minister",
+          "kind": "답변",
+          "summary": "전문임기제 형태로 채용",
+          "quote": "전문 임기재 형태로 채용을 하는 것입니다",
+          "timestamp": 4905,
+          "inReplyTo": 0
+        },
+        {
+          "speakerId": "president",
+          "kind": "질문",
+          "summary": "직접고용 방식의 원론적 타당성 의문 제기",
+          "quote": "원론적으로 이 맞는 시스템인가요? 경직되게 고용을 해서 개발을 시킨다",
+          "timestamp": 4920,
+          "inReplyTo": 1
+        },
+        {
+          "speakerId": "msit-minister",
+          "kind": "답변",
+          "summary": "기존 외주방식은 1~2년 이상 소요되어 새 방식으로 속도 제고",
+          "quote": "지금의 프로세스는 뭐 최소 1년 그리고 2년 이상의 시간이 걸립니다",
+          "timestamp": 4936,
+          "inReplyTo": 2
+        },
+        {
+          "speakerId": "president",
+          "kind": "추가질문",
+          "summary": "외부인력 채용과 내부직원 교육 방식의 비교 타당성 질의",
+          "quote": "그 외부 인력이 그 예 공무를 하는 사람들도 아닐 텐데 그 사람들을 불러들어서 아예 채용을 해 가지고 공무와 관련된 어떤 프로그램을 만들어 본다고 하는게 현실성이 약간 납득이 잘 안 되는데",
+          "timestamp": 5020,
+          "inReplyTo": 3
+        },
+        {
+          "speakerId": "msit-minister",
+          "kind": "답변",
+          "summary": "부처 직원도 저코딩을 활용 중이며 인력양성에는 시간 필요",
+          "quote": "우리 부처에 있는 직원들이 일부 이런 바이브 코딩을 이용해서 부처에 필요한 AI 개발을 좀 쉽게 좀 요즘 하기도 합니다",
+          "timestamp": 5045,
+          "inReplyTo": 4
+        },
+        {
+          "speakerId": "president",
+          "kind": "제안",
+          "summary": "소양 있는 지원자를 정부 내 팀으로 구성해 기술역량 강화하는 방안 제시",
+          "quote": "그런 소양 있는 사람들을 정부 부처 내에서 일단 한 팀 또 모아서 뭐 논의도 해보고 기술적 영향도 강화해서",
+          "timestamp": 5100,
+          "inReplyTo": 5
+        },
+        {
+          "speakerId": "msit-minister",
+          "kind": "답변",
+          "summary": "추진단은 민간 개발자 41%, 지방정부 파견 16%, 공무원 약 30%로 구성",
+          "quote": "민간 개발자가 한 41% 수준이라고 말씀드렸습니다. 나머지는 어 16% 정도는 또 실제 지방 정부에서...",
+          "timestamp": 5164,
+          "inReplyTo": 6
+        }
+      ]
+    },
+    {
+      "id": "ex-10",
+      "topic": "세제개편안 입법예고 및 정치적 부담",
+      "turns": [
+        {
+          "speakerId": "moef-minister",
+          "kind": "답변",
+          "summary": "세제개편 법안 제출 계획 및 경청토론회 통한 의견 수렴",
+          "quote": "이번 세제화는 저희들이 이제 법안을 제출하겠습니다.",
+          "timestamp": 105,
+          "inReplyTo": null
+        },
+        {
+          "speakerId": "president",
+          "kind": "지시",
+          "summary": "입법예고 기간 동안 국민 의견을 적극 반영할 것을 당부",
+          "quote": "국민들께서 의견 주시면은 입법 외고 기간 동안에 무슨 의견을 주셔도 좋습니다",
+          "timestamp": 105,
+          "inReplyTo": 0
+        },
+        {
+          "speakerId": "president",
+          "kind": "발언",
+          "summary": "세금 관련 부처는 정책 변경 시 비판을 받을 수밖에 없다는 점 언급",
+          "quote": "세금만 지는 사람은 바꾸면 반드시 욕을 먹게 돼 있어요",
+          "timestamp": 106,
+          "inReplyTo": 1
+        },
+        {
+          "speakerId": "president",
+          "kind": "지시",
+          "summary": "재정부 장관에게 비판에 당당히 대응할 것을 지시",
+          "quote": "무조건 기워서 다니세요",
+          "timestamp": 106,
+          "inReplyTo": 2
+        },
+        {
+          "speakerId": "moef-minister",
+          "kind": "답변",
+          "summary": "지시 수용",
+          "quote": null,
+          "timestamp": 106,
+          "inReplyTo": 3
+        }
+      ]
+    }
+  ],
+  "directives": [
+    {
+      "id": "dir-2026-08-11-01",
+      "from": "president",
+      "to": [
+        "mois-minister",
+        "mohw-minister",
+        "moel-minister"
+      ],
+      "content": "극심한 폭염이 계속되는 만큼 비상한 각오로 완화될 때까지 전방위적 대응체계를 가동할 것",
+      "timestamp": 739,
+      "tags": [
+        "폭염대응"
+      ],
+      "status": "issued",
+      "followUps": []
+    },
+    {
+      "id": "dir-2026-08-11-02",
+      "from": "president",
+      "to": [
+        "osc-minister"
+      ],
+      "content": "남은 임기 동안 국민이 체감하는 국정 성과 창출에 최선을 다하고, 세종 집무실에서 마지막 국무회의를 개최한다는 자세로 총력을 다할 것",
+      "timestamp": 1237,
+      "tags": [
+        "세종진무실"
+      ],
+      "status": "issued",
+      "followUps": []
+    },
+    {
+      "id": "dir-2026-08-11-03",
+      "from": "president",
+      "to": [
+        "molit-minister",
+        "osc-minister"
+      ],
+      "content": "대통령 세종 집무실과 국회 세종의사당 건립 속도를 높이고 관련 인프라 정비도 차질 없이 진행할 것",
+      "timestamp": 1225,
+      "tags": [
+        "세종진무실"
+      ],
+      "status": "issued",
+      "followUps": []
+    },
+    {
+      "id": "dir-2026-08-11-04",
+      "from": "president",
+      "to": [
+        "motie-minister",
+        "moef-minister"
+      ],
+      "content": "3대 메가프로젝트 추진 시 낡은 관행과 불필요한 절차를 과감히 개선·단축하고 조기투자 장애물을 선제적으로 제거할 것",
+      "timestamp": 1356,
+      "tags": [
+        "규제"
+      ],
+      "status": "issued",
+      "followUps": []
+    },
+    {
+      "id": "dir-2026-08-11-05",
+      "from": "president",
+      "to": [
+        "motie-minister"
+      ],
+      "content": "3대 메가프로젝트와 함께 SMR·재생에너지·양자컴퓨터·우주항공·첨단바이오 등 미래산업 분야에 동급 수준의 전략적 투자를 집중할 것",
+      "timestamp": 1450,
+      "tags": [
+        "AI인프라"
+      ],
+      "status": "issued",
+      "followUps": []
+    },
+    {
+      "id": "dir-2026-08-11-06",
+      "from": "president",
+      "to": [
+        "mohw-minister",
+        "molit-minister"
+      ],
+      "content": "기후재난 관점에서 최저주거기준 개정을 적극 검토하고 고시원·비닐하우스·판자집 등 주택 이외 거처 개선을 서두를 것",
+      "timestamp": 3340,
+      "tags": [],
+      "status": "issued",
+      "followUps": []
+    },
+    {
+      "id": "dir-2026-08-11-07",
+      "from": "president",
+      "to": [
+        "mohw-minister",
+        "mois-minister"
+      ],
+      "content": "기존 사회안전망 체계에 공백이나 부족함이 없는지 부지런히 점검하고 어려운 국민의 삶을 세심히 살필 것",
+      "timestamp": 3392,
+      "tags": [],
+      "status": "issued",
+      "followUps": []
+    },
+    {
+      "id": "dir-2026-08-11-08",
+      "from": "president",
+      "to": [
+        "osc-minister"
+      ],
+      "content": "충직하고 유능하며 성과를 내는 공직자에 대한 포상과 보상을 철저히 하고, 실패에 대한 과도한 문책·감사는 배제할 것",
+      "timestamp": 3481,
+      "tags": [],
+      "status": "issued",
+      "followUps": []
+    },
+    {
+      "id": "dir-2026-08-11-09",
+      "from": "president",
+      "to": [
+        "osc-minister",
+        "moj-minister"
+      ],
+      "content": "극히 일부 무책임·무능·부정부패 공직자에 대해서는 엄정한 문책을 반드시 병행할 것",
+      "timestamp": 3538,
+      "tags": [],
+      "status": "issued",
+      "followUps": []
+    },
+    {
+      "id": "dir-2026-08-11-10",
+      "from": "president",
+      "to": [
+        "knpa-commissioner"
+      ],
+      "content": "범죄 유형별(살인·과실치사 등) 사망통계를 분류하고 월별 추이를 분석해 보고할 것",
+      "timestamp": 3034,
+      "tags": [],
+      "status": "issued",
+      "followUps": [
+        "knpa-commissioner 별도 보고 예정"
+      ]
+    },
+    {
+      "id": "dir-2026-08-11-11",
+      "from": "president",
+      "to": [
+        "knpa-commissioner"
+      ],
+      "content": "범죄 피해 확대 방지, 구제, 진상규명 등에 대한 종합 대책을 정리해 보고할 것",
+      "timestamp": 3087,
+      "tags": [],
+      "status": "issued",
+      "followUps": [
+        "knpa-commissioner 대책 마련 후 보고 예정"
+      ]
+    },
+    {
+      "id": "dir-2026-08-11-12",
+      "from": "president",
+      "to": [
+        "mois-minister"
+      ],
+      "content": "식약처 등 심사인력 부족으로 심사기간이 지연되는 문제를 서둘러 해결할 것",
+      "timestamp": 60,
+      "tags": [],
+      "status": "issued",
+      "followUps": []
+    },
+    {
+      "id": "dir-2026-08-11-13",
+      "from": "president",
+      "to": [
+        "fsc-chairman",
+        "moj-minister"
+      ],
+      "content": "해결할 수 없는 채무는 무조건 팔아 추심 고통을 가하지 말고 신용회복위원회·금융기관 스스로 정리·청산하도록 할 것",
+      "timestamp": 43700,
+      "tags": [],
+      "status": "issued",
+      "followUps": []
+    },
+    {
+      "id": "dir-2026-08-11-14",
+      "from": "president",
+      "to": [
+        "mohw-minister"
+      ],
+      "content": "기초연금 선정기준을 하후상박형으로 조정하고 세부 기준을 정교하게 만들 것",
+      "timestamp": 2951,
+      "tags": [],
+      "status": "issued",
+      "followUps": [
+        "mohw-minister 부처간 논의 후 별도 보고 예정"
+      ]
+    },
+    {
+      "id": "dir-2026-08-11-15",
+      "from": "president",
+      "to": [
+        "moel-minister"
+      ],
+      "content": "노란봉투법상 쟁의 대상 여부에 대한 명확한 기준을 시행령·시행지침 등으로 적극 검토해 마련할 것",
+      "timestamp": 70,
+      "tags": [
+        "규제"
+      ],
+      "status": "issued",
+      "followUps": []
+    },
+    {
+      "id": "dir-2026-08-11-16",
+      "from": "president",
+      "to": [
+        "moef-minister"
+      ],
+      "content": "세제개편안에 대한 정치적 비판에 당당히 대응하고 입법예고 기간 국민 의견을 적극 반영할 것",
+      "timestamp": 106,
+      "tags": [],
+      "status": "issued",
+      "followUps": []
+    }
+  ],
+  "aiDataPolicy": [
+    {
+      "topic": "국민 AI서비스 혁신추진단 신설",
+      "speakerId": "msit-minister",
+      "summary": "범부처 국민 AI서비스 혁신추진단을 신설해 민간 AI개발자를 정부내에 채용, 공공서비스 및 행정혁신 속도를 가속화",
+      "quote": "범부처 국민 AI 서비스 혁신 추진단을 신설하여 민간 AI 개발자를 정부 내에 채용하여 AI를 기반으로 국민 서비스와 행정 혁신 속도를 가속화하도록 하겠습니다",
+      "timestamp": 4733,
+      "tags": [
+        "AI인프라",
+        "인재양성"
+      ]
+    },
+    {
+      "topic": "국민 AI서비스 혁신추진단 운영방식",
+      "speakerId": "msit-minister",
+      "summary": "민간 혁신성과 공공 책임성을 결합한 '정부 내 스타트업' 형태로 운영, 민간개발자 41%·지방정부파견 16%·공무원 30% 구성",
+      "quote": "이 추진단은 민간의 혁신성과 공공의 책임성을 결합한 문제 해결형 조직으로 이른바 정부 내 스타트업처럼 운영하겠습니다",
+      "timestamp": 4753,
+      "tags": [
+        "인재양성"
+      ]
+    },
+    {
+      "topic": "우선 개발 서비스",
+      "speakerId": "msit-minister",
+      "summary": "청년지원금 사전안내·신청대행, 경제위기 국민 선제적 발굴 서비스 등을 2~3개월 내 우선 개발",
+      "quote": "청년 지원금을 미리 알려주고 신청까지 대신해 주는 서비스, 경제적 위기 사항에 놓인 국민을 선제적으로 발굴하여 지원하는 서비스 등이 우선 개발 대상입니다",
+      "timestamp": 4800,
+      "tags": [
+        "공공데이터"
+      ]
+    },
+    {
+      "topic": "데이터 개방 협력 요청",
+      "speakerId": "msit-minister",
+      "summary": "AI에이전트가 부처 데이터를 접근·활용할 수 있도록 API·MCP 개방 연계에 각 부처 협력 요청",
+      "quote": "AI 에이전트가 접근하고 활용할 수 있도록 API와 MCP 개방 연계에도 적극적으로 협력해 주실 것을 요청드립니다",
+      "timestamp": 4853,
+      "tags": [
+        "데이터거버넌스",
+        "공공데이터"
+      ]
+    },
+    {
+      "topic": "민간개발자 채용방식 타당성",
+      "speakerId": "president",
+      "summary": "민간 개발자를 전문임기제로 직접 채용하는 방식의 원론적 타당성에 대해 의문 제기",
+      "quote": "원론적으로 이 맞는 시스템인가요? 경직되게 고용을 해서 개발을 시킨다",
+      "timestamp": 4920,
+      "tags": [
+        "인재양성"
+      ]
+    },
+    {
+      "topic": "내부 공무원 AI역량 강화",
+      "speakerId": "mois-minister",
+      "summary": "민간 개발자 채용보다 행정 경험이 있는 내부 직원을 교육시켜 활용하는 것이 중요하다고 강조하며 실제 성과 사례(AI 챔피언) 소개",
+      "quote": "실제 행정의 과정과 내용을 알고 있는 직원들을 교육시켜서 활용하는 것이 되게 중요해 보입니다",
+      "timestamp": 5295,
+      "tags": [
+        "인재양성"
+      ]
+    },
+    {
+      "topic": "AI챔피언 프로그램",
+      "speakerId": "mois-minister",
+      "summary": "행안부 7급 주무관이 출장비 자동산정 프로그램, 계약관리·평가 자동시스템을 직접 개발한 사례 보고, 전문인재 정원 확대 요청",
+      "quote": "출장비의 자동산 프로그램 AI 여비몬 그다음에 협상 계약 관리 및 평가 자동 시스템 이런 걸 직접 개발을 해냅니다",
+      "timestamp": 5310,
+      "tags": [
+        "인재양성",
+        "AI인프라"
+      ]
+    },
+    {
+      "topic": "AI챔피언 등급 현황",
+      "speakerId": "msit-minister",
+      "summary": "행안부 AI챔피언 블랙등급 18명, 블루등급 76명 배출 예정이라 보고",
+      "quote": "개발자 개발 실력을 갖춘 AI 챔피언이 어 지금 18명이 나왔습니다. 그리고 그 밑에 블루등급이 76명",
+      "timestamp": 5368,
+      "tags": [
+        "인재양성"
+      ]
+    },
+    {
+      "topic": "위기가구 통합 발굴 플랫폼",
+      "speakerId": "mohw-minister",
+      "summary": "산재된 위기정보를 통합화한 위기가구 통합 발굴 플랫폼을 구축해 자살 고위험군을 선제적으로 발굴",
+      "quote": "개별적으로 운영되고 있는 발굴 시스템에 산재된 위기 정보를 통합화하고 위기 가구 통합 발굴 플랫폼을 구축하겠습니다.",
+      "timestamp": 35070,
+      "tags": [
+        "데이터거버넌스",
+        "공공데이터"
+      ]
+    },
+    {
+      "topic": "피지컬AI·AI데이터센터 산업지원",
+      "speakerId": "motie-minister",
+      "summary": "피지컬AI는 휴먼노이드 로봇 공공구매 확대, AI데이터센터는 대중소 솔루션 실증 테스트베드 구축 및 동반수출 지원",
+      "quote": "피지컬 AI는 정부가 초기 수요 창출을 위해 휴먼노이드 사적 로봇의 공공 구매를 대폭 확대하고... AI 데이터 센터는 대규모 AI 데이터 센터 구축을 계기로... 초대형 테스트 배드 구축, 대중서 솔루션 동반 수출 지원",
+      "timestamp": 4146,
+      "tags": [
+        "AI인프라",
+        "AI예산"
+      ]
+    }
+  ],
+  "tags": [
+    "세종진무실",
+    "국토균형발전",
+    "3대메가프로젝트",
+    "자살예방",
+    "돌봄정책",
+    "기초연금",
+    "국민AI서비스혁신추진단",
+    "생산적일자리",
+    "공직문화",
+    "여수세계섬박람회",
+    "세제개편",
+    "채무조정",
+    "폭염대응",
+    "노란봉투법"
+  ],
+  "videoId": "BvYdWpiyVTg",
+  "videoUrl": "https://youtu.be/BvYdWpiyVTg",
+  "duration": 6397,
+  "thumbnail": "https://i.ytimg.com/vi/BvYdWpiyVTg/hqdefault.jpg"
+}

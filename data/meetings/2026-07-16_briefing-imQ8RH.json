@@ -355,8 +355,15 @@
         "복지",
         "기초연금"
       ],
-      "status": "issued",
-      "followUps": []
+      "status": "reported",
+      "followUps": [
+        {
+          "meetingId": "2026-08-11-cabinet-BvYdWp",
+          "exchangeId": "ex-04",
+          "summary": "기초연금 하후상박형 개편을 정부 부처에서 논의 중이며 정리되면 별도 보고 예정",
+          "inferred": true
+        }
+      ]
     },
     {
       "id": "dir-2026-07-16-02",
