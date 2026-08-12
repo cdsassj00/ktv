@@ -191,6 +191,11 @@ gtag('config', 'G-GSYEFJ4GTC');`}
               </a>{" "}
               (한국데이터사이언티스트협회) · ⓒ 2026 CDSA. All rights reserved.
             </p>
+            <p className="pt-1">
+              <Link href="/privacy" className="text-mut hover:text-ink">
+                개인정보처리방침
+              </Link>
+            </p>
             <VisitBadge className="pt-2" />
           </div>
         </footer>
