@@ -403,8 +403,15 @@
         "재난대응",
         "폭염대책"
       ],
-      "status": "issued",
-      "followUps": []
+      "status": "reported",
+      "followUps": [
+        {
+          "meetingId": "2026-08-18-cabinet-tBDepV",
+          "exchangeId": "ex-01",
+          "summary": "남부지방 폭우 피해지역에 대한 피해 및 복구 대책 추진 지시",
+          "inferred": true
+        }
+      ]
     },
     {
       "id": "dir-2026-07-21-02",
