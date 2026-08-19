@@ -914,5 +914,13 @@
   "videoId": "BvYdWpiyVTg",
   "videoUrl": "https://youtu.be/BvYdWpiyVTg",
   "duration": 6397,
-  "thumbnail": "https://i.ytimg.com/vi/BvYdWpiyVTg/hqdefault.jpg"
+  "thumbnail": "https://i.ytimg.com/vi/BvYdWpiyVTg/hqdefault.jpg",
+  "sources": [
+    {
+      "videoId": "QwzUNhDpN2E",
+      "title": "[#이재명 LIVE] 행정수도 세종에서의 네 번째 국무회의 | 제35회 국무회의",
+      "channelTitle": "이재명 (대통령실 공식)",
+      "url": "https://youtu.be/QwzUNhDpN2E"
+    }
+  ]
 }
