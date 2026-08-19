@@ -70,6 +70,15 @@ export interface MeetingSummary {
   remarks: Remark[];
 }
 
+/** 같은 회의를 다룬 '다른 공식 영상'(대통령실 LIVE 등). 요약은 primary 영상 하나로
+ *  하되, 시청자가 다른 공식 출처를 바로 열어볼 수 있도록 출처(provenance)로 남긴다. */
+export interface MeetingSource {
+  videoId: string;
+  title: string;
+  channelTitle: string;
+  url: string;
+}
+
 export interface Meeting {
   id: string;
   type: MeetingType;
@@ -84,6 +93,8 @@ export interface Meeting {
   directives: Directive[];
   aiDataPolicy: AiDataPolicyItem[];
   tags: string[];
+  /** 같은 회의의 다른 공식 채널 영상(참고용). 요약에는 쓰지 않는다. */
+  sources?: MeetingSource[];
   /** 데모용 샘플 데이터 여부 — UI에 배너 표시 */
   sample?: boolean;
 }

@@ -1,0 +1,7 @@
+{
+  "_comment": "국무회의·업무보고 영상을 수집·보강할 '공식' 유튜브 채널 allowlist. primary=true 인 채널(KTV)이 기본 소스이고, 나머지 공식 채널은 (1) 같은 회차의 더 완전한 영상을 '다른 공식 영상'으로 붙이고 (2) KTV가 안 올린 회의(총리 주재 등)를 보충하는 데 쓴다. 여기 없는 채널은 절대 자동 수집하지 않는다. 회차·연도 검증(제N회 + 당해 연도)을 통과한 영상만 채택하므로 작년 것/오라벨은 자동 배제된다.",
+  "channels": [
+    { "id": "UCIMOytYIzaUpoAM2bpT4JZQ", "title": "KTV 국민방송", "primary": true },
+    { "id": "UCNJM6dqu70Qr6VaseiW1Org", "title": "이재명 (대통령실 공식)" }
+  ]
+}

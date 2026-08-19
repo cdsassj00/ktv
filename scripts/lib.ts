@@ -7,6 +7,14 @@ export const MEETINGS_DIR = path.join(DATA_DIR, "meetings");
 export const TRANSCRIPTS_DIR = path.join(DATA_DIR, "transcripts");
 export const QUEUE_FILE = path.join(DATA_DIR, "videos-queue.json");
 
+/** 같은 회의를 다룬 다른 공식 채널 영상(참고용 provenance). */
+export interface MeetingSource {
+  videoId: string;
+  title: string;
+  channelTitle: string;
+  url: string;
+}
+
 export interface QueueItem {
   videoId: string;
   title: string;
@@ -14,6 +22,47 @@ export interface QueueItem {
   type: "cabinet" | "briefing" | "other";
   duration: number; // 초
   thumbnail: string;
+  /** 요약에 쓴 primary 영상 채널명(있으면 표기·판단에 사용) */
+  channelTitle?: string;
+  /** 같은 회의의 다른 공식 영상들(요약엔 안 쓰고 출처로만 남긴다) */
+  sources?: MeetingSource[];
+}
+
+export interface SourceChannel {
+  id: string;
+  title: string;
+  primary?: boolean;
+}
+
+/** data/source-channels.json 의 공식 채널 allowlist를 읽는다(없으면 KTV만). */
+export function sourceChannels(): SourceChannel[] {
+  const cfg = readJson<{ channels?: SourceChannel[] }>(
+    path.join(DATA_DIR, "source-channels.json"),
+    {}
+  );
+  const list = (cfg.channels ?? []).filter((c) => c && c.id && c.title);
+  return list.length
+    ? list
+    : [{ id: "UCIMOytYIzaUpoAM2bpT4JZQ", title: "KTV 국민방송", primary: true }];
+}
+
+/**
+ * 국무회의 영상이 "그 회차 본편"이 맞는지 엄격 검증한다.
+ * (1) 클립·쇼츠 아님, (2) 제목에 '국무회의' + '제N회', (3) 업로드 연도가 기대 연도 이상.
+ * 회차 번호는 매년 리셋되므로 연도 검증이 작년 것 혼입을 막는 핵심 안전장치다.
+ */
+export function verifyCabinetVideo(
+  title: string,
+  number: number,
+  expectYear: number,
+  publishedAt: string
+): boolean {
+  if (looksLikeClip(title)) return false;
+  if (!/국무회의/.test(title)) return false;
+  if (!new RegExp(`제\\s*${number}\\s*회`).test(title)) return false;
+  const yr = Number(publishedAt.slice(0, 4));
+  if (Number.isFinite(yr) && yr < expectYear) return false;
+  return true;
 }
 
 export interface TranscriptSegment {
