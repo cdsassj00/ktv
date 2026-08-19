@@ -201,5 +201,13 @@
   "videoId": "tBDepV3LJi0",
   "videoUrl": "https://youtu.be/tBDepV3LJi0",
   "duration": 543,
-  "thumbnail": "https://i.ytimg.com/vi/tBDepV3LJi0/hqdefault.jpg"
+  "thumbnail": "https://i.ytimg.com/vi/tBDepV3LJi0/hqdefault.jpg",
+  "sources": [
+    {
+      "videoId": "d8kDY2A9Zs0",
+      "title": "[#이재명 LIVE] 굳건한 안보 토대 위에 국민의 안전한 삶을 세우겠습니다 | 을지1 및 제36회 국무회의",
+      "channelTitle": "이재명 (대통령실 공식)",
+      "url": "https://youtu.be/d8kDY2A9Zs0"
+    }
+  ]
 }

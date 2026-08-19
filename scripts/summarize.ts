@@ -168,6 +168,8 @@ JSON만 출력 (스키마):
     videoUrl: `https://youtu.be/${item.videoId}`,
     duration: item.duration,
     thumbnail: item.thumbnail,
+    // 같은 회의의 다른 공식 채널 영상(참고 링크) — 요약엔 안 쓰고 출처로만 남긴다
+    sources: item.sources ?? [],
   };
 }
 

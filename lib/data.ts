@@ -45,6 +45,9 @@ export function getMeetings(): Meeting[] {
       ...a,
       tags: Array.isArray(a?.tags) ? a.tags : [],
     }));
+    m.sources = (Array.isArray(m.sources) ? m.sources : []).filter(
+      (s) => s && s.videoId && s.url
+    );
     return m;
   });
   meetings.sort((a, b) => (a.date < b.date ? 1 : -1));

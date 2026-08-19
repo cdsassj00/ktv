@@ -24,6 +24,8 @@
  *   CABINET_PROBE_AHEAD(회차 콕집기 최대 선행 탐색 수, 기본 8),
  *   CABINET_PROBE_MISSES(연속 미발견 시 중단 임계, 기본 2)
  */
+import fs from "fs";
+import path from "path";
 import { pathToFileURL } from "url";
 import {
   classifyTitle,
@@ -33,11 +35,15 @@ import {
   latestCabinetNumber,
   log,
   looksLikeClip,
+  MEETINGS_DIR,
   meetingKey,
+  MeetingSource,
   parseIsoDuration,
   QUEUE_FILE,
   QueueItem,
   readJson,
+  sourceChannels,
+  verifyCabinetVideo,
   writeJson,
 } from "./lib";
 
@@ -52,7 +58,13 @@ async function yt<T>(endpoint: string, params: Record<string, string>): Promise<
   return (await res.json()) as T;
 }
 
-type Candidate = { videoId: string; title: string; publishedAt: string; type: QueueItem["type"] };
+type Candidate = {
+  videoId: string;
+  title: string;
+  publishedAt: string;
+  type: QueueItem["type"];
+  channelTitle?: string;
+};
 
 /** 재생목록의 모든 항목을 페이지네이션으로 순회 */
 async function listPlaylist(playlistId: string, maxPages: number) {
@@ -189,6 +201,76 @@ async function probeCabinetByNumber(
   return out;
 }
 
+/**
+ * 공식 allowlist 채널(비-KTV)에서 국무회의 회차 영상을 회차번호로 지목·검증해 수집한다.
+ * 현재 시리즈의 회차대(latest-back .. latest+ahead)를 훑어, 연도+제N회 검증을 통과한
+ * 영상만 채택한다. (작년 것/오라벨/클립은 verifyCabinetVideo가 자동 배제)
+ * 반환: 검증된 후보들(각자 channelTitle 포함).
+ */
+async function probeChannelCabinet(
+  channelId: string,
+  channelTitle: string,
+  fromNumber: number,
+  toNumber: number,
+  expectYear: number
+): Promise<Candidate[]> {
+  const out: Candidate[] = [];
+  for (let n = Math.max(1, fromNumber); n <= toNumber; n++) {
+    try {
+      const res = await yt<{
+        items?: { id: { videoId?: string }; snippet: { title: string; publishedAt: string } }[];
+      }>("search", {
+        part: "snippet",
+        channelId,
+        q: `제${n}회 국무회의`,
+        type: "video",
+        order: "date",
+        videoDuration: "long",
+        maxResults: "10",
+      });
+      for (const it of res.items ?? []) {
+        const videoId = it.id.videoId;
+        const title = it.snippet.title;
+        if (!videoId) continue;
+        if (!verifyCabinetVideo(title, n, expectYear, it.snippet.publishedAt)) continue;
+        out.push({ videoId, title, publishedAt: it.snippet.publishedAt, type: "cabinet", channelTitle });
+      }
+    } catch (e) {
+      log(`[${channelTitle}] 회차검색(제${n}회) 실패(무시): ${(e as Error).message}`);
+    }
+  }
+  return out;
+}
+
+/** data/meetings 의 기존 회의 파일에 새로 찾은 '다른 공식 영상' 소스를 소급 추가한다.
+ *  (이미 요약된 회의는 재요약하지 않으므로, 출처 링크만 채워 넣어 준다.) */
+function backfillMeetingSources(altByKey: Map<string, MeetingSource[]>): number {
+  if (altByKey.size === 0 || !fs.existsSync(MEETINGS_DIR)) return 0;
+  let touched = 0;
+  for (const f of fs.readdirSync(MEETINGS_DIR)) {
+    if (!f.endsWith(".json")) continue;
+    const file = path.join(MEETINGS_DIR, f);
+    const m = readJson<{
+      type?: string;
+      title?: string;
+      date?: string;
+      videoId?: string;
+      sources?: MeetingSource[];
+    }>(file, {});
+    if (!m.type || !m.title || !m.date) continue;
+    const alts = altByKey.get(meetingKey(m.type, m.title, m.date));
+    if (!alts || alts.length === 0) continue;
+    const existing = new Set([m.videoId, ...(m.sources ?? []).map((s) => s.videoId)]);
+    const add = alts.filter((s) => !existing.has(s.videoId));
+    if (add.length === 0) continue;
+    m.sources = [...(m.sources ?? []), ...add];
+    writeJson(file, m);
+    touched += 1;
+    log(`기존 회의에 다른 공식 영상 소급 추가: ${m.title} (+${add.length})`);
+  }
+  return touched;
+}
+
 export async function fetchVideos(): Promise<QueueItem[]> {
   const handle = process.env.CHANNEL_HANDLE ?? "KTV_korea";
   const playlistId = process.env.PLAYLIST_ID ?? "PLTlQMzTtp1gY"; // KTV 공식 국무회의 재생목록
@@ -196,6 +278,7 @@ export async function fetchVideos(): Promise<QueueItem[]> {
   const since = process.env.SINCE; // 이 날짜 이전 영상은 무시
   const lookbackDays = Number(process.env.SEARCH_LOOKBACK_DAYS ?? 90);
   const queueMaxAgeDays = Number(process.env.QUEUE_MAX_AGE_DAYS ?? 45);
+  const primaryTitle = sourceChannels().find((c) => c.primary)?.title ?? "KTV 국민방송";
 
   const known = existingVideoIds();
   const knownKeys = existingMeetingKeys(); // 수정본 재업로드(다른 videoId) 중복 방지
@@ -276,6 +359,52 @@ export async function fetchVideos(): Promise<QueueItem[]> {
   }
   if (extras.length) log(`수동 추가(extra-videos) 반영 후 후보 총 ${candidates.length}건`);
 
+  // 4.7) 공식 다중 채널 보강 — KTV 외 allowlist 공식 채널(대통령실 등)에서 같은 회차를
+  //      회차번호로 지목·검증해 (a) 같은 회의면 '다른 공식 영상'(alternate source)으로,
+  //      (b) KTV에 없는 회차면 gap-fill 신규 회의로 추가한다. 연도+제N회 검증을 통과한
+  //      영상만 채택하므로 작년 것/오라벨은 자동 배제된다.
+  const altByKey = new Map<string, MeetingSource[]>();
+  const officialChannels = sourceChannels().filter((c) => !c.primary && c.id);
+  if (officialChannels.length) {
+    const latest = latestCabinetNumber();
+    if (latest.number > 0) {
+      // 쿼터 절약: 공식 보강은 최근 회차 몇 개(alternate) + 앞 몇 개(gap-fill)만 훑는다.
+      const back = Number(process.env.OFFICIAL_PROBE_BACK ?? 3);
+      const ahead = Number(process.env.OFFICIAL_PROBE_AHEAD ?? 3);
+      for (const ch of officialChannels) {
+        const found = await probeChannelCabinet(
+          ch.id,
+          ch.title,
+          latest.number - back,
+          latest.number + ahead,
+          latest.year
+        );
+        for (const c of found) {
+          const key = meetingKey("cabinet", c.title, c.publishedAt.slice(0, 10));
+          const owned = knownKeys.has(key) || seenKeys.has(key);
+          if (owned) {
+            // 이미 KTV(또는 이번 실행 후보)가 가진 회의 → 다른 공식 영상으로만 기록
+            if (known.has(c.videoId) || candidates.some((x) => x.videoId === c.videoId)) continue;
+            const list = altByKey.get(key) ?? [];
+            if (!list.some((s) => s.videoId === c.videoId)) {
+              list.push({
+                videoId: c.videoId,
+                title: c.title,
+                channelTitle: c.channelTitle ?? ch.title,
+                url: `https://youtu.be/${c.videoId}`,
+              });
+              altByKey.set(key, list);
+            }
+          } else {
+            // KTV에 없는 회차 → 신규 회의로 보충(gap fill)
+            add(c);
+          }
+        }
+        log(`[${ch.title}] 보강 — 다른영상 ${[...altByKey.values()].reduce((n, v) => n + v.length, 0)}건 / gap-fill 포함 후보 총 ${candidates.length}건`);
+      }
+    }
+  }
+
   // 5) 영상 상세(길이·썸네일) — 생중계 예고(길이 0) 및 진행 중 라이브 제외
   const fresh: QueueItem[] = [];
   for (let i = 0; i < candidates.length; i += 50) {
@@ -303,13 +432,21 @@ export async function fetchVideos(): Promise<QueueItem[]> {
         log(`5분 미만(예고편 추정) — 건너뜀: ${c.title}`);
         continue;
       }
+      const key = meetingKey(c.type, c.title, c.publishedAt.slice(0, 10));
+      const sources = altByKey.get(key);
       fresh.push({
         ...c,
+        channelTitle: c.channelTitle ?? primaryTitle,
         duration,
         thumbnail: v.snippet.thumbnails?.high?.url ?? v.snippet.thumbnails?.medium?.url ?? "",
+        ...(sources && sources.length ? { sources } : {}),
       });
     }
   }
+
+  // 이미 요약된 기존 회의에는 재요약 없이 '다른 공식 영상' 링크만 소급 추가
+  const backfilled = backfillMeetingSources(altByKey);
+  if (backfilled) log(`기존 회의 ${backfilled}건에 다른 공식 영상 소급 반영`);
 
   // 6) 대기 큐 병합 — 아직 수집 안 된 기존 큐 항목을 유지한다.
   //    이번 실행에서 재발견 못 해도(창 밖으로 밀려도) 자막 대기 중이면 남긴다.

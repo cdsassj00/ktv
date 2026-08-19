@@ -258,12 +258,27 @@ export default function MeetingDetail({
           )}
 
           {canSeek && (
-            <p className="text-[13px] text-faint">
-              원본 영상:{" "}
-              <a href={youtubeUrlAt(meeting.videoId, 0)} target="_blank" rel="noreferrer" className="underline">
-                KTV 유튜브에서 보기
-              </a>
-            </p>
+            <div className="space-y-1 text-[13px] text-faint">
+              <p>
+                원본 영상:{" "}
+                <a href={youtubeUrlAt(meeting.videoId, 0)} target="_blank" rel="noreferrer" className="underline">
+                  유튜브에서 보기
+                </a>
+              </p>
+              {meeting.sources && meeting.sources.length > 0 && (
+                <p>
+                  다른 공식 영상:{" "}
+                  {meeting.sources.map((s, i) => (
+                    <span key={s.videoId}>
+                      {i > 0 && " · "}
+                      <a href={s.url} target="_blank" rel="noreferrer" className="underline">
+                        {s.channelTitle}
+                      </a>
+                    </span>
+                  ))}
+                </p>
+              )}
+            </div>
           )}
         </div>
       </div>
