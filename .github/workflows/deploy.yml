@@ -3,6 +3,12 @@ name: Cloudflare Pages 배포
 on:
   push:
     branches: [main]
+  # 수집 크론(collect.yml)은 GITHUB_TOKEN 으로 main 에 push 하는데,
+  # GITHUB_TOKEN 이 만든 push 는 다른 워크플로를 트리거하지 못한다(깃허브 정책).
+  # 그래서 새 회의가 커밋돼도 배포가 안 되던 문제를 workflow_run 으로 잇는다.
+  workflow_run:
+    workflows: ["회의 수집·요약 파이프라인"]
+    types: [completed]
   workflow_dispatch:
 
 permissions:
@@ -15,6 +21,11 @@ concurrency:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    # push·수동 실행은 항상 배포. workflow_run 은 수집이 main 에서 성공했을 때만.
+    if: >-
+      github.event_name != 'workflow_run' ||
+      (github.event.workflow_run.conclusion == 'success' &&
+       github.event.workflow_run.head_branch == 'main')
     steps:
       - uses: actions/checkout@v4
 
