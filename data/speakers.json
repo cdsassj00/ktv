@@ -164,12 +164,11 @@
     "photoSource": "국민권익위원회 누리집 (위원장 인사말)"
   },
   "data-minister": {
-    "name": "국가데이터처장",
-    "role": "국가데이터처",
+    "name": "안형준",
+    "role": "국가데이터처장",
     "org": "국가데이터처",
     "photo": null,
-    "photoSource": null,
-    "titleOnly": true
+    "photoSource": null
   },
   "ftc-chairman": {
     "name": "주병기",
@@ -186,12 +185,11 @@
     "photoSource": "지식재산처 누리집 (처장 인사말)"
   },
   "kcc-chairman": {
-    "name": "방송통신위원장",
-    "role": "방송통신위원회",
-    "org": "방송통신위원회",
+    "name": "김종철",
+    "role": "방송미디어통신위원장",
+    "org": "방송미디어통신위원회",
     "photo": null,
-    "photoSource": null,
-    "titleOnly": true
+    "photoSource": null
   },
   "kcs-commissioner": {
     "name": "관세청장",
@@ -202,11 +200,12 @@
     "titleOnly": true
   },
   "kfs-minister": {
-    "name": "남성현",
+    "name": "산림청장",
     "role": "산림청장",
     "org": "산림청",
     "photo": null,
-    "photoSource": null
+    "photoSource": null,
+    "titleOnly": true
   },
   "khs-administrator": {
     "name": "허민",
@@ -216,12 +215,11 @@
     "photoSource": "국가유산청 누리집 (청장 소개)"
   },
   "kipo-commissioner": {
-    "name": "특허청장",
-    "role": "특허청",
-    "org": "특허청",
+    "name": "김용선",
+    "role": "지식재산처장",
+    "org": "지식재산처",
     "photo": null,
-    "photoSource": null,
-    "titleOnly": true
+    "photoSource": null
   },
   "knpa-commissioner": {
     "name": "경찰청장",
@@ -253,28 +251,25 @@
     "photoSource": "국세청 누리집 (청장 소개)"
   },
   "oka-commissioner": {
-    "name": "재외동포청장",
-    "role": "재외동포청",
+    "name": "김경협",
+    "role": "재외동포청장",
     "org": "재외동포청",
     "photo": null,
-    "photoSource": null,
-    "titleOnly": true
+    "photoSource": null
   },
   "osc-minister": {
-    "name": "국무조정실장",
-    "role": "국무조정실",
+    "name": "윤창렬",
+    "role": "국무조정실장",
     "org": "국무조정실",
-    "photo": null,
-    "photoSource": null,
-    "titleOnly": true
+    "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/%E5%B0%B9%E6%98%8C%E7%83%88%E7%85%A7%E7%89%87.jpg?width=400",
+    "photoSource": "위키미디어 공용 · KOGL 제1유형(출처표시) · 대한민국 대통령실"
   },
   "pipc-chairman": {
-    "name": "개인정보보호위원장",
-    "role": "개인정보보호위원회",
+    "name": "송경희",
+    "role": "개인정보보호위원장",
     "org": "개인정보보호위원회",
     "photo": null,
-    "photoSource": null,
-    "titleOnly": true
+    "photoSource": null
   },
   "senior-civil": {
     "name": "민정수석",
