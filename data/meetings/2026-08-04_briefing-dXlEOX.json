@@ -1411,8 +1411,15 @@
         "규제",
         "배달앱"
       ],
-      "status": "issued",
-      "followUps": []
+      "status": "reported",
+      "followUps": [
+        {
+          "meetingId": "2026-08-25-cabinet-TR53Rd",
+          "exchangeId": "ex-08",
+          "summary": "배달앱 수수료 독과점 문제 통제 방안 검토 및 공정위 협력 논의",
+          "inferred": true
+        }
+      ]
     },
     {
       "id": "dir-2026-08-04-12",
@@ -1426,8 +1433,15 @@
         "규제",
         "데이터거버넌스"
       ],
-      "status": "issued",
-      "followUps": []
+      "status": "reported",
+      "followUps": [
+        {
+          "meetingId": "2026-08-25-cabinet-TR53Rd",
+          "exchangeId": "ex-08",
+          "summary": "배달앱 수수료 항목 공개 의무화 등 필요한 조치를 공정위와 추진",
+          "inferred": true
+        }
+      ]
     }
   ],
   "videoId": "dXlEOXdMnJI",

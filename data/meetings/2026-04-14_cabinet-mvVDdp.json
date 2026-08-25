@@ -440,8 +440,15 @@
         "교통",
         "고유가"
       ],
-      "status": "issued",
-      "followUps": []
+      "status": "reported",
+      "followUps": [
+        {
+          "meetingId": "2026-08-25-cabinet-TR53Rd",
+          "exchangeId": "ex-01",
+          "summary": "국민 교통비 부담 경감을 위한 모두의 카드 인센티브 강화 방안 시행 논의",
+          "inferred": true
+        }
+      ]
     },
     {
       "id": "dir-2026-04-14-03",

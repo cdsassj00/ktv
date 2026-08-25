@@ -587,8 +587,15 @@
         "데이터거버넌스",
         "AI전환"
       ],
-      "status": "issued",
-      "followUps": []
+      "status": "reported",
+      "followUps": [
+        {
+          "meetingId": "2026-08-25-cabinet-TR53Rd",
+          "exchangeId": "ex-05",
+          "summary": "국가데이터처의 데이터 최고책임자(CDO) 역할 강화 및 보안·개인정보 보호와 활용 균형 논의",
+          "inferred": true
+        }
+      ]
     },
     {
       "id": "dir-2026-07-15-10",

@@ -513,8 +513,15 @@
         "AI정책",
         "모두의AI"
       ],
-      "status": "issued",
-      "followUps": []
+      "status": "reported",
+      "followUps": [
+        {
+          "meetingId": "2026-08-25-cabinet-TR53Rd",
+          "exchangeId": "ex-04",
+          "summary": "모두의 AI 기본 기능 무상 보장 및 데이터 대가 시스템 설계 논의",
+          "inferred": true
+        }
+      ]
     },
     {
       "id": "dir-2026-05-20-07",
