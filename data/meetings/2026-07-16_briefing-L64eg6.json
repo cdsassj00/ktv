@@ -496,8 +496,15 @@
         "농어촌기본소득",
         "재정"
       ],
-      "status": "issued",
-      "followUps": []
+      "status": "reported",
+      "followUps": [
+        {
+          "meetingId": "2026-09-01-cabinet-BOaiHU",
+          "exchangeId": "ex-03",
+          "summary": "외국인 연금 추납 제도 악용 방지를 위해 국내 거주 여부 판단 기준을 강화하는 지침을 8월 31일부터 시행하고, 여권 확인을 통한 실거주 기간만큼만 추납을 허용하도록 함",
+          "inferred": true
+        }
+      ]
     },
     {
       "id": "dir-2026-07-16-L10",

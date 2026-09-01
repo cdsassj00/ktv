@@ -298,8 +298,15 @@
         "안전",
         "재난대응"
       ],
-      "status": "issued",
-      "followUps": []
+      "status": "reported",
+      "followUps": [
+        {
+          "meetingId": "2026-09-01-cabinet-BOaiHU",
+          "exchangeId": "ex-02",
+          "summary": "월평균 31만 건(아동 14만건, 성인 18만건)의 실종신고 발생 중 미제 건수가 약 8천건에 달하고, 특수계층 실종 미제 건수가 29건, 성인 실종 사망 발견이 연 천명 전후인 상황 파악",
+          "inferred": true
+        }
+      ]
     },
     {
       "id": "dir-2026-01-20-02",
@@ -458,8 +465,15 @@
         "체납관리",
         "일자리"
       ],
-      "status": "issued",
-      "followUps": []
+      "status": "reported",
+      "followUps": [
+        {
+          "meetingId": "2026-09-01-cabinet-BOaiHU",
+          "exchangeId": "ex-09",
+          "summary": "의대 위치를 순천으로 결정한 광주광역시장의 결단을 평가하고, 목포·서부지역의 상대적 박탈감 해소를 위해 중앙정부 차원에서 의료 인프라 구축 등 지원방안 모색",
+          "inferred": true
+        }
+      ]
     },
     {
       "id": "dir-2026-01-20-10",

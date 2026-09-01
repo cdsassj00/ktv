@@ -537,8 +537,15 @@
         "부동산",
         "공직윤리"
       ],
-      "status": "issued",
-      "followUps": []
+      "status": "reported",
+      "followUps": [
+        {
+          "meetingId": "2026-09-01-cabinet-BOaiHU",
+          "exchangeId": "ex-10",
+          "summary": "수도권 주택 공급 절벽 해소를 위해 500호 이하 사업 권한을 구청으로 위임하고, 공급금융·대출제도 확장, 인허가 원스톱 서비스 강화 등으로 신속한 주택 공급 추진",
+          "inferred": true
+        }
+      ]
     },
     {
       "id": "dir-2026-04-14-08",

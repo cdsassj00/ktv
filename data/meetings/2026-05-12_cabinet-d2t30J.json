@@ -370,8 +370,15 @@
         "재정",
         "경제성장전략"
       ],
-      "status": "issued",
-      "followUps": []
+      "status": "reported",
+      "followUps": [
+        {
+          "meetingId": "2026-09-01-cabinet-BOaiHU",
+          "exchangeId": "ex-01",
+          "summary": "2027년 예산안이 역대 최대 규모(820조 9천억 원)로 편성되었으며, 경제 성장을 통한 재정 선순환 구조 안착과 잠재성장률 반등, 성장 과실의 전 세대·지역·계층 확산을 목표로 함",
+          "inferred": true
+        }
+      ]
     },
     {
       "id": "dir-2026-05-12-03",
@@ -499,8 +506,15 @@
         "안전",
         "여름철재난"
       ],
-      "status": "issued",
-      "followUps": []
+      "status": "reported",
+      "followUps": [
+        {
+          "meetingId": "2026-09-01-cabinet-BOaiHU",
+          "exchangeId": "ex-02",
+          "summary": "실종자 관리 시스템 개선으로 경찰관의 임의 종결을 방지하고, 성인 실종 자동 위치추적을 자살위험자·긴급치료 필요자에 한정하여 검토하는 방향으로 진행",
+          "inferred": true
+        }
+      ]
     },
     {
       "id": "dir-2026-05-12-11",

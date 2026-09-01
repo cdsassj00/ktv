@@ -635,8 +635,15 @@
       "tags": [
         "AI예산"
       ],
-      "status": "issued",
-      "followUps": []
+      "status": "reported",
+      "followUps": [
+        {
+          "meetingId": "2026-09-01-cabinet-BOaiHU",
+          "exchangeId": "ex-01",
+          "summary": "미래대응기금을 신설하여 청년, 성장동력, 지방, 인재교육 4대 분야에 투자하고, AI·메가프로젝트·초격차 기술 확보에 집중 투자하는 방향으로 2027년도 예산 편성",
+          "inferred": true
+        }
+      ]
     },
     {
       "id": "dir-2026-08-25-05",

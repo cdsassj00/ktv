@@ -427,8 +427,15 @@
         "복지",
         "그냥드림"
       ],
-      "status": "issued",
-      "followUps": []
+      "status": "reported",
+      "followUps": [
+        {
+          "meetingId": "2026-09-01-cabinet-BOaiHU",
+          "exchangeId": "ex-04",
+          "summary": "아동수당 증액 기준일을 7월 1일에서 1월 1일로 변경 검토, 약 2,500억 원의 추가 예산 확보 가능성 논의",
+          "inferred": true
+        }
+      ]
     },
     {
       "id": "dir-2026-02-03-02",
@@ -442,8 +449,15 @@
         "방역",
         "농업"
       ],
-      "status": "issued",
-      "followUps": []
+      "status": "reported",
+      "followUps": [
+        {
+          "meetingId": "2026-09-01-cabinet-BOaiHU",
+          "exchangeId": "ex-08",
+          "summary": "추석 전 임금체불 집중 청산 기간(4주) 운영으로 전국 8천여 개소 전수조사, 사업주 최대 10억원·노동자 생계비 1천만원(특별고용위기 2천만원) 융자 지원, 법정형 3년 3천만원에서 5년 5천만원으로 상향",
+          "inferred": true
+        }
+      ]
     },
     {
       "id": "dir-2026-02-03-03",
@@ -457,8 +471,15 @@
         "물가",
         "민생"
       ],
-      "status": "issued",
-      "followUps": []
+      "status": "reported",
+      "followUps": [
+        {
+          "meetingId": "2026-09-01-cabinet-BOaiHU",
+          "exchangeId": "ex-07",
+          "summary": "2026년 추석 민생안정 대책으로 성수품 역대 최대 물량 공급, 농축수산물 할인 지원, 가격표시 위반 시 5일간 즉시 영업정지 등 물가안정 조치 추진",
+          "inferred": true
+        }
+      ]
     },
     {
       "id": "dir-2026-02-03-04",
