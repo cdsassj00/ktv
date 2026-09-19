@@ -726,8 +726,15 @@
         "AI예산",
         "인재양성"
       ],
-      "status": "issued",
-      "followUps": []
+      "status": "reported",
+      "followUps": [
+        {
+          "meetingId": "2026-09-08-cabinet-ukNaz5",
+          "exchangeId": "ex-01",
+          "summary": "공무원의 AI 활용 업무 개선을 공식 업무로 인정하는 지침 마련 및 AI 챔피언 양성, 성과보상체계 구축 추진",
+          "inferred": true
+        }
+      ]
     },
     {
       "id": "dir-2026-08-25-11",
@@ -741,8 +748,15 @@
       "tags": [
         "AI예산"
       ],
-      "status": "issued",
-      "followUps": []
+      "status": "reported",
+      "followUps": [
+        {
+          "meetingId": "2026-09-08-cabinet-ukNaz5",
+          "exchangeId": "ex-01",
+          "summary": "행정혁신 필요경비 항목 신설으로 AI 관련 예산의 유연한 집행 확보",
+          "inferred": true
+        }
+      ]
     },
     {
       "id": "dir-2026-08-25-12",

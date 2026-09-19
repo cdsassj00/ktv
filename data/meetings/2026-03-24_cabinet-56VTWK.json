@@ -362,8 +362,15 @@
         "최고가격제",
         "물가"
       ],
-      "status": "issued",
-      "followUps": []
+      "status": "reported",
+      "followUps": [
+        {
+          "meetingId": "2026-09-15-cabinet-3eb1wt",
+          "exchangeId": "ex-03",
+          "summary": "3월 27일 석유 최고가격 2차 고시에서 국민 충격을 완화할 구체적 방안을 신속히 마련하도록 지시했던 사항에 대해, 산업통상자원부가 금요일 전에 다음 달 최고가격제를 고시할 예정임을 보고",
+          "inferred": true
+        }
+      ]
     },
     {
       "id": "dir-2026-03-24-03",
