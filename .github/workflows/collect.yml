@@ -51,6 +51,11 @@ jobs:
 
       - run: npm ci
 
+      # 제목 필터가 본편을 클립으로 오판하면 수집이 조용히 0건으로 끝난다.
+      # 실제 제목 표본으로 필터를 먼저 점검해 그 상태로 도는 것을 막는다.
+      - name: 제목 필터 점검
+        run: npm run check:titles
+
       - name: 파이프라인 실행
         env:
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}

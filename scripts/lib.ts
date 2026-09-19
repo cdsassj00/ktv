@@ -165,12 +165,32 @@ export function existingMeetingKeys(): Set<string> {
 }
 
 /**
+ * 예능형 제목을 달고 올라온 "회의 본편"인가?
+ *
+ * KTV는 2026년 9월(제39회)부터 국무회의 본편도 #명벤져스 브랜드 제목으로 올린다.
+ * 예: "#대통령 너무 바쁜 중에도 맘 편한 이유?! #한성숙 총리와 명벤져스들이
+ *      작정하고 일한 제40회 #국무회의 풀영상! #명벤져스"
+ * 해시태그·코너명만 보고 클립으로 버리면 본편을 통째로 놓치므로(제39·40회 누락),
+ * "제N회 + 국무회의 + 풀영상/풀버전"이 모두 갖춰지면 본편으로 인정한다.
+ * 짧은 코너 클립은 '풀영상/풀버전'을 달지 않고, 모음·하이라이트류는 아래에서
+ * 되돌려 배제한다. 길이 검증(검색 videoDuration=long, 5분 미만 제외)이 2차 방어선.
+ */
+export function looksLikeFullCabinet(title: string): boolean {
+  if (!/국무회의/.test(title)) return false;
+  if (!/제\s*\d+\s*회/.test(title)) return false;
+  if (!/풀영상|풀버전|전체\s*영상/.test(title)) return false;
+  if (/모아보기|모음|하이라이트|다이제스트|예고|쇼츠|shorts/i.test(title)) return false;
+  return true;
+}
+
+/**
  * KTV 예능·클립·쇼츠·브이로그처럼 회의 본편이 아닌 영상인가?
  * 이런 제목은 이모지·다중 해시태그·특유의 코너명이 들어가고, 회의 본편
  * 제목("(26.8.4.) 이재명 대통령 제34회 국무회의", "…업무보고｜삶으로 체감하는
  * 대체불가 대한민국")은 이모지·해시태그가 전혀 없다. 그 차이로 걸러낸다.
  */
 export function looksLikeClip(title: string): boolean {
+  if (looksLikeFullCabinet(title)) return false; // 예능형 제목을 단 본편은 예외
   if (/[\u{1F000}-\u{1FAFF}\u{2600}-\u{27BF}\u{2190}-\u{21FF}\u{2B00}-\u{2BFF}]/u.test(title)) return true; // 이모지
   if ((title.match(/#/g) ?? []).length >= 2) return true; // 해시태그 2개 이상
   if (/퀵-?클립|잼플릭스|브이로그|명벤져스|하이라이트|홍보영상|예고편|모아보기|풀영상\s*모음|시즌\s*\d|\[클립\]/.test(title))

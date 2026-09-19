@@ -179,7 +179,14 @@ async function probeCabinetByNumber(
         const title = it.snippet.title;
         if (!videoId) continue;
         // 정확히 그 회차(제N회) + 국무회의 + 클립 아님만 채택
-        if (looksLikeClip(title) || !/국무회의/.test(title) || !numRe.test(title)) continue;
+        if (!/국무회의/.test(title) || !numRe.test(title)) continue;
+        // 회차·회의명은 맞는데 클립으로 판정된 건 반드시 남긴다 — 제목 규칙이
+        // 또 바뀌어 본편이 걸러지는 '조용한 누락'을 로그에서 바로 알아채려면
+        // "없다"가 아니라 "버렸다"가 보여야 한다.
+        if (looksLikeClip(title)) {
+          log(`회차검색 — 제${n}회 후보를 클립으로 판정해 제외(제목 규칙 확인 필요): ${title}`);
+          continue;
+        }
         // 번호는 매년 리셋되므로 현재 시리즈(당해 연도) 영상만 채택 — 이러면
         // 옛 연도의 같은 번호(예: 2025 제32회)를 다시 끌어오지 않고, 아래
         // "연속 miss 조기 종료"도 정상 작동한다.
