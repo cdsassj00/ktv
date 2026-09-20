@@ -57,13 +57,27 @@ function chunkTranscript(segments: TranscriptSegment[]): { start: number; text: 
   return chunks;
 }
 
-function speakerRoster(): string {
-  const speakers = readJson<Record<string, { name: string; role: string; org: string }>>(
-    path.join(DATA_DIR, "speakers.json"),
-    {}
-  );
+type RosterEntry = { name: string; role: string; org: string; term?: { from: string; to?: string } };
+
+/**
+ * 회의 날짜 기준 명부. 그 날짜에 재직하지 않은 사람은 아예 빼고, 남은 사람의
+ * 재임 기간을 함께 적는다. 이러면 LLM이 "총리"를 전임자 이름으로 채우는 사고를
+ * 막을 수 있다(2026-09-08 제39회 요약이 전임 총리 실명을 넣은 사례).
+ * term이 없는 사람은 기간 정보가 없다는 뜻이므로 그대로 둔다.
+ */
+function speakerRoster(meetingDate: string): string {
+  const speakers = readJson<Record<string, RosterEntry>>(path.join(DATA_DIR, "speakers.json"), {});
   return Object.entries(speakers)
-    .map(([id, s]) => `- ${id}: ${s.name} (${s.role}, ${s.org})`)
+    .filter(([, s]) => {
+      if (!s.term) return true;
+      if (s.term.from && meetingDate < s.term.from) return false;
+      if (s.term.to && meetingDate > s.term.to) return false;
+      return true;
+    })
+    .map(([id, s]) => {
+      const term = s.term ? ` · 재임 ${s.term.from}~${s.term.to ?? "현재"}` : "";
+      return `- ${id}: ${s.name} (${s.role}, ${s.org}${term})`;
+    })
     .join("\n");
 }
 
@@ -80,6 +94,8 @@ ${chunk.text}
 ## 지시
 자막을 의미 있는 발언 단위로 분리하고 각 발언에 대해 다음을 판단하세요:
 - speakerId: 명부에서 추론. 문맥상 확신할 수 없으면 null (추측 금지)
+- summary·quote에 사람 이름을 쓰지 말 것. 자막에 이름이 실제로 나오지 않으면
+  "총리", "행정안전부 장관"처럼 직책으로만 지칭한다 (전임자 이름이 끼어드는 사고 방지)
 - kind: "지시" | "보고" | "답변" | "질문" | "추가질문" | "발언"
 - summary: 발언 요지 1~2문장
 - quote: 핵심 직접 인용 (자막 오탈자를 보정한 문장, 중요 발언에만)
@@ -137,6 +153,11 @@ ${JSON.stringify(aiFlagged, null, 1)}
 - aiDataPolicy: AI·데이터 정책 발언 정리. tags는 다음 중에서 선택하되 필요시 추가: AI기본법, 규제, 데이터거버넌스, 공공데이터, AI예산, 인재양성, AI인프라, 데이터산업
 - speakerId를 확신할 수 없는 발언은 "unknown" 사용
 - 요약은 중립적·사실적으로. 자막에 없는 내용을 지어내지 말 것
+- 인명은 자막에 그 이름이 실제로 등장할 때만 쓴다. 등장하지 않으면 "총리",
+  "기획재정부 장관"처럼 직책으로 서술할 것 — 명부나 사전지식으로 이름을 채우면
+  전임자 실명이 현직처럼 실리는 오보가 된다(제39회 국무회의 사례)
+- 위 명부는 이 회의 날짜(${date}) 기준 재직자만 담고 있다. 목록에 없는 사람의
+  이름·직책을 끌어오지 말 것
 
 JSON만 출력 (스키마):
 {
@@ -245,7 +266,6 @@ export async function summarize(): Promise<number> {
   const queue = readJson<QueueItem[]>(QUEUE_FILE, []);
   const n = Number(process.env.MAX_MEETINGS);
   const maxMeetings = Number.isFinite(n) && n > 0 ? n : 3;
-  const roster = speakerRoster();
   let processed = 0;
   const remaining: QueueItem[] = [];
 
@@ -273,6 +293,8 @@ export async function summarize(): Promise<number> {
     // 중단시키지 않도록 회의 단위로 격리한다. 실패분은 큐에 남겨 재시도한다.
     try {
       log(`요약 시작: ${item.title}`);
+      // 명부는 회의 날짜 기준으로 만든다 — 회의 시점에 재직하지 않은 사람은 제외된다
+      const roster = speakerRoster(item.publishedAt.slice(0, 10));
       const chunks = chunkTranscript(segments);
       log(`  청크 ${chunks.length}개 (15분 단위)`);
       const mapped = [];

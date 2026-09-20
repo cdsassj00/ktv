@@ -602,7 +602,7 @@
       "id": "dir-2026-08-25-02",
       "from": "president",
       "to": [
-        "pm",
+        "pm2",
         "moj-minister",
         "acrc-chairman"
       ],
@@ -662,7 +662,7 @@
       "id": "dir-2026-08-25-06",
       "from": "president",
       "to": [
-        "pm",
+        "pm2",
         "osc-minister"
       ],
       "content": "경찰개혁 방안을 총리실이 주도해 국민 의견을 광범위하게 수렴한 뒤 구상할 것",

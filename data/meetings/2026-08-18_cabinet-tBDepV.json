@@ -63,7 +63,7 @@
           "inReplyTo": null
         },
         {
-          "speakerId": "pm",
+          "speakerId": "pm2",
           "kind": "답변",
           "summary": "거제 방문 확인",
           "quote": "네.",
@@ -123,7 +123,7 @@
       "id": "dir-2026-08-18-04",
       "from": "president",
       "to": [
-        "pm",
+        "pm2",
         "mois-minister"
       ],
       "content": "거제를 포함해 피해가 큰 지역에 피해 대책과 복구 대책을 잘 챙길 것",
