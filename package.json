@@ -14,7 +14,7 @@
     "reconcile": "tsx scripts/reconcile-sources.ts",
     "upload:r2": "tsx scripts/upload-r2.ts",
     "pipeline": "tsx scripts/pipeline.ts",
-    "check:titles": "tsx scripts/check-title-filter.ts"
+    "check:rules": "tsx scripts/check-pipeline-rules.ts"
   },
   "dependencies": {
     "fuse.js": "^7.5.0",

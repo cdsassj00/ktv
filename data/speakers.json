@@ -11,10 +11,14 @@
   },
   "pm": {
     "name": "김민석",
-    "role": "국무총리(전임)",
+    "role": "제49대 국무총리(전임)",
     "org": "국무조정실",
     "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Kim_Min_Seok%27s_Potrait_%282025.08.21%29.png?width=400",
-    "photoSource": "위키미디어 공용 (Kim_Min_Seok's_Potrait_(2025.08.21).png)"
+    "photoSource": "위키미디어 공용 (Kim_Min_Seok's_Potrait_(2025.08.21).png)",
+    "term": {
+      "from": "2025-07-04",
+      "to": "2026-06-30"
+    }
   },
   "moef-minister": {
     "name": "구윤철",
@@ -144,10 +148,13 @@
   },
   "pm2": {
     "name": "한성숙",
-    "role": "국무총리 (전 중소벤처기업부 장관)",
+    "role": "제50대 국무총리 (전 중소벤처기업부 장관)",
     "org": "국무조정실",
     "photo": "https://commons.wikimedia.org/wiki/Special:FilePath/Prime_Minister_Han_Seong-sook_20260707.jpg?width=400",
-    "photoSource": "위키미디어 공용 (Prime_Minister_Han_Seong-sook_20260707.jpg)"
+    "photoSource": "위키미디어 공용 (Prime_Minister_Han_Seong-sook_20260707.jpg)",
+    "term": {
+      "from": "2026-07-01"
+    }
   },
   "fsc-chairman": {
     "name": "이억원",
