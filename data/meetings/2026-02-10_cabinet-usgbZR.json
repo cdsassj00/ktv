@@ -479,8 +479,15 @@
         "데이터거버넌스",
         "AI정책"
       ],
-      "status": "issued",
-      "followUps": []
+      "status": "reported",
+      "followUps": [
+        {
+          "meetingId": "2026-09-08-cabinet-ukNaz5",
+          "exchangeId": "ex-01",
+          "summary": "AI·데이터 거버넌스 정합성 문제 해결 및 AI 전략위원회 운영 방식 개선에 대한 행안부의 보고와 총리의 지시",
+          "inferred": true
+        }
+      ]
     },
     {
       "id": "dir-2026-02-10-09",
