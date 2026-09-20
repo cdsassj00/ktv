@@ -6,8 +6,9 @@
  * 요약에 전임 총리 실명이 현직처럼 실린다(제39회 요약). 둘 다 실패가 아니라
  * "정상 종료"로 보이므로, 규칙을 손댈 때 돌려볼 표본을 여기에 박아둔다.
  */
+import fs from "node:fs";
 import path from "node:path";
-import { classifyTitle, DATA_DIR, log, looksLikeClip, readJson, verifyCabinetVideo } from "./lib";
+import { classifyTitle, DATA_DIR, log, looksLikeClip, MEETINGS_DIR, readJson, verifyCabinetVideo } from "./lib";
 
 /** 국무회의 본편으로 채택되어야 하는 실제 제목 */
 const ACCEPT = [
@@ -80,10 +81,43 @@ for (const date of ["2026-01-27", "2026-06-30", "2026-07-14", "2026-09-08"]) {
   }
 }
 
+// ── 정부조직 개편(부처명) ────────────────────────────────────────
+// 명부의 부처명이 낡으면 요약에 옛 이름이 그대로 실린다(2026-09 제39회 요약이
+// 자막에 없는 "여성가족부"를 쓴 사례). 명부는 항상 현재 명칭이어야 하고,
+// 시행일 이후 회의 요약에도 옛 명칭이 남아 있으면 안 된다.
+const RENAMES: { effective: string; old: RegExp; oldName: string; now: string }[] = [
+  { effective: "2025-10-01", old: /(?<!성평등)여성가족부/, oldName: "여성가족부", now: "성평등가족부" },
+  { effective: "2025-10-01", old: /(?<!기후에너지)환경부/, oldName: "환경부", now: "기후에너지환경부" },
+  { effective: "2025-10-01", old: /산업통상자원부/, oldName: "산업통상자원부", now: "산업통상부" },
+  { effective: "2026-01-02", old: /기획재정부/, oldName: "기획재정부", now: "재정경제부" },
+];
+
+for (const [id, s] of Object.entries(roster)) {
+  const text = `${s.role ?? ""} ${(s as { org?: string }).org ?? ""}`;
+  for (const r of RENAMES) {
+    if (r.old.test(text)) {
+      log(`FAIL 명부 ${id}(${s.name})에 옛 부처명 "${r.oldName}" — 현재 명칭은 "${r.now}"`);
+      failed++;
+    }
+  }
+}
+
+for (const file of fs.readdirSync(MEETINGS_DIR)) {
+  if (!file.endsWith(".json")) continue;
+  const m = readJson<{ date?: string }>(path.join(MEETINGS_DIR, file), {});
+  const body = fs.readFileSync(path.join(MEETINGS_DIR, file), "utf-8");
+  for (const r of RENAMES) {
+    if ((m.date ?? "") >= r.effective && r.old.test(body)) {
+      log(`FAIL ${file}(${m.date})에 옛 부처명 "${r.oldName}" — 시행 ${r.effective} 이후이므로 "${r.now}"`);
+      failed++;
+    }
+  }
+}
+
 if (failed) {
   log(`파이프라인 규칙 점검 실패 ${failed}건`);
   process.exit(1);
 }
 log(
-  `파이프라인 규칙 점검 통과 (제목: 채택 ${ACCEPT.length} / 제외 ${REJECT.length} + 회차·연도, 명부: 총리 ${pmIds.length}명 재임기간·날짜별 유일성)`
+  `파이프라인 규칙 점검 통과 (제목: 채택 ${ACCEPT.length} / 제외 ${REJECT.length} + 회차·연도, 명부: 총리 ${pmIds.length}명 재임기간·날짜별 유일성, 부처명: 개편 ${RENAMES.length}건 시행일 기준)`
 );
