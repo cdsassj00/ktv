@@ -472,8 +472,15 @@
         "안전",
         "행사관리"
       ],
-      "status": "issued",
-      "followUps": []
+      "status": "reported",
+      "followUps": [
+        {
+          "meetingId": "2026-09-22-cabinet-ZLvbOB",
+          "exchangeId": "ex-04",
+          "summary": "가을철 인파 밀집 행사(축제, 헬로윈)에 대해 관계기관이 합동 대응하여 안전대책 강화 추진",
+          "inferred": true
+        }
+      ]
     },
     {
       "id": "dir-2026-03-17-06",

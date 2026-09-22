@@ -410,8 +410,15 @@
         "관광",
         "바가지요금"
       ],
-      "status": "issued",
-      "followUps": []
+      "status": "reported",
+      "followUps": [
+        {
+          "meetingId": "2026-09-22-cabinet-ZLvbOB",
+          "exchangeId": "ex-01",
+          "summary": "관광지 바가지요금에 대한 현장점검을 범부처 차원에서 실시 중이며 지속적 모니터링 계획",
+          "inferred": true
+        }
+      ]
     },
     {
       "id": "dir-2025-09-02-06",
