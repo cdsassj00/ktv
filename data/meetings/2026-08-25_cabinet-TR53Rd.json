@@ -668,8 +668,15 @@
       "content": "경찰개혁 방안을 총리실이 주도해 국민 의견을 광범위하게 수렴한 뒤 구상할 것",
       "timestamp": 1408,
       "tags": [],
-      "status": "issued",
-      "followUps": []
+      "status": "reported",
+      "followUps": [
+        {
+          "meetingId": "2026-09-29-cabinet-YVWehA",
+          "exchangeId": "ex-03",
+          "summary": "총리실 경찰개혁위원회 9월말~10월초 발족 및 행안부 국가경찰위원회 산하 수사·인권·감찰 조사기구 신설 예정 보고",
+          "inferred": true
+        }
+      ]
     },
     {
       "id": "dir-2026-08-25-07",

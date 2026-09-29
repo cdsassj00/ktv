@@ -502,8 +502,15 @@
         "외교",
         "국빈방문"
       ],
-      "status": "issued",
-      "followUps": []
+      "status": "reported",
+      "followUps": [
+        {
+          "meetingId": "2026-09-29-cabinet-YVWehA",
+          "exchangeId": "ex-05",
+          "summary": "멕시코 국빈방문 주요 성과 및 후속 조치 계획 보고",
+          "inferred": true
+        }
+      ]
     },
     {
       "id": "dir-2026-09-15-09",
@@ -517,8 +524,15 @@
         "AI기본법",
         "정책조정"
       ],
-      "status": "issued",
-      "followUps": []
+      "status": "reported",
+      "followUps": [
+        {
+          "meetingId": "2026-09-29-cabinet-YVWehA",
+          "exchangeId": "ex-11",
+          "summary": "AI 기본사회 관련 과제들 정리 및 향후 진행 상황 점검 진행",
+          "inferred": true
+        }
+      ]
     }
   ],
   "aiDataPolicy": [

@@ -1,0 +1,1420 @@
+{
+  "id": "2026-09-29-cabinet-YVWehA",
+  "type": "cabinet",
+  "title": "제42회 국무회의",
+  "date": "2026-09-29",
+  "summary": {
+    "oneLine": "이재명 대통령이 추석 연휴 성과와 UN총회·멕시코 순방 외교성과를 평가하고, 3대 핵심 사회정책 추진과 개혁 의지를 밝힌 가운데, 한중앙아시아정상회의·중동전쟁 대응·농산물 유통구조 개선·재생에너지 전력망 혁신대책 등을 논의한 국무회의.",
+    "overview": "이재명 대통령은 모두발언에서 추석 연휴 기간 응급 시스템 정상 작동과 고속도로 사망자 제로 달성을 언급하고, UN 제81차 총회 참석과 멕시코 국빈방문, 트럼프 대통령과의 정상회담에서 조선업·핵추진 잠수함·전작권 전환 등 주요 안보 현안을 논의했음을 보고했다. 이어 KF21 전투기 공식 도입, OECD의 한국 경제성장률 3.7% 상향 조정을 언급하며 주거안정·국민일자리·포용금융을 3대 핵심 사회정책으로 제시하고 전 부처의 총력 추진과 사회 전반의 불가역적 개혁 완수 의지를 밝혔다.\n\n국토교통부·중소벤처기업부 신임 장관의 인사말에 이어, 국립원(의대) 설립 부지, 실종사건 전담기구 신설, 경찰 개혁(감찰 독립성·징계 강화) 등에 대한 질의응답이 이어졌다. 국무총리 주재로 전환된 후에는 외교부 장관이 제1차 한중앙아시아정상회의·UN총회·멕시코 순방 성과 및 후속조치를, 기획재정부 장관이 중동전쟁 관련 국제유가·에너지수급·물가안정 대응 현황을 보고했다.\n\n농림축산식품부 장관은 농산물 유통구조 개선방안과 '알뜰하게 장볼지도' 앱 확산 계획을 보고했고, 전통시장 할인지원 사업의 형평성 문제, 농협 조합장 선거 매표 문제, 할당관세 악용 방지, 체납관리단 운영 성과 등에 대한 대통령의 질의가 이어졌다.\n\n과학기술정보통신부 장관은 국민체감 AI 서비스 계획을 보고했으며, 대통령은 마이데이터를 활용한 음성 기반 통합 행정서비스 구축을 주문했다. 기후에너지환경부 장관은 2030년 재생에너지 100GW+α 달성을 위한 전력망 혁신대책(유연접속 제도, 비증설 대안 방식 등)을 보고했고, 대통령은 지산지소 원칙 강화와 태양광 농사(햇빛소득마을)의 지역경제 활성화 가능성을 강조했다. 국토교통부 장관은 '모두의 카드' 확대 계획을 보고했고, 대통령은 출퇴근 시차 할인율 확대(반값 수준) 검토를 지시했다.",
+    "agenda": [
+      {
+        "title": "대통령 모두발언",
+        "summary": "추석 연휴 성과, UN총회·멕시코 순방 결과, KF21 도입, 경제성장률 상향, 3대 핵심 사회정책, 개혁 의지 표명",
+        "timestamp": 3108
+      },
+      {
+        "title": "제1차 한중앙아시아정상회의·UN총회·멕시코 순방 성과 및 후속조치",
+        "summary": "외교부 장관이 정상외교 성과와 후속 이행계획 보고",
+        "timestamp": 4452
+      },
+      {
+        "title": "중동전쟁 관련 비상 국정운영 및 대응 현황",
+        "summary": "기획재정부 장관이 유가·에너지수급·금융시장·물가안정 대응 현황 보고",
+        "timestamp": 57080
+      },
+      {
+        "title": "농산물 유통구조 개선 보완계획",
+        "summary": "농림축산식품부 장관이 유통구조 개선 4대 전략과 '알뜰하게 장볼지도' 앱 보고",
+        "timestamp": 83
+      },
+      {
+        "title": "2030년 재생에너지 100GW+α 전력망 혁신대책",
+        "summary": "기후에너지환경부 장관이 유연접속 제도 등 전력망 혁신방안 보고",
+        "timestamp": 109
+      }
+    ],
+    "remarks": [
+      {
+        "speakerId": "president",
+        "quote": "한반도 평화 공존의 방향을 담은 세 가지 청사진을 국제 사회 앞에서 선언하고자 합니다.",
+        "context": "UN총회 기조연설 관련 발언",
+        "timestamp": 5
+      },
+      {
+        "speakerId": "president",
+        "quote": "OECD가 올해 우리 경제 성장률 전망을 3.7%로 예측했습니다. 주요 20개 국가 가운데 가장 큰 폭의 상향 조정입니다.",
+        "context": "경제성과 언급",
+        "timestamp": 4276
+      },
+      {
+        "speakerId": "president",
+        "quote": "아무리 어렵고 힘들더라도 사회 전반의 불가역적 개혁이라는 우리 주권자들께서 부여한 소명을 꼭 완수하겠습니다.",
+        "context": "개혁 의지 표명",
+        "timestamp": 5789
+      },
+      {
+        "speakerId": "president",
+        "quote": "호남에서 전력을 생산해 가지고 수도권으로 막 끌고 와 가지고, 수도권 중심 체제를 계속 강화하는게 맞냐. 비상식적인 일이죠.",
+        "context": "지산지소 원칙 강조",
+        "timestamp": 119
+      }
+    ]
+  },
+  "exchanges": [
+    {
+      "id": "ex-01",
+      "topic": "국립원(남원 의대) 설립 부지",
+      "turns": [
+        {
+          "speakerId": "president",
+          "kind": "질문",
+          "summary": "국립원의 위치 결정 논쟁 및 서울 기존 시설 활용 방안 확인",
+          "quote": null,
+          "timestamp": 7040,
+          "inReplyTo": null
+        },
+        {
+          "speakerId": "unknown",
+          "kind": "보고",
+          "summary": "2018년 보건복지부가 남원 서남의대 대체 설립 방침을 정한 바 있음",
+          "quote": "2018년도에 보건복지부가 남원의 선남의대를 대체하는데 설립하겠다라는 방침을 정한 적이 있었습니다",
+          "timestamp": 3057,
+          "inReplyTo": 0
+        },
+        {
+          "speakerId": "president",
+          "kind": "발언",
+          "summary": "과거 남원 설립으로 정한 바 있었는지 확인",
+          "quote": "과거에 이미 남원해 하는 걸로 정한 바가 있었다",
+          "timestamp": 3120,
+          "inReplyTo": 1
+        },
+        {
+          "speakerId": "unknown",
+          "kind": "답변",
+          "summary": "당정협의에서 서남의대 폐지 시 정원·부지 활용 결정, 일부 부지 확보 상태",
+          "quote": "당정협의에서 서남의대를 폐지하면서 그 정원과 부지를 활용하겠다라고 정한 적이 있고, 보건복지부가 남원의 부지를 확보해달라는 요청을 해서 일부 부지가 확보되어 있는 상황입니다",
+          "timestamp": 3123,
+          "inReplyTo": 2
+        },
+        {
+          "speakerId": "president",
+          "kind": "발언",
+          "summary": "지연되어온 남원 설립을 이번에 본격 추진할 필요",
+          "quote": "남원해가 계속 지연되고 있었던 거죠. 이번에 본격적으로 할",
+          "timestamp": 3141,
+          "inReplyTo": 3
+        }
+      ]
+    },
+    {
+      "id": "ex-02",
+      "topic": "실종사건 전담기구",
+      "turns": [
+        {
+          "speakerId": "president",
+          "kind": "지시",
+          "summary": "실종 사건 전담 기구 필요성 강조",
+          "quote": "실종 사건을 좀 전담 기구가 좀 필요하겠다. 이것도 사람 목숨에 관한 건데요",
+          "timestamp": 3152,
+          "inReplyTo": null
+        },
+        {
+          "speakerId": "knpa-commissioner",
+          "kind": "답변",
+          "summary": "국수본·시도경찰청에 실종수사계 추진 중",
+          "quote": "실종 사건과 관련해서 국수본과 각 시도 경찰청에 실종 수사계라는 장지 실종자를 전담 수사하는 기구를 추진하고 있습니다",
+          "timestamp": 3206,
+          "inReplyTo": 0
+        },
+        {
+          "speakerId": "president",
+          "kind": "발언",
+          "summary": "인력 부족 호소와 비효율 우려",
+          "quote": "경찰이 하는 일이 너무 많아서 그 인력 부족을 항상 호소하는 것 같은데, 각 경찰서 단위로 너무 많은 인력을 배치하면 비효율적으로 될 수도 있습니다",
+          "timestamp": 3232,
+          "inReplyTo": 1
+        },
+        {
+          "speakerId": "knpa-commissioner",
+          "kind": "답변",
+          "summary": "조직진단 통해 적정 인원 산출 중",
+          "quote": "각 조직 진단을 통해서 적정 인원을 산출을 하고 있습니다",
+          "timestamp": 3249,
+          "inReplyTo": 2
+        },
+        {
+          "speakerId": "president",
+          "kind": "발언",
+          "summary": "실종신고 대부분 자동복귀, 장기실종은 소수라는 점 확인",
+          "quote": "1년 이상 계속 실종 상태에 있는 사람이 신고된 사람의 0점 몇 % 수준이라는 거잖아",
+          "timestamp": 3258,
+          "inReplyTo": 3
+        },
+        {
+          "speakerId": "knpa-commissioner",
+          "kind": "답변",
+          "summary": "99.7~99.8% 발견, 연간 약 1천명 사망 발견, 장기실종자 약 1700명 관리",
+          "quote": "99.7% 내지 99.8% 발견을 하고, 연간 어 실종 상태에서 사망자로 발견되는게 연간 1천명 정도고요",
+          "timestamp": 3325,
+          "inReplyTo": 4
+        },
+        {
+          "speakerId": "president",
+          "kind": "질문",
+          "summary": "매년 1700명 신규 발생 여부 확인",
+          "quote": "매년 1700명의 실종자가 발생한다는 거예요",
+          "timestamp": 3408,
+          "inReplyTo": 5
+        },
+        {
+          "speakerId": "knpa-commissioner",
+          "kind": "답변",
+          "summary": "5년 주기 약 1700명 장기실종자 관리, 매년 신규 추가",
+          "quote": "5년 주기로 해서 한 1700명 정도를 관리를 하고 있습니다. 장기 실종자를",
+          "timestamp": 3430,
+          "inReplyTo": 6
+        },
+        {
+          "speakerId": "president",
+          "kind": "발언",
+          "summary": "중앙 사령탑 구축 및 장기실종자 통합관리 필요성",
+          "quote": "각 경찰서 단위로만 하게 되면 인력 소진이 많을 것 같아서 전 중앙 사령탑을 명확하게 두고 일정 기간이 지난 상태에서 계속 실종이면 다 모아서 관리를 하고",
+          "timestamp": 3436,
+          "inReplyTo": 7
+        },
+        {
+          "speakerId": "knpa-commissioner",
+          "kind": "답변",
+          "summary": "시도경찰청 단위 전담 실종수사계 체계 구축",
+          "quote": "최소 각 시도청 단위에 전담 실종 수사라는 장기 실종자를 전담해서 수사할 수 있는 체계를 구축해 두었습니다",
+          "timestamp": 3520,
+          "inReplyTo": 8
+        }
+      ]
+    },
+    {
+      "id": "ex-03",
+      "topic": "경찰 개혁 및 감찰 독립성",
+      "turns": [
+        {
+          "speakerId": "president",
+          "kind": "발언",
+          "summary": "경검찰 개혁 이후 경찰의 수사 부당처리·피해자 구제 우려",
+          "quote": "경-검찰 개혁을 통해서 검찰의 일체 수사 권한이 배제되고 이제 중수청·공수처·경찰이 수사를 하게 되는데... 그런 우려를 많이 하잖아요",
+          "timestamp": 3546,
+          "inReplyTo": null
+        },
+        {
+          "speakerId": "president",
+          "kind": "발언",
+          "summary": "경찰 가족 증거인멸 등 사례 지적",
+          "quote": "실제로 수사 과정에서 경찰이 식구가 많다 보니까 경찰 가족이 증거를 없앴다든지... 국민들 관심사가 되고 있잖아요",
+          "timestamp": 3628,
+          "inReplyTo": 0
+        },
+        {
+          "speakerId": "president",
+          "kind": "질문",
+          "summary": "사건 조작 징계가 경징계였다는 보도 우려",
+          "quote": "언론 보도를 보니까 경찰이 사건을 조작을 했는데 그 징계 수위가 경진계였다",
+          "timestamp": 3703,
+          "inReplyTo": 1
+        },
+        {
+          "speakerId": "president",
+          "kind": "발언",
+          "summary": "사건 조작 시 징계 강화 및 책임 명확화 요구",
+          "quote": "징계를 하면 기본적으로 경찰 일을 못 하게 한다든지 해임을 한다든지 정도는 해야지 경진계라는 게 말이 안 되는 거 같아",
+          "timestamp": 3719,
+          "inReplyTo": 2
+        },
+        {
+          "speakerId": "knpa-commissioner",
+          "kind": "답변",
+          "summary": "중대비위는 구속수사·배제징계 원칙, 수사·감찰부서 보직제외 정비",
+          "quote": "사건의 본질에 영향을 미칠 수 있는 중대 비행위에 대해서는 기본적으로 구속 수사를 원칙으로 하고 있고, 징계와 관련해서도 배제 징계를 원칙으로 하고 있습니다",
+          "timestamp": 3802,
+          "inReplyTo": 3
+        },
+        {
+          "speakerId": "president",
+          "kind": "발언",
+          "summary": "감찰 기능 강화와 독립성 필요, 외부 견제 약화 우려",
+          "quote": "감찰 기능의 강화 또 독립성 강화 이거 되게 중요할 것 같아요. 이제는 정말로 수사 과정에서는 외부 견제가 쉽지 않게 됐잖아요",
+          "timestamp": 3941,
+          "inReplyTo": 4
+        },
+        {
+          "speakerId": "president",
+          "kind": "지시",
+          "summary": "수사 공정성·객관성 시스템 및 감찰 독립성 강화 검토 지시",
+          "quote": "공정하고 객관적으로 될 수 있게 하는 자체 시스템 또 잘못됐을 때 교정하는 시스템 철저하게 해야 되고, 감찰 기능을 좀 강화하고 또 좀 독립적으로 운영될 수 있게 좀 만드는 것도 고민을 많이 해야 될 것 같습니다",
+          "timestamp": 4000,
+          "inReplyTo": 5
+        },
+        {
+          "speakerId": "president",
+          "kind": "질문",
+          "summary": "총리에게 경찰개혁 논의 현황 확인",
+          "quote": "우리 총리께서 이거 경찰 개혁 관련된 거는 논의하고 계시죠",
+          "timestamp": 4101,
+          "inReplyTo": 6
+        },
+        {
+          "speakerId": "pm2",
+          "kind": "답변",
+          "summary": "총리실 산하 경찰개혁위원회 9월말~10월초 발족 예정",
+          "quote": "총리실 산하에서 경찰 개혁 위원회가 구성되고 있고요. 지금 9월 말에서 10월 초에 발족하고",
+          "timestamp": 4108,
+          "inReplyTo": 7
+        },
+        {
+          "speakerId": "pm2",
+          "kind": "답변",
+          "summary": "행안부 국가경찰위원회 산하 수사·인권·감찰 조사기구 신설 예정",
+          "quote": "행안부의 국가 경찰위원회가 있어서 여기서 경찰수사 인권 감찰고 조사 기구를 신설을 하고",
+          "timestamp": 4120,
+          "inReplyTo": 8
+        },
+        {
+          "speakerId": "president",
+          "kind": "발언",
+          "summary": "경찰개혁은 국민 관심사이자 시스템 대변역이므로 각별한 관심 필요",
+          "quote": "경찰 개혁 문제는 국민들의 관심 사이기도 하고 또 시스템의 대변역이 있기 때문에",
+          "timestamp": 4146,
+          "inReplyTo": 9
+        },
+        {
+          "speakerId": "pm2",
+          "kind": "답변",
+          "summary": "차질 없이 준비 약속",
+          "quote": "차질없이 준비하겠습니다",
+          "timestamp": 4214,
+          "inReplyTo": 10
+        }
+      ]
+    },
+    {
+      "id": "ex-04",
+      "topic": "부처 인사 자율권 및 청와대 역할",
+      "turns": [
+        {
+          "speakerId": "president",
+          "kind": "지시",
+          "summary": "실국장급 인사 자율권 부여, 책임 있는 배치 당부",
+          "quote": "실장급 이하 실국장들은 다 최대한 실무 부처의 의견대로 하고 있습니다. 충분히 인사에 대한 자율권을 부여하고 있으니까 책임을 충분히 인식하고 자율적으로 좋은 자원들을 잘 배치하기 바랍니다",
+          "timestamp": 4220,
+          "inReplyTo": null
+        },
+        {
+          "speakerId": "president",
+          "kind": "지시",
+          "summary": "각 부처 자율 책임 원칙, 청와대는 국민 의견 수렴 집중",
+          "quote": "각 부처의 업무는 각 부처이 최대한 책임을지고 자율적으로 하기 합니다. 그리고 역시 결과에 대해서 책임 책임지는 걸로",
+          "timestamp": 4244,
+          "inReplyTo": 0
+        }
+      ]
+    },
+    {
+      "id": "ex-05",
+      "topic": "멕시코 전대 금융 및 정상외교 후속관리",
+      "turns": [
+        {
+          "speakerId": "president",
+          "kind": "질문",
+          "summary": "전대 금융 개념 설명 요청",
+          "quote": "멕시코에 대한 1억 달러 규모 전대 금융이라고 하는 게 일종에 대한민국 상품 서비스를 수입하거나 투자할 때 마이너스 통장을 개설해 준다 그 말이죠.",
+          "timestamp": 50570,
+          "inReplyTo": null
+        },
+        {
+          "speakerId": "mofa-minister",
+          "kind": "답변",
+          "summary": "1억 달러 범위 내 지속 대여, 수입·투자 보증 용도",
+          "quote": "그쪽에다 돈을 1억 달러 범위 계속 빌려 줘서 그 돈으로 우리나라 물건을 수입하거나 우리나라 기업들이 투자할 때 보증을 하거나 빌려 주관한테 쓴다는 뜻입니다.",
+          "timestamp": 50640,
+          "inReplyTo": 0
+        },
+        {
+          "speakerId": "president",
+          "kind": "질문",
+          "summary": "상환 후 재대여 가능한 순환구조인지 확인",
+          "quote": "1억 달러 상태 누군가 상환하면 다시 또 1억 더 빌려 줄 수 있다 그런 거죠.",
+          "timestamp": 51390,
+          "inReplyTo": 1
+        },
+        {
+          "speakerId": "mofa-minister",
+          "kind": "답변",
+          "summary": "정상회담 후속 관리를 위한 별도 TF 운영, 이슈별 진척 점검",
+          "quote": "저희들이 별도 TF를 만들어 가지고 정상회담이 끝나면은 각 이슈별로 한 페이지씩 전부 만들어서 진척 현황을 점검하고 청와대에 보고",
+          "timestamp": 52290,
+          "inReplyTo": 2
+        },
+        {
+          "speakerId": "president",
+          "kind": "지시",
+          "summary": "정상회담 합의사항의 수출·투자 확대로의 실질 이행 강조",
+          "quote": "정상관의 만남을 계기로 이런저런 많은 합의들도 이루어지고... 실제로 순방을 해 보면 우리 수출이 대폭 늘어나고 투자도 늘어나고",
+          "timestamp": 52500,
+          "inReplyTo": 3
+        },
+        {
+          "speakerId": "president",
+          "kind": "지시",
+          "summary": "사후관리 미흡 시 효과 소멸 우려, 사전준비·사후관리 중요성 강조",
+          "quote": "사후 조치를 잘하면 사실 그게 또 더 확장될 수도 있고요. 이게 사고 조치가 좀 미진하면 이제 그러다가 또 사그라들기도 하고",
+          "timestamp": 53290,
+          "inReplyTo": 4
+        },
+        {
+          "speakerId": "president",
+          "kind": "지시",
+          "summary": "초기 집중 외교의 중요성과 실무 후속조치 필요",
+          "quote": "이게 이제 초기에 많이 다녀야 이게 효과를 누릴 수가 있는데 후반에 가면 의미가 별로 없거든요.",
+          "timestamp": 54350,
+          "inReplyTo": 5
+        },
+        {
+          "speakerId": "president",
+          "kind": "지시",
+          "summary": "순방 성과 별도 보고 요청",
+          "quote": "잠 잘 챙기시고요. 그 결과들도 좀 저한테 한번 따로 보고를 한번 해 주면 좋겠어요.",
+          "timestamp": 54570,
+          "inReplyTo": 6
+        },
+        {
+          "speakerId": "mofa-minister",
+          "kind": "답변",
+          "summary": "별도 보고 및 국민 대상 홍보 시기 검토 약속",
+          "quote": "별로도 한번 보고 드리겠습니다만은 또한 그 어느 시기를 정해 가지고 국민들께 한번 그런 것도 괜찮겠네요.",
+          "timestamp": 54570,
+          "inReplyTo": 7
+        },
+        {
+          "speakerId": "president",
+          "kind": "지시",
+          "summary": "정상회담 성과(철강 문제 등)의 언론 홍보 지시",
+          "quote": "그외에도 예를 들어 철강 문제라든지... 해결된 것이 있기 때문에 그런 것들을 모아 가지고 언론에서 한번 그 홍보를 하도록 하겠습니다.",
+          "timestamp": 55410,
+          "inReplyTo": 8
+        }
+      ]
+    },
+    {
+      "id": "ex-06",
+      "topic": "중동전쟁 관련 원유 수급 대응",
+      "turns": [
+        {
+          "speakerId": "president",
+          "kind": "질문",
+          "summary": "홍해 후티 문제로 인한 원유 수송선 운항 상황 확인",
+          "quote": "지금 홍해의 그 후방군 문제 때문에 지금 원유 수송선 운항이 조금 걱정되는 측면이 있잖아요.",
+          "timestamp": 59200,
+          "inReplyTo": null
+        },
+        {
+          "speakerId": "mof-minister",
+          "kind": "답변",
+          "summary": "얀부항 15척 입항, 최근 수에즈 운하 우회 운항 중",
+          "quote": "지금 그 양부항에서 들어온 게 15척이 우리나라에 들어왔고요... 최근에 세척은 다 수에즈 운화를 통해서 운항을 하고 있습니다.",
+          "timestamp": 59380,
+          "inReplyTo": 0
+        },
+        {
+          "speakerId": "president",
+          "kind": "질문",
+          "summary": "우회 운항 시 소요 시간 증가(24일→52일) 확인",
+          "quote": "그 수에즈로 가면 저 포카 희망봉으로 돌게 되는데... 이제 돌게 되면 52일이 걸리게 되는 상황이 되겠습니다.",
+          "timestamp": 59540,
+          "inReplyTo": 1
+        },
+        {
+          "speakerId": "president",
+          "kind": "질문",
+          "summary": "수에즈 운하 통과 유조선 크기 제한 확인",
+          "quote": "그 그런데 뭐 말로는 수에즈 운화 그 통과하는 유조선이 크기에 제한이 있다 그랬던데",
+          "timestamp": 60070,
+          "inReplyTo": 2
+        },
+        {
+          "speakerId": "mof-minister",
+          "kind": "답변",
+          "summary": "수에즈막스 규격상 200만 배럴 중 150만 배럴까지만 통과 가능",
+          "quote": "스웨즈 막스라고 해서 꼭 일정 한도가 있습니다. 저희가 원래 200만 배를 실을 수 있지 않습니까? 네. 그게 150만 배를까지만 가능합니다.",
+          "timestamp": 60170,
+          "inReplyTo": 3
+        },
+        {
+          "speakerId": "president",
+          "kind": "발언",
+          "summary": "우회 운항으로 인한 비용 증가 우려",
+          "quote": "비용이 꽤 많이 늘어나겠네요.",
+          "timestamp": 60420,
+          "inReplyTo": 4
+        },
+        {
+          "speakerId": "mof-minister",
+          "kind": "답변",
+          "summary": "추가 비용 발생 인정",
+          "quote": "예. 아무래도 좀 추가 비용이 들고 있습니다.",
+          "timestamp": 60430,
+          "inReplyTo": 5
+        },
+        {
+          "speakerId": "president",
+          "kind": "질문",
+          "summary": "수급 지장 여부 최종 확인",
+          "quote": "수웨지 운화를 통한 원유 수급에는 시간이 좀 많이 걸리긴 하는데 지장은 없나 보군요.",
+          "timestamp": 61000,
+          "inReplyTo": 6
+        },
+        {
+          "speakerId": "mof-minister",
+          "kind": "답변",
+          "summary": "52일 소요되나 현재 지장 없음",
+          "quote": "예. 54일",
+          "timestamp": 61020,
+          "inReplyTo": 7
+        },
+        {
+          "speakerId": "motie-minister",
+          "kind": "답변",
+          "summary": "원유 수급처 다변화로 큰 문제 없음",
+          "quote": "산자부 쪽에서 이제 그 얀부학 말고 여러 가지 원유를 수급하는 다변화시켜 놨기 때문에 일단 그 거기서 나오는 것은 큰 문제는 없는 상황",
+          "timestamp": 3664,
+          "inReplyTo": 8
+        },
+        {
+          "speakerId": "president",
+          "kind": "질문",
+          "summary": "얀부항 파이프라인 복구 여부 확인",
+          "quote": "지금 저기 얀부항의 그 원유 공급 시설도 폭격당했다고 하잖아요. 파이프라인이 파이프라인 그 복구돼 됐어요?",
+          "timestamp": 3768,
+          "inReplyTo": 9
+        },
+        {
+          "speakerId": "unknown",
+          "kind": "답변",
+          "summary": "파이프라인 미복구, 최근 선적 완료된 상태",
+          "quote": "아직 안 됐고요. 저희가 그래서 지금 원료를 실을 수가 있어요. 15층은 들어왔고 세 측이 이제 어저께 마지막 하나가 선적을 했습니다.",
+          "timestamp": 3782,
+          "inReplyTo": 10
+        },
+        {
+          "speakerId": "motie-minister",
+          "kind": "보고",
+          "summary": "홍해 상황 빠른 개선 전망 어려움, 수에즈 우회 지속 전망",
+          "quote": "홍해 상황은 뭐 그렇게 빨리 개선될 것 같지 않아 보이는데요. 지금 스웨지 운화 같은 경우도 저희가 7월 20일 그 조치가 할 때부터 바로 저희들이 그 수혜지 운화로 돌렸습니다.",
+          "timestamp": 3815,
+          "inReplyTo": 11
+        },
+        {
+          "speakerId": "president",
+          "kind": "질문",
+          "summary": "국내 유가가 국제 유가 하락만큼 안 떨어진다는 주장 관련 설명 요청",
+          "quote": "유가가 뭐 120불 뭐 110불 가다가 지금 90불 100불 하면 유가가 떨어졌는데 왜 국내 유가는 안 떨어지냐 이런 주장을 하더라고요.",
+          "timestamp": 3908,
+          "inReplyTo": 12
+        },
+        {
+          "speakerId": "unknown",
+          "kind": "답변",
+          "summary": "국내 유가는 국제 유가 대비 낮은 수준으로 유지 중이며 차액을 재정으로 보존",
+          "quote": "국내 유가가 사실은 그 참 저희들 그런 소리 들으면 억울한 일부가 일부가... 낮은 수준에 이렇게 최고절 안정적으로 유지를 하고 있는",
+          "timestamp": 3923,
+          "inReplyTo": 13
+        }
+      ]
+    },
+    {
+      "id": "ex-07",
+      "topic": "전통시장 할인지원 형평성 문제",
+      "turns": [
+        {
+          "speakerId": "president",
+          "kind": "질문",
+          "summary": "전체 전통시장 중 300개만 할인지원 대상인 형평성 문제 제기",
+          "quote": "전국의 시장이 몇 개쯤면 돼요? 근데이 할인 지원을 모든 전통 시장이 한게 아니고 약간 시스템이 정비가 된 시장 300개",
+          "timestamp": 4033,
+          "inReplyTo": null
+        },
+        {
+          "speakerId": "mafra-minister",
+          "kind": "답변",
+          "summary": "작년 200개에서 올해 300개로 확대, 시스템 개선 필요성 인정",
+          "quote": "사실 작년에는 200개씩 했거든요. 그때도 그러한 이제 여러 요청이서 300개식으로 늘린 겁니다.",
+          "timestamp": 4075,
+          "inReplyTo": 0
+        },
+        {
+          "speakerId": "president",
+          "kind": "발언",
+          "summary": "할인시장 쏠림으로 인한 다른 시장 소외감 지적",
+          "quote": "그러니까 아니 저기는 저 시장은 할인을 해 주니까 손님이 많이 가고 우리 시장은 뭐냐 이런 불만이 또 많더라고요.",
+          "timestamp": 4088,
+          "inReplyTo": 1
+        },
+        {
+          "speakerId": "pm2",
+          "kind": "답변",
+          "summary": "농축산물 지원 취지가 전통시장 지원과 혼재되어 인식되며, 내년 구조 개편 필요",
+          "quote": "우리 농산물, 우리 수산물을 위한 예산이 전통 시장에서 집행되면서 이게 전통 시장을 위한 정책이랑 이게 섞여서 좀 느껴지는 부분이 있었던 거 같습니다.",
+          "timestamp": 4117,
+          "inReplyTo": 2
+        },
+        {
+          "speakerId": "president",
+          "kind": "발언",
+          "summary": "내년 설·추석 할인지원 예산 약 1조원 규모 확대 제안",
+          "quote": "내년에는 저는 이거 대폭 더 늘려서 그 서울 추석해서 한 1조원 정도 가까이 하는게 어떨까 싶은데",
+          "timestamp": 4213,
+          "inReplyTo": 3
+        },
+        {
+          "speakerId": "moef-minister",
+          "kind": "답변",
+          "summary": "정부안 1,600억 규모, 형평성 문제로 예산 제한",
+          "quote": "내년 지금 사실 보내산에 제가 정부 안에는 지금 1600억이 담겼습니다. 왜냐면 방금 말씀하신 수위 그 지역과 이런 것 때문에 형평성 문제가 생깁니다.",
+          "timestamp": 4258,
+          "inReplyTo": 4
+        },
+        {
+          "speakerId": "moef-minister",
+          "kind": "발언",
+          "summary": "올해 기금 확보로 총 6,380억 규모 지원",
+          "quote": "저희가 중간에 기금 변경으로 3,500억을 확보했고 추염 때 800억을 확보해서 이걸 가지고 6,380억을 가지고 지금 그동안 쏘던 겁니다.",
+          "timestamp": 4407,
+          "inReplyTo": 5
+        },
+        {
+          "speakerId": "mafra-minister",
+          "kind": "보고",
+          "summary": "사업 목적·방식 개편 필요, 300개 시장 한정으로 인한 형평성 문제",
+          "quote": "사업 자체가 목적이나 방식에 좀 개편이 필요한 때가 왔다고 생각이 듭니다.",
+          "timestamp": 4441,
+          "inReplyTo": 6
+        },
+        {
+          "speakerId": "mafra-minister",
+          "kind": "발언",
+          "summary": "농축수산물 비취급 상인 소외, 전국 1,000개 이상 확대 및 구조 재편 필요",
+          "quote": "정부는 농축 수산물의 소비 촉진을 위해서 하는 행사지만... 카테고리에 들어가지 않은 전통 시장 내에 있는 전포들에서는 환급 행사가 이루어지지 않다 보니까",
+          "timestamp": 4475,
+          "inReplyTo": 7
+        },
+        {
+          "speakerId": "president",
+          "kind": "발언",
+          "summary": "디지털화로 사업구조 개편이 어렵지 않을 것으로 판단",
+          "quote": "어쨌든 저는 이게 요즘 디지털화가 워낙 많이 진척이 돼서 그리 어렵지 않을 것 같은데요.",
+          "timestamp": 4550,
+          "inReplyTo": 8
+        },
+        {
+          "speakerId": "president",
+          "kind": "발언",
+          "summary": "소비자 쿠폰보다 공급자 지원을 통한 가격 인하 방식 선호",
+          "quote": "요즘처럼 이게 전자화된 시대에... 공급자 측에 이렇게 지원을 해셔서 공급 가격을 낮추면 혜택도 있고 물가도 낮아지고",
+          "timestamp": 4553,
+          "inReplyTo": 9
+        },
+        {
+          "speakerId": "president",
+          "kind": "발언",
+          "summary": "국민 불공정 체감 문제와 정책 시행상 지역·직업별 불균형 지적",
+          "quote": "가난한 거는 견딜 수 있는데 불공정한 거는 못 견디겠다",
+          "timestamp": 77,
+          "inReplyTo": 10
+        },
+        {
+          "speakerId": "unknown",
+          "kind": "답변",
+          "summary": "농림부-해수부 소관 구분으로 인한 비농축수산물 상인 소외 문제",
+          "quote": "농림부는 농축수에 주고 농축 수산물해 주고 해수부는 수산물 줍니다. 이제 소관이 그렇게 돼 있는데요",
+          "timestamp": 80,
+          "inReplyTo": 11
+        },
+        {
+          "speakerId": "president",
+          "kind": "답변",
+          "summary": "담당 부처 정리 및 예산 항목별 재검토 필요성 인정",
+          "quote": "말씀 주신 것처럼 새로 정리할 때가 되면 새로 정리하고 예산도 사실 각 항목별로 다 있기 때문에 이번 참여 한번 다 같이 볼 필요 있겠습니다",
+          "timestamp": 81,
+          "inReplyTo": 12
+        }
+      ]
+    },
+    {
+      "id": "ex-08",
+      "topic": "농협 조합장 선거 매표 문제",
+      "turns": [
+        {
+          "speakerId": "president",
+          "kind": "발언",
+          "summary": "경제적 이권이 있는 조직의 투표 매수 문제 제기",
+          "quote": "돈 주고 또는 뭔가 경제적 이익을 주고받으면서 투표권 매표하는 경우가 많잖아요. 농협이 사실 그런 경향들이 좀 있었다는 거고",
+          "timestamp": 5582,
+          "inReplyTo": null
+        },
+        {
+          "speakerId": "president",
+          "kind": "질문",
+          "summary": "일반 선거 매표 처벌 규정 부재 및 입법 담당 부처 확인",
+          "quote": "농협 말고 일반적인 선거에 돈 주고받고 표를 사고하는 거는 처벌할 길이 없더라고요. 그런데 어디서 만들어야 되나요?",
+          "timestamp": 5608,
+          "inReplyTo": 0
+        },
+        {
+          "speakerId": "moj-minister",
+          "kind": "답변",
+          "summary": "개별 법률 근거가 있을 때만 형사처벌 가능, 민간조직 자율성 존중 필요",
+          "quote": "정부가 형사 처벌을 해야 되는 선거의 부정 행위에 대해서 개별 법률의 근거가 있는 경우에만 형사 처벌을 하고 있습니다",
+          "timestamp": 5686,
+          "inReplyTo": 1
+        },
+        {
+          "speakerId": "president",
+          "kind": "추가질문",
+          "summary": "경제적 이권 있는 조직에 대한 규제 필요성 강조",
+          "quote": "그런 경우에 어쨌든 그 지위를 차지하면 뭔가 이렇게 이권을 누릴 수 있단 말이에요. 그러니까 돈으로 매수를 해요",
+          "timestamp": 5735,
+          "inReplyTo": 2
+        },
+        {
+          "speakerId": "moj-minister",
+          "kind": "답변",
+          "summary": "경제적 이해관계 및 공정성 필요성 인정",
+          "quote": "경제적 이해 관계가 걸려 있고 그 선거 과정이 공정해야 되고 그렇지 않은 문제 때문에 분쟁도 상당히 있는 것이 현실입니다",
+          "timestamp": 5806,
+          "inReplyTo": 3
+        },
+        {
+          "speakerId": "president",
+          "kind": "지시",
+          "summary": "일정 규모 이상 경제적 이권 조직에 한정한 규제 검토 지시",
+          "quote": "시행령으로 뭐뭐 제한을 일정 규모 아니면 뭐 자산 뭐 이런 등등 어쨌든 적정 제한을 해서 필요는 있는 거 같은데 너무 광범하게 되지 않게 한번 검토 한번 해 보시고요",
+          "timestamp": 5867,
+          "inReplyTo": 4
+        },
+        {
+          "speakerId": "moj-minister",
+          "kind": "답변",
+          "summary": "업무방해죄는 위계·위력 요건 미충족으로 해당 불가",
+          "quote": "그 위계 위력으로 인한 업무를 방해할 때기 때문에 해당되지 않고 있고요",
+          "timestamp": 5920,
+          "inReplyTo": 5
+        }
+      ]
+    },
+    {
+      "id": "ex-09",
+      "topic": "할당관세 악용 방지",
+      "turns": [
+        {
+          "speakerId": "president",
+          "kind": "발언",
+          "summary": "할당관세 조사 결과 수입가 조작 등 악용 사례 확인",
+          "quote": "무관세로 수입할 수 있게 해주고 싸게 공급하라 그랬더니 정상 가격을 받거나 아니면 아는 사람한테 싸게 주거나 이래서 그 이익을 다 자기가 다 먹어버리는",
+          "timestamp": 5948,
+          "inReplyTo": null
+        },
+        {
+          "speakerId": "president",
+          "kind": "추가질문",
+          "summary": "양심에 맡길 수 없으므로 제도 자체 개선 필요성 제기",
+          "quote": "이 제도적으로 양심에 맡길게 아니고 시스템을 바꾸든지 해야 될 것 같아.",
+          "timestamp": 5988,
+          "inReplyTo": 0
+        },
+        {
+          "speakerId": "president",
+          "kind": "지시",
+          "summary": "보조금 직접지급 또는 실수입자 직접 배정 등 대체방안 검토 지시",
+          "quote": "관세 형식보다는 차라리 싸게 공급하는만큼 보조금을 주든지 확실하게 실수입자한테 직접 배정을 해주고 뭐 그러든지",
+          "timestamp": 6013,
+          "inReplyTo": 1
+        },
+        {
+          "speakerId": "unknown",
+          "kind": "답변",
+          "summary": "재경부·산업부·관세청 합동 개선방안 모색 중",
+          "quote": "지금 재경부랑 저희 부랑 관세청도 참여해서 지금 저희들이 그 개선 방안을 모색하고 있습니다",
+          "timestamp": 6051,
+          "inReplyTo": 2
+        },
+        {
+          "speakerId": "unknown",
+          "kind": "보고",
+          "summary": "공급기한 미준수 시 할당취소, 사후가격보고, 전담기구 설치 등 개선안",
+          "quote": "일정 기간 내에 공급되지 않으면 할당이 관세를 다시나 못하게 취소를 시킨다든지... 유통 과정을 정정 관리하는 어떤 전담 기구도 만들어서 운영",
+          "timestamp": 6080,
+          "inReplyTo": 3
+        },
+        {
+          "speakerId": "president",
+          "kind": "추가질문",
+          "summary": "저가공급 확인 후 할당관세 감면 방식 제안",
+          "quote": "제대로 저가 낮은 가격으로 공급한게 관세를 깎아 준만큼 그죠. 가격으로 공급된게 확인되면 그때서 깎아 주는 방법도 있죠",
+          "timestamp": 6130,
+          "inReplyTo": 4
+        },
+        {
+          "speakerId": "unknown",
+          "kind": "답변",
+          "summary": "사후 감면 방식은 실질 운영에 어려움이 있었던 사례",
+          "quote": "실질적으로 그게 킹이 안 되는 아니 실제로 제도적으로 굴러가는게 좀 그 당시 기억이 잘 끝나는데 어려움이 있었던 상황이었습니다",
+          "timestamp": 6150,
+          "inReplyTo": 5
+        },
+        {
+          "speakerId": "president",
+          "kind": "지시",
+          "summary": "할당관세 악용 방지에 각별한 신경 당부",
+          "quote": "하여튼 악용되지 않게 좀 각별히 신경 써 주시고요",
+          "timestamp": 6161,
+          "inReplyTo": 6
+        }
+      ]
+    },
+    {
+      "id": "ex-10",
+      "topic": "체납관리단 운영 성과",
+      "turns": [
+        {
+          "speakerId": "president",
+          "kind": "발언",
+          "summary": "체납 관리단 활동 성과 평가 질문",
+          "quote": "그 체납 관리단은 활동 잘하고 있어요",
+          "timestamp": 6272,
+          "inReplyTo": null
+        },
+        {
+          "speakerId": "unknown",
+          "kind": "보고",
+          "summary": "기대 이상의 효과 보고",
+          "quote": "우리 그 체악관리당 국민 여러분께서 정말 열심히 해 주시고 있어서 아주 기대 이상의 효과를 보고 있다고 저희는 생각하고 있습니다",
+          "timestamp": 6292,
+          "inReplyTo": 0
+        },
+        {
+          "speakerId": "president",
+          "kind": "질문",
+          "summary": "현재 운영 인원 규모 확인",
+          "quote": "지금 몇 명 운영하고 있어요?",
+          "timestamp": 6317,
+          "inReplyTo": 1
+        },
+        {
+          "speakerId": "unknown",
+          "kind": "답변",
+          "summary": "현재 약 1만 명 운영 중",
+          "quote": "지금 이제 만 명 하고 있습니다",
+          "timestamp": 6331,
+          "inReplyTo": 2
+        },
+        {
+          "speakerId": "president",
+          "kind": "질문",
+          "summary": "지방정부 체납관리단 운영 점검 요청",
+          "quote": "지방 정부들도 하고 있겠죠? 음. 그 좀 나중에 점검을 한번 해 보세요.",
+          "timestamp": 6362,
+          "inReplyTo": 3
+        },
+        {
+          "speakerId": "unknown",
+          "kind": "보고",
+          "summary": "약 243억 원 징수, 인원 2,029명",
+          "quote": "한 243억 정도를 징수했습니다",
+          "timestamp": 6378,
+          "inReplyTo": 4
+        },
+        {
+          "speakerId": "president",
+          "kind": "발언",
+          "summary": "징수액이 인원 대비 저조, 지방정부 체납 규모 수십조 추정",
+          "quote": "어, 생각보다 많지 않은. 인원수는 얼마예요? 너무 적어요.",
+          "timestamp": 6403,
+          "inReplyTo": 5
+        },
+        {
+          "speakerId": "unknown",
+          "kind": "보고",
+          "summary": "내년 인원 6천명(3배)으로 확대 계획",
+          "quote": "내년에는 6,명으로 늘릴 계획입니다. 그래서 세 배로 늘려서요",
+          "timestamp": 6422,
+          "inReplyTo": 6
+        },
+        {
+          "speakerId": "president",
+          "kind": "지시",
+          "summary": "지방정부 체납관리 철저 당부",
+          "quote": "하여튼 그거 좀 잘 챙겨 주시기 바랍니다",
+          "timestamp": 6547,
+          "inReplyTo": 7
+        }
+      ]
+    },
+    {
+      "id": "ex-11",
+      "topic": "AI 기반 통합 행정서비스(마이데이터)",
+      "turns": [
+        {
+          "speakerId": "president",
+          "kind": "질문",
+          "summary": "정부 혜택 안내를 음성 기반 AI 서비스로 제공 가능한지 질문",
+          "quote": "우리 국민들이 이렇게 텍스트 말고 말로도 바꾸는 게 1도 아니죠. 쉽잖아.",
+          "timestamp": 106,
+          "inReplyTo": null
+        },
+        {
+          "speakerId": "unknown",
+          "kind": "답변",
+          "summary": "현재 AI 서비스로는 불가하며 각 서비스-데이터 연결 필요",
+          "quote": "지금의 AI 서비스로는 그런 서비스를 이용할 수 없습니다. 각 서비스와 데이터 연결이 되어 있어야 됩니다.",
+          "timestamp": 106,
+          "inReplyTo": 0
+        },
+        {
+          "speakerId": "president",
+          "kind": "발언",
+          "summary": "구축이 어렵지 않을 것이라며 공공데이터 연결 부족 문제 지적",
+          "quote": "그거 만드는 거 별로 어렵지 않을 것 같은데. 한국이 가지고 있는 장점과 공공에 연결되어 있지 않기 때문에",
+          "timestamp": 107,
+          "inReplyTo": 1
+        },
+        {
+          "speakerId": "unknown",
+          "kind": "답변",
+          "summary": "국가정책 데이터와 개인정보 통합 시 맞춤형 혜택 정리 가능",
+          "quote": "국가 정책을 전부 데이터와 연결하고 나의 객관적인 조건이 다 들어가 있으면 이 사람이 어떤 혜택을 받을 수 있는지를 정리해 줄 수 있습니다.",
+          "timestamp": 107,
+          "inReplyTo": 2
+        },
+        {
+          "speakerId": "president",
+          "kind": "추가질문",
+          "summary": "해당 서비스 구축을 국민 최우선 필요 서비스로 추진할 것을 요구",
+          "quote": "만들어야죠. 지금 그거를 국민들이 제일 필요한 거 아닌가요?",
+          "timestamp": 108,
+          "inReplyTo": 3
+        },
+        {
+          "speakerId": "unknown",
+          "kind": "답변",
+          "summary": "행안부가 준비 중이며 연말 음성서비스 제공 목표",
+          "quote": "행안부에서 준비하고 있습니다. 올해 말쯤에 음성 서비스까지 가는 거.",
+          "timestamp": 108,
+          "inReplyTo": 4
+        },
+        {
+          "speakerId": "mohw-minister",
+          "kind": "답변",
+          "summary": "복지로 서비스가 소득·재산 정보와 중앙·지방 정부 서비스 연계 안내 중",
+          "quote": "저희 보건복지부에서는 복지로라는 서비스가 있어서 소득·재산 정보와 중앙정부가 지방정부가 제공하는 서비스를 맞춰서 받을 수 있는 서비스를 안내해 드립니다.",
+          "timestamp": 108,
+          "inReplyTo": 5
+        },
+        {
+          "speakerId": "president",
+          "kind": "발언",
+          "summary": "부처별 분산 운영으로 인한 국민의 소관 확인 어려움 지적",
+          "quote": "이게 각각 따로 막 한막이 돼 가지고 우리 국민 입장에서 이게 어디에 해당되는 부처 소관인지 알 수도 없죠.",
+          "timestamp": 109,
+          "inReplyTo": 6
+        },
+        {
+          "speakerId": "unknown",
+          "kind": "답변",
+          "summary": "정부24로 통합 작업 진행 중, 시간 소요",
+          "quote": "정부24에 하나로 통합하는 작업을 하고 있고 그 시간이 조금 걸린다는 말씀을 드린 겁니다.",
+          "timestamp": 109,
+          "inReplyTo": 7
+        },
+        {
+          "speakerId": "president",
+          "kind": "발언",
+          "summary": "정부 행정이 AI 활용에 가장 적합한 영역이라며 신속 활용 강조",
+          "quote": "인공지능을 빨리 활용하는 게 필요할 것 같습니다. 정부 행정이 합리적이고 예측 가능해야 되기 때문에 인공지능 활용하기에 제일 좋은 영역입니다.",
+          "timestamp": 109,
+          "inReplyTo": 8
+        }
+      ]
+    },
+    {
+      "id": "ex-12",
+      "topic": "재생에너지 100GW 전력망 혁신대책",
+      "turns": [
+        {
+          "speakerId": "president",
+          "kind": "발언",
+          "summary": "기존 시설 활용으로 52GW 추가 확보에 대한 긍정 평가",
+          "quote": "기존의 시설을 그대로 활용하면서도 52GW 역량을 추가하고 있다고 말인군요. 훌륭하십니다.",
+          "timestamp": 116,
+          "inReplyTo": null
+        },
+        {
+          "speakerId": "me-minister",
+          "kind": "답변",
+          "summary": "한전의 기존 보수적 운영 방식 설명",
+          "quote": "기존에는 전력은 한 번이라도 블랙아웃이 오면 안 되기 때문에 한전이 비교적 보수적으로 전력을 운영해 왔습니다.",
+          "timestamp": 116,
+          "inReplyTo": 0
+        },
+        {
+          "speakerId": "president",
+          "kind": "발언",
+          "summary": "근본적 송배전망 확대 필요성 지적",
+          "quote": "문제는 이걸로도 부족한 상황 아니겠습니까? 근본적으로 송배전망을 확대해야 되는데요.",
+          "timestamp": 116,
+          "inReplyTo": 1
+        },
+        {
+          "speakerId": "me-minister",
+          "kind": "답변",
+          "summary": "기존 철탑 활용으로 신규 철탑 40% 절감, 주민 인근 지중화",
+          "quote": "기존 철탑에 묶어서 하면 철탑을 신규로 만들어야 될 것을 대략 한 40%를 줄일 수 있습니다.",
+          "timestamp": 117,
+          "inReplyTo": 2
+        },
+        {
+          "speakerId": "president",
+          "kind": "질문",
+          "summary": "송배전망 확충 재원 조달 가능 여부 확인",
+          "quote": "송배전망을 확충해야 되는 거는 뭐 중요한 국가 과제인데, 지금 재원은 충분히 조달할 수 있습니까?",
+          "timestamp": 118,
+          "inReplyTo": 3
+        },
+        {
+          "speakerId": "me-minister",
+          "kind": "답변",
+          "summary": "정부지원·한전채·민간참여·국민펀드 등 다양한 재원 방안",
+          "quote": "정부에서 직접 지원도 했고, 한전채를 발행하는게 크게 어렵지 않고, 민간 사업자들도 참여할 수 있도록 돼서, 국민 상장 펀드 방식으로 국민들도 직접 참여할 수 있는 제도도 도입할 예정입니다.",
+          "timestamp": 118,
+          "inReplyTo": 4
+        },
+        {
+          "speakerId": "president",
+          "kind": "발언",
+          "summary": "재원보다 행정절차·시공속도가 관건이라는 지적",
+          "quote": "별로 문제가 없다. 결국은 행정철이 속도가 문제겠네요.",
+          "timestamp": 118,
+          "inReplyTo": 5
+        },
+        {
+          "speakerId": "me-minister",
+          "kind": "답변",
+          "summary": "국민 수용성이 가장 큰 걸림돌이었으나 개선 기대",
+          "quote": "국민들의 수용성이 가장 큰 걸림돌이었는데, 이번 제도를 통해서 많이 보정될 것으로 기대합니다.",
+          "timestamp": 119,
+          "inReplyTo": 6
+        },
+        {
+          "speakerId": "president",
+          "kind": "발언",
+          "summary": "지산지소 원칙 강화 및 호남 전력의 수도권 집중 문제 지적",
+          "quote": "지산지소 원칙을 강화하는 거겠죠. 호남에서 전력을 생산해 가지고 수도권으로 막 끌고 와 가지고... 비상식적인 일이죠.",
+          "timestamp": 119,
+          "inReplyTo": 7
+        },
+        {
+          "speakerId": "me-minister",
+          "kind": "답변",
+          "summary": "수도권 일극체제 극복이 국가적 핵심과제라는 데 동의",
+          "quote": "우리가 수도권 일극 체제를 극복하는게 국가적인 핵심 과제입니다.",
+          "timestamp": 120,
+          "inReplyTo": 8
+        },
+        {
+          "speakerId": "me-minister",
+          "kind": "답변",
+          "summary": "전국망 연결 필요하나 지산지소 지향 필요성 설명",
+          "quote": "전력은 특성상 전국망을 연결해야 되지만, 호남에서 생산한 전력은 호남에서 쓰는 방향으로 지향해야 합니다.",
+          "timestamp": 120,
+          "inReplyTo": 9
+        },
+        {
+          "speakerId": "president",
+          "kind": "발언",
+          "summary": "지역 소비를 기업 이익과 연결하는 정책 필요성 강조",
+          "quote": "정책 영향을 최대한 동원해서 해당 지역에서 쓰면 쓰는게 기업에 이익이 되게 하는게 기본적으로 가장 중요할 것 같아요.",
+          "timestamp": 120,
+          "inReplyTo": 10
+        }
+      ]
+    },
+    {
+      "id": "ex-13",
+      "topic": "모두의 카드 출퇴근 할인 확대",
+      "turns": [
+        {
+          "speakerId": "president",
+          "kind": "질문",
+          "summary": "피크타임 전후 할인율 확인",
+          "quote": "출근 시간 소위 픽타임 전후에 얼마 깎아 준다고요?",
+          "timestamp": 7491,
+          "inReplyTo": null
+        },
+        {
+          "speakerId": "molit-minister",
+          "kind": "답변",
+          "summary": "기존 20%에서 30%로 환급률 인상",
+          "quote": "그 환급을 한데 기존에는 20% 할인을 해 주다가 이번에 30%까지 늘려서 환급을 해 주겠습니다.",
+          "timestamp": 7497,
+          "inReplyTo": 0
+        },
+        {
+          "speakerId": "president",
+          "kind": "질문",
+          "summary": "관련 예산 규모 문의",
+          "quote": "그게 그렇게 깎아 주는데 예산이 얼마 정도 들었어요?",
+          "timestamp": 7530,
+          "inReplyTo": 1
+        },
+        {
+          "speakerId": "molit-minister",
+          "kind": "답변",
+          "summary": "추경으로 1,900억 확대, 지방정부와 50대50 분담",
+          "quote": "올해 추경 때 1,900억까지 확대를 했어요. 한 7억 이상 저희가 지금 확보를 했습니다. 50대 50 지금 분담을 하고 있습니다.",
+          "timestamp": 7533,
+          "inReplyTo": 2
+        },
+        {
+          "speakerId": "president",
+          "kind": "질문",
+          "summary": "서울-지방 분담비율 동일 여부 확인",
+          "quote": "50대 50. 아 이게 서울 수도권과 지방 똑같이 50대 50이에요.",
+          "timestamp": 7545,
+          "inReplyTo": 3
+        },
+        {
+          "speakerId": "molit-minister",
+          "kind": "답변",
+          "summary": "서울 40%, 지방 50% 지원으로 차등 분담",
+          "quote": "서울은 40% 저희가 지원해 주고요. 지방은 50% 6대 4 서울은 나머지는 5대 5.",
+          "timestamp": 7551,
+          "inReplyTo": 4
+        },
+        {
+          "speakerId": "president",
+          "kind": "추가질문",
+          "summary": "저소득층 시차출퇴근자를 위한 할인율을 반값 수준으로 인상 검토 요청",
+          "quote": "근데 결국 그 20% 30% 깎아 가지고 우는 거 너무 너무 약하지 않나? 한 반값 정도 해 주는게 적정하지 않나?",
+          "timestamp": 7627,
+          "inReplyTo": 5
+        },
+        {
+          "speakerId": "molit-minister",
+          "kind": "발언",
+          "summary": "시간분산 효과 고려하여 30%까지 인상, 내년도 지속 예산 확보 계획",
+          "quote": "분산 효과를 생각하더라도 이번으로 한 30%까지 올렸는데요. 그거를 이제 내년에도 지속적으로 지금 저희가 예산을 확보를 해서 지원을 할 예정입니다.",
+          "timestamp": 7666,
+          "inReplyTo": 6
+        },
+        {
+          "speakerId": "president",
+          "kind": "지시",
+          "summary": "기획재정부와 함께 반값 할인 소요 예산 검토 지시",
+          "quote": "그게 얼마나 드는지는 내가 보 계산해 보니까 그렇게 많이 될 것 같지 않은데요. 한번 검정 검토 한번 해 주세요.",
+          "timestamp": 7700,
+          "inReplyTo": 7
+        },
+        {
+          "speakerId": "molit-minister",
+          "kind": "답변",
+          "summary": "검토 진행 확답",
+          "quote": "네. 알겠습니다.",
+          "timestamp": 7712,
+          "inReplyTo": 8
+        }
+      ]
+    },
+    {
+      "id": "ex-14",
+      "topic": "햇빛소득마을 및 태양광 농사",
+      "turns": [
+        {
+          "speakerId": "president",
+          "kind": "질문",
+          "summary": "햇빛소득마을 올해 조성 목표 규모 확인",
+          "quote": "해피소마을 얘기 나와서 그런는데 지금 올해 몇 개 정도 될 것 같아?",
+          "timestamp": 8228,
+          "inReplyTo": null
+        },
+        {
+          "speakerId": "me-minister",
+          "kind": "답변",
+          "summary": "올해 700개 목표, 1·2차 신청 700개 이상, 500여개 선정 후 3차 모집 예정",
+          "quote": "올해 지금 700개를 다 목표 채우려고 하고 있고요. 1, 2차 신청을 받아서 700개 이상 나왔습니다만 그중에 지금 한 500여개 정도가 선정이 됐고 3차 모집을 할 예정입니다.",
+          "timestamp": 8231,
+          "inReplyTo": 0
+        },
+        {
+          "speakerId": "president",
+          "kind": "발언",
+          "summary": "무리한 조성 지양, 조건 미비 시 신중 추진 당부",
+          "quote": "그니까 너무 숫자에 연전하지 마시고요. 많이 하도록 노력은 하는데 그 조건이 좀 미비하거나 뭐 이런 경우 무리하게 하진 말고요.",
+          "timestamp": 8253,
+          "inReplyTo": 1
+        },
+        {
+          "speakerId": "me-minister",
+          "kind": "발언",
+          "summary": "소규모 영농 경제성 악화된 농지의 태양광 활용 가능성 설명",
+          "quote": "농촌 지역의 농업이 소규모 영농의 경제성이 많이 떨어지잖아요. 그래서 사실 좀 무고 있는 밭들이 많거든요.",
+          "timestamp": 8312,
+          "inReplyTo": 2
+        },
+        {
+          "speakerId": "president",
+          "kind": "발언",
+          "summary": "고향 유휴농지를 활용한 태양광 발전·판매의 경제성 언급",
+          "quote": "내가 옛날 살던 내 고향으로 가서 어차피 지금 묵어 있는 밭들 이런 거 좀 해서 거기도 태양광 좀 깔아서 연결해 가지고 동네 쓸 건 좀 쓰고 나머 팔고",
+          "timestamp": 8359,
+          "inReplyTo": 3
+        },
+        {
+          "speakerId": "me-minister",
+          "kind": "발언",
+          "summary": "태양광 농사의 수익성이 기존 농사 대비 약 6배 수준",
+          "quote": "여섯 배 보통 이렇게 얘기하던데",
+          "timestamp": 8409,
+          "inReplyTo": 4
+        },
+        {
+          "speakerId": "president",
+          "kind": "발언",
+          "summary": "기존 농사와 차원이 다른 햇빛 농사 가능성 결론",
+          "quote": "하여튼 뭐 선업라 하더라도 기존의 농사와는 차원이 다른 어 햇빛 농사가 가능하다.",
+          "timestamp": 8413,
+          "inReplyTo": 5
+        },
+        {
+          "speakerId": "president",
+          "kind": "추가질문",
+          "summary": "농지 태양광 설치 관련 허가·청탁 문제와 향후 유행 가능성 제기",
+          "quote": "개인이 농지 위에다가 하는 걸 지금은 허가를 해 줘야 되는 거 같긴 한데 연결을 또 해야 되니까 청탁이 많이 들어오더라고요.",
+          "timestamp": 836,
+          "inReplyTo": 6
+        },
+        {
+          "speakerId": "unknown",
+          "kind": "답변",
+          "summary": "국내 태양광 발전단가는 선진국 대비 다소 높으나 대·소규모 차이는 크지 않음",
+          "quote": "아직까지 전반적으로 뭐 중국이나 독일이나 미국보다 태양광의 생산 설치 발전 단가가 좀 비교적 비싼 편입니다.",
+          "timestamp": 906,
+          "inReplyTo": 7
+        },
+        {
+          "speakerId": "president",
+          "kind": "발언",
+          "summary": "화석에너지 의존도 감소와 인구소멸지역 활성화 위한 태양광 농사 확산 필요성 강조",
+          "quote": "태양광 농사를 짓는 게 농지 활용도도 높이고 국도 활용도도 높이고 에너지 자급률도 높이고",
+          "timestamp": 952,
+          "inReplyTo": 8
+        },
+        {
+          "speakerId": "unknown",
+          "kind": "답변",
+          "summary": "국내 일조량이 독일 등보다 높아 발전량 확보에 유리",
+          "quote": "저희가 독일이나 이런 데보다 훨씬 더 일조량이 높기 때문에요. 충분히 발전량을 높일 수 있습니다.",
+          "timestamp": 1032,
+          "inReplyTo": 9
+        }
+      ]
+    }
+  ],
+  "directives": [
+    {
+      "id": "dir-2026-09-29-01",
+      "from": "president",
+      "to": [
+        "mofa-minister"
+      ],
+      "content": "UN총회·멕시코 순방 성과가 국익 실질 증진으로 이어지도록 후속 조치에 만전을 기할 것",
+      "timestamp": 3345,
+      "tags": [
+        "외교"
+      ],
+      "status": "issued",
+      "followUps": []
+    },
+    {
+      "id": "dir-2026-09-29-02",
+      "from": "president",
+      "to": [
+        "mnd-minister"
+      ],
+      "content": "핵잠수함 건조와 극초음속 미사일 등 첨단 무기체계 개발 속도 강화",
+      "timestamp": 3959,
+      "tags": [
+        "국방"
+      ],
+      "status": "issued",
+      "followUps": []
+    },
+    {
+      "id": "dir-2026-09-29-03",
+      "from": "president",
+      "to": [
+        "mnd-minister"
+      ],
+      "content": "군사분계선 인근 지뢰 사고에 대해 유엔사와 협조하여 신속·철저한 조사 실시",
+      "timestamp": 4047,
+      "tags": [
+        "국방"
+      ],
+      "status": "issued",
+      "followUps": []
+    },
+    {
+      "id": "dir-2026-09-29-04",
+      "from": "president",
+      "to": [
+        "moef-minister",
+        "mohw-minister",
+        "molit-minister",
+        "moel-minister"
+      ],
+      "content": "주거안정 플랜, 국민일자리 사업, 포용금융 확대 등 3대 핵심 사회정책에 가용 재원 집중 투입",
+      "timestamp": 4646,
+      "tags": [
+        "민생"
+      ],
+      "status": "issued",
+      "followUps": []
+    },
+    {
+      "id": "dir-2026-09-29-05",
+      "from": "president",
+      "to": [
+        "osc-minister",
+        "moef-minister"
+      ],
+      "content": "전 부처는 3대 핵심 사회정책의 신속한 추진에 총력을 다할 것",
+      "timestamp": 4952,
+      "tags": [
+        "민생"
+      ],
+      "status": "issued",
+      "followUps": []
+    },
+    {
+      "id": "dir-2026-09-29-06",
+      "from": "president",
+      "to": [
+        "knpa-commissioner"
+      ],
+      "content": "실종사건 전담기구 신설 및 장기 실종자 중앙 통합관리 체계 구축",
+      "timestamp": 3152,
+      "tags": [
+        "치안"
+      ],
+      "status": "issued",
+      "followUps": []
+    },
+    {
+      "id": "dir-2026-09-29-07",
+      "from": "president",
+      "to": [
+        "knpa-commissioner",
+        "pm2"
+      ],
+      "content": "경찰 수사의 공정성·객관성 확보를 위한 자체 시스템 마련 및 감찰 기능 강화·독립성 제고 검토",
+      "timestamp": 4000,
+      "tags": [
+        "치안",
+        "규제"
+      ],
+      "status": "issued",
+      "followUps": []
+    },
+    {
+      "id": "dir-2026-09-29-08",
+      "from": "president",
+      "to": [
+        "mois-minister",
+        "osc-minister"
+      ],
+      "content": "실장급 이하 인사에 대한 부처 자율권 부여 재확인, 책임 있는 인사 배치 당부",
+      "timestamp": 4220,
+      "tags": [
+        "인사"
+      ],
+      "status": "issued",
+      "followUps": []
+    },
+    {
+      "id": "dir-2026-09-29-09",
+      "from": "president",
+      "to": [
+        "mofa-minister"
+      ],
+      "content": "정상외교 순방 성과에 대한 별도 보고 및 국민 대상 홍보 방안 마련",
+      "timestamp": 54570,
+      "tags": [
+        "외교"
+      ],
+      "status": "issued",
+      "followUps": []
+    },
+    {
+      "id": "dir-2026-09-29-10",
+      "from": "president",
+      "to": [
+        "moef-minister"
+      ],
+      "content": "금융취약계층의 어려움에 각별한 관심을 기울일 것 (자살률과의 연관성 강조)",
+      "timestamp": 6900,
+      "tags": [
+        "민생"
+      ],
+      "status": "issued",
+      "followUps": []
+    },
+    {
+      "id": "dir-2026-09-29-11",
+      "from": "president",
+      "to": [
+        "moj-minister"
+      ],
+      "content": "일정 규모 이상 경제적 이권이 있는 조직의 선거 매표 행위에 대한 처벌 규정 검토(범위 제한 필요)",
+      "timestamp": 5867,
+      "tags": [
+        "규제"
+      ],
+      "status": "issued",
+      "followUps": []
+    },
+    {
+      "id": "dir-2026-09-29-12",
+      "from": "president",
+      "to": [
+        "kcs-commissioner",
+        "motie-minister",
+        "moef-minister"
+      ],
+      "content": "할당관세 악용 방지를 위한 제도 개선(보조금 지급·실수입자 직접 배정 등 대체방안 포함) 각별히 신경 쓸 것",
+      "timestamp": 6161,
+      "tags": [
+        "규제"
+      ],
+      "status": "issued",
+      "followUps": []
+    }
+  ],
+  "videoId": "YVWehArKpso",
+  "videoUrl": "https://youtu.be/YVWehArKpso",
+  "duration": 8441,
+  "thumbnail": "https://i.ytimg.com/vi/YVWehArKpso/hqdefault.jpg",
+  "sources": [
+    {
+      "videoId": "pNmWsvJj7Mc",
+      "title": "[#이재명 LIVE] 국민의 삶을 바꾸는 개혁, 중단 없이 이어가겠습니다 | 제42회 국무회의",
+      "channelTitle": "이재명 (대통령실 공식)",
+      "url": "https://youtu.be/pNmWsvJj7Mc"
+    }
+  ]
+}

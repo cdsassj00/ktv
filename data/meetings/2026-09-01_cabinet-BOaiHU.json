@@ -879,8 +879,15 @@
       "tags": [
         "경찰개혁"
       ],
-      "status": "issued",
-      "followUps": []
+      "status": "reported",
+      "followUps": [
+        {
+          "meetingId": "2026-09-29-cabinet-YVWehA",
+          "exchangeId": "ex-02",
+          "summary": "경찰청이 실종수사계 구축 및 장기실종자 통합관리 체계 진행 현황 보고",
+          "inferred": true
+        }
+      ]
     },
     {
       "id": "dir-2026-09-01-09",
