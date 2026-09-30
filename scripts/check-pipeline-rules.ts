@@ -89,7 +89,7 @@ const RENAMES: { effective: string; old: RegExp; oldName: string; now: string }[
   { effective: "2025-10-01", old: /(?<!성평등)여성가족부/, oldName: "여성가족부", now: "성평등가족부" },
   { effective: "2025-10-01", old: /(?<!기후에너지)환경부/, oldName: "환경부", now: "기후에너지환경부" },
   { effective: "2025-10-01", old: /산업통상자원부/, oldName: "산업통상자원부", now: "산업통상부" },
-  { effective: "2026-01-02", old: /기획재정부/, oldName: "기획재정부", now: "재정경제부" },
+  { effective: "2026-01-02", old: /기획재정부/, oldName: "기획재정부", now: "재정경제부 또는 기획예산처 (문맥에 맞게 확인)" },
 ];
 
 for (const [id, s] of Object.entries(roster)) {
