@@ -1,0 +1,1042 @@
+{
+  "id": "2026-10-13-cabinet-GQsdsl",
+  "type": "cabinet",
+  "title": "제44회 국무회의",
+  "date": "2026-10-13",
+  "summary": {
+    "oneLine": "북극항로 컨테이너선 첫 왕복 시범운항 성공을 계기로 K해양강국 전략을 점검하고, 복지급여 신청주의를 전면 개편하는 '자동복지' 체계와 자살예방 대책을 집중 논의한 국무회의.",
+    "overview": "이번 국무회의에서는 먼저 해양수산부가 북극항로 컨테이너선(펜스타 아크로) 시범운항 성과를 보고했다. 8월 22일 출항해 50일간 왕복 항해를 완료한 결과 수에즈 운하 대비 거리 약 35%, 기간 약 10일이 단축됨이 확인되었으며, 대통령은 러시아와의 협력 관리, 부산항·신공항·철도 등 물류 인프라 확충, 대재제재 회피 방식 등을 구체적으로 질의했다.\n\n이어 보건복지부는 '신청주의'에서 벗어나 국가가 선제적으로 자격을 확인해 급여를 지급하는 '자동복지' 체계로의 전환을 보고했다. 아동수당·기초연금·장애인연금 등 관련 6개 법률 개정안이 처리되어 내년 1월 시행을 앞두고 있으며, 대통령은 출생신고 지연 시 소급지급 문제, 복지급여의 권리성·시효 문제 등 법적 쟁점을 짚고 제도 명칭(자동복지·당연주의 등)에 대한 의견수렴을 지시했다.\n\n자살예방 대책과 관련해 총리는 경제적 이유에 의한 자살이 크게 감소했다고 보고했고, 대통령은 OECD 최고 수준인 자살률을 언급하며 목표치를 세 배 이상 상향할 것을 지시했다. 청소년 자살의 경우 학업 경쟁보다 관계·외로움이 더 큰 원인으로 지적되어 교육부에 새로운 접근을 주문했다. 금융위원회는 장기소액연체자 98만 명에 대한 11.9조원 규모의 채권 일괄매입 성과를 보고했고, 대통령은 시장에서 원금의 3~5%로 거래되는 연체채권을 정부가 직접 매입해 정리하는 방안을 제안했다.\n\n이 밖에 대통령은 양극화 완화를 위한 주택·일자리·포용금융 등 3대 핵심 사회정책 집중, 스토킹·가정폭력 등 관계성범죄 대응체계 강화, 노동자 대상 위험물질 투여 사건에 대한 엄정 조치, 국세청의 고액 체납세금 징수 성과, 실용적 국익외교 기조 등을 언급했다. 개인정보보호위원회는 '털지마' 홍보 영상 성과(조회수 160만)를 보고했으며, 마지막으로 국민과의 실시간 소통 시간을 통해 '자동복지' 명칭에 대한 국민 의견이 소개됐다.",
+    "agenda": [
+      {
+        "title": "북극항로 시범운항 성과 및 K해양강국 전략",
+        "summary": "해양수산부가 컨테이너선 북극항로 왕복 시범운항 성과(거리 35%·기간 10일 단축)와 상용화 계획을 보고",
+        "timestamp": 63
+      },
+      {
+        "title": "복지급여 신청주의 개선(자동복지) 추진계획",
+        "summary": "보건복지부가 신청 없이도 자격 확인만으로 급여를 지급하는 제도개선 법률 6건 처리 및 시행계획 보고",
+        "timestamp": 76
+      },
+      {
+        "title": "복지 돌봄 AI 로드맵",
+        "summary": "복지 돌봄 분야 AI 활용 로드맵 보고, 대통령이 구체적 일정의 시각화 자료 요청",
+        "timestamp": 502
+      },
+      {
+        "title": "개인정보보호위원회 홍보영상 상영",
+        "summary": "'털지마' 캠페인 영상 제작 배경과 조회수 성과 보고",
+        "timestamp": 795
+      }
+    ],
+    "remarks": [
+      {
+        "speakerId": "president",
+        "quote": "국내외 기관들이 올해 대한민국의 성장률 전망을 연달라 상향하고 있는데 일부 기관들은 4% 성장도 가능하다라는 예측까지 내놓고 있습니다.",
+        "context": "경제 성장세 언급과 동시에 양극화 그늘을 짚는 모두발언",
+        "timestamp": 863
+      },
+      {
+        "speakerId": "president",
+        "quote": "국가가 먼저 도움이 필요한 국민들을 찾아서 지원하는 자동 지원 복지로 패러다임을 전환해야 합니다.",
+        "context": "복지 신청주의 개선 방향 제시",
+        "timestamp": 1078
+      },
+      {
+        "speakerId": "president",
+        "quote": "지금 OECD 통계상으로 우리가 어 노인 자살율, 청소연 자살율, 종합 자살율 이게 10수년간 1등하고 있죠.",
+        "context": "자살예방 대책 논의 중 문제의 심각성 지적",
+        "timestamp": 3909
+      },
+      {
+        "speakerId": "president",
+        "quote": "대한민국의 외교 방침은 명확하게 실용적 국익 외교입니다. 가장 중요한 것은 대한민국의 국익입니다.",
+        "context": "외교 기조에 대한 입장 표명",
+        "timestamp": 1403
+      },
+      {
+        "speakerId": "pm2",
+        "quote": "이건 제가 한 건 아니고 사실 복지부랑 금융이랑 뭐 아홉 개 부처들 모든 부처가 함께 한 것이죠.",
+        "context": "자살 감소 성과에 대한 대통령의 치하에 대한 응답",
+        "timestamp": 3451
+      }
+    ]
+  },
+  "exchanges": [
+    {
+      "id": "ex-01",
+      "topic": "북극항로 컨테이너선 시범운항 관련 인터뷰(보도)",
+      "turns": [
+        {
+          "speakerId": "unknown",
+          "kind": "질문",
+          "summary": "시범 운항 추진 배경과 과정 질문",
+          "quote": "시범 운항을 추진하게 된 배경과 그간의 과정이 궁금합니다.",
+          "timestamp": 30,
+          "inReplyTo": null
+        },
+        {
+          "speakerId": "unknown",
+          "kind": "답변",
+          "summary": "기후변화로 북극해빙 진전, 국가전략적 차원의 준비 필요성 설명",
+          "quote": "기후 변화로 인해서 북극의 해빙이 진전되면서 새로운 바닷길이 열리게 되었는데요.",
+          "timestamp": 47,
+          "inReplyTo": 0
+        },
+        {
+          "speakerId": "unknown",
+          "kind": "답변",
+          "summary": "5월 선사 공모~8월 22일 출항, 10월 11일 50일 항해 완료",
+          "quote": "8월 22일 추항을 해서 10월 11일 드디어 50일간에 여정을 마치고 성공적으로 북극항로를 왕복하는 여정을 마무리 지었습니다.",
+          "timestamp": 95,
+          "inReplyTo": 0
+        },
+        {
+          "speakerId": "unknown",
+          "kind": "추가질문",
+          "summary": "입증 사항 및 물류경제적 성과 질문",
+          "quote": "이번 시범 운항을 통해서 어떤 새로운 점들을 입증을 했는지... 성과들은 어떤게 있었는지도 짚어 주시죠.",
+          "timestamp": 139,
+          "inReplyTo": 2
+        },
+        {
+          "speakerId": "unknown",
+          "kind": "답변",
+          "summary": "쇄빙선 없이 여름철 자유통항 검증, 거리·기간 단축, 운항비용 약 15억원 절감",
+          "quote": "스웨즈 운화로 갈 때... 약 7,000km 정도 단축했을뿐만 아니라 편도로 20일 정도로 단축이 됐기 때문에 10일 정도 단축이 되었습니다.",
+          "timestamp": 161,
+          "inReplyTo": 3
+        },
+        {
+          "speakerId": "unknown",
+          "kind": "추가질문",
+          "summary": "상용화까지 남은 과제 질문",
+          "quote": "본격적인 상용화까지 넘어야 할 산이 좀 있어 보입니다.",
+          "timestamp": 298,
+          "inReplyTo": 4
+        },
+        {
+          "speakerId": "unknown",
+          "kind": "답변",
+          "summary": "내년 선사·화물 확대, 내빙선 건조 지원 등 장기전략 필요성 설명",
+          "quote": "선사들의 내빈선 건조를 위한 지원 그리고 대형 세빙 컨테이너선 건조까지도 저희가 차근차근 준비해 나감으로써",
+          "timestamp": 356,
+          "inReplyTo": 5
+        }
+      ]
+    },
+    {
+      "id": "ex-02",
+      "topic": "북극항로 시범운항 보고 및 러시아 협력 질의",
+      "turns": [
+        {
+          "speakerId": "mof-minister",
+          "kind": "보고",
+          "summary": "북극항로 K해양강국 전략 추진 배경 설명",
+          "quote": "국가 전략적인 차원에서의 확보가 필요한 상황입니다.",
+          "timestamp": 63,
+          "inReplyTo": null
+        },
+        {
+          "speakerId": "mof-minister",
+          "kind": "보고",
+          "summary": "시범운항 성과: 세빙선 없이 실증, 거리 35%·기간 10일 단축",
+          "quote": "부산과 유럽 간 기존 항비 운항 거리는 약 35%, 운항 기간은 약 10일을 단축하였습니다.",
+          "timestamp": 65,
+          "inReplyTo": 0
+        },
+        {
+          "speakerId": "president",
+          "kind": "질문",
+          "summary": "북극항로 개척의 최대 과제가 러시아 협력인지 질의",
+          "quote": "이게 지금 북극로 개척의 가장 큰... 러시아와의 협력 아니겠어요?",
+          "timestamp": 66,
+          "inReplyTo": 1
+        },
+        {
+          "speakerId": "mof-minister",
+          "kind": "답변",
+          "summary": "제재대상 쇄빙선사 '아톰플러이' 미이용으로 대러 제재 회피",
+          "quote": "대재와 직접적인 관련되는 세빙선 운항 서비스를 받지 않고 운항을 함으로써 직접적으로 대로 제재에는 연관이 없도록 했습니다.",
+          "timestamp": 67,
+          "inReplyTo": 2
+        },
+        {
+          "speakerId": "president",
+          "kind": "질문",
+          "summary": "러시아 비협조 시 영해 통과 문제 질의",
+          "quote": "러시아가 예를 들면 비협조적이면 제재와 관계 없이도 사실 쉽지 않죠.",
+          "timestamp": 68,
+          "inReplyTo": 3
+        },
+        {
+          "speakerId": "mof-minister",
+          "kind": "답변",
+          "summary": "국제법상 자유운항 가능하나 러시아 영해·EEZ 통과로 협조 필요",
+          "quote": "러시아 당국의 협조 또는 어느 정도의 동의가 없으면 운항 자체가 좋지 않습니다.",
+          "timestamp": 68,
+          "inReplyTo": 4
+        },
+        {
+          "speakerId": "president",
+          "kind": "질문",
+          "summary": "우크라이나 전쟁 격화 시 러시아 태도 변화 가능성 질의",
+          "quote": "러시아 안 그래도 뭐 뭐 논란들도 좀 있긴 한데.",
+          "timestamp": 68,
+          "inReplyTo": 5
+        },
+        {
+          "speakerId": "mof-minister",
+          "kind": "답변",
+          "summary": "현재 러시아 협조적이나 전쟁 격화 시 유럽·미국 변수 우려",
+          "quote": "우크라이나 전쟁으로 이게 격화가 되면은 유럽 국가들이 태도를 좀 더 강화할 것이고... 이걸 잘 관리를 해 나가야 될 것으로 보입니다.",
+          "timestamp": 68,
+          "inReplyTo": 6
+        },
+        {
+          "speakerId": "president",
+          "kind": "발언",
+          "summary": "중동 정세 악화로 수에즈 대체 경로로서 북극항로 전략적 가치 강조",
+          "quote": "영원한 적도 영원한 우방도 없다.",
+          "timestamp": 70,
+          "inReplyTo": 7
+        }
+      ]
+    },
+    {
+      "id": "ex-03",
+      "topic": "복지급여 신청주의 개선(자동복지) 보고 및 법적 쟁점 질의",
+      "turns": [
+        {
+          "speakerId": "mohw-minister",
+          "kind": "보고",
+          "summary": "신청주의 한계 지적 및 적극적 복지로의 전환 방향 설명",
+          "quote": "앞으로는 국민의 신청을 기다리는 수동적 복지에서 먼저 찾아 지원하는 적극적 복지로 전환하겠습니다.",
+          "timestamp": 76,
+          "inReplyTo": null
+        },
+        {
+          "speakerId": "mohw-minister",
+          "kind": "보고",
+          "summary": "관련 6개 법률 개정 완료, 내년 1월 시행 예정",
+          "quote": "신청주의 개선을 위한 여섯 개 법률이 지난 10월 1일 본의에서 의결되었고... 내년 1월부터 시행될 예정입니다.",
+          "timestamp": 77,
+          "inReplyTo": 0
+        },
+        {
+          "speakerId": "president",
+          "kind": "질문",
+          "summary": "출생신고 지연 시 급여 소급지급 여부 질의",
+          "quote": "출생 신고 안 하고 오랫동안 그냥 키우는 경우도 있더라고요... 그럼 어떻게 됩니까?",
+          "timestamp": 82,
+          "inReplyTo": 1
+        },
+        {
+          "speakerId": "mohw-minister",
+          "kind": "답변",
+          "summary": "출생통보제에 따른 지자체 직권 출생등록 절차 설명",
+          "quote": "의료 기관이 출생 사실을 신평원으로 신고하게 되면... 지자체 장이 직권으로 출생 신고가",
+          "timestamp": 82,
+          "inReplyTo": 2
+        },
+        {
+          "speakerId": "president",
+          "kind": "추가질문",
+          "summary": "소급지급 기준(출생일 vs 신고일) 명확화 질의",
+          "quote": "늦게 되는 경우에는 소급해서 지급하냐을 내가 물어보려고 한 거예요.",
+          "timestamp": 84,
+          "inReplyTo": 3
+        },
+        {
+          "speakerId": "mohw-minister",
+          "kind": "답변",
+          "summary": "현재는 출생신고일 기준이나 세부지침 수립 시 검토 예정",
+          "quote": "그것도 좀 지침할 때 검토를 하게 되고",
+          "timestamp": 85,
+          "inReplyTo": 4
+        },
+        {
+          "speakerId": "president",
+          "kind": "발언",
+          "summary": "자동지급 전환이 복지의 권리성·시효 문제를 야기함을 지적",
+          "quote": "국가의 복지 급여가 국민의 권리냐라고 하는 근본적인 논쟁이 될 수도 있어요. 이게 권리냐 시혜냐.",
+          "timestamp": 86,
+          "inReplyTo": 5
+        }
+      ]
+    },
+    {
+      "id": "ex-04",
+      "topic": "자동지급 제도의 명칭 논의",
+      "turns": [
+        {
+          "speakerId": "president",
+          "kind": "질문",
+          "summary": "신청주의 반대 개념의 명칭 정리 필요성 제기",
+          "quote": "신청을 해야 지급하는 복지 제도에서 신청 안 해도 자동으로 지급하는 이 제도를 뭐라고 이름을 붙일까?",
+          "timestamp": 640,
+          "inReplyTo": null
+        },
+        {
+          "speakerId": "molegis-minister",
+          "kind": "답변",
+          "summary": "법정주의·발생주의 등 법률용어 제안",
+          "quote": "법률 용어로서는 법정주의가 좀 가까워. 발생주의도 생각해 볼 수 있을 것 같습니다.",
+          "timestamp": 655,
+          "inReplyTo": 0
+        },
+        {
+          "speakerId": "president",
+          "kind": "발언",
+          "summary": "딱딱한 법률용어 대신 쉬운 표현 요청",
+          "quote": "법지 서장님 너무 딱 딱딱해요.",
+          "timestamp": 670,
+          "inReplyTo": 1
+        },
+        {
+          "speakerId": "unknown",
+          "kind": "답변",
+          "summary": "'당연주의' 제안",
+          "quote": "당연주의는 이상한가요? 당연주의 예 당연합니다.",
+          "timestamp": 750,
+          "inReplyTo": 2
+        },
+        {
+          "speakerId": "president",
+          "kind": "발언",
+          "summary": "'주의'를 붙이지 말고 '자동복지'·'보편복지' 등으로 명명 제안",
+          "quote": "주의자를 붙이지 말고 신청 복지에서 자동 복지로 신청 복지에서 보편 복지로",
+          "timestamp": 755,
+          "inReplyTo": 3
+        },
+        {
+          "speakerId": "unknown",
+          "kind": "답변",
+          "summary": "'자동복지' 제안",
+          "quote": "자동복지",
+          "timestamp": 760,
+          "inReplyTo": 4
+        },
+        {
+          "speakerId": "president",
+          "kind": "지시",
+          "summary": "국무회의 종료 전까지 명칭 의견을 모아볼 것 지시",
+          "quote": "국무회의 공교 회의 끝날 때쯤 한번 어떤 이름이 좋은지 의견들이 좀 좀 모아 보십시오.",
+          "timestamp": 695,
+          "inReplyTo": 5
+        }
+      ]
+    },
+    {
+      "id": "ex-05",
+      "topic": "복지 돌봄 AI 로드맵",
+      "turns": [
+        {
+          "speakerId": null,
+          "kind": "보고",
+          "summary": "복지 돌봄 AI 대전환 로드맵 보고 예고",
+          "quote": "복지 돌봄 AI 대전한 로드맵에 대해 보고 드리겠습니다.",
+          "timestamp": 502,
+          "inReplyTo": null
+        },
+        {
+          "speakerId": "president",
+          "kind": "지시",
+          "summary": "구체적 계획을 시각화 자료로 제시할 것 요청",
+          "quote": "이게 기본요 이런 것들을 좀 만들어서 좀 보여 주시면 좋겠어요. 어떻게 하겠다.",
+          "timestamp": 562,
+          "inReplyTo": 0
+        },
+        {
+          "speakerId": "unknown",
+          "kind": "답변",
+          "summary": "AI 작동에 필요한 데이터·시간 소요 인정, 노력 약속",
+          "quote": "아무리 AI도 데이터가 만져야 될 시간이 좀 필요하긴 하고 두 배로 세 배로 열심히 하겠습니다.",
+          "timestamp": 603,
+          "inReplyTo": 1
+        }
+      ]
+    },
+    {
+      "id": "ex-06",
+      "topic": "자살예방 대책 성과 및 목표 점검",
+      "turns": [
+        {
+          "speakerId": "president",
+          "kind": "질문",
+          "summary": "자살 통계 분석 결과 확인",
+          "quote": "그 자살자 통계가 분석이 된 모양이에요. 자살 분야별로.",
+          "timestamp": 3217,
+          "inReplyTo": null
+        },
+        {
+          "speakerId": "pm2",
+          "kind": "답변",
+          "summary": "경제적 이유 자살 40% 이상 감소, 전체 10% 이상 감소 보고",
+          "quote": "어쨌든 자살자가 전반계에만 수백명이 줄었다는 거 아닙니까? 그리고 전체적으로 10% 넘게 줄었다는데",
+          "timestamp": 3228,
+          "inReplyTo": 0
+        },
+        {
+          "speakerId": "president",
+          "kind": "발언",
+          "summary": "경제적 이유 자살 감소를 큰 성과로 평가",
+          "quote": "경제적 이유로 사망 그 자살하는 분들이... 수백명이 어쨌든 목숨을 건졌다.",
+          "timestamp": 3325,
+          "inReplyTo": 1
+        },
+        {
+          "speakerId": "president",
+          "kind": "지시",
+          "summary": "자살 감소 목표를 세 배 이상 상향할 것 지시",
+          "quote": "지금까지 줄인 거에 한 세 배 이상 더 줄여요.",
+          "timestamp": 3527,
+          "inReplyTo": 2
+        },
+        {
+          "speakerId": "pm2",
+          "kind": "답변",
+          "summary": "현 목표 33.3%는 WHO 권고 수준이며 도전적 목표임을 설명",
+          "quote": "지금 현재 목표는 이제 33.3%를 잡았는데요... 굉장히 좀 도전적인 목표다라고 말씀을 하셨는데",
+          "timestamp": 3535,
+          "inReplyTo": 3
+        },
+        {
+          "speakerId": "president",
+          "kind": "질문",
+          "summary": "OECD 자살률 10년 연속 1위 문제 제기",
+          "quote": "지금 OECD 통계상으로 우리가... 10수년간 1등하고 있죠.",
+          "timestamp": 3909,
+          "inReplyTo": 4
+        },
+        {
+          "speakerId": "pm2",
+          "kind": "답변",
+          "summary": "33% 감소 시 OECD 2위권 진입 가능, 청소년 자살률은 오히려 증가 추세 보고",
+          "quote": "전체적으로 줄어드는 와중에 그 청소년 자살율은 오히려 조금 늘어났다는 거예요.",
+          "timestamp": 4045,
+          "inReplyTo": 5
+        }
+      ]
+    },
+    {
+      "id": "ex-07",
+      "topic": "청소년 자살 원인 분석과 교육부 대응",
+      "turns": [
+        {
+          "speakerId": "president",
+          "kind": "질문",
+          "summary": "청소년 자살 원인의 세부 분류 질의",
+          "quote": "그 청소년 자살 원인 중에 그것도 세부 분류가 아마 될 텐데",
+          "timestamp": 4220,
+          "inReplyTo": null
+        },
+        {
+          "speakerId": "pm2",
+          "kind": "답변",
+          "summary": "학업문제와 대인관계 문제가 주요 원인",
+          "quote": "그 학업 관련된게 꽤 많죠... 학업과 그 관계요 두 가지만이 있습니다.",
+          "timestamp": 4322,
+          "inReplyTo": 0
+        },
+        {
+          "speakerId": "moe-minister",
+          "kind": "답변",
+          "summary": "성적 우수자도 자살, 관계·외로움이 더 큰 요인이라는 분석 변화 설명",
+          "quote": "오히려 그 지금 말씀하신 관계 학교에서의 그 외 외로움 친구들이 없는 문제나 가정에서의 소외",
+          "timestamp": 4345,
+          "inReplyTo": 1
+        },
+        {
+          "speakerId": "president",
+          "kind": "발언",
+          "summary": "교육부의 노력 인정하되 기존과 다른 접근 필요성 제기",
+          "quote": "교육부에서 지금까지와는 좀 다른 배전의 노력이 필요하지 않을까 싶어요.",
+          "timestamp": 4342,
+          "inReplyTo": 2
+        },
+        {
+          "speakerId": "president",
+          "kind": "발언",
+          "summary": "학교 내 교류·소통·교감 강화 제안",
+          "quote": "학교 안에서 교 교류나 소통이나 뭐 뭐 교감이나 이런 것들을 좀 강화하는 것도 중요하지 않을까 싶긴 해요.",
+          "timestamp": 4540,
+          "inReplyTo": 3
+        },
+        {
+          "speakerId": "moe-minister",
+          "kind": "답변",
+          "summary": "교사-학생 관계 단절 우려 및 법무부·학부모단체와의 협의 진행 설명",
+          "quote": "선생님들이 학생들과 깊이 있게 대화하고 상담하고 하는 것을 두려워하는 분 문화가 굉장히",
+          "timestamp": 2778,
+          "inReplyTo": 4
+        },
+        {
+          "speakerId": "moe-minister",
+          "kind": "답변",
+          "summary": "청소년 자살 예방을 위한 최선의 방안 마련 약속",
+          "quote": "정말 그 우리 아이들이 세상을 살아보지도 못하고 죽는 일은 없도록 하기 위해서 최선을 다 최선의 방안을 찾아보겠습니다.",
+          "timestamp": 4431,
+          "inReplyTo": 5
+        }
+      ]
+    },
+    {
+      "id": "ex-08",
+      "topic": "서민금융·연체채권 대책",
+      "turns": [
+        {
+          "speakerId": "fsc-chairman",
+          "kind": "답변",
+          "summary": "장기소액연체자 98만 명 대상 11.9조원 채권 일괄매입 성과 보고",
+          "quote": "7년 이상 5천만 원 이하 장기 소액 연체자들에 대해서... 98만 명에 대해서 어 11.9조원을 저... 일괄에서 아예 매입을 해 버립니다.",
+          "timestamp": 2949,
+          "inReplyTo": null
+        },
+        {
+          "speakerId": "president",
+          "kind": "질문",
+          "summary": "현재 조치가 여전히 부족하다는 평가",
+          "quote": "근데 제가 보기엔 지금도 많이 부족해요.",
+          "timestamp": 3051,
+          "inReplyTo": 0
+        },
+        {
+          "speakerId": "president",
+          "kind": "발언",
+          "summary": "시장에서 원금의 3~5%에 거래되는 연체채권을 정부가 직접 매입해 정리하는 방안 제안",
+          "quote": "원금에 3% 5% 정도에 살 수 있다.라고 하면 그 사서 정리하면 되지 않나요?",
+          "timestamp": 3102,
+          "inReplyTo": 1
+        },
+        {
+          "speakerId": "fsc-chairman",
+          "kind": "발언",
+          "summary": "신용불량자의 사회적 고립과 정부지원 의존 가능성 설명",
+          "quote": "신용 분량자 되고 이제 직업도 못 구하고 은행 거래도 못 하고 이러면 이제 거의 정부 지원에 의존하는 보대상자로 전락할 가능성이 높지 않습니까?",
+          "timestamp": 3172,
+          "inReplyTo": 2
+        },
+        {
+          "speakerId": "president",
+          "kind": "발언",
+          "summary": "구조적 고금리 시대 도래 우려 및 서민금융 영향 점검",
+          "quote": "앞으로 상당히 장기간 고금리 시대가 올 거다.",
+          "timestamp": 3331,
+          "inReplyTo": 3
+        },
+        {
+          "speakerId": "fsc-chairman",
+          "kind": "답변",
+          "summary": "내년도 자영업자 지원 예산 역대 최대 반영 보고",
+          "quote": "저 자영업자들에 대해서는 제가 소위 그 특별 조종 포함해서 여러 가지 역대 가장 많이 예산이 반영이 됐습니다만은",
+          "timestamp": 3355,
+          "inReplyTo": 4
+        }
+      ]
+    },
+    {
+      "id": "ex-09",
+      "topic": "지방정부 자살예방 사업 현황 점검",
+      "turns": [
+        {
+          "speakerId": "president",
+          "kind": "질문",
+          "summary": "시도 차원의 자살예방 논의·준비 상황 질의",
+          "quote": "시도에서는 이 자살 예방 관련해서... 상황이 어떤가요?",
+          "timestamp": 71,
+          "inReplyTo": null
+        },
+        {
+          "speakerId": "unknown",
+          "kind": "답변",
+          "summary": "인천시 24시간 콜센터 운영 사례 보고",
+          "quote": "저희 인천 같은 경우에는... 24시간 콜센터를 지금 운영을 하고 있는데요.",
+          "timestamp": 72,
+          "inReplyTo": 0
+        },
+        {
+          "speakerId": "president",
+          "kind": "질문",
+          "summary": "콜센터 인력 부족 여부 질의",
+          "quote": "콜센터 인력은 부족하지 않아요?",
+          "timestamp": 72,
+          "inReplyTo": 1
+        },
+        {
+          "speakerId": "unknown",
+          "kind": "답변",
+          "summary": "현재 인력 부족, 중앙정부 제도·재정 지원 필요성 언급",
+          "quote": "지금은 아직은 많지는 않습니다. 중앙 정부에서는 제도적으로 재정적으로 뒷받침해 주고",
+          "timestamp": 72,
+          "inReplyTo": 2
+        },
+        {
+          "speakerId": "president",
+          "kind": "지시",
+          "summary": "시도지사협의회를 통한 자살예방 정책 제도화 추진 지시",
+          "quote": "시도지사 협의회를 통해 가지고 좀 더 제도화해 나가도록 그렇게 해 나가겠습니다.",
+          "timestamp": 72,
+          "inReplyTo": 3
+        },
+        {
+          "speakerId": "president",
+          "kind": "질문",
+          "summary": "시군구 단위 관심도 및 보완 필요사항 질의",
+          "quote": "그 시공구 상황은 어때요? 좀 실제 관심 정도나 아니면 보완해야 될 거",
+          "timestamp": 74,
+          "inReplyTo": 4
+        },
+        {
+          "speakerId": "unknown",
+          "kind": "답변",
+          "summary": "정신건강센터를 '마음지기센터'로 개편, 학교 순회 상담 사례 설명",
+          "quote": "마음지기 센터로 바꿔서... 학교별로 순해로 나가 가지고 마음을 상담해 주는",
+          "timestamp": 74,
+          "inReplyTo": 5
+        }
+      ]
+    },
+    {
+      "id": "ex-10",
+      "topic": "개인정보보호위원회 홍보영상 보고",
+      "turns": [
+        {
+          "speakerId": "pipc-chairman",
+          "kind": "보고",
+          "summary": "'털지마' 캠페인 영상 제작배경 및 3가지 서비스(털린내정보·지우의서비스·마이데이터) 소개",
+          "quote": "내 개인 정보를 털지 마라는 홍보 키워드로 해서 반복적으로 이렇게 노출을 하고 있습니다.",
+          "timestamp": 855,
+          "inReplyTo": null
+        },
+        {
+          "speakerId": "president",
+          "kind": "발언",
+          "summary": "딱딱한 주제를 가볍게 전달한 점 호평",
+          "quote": "잘 만들었네요. 이이 딱딱한 주제를 저렇게 가볍게",
+          "timestamp": 975,
+          "inReplyTo": 0
+        },
+        {
+          "speakerId": "pipc-chairman",
+          "kind": "답변",
+          "summary": "'털린내정보' 서비스는 블랙마켓 불법유통 정보 확인 서비스임을 설명",
+          "quote": "다크랩 같이 이렇게 블랙마켓에서 거래 중인 이제 불법 유통 정보에 해당하는지를 알려주는 서비스",
+          "timestamp": 1010,
+          "inReplyTo": 1
+        },
+        {
+          "speakerId": "president",
+          "kind": "질문",
+          "summary": "60대 이상도 '지우의 서비스' 이용 가능 여부 질의",
+          "quote": "그럼 저 같은 60대는 안 되는 거예요.",
+          "timestamp": 1040,
+          "inReplyTo": 2
+        },
+        {
+          "speakerId": "pipc-chairman",
+          "kind": "답변",
+          "summary": "유사업종 악용 우려로 30세 미만으로 제한 운영 설명",
+          "quote": "유사업종을 하는 그 사업자들이 있습니다. 그 업욕의 문제가 있어서 30세 미만으로 좀 하고 있습니다.",
+          "timestamp": 1050,
+          "inReplyTo": 3
+        }
+      ]
+    },
+    {
+      "id": "ex-11",
+      "topic": "국민소통 시간 - 자동복지 명칭 국민의견",
+      "turns": [
+        {
+          "speakerId": "senior-civil",
+          "kind": "발언",
+          "summary": "국민 실시간 의견 소통 시간 시작 안내",
+          "quote": "국민 여러분들께서 실시간으로 보내 주신 의견 듣고 답변하는 소통 시간 갖겠습니다.",
+          "timestamp": 1075,
+          "inReplyTo": null
+        },
+        {
+          "speakerId": "unknown",
+          "kind": "보고",
+          "summary": "'자동복지' 명칭이 국민 제안 중 가장 많았음을 소개",
+          "quote": "가장 많은 분들이 자동 복지라는 의견을 주셨고요.",
+          "timestamp": 1100,
+          "inReplyTo": 0
+        },
+        {
+          "speakerId": "president",
+          "kind": "발언",
+          "summary": "'자동복지'가 국민 의견 중 최다임을 확인",
+          "quote": "자동 복지가 제일 많았어요.",
+          "timestamp": 1165,
+          "inReplyTo": 1
+        },
+        {
+          "speakerId": "president",
+          "kind": "지시",
+          "summary": "보건복지부에 자동복지 용어 최종 검토 지시",
+          "quote": "나중에 복지부에 잘 검토해 보십시오. 뭐 뭔가 어쨌든 개념을 명확하게 해리기 때문에.",
+          "timestamp": 1175,
+          "inReplyTo": 2
+        },
+        {
+          "speakerId": "mohw-minister",
+          "kind": "답변",
+          "summary": "검토 지시에 대한 수용 답변",
+          "quote": "네. 알겠습니다.",
+          "timestamp": 1185,
+          "inReplyTo": 3
+        }
+      ]
+    },
+    {
+      "id": "ex-12",
+      "topic": "수사기관장 국무회의 참석 적절성",
+      "turns": [
+        {
+          "speakerId": "president",
+          "kind": "발언",
+          "summary": "수사기관장 국무회의 참석에 대한 문제제기에 동의하지 않음을 표명",
+          "quote": "어 저는 그 지적에 공 동의하기가 좀 어려워요.",
+          "timestamp": 3457,
+          "inReplyTo": null
+        },
+        {
+          "speakerId": "president",
+          "kind": "발언",
+          "summary": "정부조직법상 대통령·총리의 모든 중앙행정기관장 지휘감독 권한 설명",
+          "quote": "대통령은 정부의 수반으로서 법령에 따라 모든 중앙행정 기관의 장을 지휘 감독한다.",
+          "timestamp": 3536,
+          "inReplyTo": 0
+        },
+        {
+          "speakerId": "president",
+          "kind": "발언",
+          "summary": "개별사건 불관여 원칙과 국정방향 공유의 필요성 구분 설명",
+          "quote": "세부 사건들 처리에 대해서야 관여하지 않죠. 그러나 국정의 일반적인 방향이나... 함께 공유하는게 매우 중요합니다.",
+          "timestamp": 3558,
+          "inReplyTo": 1
+        }
+      ]
+    }
+  ],
+  "directives": [
+    {
+      "id": "dir-2026-10-13-01",
+      "from": "president",
+      "to": [
+        "mohw-minister"
+      ],
+      "content": "복지 돌봄 AI 로드맵의 구체적 추진 일정을 시각화된 자료로 정리해 제시할 것",
+      "timestamp": 562,
+      "tags": [
+        "AI예산",
+        "데이터거버넌스"
+      ],
+      "status": "issued",
+      "followUps": []
+    },
+    {
+      "id": "dir-2026-10-13-02",
+      "from": "president",
+      "to": [
+        "mohw-minister",
+        "mois-minister",
+        "osc-minister"
+      ],
+      "content": "하위 법령 정비에 만전을 기하고 기관 간 협조를 통해 위기 가구를 빠짐없이 찾아 지원하는 체계를 구축하며, 적극적인 공직자에 대한 경려·포상을 진행할 것",
+      "timestamp": 1108,
+      "tags": [],
+      "status": "issued",
+      "followUps": []
+    },
+    {
+      "id": "dir-2026-10-13-03",
+      "from": "president",
+      "to": [
+        "molit-minister",
+        "mof-minister",
+        "mofa-minister"
+      ],
+      "content": "부산항 인프라 확충, 신공항 건설, 철도 물류망 정비 등에 속도를 내고 북극항로 인접 국가와의 외교 역량을 강화할 것",
+      "timestamp": 1208,
+      "tags": [],
+      "status": "issued",
+      "followUps": []
+    },
+    {
+      "id": "dir-2026-10-13-04",
+      "from": "president",
+      "to": [
+        "moj-minister",
+        "mois-minister",
+        "mogef-minister"
+      ],
+      "content": "스토킹·가정폭력 등 관계성 범죄의 위험성이 확인되면 모든 가용 수단을 신속·적극적으로 동원해 가해자의 접근을 차단하고, 피해자 보호를 가로막는 법·제도적 미비점을 보완할 것",
+      "timestamp": 1362,
+      "tags": [],
+      "status": "issued",
+      "followUps": []
+    },
+    {
+      "id": "dir-2026-10-13-05",
+      "from": "president",
+      "to": [
+        "moel-minister",
+        "mohw-minister"
+      ],
+      "content": "근로자 대상 위험물질(중금속 배출 주사) 투여 사건에 대해 엄정하고 신속하게 조치할 것",
+      "timestamp": 3152,
+      "tags": [],
+      "status": "issued",
+      "followUps": []
+    },
+    {
+      "id": "dir-2026-10-13-06",
+      "from": "president",
+      "to": [
+        "pm2",
+        "mohw-minister",
+        "fsc-chairman"
+      ],
+      "content": "자살 감소 목표를 현재보다 세 배 이상 추가로 낮출 것",
+      "timestamp": 3527,
+      "tags": [],
+      "status": "issued",
+      "followUps": []
+    },
+    {
+      "id": "dir-2026-10-13-07",
+      "from": "president",
+      "to": [
+        "pm2"
+      ],
+      "content": "양극화 완화 문제를 앞으로 더 세심하게 챙길 것",
+      "timestamp": 3854,
+      "tags": [],
+      "status": "issued",
+      "followUps": []
+    },
+    {
+      "id": "dir-2026-10-13-08",
+      "from": "president",
+      "to": [
+        "mohw-minister",
+        "molegis-minister"
+      ],
+      "content": "복지급여 자동지급 전환에 따른 소급지급, 시효, 권리성 여부에 대한 법적 검토를 명확히 할 것",
+      "timestamp": 88,
+      "tags": [
+        "데이터거버넌스"
+      ],
+      "status": "issued",
+      "followUps": []
+    },
+    {
+      "id": "dir-2026-10-13-09",
+      "from": "president",
+      "to": [
+        "molegis-minister",
+        "mohw-minister"
+      ],
+      "content": "신청주의 반대 개념(직권주의 등)에 대한 명칭을 정리할 것",
+      "timestamp": 89,
+      "tags": [],
+      "status": "issued",
+      "followUps": [
+        "dir-2026-10-13-10"
+      ]
+    },
+    {
+      "id": "dir-2026-10-13-10",
+      "from": "president",
+      "to": [
+        "osc-minister",
+        "mohw-minister"
+      ],
+      "content": "신청 없이 자동 지급하는 제도의 명칭에 대해 국무회의 종료 전까지 의견을 모아볼 것",
+      "timestamp": 695,
+      "tags": [],
+      "status": "issued",
+      "followUps": []
+    },
+    {
+      "id": "dir-2026-10-13-11",
+      "from": "president",
+      "to": [
+        "mohw-minister"
+      ],
+      "content": "국민 의견 중 가장 많았던 '자동복지' 명칭을 최종 검토할 것",
+      "timestamp": 1175,
+      "tags": [],
+      "status": "issued",
+      "followUps": []
+    },
+    {
+      "id": "dir-2026-10-13-12",
+      "from": "president",
+      "to": [
+        "unknown"
+      ],
+      "content": "지방정부 책임자는 제기하고 싶은 의견이 있으면 사전에 서면으로 제출할 것",
+      "timestamp": 62,
+      "tags": [],
+      "status": "issued",
+      "followUps": []
+    },
+    {
+      "id": "dir-2026-10-13-13",
+      "from": "president",
+      "to": [
+        "mois-minister"
+      ],
+      "content": "자살예방 우수 사례를 시도지사협의회를 통해 제도화해 확대할 것",
+      "timestamp": 72,
+      "tags": [],
+      "status": "issued",
+      "followUps": []
+    }
+  ],
+  "aiDataPolicy": [
+    {
+      "topic": "복지 돌봄 AI 로드맵",
+      "speakerId": "unknown",
+      "summary": "복지 돌봄 분야 AI 대전환 로드맵에 대한 보고가 예고됨",
+      "quote": "복지 돌봄 AI 대전한 로드맵에 대해 보고 드리겠습니다.",
+      "timestamp": 502,
+      "tags": [
+        "데이터거버넌스",
+        "AI예산"
+      ]
+    },
+    {
+      "topic": "복지 돌봄 AI 로드맵 구체화 요구",
+      "speakerId": "president",
+      "summary": "대통령이 AI 돌봄 로드맵을 구체적 일정이 담긴 시각화 자료로 제시할 것을 요청",
+      "quote": "이게 기본요 이런 것들을 좀 만들어서 좀 보여 주시면 좋겠어요. 어떻게 하겠다.",
+      "timestamp": 562,
+      "tags": [
+        "AI예산",
+        "데이터거버넌스"
+      ]
+    },
+    {
+      "topic": "AI 대전환에 따른 사회 재편 대비",
+      "speakerId": "president",
+      "summary": "인공지능 대전환이 초래할 사회·경제 재편에 선제적 대비가 필요함을 강조",
+      "quote": "가속화되고 있는 인공지능 대전환이 초래할 사회 경제의 여러 부문의 재편에도 선재적인 대비가 필요합니다.",
+      "timestamp": 985,
+      "tags": [
+        "규제",
+        "AI기본법"
+      ]
+    },
+    {
+      "topic": "개인정보보호위 '털지마' 캠페인 및 마이데이터 서비스",
+      "speakerId": "pipc-chairman",
+      "summary": "청년층 타깃 홍보 전략(ASMR·역할연기)과 개인정보 보호 캠페인 소개",
+      "quote": "청년 세대의 인기가 높고 한 100만 명 이상의 그 구독자를 보유한 개그원인 엄지훈 씨를 소별했습니다.",
+      "timestamp": 810,
+      "tags": [
+        "데이터거버넌스"
+      ]
+    },
+    {
+      "topic": "개인정보보호 캠페인 성과",
+      "speakerId": "pipc-chairman",
+      "summary": "9월 22일 공개 이후 160만 회 이상의 조회수를 기록한 홍보 성과 보고",
+      "quote": "이 영상은 지난 9월 22일부터 유튜브 등에 개제해서 현재까지 약 160만 명 이상의 조회수를 기록하고 있습니다.",
+      "timestamp": 825,
+      "tags": [
+        "데이터거버넌스"
+      ]
+    },
+    {
+      "topic": "개인정보 보호 3대 서비스(털린내정보·지우의서비스·마이데이터)",
+      "speakerId": "pipc-chairman",
+      "summary": "개인정보 유출 확인, 흑역사 삭제, 마이데이터 활용 등 3대 서비스 소개",
+      "quote": "털린 내정보 찾기와 지우의 서비스 그리고 마이데이터 서비스를 소개하는데",
+      "timestamp": 840,
+      "tags": [
+        "데이터거버넌스",
+        "공공데이터"
+      ]
+    },
+    {
+      "topic": "'털지마' 홍보 컨셉",
+      "speakerId": "pipc-chairman",
+      "summary": "3대 서비스 머리글자를 딴 '털지마' 홍보 키워드로 반복 노출 전략 설명",
+      "quote": "내 개인 정보를 털지 마라는 홍보 키워드로 해서 반복적으로 이렇게 노출을 하고 있습니다.",
+      "timestamp": 855,
+      "tags": [
+        "데이터거버넌스"
+      ]
+    },
+    {
+      "topic": "개인정보 포털 콘텐츠 제공",
+      "speakerId": "pipc-chairman",
+      "summary": "개인정보 보호 및 안전한 활용을 위한 콘텐츠를 개인정보 포털에서 제공 중임을 안내",
+      "quote": "개인 정보 보호 그리고 안전한 활용을 할 수 있는 차전 예방 그런 컨텐츠들을 다양하게 제공하고 있는데 개인 정보 포털에서 소개하고 있습니다.",
+      "timestamp": 870,
+      "tags": [
+        "공공데이터"
+      ]
+    },
+    {
+      "topic": "마이데이터 서비스 설명(영상 내)",
+      "speakerId": "unknown",
+      "summary": "마이데이터를 통해 의료정보 등 개인정보 활용 권리를 설명하는 영상 내용",
+      "quote": "마이 데이터는 내가 내 정보에 대한 권리를 갖고 어디로 보내고 어떻게 활용할지 직접 결정하는 거예요.",
+      "timestamp": 900,
+      "tags": [
+        "데이터거버넌스",
+        "공공데이터"
+      ]
+    },
+    {
+      "topic": "개인정보 캠페인 호평",
+      "speakerId": "president",
+      "summary": "딱딱한 개인정보보호 주제를 가볍게 전달한 홍보영상을 긍정 평가",
+      "quote": "잘 만들었네요. 이이 딱딱한 주제를 저렇게 가볍게",
+      "timestamp": 975,
+      "tags": [
+        "데이터거버넌스"
+      ]
+    },
+    {
+      "topic": "지우의 서비스 연령 제한",
+      "speakerId": "pipc-chairman",
+      "summary": "유사 업종 악용 우려로 '지우의 서비스'를 30세 미만으로 제한 운영 중임을 설명",
+      "quote": "유사업종을 하는 그 사업자들이 있습니다. 그 업욕의 문제가 있어서 30세 미만으로 좀 하고 있습니다.",
+      "timestamp": 1050,
+      "tags": [
+        "데이터거버넌스",
+        "규제"
+      ]
+    }
+  ],
+  "tags": [
+    "북극항로",
+    "K해양강국",
+    "복지신청주의개선",
+    "자동복지",
+    "자살예방",
+    "양극화해소",
+    "개인정보보호",
+    "조세정의",
+    "실용외교",
+    "관계성범죄대책",
+    "서민금융"
+  ],
+  "videoId": "GQsdslNTn_8",
+  "videoUrl": "https://youtu.be/GQsdslNTn_8",
+  "duration": 6158,
+  "thumbnail": "https://i.ytimg.com/vi/GQsdslNTn_8/hqdefault.jpg",
+  "sources": [
+    {
+      "videoId": "x6OqEALIZIU",
+      "title": "[#이재명 LIVE] 모두가 성장의 결실을 누릴 수 있도록! | 제44회 국무회의",
+      "channelTitle": "이재명 (대통령실 공식)",
+      "url": "https://youtu.be/x6OqEALIZIU"
+    }
+  ]
+}

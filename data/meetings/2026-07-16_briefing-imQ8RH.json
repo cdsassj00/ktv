@@ -377,8 +377,15 @@
         "자살예방",
         "보건복지"
       ],
-      "status": "issued",
-      "followUps": []
+      "status": "reported",
+      "followUps": [
+        {
+          "meetingId": "2026-10-13-cabinet-GQsdsl",
+          "exchangeId": "ex-06",
+          "summary": "청소년·청년 자살의 원인을 데이터 기반으로 규명하고 자살예방 대책 실행 현황 보고",
+          "inferred": true
+        }
+      ]
     },
     {
       "id": "dir-2026-07-16-03",
