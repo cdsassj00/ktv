@@ -638,8 +638,15 @@
         "산불",
         "재난대응"
       ],
-      "status": "issued",
-      "followUps": []
+      "status": "reported",
+      "followUps": [
+        {
+          "meetingId": "2026-10-20-cabinet-qkntko",
+          "exchangeId": "ex-04",
+          "summary": "야간 산불 진화 헬기 5대를 실제 투입할 수 있도록 훈련과 준비를 갖춰 안전을 전제로 야간 진화를 활성화하도록 지시했던 과제와 관련하여, 야간 헬기 운영 준비 완료 상황이 보고됨",
+          "inferred": true
+        }
+      ]
     },
     {
       "id": "dir-2026-01-27-15",

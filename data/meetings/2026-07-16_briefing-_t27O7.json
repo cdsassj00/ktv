@@ -440,8 +440,15 @@
         "우주산업",
         "발사체"
       ],
-      "status": "issued",
-      "followUps": []
+      "status": "reported",
+      "followUps": [
+        {
+          "meetingId": "2026-10-20-cabinet-qkntko",
+          "exchangeId": "ex-01",
+          "summary": "스페이스X 발사 수요 급증에 대응해 발사체 발사 횟수 확대 방안을 연구·검토하도록 지시했던 과제와 관련하여, 누리호 5차 발사 성공과 2032년까지 연 1회 이상 반복 발사 계획이 보고됨",
+          "inferred": true
+        }
+      ]
     },
     {
       "id": "dir-2026-07-16-S06",

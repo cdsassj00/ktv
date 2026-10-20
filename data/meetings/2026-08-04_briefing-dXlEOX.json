@@ -1267,8 +1267,15 @@
       "tags": [
         "청년일자리"
       ],
-      "status": "issued",
-      "followUps": []
+      "status": "reported",
+      "followUps": [
+        {
+          "meetingId": "2026-10-20-cabinet-qkntko",
+          "exchangeId": "ex-08",
+          "summary": "청년이 원하는 좋은 일자리 확대를 위해 기존 틀을 뛰어넘는 혁신적 대책 마련 지시와 관련하여, K뉴딜 아카데미를 1만 명에서 5만 명으로 확대하는 청년 일자리 정책이 보고됨",
+          "inferred": true
+        }
+      ]
     },
     {
       "id": "dir-2026-08-04-02",
