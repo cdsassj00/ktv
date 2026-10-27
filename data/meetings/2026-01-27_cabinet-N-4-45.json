@@ -555,8 +555,15 @@
         "세금체납",
         "지방행정"
       ],
-      "status": "issued",
-      "followUps": []
+      "status": "reported",
+      "followUps": [
+        {
+          "meetingId": "2026-10-27-cabinet-ITYGEO",
+          "exchangeId": "ex-01",
+          "summary": "지방 체납관리단 인력 확대 및 성과(8월 출범 후 2개월간 2만 명 고용, 104억 인건비 대비 400억 이상 체납 징수)",
+          "inferred": true
+        }
+      ]
     },
     {
       "id": "dir-2026-01-27-10",

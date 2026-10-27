@@ -542,8 +542,15 @@
         "조세행정",
         "체납관리"
       ],
-      "status": "issued",
-      "followUps": []
+      "status": "reported",
+      "followUps": [
+        {
+          "meetingId": "2026-10-27-cabinet-ITYGEO",
+          "exchangeId": "ex-01",
+          "summary": "체납관리단 인력을 3만 명 규모로 확대하고 전수조사 체계 구축(기존 지시 '1만 명 이상 한시 확대'에서 구체적 규모 확정)",
+          "inferred": true
+        }
+      ]
     },
     {
       "id": "dir-2026-07-15-07",
