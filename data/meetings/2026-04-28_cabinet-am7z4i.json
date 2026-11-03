@@ -590,8 +590,15 @@
         "교육",
         "헌법교육"
       ],
-      "status": "issued",
-      "followUps": []
+      "status": "reported",
+      "followUps": [
+        {
+          "meetingId": "2026-11-03-cabinet-e0hZeT",
+          "exchangeId": "ex-05",
+          "summary": "민주시민 교육을 헌법 교육 중심으로 의무교육 과정 포함 관련 AI의 위험성 및 미디어 리터러시 교육 강화",
+          "inferred": true
+        }
+      ]
     },
     {
       "id": "dir-2026-04-28-11",

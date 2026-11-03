@@ -482,8 +482,15 @@
         "정당현수막",
         "입법"
       ],
-      "status": "issued",
-      "followUps": []
+      "status": "reported",
+      "followUps": [
+        {
+          "meetingId": "2026-11-03-cabinet-e0hZeT",
+          "exchangeId": "ex-06",
+          "summary": "혐오와 분열을 조장하는 정당 현수막 단속 관련 여야 정당에 건전한 내용 현수막 게시 제안 및 할인 기준 확인",
+          "inferred": true
+        }
+      ]
     },
     {
       "id": "dir-2025-12-02-10",

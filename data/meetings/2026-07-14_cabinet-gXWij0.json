@@ -459,8 +459,15 @@
         "농업",
         "유통구조"
       ],
-      "status": "issued",
-      "followUps": []
+      "status": "reported",
+      "followUps": [
+        {
+          "meetingId": "2026-11-03-cabinet-e0hZeT",
+          "exchangeId": "ex-07",
+          "summary": "산지 가격과 소비자 가격 괴리 해소 위한 계약재배·직거래 확대 및 유통구조 개혁 관련 가축방역 예방백신 및 살처분 기준 개선 논의",
+          "inferred": true
+        }
+      ]
     },
     {
       "id": "dir-2026-07-14-06",

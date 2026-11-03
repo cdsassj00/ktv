@@ -591,8 +591,15 @@
       "tags": [
         "데이터거버넌스"
       ],
-      "status": "issued",
-      "followUps": []
+      "status": "reported",
+      "followUps": [
+        {
+          "meetingId": "2026-11-03-cabinet-e0hZeT",
+          "exchangeId": "ex-04",
+          "summary": "국가 최고 데이터 책임자 역할 및 데이터 활용 기본틀 관리 관련 정부문서 HWPX 전환 및 기계판독 가능 형식 전면 도입",
+          "inferred": true
+        }
+      ]
     }
   ],
   "aiDataPolicy": [

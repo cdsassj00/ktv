@@ -451,8 +451,15 @@
         "농가소득",
         "직불금"
       ],
-      "status": "issued",
-      "followUps": []
+      "status": "reported",
+      "followUps": [
+        {
+          "meetingId": "2026-11-03-cabinet-e0hZeT",
+          "exchangeId": "ex-07",
+          "summary": "농가에 대한 정부 지원금 수준 국제 비교 및 적정 수준 검토 관련 가축방역 사전예방 투자 적정성 재검토",
+          "inferred": true
+        }
+      ]
     },
     {
       "id": "dir-2026-07-16-L07",
