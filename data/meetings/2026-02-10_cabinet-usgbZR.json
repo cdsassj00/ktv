@@ -366,8 +366,15 @@
         "안전",
         "설연휴"
       ],
-      "status": "issued",
-      "followUps": []
+      "status": "reported",
+      "followUps": [
+        {
+          "meetingId": "2026-11-10-cabinet-upoeCY",
+          "exchangeId": "ex-01",
+          "summary": "겨울철 한파·대설 대비 안전대책을 행안부가 24시간 상황관리, 제설제 사전 살포, 취약계층 예찰 등으로 구체적 이행",
+          "inferred": true
+        }
+      ]
     },
     {
       "id": "dir-2026-02-10-02",

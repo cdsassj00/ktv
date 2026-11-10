@@ -582,8 +582,15 @@
       "tags": [
         "폭염대응"
       ],
-      "status": "issued",
-      "followUps": []
+      "status": "reported",
+      "followUps": [
+        {
+          "meetingId": "2026-11-10-cabinet-upoeCY",
+          "exchangeId": "ex-01",
+          "summary": "극심한 폭염 대응에서 겨울철 대설·한파 대응으로 계절 변화에 따른 비상체계 가동 현황 보고",
+          "inferred": true
+        }
+      ]
     },
     {
       "id": "dir-2026-08-11-02",

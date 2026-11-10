@@ -1,0 +1,1242 @@
+{
+  "id": "2026-11-10-cabinet-upoeCY",
+  "type": "cabinet",
+  "title": "제48회 국무회의",
+  "date": "2026-11-10",
+  "summary": {
+    "oneLine": "이재명 대통령이 법질서 수호와 공정성 강화를 강조하고, 겨울철 안전·복지대책, 지식재산 거래 활성화 방안, 김장 소비촉진, 대학생 첫 경력 지원 정책을 점검한 국무회의.",
+    "overview": "이재명 대통령은 모두발언에서 정책 집행의 공정성과 섬세함을 강조하고, 미국 중간선거 이후 대외 환경 변화에 대한 다각도 분석과 금융시장 모니터링, 반도체·AI 등 핵심 전략산업 경쟁력 강화, 한미 신뢰 기반 외교력 집중을 지시했다. 이어 공공기관 개혁은 속도가 핵심이라며 총리에게 신속한 조정과 인센티브 마련을 당부했다.\n\n대통령은 특히 재개발·재건축 현장에서 물리력을 동원한 명도 저항 등 '합법적 법질서를 무력으로 저항'하는 사례가 방치되고 있다는 문제를 제기하며, 전국의 유사 사례를 경찰청·행정안전부·법무부가 점검해 총리에게 1~2주 내 취합·보고할 것을 지시했다. 온라인 스캠, 마약, 불법사금융, 가짜뉴스 등 민생피해 범죄와 부동산 불법행위·지역 토착비리에 대해서도 부처 간 칸막이를 허물고 범정부적 대응체계를 구축하라고 지시했다.\n\n국무회의 안건으로는 행정안전부·국토교통부·보건복지부·기후에너지환경부가 순서대로 겨울철 대설·한파 대책을 보고했다. 엘니뇨로 인한 기온·적설량 변동성 확대에 대비해 24시간 상황관리, 결빙 취약구간 사전 제설, 취약계층 난방비·에너지바우처 지원, 노숙인·독거노인 안부 확인 등이 제시됐다. 대통령은 지방정부의 역할, 블랙아이스 취약지점 관리, 노숙인 대책 현장 점검, 드림센터(복지서비스) 운영 취지 유지 등을 구체적으로 점검했다.\n\n지식재산처는 '모두의 아이디어' 프로젝트 우수 제안(지하철 방향 표시, 도로 색상 표시 등)을 소개하고, 10여 부처로 분산된 지식재산 거래 시스템을 통합하고 AI 기반 가치평가 등을 통해 지식재산 거래를 활성화하는 방안을 보고했다. 이어 농림축산식품부가 배추·무 풍작에 따른 김장비용 하락과 농가 소득 보호를 위한 '김장 더하고 나누기' 소비촉진 방안을, 교육부가 대학생 첫 경력 프로젝트 홍보영상을 소개했다.\n\n회의 말미에는 국민이 실시간으로 보낸 의견을 청취하는 시간을 가졌으며, 대통령은 서울역 종교단체 관련 불법행위 실태조사, 중수청 인력·인프라 충원 현황, 검찰·사법개혁 속도, 범죄수익 환수 절차 개선 등을 추가로 점검한 뒤 이후 회의는 비공개로 전환됐다.",
+    "agenda": [
+      {
+        "title": "겨울철 안전 및 복지대책",
+        "summary": "행정안전부·국토교통부·보건복지부·기후에너지환경부가 대설·한파 대비, 교통안전, 취약계층 보호, 에너지 지원 대책을 순차 보고",
+        "timestamp": 1723
+      },
+      {
+        "title": "지식재산 거래 활성화 방안",
+        "summary": "지식재산처가 분산된 거래시스템 통합, AI 기반 가치평가 도입 등 지식재산 거래 활성화 종합대책 보고",
+        "timestamp": 3645
+      },
+      {
+        "title": "김장 더하고 나누기 확산 협조",
+        "summary": "농림축산식품부가 배추·무 풍작에 따른 김장비용 하락 속 농가소득 보호를 위한 소비촉진·나눔 캠페인 협조 요청",
+        "timestamp": 4217
+      },
+      {
+        "title": "대학생 첫 경력 프로젝트 홍보",
+        "summary": "교육부가 청년 취업의 경력 역설 문제 해소를 위한 대학생 첫 경력 프로젝트 소개",
+        "timestamp": 4323
+      },
+      {
+        "title": "국민의견 청취",
+        "summary": "국민이 실시간으로 보낸 의견을 소개하고 대통령이 답변",
+        "timestamp": 4556
+      }
+    ],
+    "remarks": [
+      {
+        "speakerId": "president",
+        "quote": "정책 집행에서 섬세함이 부족했죠. ... 공정성에 대한 열망이 매우 높아졌습니다.",
+        "context": "정책 집행의 공정성 강화 필요성 강조",
+        "timestamp": 800
+      },
+      {
+        "speakerId": "president",
+        "quote": "재정비 사업을 하려면 너무 오래 걸린다는 거예요. ... 속도를 좀 빨리 내야 되겠다는 생각이 들었습니다.",
+        "context": "도시재정비 사업 지연 문제 지적",
+        "timestamp": 922
+      },
+      {
+        "speakerId": "president",
+        "quote": "국민들이 직접 눈으로 보면 아 힘 세면 그냥 버티면 되는구나. 법이 뭐 상관 있냐?",
+        "context": "법질서 무력저항 사례 방치에 대한 문제의식",
+        "timestamp": 1440
+      },
+      {
+        "speakerId": "president",
+        "quote": "저는 그런 사례들을 전체적으로 우리 총리께서 전부 다 취합을 한번 해 가지고 한 1, 2주 후까지 좀 보고를 좀 하도록 하십시오.",
+        "context": "총리에게 전국 법질서 무력저항 사례 실태조사 지시",
+        "timestamp": 1671
+      },
+      {
+        "speakerId": "ipo-minister",
+        "quote": "질산 거래 활성화는 지난 30여년 동안 해먹은 과제였습니다.",
+        "context": "지식재산 거래 활성화 방안 보고",
+        "timestamp": 3725
+      },
+      {
+        "speakerId": "mafra-minister",
+        "quote": "배추와 무 등의 생산량이 많이 증가를 했습니다... -8% 정도 떨어지는 것으로 나옵니다.",
+        "context": "김장비용 하락과 농가소득 보호 필요성",
+        "timestamp": 4252
+      }
+    ]
+  },
+  "exchanges": [
+    {
+      "id": "ex-01",
+      "topic": "겨울철 기상전망 및 안전대책 사전 인터뷰",
+      "turns": [
+        {
+          "speakerId": null,
+          "kind": "발언",
+          "summary": "국무회의 현장 인터뷰 소개 및 진행자 인사",
+          "quote": null,
+          "timestamp": 0,
+          "inReplyTo": null
+        },
+        {
+          "speakerId": "mois-minister",
+          "kind": "발언",
+          "summary": "인터뷰 시작 및 겨울철 기상 전망 소개",
+          "quote": "안녕하세요.",
+          "timestamp": 29,
+          "inReplyTo": 0
+        },
+        {
+          "speakerId": null,
+          "kind": "질문",
+          "summary": "올겨울 기상 전망과 정부의 겨울철 안전 대책에 대한 질문",
+          "quote": null,
+          "timestamp": 34,
+          "inReplyTo": 1
+        },
+        {
+          "speakerId": "mois-minister",
+          "kind": "답변",
+          "summary": "올해 기온과 적설량은 평년과 비슷하나 엘니뇨로 인한 급변 날씨 예상, 11월 15일부터 한파 특별 대책 시행",
+          "quote": "평년 기온보다 한 4도 정도 높은 그런 괴물 엘리뇨가 예상되기 때문에 기습적인 폭이나 한파가 올 수도 있어서 철저히 대비하고 있습니다.",
+          "timestamp": 49,
+          "inReplyTo": 2
+        },
+        {
+          "speakerId": null,
+          "kind": "추가질문",
+          "summary": "도로 위 살얼음 등으로 인한 사고 예방과 현장 대응책에 대한 질문",
+          "quote": null,
+          "timestamp": 206,
+          "inReplyTo": 3
+        },
+        {
+          "speakerId": "mois-minister",
+          "kind": "답변",
+          "summary": "24시간 대비체계 운영, 사전 제설제 살포, 재난특교 및 현장 공무원 교육 실시",
+          "quote": "강설이나 결빙이 예상되면 한두 시간 전에 미리 제설제를 뿌리도록 하고 시간마다 제설제를 추가로 살포해서 결빙이나 눈 때문에 교통 사고가 나지 않도록 조치할 예정입니다.",
+          "timestamp": 225,
+          "inReplyTo": 4
+        },
+        {
+          "speakerId": null,
+          "kind": "추가질문",
+          "summary": "겨울철 추위에 취약한 노인과 거동 불편 계층 보호 대책 질문",
+          "quote": null,
+          "timestamp": 319,
+          "inReplyTo": 5
+        },
+        {
+          "speakerId": "mois-minister",
+          "kind": "답변",
+          "summary": "취약계층 예찰 활동, 난방비 보조, 노숙인 응급 잠자리 제공, 야외근로자 작업시간 조정",
+          "quote": "도건노인이나 노령층 같은 경우에는 예찰 활동을 통해서 안전하신지 확인할 예정이고요.",
+          "timestamp": 338,
+          "inReplyTo": 6
+        },
+        {
+          "speakerId": null,
+          "kind": "질문",
+          "summary": "국민 개개인의 협력과 실천 당부 요청",
+          "quote": null,
+          "timestamp": 422,
+          "inReplyTo": 7
+        },
+        {
+          "speakerId": "mois-minister",
+          "kind": "답변",
+          "summary": "주민대피지원단 2만여 명 투입, 국민 협력 강조, 대중교통 이용 및 적극 신고 권장",
+          "quote": "내 집 앞, 내 전포 앞에 눈은 내가 치운다 하는 그런 솔선 수범하는 모습을 보여 주셨으면 좋겠고요.",
+          "timestamp": 434,
+          "inReplyTo": 8
+        },
+        {
+          "speakerId": null,
+          "kind": "발언",
+          "summary": "인터뷰 마무리 및 감사 인사",
+          "quote": null,
+          "timestamp": 551,
+          "inReplyTo": 9
+        }
+      ]
+    },
+    {
+      "id": "ex-02",
+      "topic": "전국 법질서 무력저항 사례 실태조사 지시",
+      "turns": [
+        {
+          "speakerId": "president",
+          "kind": "지시",
+          "summary": "총리에게 전국의 불법 방치 사례 전수 조사 및 1~2주 내 보고 지시",
+          "quote": "저는 그런 사례들을 전체적으로 우리 총리께서 전부 다 취합을 한번 해 가지고 한 1, 2주 후까지 좀 보고를 좀 하도록 하십시오.",
+          "timestamp": 1671,
+          "inReplyTo": null
+        },
+        {
+          "speakerId": "pm2",
+          "kind": "답변",
+          "summary": "지시 수용 및 실행 의지 표명",
+          "quote": "네. 그렇게 하겠습니다.",
+          "timestamp": 1699,
+          "inReplyTo": 0
+        },
+        {
+          "speakerId": "president",
+          "kind": "발언",
+          "summary": "이후 회의는 국무총리가 진행하도록 함",
+          "quote": "네. 예. 이상입니다. 이유 회의는 국무총리께서 진행해 주시겠습니다.",
+          "timestamp": 1710,
+          "inReplyTo": 1
+        }
+      ]
+    },
+    {
+      "id": "ex-03",
+      "topic": "겨울철 대책 지방정부 역할 확인",
+      "turns": [
+        {
+          "speakerId": "president",
+          "kind": "질문",
+          "summary": "겨울철 대설 대비가 지방정부의 역할이 중요함을 확인",
+          "quote": "이게 결국 지방정부 역할이 중요한데 그죠?",
+          "timestamp": 1849,
+          "inReplyTo": null
+        },
+        {
+          "speakerId": "mois-minister",
+          "kind": "답변",
+          "summary": "대부분의 겨울철 대설 대비가 지방정부 역할임을 확인",
+          "quote": "네. 그게 대부분 지방정부 역할입니다.",
+          "timestamp": 1852,
+          "inReplyTo": 0
+        }
+      ]
+    },
+    {
+      "id": "ex-04",
+      "topic": "블랙아이스 취약지점 관리 점검",
+      "turns": [
+        {
+          "speakerId": "president",
+          "kind": "발언",
+          "summary": "블랙아이스 대비: 작년 지시 이후 동일 지점 사고 감소 성과 확인하되 연초 결빙 대처 지연으로 사망자 발생",
+          "quote": "작년에 제가 그 얘기를 하고 조치라고 한 다음에 동일 지점 사고가 대폭 줄었다고 하더라고요.",
+          "timestamp": 3032,
+          "inReplyTo": null
+        },
+        {
+          "speakerId": "molit-minister",
+          "kind": "답변",
+          "summary": "블랙아이스 취약지점 121개소 전수조사 및 도로열선·염수분사장치 설치 완료 보고",
+          "quote": "저희가 한 121개 소를 전수 조사를 해서 파악을 해 갖고요. 도로 열선하고 그다음에 염수 분사 장치를 설치를 했습니다.",
+          "timestamp": 3004,
+          "inReplyTo": 0
+        },
+        {
+          "speakerId": "president",
+          "kind": "발언",
+          "summary": "동일 지점 동일 원인 반복 사고는 국가 과실이므로 엄격한 책임 필요",
+          "quote": "맨날 똑같은 지점에서 똑같은 유형의 사고가 발생하는데 그걸 방치를 해가지고 또 사고가 난다. 이거는 사실은 엄청난 그 과실이 있거든요.",
+          "timestamp": 3027,
+          "inReplyTo": 1
+        },
+        {
+          "speakerId": "president",
+          "kind": "발언",
+          "summary": "과거와 달리 현재는 재정 부족이 아니므로 필요한 예방조치 전부 시행 가능",
+          "quote": "우리가 뭐 돈이 없는 것도 아니고...",
+          "timestamp": 3056,
+          "inReplyTo": 2
+        }
+      ]
+    },
+    {
+      "id": "ex-05",
+      "topic": "도로 관리주체 확인",
+      "turns": [
+        {
+          "speakerId": "president",
+          "kind": "질문",
+          "summary": "국토부의 고속국도와 국도 관리 범위 확인",
+          "quote": "그 국토부는 국도 고속 국도까지 관리하나요?",
+          "timestamp": 3359,
+          "inReplyTo": null
+        },
+        {
+          "speakerId": "molit-minister",
+          "kind": "답변",
+          "summary": "고속국도는 도로공사, 국도는 국토관리청, 지방도로는 지방정부 관리",
+          "quote": "고속 국도는 도로공사에서 관리하고요. 이제 국도 지방 국토 관리 청에서 국도를 관리합니다.",
+          "timestamp": 3343,
+          "inReplyTo": 0
+        }
+      ]
+    },
+    {
+      "id": "ex-06",
+      "topic": "첫눈 교통사고 대책 및 지방도로 안전관리",
+      "turns": [
+        {
+          "speakerId": "president",
+          "kind": "질문",
+          "summary": "첫눈이 오는 날 교통사고 발생 현황 질문",
+          "quote": "첫눈 오는 날 사고 엄청 많이 나죠, 경찰청장님.",
+          "timestamp": 45,
+          "inReplyTo": null
+        },
+        {
+          "speakerId": "knpa-commissioner",
+          "kind": "답변",
+          "summary": "첫눈 시 사고 비율이 평균보다 높음을 인정",
+          "quote": "평균 중에 사고 비율이 높습니다.",
+          "timestamp": 45,
+          "inReplyTo": 0
+        },
+        {
+          "speakerId": "president",
+          "kind": "추가질문",
+          "summary": "매년 동일 지점 반복 사고에 대한 체계적 감소방안 모색 요청",
+          "quote": "매해 첫눈 올 때마다 거의 같은 지점에서 유사한 사고들이 계속 발생하는데... 체계적으로 좀 감소시킬 수 있는 방법을 좀 더 찾아보면 좋겠어요.",
+          "timestamp": 45,
+          "inReplyTo": 1
+        },
+        {
+          "speakerId": "knpa-commissioner",
+          "kind": "답변",
+          "summary": "경찰청 및 유관기관 협력을 통한 국민안전 확보 약속",
+          "quote": "저희 경찰청 차원에서 할 수 있는 일 또 유관 기관과 협력을 통해서 ... 최선을 다하겠습니다.",
+          "timestamp": 46,
+          "inReplyTo": 2
+        },
+        {
+          "speakerId": "president",
+          "kind": "지시",
+          "summary": "경고등 설치, 미끄럼방지 시설 등 선제적 대책 강구 지시",
+          "quote": "경고등 같은 거를 설치한다든지 아니면 노면의 미끄럼 방지 시설이 이루어져 될 수 있도록 한다든가 어떤 대책들을 선재적으로 강구하도록 하겠습니다.",
+          "timestamp": 46,
+          "inReplyTo": 3
+        },
+        {
+          "speakerId": "president",
+          "kind": "추가질문",
+          "summary": "고속도로 대비 일반 지방도로 안전관리 미흡 지적",
+          "quote": "고속국도나 고속도로나 이런 데는 많이 보완이 된 거 같은데 일반 지방도로는 여전히 좀 방치되고 있지 않나는 생각이 좀 들어서요.",
+          "timestamp": 47,
+          "inReplyTo": 4
+        },
+        {
+          "speakerId": "mois-minister",
+          "kind": "답변",
+          "summary": "지방도로 결빙관리 가이드라인 마련 및 시행 약속",
+          "quote": "그 저 가이드라인을 만들어서 시행하도록 하겠습니다.",
+          "timestamp": 48,
+          "inReplyTo": 5
+        },
+        {
+          "speakerId": "president",
+          "kind": "지시",
+          "summary": "작년 사고 발생 지점 사전 점검 제안",
+          "quote": "한번 미리 한번 돌아보시는 것도 좋을 것 같고요. 작년에 예를 들면 사고난 지점들이 쭉 있을 거거든요.",
+          "timestamp": 48,
+          "inReplyTo": 6
+        }
+      ]
+    },
+    {
+      "id": "ex-07",
+      "topic": "드림센터 운영방식 및 정책 취지 유지",
+      "turns": [
+        {
+          "speakerId": "president",
+          "kind": "질문",
+          "summary": "드림센터 배달 서비스의 성격에 대한 의문 제기",
+          "quote": "배달을 할 정도면 이미 타겟이 정해졌다는 뜻이고 그러면 그런 데는 그냥 드림센터로 대처할게 아니라 일반 복지사업을 해야 되는 대상이 아닌가요?",
+          "timestamp": 48,
+          "inReplyTo": null
+        },
+        {
+          "speakerId": "mohw-minister",
+          "kind": "답변",
+          "summary": "배달까지 하는 가구는 사례관리·패키지 서비스가 더 필요하다는 데 동의",
+          "quote": "배달까지 하는 그런 가구에 대해서는 사실은 복지시군의 복지센터가 좀 더 이렇게 사례관리라든가... 더 필요할 것 같다는 생각이 듭니다.",
+          "timestamp": 48,
+          "inReplyTo": 0
+        },
+        {
+          "speakerId": "president",
+          "kind": "지시",
+          "summary": "드림센터 운영방식 전반 점검 요청",
+          "quote": "하여튼 그 한번 점검 한번 해보세요. 나고 약간 이해가 좀 덜 되더라고요.",
+          "timestamp": 49,
+          "inReplyTo": 1
+        },
+        {
+          "speakerId": "president",
+          "kind": "발언",
+          "summary": "드림센터는 대책 없는 사람들의 마지막 탈출구라는 본래 취지 설명",
+          "quote": "아 이거는 정말로 대책 없는 사람들이 마지막 탈출구다.",
+          "timestamp": 51,
+          "inReplyTo": 2
+        },
+        {
+          "speakerId": "mohw-minister",
+          "kind": "발언",
+          "summary": "제도 악용 시 불신과 비판이 생길 수 있어 섬세한 관리 필요하다는 데 동의",
+          "quote": "악용되게 되면이 제도 자체에 대한 불신도 생기고...",
+          "timestamp": 52,
+          "inReplyTo": 3
+        },
+        {
+          "speakerId": "president",
+          "kind": "발언",
+          "summary": "정책의 본래 목적이 시간이 지나며 잊혀지는 경향과 경계선 설정의 중요성 강조",
+          "quote": "정책을 하다 보면 계속 좋아져야 한다라는 강박이 있으면서 본래 목적이 잊어버려지는 경우가 있습니다.",
+          "timestamp": 53,
+          "inReplyTo": 4
+        },
+        {
+          "speakerId": "president",
+          "kind": "발언",
+          "summary": "지역 상품권 사례로 정책 취지를 지키지 않으면 제도가 무의미해짐을 설명",
+          "quote": "현금으로 주서 준 것처럼 편하게 해버리면 그 정책의 목표가 상실돼 버리죠.",
+          "timestamp": 54,
+          "inReplyTo": 5
+        },
+        {
+          "speakerId": "president",
+          "kind": "발언",
+          "summary": "농촌 기본소득도 같은 맥락에서 면 단위 사용 제한의 이유 설명",
+          "quote": "면단위에서는 사실 면 안에서 쓰게 해야 면에 짜장면 가게라도 하나 생기거든요.",
+          "timestamp": 54,
+          "inReplyTo": 6
+        },
+        {
+          "speakerId": "president",
+          "kind": "발언",
+          "summary": "모든 정책이 초기 취지에서 왜곡되는 경향에 대한 경계 강조",
+          "quote": "모든 정책이 다 그렇죠. 처음엔 잘 출발했는데 나중에 조금씩 조금씩 외곡되다가...",
+          "timestamp": 55,
+          "inReplyTo": 7
+        },
+        {
+          "speakerId": "mohw-minister",
+          "kind": "발언",
+          "summary": "드림센터 본래 목적과 배달서비스 목적에 대해 전반적으로 재검토 약속",
+          "quote": "드림센터는 정말 절박한 사람들이 와서 한 번 문제를 좀 해결하자는 목적이었는데 이게 배달까지 가게 되는 건 어떤 목적일까라는 부분은 좀 전반적으로 한번 좀 보겠습니다.",
+          "timestamp": 54,
+          "inReplyTo": 8
+        }
+      ]
+    },
+    {
+      "id": "ex-08",
+      "topic": "모두의 아이디어 프로젝트 보고 및 질의",
+      "turns": [
+        {
+          "speakerId": "ipo-minister",
+          "kind": "보고",
+          "summary": "'모두의 아이디어' 프로젝트 27만여 건 중 최종 라운드 상위 5개 아이디어 최초 공개",
+          "quote": "지재처는 우리 국민의 창의력과 집단 지성을 새로운 경제 성장과 사회발전의 동력으로 활용하고자...",
+          "timestamp": 55,
+          "inReplyTo": null
+        },
+        {
+          "speakerId": "president",
+          "kind": "질문",
+          "summary": "지하철 방향 표시(플러스/마이너스) 아이디어에 대한 확인",
+          "quote": "실제로 저 도로의 표시는 다른 나라에 가면 동쪽 서쪽이 표시가 돼 있잖아요.",
+          "timestamp": 59,
+          "inReplyTo": 0
+        },
+        {
+          "speakerId": "ipo-minister",
+          "kind": "답변",
+          "summary": "지하철 번호체계에 플러스/마이너스 스티커로 방향을 표시하는 아이디어 설명",
+          "quote": "모든 지하철에는 번호가 있습니다. 거기서 올라가는 방향 플러스, 내려가는 마이너스만 스티커 붙여 놓으면은...",
+          "timestamp": 59,
+          "inReplyTo": 1
+        },
+        {
+          "speakerId": "president",
+          "kind": "발언",
+          "summary": "단순하지만 실생활에 매우 유용한 아이디어라는 평가",
+          "quote": "쉽지만 그거 적용하면 생활이 굉장히 편리하게 될 수 있는 거죠.",
+          "timestamp": 59,
+          "inReplyTo": 2
+        },
+        {
+          "speakerId": "president",
+          "kind": "질문",
+          "summary": "고속도로 진입도로 파란색/빨간색 표시 아이디어에 대한 확인",
+          "quote": "그 도로 고속도로의 그 진입도로 파란색 빨간색 그게 아주...",
+          "timestamp": 59,
+          "inReplyTo": 3
+        },
+        {
+          "speakerId": "ipo-minister",
+          "kind": "답변",
+          "summary": "현직 경찰관 제안으로 상·하행선 구분을 위한 색상표시, 오출동 방지·골든타임 확보 효과 설명",
+          "quote": "일반 경찰 후방관들이 신고를 하면 GPS가 오는데 막상 가보면 상행선 하행선 헷갈려 가지고 오출동하는 경우가 86%가 넘는답니다.",
+          "timestamp": 59,
+          "inReplyTo": 4
+        },
+        {
+          "speakerId": "unknown",
+          "kind": "질문",
+          "summary": "상행선과 하행선이 북쪽/남쪽 중 어느 쪽인지 묻는 질문",
+          "quote": "상은 북쪽 하는 남쪽입니까?",
+          "timestamp": 3617,
+          "inReplyTo": 5
+        },
+        {
+          "speakerId": "unknown",
+          "kind": "답변",
+          "summary": "방향 표기는 상황에 따라 달라질 수 있다는 답변",
+          "quote": "뭐 그거야 이제 부기 나름이겠죠.",
+          "timestamp": 3619,
+          "inReplyTo": 6
+        },
+        {
+          "speakerId": "unknown",
+          "kind": "발언",
+          "summary": "아직 채택 전이며 채택 시 국토부·경찰청과 협의해 시행 예정임을 설명",
+          "quote": "아직 채택이 안 됐기 때문에 여기서 채택이 되면 국토부등 관계부처 경찰청과 협의해서 시행을 할 예정입니다.",
+          "timestamp": 3625,
+          "inReplyTo": 7
+        },
+        {
+          "speakerId": "president",
+          "kind": "발언",
+          "summary": "우수한 아이디어와 기술이 산업현장·정부정책으로 연결되어야 가치가 있음을 강조",
+          "quote": "이처럼 그 우수한 아이디어와 기술은 산업 현장, 정부 정책으로 연결되어야만 그 가치가 있습니다.",
+          "timestamp": 3637,
+          "inReplyTo": 8
+        }
+      ]
+    },
+    {
+      "id": "ex-09",
+      "topic": "국가데이터처 업무방향 확인",
+      "turns": [
+        {
+          "speakerId": "president",
+          "kind": "질문",
+          "summary": "국가데이터처장 불참 이유와 데이터 관리·활용 보고 여부 확인",
+          "quote": "이제 국가 데이터 처 처장님 어디 오늘 안 왔어요?",
+          "timestamp": 3915,
+          "inReplyTo": null
+        },
+        {
+          "speakerId": "osc-minister",
+          "kind": "답변",
+          "summary": "국가데이터처가 데이터 관리, 표준화, AI 관련 변화 등을 정리 중이라고 설명",
+          "quote": "지금 데이터처가 관련해서 정리하고 있고요. 그리고 표준화하는 방안들하고 그리고 AI 관련돼서 어떻게 변화할 건지 정리하고 있습니다.",
+          "timestamp": 3959,
+          "inReplyTo": 0
+        },
+        {
+          "speakerId": "president",
+          "kind": "지시",
+          "summary": "데이터 업무의 중심을 통계작성에서 국가데이터 관리·활용으로 전환하도록 지시",
+          "quote": "하여튼 그 데이터도 업무의 중심을 통계를 내는 기술적인 분야에서 국가 데이터를 어떻게 관리 활용할 거냐로 완전히 옮겨가야 되거든요.",
+          "timestamp": 4005,
+          "inReplyTo": 1
+        }
+      ]
+    },
+    {
+      "id": "ex-10",
+      "topic": "도로 색상표시 제안자 포상 및 공직자 문책 당부",
+      "turns": [
+        {
+          "speakerId": "president",
+          "kind": "질문",
+          "summary": "경찰청이 도로의 빨간색·파란색 노선 표시 아이디어를 제시했는지 확인",
+          "quote": "그리고 경찰청 청장님 아까 그 도로의 그 빨간색 파란색이 노선 표시하는 그 경찰이었다면서요?",
+          "timestamp": 3991,
+          "inReplyTo": null
+        },
+        {
+          "speakerId": "knpa-commissioner",
+          "kind": "답변",
+          "summary": "2010년대 초반 도로공사 직원이 제안하여 채택된 것임을 설명",
+          "quote": "그건 어 2010년대 초반에 도로공사 한국 도로공사에 윤석덕 차장이란 분이 제안에서 채택된 건데요.",
+          "timestamp": 3952,
+          "inReplyTo": 0
+        },
+        {
+          "speakerId": "knpa-commissioner",
+          "kind": "답변",
+          "summary": "기존 도로교통법상 흰색·노란색만 가능했으나 10여 년 설득 끝에 법 개정으로 실현되었음을 설명",
+          "quote": "기존 도로 교통법에는 하얀색 노란색 외는 색깔을 적용 쓸 수가 없습니다... 그 10여년 동안 설득을 해서 경찰청 도로교통법 개정을 해서 실현이 된 겁니다.",
+          "timestamp": 3959,
+          "inReplyTo": 1
+        },
+        {
+          "speakerId": "president",
+          "kind": "발언",
+          "summary": "경찰청장이 더 고민할 필요 없다는 반응",
+          "quote": "아 청장님 고민 안 하셔도 될 것 같습니다.",
+          "timestamp": 3993,
+          "inReplyTo": 2
+        },
+        {
+          "speakerId": "knpa-commissioner",
+          "kind": "답변",
+          "summary": "해당 제안자가 올해 행안부 최고시상식에서 시상, 전년도 국민훈장 모란장 수훈 설명",
+          "quote": "올해 저 행안부에서 하는 최고 시상식이 있습니다. 올해 그분을 시상을 했습니다. 지난해는 국민훈장 모란장도 받으셨습니다.",
+          "timestamp": 4035,
+          "inReplyTo": 3
+        },
+        {
+          "speakerId": "president",
+          "kind": "지시",
+          "summary": "공직자 포상은 과감히 하되 부주의로 인한 개인정보 유출 사고는 명확히 문책할 것 지시",
+          "quote": "공직자들한테 포상도 철저하게 좀 과감하게 하되... 이렇게 정말 아무 생각 없이 그냥 대충 하다가 국민 개인 정보 유출되거나 이런 대형 사고내는 거에 대해서 문책도 명확하게 좀 하십시오.",
+          "timestamp": 4052,
+          "inReplyTo": 4
+        },
+        {
+          "speakerId": "mois-minister",
+          "kind": "답변",
+          "summary": "지시에 대한 확인 답변",
+          "quote": "예.",
+          "timestamp": 4108,
+          "inReplyTo": 5
+        }
+      ]
+    },
+    {
+      "id": "ex-11",
+      "topic": "김장 더하고 나누기 소비촉진 협조",
+      "turns": [
+        {
+          "speakerId": "osc-minister",
+          "kind": "발언",
+          "summary": "김장 더하고 나누기 확산 협조 안건 소개",
+          "quote": "다음은 부처 협조 사항 공유합니다. 김장 더하고 나누기 확산을 위한 협조에 대해서 농림축산 식품부 장관께서 말씀하시겠습니다.",
+          "timestamp": 4217,
+          "inReplyTo": null
+        },
+        {
+          "speakerId": "mafra-minister",
+          "kind": "보고",
+          "summary": "배추·무 생산량 증가로 김장재료 가격이 전년 대비 8% 하락, 농가소득 감소 우려",
+          "quote": "4인 가족이 20개 김장하는데 13개 김장 재료 구입 가격이 전년하고 비교하면 -8% 정도 떨어지는 것으로 나옵니다.",
+          "timestamp": 4252,
+          "inReplyTo": 0
+        },
+        {
+          "speakerId": "mafra-minister",
+          "kind": "보고",
+          "summary": "공공기관·민간기업 참여를 통한 김장 문화 확산 및 나눔 소비 분위기 조성 필요성",
+          "quote": "우리 공공 기관이나 민간 기업 등과 같이 사회 각계에서 참여를 통해서 김장을 좀 많이 하실 수 있도록...",
+          "timestamp": 4330,
+          "inReplyTo": 1
+        },
+        {
+          "speakerId": "mafra-minister",
+          "kind": "보고",
+          "summary": "공공기관·기업의 김치 대량구매 및 취약계층 기부 유도",
+          "quote": "가장 기본인 것은 소비가 늘어야 되기 때문에 공공기관과 기업 등에서 김치 나눔을 확산하는 것을 유도하고자 합니다.",
+          "timestamp": 4404,
+          "inReplyTo": 2
+        },
+        {
+          "speakerId": "mafra-minister",
+          "kind": "보고",
+          "summary": "전국 릴레이 김장 행사 확대, 11월 22일 김치의 날 중심 추진",
+          "quote": "김장담그는 행사를 지방정부나 농협 등에서 많이 하시는데요. 이걸 전국의 릴레이 김장 행사를 좀 전국적으로 확대할 수 있었으면 합니다.",
+          "timestamp": 4432,
+          "inReplyTo": 3
+        },
+        {
+          "speakerId": "mafra-minister",
+          "kind": "보고",
+          "summary": "국산 김치 수출 확대를 위한 정부 비축물량 할인 및 물류비 지원",
+          "quote": "수출 업체 대상으로 정부의 비축 물량을 좀 더 할인해서 공급하고 수출 물류비 부담 완화 등을 통해서 수출 활성화를 지원하도록 하겠습니다.",
+          "timestamp": 4452,
+          "inReplyTo": 4
+        },
+        {
+          "speakerId": "mafra-minister",
+          "kind": "보고",
+          "summary": "국민참여 온라인 이벤트로 김장 문화 확산 및 SNS 인증 참여자 선물 제공",
+          "quote": "국민들이 좀 참여해서 그 김장을 많이 하실 수 있도록 더하고 나누는 김장...",
+          "timestamp": 4471,
+          "inReplyTo": 5
+        },
+        {
+          "speakerId": "mafra-minister",
+          "kind": "보고",
+          "summary": "각 부처 소관 공공기관의 취약계층 김치 선물 및 김장 행사 참석·홍보 협조 요청",
+          "quote": "각 부처 소관의 공공 기관의 취약계층 대상으로 김치 선물하기 그리고 김장 행사 개최 등에 대해서...협조해 주시기를 부탁드립니다.",
+          "timestamp": 4517,
+          "inReplyTo": 6
+        },
+        {
+          "speakerId": "president",
+          "kind": "발언",
+          "summary": "기업들의 적극적인 김장 나눔 동참 당부 및 농민 소득 보호 기대",
+          "quote": "기업 좀 많이 해 주세요. 김장 많이 담그고 나눠서 농민들 시름이 좀 덜어지시면 좋겠습니다.",
+          "timestamp": 3960,
+          "inReplyTo": 7
+        }
+      ]
+    },
+    {
+      "id": "ex-12",
+      "topic": "대학생 첫 경력 프로젝트 소개 및 질의",
+      "turns": [
+        {
+          "speakerId": "osc-minister",
+          "kind": "발언",
+          "summary": "대학생 첫 경력 프로젝트 홍보영상 소개",
+          "quote": "이번 주는 대학생 첫 경력 프로젝트에 대해서 교육부 장관께서 소개하시겠습니다.",
+          "timestamp": 4323,
+          "inReplyTo": null
+        },
+        {
+          "speakerId": "moe-minister",
+          "kind": "보고",
+          "summary": "청년 취업시장의 경력 역설 문제 제기",
+          "quote": "취업을 해야 되겠는데 취업하려 그러면 경력이 필요하다고 하고 경력을 쌓으려고 하면 일단 취업을 해야 되는...",
+          "timestamp": 4332,
+          "inReplyTo": 0
+        },
+        {
+          "speakerId": "moe-minister",
+          "kind": "보고",
+          "summary": "내년도 4,650억 원 신규 예산으로 대학생 6만 명 첫 경력 지원 계획",
+          "quote": "교육부는 내년도에 정부 예산 안에 4,650억 원을 신규 반영해서 대학생 6만 명이 첫 경력을 쌓을 수 있도록 지원하려고 합니다.",
+          "timestamp": 4349,
+          "inReplyTo": 1
+        },
+        {
+          "speakerId": "moe-minister",
+          "kind": "보고",
+          "summary": "SNS 캐릭터 활용 드라마형 홍보영상 '신입의 비밀' 소개",
+          "quote": "오늘 보실 영상은 교육부 SNS 홍보 캐릭터인 꾸미를 주인공으로 삼아서...",
+          "timestamp": 4373,
+          "inReplyTo": 2
+        },
+        {
+          "speakerId": "president",
+          "kind": "질문",
+          "summary": "대학생 첫 경력 프로젝트의 구체적 프로그램과 선택기회 사전 공지 여부 확인",
+          "quote": "이거는 그러면 어떤 프로그램들이 준비되 있는지는 다 미리 알려지겠죠? 이런저런 것 선택할 수 있게.",
+          "timestamp": 4510,
+          "inReplyTo": 3
+        },
+        {
+          "speakerId": "unknown",
+          "kind": "답변",
+          "summary": "기업과 정부가 훈련비를 50%씩 분담하는 방식 설명",
+          "quote": "취업을 원하는 청년과 기업을 연계해서 전에는 기업에서 그 필요한 돈을 댔었는데 저희들이 50%를 지원해서...",
+          "timestamp": 4521,
+          "inReplyTo": 4
+        },
+        {
+          "speakerId": "president",
+          "kind": "질문",
+          "summary": "기업들의 수요 규모 현황 확인",
+          "quote": "그러니까 기업들이 예를 들면 수요가 어느 정도 있나 그게 궁금해서요, 지금",
+          "timestamp": 4539,
+          "inReplyTo": 5
+        },
+        {
+          "speakerId": "unknown",
+          "kind": "답변",
+          "summary": "현재 약 2천 명 규모 기업 참여 중이며 6만 명 목표",
+          "quote": "지금 2천명 정도 기업이 참여하고 있는데...",
+          "timestamp": 4551,
+          "inReplyTo": 6
+        },
+        {
+          "speakerId": "president",
+          "kind": "추가질문",
+          "summary": "기업 수요가 목표치를 초과할 가능성 제시",
+          "quote": "어쨌든 기업들의 수요는 그 이상 있을 거다",
+          "timestamp": 4576,
+          "inReplyTo": 7
+        }
+      ]
+    },
+    {
+      "id": "ex-13",
+      "topic": "국민의견 청취 및 서울역 종교단체 실태조사",
+      "turns": [
+        {
+          "speakerId": "osc-minister",
+          "kind": "보고",
+          "summary": "국민이 제시한 법질서, 겨울철 안전, 에너지 정책, 지식재산 등 다양한 의견 소개",
+          "quote": "오늘도 많은 국민들께서 국무회의 생중계를 시청해 주시고 다양한 의견을 주셨습니다",
+          "timestamp": 4539,
+          "inReplyTo": null
+        },
+        {
+          "speakerId": "osc-minister",
+          "kind": "보고",
+          "summary": "에너지바우처 잔액을 다른 용도로도 사용 가능하게 해달라는 국민제안",
+          "quote": "에너지 바우처 남은 건 다른 곳에도 쓸 수 있게 해 주세요",
+          "timestamp": 4621,
+          "inReplyTo": 0
+        },
+        {
+          "speakerId": "osc-minister",
+          "kind": "보고",
+          "summary": "연구자 보상 강화 및 핵심기술 유출 방지 방안 요구 의견",
+          "quote": "연구자한테도 보상이 제대로 돌아가야 합니다... 핵심 기술 탈취는 어떻게 막나요",
+          "timestamp": 4645,
+          "inReplyTo": 1
+        },
+        {
+          "speakerId": "president",
+          "kind": "발언",
+          "summary": "서울역 종교단체 관련 불법행위에 대한 실태조사 지시",
+          "quote": "서울역의 종교 단체 얘기는 역시 본 사람이 많은 거예요... 그거 한번 실태조사를 한번 해 보고요",
+          "timestamp": 4659,
+          "inReplyTo": 2
+        }
+      ]
+    },
+    {
+      "id": "ex-14",
+      "topic": "중수청 인력·인프라 확충 점검",
+      "turns": [
+        {
+          "speakerId": "president",
+          "kind": "질문",
+          "summary": "중수청 인력 보강 사업 진행 상황 확인",
+          "quote": "중수청은 인력 보강 사업은 잘되고 있습니까?",
+          "timestamp": 4758,
+          "inReplyTo": null
+        },
+        {
+          "speakerId": "unknown",
+          "kind": "답변",
+          "summary": "현재 66% 충원, 12월 초 추가 공고 후 내년 2월경 충원 완료 예상",
+          "quote": "지금 현재 66% 충원했습니다. 이달 말 12월 초 정도에 공고를 낼 거고요. 내년 한 2월 정도면 어느 정도 충원이 될 거로 예상하고 있습니다.",
+          "timestamp": 4766,
+          "inReplyTo": 0
+        },
+        {
+          "speakerId": "president",
+          "kind": "질문",
+          "summary": "수사 인력 충원이 주요 과제인지 확인",
+          "quote": "주로는 수사 인력이겠죠",
+          "timestamp": 4788,
+          "inReplyTo": 1
+        },
+        {
+          "speakerId": "president",
+          "kind": "질문",
+          "summary": "시설·장비·업무공간 등 인프라 정비 상황 확인",
+          "quote": "다른 시설 장비나 뭐 업무 공간이나 이런 거 다 정리돼 갑니까?",
+          "timestamp": 4795,
+          "inReplyTo": 2
+        },
+        {
+          "speakerId": "unknown",
+          "kind": "답변",
+          "summary": "12월 중순까지 인프라 완비될 것으로 예상",
+          "quote": "한 올해 말이면 12월 중순 정도면 완비될 걸로 예상합니다",
+          "timestamp": 4819,
+          "inReplyTo": 3
+        },
+        {
+          "speakerId": "president",
+          "kind": "지시",
+          "summary": "검찰·사법개혁에 대한 국민 관심이 높으므로 속도감 있게 추진할 것 당부",
+          "quote": "국민들께서 이번 사복 개혁 그 검찰 개혁 수사 뭐 공판 관련 개혁 과정을 이렇게 관심 있게 지켜보고 계시기 때문에... 속도를 좀 내 주시고요",
+          "timestamp": 4835,
+          "inReplyTo": 4
+        }
+      ]
+    },
+    {
+      "id": "ex-15",
+      "topic": "범죄수익 환수 절차 개선",
+      "turns": [
+        {
+          "speakerId": "president",
+          "kind": "질문",
+          "summary": "범죄수익 환수 절차의 사후적 한계와 추적 권한 부족 문제 지적",
+          "quote": "범죄 수익 환수가 이제 처벌 조치가 끝난 후에 이제 확정이 되면 이제 시작되는 거잖아요. 무죄 추정 원칙 때문에... 지금 실질적으로 뭘 할 수 있는게 없다",
+          "timestamp": 4880,
+          "inReplyTo": null
+        },
+        {
+          "speakerId": "unknown",
+          "kind": "답변",
+          "summary": "범죄수익 환수 관련 개선 대책을 별도로 준비 중임을 보고",
+          "quote": "저희 범죄 수익 환수 업무 관련 개선 대책 지금 보고 준비하고 있는 되고 난 다음에 얘기하면 되겠네요",
+          "timestamp": 4920,
+          "inReplyTo": 0
+        }
+      ]
+    }
+  ],
+  "directives": [
+    {
+      "id": "dir-2026-11-10-01",
+      "from": "president",
+      "to": [
+        "moef-minister",
+        "mofa-minister",
+        "motie-minister"
+      ],
+      "content": "미국 중간선거 이후 국제경제 환경 변화에 대비해 다양한 변수를 다각도로 분석하고 상황별 대응방안을 마련할 것",
+      "timestamp": 968,
+      "tags": [
+        "외교",
+        "경제정책"
+      ],
+      "status": "issued",
+      "followUps": []
+    },
+    {
+      "id": "dir-2026-11-10-02",
+      "from": "president",
+      "to": [
+        "fsc-chairman"
+      ],
+      "content": "금융시장 동요 방지를 위한 모니터링 강화 및 신속 대응체계 구축",
+      "timestamp": 1006,
+      "tags": [
+        "금융"
+      ],
+      "status": "issued",
+      "followUps": []
+    },
+    {
+      "id": "dir-2026-11-10-03",
+      "from": "president",
+      "to": [
+        "motie-minister",
+        "msit-minister"
+      ],
+      "content": "반도체·인공지능 등 핵심 전략산업 경쟁력을 정교하게 다듬고 새로운 성장산업 육성 고민을 지속할 것",
+      "timestamp": 1015,
+      "tags": [
+        "AI",
+        "산업정책"
+      ],
+      "status": "issued",
+      "followUps": []
+    },
+    {
+      "id": "dir-2026-11-10-04",
+      "from": "president",
+      "to": [
+        "mofa-minister"
+      ],
+      "content": "한미 상호신뢰를 바탕으로 양국 협력 기반을 다지고 넓히는 데 외교력을 집중할 것",
+      "timestamp": 1034,
+      "tags": [
+        "외교"
+      ],
+      "status": "issued",
+      "followUps": []
+    },
+    {
+      "id": "dir-2026-11-10-05",
+      "from": "president",
+      "to": [
+        "osc-minister"
+      ],
+      "content": "개별 조직의 이해관계가 국민과 공동체 전체를 위한 공공기관 개혁을 가로막지 않도록 할 것",
+      "timestamp": 1159,
+      "tags": [
+        "공공기관개혁"
+      ],
+      "status": "issued",
+      "followUps": []
+    },
+    {
+      "id": "dir-2026-11-10-06",
+      "from": "president",
+      "to": [
+        "pm2"
+      ],
+      "content": "공공기관 개혁의 핵심은 속도이며, 빠른 구조개혁을 위한 획기적 인센티브를 강구하고 신속히 조정할 것",
+      "timestamp": 1192,
+      "tags": [
+        "공공기관개혁"
+      ],
+      "status": "issued",
+      "followUps": []
+    },
+    {
+      "id": "dir-2026-11-10-07",
+      "from": "president",
+      "to": [
+        "moj-minister",
+        "knpa-commissioner"
+      ],
+      "content": "범죄·비리·불공정에 대한 범정부적 대응 역량을 집중할 것",
+      "timestamp": 1231,
+      "tags": [
+        "법질서",
+        "치안"
+      ],
+      "status": "issued",
+      "followUps": []
+    },
+    {
+      "id": "dir-2026-11-10-08",
+      "from": "president",
+      "to": [
+        "moj-minister",
+        "knpa-commissioner"
+      ],
+      "content": "온라인 스캠, 마약, 불법사금융, 가짜뉴스 등 민생피해 범죄에 빈틈없이 대비할 것",
+      "timestamp": 1254,
+      "tags": [
+        "법질서",
+        "치안"
+      ],
+      "status": "issued",
+      "followUps": []
+    },
+    {
+      "id": "dir-2026-11-10-09",
+      "from": "president",
+      "to": [
+        "moj-minister",
+        "knpa-commissioner",
+        "molit-minister"
+      ],
+      "content": "부동산 불법행위와 지역 토착비리 등 구조적 불공정·비리에 엄정 대응할 것",
+      "timestamp": 1305,
+      "tags": [
+        "법질서",
+        "부동산"
+      ],
+      "status": "issued",
+      "followUps": []
+    },
+    {
+      "id": "dir-2026-11-10-10",
+      "from": "president",
+      "to": [
+        "moj-minister",
+        "knpa-commissioner",
+        "mois-minister"
+      ],
+      "content": "부처 간 칸막이를 허물고 모든 수단을 동원해 범죄 대응 종합대책을 신속히 수립·시행할 것",
+      "timestamp": 1356,
+      "tags": [
+        "법질서"
+      ],
+      "status": "issued",
+      "followUps": []
+    },
+    {
+      "id": "dir-2026-11-10-11",
+      "from": "president",
+      "to": [
+        "moe-minister",
+        "knpa-commissioner"
+      ],
+      "content": "수능 시험의 공정성 관리를 강화하고 스마트 안경 등 첨단기기를 이용한 부정행위를 차단할 것",
+      "timestamp": 1030,
+      "tags": [
+        "교육",
+        "공정성"
+      ],
+      "status": "issued",
+      "followUps": []
+    },
+    {
+      "id": "dir-2026-11-10-12",
+      "from": "president",
+      "to": [
+        "knpa-commissioner",
+        "mois-minister",
+        "moj-minister"
+      ],
+      "content": "합법적 법질서를 무력으로 저항하는 전국 사례의 실태를 점검할 것",
+      "timestamp": 1545,
+      "tags": [
+        "법질서"
+      ],
+      "status": "issued",
+      "followUps": []
+    },
+    {
+      "id": "dir-2026-11-10-13",
+      "from": "president",
+      "to": [
+        "pm2"
+      ],
+      "content": "전국의 법질서 무력저항 및 불법 지속행위 사례를 전수 취합해 1~2주 내 보고할 것",
+      "timestamp": 1671,
+      "tags": [
+        "법질서"
+      ],
+      "status": "issued",
+      "followUps": []
+    },
+    {
+      "id": "dir-2026-11-10-14",
+      "from": "president",
+      "to": [
+        "mois-minister"
+      ],
+      "content": "일반 지방도로 결빙관리 가이드라인을 마련하고 작년 사고 발생 지점을 사전 점검할 것",
+      "timestamp": 47,
+      "tags": [
+        "겨울철안전"
+      ],
+      "status": "issued",
+      "followUps": []
+    },
+    {
+      "id": "dir-2026-11-10-15",
+      "from": "president",
+      "to": [
+        "mohw-minister"
+      ],
+      "content": "드림센터 배달서비스 운영방식에 대한 점검을 요청",
+      "timestamp": 49,
+      "tags": [
+        "복지"
+      ],
+      "status": "issued",
+      "followUps": []
+    },
+    {
+      "id": "dir-2026-11-10-16",
+      "from": "president",
+      "to": [
+        "data-minister"
+      ],
+      "content": "국가데이터 업무의 중심을 통계 작성에서 국가데이터 관리·활용으로 전환할 것",
+      "timestamp": 4005,
+      "tags": [
+        "데이터거버넌스"
+      ],
+      "status": "issued",
+      "followUps": []
+    },
+    {
+      "id": "dir-2026-11-10-17",
+      "from": "president",
+      "to": [
+        "mois-minister"
+      ],
+      "content": "공직자 포상은 과감히 하되 부주의로 인한 국민 개인정보 유출 사고에 대해서는 문책을 명확히 할 것",
+      "timestamp": 4052,
+      "tags": [
+        "공직기강",
+        "개인정보"
+      ],
+      "status": "issued",
+      "followUps": []
+    },
+    {
+      "id": "dir-2026-11-10-18",
+      "from": "president",
+      "to": [
+        "moj-minister"
+      ],
+      "content": "검찰·사법개혁 관련 수사·공판 개혁 과정에 속도를 낼 것",
+      "timestamp": 4835,
+      "tags": [
+        "검찰개혁"
+      ],
+      "status": "issued",
+      "followUps": []
+    },
+    {
+      "id": "dir-2026-11-10-19",
+      "from": "president",
+      "to": [
+        "mois-minister",
+        "knpa-commissioner"
+      ],
+      "content": "서울역 종교단체 관련 불법행위에 대한 실태조사를 실시할 것",
+      "timestamp": 4659,
+      "tags": [
+        "법질서"
+      ],
+      "status": "issued",
+      "followUps": []
+    }
+  ],
+  "aiDataPolicy": [
+    {
+      "topic": "AI 혁신 챌린지 경진대회",
+      "speakerId": "unknown",
+      "summary": "AI 혁신 챌린지 경진대회 개최 결과, 국민 생활 밀접 분야에서 성과 창출 보도",
+      "quote": null,
+      "timestamp": 742,
+      "tags": [
+        "AI인프라",
+        "인재양성"
+      ]
+    },
+    {
+      "topic": "핵심 전략산업 경쟁력 강화",
+      "speakerId": "president",
+      "summary": "반도체와 인공지능 등 핵심 전략산업의 경쟁력을 정교하게 다듬고 새로운 성장산업 육성을 지시",
+      "quote": "반도체와 인공지능 같은 핵심 전략산업의 경쟁력을 한층 정교하게 다듬고 새로운 성장산업 육성 또한 고민을 놓치지 말아야겠습니다.",
+      "timestamp": 1015,
+      "tags": [
+        "AI예산",
+        "AI인프라"
+      ]
+    },
+    {
+      "topic": "지식재산 거래와 AI 혁명",
+      "speakerId": "ipo-minister",
+      "summary": "글로벌 기술패권 경쟁과 AI 혁명 시대에 기업이 시장거래로 필요한 기술을 신속히 확보할 필요성 설명",
+      "quote": "글로벌 기술 패권 경쟁과 AI 혁명 시대에 기업들이 시장에서 거래를 통해 필요한 기술을 빨리 확보하고...",
+      "timestamp": 3652,
+      "tags": [
+        "데이터산업"
+      ]
+    },
+    {
+      "topic": "AI 기반 지식재산 가치평가",
+      "speakerId": "ipo-minister",
+      "summary": "지식재산 거래 활성화를 위해 실거래 데이터 수집과 AI 기반 가치평가 제공 계획 발표",
+      "quote": "지재산 거래를 어렵게 하는 가장 큰 요인은 신뢰성 있는 시장 가격이 없다는 것입니다.",
+      "timestamp": 3758,
+      "tags": [
+        "데이터산업",
+        "AI인프라"
+      ]
+    },
+    {
+      "topic": "국가데이터처 업무현황",
+      "speakerId": "president",
+      "summary": "국가데이터처장 불참 사유와 데이터 관리·활용 관련 보고 여부 확인",
+      "quote": "이제 국가 데이터 처 처장님 어디 오늘 안 왔어요?",
+      "timestamp": 3915,
+      "tags": [
+        "데이터거버넌스"
+      ]
+    }
+  ],
+  "videoId": "upoeCY7FE74",
+  "videoUrl": "https://youtu.be/upoeCY7FE74",
+  "duration": 4908,
+  "thumbnail": "https://i.ytimg.com/vi/upoeCY7FE74/hqdefault.jpg",
+  "sources": [
+    {
+      "videoId": "gDRR6qNUDik",
+      "title": "[#이재명 LIVE] 모든 국정의 출발점은 국민의 안전입니다 | 제48회 국무회의",
+      "channelTitle": "이재명 (대통령실 공식)",
+      "url": "https://youtu.be/gDRR6qNUDik"
+    }
+  ]
+}
